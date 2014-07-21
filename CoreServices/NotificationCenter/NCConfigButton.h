@@ -4,20 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NCButton.h"
+#import "NSButton.h"
 
-@class CALayer;
-
-@interface NCConfigButton : NCButton
+@interface NCConfigButton : NSButton
 {
-    CALayer *_indicatorLayer;
     _Bool _showsNewIndicator;
 }
 
 + (Class)cellClass;
 @property(nonatomic) _Bool showsNewIndicator; // @synthesize showsNewIndicator=_showsNewIndicator;
-- (void).cxx_destruct;
-- (void)layout;
+- (void)_setIndicatorImage;
 - (struct CGSize)intrinsicContentSize;
 - (void)setTitle:(id)arg1;
 - (void)awakeFromNib;

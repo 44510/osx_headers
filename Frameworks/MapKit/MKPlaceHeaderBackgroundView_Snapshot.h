@@ -8,15 +8,15 @@
 
 #import "MKMapViewDelegate.h"
 
-@class CLLocation, MKMapView, NSString, NSTimer;
+@class CLLocation, MKMapCamera, MKMapView, NSString;
 
 @interface MKPlaceHeaderBackgroundView_Snapshot : MKPlaceHeaderBackgroundView <MKMapViewDelegate>
 {
     MKMapView *_mapView;
-    NSTimer *_timer;
-    double _orbitStartTime;
+    BOOL _orbiting;
     BOOL _showsPin;
     BOOL _useSatellite;
+    MKMapCamera *_orbitCamera;
     double _zoomLevel;
     unsigned long long _pinColor;
     CLLocation *_location;
@@ -27,6 +27,8 @@
 @property(nonatomic) double zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) BOOL useSatellite; // @synthesize useSatellite=_useSatellite;
 @property(nonatomic) BOOL showsPin; // @synthesize showsPin=_showsPin;
+@property(nonatomic) BOOL orbiting; // @synthesize orbiting=_orbiting;
+@property(retain, nonatomic) MKMapCamera *orbitCamera; // @synthesize orbitCamera=_orbitCamera;
 - (void).cxx_destruct;
 - (void)resume;
 - (void)pause;
@@ -34,7 +36,7 @@
 - (void)present;
 - (void)prepareForPresentation;
 - (void)pauseOrbit;
-- (void)orbit:(id)arg1;
+- (void)_orbitNextThird;
 - (void)beginOrbit;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapViewDidFinishLoadingMap:(id)arg1;
@@ -43,8 +45,6 @@
 - (void)mapFinishedLoading:(BOOL)arg1;
 - (void)requestSnapshot;
 - (id)hitTest:(struct CGPoint)arg1;
-- (void)resizeMapIfNeeded;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)setBackgroundType:(long long)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)dealloc;

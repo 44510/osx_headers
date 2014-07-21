@@ -19,6 +19,8 @@
 }
 
 @property(readonly) long long state; // @synthesize state=_state;
+- (void)continuityDidStopTrackingPeer:(id)arg1;
+- (void)continuityDidStartTrackingPeer:(id)arg1 error:(id)arg2;
 - (void)continuityDidLosePeer:(id)arg1;
 - (void)continuityDidDiscoverType:(long long)arg1 withData:(id)arg2 fromPeer:(id)arg3;
 - (void)continuityDidFailToStartScanningForType:(long long)arg1 withError:(id)arg2;
@@ -31,6 +33,8 @@
 - (void)_callDelegateWithBlock:(CDUnknownBlockType)arg1;
 - (void)_daemonDied:(id)arg1;
 - (void)_handleReconnect;
+- (void)stopTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1;
 - (void)stopScanningForType:(long long)arg1;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;

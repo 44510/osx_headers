@@ -21,6 +21,8 @@
 @property(nonatomic) BOOL shouldRasterize;
 @property(nonatomic) BOOL shouldEnableEffects;
 @property(retain, nonatomic) CIFilter *filter;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

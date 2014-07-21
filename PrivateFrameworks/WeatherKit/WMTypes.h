@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)primaryConditionForRange:(struct _NSRange)arg1 inHourlyForecasts:(id)arg2;
 + (id)WeatherDescriptions;
 
 @end

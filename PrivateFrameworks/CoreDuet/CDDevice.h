@@ -11,6 +11,7 @@
 @interface CDDevice : NSObject
 {
     CDSession *_session;
+    int remoteDataNotificationToken;
     unsigned int _identifier;
     NSString *_modelIdentifier;
 }
@@ -19,6 +20,7 @@
 @property(readonly) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property(readonly) unsigned int identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (BOOL)requestLogDataWithError:(id *)arg1;
 - (id)readLogDataWithError:(id *)arg1;
 - (BOOL)setLogDataHandlerWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;

@@ -37,7 +37,8 @@
 - (void)ubiquityIdentityChanged:(id)arg1;
 - (void)toggleSidebar:(id)arg1;
 - (void)addShowSidebarSection;
-- (_Bool)wantsShowSidebarSection;
+- (_Bool)sidebarIsHidden;
+- (_Bool)wantsShowHideSidebarSection;
 - (void)addOtherSection;
 - (void)addFavoritesItems;
 - (void)addRecentsItems:(const struct TFENodeVector *)arg1;

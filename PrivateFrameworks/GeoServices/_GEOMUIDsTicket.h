@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic, getter=isCanceled) BOOL canceled; // @synthesize canceled=_canceled;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;

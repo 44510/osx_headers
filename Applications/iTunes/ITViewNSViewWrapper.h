@@ -16,7 +16,7 @@
 }
 
 + (void)hideViewWrappersForITView:(shared_ptr_8092bbf7)arg1 shouldBeVisible:(BOOL)arg2;
-+ (HashMap_9195d314 *)getITViewToWrapperListMapInstance;
++ (HashMap_8e96d517 *)getITViewToWrapperListMapInstance;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)mouseMoved:(id)arg1;

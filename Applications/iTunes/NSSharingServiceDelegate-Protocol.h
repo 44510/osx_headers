@@ -11,7 +11,7 @@
 @protocol NSSharingServiceDelegate <NSObject>
 
 @optional
-- (NSWindow *)sharingService:(NSSharingService *)arg1 sourceWindowForShareItems:(NSArray *)arg2 sharingContentScope:(int *)arg3;
+- (NSWindow *)sharingService:(NSSharingService *)arg1 sourceWindowForShareItems:(NSArray *)arg2 sharingContentScope:(long long *)arg3;
 - (NSImage *)sharingService:(NSSharingService *)arg1 transitionImageForShareItem:(id <NSPasteboardWriting>)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)sharingService:(NSSharingService *)arg1 sourceFrameOnScreenForShareItem:(id <NSPasteboardWriting>)arg2;
 - (void)sharingService:(NSSharingService *)arg1 didShareItems:(NSArray *)arg2;

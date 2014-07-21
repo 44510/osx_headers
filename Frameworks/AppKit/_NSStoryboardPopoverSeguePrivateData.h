@@ -6,14 +6,9 @@
 
 #import "NSObject.h"
 
-@class NSView;
-
 __attribute__((visibility("hidden")))
 @interface _NSStoryboardPopoverSeguePrivateData : NSObject
 {
-    NSView *anchorView;
-    long long popoverBehavior;
-    unsigned long long preferredEdge;
 }
 
 @end

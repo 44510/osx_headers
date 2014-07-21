@@ -11,12 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)updateFaceTimeVideoAvailability:(BOOL)arg1;
-- (void)updateFaceTimeAudioAvailability:(BOOL)arg1;
+- (void)updateFaceTimeAvailability:(BOOL)arg1;
 - (void)setContactIdentifiers:(id)arg1;
 - (void)_updateViewValue;
 - (id)_localizedLabel;
 - (id)_labelMenuItems;
+- (void)didRemoveFromCollection:(id)arg1;
 - (id)faceTimeRowView;
 
 @end

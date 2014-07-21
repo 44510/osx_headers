@@ -14,6 +14,7 @@
     BOOL _oplock;
     BOOL _sendAllFields;
     NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
     CDUnknownBlockType _recordPostedBlock;
     NSArray *_records;
     NSArray *_recordIDsToDelete;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(copy, nonatomic) CDUnknownBlockType recordPostedBlock; // @synthesize recordPostedBlock=_recordPostedBlock;
 @property(nonatomic) BOOL atomic; // @synthesize atomic=_atomic;
+@property(retain, nonatomic) NSDictionary *conflictLosersToResolveByRecordID; // @synthesize conflictLosersToResolveByRecordID=_conflictLosersToResolveByRecordID;
 @property(retain, nonatomic) NSDictionary *recordIDsToDeleteToEtags; // @synthesize recordIDsToDeleteToEtags=_recordIDsToDeleteToEtags;
 - (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;

@@ -46,7 +46,7 @@
 - (id)queryWithString:(id)arg1 webSearch:(BOOL)arg2 handler:(id)arg3;
 - (id)queryWithString:(id)arg1 webSearch:(BOOL)arg2 scaleFactor:(double)arg3 handler:(id)arg4;
 - (id)createURLRequestWithString:(id)arg1 webSearch:(BOOL)arg2 scaleFactor:(double)arg3 fallbackURL:(id *)arg4;
-- (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(CDStruct_c3b9c2ee)arg5 storeFrontId:(id)arg6 locale:(id)arg7;
+- (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(CDStruct_c3b9c2ee)arg5 storeFrontId:(id)arg6 locale:(id)arg7 context:(id)arg8;
 - (id)urlRequestFromURL:(id)arg1;
 - (void)refreshGUID;
 - (void)reloadGuid;

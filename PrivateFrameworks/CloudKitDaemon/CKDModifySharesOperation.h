@@ -23,7 +23,7 @@
 @property(copy, nonatomic) CDUnknownBlockType deleteCompletionBlock; // @synthesize deleteCompletionBlock=_deleteCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType saveCompletionBlock; // @synthesize saveCompletionBlock=_saveCompletionBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleShareDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleShareSaved:(id)arg1 shareID:(id)arg2 responseCode:(id)arg3;

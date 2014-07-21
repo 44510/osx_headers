@@ -28,6 +28,7 @@
 - (unsigned long long)indexOfValueForIdentifier:(NSString *)arg1;
 - (NSArray *)identifiers;
 - (NSString *)identifierAtIndex:(unsigned long long)arg1;
+- (NSArray *)values;
 - (BOOL)hasEmptyValue;
 - (id)valueAtIndex:(unsigned long long)arg1;
 - (BOOL)isValueEmptyAtIndex:(unsigned long long)arg1;

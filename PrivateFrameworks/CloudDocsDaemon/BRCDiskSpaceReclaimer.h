@@ -6,15 +6,18 @@
 
 #import "NSObject.h"
 
-@class BRCAccountSession;
+@class BRCAccountSession, NSObject<OS_dispatch_queue>;
 
 __attribute__((visibility("hidden")))
 @interface BRCDiskSpaceReclaimer : NSObject
 {
     BRCAccountSession *_session;
+    BOOL _isClosed;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (BOOL)createTablesWithDB:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(CDUnknownBlockType)arg1;
@@ -25,7 +28,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)documentWasCreated:(id)arg1;
 - (long long)periodicReclaimSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
+- (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;
+- (void)close;
 - (id)initWithAccountSession:(id)arg1;
 
 @end

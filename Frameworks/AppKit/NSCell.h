@@ -233,6 +233,7 @@
 - (id)fieldEditorTextContainer;
 - (void)setTitleTextContainer:(id)arg1;
 - (id)titleTextContainer;
+- (BOOL)_hasAppearanceTextEffectsWithAttributedString:(id)arg1;
 - (void)setAllowsAppearanceTextEffects:(BOOL)arg1;
 - (BOOL)allowsAppearanceTextEffects;
 - (BOOL)_layerDrawingSupportsLinearMaskOverlayForLayerBackedView:(id)arg1;
@@ -297,10 +298,12 @@
 - (BOOL)_usingAlternateHighlightColorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_finalizeStyleTextOptions:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
+- (BOOL)_customForegroundColorInTitle:(id)arg1;
 - (BOOL)_updateStyledTextOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
 - (void)_updateCoreUIOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
 - (unsigned long long)_interiorContentValueStateInView:(id)arg1;
 - (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (BOOL)_funkyOptOutLogicThatShouldGoAwayForView:(id)arg1 semanticContext:(int)arg2;
 - (BOOL)_preferInactiveBezelArtInView:(id)arg1;
 - (id)_defaultImageHints;
 - (BOOL)_needsHighlightedTextHint;

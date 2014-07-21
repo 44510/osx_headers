@@ -8,13 +8,14 @@
 
 #import "NSURLSessionDownloadDelegate.h"
 
-@class MCArchiveFileWrapper, MCMimeBody, MCMimePart, NSArray, NSBlockOperation, NSData, NSDate, NSDictionary, NSError, NSFileWrapper, NSImage, NSNumber, NSPort, NSProgress, NSString, NSURL, NSURLSession, StationeryCompositeImage;
+@class MCArchiveFileWrapper, MCMimeBody, MCMimePart, NSArray, NSBlockOperation, NSData, NSDate, NSDictionary, NSError, NSFileWrapper, NSImage, NSNumber, NSPort, NSProgress, NSString, NSURL, StationeryCompositeImage;
 
 @interface MCAttachment : NSObject <NSURLSessionDownloadDelegate>
 {
     unsigned long long _approximateSize;
     NSImage *_iconImage;
     MCMimePart *_mimePart;
+    id _currentDataLock;
     NSData *_currentData;
     NSData *_originalData;
     BOOL _isRemoteImage;
@@ -48,9 +49,9 @@
     StationeryCompositeImage *_stationeryCompositeImage;
     NSArray *_whereFroms;
     NSString *_cloudKitRecordName;
+    NSURL *_downloadURL;
     NSDate *_downloadURLExpiration;
     NSURL *_downloadDirectory;
-    NSURLSession *_downloadSession;
     NSPort *_downloadPort;
     NSError *_downloadError;
     struct CGSize _imageSizeFromHeaders;
@@ -61,9 +62,9 @@
 @property(nonatomic) BOOL isImageArchive; // @synthesize isImageArchive=_isImageArchive;
 @property(retain, nonatomic) NSError *downloadError; // @synthesize downloadError=_downloadError;
 @property(readonly, nonatomic) NSPort *downloadPort; // @synthesize downloadPort=_downloadPort;
-@property(retain, nonatomic) NSURLSession *downloadSession; // @synthesize downloadSession=_downloadSession;
 @property(retain, nonatomic) NSURL *downloadDirectory; // @synthesize downloadDirectory=_downloadDirectory;
 @property(retain, nonatomic) NSDate *downloadURLExpiration; // @synthesize downloadURLExpiration=_downloadURLExpiration;
+@property(retain, nonatomic) NSURL *downloadURL; // @synthesize downloadURL=_downloadURL;
 @property(copy, nonatomic) NSString *cloudKitRecordName; // @synthesize cloudKitRecordName=_cloudKitRecordName;
 @property(copy, nonatomic) NSArray *whereFroms; // @synthesize whereFroms=_whereFroms;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
@@ -145,10 +146,12 @@
 - (void)revertToOriginalData;
 - (void)setDataForResizedImage:(id)arg1;
 - (BOOL)isScalable;
+- (void)_setCurrentDataIfNil:(id)arg1;
 @property(retain, nonatomic) NSData *currentData;
 @property(retain, nonatomic) NSData *originalData;
 - (id)attachmentWithCurrentData;
 - (void)dealloc;
+- (void)_mcAttachmentCommonInit;
 - (id)initWithHeaderURL:(id)arg1;
 - (id)init;
 - (id)initWithFileURL:(id)arg1;

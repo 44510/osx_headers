@@ -27,7 +27,6 @@
     HiCloudController *hiCloudController;
     NSMutableArray *_shieldWindows;
     PrincessShieldWindow *_mainShieldWindow;
-    BOOL _registeredDisplayListener;
     NSView *mbExtraTextView;
     NSTextField *mbExtraTextField;
     NSObject<OS_dispatch_queue> *applySettingsQueue;

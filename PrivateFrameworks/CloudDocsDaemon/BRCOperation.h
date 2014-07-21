@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     long long _throttleHash;
     NSObject<OS_dispatch_source> *_retryTimer;
     NSObject<OS_dispatch_group> *_group;
+    id _pmAssertionID;
     BOOL _finished;
     BOOL _executing;
     BOOL _isDiscretionary;

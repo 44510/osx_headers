@@ -13,6 +13,7 @@
     NSAppleEventDescriptor *_address;
 }
 
++ (id)remoteApplicationWithPath:(id)arg1;
 + (id)currentApplication;
 + (id)applicationWithPath:(id)arg1;
 @property(retain) NSAppleEventDescriptor *address; // @synthesize address=_address;
@@ -20,9 +21,10 @@
 - (void)setPSNAddress;
 - (BOOL)isRunning;
 - (BOOL)launch;
-- (id)sendAppleEvent:(id)arg1 modifiers:(id)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
+- (id)sendAppleEvent:(id)arg1 timeout:(long long)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
 - (id)sendAppleEvent:(id)arg1 withContext:(id)arg2 waitForReply:(BOOL)arg3 error:(id *)arg4;
 - (id)emptyAppleEventWithEventClass:(unsigned int)arg1 eventID:(unsigned int)arg2;
+- (id)initRemoteApplicationWithPath:(id)arg1;
 - (id)initCurrentApplication;
 - (id)initWithPath:(id)arg1;
 

@@ -22,6 +22,7 @@
 @property(retain, nonatomic) CKDPResponseOperationResultError *error; // @synthesize error=_error;
 @property(nonatomic) int code; // @synthesize code=_code;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

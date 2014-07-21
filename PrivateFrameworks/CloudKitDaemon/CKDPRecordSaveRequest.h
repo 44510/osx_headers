@@ -13,6 +13,7 @@
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying>
 {
     CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
+    NSMutableArray *_conflictLosersToResolves;
     NSString *_etag;
     NSMutableArray *_fieldsToDeleteIfExistOnMerges;
     CKDPRecord *_record;
@@ -27,6 +28,7 @@
 }
 
 + (id)options;
+@property(retain, nonatomic) NSMutableArray *conflictLosersToResolves; // @synthesize conflictLosersToResolves=_conflictLosersToResolves;
 @property(retain, nonatomic) NSString *recordProtectionInfoTag; // @synthesize recordProtectionInfoTag=_recordProtectionInfoTag;
 @property(retain, nonatomic) NSString *zoneProtectionInfoTag; // @synthesize zoneProtectionInfoTag=_zoneProtectionInfoTag;
 @property(retain, nonatomic) CKDPRecordSaveRequestConflictLoserUpdate *conflictLoserUpdate; // @synthesize conflictLoserUpdate=_conflictLoserUpdate;
@@ -35,6 +37,7 @@
 @property(nonatomic) BOOL merge; // @synthesize merge=_merge;
 @property(retain, nonatomic) CKDPRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -45,6 +48,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)conflictLosersToResolveAtIndex:(unsigned long long)arg1;
+- (unsigned long long)conflictLosersToResolvesCount;
+- (void)addConflictLosersToResolve:(id)arg1;
+- (void)clearConflictLosersToResolves;
 @property(readonly, nonatomic) BOOL hasRecordProtectionInfoTag;
 @property(readonly, nonatomic) BOOL hasZoneProtectionInfoTag;
 @property(nonatomic) BOOL hasSaveSemantics;

@@ -23,7 +23,6 @@
 @property(readonly, nonatomic) GEOMapRegion *boundingRegion;
 @property(readonly, nonatomic) NSArray *refinedMapItems;
 @property(readonly, nonatomic) NSArray *exactMapItems;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
 - (void)cancel;

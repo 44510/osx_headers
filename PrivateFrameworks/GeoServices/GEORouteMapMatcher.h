@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_clampSegment:(struct PolylineCoordinate *)arg1 endCoord:(struct PolylineCoordinate *)arg2 outSegmentLength:(double *)arg3 firstAllowedMatch:(struct PolylineCoordinate)arg4 maxDistance:(double)arg5;
 - (CDStruct_c3b9c2ee)_locationCoordinateFromRouteCoordinate:(const struct PolylineCoordinate *)arg1;
 - (double)_modifiedHorizontalAccuracy:(double)arg1 routeIndex:(unsigned int)arg2;
+- (void)_enumerateRouteSegmentsNearLocation:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isLocationCoordinate:(CDStruct_c3b9c2ee)arg1 withinDistance:(double)arg2 alongRoute:(double)arg3;
 - (double)_closestDistanceFromCoordinate:(CDStruct_c3b9c2ee)arg1 alongRoute:(double)arg2;
 - (id)matchToRouteWithLocation:(id)arg1 trackedLocation:(id)arg2 onDate:(id)arg3 maxDistance:(double)arg4;

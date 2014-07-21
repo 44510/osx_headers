@@ -20,6 +20,7 @@
     IDSBatchIDQueryController *_batchQueryAudioController;
 }
 
++ (id)sharedManager;
 @property(retain, nonatomic) IDSBatchIDQueryController *batchQueryAudioController; // @synthesize batchQueryAudioController=_batchQueryAudioController;
 @property(retain, nonatomic) IDSBatchIDQueryController *batchQueryVideoController; // @synthesize batchQueryVideoController=_batchQueryVideoController;
 @property(retain, nonatomic) NSMutableSet *audioLookup; // @synthesize audioLookup=_audioLookup;

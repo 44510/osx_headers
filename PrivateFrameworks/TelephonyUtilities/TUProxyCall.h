@@ -37,6 +37,7 @@
 @property(nonatomic) int status; // @synthesize status=_status;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)supportsRelayingAudioOrVideo;
 - (BOOL)setDownlinkMuted:(BOOL)arg1;
 - (BOOL)isDownlinkMuted;
 - (BOOL)setUplinkMuted:(BOOL)arg1;

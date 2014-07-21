@@ -8,6 +8,7 @@
 
 @class NSToolbar;
 
+__attribute__((visibility("hidden")))
 @interface _NSToolbarDefaultImageRepWindow : NSWindow
 {
     BOOL segmentedCellsGetTextures;

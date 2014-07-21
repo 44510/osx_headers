@@ -14,23 +14,27 @@ __attribute__((visibility("hidden")))
 @interface VKPSheet : PBCodable <NSCopying>
 {
     VKPGlobalProperties *_globalProperties;
+    unsigned int _mapTypeSupport;
     NSMutableArray *_matchingGraphNodes;
     VKPMatchingTree *_matchingTree;
     unsigned int _matchingTreeVersion;
     NSMutableArray *_styles;
     unsigned int _version;
     struct {
+        unsigned int mapTypeSupport:1;
         unsigned int matchingTreeVersion:1;
         unsigned int version:1;
     } _has;
 }
 
+@property(nonatomic) unsigned int mapTypeSupport; // @synthesize mapTypeSupport=_mapTypeSupport;
 @property(retain, nonatomic) NSMutableArray *matchingGraphNodes; // @synthesize matchingGraphNodes=_matchingGraphNodes;
 @property(nonatomic) unsigned int matchingTreeVersion; // @synthesize matchingTreeVersion=_matchingTreeVersion;
 @property(retain, nonatomic) VKPMatchingTree *matchingTree; // @synthesize matchingTree=_matchingTree;
 @property(retain, nonatomic) VKPGlobalProperties *globalProperties; // @synthesize globalProperties=_globalProperties;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSMutableArray *styles; // @synthesize styles=_styles;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -39,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasMapTypeSupport;
 - (id)matchingGraphNodesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)matchingGraphNodesCount;
 - (void)addMatchingGraphNodes:(id)arg1;

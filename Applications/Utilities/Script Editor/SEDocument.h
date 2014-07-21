@@ -11,12 +11,14 @@
 #import "NSToolbarDelegate.h"
 #import "SEEventLogOptionsDelegate.h"
 
-@class NSAppleEventDescriptor, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSOperationQueue, NSPopUpButton, NSSegmentedControl, NSString, NSTabView, NSTextField, NSTextView, NSToolbarItem, NSURL, NSView, NSWindow, OSALanguage, OSAScript, OSAScriptParser, SEBundleContentsController, SEEventLogOptionsController, SEEventLogSessionItem, SENavigationBar, SEPopUpButton, SEScriptController, SEScriptTextStorage, SEScriptView, SESplitView, SETextStorage;
+@class NSAppleEventDescriptor, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSOperationQueue, NSPopUpButton, NSSegmentedControl, NSStackView, NSString, NSTabView, NSTextField, NSTextView, NSToolbarItem, NSURL, NSView, NSWindow, OSALanguage, OSAScript, OSAScriptParser, SEBundleContentsController, SEEventLogOptionsController, SEEventLogSessionItem, SENavigationBar, SEPopUpButton, SEScriptController, SEScriptTextStorage, SEScriptView, SESplitView, SETextStorage;
 
 @interface SEDocument : NSDocument <NSToolbarDelegate, NSTextViewDelegate, NSSplitViewDelegate, SEEventLogOptionsDelegate>
 {
     SEScriptTextStorage *_textStorage;
     SETextStorage *_descriptionTextStorage;
+    SETextStorage *_eventLogTextStorage;
+    SETextStorage *_resultTextStorage;
     OSAScript *_script;
     OSALanguage *_initLanguage;
     NSAppleEventDescriptor *_defaultTarget;
@@ -56,10 +58,11 @@
     SEScriptController *_controller;
     SEEventLogOptionsController *_logOptionsController;
     NSWindow *_scriptWindow;
+    SESplitView *_contentSplitView;
     SEScriptView *_scriptView;
     NSTextField *_findField;
     NSPopUpButton *_elementsPopUpButton;
-    SESplitView *_splitView;
+    SESplitView *_scriptSplitView;
     NSTabView *_tabView;
     NSTabView *_logTabView;
     NSTextView *_resultTextView;
@@ -70,20 +73,12 @@
     SEPopUpButton *_languagePopUpButton;
     SEPopUpButton *_defaultTargetPopUpButton;
     SENavigationBar *_navigationBar;
+    NSStackView *_navigationBarContentStackView;
     NSSegmentedControl *_tabViewControl;
     SEBundleContentsController *_bundleContentsController;
+    NSStackView *_contentStackView;
     NSView *_navigationBarContainerView;
-    NSLayoutConstraint *_navigationBarConstraint1;
-    NSLayoutConstraint *_navigationBarConstraint2;
-    NSLayoutConstraint *_navigationBarConstraint3;
-    NSLayoutConstraint *_navigationBarConstraint4;
-    NSLayoutConstraint *_navigationBarHiddenBottomConstraint;
-    NSLayoutConstraint *_navigationBarHiddenSplitViewTopConstraint;
-    NSLayoutConstraint *_defaultTargetConstraint1;
-    NSLayoutConstraint *_defaultTargetConstraint2;
-    NSLayoutConstraint *_defaultTargetConstraint3;
-    NSLayoutConstraint *_defaultTargetConstraint4;
-    NSLayoutConstraint *_defaultTargetHiddenElementsLeftConstraint;
+    NSLayoutConstraint *_navigationBarTopConstraint;
     NSView *_accessoryView;
     NSPopUpButton *_fileFormatPopUpButton;
     NSTabView *_formatOptionsTabView;
@@ -101,13 +96,11 @@
 + (id)scriptDocumentWithString:(id)arg1 forClass:(Class)arg2;
 + (id)keyPathsForValuesAffectingDefaultDraftName;
 + (BOOL)autosavesInPlace;
-@property(retain) NSLayoutConstraint *navigationBarHiddenSplitViewTopConstraint; // @synthesize navigationBarHiddenSplitViewTopConstraint=_navigationBarHiddenSplitViewTopConstraint;
-@property(retain) NSLayoutConstraint *navigationBarHiddenBottomConstraint; // @synthesize navigationBarHiddenBottomConstraint=_navigationBarHiddenBottomConstraint;
-@property(retain) NSLayoutConstraint *navigationBarConstraint4; // @synthesize navigationBarConstraint4=_navigationBarConstraint4;
-@property(retain) NSLayoutConstraint *navigationBarConstraint3; // @synthesize navigationBarConstraint3=_navigationBarConstraint3;
-@property(retain) NSLayoutConstraint *navigationBarConstraint2; // @synthesize navigationBarConstraint2=_navigationBarConstraint2;
-@property(retain) NSLayoutConstraint *navigationBarConstraint1; // @synthesize navigationBarConstraint1=_navigationBarConstraint1;
+@property(retain) NSLayoutConstraint *navigationBarTopConstraint; // @synthesize navigationBarTopConstraint=_navigationBarTopConstraint;
+@property(retain) NSStackView *navigationBarContentStackView; // @synthesize navigationBarContentStackView=_navigationBarContentStackView;
 @property(retain) NSView *navigationBarContainerView; // @synthesize navigationBarContainerView=_navigationBarContainerView;
+@property(retain) NSStackView *contentStackView; // @synthesize contentStackView=_contentStackView;
+@property(retain) SESplitView *contentSplitView; // @synthesize contentSplitView=_contentSplitView;
 @property(retain) NSString *saveAsCodeSignIdentity; // @synthesize saveAsCodeSignIdentity=_saveAsCodeSignIdentity;
 @property(retain) NSString *saveAsDefaultName; // @synthesize saveAsDefaultName=_saveAsDefaultName;
 @property(retain) NSString *saveAsDefaultLocationDirectory; // @synthesize saveAsDefaultLocationDirectory=_saveAsDefaultLocationDirectory;
@@ -141,7 +134,7 @@
 - (void)addElementsOfElement:(id)arg1 forLevel:(long long)arg2;
 - (void)setWindowState:(id)arg1;
 - (id)windowState;
-- (void)showNavigationBar:(BOOL)arg1;
+- (void)showNavigationBar:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)navigationBarToggled;
 - (void)editingPreferencesChanged;
 - (void)sourceStylesChanged;
@@ -170,7 +163,7 @@
 - (id)selectedTabViewIdentifier;
 - (id)logTabView;
 - (id)tabView;
-- (id)splitView;
+- (id)scriptSplitView;
 - (id)defaultTargetPopUpButton;
 - (id)languagePopUpButton;
 - (id)activeFindItem;
@@ -221,6 +214,8 @@
 - (id)defaultTarget;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)resultTextStorage;
+- (id)eventLogTextStorage;
 - (id)descriptionTextStorage;
 - (id)textStorage;
 - (id)contentsFileURL;
@@ -266,6 +261,7 @@
 - (void)saveDocumentAs:(id)arg1;
 - (void)saveDocument:(id)arg1;
 - (void)scriptDocument:(id)arg1 didSave:(BOOL)arg2 contextInfo:(void *)arg3;
+- (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)changeCodeSignIdentity:(id)arg1;
 - (void)changeRunOnly:(id)arg1;
@@ -305,6 +301,7 @@
 - (void)setTextStorage:(id)arg1;
 - (void)setSelection:(id)arg1;
 - (id)selection;
+- (id)eventLog;
 - (void)setContents:(id)arg1;
 - (id)contents;
 - (id)windows;

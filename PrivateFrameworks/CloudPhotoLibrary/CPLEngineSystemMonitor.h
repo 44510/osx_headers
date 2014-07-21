@@ -7,15 +7,22 @@
 #import "NSObject.h"
 
 #import "CPLEngineComponent.h"
+#import "CPLNetworkWatcherDelegate.h"
 
-@class NSString, NSURL;
+@class CPLEngineLibrary, CPLNetworkWatcher, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
-@interface CPLEngineSystemMonitor : NSObject <CPLEngineComponent>
+@interface CPLEngineSystemMonitor : NSObject <CPLNetworkWatcherDelegate, CPLEngineComponent>
 {
     NSURL *_volumeURL;
+    NSObject<OS_dispatch_queue> *_queue;
+    CPLNetworkWatcher *_watcher;
+    CPLEngineLibrary *_engineLibrary;
 }
 
+@property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
+- (void)networkStateDidChangeForNetworkWatched:(id)arg1;
+- (BOOL)isNetworkConnected;
 - (void)getStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (unsigned long long)diskPressureState;
 - (id)componentName;

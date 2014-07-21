@@ -6,7 +6,7 @@
 
 #import "NSViewController.h"
 
-@class NCDividerLineView, NCLinearDodgeButton, NSLayoutConstraint, NSView, _NCShieldView;
+@class NCLineView, NCListViewDeleteButton, NSButton, NSLayoutConstraint, NSView, _NCShieldView;
 
 @interface NCListItemViewController : NSViewController
 {
@@ -31,24 +31,24 @@
     NSLayoutConstraint *_itemTrailingConstraint;
     NSLayoutConstraint *_itemLeadingConstraint;
     NSLayoutConstraint *_deleteButtonSpacingConstraint;
-    NCLinearDodgeButton *_deleteButton;
-    NCLinearDodgeButton *_removeButton;
-    NCLinearDodgeButton *_reorderButton;
-    NSLayoutConstraint *_reorderButtonLeadingConstraint;
+    NCListViewDeleteButton *_deleteButton;
+    NSButton *_removeButton;
+    NSView *_grabberContainer;
+    NSButton *_grabberButton;
     _NCShieldView *_shieldView;
     NSLayoutConstraint *_leftMarginConstraint;
     NSLayoutConstraint *_deleteButtonWidthConstraint;
-    NCDividerLineView *_dividerLine;
+    NCLineView *_dividerLine;
 }
 
-@property __weak NCDividerLineView *dividerLine; // @synthesize dividerLine=_dividerLine;
+@property __weak NCLineView *dividerLine; // @synthesize dividerLine=_dividerLine;
 @property __weak NSLayoutConstraint *deleteButtonWidthConstraint; // @synthesize deleteButtonWidthConstraint=_deleteButtonWidthConstraint;
 @property __weak NSLayoutConstraint *leftMarginConstraint; // @synthesize leftMarginConstraint=_leftMarginConstraint;
 @property(nonatomic) __weak _NCShieldView *shieldView; // @synthesize shieldView=_shieldView;
-@property(nonatomic) __weak NSLayoutConstraint *reorderButtonLeadingConstraint; // @synthesize reorderButtonLeadingConstraint=_reorderButtonLeadingConstraint;
-@property(nonatomic) __weak NCLinearDodgeButton *reorderButton; // @synthesize reorderButton=_reorderButton;
-@property(nonatomic) __weak NCLinearDodgeButton *removeButton; // @synthesize removeButton=_removeButton;
-@property(nonatomic) __weak NCLinearDodgeButton *deleteButton; // @synthesize deleteButton=_deleteButton;
+@property(nonatomic) __weak NSButton *grabberButton; // @synthesize grabberButton=_grabberButton;
+@property(nonatomic) __weak NSView *grabberContainer; // @synthesize grabberContainer=_grabberContainer;
+@property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
+@property(nonatomic) __weak NCListViewDeleteButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(nonatomic) _Bool deleteButtonHidden; // @synthesize deleteButtonHidden=_deleteButtonHidden;
 @property(nonatomic) __weak NSLayoutConstraint *deleteButtonSpacingConstraint; // @synthesize deleteButtonSpacingConstraint=_deleteButtonSpacingConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *itemLeadingConstraint; // @synthesize itemLeadingConstraint=_itemLeadingConstraint;
@@ -75,6 +75,7 @@
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (void)viewWillLayout;
 - (id)nibBundle;
 - (void)loadView;
 

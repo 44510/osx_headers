@@ -85,6 +85,7 @@
 @property long long rowSizeStyle;
 - (void)_defaultRowSizeStyleChanged:(id)arg1;
 - (void)_updateForSizeModeChange;
+- (void)_sizeModeChangeForRowView:(id)arg1 row:(long long)arg2;
 - (double)_effectiveRowHeight;
 @property(readonly) long long effectiveRowSizeStyle;
 - (void)setGroupRowStyle:(long long)arg1;
@@ -740,6 +741,8 @@
 - (BOOL)_delegateRespondsToCanSelectRow;
 - (BOOL)_userCanChangeSelection;
 - (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
+- (BOOL)_isOutlineView;
+- (void)_sourceListFrameOfCellAtColumn:(long long)arg1 row:(long long)arg2 frame:(struct CGRect *)arg3;
 - (BOOL)_isGapRow:(long long)arg1;
 - (long long)_lastAutoresizingColumn;
 - (struct CGRect)bounds;

@@ -6,7 +6,7 @@
 
 #import "NSWindowController.h"
 
-@class NSButton, NSMutableDictionary, NSPanel, NSPathControl, NSProgressIndicator, NSScrollView, NSSplitView, NSTextField, NSTextView, SPOutlineView;
+@class NSButton, NSLayoutConstraint, NSMutableDictionary, NSPanel, NSPathControl, NSProgressIndicator, NSScrollView, NSSplitView, NSTextField, NSTextView, SPOutlineView;
 
 @interface SPWindowController : NSWindowController
 {
@@ -25,7 +25,8 @@
     NSTextField *_progressTitleTextField;
     NSButton *_progressCancelButton;
     NSPanel *_uploadPanel;
-    NSTextField *_uploadTextField;
+    NSTextView *_uploadTextView;
+    NSLayoutConstraint *_uploadTextViewHeight;
     NSButton *_uploadContinueButton;
     NSPathControl *_pathControl;
     NSScrollView *_enclosingScrollView;
@@ -65,6 +66,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidLoad;
+- (void)xformStep2;
+- (void)xformStep3;
 - (void)dealloc;
 - (id)init;
 

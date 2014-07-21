@@ -31,6 +31,8 @@
     DateViewController *_dateViewController;
     RemindersSplitView *_mainSplitView;
     NSVisualEffectView *_sidebarView;
+    NSView *_sidebarClipView;
+    NSArray *_sidebarClippingConstraints;
     HeaderViewController *_headerViewController;
     FooterViewController *_footerViewController;
     NSButton *_addListButton;
@@ -69,6 +71,8 @@
 @property(retain) NSButton *addListButton; // @synthesize addListButton=_addListButton;
 @property(retain) FooterViewController *footerViewController; // @synthesize footerViewController=_footerViewController;
 @property(retain) HeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
+@property(retain) NSArray *sidebarClippingConstraints; // @synthesize sidebarClippingConstraints=_sidebarClippingConstraints;
+@property(retain) NSView *sidebarClipView; // @synthesize sidebarClipView=_sidebarClipView;
 @property(retain) NSVisualEffectView *sidebarView; // @synthesize sidebarView=_sidebarView;
 @property(retain) RemindersSplitView *mainSplitView; // @synthesize mainSplitView=_mainSplitView;
 @property(retain) DateViewController *dateViewController; // @synthesize dateViewController=_dateViewController;

@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *originString; // @synthesize originString=_originString;
 @property(retain, nonatomic) GEOStorageRouteRequestStorage *routeRequestStorage; // @synthesize routeRequestStorage=_routeRequestStorage;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

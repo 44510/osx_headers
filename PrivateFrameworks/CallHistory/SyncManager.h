@@ -8,17 +8,15 @@
 
 #import "SyncManagerProtocol.h"
 
-@class CallHistoryDBClientHandle, NSObject<OS_dispatch_queue>, NSString, TransactionManager;
+@class DBHandleManager, NSString, TransactionManager;
 
 @interface SyncManager : CHLogger <SyncManagerProtocol>
 {
     TransactionManager *_transactionManager;
-    id _syncHelperReadyNotificationRef;
-    NSObject<OS_dispatch_queue> *_queue;
-    CallHistoryDBClientHandle *_dbHandle;
+    DBHandleManager *_handleManager;
 }
 
-@property(retain, nonatomic) CallHistoryDBClientHandle *dbHandle; // @synthesize dbHandle=_dbHandle;
+@property(readonly, nonatomic) DBHandleManager *handleManager; // @synthesize handleManager=_handleManager;
 - (void).cxx_destruct;
 - (id)archiveCallObject:(id)arg1;
 - (void)resetTimers;
@@ -37,12 +35,7 @@
 - (id)fetchAllObjects;
 - (void)insertWithoutTransaction:(id)arg1;
 - (void)insert:(id)arg1;
-- (void)createDBHandle;
-- (void)createDBHandleIfNeeded;
-- (void)dealloc;
-- (void)unRegisterForNotifications;
-- (void)registerForNotifications;
-- (id)initWithQueue:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

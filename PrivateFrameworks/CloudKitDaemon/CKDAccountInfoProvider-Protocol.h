@@ -23,7 +23,6 @@
 - (NSString *)serverPreferredPushEnvironment;
 - (NSString *)deviceName;
 - (NSString *)hardwareID;
-- (NSString *)sourceApplicationSecondaryIdentifier;
 - (NSString *)bundleID;
 - (CKContainerID *)containerID;
 - (NSString *)containerScopedUserID;

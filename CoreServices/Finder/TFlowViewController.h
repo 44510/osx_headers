@@ -55,7 +55,6 @@
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (void)splitViewDidResizeSubviews:(id)arg1;
 - (void)ensureCGSurfaceUpdateOnDraw:(_Bool)arg1;
-- (void)timeMachineWillStart:(id)arg1;
 - (id)quickLookSharedPreviewViewForPreviewNode:(const struct TFENode *)arg1;
 - (id)zoomImageForNode:(const struct TFENode *)arg1 contentRect:(struct CGRect *)arg2;
 - (void)outlineViewItemDidCollapse:(id)arg1;

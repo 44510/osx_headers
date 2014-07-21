@@ -12,6 +12,8 @@
 
 @interface NSPersistentStoreCoordinator : NSObject <NSLocking>
 {
+    id _queueOwner;
+    void *_dispatchQueue;
     struct _persistentStoreCoordinatorFlags {
         unsigned int _isRegistered:1;
         unsigned int _reservedFlags:31;
@@ -19,9 +21,7 @@
     unsigned int _reserved32;
     long long _miniLock;
     id *_additionalPrivateIvars;
-    id _coordinatorLabel;
     NSManagedObjectModel *_managedObjectModel;
-    void *_dispatchQueue;
     NSArray *_persistentStores;
 }
 
@@ -43,6 +43,8 @@
 + (void)_registerDefaultStoreClassesAndTypes;
 + (Class)_storeClassForStoreType:(id)arg1;
 + (id)_storeTypeForStore:(id)arg1;
++ (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
++ (id)_beginPowerAssertionWithAssert:(unsigned long long *)arg1;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id *)arg5;
 + (id)metadataForPersistentStoreOfType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;

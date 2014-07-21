@@ -13,12 +13,12 @@
 
 @interface CPLAlbumChange : CPLContainerChange <NSSecureCoding, NSCopying>
 {
+    NSString *_keyAssetIdentifier;
     BOOL _albumSortAscending;
     unsigned long long _albumType;
     NSString *_name;
     long long _position;
     NSString *_parentIdentifier;
-    NSString *_keyAssetIdentifier;
     NSString *_customAlbumSortKey;
     unsigned long long _albumSortType;
     NSData *_smartQueryParamsData;
@@ -29,14 +29,13 @@
 @property(nonatomic) BOOL albumSortAscending; // @synthesize albumSortAscending=_albumSortAscending;
 @property(nonatomic) unsigned long long albumSortType; // @synthesize albumSortType=_albumSortType;
 @property(copy, nonatomic) NSString *customAlbumSortKey; // @synthesize customAlbumSortKey=_customAlbumSortKey;
-@property(copy, nonatomic) NSString *keyAssetIdentifier; // @synthesize keyAssetIdentifier=_keyAssetIdentifier;
 @property(copy, nonatomic) NSString *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long albumType; // @synthesize albumType=_albumType;
 - (void).cxx_destruct;
-- (void)setSecondaryIdentifier:(id)arg1;
-- (id)secondaryIdentifier;
+- (id)keyAssetIdentifier;
+- (void)setKeyAssetIdentifier:(id)arg1;
 @property(copy, nonatomic) NSDictionary *smartQueryParams;
 - (id)propertiesDescription;
 - (void)setRelatedIdentifier:(id)arg1;

@@ -18,6 +18,7 @@
 + (void)configureGraphicsContextForCALayer:(id)arg1 withCGContext:(struct CGContext *)arg2 andRenderWithHandler:(CDUnknownBlockType)arg3;
 + (id)graphicsContextWithCGContext:(struct CGContext *)arg1 forCALayer:(id)arg2;
 + (id)graphicsContextWithGraphicsPort:(void *)arg1 flipped:(BOOL)arg2;
++ (id)graphicsContextWithCGContext:(struct CGContext *)arg1 flipped:(BOOL)arg2;
 + (id)graphicsContextWithBitmapImageRep:(id)arg1;
 + (id)graphicsContextWithWindow:(id)arg1;
 + (id)graphicsContextWithAttributes:(id)arg1;
@@ -46,6 +47,7 @@
 - (void)setShouldAntialias:(BOOL)arg1;
 - (double)_scaleFactor;
 @property(readonly, getter=isFlipped) BOOL flipped;
+@property(readonly) struct CGContext *CGContext;
 - (void *)graphicsPort;
 - (void)flushGraphics;
 - (void)restoreGraphicsState;

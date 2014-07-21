@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (void)_addDetailedMessageDescriptionToRequest:(id)arg1;
 - (id)_senderElement;
 - (id)contentElement;
-- (id)_contentElementUnderElement:(id)arg1;
+- (id)_contentElementDescendantOfElement:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (BOOL)isMessageContentGroup;
 

@@ -15,7 +15,6 @@
 {
 }
 
-+ (void)deduplicateIMAPNotes;
 + (void)performUpgrades;
 + (id)_sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;

@@ -29,7 +29,8 @@
         unsigned int delegateDidEnd:1;
         unsigned int delegateDidFinishLoading:1;
         unsigned int delegateDidFail:1;
-        unsigned int padding:5;
+        unsigned int delegateDidChangePassword:1;
+        unsigned int padding:4;
     } _flags;
 }
 
@@ -111,6 +112,7 @@
 - (void)loadURLRequest:(id)arg1;
 - (void)reload;
 - (void)dealloc;
+- (void)endWebKitViewController;
 - (id)initWebKitViewControllerInView:(id)arg1 UIDelegate:(id)arg2 accountID:(id)arg3 workflowDict:(id)arg4;
 - (id)initWebKitViewControllerInView:(id)arg1 UIDelegate:(id)arg2 accountID:(id)arg3 inviteDict:(id)arg4;
 - (id)initWebKitViewControllerInWindow:(id)arg1 UIDelegate:(id)arg2 accountID:(id)arg3;

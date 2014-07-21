@@ -10,12 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct GCAcceleration {
-    double x;
-    double y;
-    double z;
-};
-
 struct GCQuaternion {
     double x;
     double y;

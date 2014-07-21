@@ -107,11 +107,16 @@
 - (id)init;
 - (void)_postNotificationForSlideChange:(id)arg1;
 - (void)_slideDidAppear:(id)arg1;
+- (void)gotoSlideLegacy:(id)arg1;
+- (void)gotoPreviousSlideLegacy;
+- (void)gotoNextSlideLegacy;
 - (double)startTimeForSlide:(id)arg1;
 - (double)timeForSlide:(id)arg1;
 - (void)gotoText:(id)arg1;
 - (void)gotoSlide:(id)arg1;
+- (void)gotoPreviousSlide:(BOOL)arg1;
 - (void)gotoPreviousSlide;
+- (void)gotoNextSlide:(BOOL)arg1;
 - (void)gotoNextSlide;
 - (void)removeEffectContainersBeforeTime:(double)arg1;
 - (id)currentSlide;

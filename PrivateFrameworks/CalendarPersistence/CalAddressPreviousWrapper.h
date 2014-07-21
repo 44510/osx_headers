@@ -6,7 +6,7 @@
 
 #import <CalendarPersistence/CalAddressWrapper.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface CalAddressPreviousWrapper : CalAddressWrapper
 {
@@ -15,6 +15,7 @@
     NSString *_displayedName;
     NSString *_type;
     NSString *_loginName;
+    NSNumber *_recentContactIDNumber;
 }
 
 - (id)completionForSubstring:(id)arg1;
@@ -27,7 +28,9 @@
 - (id)lastName;
 - (id)firstName;
 - (id)displayedName;
+- (id)recentContactIDNumber;
 - (void)dealloc;
+- (id)initWithFirstName:(id)arg1 lastName:(id)arg2 displayedName:(id)arg3 address:(id)arg4 loginName:(id)arg5 type:(id)arg6 recentContactIDNumber:(id)arg7;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 displayedName:(id)arg3 address:(id)arg4 loginName:(id)arg5 type:(id)arg6;
 
 @end

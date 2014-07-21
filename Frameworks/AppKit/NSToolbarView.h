@@ -122,6 +122,7 @@
 - (id)_computeFlexibleSpaceItemViewersInRange:(struct _NSRange)arg1;
 - (id)_computeResizeableCustomItemViewersInRange:(struct _NSRange)arg1;
 - (void)_cycleWindows:(id)arg1;
+- (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
 - (void)_makeFirstResponderForKeyboardHotKeyEvent;
 - (id)_computePriorFirstResponder;
@@ -175,6 +176,7 @@
 - (BOOL)_shouldStealHitTestForCurrentEvent;
 - (BOOL)_isEditing;
 - (BOOL)_isInConfigurationMode;
+- (BOOL)_isInCustomizationWindow;
 - (BOOL)_isInCustomizationMode;
 - (void)_endCustomizationMode;
 - (void)_beginCustomizationMode;
@@ -264,7 +266,6 @@
 - (void)_toolbarContentsAttributesChanged:(id)arg1;
 - (void)_toolbarAttributesChanged:(id)arg1;
 - (void)_toolbarContentsChanged:(id)arg1;
-- (void)setFrameOrigin:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (BOOL)accessibilityIsSelectedChildrenAttributeSettable;
 - (id)accessibilitySelectedChildrenAttribute;

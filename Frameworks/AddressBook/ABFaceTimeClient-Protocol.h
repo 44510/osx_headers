@@ -11,7 +11,6 @@
 @protocol ABFaceTimeClient <NSObject>
 - (void)telephonyAvailaibilityChanged:(BOOL)arg1;
 - (void)messagingAvailabilityChanged:(BOOL)arg1 forEndpoint:(NSString *)arg2;
-- (void)faceTimeAudioAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(NSString *)arg2;
-- (void)faceTimeVideoAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(NSString *)arg2;
+- (void)faceTimeAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(NSString *)arg2;
 @end
 

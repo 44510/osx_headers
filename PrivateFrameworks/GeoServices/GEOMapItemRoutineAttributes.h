@@ -12,13 +12,19 @@
 
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying>
 {
+    double _eventDate;
     NSString *_eventName;
     int _loiType;
+    BOOL _isEventAllDay;
     struct {
+        unsigned int eventDate:1;
         unsigned int loiType:1;
+        unsigned int isEventAllDay:1;
     } _has;
 }
 
+@property(nonatomic) BOOL isEventAllDay; // @synthesize isEventAllDay=_isEventAllDay;
+@property(nonatomic) double eventDate; // @synthesize eventDate=_eventDate;
 @property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(nonatomic) int loiType; // @synthesize loiType=_loiType;
 - (void)mergeFrom:(id)arg1;
@@ -30,6 +36,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsEventAllDay;
+@property(nonatomic) BOOL hasEventDate;
 @property(readonly, nonatomic) BOOL hasEventName;
 @property(nonatomic) BOOL hasLoiType;
 - (void)dealloc;

@@ -43,6 +43,7 @@
 - (void)tucViewControllerCallPromptCall:(id)arg1;
 - (void)tucViewControllerCallBack:(id)arg1;
 - (void)tucViewControllerCanceled:(id)arg1;
+- (void)tucViewControllerHardPause:(id)arg1;
 - (void)tucViewControllerMerge:(id)arg1;
 - (void)tucViewControllerSwap:(id)arg1;
 - (void)tucViewControllerFaceTime:(id)arg1;
@@ -59,6 +60,7 @@
 - (void)screenShieldWasRaised;
 - (void)tuCallStatusChanged:(id)arg1;
 - (void)tuCallConnected:(id)arg1;
+- (void)tuHardPauseChanged:(id)arg1;
 - (void)_playDTMFTone:(BOOL)arg1 stringRepresentation:(id)arg2;
 - (void)_windowWillClose:(id)arg1;
 - (void)_windowWillMove:(id)arg1;

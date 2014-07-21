@@ -9,6 +9,7 @@
 @class MKStackingViewController;
 
 @protocol MKStackingViewControllerSelectorView <NSObject>
+@property(nonatomic) BOOL isBlurred;
 - (void)updateSelectorView:(MKStackingViewController *)arg1;
 @end
 

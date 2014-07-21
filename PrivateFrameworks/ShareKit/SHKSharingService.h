@@ -104,6 +104,7 @@
 - (void)cancelRemoteServiceUI;
 - (BOOL)isCustomService;
 - (void)performWithItems:(id)arg1;
+- (void)observeAllAncestorWindowForSomethingThatWillCancelSharingWithSourceWindow:(id)arg1;
 - (void)cancelExtensionKillTimer;
 - (void)killExtensionIfNoResponseWithTimeout:(float)arg1;
 - (CDUnknownBlockType)executeHandler:(CDUnknownBlockType)arg1 onQueue:(id)arg2 onTimeoutInSeconds:(float)arg3;

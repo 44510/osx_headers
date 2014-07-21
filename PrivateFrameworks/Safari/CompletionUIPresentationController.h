@@ -13,7 +13,6 @@
 __attribute__((visibility("hidden")))
 @interface CompletionUIPresentationController : NSObject <NSAnimationDelegate>
 {
-    CompletionWindow *_completionWindow;
     NSMutableArray *_insetConstraints;
     NSLayoutConstraint *_contentWidthConstraint;
     NSLayoutConstraint *_contentHeightConstraint;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
     BOOL _includeBottomContentInset;
     BOOL _roundsCorners;
     BOOL _presentsCentered;
+    CompletionWindow *_completionWindow;
     NSView *_contentView;
     NSWindow *_parentWindow;
     struct CGSize _contentSize;
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL roundsCorners; // @synthesize roundsCorners=_roundsCorners;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(readonly, nonatomic) CompletionWindow *completionWindow; // @synthesize completionWindow=_completionWindow;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)animationDidEnd:(id)arg1;
@@ -51,6 +52,8 @@ __attribute__((visibility("hidden")))
 - (void)_resetConstraints;
 - (void)_setContentViewWithoutAnimation:(id)arg1 contentSize:(struct CGSize)arg2 includeTopContentInset:(BOOL)arg3 includeBottomContentInset:(BOOL)arg4;
 - (void)setContentView:(id)arg1 contentSize:(struct CGSize)arg2 includeTopContentInset:(BOOL)arg3 includeBottomContentInset:(BOOL)arg4 animated:(BOOL)arg5;
+- (void)_startContentViewFadeInAnimation;
+- (void)_startWindowResizeAnimationWithContentView:(id)arg1 contentSize:(struct CGSize)arg2 includeTopContentInset:(BOOL)arg3 includeBottomContentInset:(BOOL)arg4;
 - (void)_updateWindowSizeAndPositionDuringAnimation;
 - (void)dismissCompletionUI;
 - (void)presentCompletionUIRelativeToRectInScreenCoordinates:(struct CGRect)arg1 animated:(BOOL)arg2;

@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
     NVFlyoverTourButtonViewController *_flyoverTourButtonViewController;
     BOOL _flyoverTourRunning;
     NSString *_flyoverTourLabel;
+    unsigned long long _flyoverTourStartMode;
     BOOL _showsCloseButtonInBezel;
     BOOL _dropsPinOnSearch;
     BOOL _sharing;
@@ -89,7 +90,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingDisplayedPinsVisible;
 + (id)keyPathsForValuesAffectingSelectedPinVisible;
 + (id)keyPathsForValuesAffectingDroppedPinVisible;
-+ (void)updateSearchQuerySubtitle:(id)arg1 inRect:(CDStruct_90e2a262)arg2 center:(CDStruct_c3b9c2ee)arg3;
++ (void)updateSearchQuerySubtitle:(id)arg1 syncedSearchQuery:(id)arg2 inRect:(CDStruct_90e2a262)arg3 center:(CDStruct_c3b9c2ee)arg4;
 + (id)_windowTitleFromMapItem:(id)arg1 visibleMapRect:(CDStruct_90e2a262)arg2;
 + (id)keyPathsForValuesAffectingIsMapViewCenteredOnUserLocation;
 + (id)keyPathsForValuesAffectingCanRemoveFromBookmarks;
@@ -186,7 +187,9 @@ __attribute__((visibility("hidden")))
 - (void)mapView:(id)arg1 didDeselectAnnotationView:(id)arg2;
 @property(retain) NVPlace *selectedPinPlace; // @synthesize selectedPinPlace=_selectedPinPlace;
 - (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
+- (void)updateLeftCalloutAccessoryView;
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
+- (void)_notePlaceChanged:(id)arg1;
 - (void)flyoverTourButtonViewClicked:(id)arg1;
 - (void)quickRouteButtonViewClicked:(id)arg1;
 - (id)makeInfoButton;
@@ -205,6 +208,7 @@ __attribute__((visibility("hidden")))
 - (void)mapViewWillStartRenderingMap:(id)arg1;
 - (void)refreshWindowTitleAfterShortDelay;
 - (id)bezelMessageForError:(id)arg1;
+- (id)checkForInternetError:(id)arg1;
 - (void)updateWindowTitle;
 @property(readonly, nonatomic) NSString *fallbackWindowTitle;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
@@ -254,6 +258,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleTraffic:(id)arg1;
 - (void)toggleDirections:(id)arg1;
 - (void)updateToggleDirectionsStateIfNecessary;
+- (void)mapModeChanged:(id)arg1;
 - (void)mapStyleChanged:(id)arg1;
 - (void)closeBezelMessage:(id)arg1;
 - (void)flashBezelMessage:(id)arg1 duration:(double)arg2;
@@ -268,6 +273,7 @@ __attribute__((visibility("hidden")))
 - (id)sharedBookmarksManager;
 - (void)showFlyoverTourForSearchResult:(id)arg1;
 - (void)launchFlyoverPreview:(id)arg1;
+- (void)showContact:(id)arg1 address:(id)arg2;
 - (void)showPlaceOrTrip:(id)arg1;
 - (void)showPlaces:(id)arg1 animated:(BOOL)arg2 allowToChangeRegion:(BOOL)arg3 removeOtherPlaceAnnotations:(BOOL)arg4 selectAnnotation:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)showPlaces:(id)arg1 animated:(BOOL)arg2 allowToChangeRegion:(BOOL)arg3 defaultMapRect:(CDStruct_90e2a262)arg4 removeOtherPlaceAnnotations:(BOOL)arg5 selectAnnotation:(BOOL)arg6 ignoreSearchField:(BOOL)arg7 completion:(CDUnknownBlockType)arg8;
@@ -329,11 +335,11 @@ __attribute__((visibility("hidden")))
 - (void)updateSettingsView;
 - (id)settingsMenu;
 @property BOOL showLabels;
-- (void)setImageryEnabled:(BOOL)arg1;
-- (BOOL)imageryEnabled;
+@property BOOL imageryEnabled;
 @property unsigned long long mapType;
 - (unsigned long long)_directionsTransportTypeForMode:(unsigned long long)arg1;
 - (void)invalidateRestorableStateAndActivityState;
+- (void)setMapsActivity:(id)arg1 assumedSourceFidelity:(unsigned long long)arg2;
 @property(retain, nonatomic) MapsActivity *mapsActivity;
 - (id)mapsActivityWithFidelity:(unsigned long long)arg1;
 - (void)restoreUserActivityState:(id)arg1;
@@ -349,8 +355,6 @@ __attribute__((visibility("hidden")))
 - (void)saveLastViewOptions;
 - (void)restoreLastViewport;
 - (void)saveLastViewport;
-- (void)restoreLastMapsActivity;
-- (void)saveLastMapsActivity;
 - (void)windowWillClose:(id)arg1;
 - (void)updateToolbarVisibility;
 - (void)updateLocationButtonState;

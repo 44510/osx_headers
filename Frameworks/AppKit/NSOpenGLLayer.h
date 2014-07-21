@@ -28,6 +28,7 @@
 - (void)drawInOpenGLContext:(id)arg1 pixelFormat:(id)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
 - (BOOL)canDrawInOpenGLContext:(id)arg1 pixelFormat:(id)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
 - (id)openGLContextForPixelFormat:(id)arg1;
+- (void)drawInContext:(struct CGContext *)arg1;
 - (id)openGLPixelFormatForDisplayMask:(unsigned int)arg1;
 @property NSView *view;
 - (void)dealloc;

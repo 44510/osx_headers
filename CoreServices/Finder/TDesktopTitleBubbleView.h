@@ -16,6 +16,7 @@
     _Bool _isSelected;
     _Bool _isDragItem;
     vector_e0f2bd7e _tagColorIndexes;
+    struct TNotificationCenterObserver _desktopWindowMainStateChangedObserver;
 }
 
 - (id).cxx_construct;
@@ -42,11 +43,10 @@
 - (void)setMaxSize:(struct CGSize)arg1;
 - (void)setMinSize:(struct CGSize)arg1;
 @property(retain) NSAttributedString *attrString; // @dynamic attrString;
-- (void)desktopWindowMainStateChanged:(id)arg1;
+- (void)desktopWindowMainStateChanged;
 - (unsigned long long)linesToDrawNotTruncated;
 - (void)drawRect:(struct CGRect)arg1;
 - (long long)userInterfaceLayoutDirection;
-- (void)dealloc;
 - (void)initCommon;
 
 @end

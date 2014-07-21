@@ -34,6 +34,7 @@
 - (BOOL)_openServerTruthConnectionWithError:(id *)arg1;
 - (BOOL)_openClientTruthConnectionWithError:(id *)arg1;
 - (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 error:(id *)arg3;
+- (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject *)arg2;
 - (BOOL)_stepBackupDetector:(struct backup_detector)arg1 newState:(struct backup_detector *)arg2 error:(id *)arg3;
 - (BOOL)_setupBackupDetector:(struct backup_detector *)arg1 error:(id *)arg2;
 - (id)newConnectionWithLabel:(id)arg1 error:(id *)arg2;

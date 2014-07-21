@@ -10,15 +10,11 @@
 #import "PQLBindable.h"
 #import "PQLResultSetInitializer.h"
 
-@class NSData, NSString;
+@class NSString;
 
 @interface BRFieldCKInfo : PBCodable <PQLBindable, PQLResultSetInitializer, NSCopying>
 {
     NSString *_etag;
-    NSString *_previousProtectionDataEtag;
-    NSData *_protectionData;
-    NSString *_protectionDataEtag;
-    NSString *_zoneProtectionDataEtag;
     BOOL _knownToServer;
     BOOL _wasCached;
     struct {
@@ -27,10 +23,6 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSString *zoneProtectionDataEtag; // @synthesize zoneProtectionDataEtag=_zoneProtectionDataEtag;
-@property(retain, nonatomic) NSString *previousProtectionDataEtag; // @synthesize previousProtectionDataEtag=_previousProtectionDataEtag;
-@property(retain, nonatomic) NSString *protectionDataEtag; // @synthesize protectionDataEtag=_protectionDataEtag;
-@property(retain, nonatomic) NSData *protectionData; // @synthesize protectionData=_protectionData;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(nonatomic) BOOL wasCached; // @synthesize wasCached=_wasCached;
 @property(nonatomic) BOOL knownToServer; // @synthesize knownToServer=_knownToServer;
@@ -44,10 +36,6 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) BOOL hasZoneProtectionDataEtag;
-@property(readonly, nonatomic) BOOL hasPreviousProtectionDataEtag;
-@property(readonly, nonatomic) BOOL hasProtectionDataEtag;
-@property(readonly, nonatomic) BOOL hasProtectionData;
 @property(readonly, nonatomic) BOOL hasEtag;
 @property(nonatomic) BOOL hasWasCached;
 @property(nonatomic) BOOL hasKnownToServer;

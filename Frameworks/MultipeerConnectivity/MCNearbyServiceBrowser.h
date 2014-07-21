@@ -19,6 +19,7 @@
     MCPeerID *_myPeerID;
     NSString *_serviceType;
     NSString *_formattedServiceType;
+    NSMutableDictionary *_netServices;
     NSMutableDictionary *_peers;
     NSNetServiceBrowser *_networkBrowser;
     long long _outgoingInviteID;
@@ -33,6 +34,7 @@
 @property(nonatomic) long long outgoingInviteID; // @synthesize outgoingInviteID=_outgoingInviteID;
 @property(retain, nonatomic) NSNetServiceBrowser *networkBrowser; // @synthesize networkBrowser=_networkBrowser;
 @property(retain, nonatomic) NSMutableDictionary *peers; // @synthesize peers=_peers;
+@property(retain, nonatomic) NSMutableDictionary *netServices; // @synthesize netServices=_netServices;
 @property(copy, nonatomic) NSString *formattedServiceType; // @synthesize formattedServiceType=_formattedServiceType;
 @property(copy) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly) MCPeerID *myPeerID; // @synthesize myPeerID=_myPeerID;

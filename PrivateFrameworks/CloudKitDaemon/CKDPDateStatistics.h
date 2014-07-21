@@ -19,6 +19,7 @@
 @property(retain, nonatomic) CKDPDate *modification; // @synthesize modification=_modification;
 @property(retain, nonatomic) CKDPDate *creation; // @synthesize creation=_creation;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -145,6 +145,7 @@
 - (void)noteMessagesMarkedAsReadForChatWithGUID:(id)arg1;
 - (void)notifyDidSendMessageID:(id)arg1 shouldNotify:(BOOL)arg2;
 - (void)notifyDidSendMessageID:(id)arg1;
+- (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 forceDate:(id)arg4;
 - (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 completionBlock:(CDUnknownBlockType)arg8;
 - (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;

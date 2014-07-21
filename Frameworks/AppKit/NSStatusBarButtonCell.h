@@ -15,15 +15,21 @@
     BOOL _fHighlightMode;
     BOOL _fDoubleClick;
     SEL _fDoubleAction;
-    BOOL _looksDisabled;
     CDStruct_3c058996 _selectionInset;
+    unsigned int _looksDisabled:1;
+    unsigned int _actsOnRightMouseDown:1;
+    unsigned int _actsOnRightMouseUp:1;
+    unsigned int _reservedFlags:29;
 }
 
 + (void)popupStatusBarMenu:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 withEvent:(id)arg4;
 @property CDStruct_3c058996 selectionInset; // @synthesize selectionInset=_selectionInset;
 - (BOOL)_sendActionFrom:(id)arg1;
+- (long long)sendActionOn:(long long)arg1;
 - (void)dismiss;
 - (void)performClick:(id)arg1;
+- (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
+- (BOOL)startTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)_fillBackground:(struct CGRect)arg1 withAlternateColor:(BOOL)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -42,6 +48,11 @@
 - (void)setStatusBar:(id)arg1;
 - (BOOL)_disabledForDrawing;
 @property BOOL looksDisabled;
+- (void)setAttributedTitle:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setAlternateImage:(id)arg1;
+- (void)setImage:(id)arg1;
+- (id)_statusItem;
 - (void)dealloc;
 - (id)init;
 

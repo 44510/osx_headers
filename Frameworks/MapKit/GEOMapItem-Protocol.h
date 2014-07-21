@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class GEOAddress, GEOMapRegion, NSArray, NSDictionary, NSString;
+@class GEOAddress, GEOMapRegion, NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @protocol GEOMapItem <NSObject>
+@property(readonly, nonatomic) BOOL isEventAllDay;
+@property(readonly, nonatomic) NSDate *eventDate;
 @property(readonly, nonatomic) NSString *eventName;
 @property(readonly, nonatomic) BOOL contactIsMe;
 @property(readonly, nonatomic) NSString *contactSpokenName;
@@ -24,6 +26,8 @@
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 @property(readonly, nonatomic, getter=isDisputed) BOOL disputed;
+@property(readonly, nonatomic) NSData *data;
+@property(readonly, nonatomic) NSData *encodedData;
 @property(readonly, nonatomic) NSString *name;
 - (NSString *)spokenNameForLocale:(NSString *)arg1;
 @end

@@ -86,7 +86,6 @@
 }
 
 + (BOOL)hasUnsentMessages;
-+ (unsigned long long)_totalUnreadMessageCount;
 + (unsigned long long)numberOfUnreadMessages;
 + (void)connectToDaemon;
 + (void)triggerStartConnecting;
@@ -167,7 +166,6 @@
 - (void)togglePublishCamera:(id)arg1;
 - (void)togglePublishMic:(id)arg1;
 - (void)toggleEffectsPalette:(id)arg1;
-- (void)toggleNameDisplay:(id)arg1;
 - (void)changeBuddyPicture:(id)arg1;
 - (void)showAddressBook:(id)arg1;
 - (void)showSelfPreview:(id)arg1;

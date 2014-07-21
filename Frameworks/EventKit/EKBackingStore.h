@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class EKBackingObjectsTracker, EKChangeTracker, EKCreatedObjectsTracker, EKEventOccurrenceCache, EKEventStore, EKRecurrenceChangeManager, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class EKBackingObjectsTracker, EKChangeTracker, EKCreatedObjectsTracker, EKEventOccurrenceCache, EKEventStore, EKRecurrenceChangeManager, NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface EKBackingStore : NSObject
 {
@@ -231,6 +231,7 @@
 @property(readonly, nonatomic) BOOL includeEnabledDelegates;
 - (void)_updateFromBackingStore:(id)arg1;
 - (id)_copyForBackgroundUpdate;
+@property(readonly, nonatomic) NSObject<OS_dispatch_group> *backingStoreAvailableGroup;
 - (id)initWithSourceFilters:(id)arg1 includeEnabledDelegates:(BOOL)arg2 orWithExistingStore:(id)arg3;
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithSourceFilters:(id)arg1 includeEnabledDelegates:(BOOL)arg2;

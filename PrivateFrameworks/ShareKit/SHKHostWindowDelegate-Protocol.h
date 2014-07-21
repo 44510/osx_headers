@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol SHKHostWindowDelegate <NSObject>
+- (void)requestClientWindowFrameWithCompletionBlock:(void (^)(struct CGRect, BOOL))arg1;
 - (void)setAnimatesDimAndBlur:(BOOL)arg1;
 - (void)setHostWindowFrame:(struct CGRect)arg1 withClientWindowSync:(BOOL)arg2;
 - (void)startSharingTransitionOutWithSuccess:(BOOL)arg1 duration:(double)arg2;

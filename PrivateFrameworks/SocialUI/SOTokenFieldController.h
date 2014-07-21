@@ -114,6 +114,7 @@
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;
 @property(readonly, nonatomic) SOTokenField *tokenField; // @dynamic tokenField;
+- (void)_addressBookPreferencesDidChange:(id)arg1;
 - (void)_updatePlaceholderAttributedString;
 - (long long)_knownIMessageIDStatusForIDSID:(id)arg1;
 - (void)_cleanupBatchIDQueryResults;
@@ -121,6 +122,7 @@
 - (void)_addIMHandleIDToDanglingHandlesForHandleGUID:(id)arg1 typedString:(id)arg2;
 - (id)_additionalSearchAccountsToHandleIDs;
 - (void)_sortSearchResults;
+- (void)_newChatDisplayControllerIDSValidationDidChange:(id)arg1;
 - (void)_chatDisplayControllerRecipientsDidChange:(id)arg1;
 - (void)_commonSOTokenFieldControllerInit;
 @property(readonly) SOCompletionResult *selectedCompletionResult; // @dynamic selectedCompletionResult;

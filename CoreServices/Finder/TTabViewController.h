@@ -104,6 +104,7 @@
 - (void)configureSearchBannersForAllTabs;
 - (void)saveScrollPositionForAllTabs;
 - (double)heightForVisibility;
+- (double)fullScreenMinHeight;
 - (struct CGSize)minimumContentSize;
 - (struct CGSize)idealContentSize;
 - (void)getTabRectsForContainers:(const vector_3a4056b3 *)arg1 proposedRects:(vector_b8c73e0a *)arg2;

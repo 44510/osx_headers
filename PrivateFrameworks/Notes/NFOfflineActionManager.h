@@ -18,7 +18,7 @@
 + (BOOL)_executeInsertNoteAction:(id)arg1 forAccount:(id)arg2 outError:(long long *)arg3;
 + (BOOL)_executeActionForAccount:(id)arg1 action:(id)arg2 outError:(long long *)arg3;
 + (void)_copyFolderContentsToRecoveredItemsFolder:(id)arg1;
-+ (void)copyNoteToRecoveredItemsFolder:(id)arg1;
++ (void)_copyNoteToRecoveredItemsFolder:(id)arg1;
 + (void)_recoverFromInvalidAction:(id)arg1;
 + (void)executeOfflineActionsForAccount:(id)arg1;
 

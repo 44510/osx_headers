@@ -14,9 +14,9 @@
 }
 
 @property(retain, nonatomic) NSFont *messageFont; // @synthesize messageFont=_messageFont;
+- (void).cxx_destruct;
 - (void)_updateTextFieldAttributedStringWithString:(id)arg1;
 - (void)setObjectValue:(id)arg1;
-- (void)dealloc;
 - (void)awakeFromNib;
 @property(readonly, retain, nonatomic) NSDictionary *messageTextFieldAttributes;
 @property(nonatomic) BOOL showsMessage; // @dynamic showsMessage;

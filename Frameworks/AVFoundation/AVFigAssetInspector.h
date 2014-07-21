@@ -18,6 +18,7 @@
 }
 
 - (id)propertyListForProxy;
+- (BOOL)containsMovieFragments;
 - (BOOL)canContainMovieFragments;
 - (id)SHA1Digest;
 - (BOOL)isPlayable;

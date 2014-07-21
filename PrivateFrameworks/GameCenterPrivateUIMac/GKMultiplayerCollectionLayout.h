@@ -10,6 +10,7 @@
 
 @interface GKMultiplayerCollectionLayout : NSCollectionViewLayout
 {
+    BOOL _isPortrait;
     double _headerGap;
     double _footerGap;
     long long _numberOfColumnsInPortrait;
@@ -25,6 +26,7 @@
 
 @property(retain, nonatomic) NSCollectionViewLayoutAttributes *headerAttributes; // @synthesize headerAttributes=_headerAttributes;
 @property(retain, nonatomic) NSDictionary *cellLayoutInfo; // @synthesize cellLayoutInfo=_cellLayoutInfo;
+@property(nonatomic) BOOL isPortrait; // @synthesize isPortrait=_isPortrait;
 @property(nonatomic) long long numberOfColumnsInPortrait; // @synthesize numberOfColumnsInPortrait=_numberOfColumnsInPortrait;
 @property(nonatomic) double footerGap; // @synthesize footerGap=_footerGap;
 @property(nonatomic) double headerGap; // @synthesize headerGap=_headerGap;

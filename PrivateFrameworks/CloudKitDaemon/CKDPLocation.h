@@ -19,6 +19,7 @@
 @property(retain, nonatomic) CKDPLocationBound *bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) CKDPLocationCoordinate *coordinate; // @synthesize coordinate=_coordinate;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

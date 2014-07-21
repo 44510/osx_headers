@@ -15,6 +15,7 @@
     CALayer *_backdropLayer;
     CALayer *_tintLayer;
     CALayer *_proxyLayer;
+    CALayer *_maskLayer;
     long long _material;
     long long _vibrancyEffect;
     long long _internalMaterialType;
@@ -26,6 +27,9 @@
     unsigned int _hasMask:1;
     unsigned int _disableBlurFilter:1;
     unsigned int _titlebarMaterialDrawsSeparator:1;
+    unsigned int _maskSet:1;
+    unsigned int _clear:1;
+    unsigned int _reservedFlags:26;
 }
 
 - (void)_updateVibrancy;
@@ -35,12 +39,12 @@
 - (void)_registerAssociatedView:(id)arg1;
 - (void)_subviewGeometryChanged:(id)arg1;
 @property(retain) NSImage *maskImage;
-- (void)drawMaskInRect:(struct CGRect)arg1;
 - (void)_setFillColorAndDrawMaskInRect:(struct CGRect)arg1;
 - (void)_drawClearInMaskImage;
 - (BOOL)_needsMaskImage;
-- (id)_generateMaskImageByDrawingAndFill:(BOOL)arg1;
-- (BOOL)_needsDrawMaskInRect;
+- (id)_generateMaskImageWithCurrentFillColor;
+- (id)_generateMaskImage;
+- (id)_backgroundColorForFontSmoothing;
 - (id)fontSmoothingBackgroundColor;
 - (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)_update;
@@ -62,7 +66,7 @@
 - (void)_setWindow:(id)arg1;
 - (void)setLayer:(id)arg1;
 - (void)updateLayer;
-- (id)_maskImageOrGenerateImageFromDrawMask;
+- (void)_updateLayerMaskForWithinWindowBlending;
 - (BOOL)wantsUpdateLayer;
 - (void)_windowChangedKeyState;
 - (void)_updateLayerToPokeOutWindowPixels;
@@ -119,6 +123,8 @@
 - (void)_invalidateAllSubviewsBecauseFontReferenceColorChanged;
 - (void)_invalidateSubviewsOfView:(id)arg1;
 - (void)_invalidateTextAndFontSmoothignInView:(id)arg1;
+- (BOOL)_isClear;
+- (void)_setClear:(BOOL)arg1;
 - (void)_setInternalMaterialType:(long long)arg1;
 - (id)_currentMaterialName;
 - (void)_markDirty;

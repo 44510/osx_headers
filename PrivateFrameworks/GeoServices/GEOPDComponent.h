@@ -12,7 +12,7 @@
 
 @interface GEOPDComponent : PBCodable <NSCopying>
 {
-    double _timestamp;
+    double _timestampFirstSeen;
     GEOPDAttribution *_attribution;
     int _cacheControl;
     GEOPDSource *_source;
@@ -25,7 +25,7 @@
     unsigned int _version;
     NSMutableArray *_versionDomains;
     struct {
-        unsigned int timestamp:1;
+        unsigned int timestampFirstSeen:1;
         unsigned int cacheControl:1;
         unsigned int startIndex:1;
         unsigned int status:1;
@@ -45,7 +45,6 @@
 @property(nonatomic) int valuesAvailable; // @synthesize valuesAvailable=_valuesAvailable;
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 @property(nonatomic) unsigned int ttl; // @synthesize ttl=_ttl;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void)mergeFrom:(id)arg1;
@@ -72,10 +71,11 @@
 @property(nonatomic) BOOL hasValuesAvailable;
 @property(nonatomic) BOOL hasStartIndex;
 @property(nonatomic) BOOL hasTtl;
-@property(nonatomic) BOOL hasTimestamp;
 @property(nonatomic) BOOL hasStatus;
 @property(nonatomic) BOOL hasType;
 - (void)dealloc;
+@property(nonatomic) BOOL hasTimestampFirstSeen;
+@property(nonatomic) double timestampFirstSeen;
 
 @end
 

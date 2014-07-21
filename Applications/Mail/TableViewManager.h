@@ -195,7 +195,7 @@
 - (void)_redeleteMessages:(id)arg1 messagesToSelect:(id)arg2;
 - (void)undeleteMessages:(id)arg1 allowUndo:(BOOL)arg2;
 - (void)_undeleteMessages:(id)arg1 allowUndo:(BOOL)arg2 unreadMessages:(id)arg3;
-- (void)_adjustScrollPositionForTransferedMessages:(id)arg1 isUndo:(BOOL)arg2;
+- (void)_adjustScrollPositionForTransferredMessages:(id)arg1 isUndo:(BOOL)arg2;
 - (id)_undoActionNameForMessageCount:(unsigned long long)arg1;
 - (BOOL)mailTableView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (id)messageStore;
@@ -230,7 +230,7 @@
 - (void)invalidateRowDataCache;
 - (void)_resetObjectValueForCellView:(id)arg1;
 - (void)_prepareCell:(id)arg1 withMessage:(id)arg2;
-- (id)_prepareProxyForMessage:(id)arg1 createIfNeeded:(BOOL)arg2;
+- (id)_prepareProxyForMessage:(id)arg1 selected:(BOOL)arg2 createIfNeeded:(BOOL)arg3;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (void)tableView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
@@ -253,6 +253,7 @@
 - (id)_messageSelectionColor;
 - (id)_attributesForTruncatedParagraphStyle;
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (id)selectionStateLog;
 - (void)_datesNeedRedisplay:(id)arg1;
 - (void)mailTableViewDidResignFirstResponder:(id)arg1;
 - (void)mailTableViewDidBecomeFirstResponder:(id)arg1;
@@ -398,6 +399,7 @@
 - (BOOL)isSortedByDateReceived;
 - (void)searchForString:(id)arg1 in:(int)arg2 withOptions:(long long)arg3;
 - (void)searchForSuggestions:(id)arg1 in:(int)arg2 withOptions:(long long)arg3 fromSuggestionsSearchField:(id)arg4;
+- (void)_updateInitialViewingState;
 - (void)_searchForString:(id)arg1 orSuggestions:(id)arg2 in:(int)arg3 withOptions:(long long)arg4 fromSuggestionsSearchField:(id)arg5;
 - (void)clearSearch;
 - (void)messagesRemovedFromMall:(id)arg1;
@@ -407,6 +409,7 @@
 - (void)mallStructureChanged:(id)arg1;
 - (void)mallStructureWillChange:(id)arg1;
 - (void)mallSortChanged:(id)arg1;
+- (void)reloadMailboxes:(id)arg1;
 - (void)setMailboxes:(id)arg1 isSettingUpUI:(BOOL)arg2;
 - (void)_restoreScrollState:(id)arg1;
 - (id)_currentScrollState;

@@ -14,11 +14,11 @@
 @interface AKDoodleAnnotation : AKAnnotation <AKRectangularAnnotationProtocol, AKStrokedAnnotationProtocol>
 {
     BOOL _dashed;
-    BOOL _hasBrushStyle;
     BOOL _hasShadow;
     NSBezierPath *_path;
     double _strokeWidth;
     NSColor *_strokeColor;
+    long long _brushStyle;
     struct CGRect _rectangle;
 }
 
@@ -27,7 +27,7 @@
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
 @property BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
-@property(getter=hasBrushStyle) BOOL hasBrushStyle; // @synthesize hasBrushStyle=_hasBrushStyle;
+@property(getter=brushStyle) long long brushStyle; // @synthesize brushStyle=_brushStyle;
 @property(getter=isDashed) BOOL dashed; // @synthesize dashed=_dashed;
 @property(retain) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

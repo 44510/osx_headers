@@ -24,6 +24,7 @@
     CalUITodayDateStringView *_todayDateStringView;
     CalUIAXTextField *_lunarDateStringTextField;
     NSView *_lunarMonthUnderline;
+    NSLayoutConstraint *_lunarBaselineConstraint;
     NSArray *_dateStrings;
     long long _currentDateStringFormatRequest;
     NSDictionary *_views;
@@ -47,6 +48,7 @@
 @property(retain) NSDictionary *views; // @synthesize views=_views;
 @property long long currentDateStringFormatRequest; // @synthesize currentDateStringFormatRequest=_currentDateStringFormatRequest;
 @property(retain) NSArray *dateStrings; // @synthesize dateStrings=_dateStrings;
+@property(retain) NSLayoutConstraint *lunarBaselineConstraint; // @synthesize lunarBaselineConstraint=_lunarBaselineConstraint;
 @property(retain) NSView *lunarMonthUnderline; // @synthesize lunarMonthUnderline=_lunarMonthUnderline;
 @property(retain) CalUIAXTextField *lunarDateStringTextField; // @synthesize lunarDateStringTextField=_lunarDateStringTextField;
 @property(retain) CalUITodayDateStringView *todayDateStringView; // @synthesize todayDateStringView=_todayDateStringView;
@@ -62,6 +64,7 @@
 - (void)setRepresentedObject:(id)arg1;
 - (BOOL)shouldShowLunarUnderline;
 - (void)updateLunarDate;
+- (void)updateLunarDateBaselineConstraint;
 - (id)dateStringTextFieldForBaselineAlignment;
 - (void)updateDateStringField;
 - (void)updateAppearance;

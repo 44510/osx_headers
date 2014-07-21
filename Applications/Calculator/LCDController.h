@@ -8,7 +8,7 @@
 
 #import "LCDViewable.h"
 
-@class CustomView, CustomWindow, NSArray, NSMenu, NSMutableString, NSNumber, NSString, NSTableView, NSTextField, NSView, NSWindow;
+@class CustomView, CustomWindow, NSArray, NSLayoutConstraint, NSMenu, NSMutableString, NSNumber, NSString, NSTableView, NSTextField, NSView, NSWindow;
 
 @interface LCDController : NSObject <LCDViewable>
 {
@@ -16,6 +16,7 @@
     NSView *_sciRPNButtons;
     NSView *_basicRPNButtons;
     NSView *_parentLCDView;
+    NSView *_RPNTableView;
     NSWindow *_window;
     NSTextField *_RightLCD;
     NSTextField *_LeftLCD;
@@ -47,14 +48,27 @@
     NSNumber *_eeNum;
     BOOL _eeMode;
     unsigned long long _error;
+    NSView *_backgroundView;
+    NSView *_modeIndicatorsView;
+    NSLayoutConstraint *_parentLCDWidth;
+    NSLayoutConstraint *_parentLCDHeight;
+    NSLayoutConstraint *_modeIndicatorsTopConstraint;
+    NSLayoutConstraint *_rpnTableRightConstraint;
+    int _displayHeight;
 }
 
+- (void)setRPNTableRightConstraint:(float)arg1;
+- (void)setModeIndicatorsTopConstraint:(float)arg1;
+- (void)setHeightConstraint:(float)arg1;
+- (void)setWidthConstraint:(float)arg1;
 - (void)switchRPNWideToReg;
 - (void)switchRPNRegToWide;
 - (void)rpnExchange:(id)arg1;
 - (void)rpnDrop:(id)arg1;
 - (void)rpnRollDown:(id)arg1;
 - (void)rpnRollUp:(id)arg1;
+- (int)displayHeight;
+- (void)setWidthForMode:(id)arg1;
 - (void)setCurrentView:(id)arg1;
 - (void)setRPNIsWide:(BOOL)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
@@ -104,13 +118,14 @@
 - (void)showMemoryIndicator:(BOOL)arg1;
 - (void)setCalcModeText:(id)arg1;
 - (void)setExponent:(id)arg1;
-- (void)setOperandText:(id)arg1;
 - (void)dealloc;
 - (void)awakeFromNib;
 - (id)stringWithSeparators:(id)arg1;
 - (void)setShowSeparators:(BOOL)arg1;
 - (void)setRPNStack:(id)arg1;
 - (id)init;
+- (BOOL)isInWideMode;
+- (BOOL)isInRPNMode;
 - (void)_restoreRightLCD:(id)arg1;
 - (void)_showRegRPNView;
 - (void)_showWideRPNView;

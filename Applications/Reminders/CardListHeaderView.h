@@ -21,6 +21,8 @@
 - (void).cxx_destruct;
 - (id)title;
 - (void)setAddButtonHidden:(BOOL)arg1;
+- (void)updateColor:(id)arg1;
+- (id)color;
 - (void)updateTitle:(id)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)updateSubtitleField;

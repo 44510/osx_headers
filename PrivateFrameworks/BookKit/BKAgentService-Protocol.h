@@ -21,6 +21,7 @@
 - (void)examineBook:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;
 - (void)uncompressBook:(NSDictionary *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)migrateBook:(NSURL *)arg1 withToken:(NSData *)arg2 withMetadata:(NSDictionary *)arg3 results:(void (^)(id, NSError *))arg4;
+- (void)evaluateBooksForFamilyContentDeletion:(NSArray *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)prioritizeImport:(NSString *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)trashBook:(NSDictionary *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)removeBook:(NSDictionary *)arg1 results:(void (^)(id, NSError *))arg2;

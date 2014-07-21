@@ -34,7 +34,9 @@
 @property(readonly, getter=isExternal) BOOL external;
 @property unsigned long long DTDKind;
 - (id)initWithXMLString:(id)arg1;
+- (id)initWithKind:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)initWithKind:(unsigned long long)arg1;
+- (id)init;
 - (void)dealloc;
 
 @end

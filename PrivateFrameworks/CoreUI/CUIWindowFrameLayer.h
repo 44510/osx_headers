@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)addAndSetupSublayer:(id)arg1;
 - (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

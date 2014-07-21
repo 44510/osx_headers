@@ -17,6 +17,7 @@
 - (void)callWithArguments:(void **)arg1 returnValue:(void *)arg2;
 - (void)dealloc;
 - (id)initWithPointerValue:(void *)arg1 type:(id)arg2;
+- (id)initWithPointerValue:(void *)arg1 type:(id)arg2 additionalArguments:(unsigned int)arg3;
 
 @end
 

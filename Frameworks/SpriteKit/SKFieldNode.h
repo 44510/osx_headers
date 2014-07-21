@@ -12,6 +12,9 @@
 {
     PKPhysicsField *_field;
     SKRegion *_region;
+    float _smoothness;
+    float _animationSpeed;
+    SKTexture *_texture;
     BOOL _exclusive;
 }
 
@@ -29,6 +32,8 @@
 + (id)dragField;
 @property(nonatomic, getter=isExclusive) BOOL exclusive; // @synthesize exclusive=_exclusive;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 @property(retain, nonatomic) SKRegion *region;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 @property(nonatomic) float falloff;

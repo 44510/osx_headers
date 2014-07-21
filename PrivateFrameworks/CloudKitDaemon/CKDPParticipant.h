@@ -38,6 +38,7 @@
 @property(retain, nonatomic) CKDPIdentifier *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) CKDPIdentifier *participantId; // @synthesize participantId=_participantId;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

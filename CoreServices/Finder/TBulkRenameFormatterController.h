@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSResponder.h"
+#import "TViewController.h"
 
-@class NSPopUpButton, NSView, TBulkRenameController;
+@class NSPopUpButton, NSTextField, TBulkRenameController;
 
-@interface TBulkRenameFormatterController : NSResponder
+@interface TBulkRenameFormatterController : TViewController
 {
-    NSView *_view;
     NSPopUpButton *_formatterSwitcherBtn;
+    NSTextField *_firstTextField;
     int _formatterType;
     TBulkRenameController *_parentController;
 }
@@ -27,9 +27,8 @@
 - (id)displayName;
 - (int)formatterType;
 - (void)setParentController:(id)arg1;
-- (id)view;
+- (id)firstTextField;
 - (void)aboutToTearDown;
-- (void)awakeFromNib;
 
 @end
 

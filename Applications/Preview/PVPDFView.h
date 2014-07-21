@@ -24,6 +24,7 @@
     NSMutableIndexSet *_undoSelectionIndexes;
     PVPDFSelectionRect *_selectionRect;
     BOOL _trackingSelectionRect;
+    id _annotationWasRemovedObserver;
     long long _toolMode;
     NSTextField *_popupControl;
     PDFAnnotationPopup *_popupAnnotation;

@@ -20,6 +20,7 @@
     NSWindow *_parentWindow;
     struct CGSize _preferredContentSize;
     struct CGRect _sourceWindowFrame;
+    struct CGRect _sourceWindowScreenVisibleFrame;
     struct CGRect _sourceWindowContentRect;
 }
 
@@ -27,6 +28,7 @@
 @property BOOL shouldDimSourceWindow; // @synthesize shouldDimSourceWindow=_shouldDimSourceWindow;
 @property struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 @property struct CGRect sourceWindowContentRect; // @synthesize sourceWindowContentRect=_sourceWindowContentRect;
+@property struct CGRect sourceWindowScreenVisibleFrame; // @synthesize sourceWindowScreenVisibleFrame=_sourceWindowScreenVisibleFrame;
 @property struct CGRect sourceWindowFrame; // @synthesize sourceWindowFrame=_sourceWindowFrame;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSString *uuidString; // @synthesize uuidString=_uuidString;
@@ -38,7 +40,6 @@
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;
 - (BOOL)view:(id)arg1 shouldResize:(struct CGSize)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewDidAdvanceToRunPhase:(id)arg1;
 - (BOOL)viewShouldDragOldestAncestorWindow:(id)arg1;
 - (id)initWithOptionsDictionary:(id)arg1;

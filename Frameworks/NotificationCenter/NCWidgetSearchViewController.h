@@ -9,7 +9,7 @@
 #import "NCWidgetListItemDelegate.h"
 #import "NSTextFieldDelegate.h"
 
-@class CALayer, NCSearchTextItemViewController, NCVerticalListController, NCWidgetEffectTextField, NSArray, NSMutableArray, NSSearchField, NSString, NSView;
+@class CALayer, NCSearchTextItemViewController, NCVerticalListController, NSArray, NSMutableArray, NSSearchField, NSString, NSTextField, NSView;
 
 @interface NCWidgetSearchViewController : NSViewController <NCWidgetListItemDelegate, NSTextFieldDelegate>
 {
@@ -25,7 +25,7 @@
     NSString *_searchDescription;
     NSString *_searchResultKeyPath;
     NCVerticalListController *_listView;
-    NCWidgetEffectTextField *_titleTextField;
+    NSTextField *_titleTextField;
     NSSearchField *_searchField;
     NSView *_containerView;
 }
@@ -33,7 +33,7 @@
 @property(nonatomic) BOOL dividerLineHidden; // @synthesize dividerLineHidden=_dividerLineHidden;
 @property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak NSSearchField *searchField; // @synthesize searchField=_searchField;
-@property(nonatomic) __weak NCWidgetEffectTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
+@property(nonatomic) __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain, nonatomic) NCVerticalListController *listView; // @synthesize listView=_listView;
 @property(nonatomic) unsigned long long selection; // @synthesize selection=_selection;
 @property(copy) NSString *searchResultKeyPath; // @synthesize searchResultKeyPath=_searchResultKeyPath;

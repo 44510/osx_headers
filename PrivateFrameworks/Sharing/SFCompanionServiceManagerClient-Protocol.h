@@ -9,6 +9,6 @@
 @class NSFileHandle, SFCompanionService;
 
 @protocol SFCompanionServiceManagerClient <NSObject>
-- (void)streamToService:(SFCompanionService *)arg1 withReadHandle:(NSFileHandle *)arg2 writeHandle:(NSFileHandle *)arg3 acceptReply:(void (^)(BOOL))arg4;
+- (void)streamToService:(SFCompanionService *)arg1 withFileHandle:(NSFileHandle *)arg2 acceptReply:(void (^)(BOOL))arg3;
 @end
 

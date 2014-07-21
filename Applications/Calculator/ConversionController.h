@@ -8,7 +8,7 @@
 
 #import "NSURLDownloadDelegate.h"
 
-@class NSArray, NSButton, NSCalendarDate, NSDictionary, NSMutableArray, NSMutableString, NSPopUpButton, NSString, NSTextField;
+@class NSArray, NSButton, NSDictionary, NSMutableArray, NSMutableString, NSPopUpButton, NSString, NSTextField;
 
 @interface ConversionController : NSObject <NSURLDownloadDelegate>
 {
@@ -28,7 +28,6 @@
     NSDictionary *mConvertToBaseDict;
     NSDictionary *mConvertFromBaseDict;
     NSDictionary *mCurrencyDict;
-    NSCalendarDate *mRatesStaleDate;
     NSString *mRatesCachePath;
     NSString *mTempDownloadFilePath;
     NSMutableString *mTimestamp;
@@ -38,7 +37,6 @@
 @property(readonly) NSArray *categories; // @synthesize categories=mConversionCategries;
 @property(readonly) NSArray *recentConversions; // @synthesize recentConversions=_recentConversions;
 - (BOOL)validateAndMoveNewCurrencyRateData;
-- (void)updateRatesStaleDate;
 - (id)getPathForFinancialRatesXML;
 - (void)browseRatesWebsite:(id)arg1;
 - (void)updateCurrencyRates:(id)arg1;

@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSString *oldAutosaveName; // @synthesize oldAutosaveName=_oldAutosaveName;
 - (void).cxx_destruct;
 - (double)dividerThickness;
+- (id)dividerColor;
 - (struct CGRect)_dividerRect;
 - (void)setDividerToolTip:(id)arg1;
 - (BOOL)isFirstViewVisible;

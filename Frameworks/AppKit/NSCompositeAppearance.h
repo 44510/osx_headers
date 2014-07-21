@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)compositeAppearanceForView:(id)arg1;
 @property(copy) NSArray *appearances; // @synthesize appearances=_appearances;
-- (Class)classForCoder;
+- (id)uniqueIdentifier;
 - (id)description;
 @property(copy) NSString *name;
 - (long long)_internalVisualEffectMaterialForTitlebar;
@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
 - (int)_defaultBlendMode;
 - (BOOL)_allowsVibrancyForColor:(id)arg1;
 - (BOOL)allowsVibrancy;
+- (BOOL)_backstoppedByDefaultAppearance;
 - (BOOL)_isDefaultAppearance;
 - (id)_coreUICatalog;
+- (id)resolvedAppearanceForWidget:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForWidget:(id)arg1;
 - (id)resolvedAppearanceForStyleName:(id)arg1 styleConfiguration:(id)arg2;
 - (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1;

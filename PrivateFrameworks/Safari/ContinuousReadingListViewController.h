@@ -6,12 +6,12 @@
 
 #import <Safari/ContinuousBrowserPageViewController.h>
 
-#import "ReaderInstallation.h"
+#import "ReaderInstallationTarget.h"
 
 @class ContinuousAutomaticReadingListDataSource, ContinuousReadingListDataSource, NSArray, NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
-@interface ContinuousReadingListViewController : ContinuousBrowserPageViewController <ReaderInstallation>
+@interface ContinuousReadingListViewController : ContinuousBrowserPageViewController <ReaderInstallationTarget>
 {
     NSMutableDictionary *_continuousReadingListPageItemsToPageViewControllers;
     BOOL _inReaderMode;

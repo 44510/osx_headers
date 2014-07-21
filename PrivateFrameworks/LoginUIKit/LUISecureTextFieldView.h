@@ -30,6 +30,7 @@
 }
 
 @property id delegate; // @synthesize delegate=_delegate;
+- (id)accessibilityPlaceholderValue;
 - (void)controlTextDidChange:(id)arg1;
 - (void)forceDrawFocusRing;
 - (void)forceClearFocusRing;

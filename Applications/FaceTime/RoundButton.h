@@ -6,27 +6,19 @@
 
 #import "NSButton.h"
 
-@class NSArray, NSColor, NSTextField;
-
 @interface RoundButton : NSButton
 {
-    NSColor *_backgroundColor;
-    NSColor *_onStateBackgroundColor;
-    NSTextField *_attachedLabel;
-    NSArray *_attachedLabelConstraints;
-    struct CGSize _imageOffset;
+    int _style;
 }
 
-+ (id)buttonWithImage:(id)arg1 imageColor:(id)arg2 onStateImage:(id)arg3 onStateImageColor:(id)arg4 backgroundColor:(id)arg5 onStateBackgroundColor:(id)arg6;
-+ (id)buttonWithImage:(id)arg1 imageColor:(id)arg2 backgroundColor:(id)arg3;
++ (id)buttonWithImage:(id)arg1 style:(int)arg2;
++ (id)colorForImageWithState:(int)arg1;
++ (id)colorForBackgroundWithState:(int)arg1 style:(int)arg2;
 + (double)radius;
-@property(retain, nonatomic) NSArray *attachedLabelConstraints; // @synthesize attachedLabelConstraints=_attachedLabelConstraints;
-@property(retain, nonatomic) NSTextField *attachedLabel; // @synthesize attachedLabel=_attachedLabel;
-@property(retain, nonatomic) NSColor *onStateBackgroundColor; // @synthesize onStateBackgroundColor=_onStateBackgroundColor;
-@property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(nonatomic) struct CGSize imageOffset; // @synthesize imageOffset=_imageOffset;
-- (void).cxx_destruct;
++ (Class)cellClass;
+@property(nonatomic) int style; // @synthesize style=_style;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

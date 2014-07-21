@@ -18,7 +18,7 @@
     NSObject<OS_dispatch_source> *_processingTimer;
     NSSet *_pendingPlugIns;
     NSSet *_knownPlugIns;
-    NSDictionary *_knownPlugInsByID;
+    NSDictionary *_knownExtensionsByID;
     NSDictionary *_remotePluginsByIdentifier;
     id _delegate;
     NSError *_lastSearchError;
@@ -28,7 +28,6 @@
 @property(readonly) NSError *lastSearchError; // @synthesize lastSearchError=_lastSearchError;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_handleSearchResults:(id)arg1 errors:(id)arg2;
 - (void)_processPluginChanges:(id)arg1;
 - (void)_actuallyStartSearching;
 - (void)stopSearching;

@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)allowsCPRecording;
 - (BOOL)openWithSearchString:(id)arg1;
 - (BOOL)isShowAllInFinderResult;
 - (id)icon;

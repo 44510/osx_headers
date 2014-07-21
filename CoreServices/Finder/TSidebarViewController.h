@@ -50,6 +50,7 @@
     struct TNSRef<NSMutableIndexSet *> _hiddenZones;
     struct TRef<dispatch_queue_s *, TRetainReleasePolicy<dispatch_queue_t>> _backupItemDimnessQueue;
     unsigned long long _validatorID;
+    struct TNotificationCenterObserver _windowResizedNotification;
 }
 
 + (void)actionButtonCoreUIOrLegacyImage:(int)arg1 highlighted:(_Bool)arg2 mouseState:(int)arg3 coreUIName:(const struct __CFString **)arg4 appKitImageName:(id *)arg5 color:(struct TColor *)arg6 legacyImageID:(long long *)arg7 animate:(_Bool *)arg8 scaleFactor:(double)arg9;
@@ -205,7 +206,7 @@
 - (void)didEnterFullScreen:(id)arg1;
 - (void)willEnterFullScreen:(id)arg1;
 - (void)windowZoomDidComplete:(id)arg1;
-- (void)windowDidResize:(id)arg1;
+- (void)clipViewBoundsChanged:(id)arg1;
 - (void)handleItemsChanged:(id)arg1;
 - (void)handleItemsAddedRemovedReordered:(id)arg1;
 - (void)handleSharedSectionVibilityChanged:(id)arg1;

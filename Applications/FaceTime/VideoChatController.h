@@ -338,6 +338,7 @@
 - (unsigned int)_windowOrientation;
 - (void)_updateMuteButton;
 - (void)_endChatNotification:(id)arg1;
+- (void)forceReceivedFirstFrame;
 - (void)prepareForAccountDeletion;
 - (void)showCallPrompt:(id)arg1 outgoingCall:(id)arg2;
 - (void)cancel:(id)arg1;

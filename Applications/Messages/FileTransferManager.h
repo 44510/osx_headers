@@ -66,6 +66,7 @@
 - (id)_transfersMatchingCondition:(int)arg1 wantsGUIDs:(BOOL)arg2;
 - (void)_handleTransferRemoved:(id)arg1;
 - (void)_handleTransferCreated:(id)arg1;
+- (void)_addressBookPreferencesDidChange:(id)arg1;
 - (void)_handleRefreshAllTransfers:(id)arg1;
 - (void)_scrollToBottom;
 - (void)_addTransfer:(id)arg1;

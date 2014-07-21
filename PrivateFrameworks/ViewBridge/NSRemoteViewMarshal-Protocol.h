@@ -17,7 +17,7 @@
 - (void)discloseAccessoryView:(BOOL)arg1 withOffset:(struct CGPoint)arg2 andAnimationState:(int)arg3 andDuration:(double)arg4;
 - (void)updateContentMinSize:(struct CGSize)arg1;
 - (void)updateAccessibilityChildren:(NSArray *)arg1;
-- (void)lastCallImpliedByAdvancingToRunPhase;
+- (void)lastCallImpliedByAdvancingToPhase:(unsigned char)arg1;
 - (void)serviceAccessoryViewResignedFirstResponder;
 - (void)serviceAccessoryViewBecameFirstResponder:(unsigned long long)arg1;
 - (void)setAccessoryViewOrigin:(struct CGPoint)arg1;
@@ -39,6 +39,6 @@
 - (void)hasValidKeyViewInDirection:(unsigned long long)arg1 withReply:(void (^)(BOOL))arg2;
 - (void)suspendInFavorOfEndpoint:(NSXPCListenerEndpoint *)arg1 serviceName:(NSString *)arg2 serviceSubclassName:(NSString *)arg3 serviceWindowIsKey:(BOOL)arg4 initialBridge:(NSDictionary *)arg5 completion:(void (^)(NSError *, NSDictionary *))arg6;
 - (void)dragWindowRelativeToMouseDown:(struct CGPoint)arg1;
-- (void)addChildWindow:(NSString *)arg1 windowBase:(unsigned char)arg2 ordered:(long long)arg3;
+- (void)addChildWindow:(NSString *)arg1 windowBase:(unsigned char)arg2 ordered:(long long)arg3 content:(struct CGRect)arg4;
 @end
 

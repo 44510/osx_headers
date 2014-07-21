@@ -68,6 +68,7 @@
 - (void)navigateForwardToViewController:(id)arg1 sender:(id)arg2;
 - (void)pageControllerDidEndLiveTransition:(id)arg1;
 - (void)pageController:(id)arg1 didTransitionToObject:(id)arg2;
+- (void)pageController:(id)arg1 prepareViewController:(id)arg2 withObject:(id)arg3;
 - (id)pageController:(id)arg1 viewControllerForIdentifier:(id)arg2;
 - (id)pageController:(id)arg1 identifierForObject:(id)arg2;
 - (void)searchTextChanged:(id)arg1;

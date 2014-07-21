@@ -9,6 +9,7 @@
 @class GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSString, NSURL;
 
 @protocol GEOMapItemPrivate <GEOMapItem>
+@property(readonly, nonatomic, getter=_additionalPlaceInfos) NSArray *additionalPlaceInfos;
 @property(readonly, nonatomic, getter=_customIconID) unsigned long long customIconID;
 @property(readonly, nonatomic, getter=_styleAttributes) GEOFeatureStyleAttributes *styleAttributes;
 @property(readonly, nonatomic, getter=_poiSurveyURLString) NSString *poiSurveyURLString;
@@ -39,6 +40,8 @@
 @property(readonly, nonatomic, getter=_sampleSizeForUserRatingScore) unsigned int sampleSizeForUserRatingScore;
 @property(readonly, nonatomic, getter=_hasUserRatingScore) BOOL hasUserRatingScore;
 @property(readonly, nonatomic, getter=_businessURL) NSString *businessURL;
+@property(readonly, nonatomic, getter=_areaInMeters) double areaInMeters;
+@property(readonly, nonatomic, getter=_hasAreaInMeters) BOOL hasAreaInMeters;
 @property(readonly, nonatomic, getter=_muid) unsigned long long muid;
 @property(readonly, nonatomic, getter=_hasMUID) BOOL hasMUID;
 @property(readonly, nonatomic, getter=_flyover) GEOPDFlyover *flyover;
@@ -47,13 +50,16 @@
 @property(readonly, nonatomic, getter=_hasResultProviderID) BOOL hasResultProviderID;
 @property(readonly, nonatomic, getter=_sequenceNumber) unsigned int sequenceNumber;
 @property(readonly, nonatomic, getter=_sessionGUID) CDStruct_4bcfbbae sessionGUID;
+@property(readonly, nonatomic, getter=_hasSessionGUID) BOOL hasSessionGUID;
 @property(readonly, nonatomic, getter=_roadAccessPoints) NSArray *roadAccessPoints;
+@property(readonly, nonatomic, getter=_placeType) int placeType;
 @property(readonly, nonatomic, getter=_hasResolvablePartialInformation) BOOL hasResolvablePartialInformation;
 @property(readonly, nonatomic, getter=_placeDataAsData) NSData *placeDataAsData;
 @property(readonly, nonatomic, getter=_placeAsData) NSData *placeAsData;
 @property(readonly, nonatomic, getter=_clientAttributes) GEOMapItemClientAttributes *clientAttributes;
 @property(readonly, nonatomic, getter=_placeData) GEOPDPlace *placeData;
 @property(readonly, nonatomic, getter=_place) GEOPlace *place;
+- (id <GEOMapItemPrivate>)_mapItemByStrippingOptionalData;
 - (NSURL *)_urlForWritingAReview;
 - (NSURL *)_urlForReviewWithUID:(NSString *)arg1;
 - (NSURL *)_urlForPhotoWithUID:(NSString *)arg1;

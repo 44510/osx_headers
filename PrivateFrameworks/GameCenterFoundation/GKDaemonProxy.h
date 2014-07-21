@@ -59,7 +59,7 @@
 - (void)_replyToDuplicatesForRequest:(id)arg1 withInvocation:(id)arg2 queue:(id)arg3;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
-- (oneway void)setLogBits:(unsigned int)arg1;
+- (oneway void)setLogBits:(int)arg1;
 - (oneway void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (oneway void)setBadgeCount:(unsigned long long)arg1 forType:(unsigned long long)arg2;
 - (oneway void)challengeCompleted:(id)arg1;

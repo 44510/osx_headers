@@ -31,6 +31,7 @@
     NSString *_urlStringToContinue;
 }
 
++ (BOOL)automaticallyNotifiesObserversOfRepresentedObject;
 @property(copy, nonatomic) NSString *urlStringToContinue; // @synthesize urlStringToContinue=_urlStringToContinue;
 @property(copy, nonatomic) NSUUID *updateUUID; // @synthesize updateUUID=_updateUUID;
 @property(nonatomic) double pageZoom; // @synthesize pageZoom=_pageZoom;

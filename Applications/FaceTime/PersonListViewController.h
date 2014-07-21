@@ -33,12 +33,13 @@
     NSMutableArray *_recentsPeople;
     NSMutableSet *_recentsUniqueIdSet;
     FTIDSLookupManager *_idsLookupManager;
+    NSMutableDictionary *_roundImageCache;
     NSMutableArray *_recentsSearchPeople;
     NSMutableSet *_recentsSearchUniqueIdSet;
     NSMutableArray *_contactsSearchPeople;
-    NSMutableDictionary *_roundImageCache;
     NSBlockOperation *_searchOperation;
     NSDate *_currentSearchDate;
+    NSString *_currentSearchString;
     NSTimer *_reloadTableTimer;
 }
 
@@ -47,12 +48,13 @@
 @property(nonatomic) BOOL rebuildImageCache; // @synthesize rebuildImageCache=_rebuildImageCache;
 @property(nonatomic) BOOL hasAwokenFromNib; // @synthesize hasAwokenFromNib=_hasAwokenFromNib;
 @property(retain, nonatomic) NSTimer *reloadTableTimer; // @synthesize reloadTableTimer=_reloadTableTimer;
+@property(retain, nonatomic) NSString *currentSearchString; // @synthesize currentSearchString=_currentSearchString;
 @property(retain, nonatomic) NSDate *currentSearchDate; // @synthesize currentSearchDate=_currentSearchDate;
 @property(retain, nonatomic) NSBlockOperation *searchOperation; // @synthesize searchOperation=_searchOperation;
-@property(retain, nonatomic) NSMutableDictionary *roundImageCache; // @synthesize roundImageCache=_roundImageCache;
 @property(retain, nonatomic) NSMutableArray *contactsSearchPeople; // @synthesize contactsSearchPeople=_contactsSearchPeople;
 @property(retain, nonatomic) NSMutableSet *recentsSearchUniqueIdSet; // @synthesize recentsSearchUniqueIdSet=_recentsSearchUniqueIdSet;
 @property(retain, nonatomic) NSMutableArray *recentsSearchPeople; // @synthesize recentsSearchPeople=_recentsSearchPeople;
+@property(retain, nonatomic) NSMutableDictionary *roundImageCache; // @synthesize roundImageCache=_roundImageCache;
 @property(retain, nonatomic) FTIDSLookupManager *idsLookupManager; // @synthesize idsLookupManager=_idsLookupManager;
 @property(retain, nonatomic) NSMutableSet *recentsUniqueIdSet; // @synthesize recentsUniqueIdSet=_recentsUniqueIdSet;
 @property(retain, nonatomic) NSMutableArray *recentsPeople; // @synthesize recentsPeople=_recentsPeople;
@@ -61,7 +63,7 @@
 @property(nonatomic) __weak NSLayoutConstraint *searchFieldTopConstraint; // @synthesize searchFieldTopConstraint=_searchFieldTopConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *segmentedControlTopConstraint; // @synthesize segmentedControlTopConstraint=_segmentedControlTopConstraint;
 @property(nonatomic) __weak NSImageView *videoImageView; // @synthesize videoImageView=_videoImageView;
-@property(retain, nonatomic) NSButton *peoplePickerButton; // @synthesize peoplePickerButton=_peoplePickerButton;
+@property(nonatomic) __weak NSButton *peoplePickerButton; // @synthesize peoplePickerButton=_peoplePickerButton;
 @property(retain, nonatomic) NSMenu *contextualMenu; // @synthesize contextualMenu=_contextualMenu;
 @property(nonatomic) __weak PersonTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak NSSegmentedControl *filterRecentsSegmentedControl; // @synthesize filterRecentsSegmentedControl=_filterRecentsSegmentedControl;
@@ -73,8 +75,8 @@
 - (void)contactPicker:(id)arg1 didChooseContact:(id)arg2 key:(id)arg3 value:(id)arg4;
 - (void)showContactsPicker:(id)arg1;
 - (void)focusSearchWithString:(id)arg1;
+- (void)callCapabilityDidChange:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
-- (void)tableSelectionDidChange:(id)arg1;
 - (void)sideListShown:(id)arg1;
 - (void)resetView:(id)arg1;
 - (void)recentPeopleDidChange:(id)arg1;

@@ -326,7 +326,9 @@
 - (void)updateConstraintsForSubtreeIfNeeded;
 - (void)_updateConstraintsForSubtreeIfNeededCollectingViewsWithInvalidBaselines:(id *)arg1;
 - (void)updateConstraints;
+- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
 - (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2;
+- (BOOL)_shouldDetermineOpaqueRegionForMoves;
 - (void)setGesturesEnabled:(BOOL)arg1;
 - (BOOL)gesturesEnabled;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -801,7 +803,6 @@
 - (void)_windowWillOrderOffScreen;
 - (void)_windowDidOrderOnScreen;
 - (void)_windowWillOrderOnScreen;
-- (void)forwardInvocation:(id)arg1;
 - (void)_invalidateShouldAutoFlattenLayerTreeRecursively;
 - (void)_invalidateShouldAutoFlattenLayerTree;
 - (BOOL)_shouldAutoFlattenLayerTree;
@@ -899,6 +900,7 @@
 - (void)_handleFrameChangeForSubview:(id)arg1;
 - (void)_handleBoundsChangeForSubview:(id)arg1;
 - (void)_compositeHiddenViewHighlight;
+- (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (struct CGRect)_opaqueRect;
 - (BOOL)_impactsWindowMoving;
 - (void)_setImpactsWindowMoving:(BOOL)arg1;
@@ -1229,8 +1231,8 @@
 - (id)_internalConstraints;
 - (void)_setInternalConstraints:(id)arg1;
 - (id)_constraintsArray;
-- (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 forConstraint:(id)arg4;
 - (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 container:(id)arg4;
+- (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 forConstraint:(id)arg4;
 - (struct CGSize)nsli_convertSizeFromEngineSpace:(struct CGSize)arg1;
 - (struct CGSize)nsli_convertSizeToEngineSpace:(struct CGSize)arg1;
 - (struct CGSize)_preferredAutolayoutEngineToUserScalingCoefficients;

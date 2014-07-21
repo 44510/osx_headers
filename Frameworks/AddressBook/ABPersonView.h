@@ -53,6 +53,8 @@
 @property(readonly, getter=isLoaded) BOOL loaded;
 - (struct CGRect)imageFrame;
 @property(readonly) struct CGSize contentSize;
+- (void)setBackgroundStyle:(long long)arg1;
+- (long long)backgroundStyle;
 @property BOOL editing;
 - (id)defaultProperties;
 - (BOOL)isSelectable;

@@ -6,7 +6,7 @@
 
 #import "NSButton.h"
 
-@class CALayer, NSImage, NSString;
+@class CALayer, NSColor, NSImage, NSString;
 
 @interface NCButton : NSButton
 {
@@ -19,10 +19,12 @@
     NSString *_imageEffect;
     double _titleEffectOpacity;
     NSString *_titleEffect;
+    NSColor *_titleColor;
 }
 
 + (Class)cellClass;
 @property(nonatomic) _Bool hasBorder; // @synthesize hasBorder=_hasBorder;
+@property(nonatomic) NSColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) NSString *titleEffect; // @synthesize titleEffect=_titleEffect;
 @property(nonatomic) double titleEffectOpacity; // @synthesize titleEffectOpacity=_titleEffectOpacity;
 @property(retain, nonatomic) NSString *imageEffect; // @synthesize imageEffect=_imageEffect;

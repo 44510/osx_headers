@@ -10,6 +10,8 @@
 
 @interface ICCameraFileProperties : NSObject
 {
+    long long _width;
+    long long _height;
     NSDate *_creationDate;
     NSDate *_modificationDate;
     long long _fileSize;
@@ -57,6 +59,8 @@
 @property long long fileSize; // @synthesize fileSize=_fileSize;
 @property(retain) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property long long height; // @synthesize height=_height;
+@property long long width; // @synthesize width=_width;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
 @property struct CGImage *thumbnail; // @dynamic thumbnail;

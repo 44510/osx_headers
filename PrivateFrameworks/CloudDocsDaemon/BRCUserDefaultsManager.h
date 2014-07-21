@@ -8,7 +8,7 @@
 
 #import "NSURLSessionDownloadDelegate.h"
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL, NSURLSession;
+@class NSDictionary, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLSession;
 
 __attribute__((visibility("hidden")))
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_serverConfigurationDict;
     NSMutableDictionary *_userDefaultsCache;
     CDUnknownBlockType _configurationPlistDidUpdateBlock;
+    NSOperationQueue *_downloadQueue;
     NSURLSession *_urlSession;
 }
 

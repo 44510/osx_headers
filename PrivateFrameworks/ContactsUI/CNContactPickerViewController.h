@@ -4,67 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewService.h"
+#import "NSViewController.h"
 
-#import "CNContactPickerInternalSetup.h"
-#import "CNContactPickerViewController.h"
+#import "CNContactPickerInternalResponseDelegate.h"
 
-@class ABAddressBook, ABBookSearchField, ABGroupEntriesList, ABPersonEntriesList, ABPersonListSearchController, CNContactListController, CNContactListView, CNContactPickerNotificationWatcher, CNContactPickerSearchController, CNGroupListController, CNGroupListEntriesFactory, CNGroupListView, NSString, NSWindow;
+@class CNContactPickerViewService, NSArray, NSString;
 
-@interface CNContactPickerViewController : NSViewService <CNContactPickerViewController, CNContactPickerInternalSetup>
+@interface CNContactPickerViewController : NSViewController <CNContactPickerInternalResponseDelegate>
 {
-    ABAddressBook *_addressBook;
-    CNContactPickerNotificationWatcher *_notificationWatcher;
-    CNContactPickerSearchController *_contactSearchController;
-    ABPersonEntriesList *_personEntriesList;
-    CNContactListController *_contactListController;
-    CNGroupListController *_groupListController;
-    CNGroupListEntriesFactory *_groupEntriesFactory;
-    ABGroupEntriesList *_groupEntriesList;
-    id <CNContactPickerInternalResponseDelegate> _responseDelegate;
-    ABPersonListSearchController *_searchController;
-    CNGroupListView *_groupListView;
-    CNContactListView *_contactListView;
-    ABBookSearchField *_searchField;
-    NSWindow *_hostingWindow;
+    CNContactPickerViewService *_serviceController;
+    NSArray *_displayedKeys;
+    id <CNContactPickerViewControllerDelegate> _delegate;
 }
 
-@property(retain) NSWindow *hostingWindow; // @synthesize hostingWindow=_hostingWindow;
-@property __weak ABBookSearchField *searchField; // @synthesize searchField=_searchField;
-@property __weak CNContactListView *contactListView; // @synthesize contactListView=_contactListView;
-@property __weak CNGroupListView *groupListView; // @synthesize groupListView=_groupListView;
-@property(readonly) ABPersonListSearchController *searchController; // @synthesize searchController=_searchController;
-@property(readonly) CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
+@property __weak id <CNContactPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)resetUsageStatistics;
-- (unsigned long long)countOfServerSearchesPerformed;
-- (unsigned long long)countOfLocalSearchesPerformed;
-- (unsigned long long)countOfGroupsViewed;
-- (unsigned long long)countOfContactsExpanded;
-- (void)traceUsageStatistics;
 - (void)registerSectionsForDraggedTypes:(id)arg1;
-- (void)showSectionWithIdentifier:(id)arg1;
+- (void)selectSectionWithIdentifier:(id)arg1;
 - (void)addSection:(id)arg1;
-- (void)setSearchFieldVisible:(BOOL)arg1;
-- (void)setDisplayedKeys:(id)arg1;
-- (void)setPickerScope:(id)arg1;
-- (id)pickerView;
-- (void)setView:(id)arg1;
-- (void)setAccounts:(id)arg1;
-- (id)browsingHeadliner;
-@property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate;
-- (void)popoverDidCreate;
-- (unsigned long long)awakeFromRemoteView;
-- (void)awakeFromNib;
-- (id)nibName;
-- (id)makePersonListUIReflector;
-- (id)makeGroupListNotificationHandler;
-- (void)setupNotificationWatcher;
-- (void)setupSearchController;
-- (void)setupGroupListController;
-- (void)setupContactListController;
-- (void)setInitialSelection;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)didShowSectionWithIdentifier:(id)arg1;
+- (void)didSearchForString:(id)arg1;
+- (void)didSelectContact:(id)arg1 key:(id)arg2 value:(id)arg3;
+@property(getter=isSearchFieldVisible) BOOL searchFieldVisible;
+@property(copy) NSArray *displayedKeys; // @synthesize displayedKeys=_displayedKeys;
+- (id)view;
 - (id)init;
 
 // Remaining properties

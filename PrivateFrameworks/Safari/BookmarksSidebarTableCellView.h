@@ -6,24 +6,22 @@
 
 #import "NSTableCellView.h"
 
-@class BookmarksSidebarTitleTextFieldBackground, NSLayoutConstraint, NSTextField, RolloverImageButton;
+@class NSLayoutConstraint, NSTextField, RolloverImageButton;
 
 __attribute__((visibility("hidden")))
 @interface BookmarksSidebarTableCellView : NSTableCellView
 {
-    BookmarksSidebarTitleTextFieldBackground *_editingBackgroundView;
-    NSLayoutConstraint *_textFieldRightMarginConstraintWhenEditing;
     BOOL _usesFolderStyle;
     BOOL _usesFavoriteStyle;
     id <BookmarksSidebarTableCellViewDelegate> _delegate;
-    NSLayoutConstraint *_textFieldRightMarginConstraintWhenNotEditing;
+    NSLayoutConstraint *_textFieldRightMarginConstraintWhenEditing;
     NSTextField *_bookmarkTitleTextField;
     RolloverImageButton *_removeButton;
 }
 
 @property(nonatomic) __weak RolloverImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(nonatomic) __weak NSTextField *bookmarkTitleTextField; // @synthesize bookmarkTitleTextField=_bookmarkTitleTextField;
-@property(retain, nonatomic) NSLayoutConstraint *textFieldRightMarginConstraintWhenNotEditing; // @synthesize textFieldRightMarginConstraintWhenNotEditing=_textFieldRightMarginConstraintWhenNotEditing;
+@property(retain, nonatomic) NSLayoutConstraint *textFieldRightMarginConstraintWhenEditing; // @synthesize textFieldRightMarginConstraintWhenEditing=_textFieldRightMarginConstraintWhenEditing;
 @property(nonatomic) BOOL usesFavoriteStyle; // @synthesize usesFavoriteStyle=_usesFavoriteStyle;
 @property(nonatomic) BOOL usesFolderStyle; // @synthesize usesFolderStyle=_usesFolderStyle;
 @property(nonatomic) __weak id <BookmarksSidebarTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -35,6 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
+- (BOOL)becomeFirstResponder;
+- (BOOL)acceptsFirstResponder;
 - (void)bookmarksSidebarTitleTextViewResignFirstResponder:(id)arg1;
 - (void)bookmarksSidebarTitleTextViewBecameFirstResponder:(id)arg1;
 - (void)didPressRemoveButton:(id)arg1;

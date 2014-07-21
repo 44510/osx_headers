@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)createWebClip:(id)arg1;
 - (void)setShouldOpenWindowBehindFrontmost:(BOOL)arg1;
 - (BOOL)shouldOpenWindowBehindFrontmost;
-- (void)tryMultipleURLs:(unique_ptr_b4bbd85b)arg1;
+- (void)tryMultipleURLs:(unique_ptr_ed026c72)arg1;
 - (struct SearchableWebContentViewController *)currentBrowserOrOverlayContentViewController;
 - (struct BrowserContentViewController *)currentBrowserContentViewController;
 - (void)_sharePageViaMail:(id)arg1;

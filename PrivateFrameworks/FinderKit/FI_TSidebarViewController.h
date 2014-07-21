@@ -170,7 +170,7 @@ __attribute__((visibility("hidden")))
 - (void)didEnterFullScreen:(id)arg1;
 - (void)willEnterFullScreen:(id)arg1;
 - (void)windowZoomDidComplete:(id)arg1;
-- (void)windowDidResize:(id)arg1;
+- (void)clipViewBoundsChanged:(id)arg1;
 - (void)handleItemsChanged:(id)arg1;
 - (void)handleItemsAddedRemovedReordered:(id)arg1;
 - (void)handleSharedSectionVibilityChanged:(id)arg1;

@@ -12,6 +12,7 @@
 
 @interface BRCServerContainer : NSObject <BRCContainer>
 {
+    NSDate *_lastSyncDownDate;
     BRCAccountSession *_session;
     unsigned int _schemaVersion;
     PQLConnection *_db;
@@ -19,7 +20,6 @@
     BOOL _needsSave;
     BOOL _hasRegisteredPushTopics;
     NSString *_containerID;
-    NSDate *_lastSyncDownDate;
     CKServerChangeToken *_changeToken;
     CKServerChangeToken *_pendingChangeToken;
     NSString *_containerMetadataEtag;
@@ -28,11 +28,13 @@
     PQLNameInjection *_itemsTable;
     PQLNameInjection *_pendingFetchesTable;
     NSArray *_tableNames;
+    PQLNameInjection *_xattrsTable;
 }
 
 + (PQLResultSet_67aa68bb *)containersEnumerator:(id)arg1;
 + (id)containerByID:(id)arg1 withDB:(id)arg2;
 + (BOOL)_sql_upgrade_to_version1:(id)arg1;
+@property(readonly, nonatomic) PQLNameInjection *xattrsTable; // @synthesize xattrsTable=_xattrsTable;
 @property(readonly, nonatomic) NSArray *tableNames; // @synthesize tableNames=_tableNames;
 @property(readonly, nonatomic) PQLNameInjection *pendingFetchesTable; // @synthesize pendingFetchesTable=_pendingFetchesTable;
 @property(readonly, nonatomic) PQLNameInjection *itemsTable; // @synthesize itemsTable=_itemsTable;
@@ -44,7 +46,6 @@
 @property(readonly, nonatomic) NSString *containerMetadataEtag; // @synthesize containerMetadataEtag=_containerMetadataEtag;
 @property(readonly, nonatomic) CKServerChangeToken *pendingChangeToken; // @synthesize pendingChangeToken=_pendingChangeToken;
 @property(readonly, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
-@property(retain) NSDate *lastSyncDownDate; // @synthesize lastSyncDownDate=_lastSyncDownDate;
 @property(retain, nonatomic) NSString *containerID; // @synthesize containerID=_containerID;
 @property(readonly, nonatomic) BOOL needsSave; // @synthesize needsSave=_needsSave;
 - (void).cxx_destruct;
@@ -65,8 +66,12 @@
 - (BOOL)savePendingFetchContentRecordsToServerTruth;
 - (PQLResultSet_67aa68bb *)_enumeratePendingFetchDeletedRecordIDs;
 - (PQLResultSet_67aa68bb *)_enumeratePendingFetchRecords;
+- (id)createUpdateQuotaOperation;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 stateIsInconsistent:(BOOL)arg3;
 - (void)collectTombstoneRanks:(id)arg1;
+- (id)xattrForSignature:(id)arg1;
+- (BOOL)storeXattr:(id)arg1;
+- (BOOL)hasXattrWithSignature:(id)arg1;
 - (void)resetTruthWithIsFullReset:(BOOL)arg1;
 - (id)_initWithContainerID:(id)arg1 db:(id)arg2 accountSession:(id)arg3;
 - (id)initFromPQLResultSet:(id)arg1 error:(id *)arg2;
@@ -83,8 +88,10 @@
 @property(readonly, nonatomic) NSString *prefixedContainerID;
 @property(readonly, nonatomic) NSString *containerIdentifier;
 @property(readonly, copy) NSString *description;
+- (id)descriptionWithContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property NSDate *lastSyncDownDate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

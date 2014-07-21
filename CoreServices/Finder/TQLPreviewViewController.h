@@ -29,7 +29,6 @@
 - (void)previewView:(id)arg1 doubleClickedOnPreviewItem:(id)arg2;
 - (void)previewView:(id)arg1 willShowPreviewItem:(id)arg2;
 - (void)previewView:(id)arg1 willLoadPreviewItem:(id)arg2;
-- (void)timeMachineWillStart:(id)arg1;
 - (void)adjustPreviewFrame;
 - (_Bool)isResizable;
 - (void)refresh;

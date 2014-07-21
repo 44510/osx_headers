@@ -20,7 +20,8 @@
 + (void)removeMessage:(id)arg1 fromSortData:(id)arg2;
 + (id)_newSortOrderDictionary;
 + (id)mutableCopyOfSortData:(id)arg1;
-+ (id)copySortDataForMessages:(id)arg1 sortOrders:(id)arg2 withDelegate:(id)arg3;
++ (id)_automaticSecondarySortForPrimarySort:(id)arg1;
++ (id)copySortDataForMessages:(id)arg1 sortOrders:(id)arg2 includeDataForAutomaticSecondarySort:(BOOL)arg3 withDelegate:(id)arg4;
 + (void)addSortData:(id)arg1 forMessages:(id)arg2 sortOrder:(id)arg3 withDelegate:(id)arg4;
 + (id)equivalentSortsForSort:(id)arg1;
 - (long long)libraryID;

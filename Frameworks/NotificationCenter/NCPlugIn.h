@@ -4,18 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "NSExtensionContext.h"
 
 #import "NCPlugInProtocol.h"
 #import "NSXPCListenerDelegate.h"
-#import "PKModularService.h"
 
-@class NCWidgetExtensionContext, NCWidgetViewService, NSBundle, NSObject<OS_dispatch_source>, NSString, NSXPCConnection, NSXPCListener, _NCWidgetServiceViewController;
+@class NCWidgetExtensionContext, NCWidgetViewService, NSBundle, NSObject<OS_dispatch_source>, NSString, _NCWidgetServiceViewController;
 
-@interface NCPlugIn : NSObject <PKModularService, NSXPCListenerDelegate, NCPlugInProtocol>
+@interface NCPlugIn : NSExtensionContext <NSXPCListenerDelegate, NCPlugInProtocol>
 {
-    NSXPCListener *_listener;
-    NSXPCConnection *_hostConnection;
     CDUnknownBlockType _readyBlock;
     NSBundle *_mainBundle;
     struct __CFBundle *_mainCFBundle;
@@ -32,8 +29,9 @@
     CDStruct_3c058996 _marginInset;
 }
 
-+ (id)initForPlugInKit;
 + (void)initialize;
++ (id)_extensionAuxiliaryVendorProtocol;
++ (id)_extensionAuxiliaryHostProtocol;
 @property _Bool initailWidgetUpdateComplete; // @synthesize initailWidgetUpdateComplete=_initailWidgetUpdateComplete;
 @property(retain) NCWidgetViewService *viewService; // @synthesize viewService=_viewService;
 @property(readonly) CDStruct_3c058996 marginInset; // @synthesize marginInset=_marginInset;
@@ -41,8 +39,6 @@
 @property(readonly) NSBundle *mainBundle; // @synthesize mainBundle=_mainBundle;
 @property(nonatomic) long long widgetMode; // @synthesize widgetMode=_widgetMode;
 - (void).cxx_destruct;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)_startListener;
 - (void)invalidateViewControllers;
 - (void)_stopEditMode;
 - (BOOL)_startEditMode;
@@ -61,7 +57,7 @@
 @property(readonly) _NCWidgetServiceViewController *topViewController;
 @property(readonly) id hostPrincipal;
 - (id)rootObjectForPlugIn:(id)arg1;
-- (id)init;
+- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

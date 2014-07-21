@@ -47,7 +47,7 @@
 - (void)_removeLeftPaneFromFullScreenAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_removeLeftPaneFromWindowAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)animationDidEnd:(id)arg1;
-- (void)addLeftPane:(id)arg1 width:(double)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addLeftPane:(id)arg1 width:(double)arg2 animated:(BOOL)arg3 canExpandWindow:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_addInFullScreenLeftPane:(id)arg1 width:(double)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_addInWindowLeftPane:(id)arg1 width:(double)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (struct CGRect)_frameForWindowFrame:(struct CGRect)arg1 withSidebarOfWidth:(double)arg2 beingAdded:(BOOL)arg3;

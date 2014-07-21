@@ -15,6 +15,12 @@
     NSString *_identifier;
     NSMutableDictionary *_propertiesByBundleID;
     NSMultiReadUniWriteLock *_readWriteLock;
+    long long _lastServerUpdateOnceToken;
+    NSDate *_lastServerUpdate;
+    long long _currentStatusOnceToken;
+    unsigned int _currentStatus;
+    BOOL _isOverQuota;
+    BOOL _isCloudSyncEnabled;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -26,6 +32,7 @@
 + (id)containerInRepositoryURL:(id)arg1 createIfMissing:(BOOL)arg2 error:(id *)arg3;
 + (id)readMetadataForContainerID:(id)arg1 fromPlistAtPath:(id)arg2 createIfMissing:(BOOL)arg3 error:(id *)arg4;
 + (id)containersRepositoryURL;
++ (void)postContainerStatusChangeNotificationWithID:(id)arg1 key:(id)arg2 value:(id)arg3;
 + (void)postContainerListUpdateNotification;
 + (id)propertiesForContainerID:(id)arg1 usingBundle:(id)arg2 minimumBundleVersion:(id)arg3 bundleIcons:(id *)arg4;
 + (BOOL)versionOfBundle:(id)arg1 changedFromVersion:(id)arg2;
@@ -34,11 +41,13 @@
 + (id)unmangleContainerID:(id)arg1;
 + (id)mangleContainerID:(id)arg1;
 + (id)containerForContainerID:(id)arg1;
+@property(nonatomic) BOOL isCloudSyncEnabled; // @synthesize isCloudSyncEnabled=_isCloudSyncEnabled;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, nonatomic) unsigned int currentStatus;
-@property(readonly, nonatomic) NSDate *lastServerUpdate;
+@property(readonly, nonatomic, getter=isOverQuota) BOOL overQuota; // @synthesize overQuota=_isOverQuota;
+@property(nonatomic) unsigned int currentStatus;
+@property(retain, nonatomic) NSDate *lastServerUpdate;
 - (id)imageRepresentationsAvailable;
 - (id)imageDataForSize:(struct CGSize)arg1 scale:(long long)arg2;
 @property(readonly, nonatomic) NSSet *importedTypes;

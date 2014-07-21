@@ -10,19 +10,19 @@
 #import "NSSharingServiceDelegate.h"
 #import "NSSharingServicePickerDelegate.h"
 
-@class NSMenu, NSString;
+@class NSMenu, NSSharingServicePicker, NSString;
 
 @interface SharingController : NSObject <NSMenuDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
     NSMenu *_shareMenu;
+    NSSharingServicePicker *_fileMenuSharePicker;
 }
 
 + (id)_noteBodyHTMLString:(id)arg1;
 + (id)webArchiveForNote:(id)arg1 atURL:(id)arg2;
+@property(retain, nonatomic) NSSharingServicePicker *fileMenuSharePicker; // @synthesize fileMenuSharePicker=_fileMenuSharePicker;
 @property(retain, nonatomic) NSMenu *shareMenu; // @synthesize shareMenu=_shareMenu;
 - (void).cxx_destruct;
-- (BOOL)validateMenuItem:(id)arg1;
-- (void)shareNote:(id)arg1;
 - (id)_sharedNote;
 - (id)_sharedPlainTextArrayWithAttachments;
 - (id)_plainTextRepresentation;
@@ -30,8 +30,8 @@
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
+- (id)sharingService:(id)arg1 sharedItemsFromProposedItems:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
-- (CDUnknownBlockType)handlerForService:(id)arg1;
 - (id)createSharingServicePicker;
 
 // Remaining properties

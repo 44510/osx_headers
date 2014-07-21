@@ -80,6 +80,7 @@
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_vibrancyFilterForControlView:(id)arg1;
 - (BOOL)_allowsVibrancyForControlView:(id)arg1;
+- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
 - (struct __CFDictionary *)_coreUIDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)setControlView:(id)arg1;

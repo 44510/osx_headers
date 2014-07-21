@@ -38,6 +38,7 @@
     NSObject<OS_dispatch_group> *_faultingGroup;
     NSMutableIndexSet *_pendingCoordinatedIOs;
     NSMutableSet *_pendingFileCoordinators;
+    BOOL _shouldForceContainerForeground;
     NSMutableSet *_foregroundXPCClients;
     NSMutableSet *_XPCClientsUsingUbiquity;
     CDAttribute *_coreDuetContainerEventAttribute;
@@ -62,7 +63,6 @@
     PQLNameInjection *_pkgItemsTable;
     PQLNameInjection *_desiredAdditionsTable;
     PQLNameInjection *_serverItemsTable;
-    PQLNameInjection *_serverVersionsTable;
     NSArray *_tableNames;
     BRCDBThrottle *_readerThrottle;
     BRCDBThrottle *_applyThrottle;
@@ -83,7 +83,6 @@
 @property(readonly, nonatomic) BRCDBThrottle *applyThrottle; // @synthesize applyThrottle=_applyThrottle;
 @property(readonly, nonatomic) BRCDBThrottle *readerThrottle; // @synthesize readerThrottle=_readerThrottle;
 @property(readonly, nonatomic) NSArray *tableNames; // @synthesize tableNames=_tableNames;
-@property(readonly, nonatomic) PQLNameInjection *serverVersionsTable; // @synthesize serverVersionsTable=_serverVersionsTable;
 @property(readonly, nonatomic) PQLNameInjection *serverItemsTable; // @synthesize serverItemsTable=_serverItemsTable;
 @property(readonly, nonatomic) PQLNameInjection *desiredAdditionsTable; // @synthesize desiredAdditionsTable=_desiredAdditionsTable;
 @property(readonly, nonatomic) PQLNameInjection *pkgItemsTable; // @synthesize pkgItemsTable=_pkgItemsTable;
@@ -132,6 +131,8 @@
 - (unsigned long long)documentSizeUsage;
 - (BOOL)hasLocalChanges;
 - (BOOL)hasUbiquitousDocuments;
+- (void)availableQuotaDidIncreaseWithNewAvailableQuota:(long long)arg1;
+- (void)handleRootRecordDeletion;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 recoverFromRank:(id)arg2 caughtUpWithServer:(BOOL)arg3 flushClientTruth:(BOOL)arg4;
 - (void)_buildUnappliedCommandsQueue:(unsigned long long)arg1 maxRank:(unsigned long long)arg2;
 - (id)_itemsKilledInSyncUp;
@@ -151,9 +152,12 @@
 - (void)scheduleSyncUp;
 - (void)startSyncOperationOnQueue:(id)arg1 syncUpBudget:(float)arg2 now:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long syncKey;
-- (unsigned int)clearSyncStateBits:(unsigned int)arg1;
-- (unsigned int)setSyncStateBits:(unsigned int)arg1;
+- (void)clearSyncStateBits:(unsigned int)arg1;
+- (void)setSyncStateBits:(unsigned int)arg1;
 @property(readonly) unsigned int syncState;
+- (void)didMarkDeadItemNeedsSyncUp;
+- (void)didClearAllItemsMarkedOverQuota;
+- (void)didMarkItemUploadOverQuota;
 - (void)didUploadAllItems;
 - (void)didDownloadAllItems;
 - (void)didMarkItemNeedsUpload;
@@ -184,7 +188,9 @@
 - (PQLResultSet_67aa68bb *)bouncedItemsEnumerator;
 - (PQLResultSet_67aa68bb *)itemsWithInFlightDiffsEnumerator;
 - (PQLResultSet_67aa68bb *)itemsNeedingDownloadEnumeratorWithItemIDFilter:(CDUnknownBlockType)arg1;
+- (PQLResultSet_67aa68bb *)itemsWithFailedUploadEnumeratorWithSizeSmallerThan:(unsigned long long)arg1;
 - (PQLResultSet_67aa68bb *)itemsNeedingUploadEnumeratorWithItemIDFilter:(CDUnknownBlockType)arg1;
+- (PQLResultSet_67aa68bb *)_itemsNeedingUploadEnumeratorWithAdditionalClause:(id)arg1;
 - (unsigned long long)countOfItemsWithPendingChanges;
 - (PQLResultSet_67aa68bb *)serverItemsEnumerator;
 - (PQLResultSet_67aa68bb *)itemsEnumerator;
@@ -205,6 +211,7 @@
 - (id)itemByItemID:(id)arg1;
 - (id)serverItemByParentID:(id)arg1 andName:(id)arg2;
 - (id)serverItemByItemID:(id)arg1;
+- (id)xattrForSignature:(id)arg1;
 - (id)deviceKeyForName:(id)arg1;
 - (void)serverDidAckAliasTargetDeletion:(id)arg1;
 - (BOOL)serverDidAckAliasTarget:(id)arg1;

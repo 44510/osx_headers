@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct CGPath *)_newLinePathForArrow:(id)arg1 fromBezierParameter:(double)arg2 toBezierParameter:(double)arg3 pageControllerForPixelAlignmentOrNil:(id)arg4;
++ (struct CGPath *)_newLinePathForArrow:(id)arg1 withHeads:(BOOL)arg2 fromBezierParameter:(double)arg3 toBezierParameter:(double)arg4 pageControllerForPixelAlignmentOrNil:(id)arg5;
 + (void)_arrowHeadLineIntersection:(id)arg1 outStartIntersection:(struct CGPoint *)arg2 outBezierStartParameter:(double *)arg3 outEndIntersection:(struct CGPoint *)arg4 outBezierEndParameter:(double *)arg5;
 + (struct CGPoint)_cubicBezierPointForParameter:(double)arg1 start:(struct CGPoint)arg2 controlPt1:(struct CGPoint)arg3 controlPt2:(struct CGPoint)arg4 end:(struct CGPoint)arg5;
 + (double)_oneDimensionalCubicBezierValueForParameter:(double)arg1 start:(double)arg2 controlPt1:(double)arg3 controlPt2:(double)arg4 end:(double)arg5;

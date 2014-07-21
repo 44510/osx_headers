@@ -4,33 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <CloudDocsDaemon/BRCOperation.h>
 
 #import "BRNonLocalVersionSending.h"
 
-@class BRCItemID, BRCLocalContainer, BRCStatInfo, BRCXPCClient, CKFetchRecordVersionsOperation, NSString, NSURL;
+@class BRCItemID, BRCStatInfo, BRCXPCClient, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
-@interface BRCNonLocalVersionsSender : NSObject <BRNonLocalVersionSending>
+@interface BRCNonLocalVersionsSender : BRCOperation <BRNonLocalVersionSending>
 {
     id <BRNonLocalVersionReceiving> _receiver;
     BRCItemID *_itemID;
-    BRCLocalContainer *_container;
     BRCStatInfo *_st;
     NSString *_currentEtag;
-    CKFetchRecordVersionsOperation *_fetchRecordVersionsOperation;
     NSString *_storagePathPrefix;
-    NSURL *_logicalURL;
     struct NSObject *_storage;
     BRCXPCClient *_client;
+    CDUnknownBlockType _reply;
+    NSURL *_logicalURL;
     NSURL *_physicalURL;
 }
 
 @property(readonly, nonatomic) NSURL *physicalURL; // @synthesize physicalURL=_physicalURL;
+@property(readonly, nonatomic) NSURL *logicalURL; // @synthesize logicalURL=_logicalURL;
 - (void).cxx_destruct;
-- (id)initWithDocumentURL:(id)arg1 client:(id)arg2 root:(id)arg3 XPCReceiver:(id)arg4 error:(id *)arg5;
+- (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (BOOL)shouldRetryForError:(id)arg1;
+- (void)main;
+- (id)_depsTrackingOperation;
+- (id)_fetchVersionsOperationWithDepsOp:(id)arg1;
+- (id)_fetchThumbnailOperationForVersionRecord:(id)arg1 faultURL:(id)arg2;
+- (id)initWithLookup:(id)arg1 client:(id)arg2 XPCReceiver:(id)arg3 error:(id *)arg4;
 - (oneway void)invalidate;
-- (void)listNonLocalVersionsAtURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)listNonLocalVersionsWithReply:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

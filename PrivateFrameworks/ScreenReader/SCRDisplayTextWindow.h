@@ -22,6 +22,7 @@
     double _mouseDownFontSize;
     BOOL _isOptionMouseDown;
     BOOL _isFrozen;
+    BOOL _registeredObservers;
 }
 
 + (BOOL)textFrozen;
@@ -69,6 +70,8 @@
 - (struct CGSize)minLineSize;
 - (void)centerText;
 - (void)setTextColorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)removeObservers;
+- (void)registerObservers;
 - (void)dealloc;
 - (id)initWithScreenRect:(struct CGRect)arg1;
 

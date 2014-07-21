@@ -9,11 +9,10 @@
 #import "NSTableViewDataSource.h"
 #import "NSTextStorageDelegate.h"
 
-@class NSArray, NSDictionary, NSScrollView, NSString, NSTableView, NSTextField, NSView, OSAScriptAssistantDataSource, OSAScriptView;
+@class NSArray, NSDictionary, NSScrollView, NSString, NSTableView, NSTextField, OSAScriptAssistantDataSource, OSAScriptView;
 
 @interface OSAScriptAssistant : NSWindowController <NSTableViewDataSource, NSTextStorageDelegate>
 {
-    NSView *_view;
     NSTableView *_tableView;
     NSScrollView *_scrollView;
     NSTextField *_infoField;
@@ -101,6 +100,7 @@
 - (id)scriptView;
 - (void)finalize;
 - (void)dealloc;
+- (void)windowDidLoad;
 - (id)initWithScriptView:(id)arg1;
 - (void)awakeFromNib;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(int)arg3;

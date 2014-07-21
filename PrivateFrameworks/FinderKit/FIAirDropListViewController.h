@@ -9,14 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface FIAirDropListViewController : FI_TTableViewController
 {
-    function_966f7bb5 _clickHandler;
+    function_35ade228 _clickHandler;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)selectionShouldChangeInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (void)setClickHandler:(const struct function<void (const TFENode &)> *)arg1;
+- (void)setClickHandler:(const function_35ade228 *)arg1;
 - (Class)dataSourceClass;
 - (void)aboutToTearDown;
 - (void)dealloc;

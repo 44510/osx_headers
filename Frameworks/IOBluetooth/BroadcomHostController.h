@@ -16,10 +16,13 @@
 - (int)BluetoothHCIBroadcomResetBasicRateACLConnectionStats;
 - (int)BluetoothHCIBroadcomGetBasicRateACLConnectionStats;
 - (void)processRawEventData:(const void *)arg1 dataSize:(unsigned long long)arg2;
+- (int)BluetoothHCILERemoveExtendedAdvertisingInstance:(unsigned char)arg1 outLEextOpcode:(char *)arg2;
+- (int)BluetoothHCILECreateExtendedAdvertisingInstance:(unsigned char)arg1 address:(struct BluetoothDeviceAddress *)arg2 outLEextOpcode:(char *)arg3 outHandle:(char *)arg4;
 - (int)BluetoothHCILETrackSensor:(struct BluetoothDeviceAddress *)arg1 addressType:(unsigned char)arg2 timeoutValue:(unsigned char)arg3 outLEextOpcode:(char *)arg4;
 - (int)BluetoothHCILEExtendedDuplicateFilter:(char *)arg1 outAction:(unsigned char)arg2;
 - (int)BluetoothHCILEAdvPacketPacketFilterServiceUUIDClear:(struct BluetoothDeviceAddress *)arg1 addressType:(unsigned char)arg2 outLEextOpcode:(char *)arg3 outAction:(char *)arg4;
 - (int)BluetoothHCILEAdvPacketPacketFilterServiceUUIDWrite:(struct BluetoothDeviceAddress *)arg1 addressType:(unsigned char)arg2 logicalType:(unsigned char)arg3 outLEextOpcode:(char *)arg4 outAction:(char *)arg5 UUID:(char *)arg6;
+- (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddress:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
 - (int)BroadcomHCILEAddAdvancedMatchingRuleWithAddress:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
 - (int)BroadcomHCILERemoveAdvancedMatchingRule:(CDStruct_cbd83a78)arg1 mask:(CDStruct_cbd83a78)arg2 RSSIThreshold:(BOOL)arg3 packetType:(unsigned char)arg4 matchingCapacity:(char *)arg5 matchingRemaining:(char *)arg6;
 - (int)BroadcomHCILEAddAdvancedMatchingRule:(CDStruct_cbd83a78)arg1 mask:(CDStruct_cbd83a78)arg2 RSSIThreshold:(BOOL)arg3 packetType:(unsigned char)arg4 matchingCapacity:(char *)arg5 matchingRemaining:(char *)arg6;

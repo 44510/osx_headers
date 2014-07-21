@@ -39,10 +39,47 @@ struct CGVector {
     double _field2;
 };
 
+struct PATHSEGMENT {
+    unsigned int :4;
+    unsigned int :60;
+    struct CGPoint _field1;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
 };
+
+struct _xmlDoc {
+    void *_field1;
+    int _field2;
+    char *_field3;
+    struct _xmlNode *_field4;
+    struct _xmlNode *_field5;
+    struct _xmlNode *_field6;
+    struct _xmlNode *_field7;
+    struct _xmlNode *_field8;
+    struct _xmlDoc *_field9;
+    int _field10;
+    int _field11;
+    struct _xmlDtd *_field12;
+    struct _xmlDtd *_field13;
+    struct _xmlNs *_field14;
+    char *_field15;
+    char *_field16;
+    void *_field17;
+    void *_field18;
+    char *_field19;
+    int _field20;
+    struct _xmlDict *_field21;
+    void *_field22;
+    int _field23;
+    int _field24;
+};
+
+struct _xmlDtd;
+
+struct _xmlNode;
 
 struct potrace_bitmap_s {
     int _field1;
@@ -103,6 +140,11 @@ typedef struct {
     char _field3;
     double _field4;
 } CDStruct_34a7c572;
+
+typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
 
 typedef struct {
     int _field1;

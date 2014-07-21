@@ -28,6 +28,7 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *operationUUID; // @synthesize operationUUID=_operationUUID;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

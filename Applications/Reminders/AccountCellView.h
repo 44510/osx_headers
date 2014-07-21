@@ -12,11 +12,9 @@
 
 @interface AccountCellView : SidebarCellView <NSTextFieldDelegate>
 {
-    BOOL _isDropTarget;
     RemindersAccount *_account;
 }
 
-@property BOOL isDropTarget; // @synthesize isDropTarget=_isDropTarget;
 @property(retain) RemindersAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2 account:(id)arg3;

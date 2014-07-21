@@ -219,6 +219,7 @@
 - (void)setScalesWhenResized:(BOOL)arg1;
 - (BOOL)isFlipped;
 - (void)setFlipped:(BOOL)arg1;
+- (BOOL)NS_needsRecommitOnDefaultContentsScaleChange;
 - (void *)CA_copyRenderValue;
 
 // Remaining properties

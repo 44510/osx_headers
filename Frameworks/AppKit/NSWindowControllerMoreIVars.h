@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSAutounbinder, NSMapTable, NSStoryboard, NSViewController;
+@class NSArray, NSAutounbinder, NSDictionary, NSMapTable, NSStoryboard, NSViewController;
 
 __attribute__((visibility("hidden")))
 @interface NSWindowControllerMoreIVars : NSObject
@@ -17,10 +17,14 @@ __attribute__((visibility("hidden")))
     NSMapTable *_externalObjectsTableForWindowLoading;
     NSArray *_segueTemplates;
     NSStoryboard *_storyboard;
+    NSDictionary *_segueDestinationOptions;
+    BOOL _retainedSelf;
     NSViewController *_contentViewController;
 }
 
 @property(retain) NSViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
+@property BOOL retainedSelf; // @synthesize retainedSelf=_retainedSelf;
+@property(retain) NSDictionary *segueDestinationOptions; // @synthesize segueDestinationOptions=_segueDestinationOptions;
 @property(retain) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 @property(retain) NSArray *segueTemplates; // @synthesize segueTemplates=_segueTemplates;
 @property(retain) NSMapTable *externalObjectsTableForWindowLoading; // @synthesize externalObjectsTableForWindowLoading=_externalObjectsTableForWindowLoading;

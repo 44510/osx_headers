@@ -20,33 +20,43 @@ __attribute__((visibility("hidden")))
     id <NSObject> _historyWasLoadedObserver;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _saveOperationSuddenTerminationDisabler;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _fetchOperationSuddenTerminationDisabler;
+    BOOL _removedHistoryItemsArePendingSave;
     WBSCloudHistorySyncThrottler *_saveChangesThrottler;
     NSTimer *_saveChangesLaterTimer;
+    unsigned long long _numberOfDevicesInSyncCircle;
 }
 
 + (id)sharedCloudHistory;
-@property(nonatomic, getter=isCloudHistoryEnabled) BOOL cloudHistoryEnabled; // @synthesize cloudHistoryEnabled=_cloudHistoryEnabled;
+@property(nonatomic) unsigned long long numberOfDevicesInSyncCircle; // @synthesize numberOfDevicesInSyncCircle=_numberOfDevicesInSyncCircle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_updateSaveChangesThrottlingPolicy;
+- (id)currentSaveChangesThrottlerPolicyString;
 - (void)setRecordOfPastOperations:(id)arg1 forThrottler:(id)arg2;
 - (id)recordOfPastOperationsForThrottler:(id)arg1;
+- (void)_cloudHistoryConfigurationChanged:(id)arg1;
 - (void)_saveChangesLaterTimerFired:(id)arg1;
 - (void)_scheduleSaveChangesLaterTimerWithInterval:(double)arg1;
 - (double)_backoffTimeIntervalFromError:(id)arg1;
 - (long long)_resultFromError:(id)arg1;
+- (long long)_estimatedPriorityForPotentialSaveAttempt;
 - (long long)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
+- (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyWasLoaded:(id)arg1;
 - (void)_registerForHistoryWasLoadedNotificationIfNecessary;
 - (void)_fetchChangesWhenHistoryLoads;
 - (void)_saveChangesWhenHistoryLoads;
-- (void)_saveChangesAfterDeterminingNumberOfDevicesInSyncCircle;
+- (void)_saveChangesAfterDeterminingNumberOfDevicesInSyncCircle:(id)arg1;
 - (void)_fetchAndMergeChangesWithServerChangeTokenData:(id)arg1 intoHistory:(id)arg2;
 - (void)fetchAndMergeChanges;
+- (id)dateOfNextPermittedSaveChangesAttempt;
+- (void)_postSaveChangesAttemptCompletedNotificationWithAllPendingDataSaved:(BOOL)arg1;
 - (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 withCallback:(CDUnknownBlockType)arg4;
 - (void)_saveChangesToCloudHistoryStoreBypassingThrottler:(BOOL)arg1;
 - (void)saveChangesToCloudHistoryStoreBypassingThrottler;
 - (void)saveChangesToCloudHistoryStore;
 - (BOOL)_hasCloudHistoryEntitlement;
+@property(nonatomic, getter=isCloudHistoryEnabled) BOOL cloudHistoryEnabled;
 - (void)dealloc;
 - (id)init;
 

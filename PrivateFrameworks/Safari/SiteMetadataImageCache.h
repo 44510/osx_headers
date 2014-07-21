@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_diskAccessQueue;
     NSMutableDictionary *_imagesForKeyStrings;
-    NSMutableDictionary *_retainCountsForImageFileNames;
+    NSMutableDictionary *_imageQualityToRetainCountMaps;
     NSMutableSet *_pendingKeyStringRequests;
     NSMutableSet *_missingImageKeyStrings;
     NSMutableDictionary *_cacheSettings;
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isImageRetainedForKeyString:(id)arg1 quality:(int)arg2;
 - (void)_releaseImageForKeyString:(id)arg1 quality:(int)arg2;
 - (void)_retainImageForKeyString:(id)arg1 quality:(int)arg2;
+- (id)_keyStringsToRetainCountsForQuality:(int)arg1;
 - (void)_setImageState:(int)arg1 forKeyString:(id)arg2;
 - (int)_imageStateForKeyString:(id)arg1;
 - (void)_removeAllImages;

@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class IMHandle, NSDate, NSString;
+@class IMHandle, IMPerson, NSDate, NSString;
 
 @interface FTContactRowItem : NSObject <NSCopying>
 {
@@ -18,6 +18,7 @@
     NSString *_callHistoryUniqueID;
     NSString *_uniqueID;
     NSString *_displayName;
+    IMPerson *_person;
     IMHandle *_handle;
     NSDate *_mostRecentCallDate;
     long long _mostRecentCallType;
@@ -33,6 +34,7 @@
 @property long long mostRecentCallType; // @synthesize mostRecentCallType=_mostRecentCallType;
 @property(retain) NSDate *mostRecentCallDate; // @synthesize mostRecentCallDate=_mostRecentCallDate;
 @property(retain) IMHandle *handle; // @synthesize handle=_handle;
+@property(retain) IMPerson *person; // @synthesize person=_person;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain) NSString *callHistoryUniqueID; // @synthesize callHistoryUniqueID=_callHistoryUniqueID;

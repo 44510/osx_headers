@@ -17,6 +17,7 @@
 
 + (void)setStoreFrontID:(id)arg1;
 + (id)storeFrontID;
++ (BOOL)useMonobarStyle;
 + (BOOL)isBookStoreClient;
 + (BOOL)isAppStoreClient;
 + (void)configureClientAsType:(long long)arg1;

@@ -13,10 +13,11 @@
 
 @interface PRSMovie : NSObject <NSCoding, NSSecureCoding>
 {
-    BOOL _subtitle_custom_line_breaking;
     NSImage *_image;
     NSString *_title;
     NSString *_subtitle;
+    NSArray *_subtitle_custom_line_breaking;
+    long long _subtitle_maxlines;
     NSImage *_rt_glyph;
     NSString *_rt_text;
     NSArray *_more_glyphs;
@@ -28,7 +29,8 @@
 @property(retain, nonatomic) NSArray *more_glyphs; // @synthesize more_glyphs=_more_glyphs;
 @property(retain, nonatomic) NSString *rt_text; // @synthesize rt_text=_rt_text;
 @property(retain, nonatomic) NSImage *rt_glyph; // @synthesize rt_glyph=_rt_glyph;
-@property(nonatomic) BOOL subtitle_custom_line_breaking; // @synthesize subtitle_custom_line_breaking=_subtitle_custom_line_breaking;
+@property(nonatomic) long long subtitle_maxlines; // @synthesize subtitle_maxlines=_subtitle_maxlines;
+@property(retain, nonatomic) NSArray *subtitle_custom_line_breaking; // @synthesize subtitle_custom_line_breaking=_subtitle_custom_line_breaking;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;

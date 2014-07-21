@@ -17,6 +17,7 @@
 + (void)setCustomFont:(id)arg1;
 + (id)customFont;
 + (id)AXFont;
++ (BOOL)AXTextEnabled;
 + (void)setAXSelectedFont:(long long)arg1;
 + (long long)AXSelectedFont;
 + (id)defaultFont;

@@ -54,6 +54,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (void)_initialize;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)_copyImageData;
 
 @end

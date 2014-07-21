@@ -11,6 +11,7 @@
 }
 
 + (void)launchWithReason:(id)arg1;
++ (id)gameCenterURLStringWithPath:(id)arg1;
 
 @end
 

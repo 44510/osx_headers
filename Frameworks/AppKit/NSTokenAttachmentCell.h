@@ -45,11 +45,13 @@
 - (void)drawPullDownImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawSeparatorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)separatorRectForBounds:(struct CGRect)arg1;
+@property(readonly) BOOL neverShowSeparator;
 - (BOOL)shouldDrawSeparator;
 - (BOOL)_supportsSeparators;
 - (void)drawTokenWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_isActiveInView:(id)arg1;
 - (BOOL)shouldDrawTokenBackground;
+@property(readonly) BOOL alwaysShowBackground;
 - (void)drawTokenInRect:(struct CGRect)arg1 withOptions:(id)arg2;
 - (struct CGRect)pullDownRectForBounds:(struct CGRect)arg1;
 - (struct CGPoint)cellBaselineOffset;

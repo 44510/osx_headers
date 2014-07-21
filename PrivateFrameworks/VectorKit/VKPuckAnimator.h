@@ -20,6 +20,7 @@
     BOOL _suspended;
     double _tracePlaybackSpeedMultiplier;
     unsigned long long _behavior;
+    struct VKPoint _lastProjectedPosition;
     GEORouteMatch *_lastProjectedLocation;
 }
 
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) GEORouteMatch *lastProjectedLocation; // @synthesize lastProjectedLocation=_lastProjectedLocation;
 @property(nonatomic) id <VKPuckAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <VKPuckAnimatorTarget> target; // @synthesize target=_target;
+- (id).cxx_construct;
 - (void)updateVehicleHeading:(double)arg1;
 - (void)updateLocation:(id)arg1 routeMatch:(id)arg2;
 - (void)_step;

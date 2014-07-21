@@ -20,7 +20,6 @@
     PCSimpleTimer *_wakeOnWiFiDisableTimer;
     void *_ctServerConnection;
     void *_interfaceAssertion;
-    void *_wifiManager;
     int _WWANContextIdentifier;
     NSString *_WWANInterfaceName;
     BOOL _isWWANInterfaceUp;
@@ -52,12 +51,10 @@
 - (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustWiFiAutoAssociation;
 - (void)enableWiFiAutoAssociation:(BOOL)arg1 forDelegate:(id)arg2;
-- (void)_populateWakeOnWiFiCapabilityLocked;
-- (void)_populateWakeOnWiFiCapability;
-- (void)_createWiFiManager;
 - (void)_updateWWANInterfaceAssertionsLocked;
 - (void)_updateWWANInterfaceAssertions;
 - (BOOL)_wantsWWANInterfaceAssertion;
+- (void)cutWiFiManagerDeviceAttached:(id)arg1;
 @property(readonly) BOOL areAllNetworkInterfacesDisabled;
 @property(readonly) BOOL isWakeOnWiFiSupported;
 - (BOOL)_isWiFiUsable;
@@ -86,8 +83,8 @@
 - (void)handleMachMessage:(void *)arg1;
 - (void)interfaceReachabilityChanged:(id)arg1;
 - (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
-- (void)_ctConnectionWasInvalidated;
-- (void)_mainThreadDelayedInvalidation;
+- (void)_ctConnectionAttempt;
+- (void)_mainThreadCTConnectionAttempt;
 - (void)_createCTConnection;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;

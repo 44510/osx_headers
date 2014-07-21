@@ -22,6 +22,7 @@
 @property(nonatomic) unsigned int typeCode; // @synthesize typeCode=_typeCode;
 @property(retain, nonatomic) NSString *extensionName; // @synthesize extensionName=_extensionName;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

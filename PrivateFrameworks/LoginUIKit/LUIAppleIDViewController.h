@@ -8,7 +8,7 @@
 
 #import "NSTextFieldDelegate.h"
 
-@class NSButton, NSSecureTextField, NSString, NSTextField;
+@class NSButton, NSProgressIndicator, NSSecureTextField, NSString, NSTextField;
 
 @interface LUIAppleIDViewController : LUIPopoverViewController <NSTextFieldDelegate>
 {
@@ -20,6 +20,7 @@
     NSSecureTextField *_passwordSecureTextField;
     NSButton *_cancelButton;
     NSButton *_resetPasswordButton;
+    NSProgressIndicator *_progressIndicator;
 }
 
 @property NSButton *resetPasswordButton; // @synthesize resetPasswordButton=_resetPasswordButton;
@@ -30,6 +31,7 @@
 @property NSTextField *appleIDLabel; // @synthesize appleIDLabel=_appleIDLabel;
 @property NSTextField *infoTextField; // @synthesize infoTextField=_infoTextField;
 @property NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
+- (void)dealloc;
 - (void)awakeFromNib;
 - (void)prepareForDisplay;
 - (BOOL)isTransient;

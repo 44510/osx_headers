@@ -25,12 +25,14 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TValidatingDateFormatter *> _fullDateOnlyFormatterRelative;
     struct TNSRef<FI_TValidatingDateFormatter *> _timeOnlyFormatter;
     struct TNSRef<FI_TValidatingDateFormatter *> _fileNameTimeFormatter;
+    struct TNSRef<FI_TValidatingDateFormatter *> _fileNameDateTimeFormatter;
 }
 
 + (id)dateFormatterController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)reset;
+- (id)fileNameDateTimeFormatter;
 - (id)fileNameTimeFormatter;
 - (id)timeOnlyFormatter;
 - (id)fullDateOnlyFormatter:(_Bool)arg1;

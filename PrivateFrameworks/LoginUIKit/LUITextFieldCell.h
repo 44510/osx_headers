@@ -12,6 +12,7 @@
 }
 
 @property BOOL shouldSmoothFonts; // @synthesize shouldSmoothFonts=_shouldSmoothFonts;
+- (id)accessibilityPlaceholderValue;
 - (id)placeholderString;
 - (void)setPlaceholderString:(id)arg1;
 - (void)setPlaceholderAttributedString:(id)arg1;

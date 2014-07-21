@@ -48,8 +48,6 @@ __attribute__((visibility("hidden")))
 
 + (id)visibilityEquivalenceMap;
 + (id)largeFontKeysForDisplayStyle:(unsigned long long)arg1;
-+ (id)personLayoutKeysByLine;
-+ (id)companyLayoutKeysByLine;
 + (id)keyToPreferenceMap;
 + (id)alwaysVisibleKeys;
 @property(readonly) NSButton *companyCheckbox; // @synthesize companyCheckbox=mCompanyCheckbox;
@@ -57,6 +55,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <ABCardViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)newKeyToFieldMap;
 - (id)newFieldToKeyMap;
+- (id)phoneticNameKeys;
+- (id)nameKeys;
+- (id)personLayoutKeysByLine;
+- (id)companyLayoutKeysByLine;
 - (void)setDisplayStyleFromCheckBox:(id)arg1;
 - (BOOL)shouldUseValueFromNameField:(id)arg1;
 - (void)controlTextDidEndEditing:(id)arg1;

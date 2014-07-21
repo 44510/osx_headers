@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) ABCommunicationButtonsController *buttonsController; // @synthesize buttonsController=_buttonsController;
-- (void)setFaceTimeAudioEnabled:(BOOL)arg1;
 - (void)setFaceTimeEnabled:(BOOL)arg1;
 - (void)setContactIdentifiers:(id)arg1;
 - (void)dealloc;

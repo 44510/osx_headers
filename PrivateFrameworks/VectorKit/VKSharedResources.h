@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
     VKStylesheetVendor *_stylesheetVendor;
     VKTrafficIncidentImageManager *_trafficIncidentImageManager;
     shared_ptr_807ec9ac _device;
+    struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas>> _alphaAtlas;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas>> _highInflationAlphaAtlas;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas>> _isoAlphaAtlas;
 }
 
 + (id)sharedResourcesForTileGroupIdentifier:(unsigned int)arg1;
@@ -32,6 +35,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1;
+@property(readonly, nonatomic) struct IsoAlphaAtlas *isoAlphaAtlas;
+@property(readonly, nonatomic) struct IsoAlphaAtlas *highInflationAlphaAtlas;
+@property(readonly, nonatomic) struct AlphaAtlas *alphaAtlas;
 @property(readonly, nonatomic) struct Device *device;
 
 @end

@@ -53,8 +53,7 @@
 - (NSArray *)multiValueKeys;
 - (void)markAsViewed:(NSTimer *)arg1;
 - (NSURL *)URL;
-- (BOOL)isAvailableForFaceTimeAudio;
-- (BOOL)isAvailableForFaceTimeVideo;
+- (BOOL)isAvailableForFaceTime;
 - (BOOL)hasChanges;
 - (BOOL)isEmpty;
 - (BOOL)isDirectoryResult;

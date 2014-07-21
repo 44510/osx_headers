@@ -17,7 +17,9 @@
 {
     BOOL _showsSpinner;
     BOOL _preselectsFirstSuggestion;
+    BOOL _shouldLogSuggestionAccuracy;
     BOOL _isEditing;
+    BOOL _suggestionWasChosen;
     id <CalUISuggestionsFieldDelegate> _suggestionsDelegate;
     unsigned long long _minimumQueryLength;
     NSArray *_currentSuggestions;
@@ -26,11 +28,13 @@
     NSProgressIndicator *_spinner;
 }
 
+@property BOOL suggestionWasChosen; // @synthesize suggestionWasChosen=_suggestionWasChosen;
 @property BOOL isEditing; // @synthesize isEditing=_isEditing;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) CalUISuggestionsTable *table; // @synthesize table=_table;
 @property(retain) NSWindow *suggestionWindow; // @synthesize suggestionWindow=_suggestionWindow;
 @property(retain) NSArray *currentSuggestions; // @synthesize currentSuggestions=_currentSuggestions;
+@property BOOL shouldLogSuggestionAccuracy; // @synthesize shouldLogSuggestionAccuracy=_shouldLogSuggestionAccuracy;
 @property unsigned long long minimumQueryLength; // @synthesize minimumQueryLength=_minimumQueryLength;
 @property BOOL preselectsFirstSuggestion; // @synthesize preselectsFirstSuggestion=_preselectsFirstSuggestion;
 @property BOOL showsSpinner; // @synthesize showsSpinner=_showsSpinner;

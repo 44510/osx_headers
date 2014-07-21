@@ -6,32 +6,47 @@
 
 #import "NSOperation.h"
 
-@class NSError, NSMutableArray, NSURL;
+#import "BRNonLocalVersionReceiving.h"
 
-@interface BRListNonLocalVersionsOperation : NSOperation
+@class GSPermanentStorage, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
+
+@interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving>
 {
     NSURL *_documentURL;
     NSMutableArray *_versions;
-    NSError *_error;
+    NSMutableDictionary *_versionsByEtag;
+    GSPermanentStorage *_versionsStore;
     id <BRNonLocalVersionSending> _sender;
-    id <BRNonLocalVersionReceiving> _receiver;
     BOOL _executing;
     BOOL _finished;
-    BOOL _cancelled;
+    BOOL _state;
+    CDUnknownBlockType _fetchingVersionsDoneBlock;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(copy, nonatomic) CDUnknownBlockType fetchingVersionsDoneBlock; // @synthesize fetchingVersionsDoneBlock=_fetchingVersionsDoneBlock;
 @property(readonly, nonatomic) NSMutableArray *versions; // @synthesize versions=_versions;
-@property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
-- (id)description;
+- (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
+- (oneway void)versionsDone;
+- (oneway void)newVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 lastEditorDeviceName:(id)arg6;
+@property(readonly, copy) NSString *description;
 - (void)start;
+- (BOOL)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id *)arg2;
+- (BOOL)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
+- (BOOL)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
+- (BOOL)__finishIfCancelled;
 - (void)cancel;
-- (BOOL)finishWithError:(id)arg1;
+- (void)_senderInvalidate;
 - (BOOL)isConcurrent;
 - (void)dealloc;
 - (id)initWithDocumentURL:(id)arg1;
+@property(retain, nonatomic) NSError *error;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

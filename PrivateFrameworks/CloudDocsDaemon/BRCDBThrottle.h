@@ -29,6 +29,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak BRCThrottledScheduler *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
 - (BOOL)dumpToContext:(id)arg1 error:(id *)arg2;
+- (void)reschedule;
+- (void)unschedule;
+- (void)deactivate;
 - (void)needsScheduleAt:(long long)arg1;
 - (void)needsSchedule;
 - (void)doneScheduling;

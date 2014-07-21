@@ -21,6 +21,7 @@
     unsigned long long _moveDirectionInDegrees;
     double _moveSpeed;
     unsigned long long _scanBoundary;
+    unsigned long long _cycleCount;
     struct CGPoint _startPosition;
 }
 
@@ -38,6 +39,7 @@
 + (id)actionLeftClickWithUndoManager:(id)arg1 modifiedWithControl:(BOOL)arg2 modifiedWithOption:(BOOL)arg3 modifiedWithCommand:(BOOL)arg4 modifiedWithShift:(BOOL)arg5;
 + (unsigned long long)clickCountForMouseAction:(int)arg1;
 + (void)initialize;
+@property(nonatomic) unsigned long long cycleCount; // @synthesize cycleCount=_cycleCount;
 @property(nonatomic) unsigned long long scanBoundary; // @synthesize scanBoundary=_scanBoundary;
 @property(nonatomic) BOOL autoClick; // @synthesize autoClick=_autoClick;
 @property(nonatomic) BOOL modifiedWithShift; // @synthesize modifiedWithShift=_modifiedWithShift;

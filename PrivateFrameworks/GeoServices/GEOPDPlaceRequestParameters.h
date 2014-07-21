@@ -8,12 +8,13 @@
 
 #import "NSCopying.h"
 
-@class GEOPDCanonicalLocationSearchParameters, GEOPDGeocodingParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDReverseGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters;
+@class GEOPDCanonicalLocationSearchParameters, GEOPDGeocodingParameters, GEOPDLocationDirectedSearchParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDReverseGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters;
 
 @interface GEOPDPlaceRequestParameters : PBCodable <NSCopying>
 {
     GEOPDCanonicalLocationSearchParameters *_canonicalLocationSearchParameters;
     GEOPDGeocodingParameters *_geocodingParameters;
+    GEOPDLocationDirectedSearchParameters *_locationDirectedSearchParameters;
     GEOPDPlaceLookupParameters *_placeLookupParameters;
     GEOPDPlaceRefinementParameters *_placeRefinementParameters;
     GEOPDReverseGeocodingParameters *_reverseGeocodingParameters;
@@ -21,6 +22,7 @@
     GEOPDSiriSearchParameters *_siriSearchParameters;
 }
 
+@property(retain, nonatomic) GEOPDLocationDirectedSearchParameters *locationDirectedSearchParameters; // @synthesize locationDirectedSearchParameters=_locationDirectedSearchParameters;
 @property(retain, nonatomic) GEOPDSiriSearchParameters *siriSearchParameters; // @synthesize siriSearchParameters=_siriSearchParameters;
 @property(retain, nonatomic) GEOPDPlaceRefinementParameters *placeRefinementParameters; // @synthesize placeRefinementParameters=_placeRefinementParameters;
 @property(retain, nonatomic) GEOPDPlaceLookupParameters *placeLookupParameters; // @synthesize placeLookupParameters=_placeLookupParameters;
@@ -37,6 +39,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasLocationDirectedSearchParameters;
 @property(readonly, nonatomic) BOOL hasSiriSearchParameters;
 @property(readonly, nonatomic) BOOL hasPlaceRefinementParameters;
 @property(readonly, nonatomic) BOOL hasPlaceLookupParameters;
@@ -45,6 +48,8 @@
 @property(readonly, nonatomic) BOOL hasGeocodingParameters;
 @property(readonly, nonatomic) BOOL hasSearchParameters;
 - (void)dealloc;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 maxResults:(unsigned int)arg3;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
 - (id)initWithCoordinateHint:(CDStruct_c3b9c2ee)arg1 addressHint:(id)arg2 placeNameHint:(id)arg3 traits:(id)arg4;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1;

@@ -109,10 +109,10 @@ __attribute__((visibility("hidden")))
 - (void)_updateActionManager;
 - (void)_updateCardActionMenu;
 - (void)updateView;
-- (void)updateFaceTimeAudioAvailability:(BOOL)arg1;
-- (void)updateFaceTimeVideoAvailability:(BOOL)arg1;
+- (void)updateFaceTimeAvailability:(BOOL)arg1;
 - (BOOL)shouldShowGlyphButton:(id)arg1;
 - (id)buttonForGlyphName:(id)arg1;
+@property(readonly) id <ABCardViewProperty> cardViewProperty;
 - (id)actionForGlyphTag:(long long)arg1;
 - (BOOL)isEditing;
 - (void)setPrivateMeEnabled:(BOOL)arg1;

@@ -6,7 +6,7 @@
 
 #import <NetworkExtension/NEVPNProtocol.h>
 
-@class NEDNSSettings, NEKeychainItem, NSData, NSString;
+@class NEDNSSettings, NEKeychainItem, NSArray, NSData, NSString;
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol
 {
@@ -16,9 +16,13 @@
     NSString *_remoteIdentifier;
     NEDNSSettings *_DNSSettings;
     NEKeychainItem *_sharedSecretKeychainItem;
+    NSArray *_legacyProposals;
+    NSArray *_legacyExchangeMode;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy) NSArray *legacyExchangeMode; // @synthesize legacyExchangeMode=_legacyExchangeMode;
+@property(copy) NSArray *legacyProposals; // @synthesize legacyProposals=_legacyProposals;
 @property(copy) NEKeychainItem *sharedSecretKeychainItem; // @synthesize sharedSecretKeychainItem=_sharedSecretKeychainItem;
 @property(copy) NEDNSSettings *DNSSettings; // @synthesize DNSSettings=_DNSSettings;
 @property(copy) NSString *remoteIdentifier; // @synthesize remoteIdentifier=_remoteIdentifier;

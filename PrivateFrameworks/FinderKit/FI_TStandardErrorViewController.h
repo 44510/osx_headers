@@ -46,15 +46,15 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initialKeyView;
-- (void)setRightButtonFunctor:(const struct function<void ()> *)arg1 validatorID:(long long)arg2;
+- (void)setRightButtonFunctor:(const function_f9feaa7d *)arg1 validatorID:(long long)arg2;
 - (void)rightButtonPressed:(id)arg1;
 @property(readonly, nonatomic) _Bool rightButtonIsHidden; // @dynamic rightButtonIsHidden;
 @property(nonatomic) struct TString rightButtonTitle; // @dynamic rightButtonTitle;
-- (void)setMiddleButtonFunctor:(const struct function<void ()> *)arg1 validatorID:(long long)arg2;
+- (void)setMiddleButtonFunctor:(const function_f9feaa7d *)arg1 validatorID:(long long)arg2;
 - (void)middleButtonPressed:(id)arg1;
 @property(readonly, nonatomic) _Bool middleButtonIsHidden; // @dynamic middleButtonIsHidden;
 @property(nonatomic) struct TString middleButtonTitle; // @dynamic middleButtonTitle;
-- (void)setLeftButtonFunctor:(const struct function<void ()> *)arg1 validatorID:(long long)arg2;
+- (void)setLeftButtonFunctor:(const function_f9feaa7d *)arg1 validatorID:(long long)arg2;
 - (void)leftButtonPressed:(id)arg1;
 @property(readonly, nonatomic) _Bool leftButtonIsHidden; // @dynamic leftButtonIsHidden;
 @property(nonatomic) struct TString leftButtonTitle; // @dynamic leftButtonTitle;

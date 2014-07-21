@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)closeInfoCard;
 - (id)detailsViewController;
+- (void)notePlaceChanged;
 - (void)showInfoCardForPlace:(id)arg1 annotationView:(id)arg2 fromView:(id)arg3 hasPreferedAnchoring:(BOOL)arg4 leftAnchoring:(BOOL)arg5;
 @property(readonly, nonatomic) NVPlaceCardActionHandler *actionHandler;
 @property(readonly, nonatomic) NSPopover *popover;

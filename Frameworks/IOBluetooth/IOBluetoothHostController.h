@@ -90,6 +90,7 @@
 - (BOOL)tbfcPageSupported;
 - (BOOL)tbfcSupported;
 - (BOOL)concurrentCreateConnectionSupported;
+- (struct BluetoothHCISupportedFeatures)supportedFeatures;
 - (id)cachedDeviceAddressString;
 - (id)cachedDeviceAddress;
 - (unsigned char)cachedHCIVersion;

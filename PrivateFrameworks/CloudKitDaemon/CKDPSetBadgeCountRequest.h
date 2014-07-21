@@ -21,6 +21,7 @@
 + (id)options;
 @property(nonatomic) BOOL forDevice; // @synthesize forDevice=_forDevice;
 @property(nonatomic) unsigned int badgeCount; // @synthesize badgeCount=_badgeCount;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

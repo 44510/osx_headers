@@ -14,6 +14,8 @@
     IMHandle *_otherHandle;
 }
 
+- (id)subject;
+- (id)sender;
 - (void)dealloc;
 
 @end

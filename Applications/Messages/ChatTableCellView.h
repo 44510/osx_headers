@@ -73,7 +73,6 @@
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)_sendingAccountDidChange:(id)arg1;
-- (id)_imagesForChatDisplayController:(id)arg1;
 - (void)_showCloseButtonTimerFired:(id)arg1;
 - (void)_updateCloseButtonVerticalAlignmentConstraint;
 - (void)delayedShowCloseButton;

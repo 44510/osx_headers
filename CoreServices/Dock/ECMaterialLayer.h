@@ -17,6 +17,7 @@
     unsigned long long _material;
 }
 
++ (void)initialize;
 @property(nonatomic) _Bool reduceTransparency; // @synthesize reduceTransparency=_reduceTransparency;
 @property(nonatomic) unsigned long long material; // @synthesize material=_material;
 - (void).cxx_destruct;

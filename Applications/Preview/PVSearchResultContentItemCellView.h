@@ -25,6 +25,7 @@
 - (void)_updateResultSamples;
 - (void)setResultSamples:(id)arg1 andMatchIndexes:(id)arg2;
 @property long long resultCount;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)viewWillDraw;
 - (void)setObjectValue:(id)arg1;

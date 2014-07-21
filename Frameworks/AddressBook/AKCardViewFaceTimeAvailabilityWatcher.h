@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     CNWeakReference *_dataSource;
 }
 
-- (void)faceTimeAudioServiceDidBecomeAvailable:(id)arg1;
-- (void)faceTimeVideoServiceDidBecomeAvailable:(id)arg1;
-- (void)startAllFaceTimeAvailabilityLookups;
+- (void)faceTimeServiceDidBecomeAvailable:(id)arg1;
+- (void)startFaceTimeAvailabilityLookup;
+- (id)communicationEndpoints;
 @property(readonly) NSSet *uniqueIdentifiers;
 - (id)dataSource;
 - (void)dealloc;

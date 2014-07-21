@@ -21,7 +21,6 @@
     NSString *_searchString;
     NSArray *_groupsOrdering;
     FezServicePeopleListGroup *_bonjourGroup;
-    BOOL _allowsIMHandleSubstitution;
     BOOL _hideOfflinePeople;
     BOOL _hideAwayPeople;
     BOOL _hideIdlePeople;
@@ -37,10 +36,12 @@
     BOOL _allowsGroupOrdering;
     BOOL _pendingResort;
     long long _coalesceCount;
+    BOOL _allowsIMHandleSubstitution;
 }
 
 + (id)_notificationSelectors;
 + (id)_notificationNames;
+@property(nonatomic) BOOL allowsIMHandleSubstitution; // @synthesize allowsIMHandleSubstitution=_allowsIMHandleSubstitution;
 @property(readonly, nonatomic) Class peopleListItemClass;
 @property(retain, nonatomic) Class customPeopleListItemClass;
 - (void)endChanges;
@@ -83,7 +84,6 @@
 - (struct _NSRange)_rangeOfGroupAndItems:(id)arg1 startingAtIndex:(unsigned int)arg2;
 - (unsigned long long)_indexOfGroup:(id)arg1 startingAtIndex:(unsigned long long)arg2;
 - (void)_updateGroupPreferences;
-@property(nonatomic) BOOL allowsIMHandleSubstitution;
 - (BOOL)containsIMHandle:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfIMHandles;
 @property(readonly, nonatomic) NSArray *allIMHandles;

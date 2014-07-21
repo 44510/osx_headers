@@ -18,8 +18,10 @@
     unsigned int mIPhotoLibraryModificationDateUTC;
     MLMediaGroup *mApertureRootMediaGroup;
     unsigned int mApertureLibraryModificationDateUTC;
+    MLMediaGroup *mPhotosAppRootMediaGroup;
+    unsigned int mPhotosAppLibraryModificationDateUTC;
     NSCondition *mKVOCondition;
-    struct multimap<MediaLibraryRequestKey, MediaLibraryRequest *, std::less<MediaLibraryRequestKey>, std::allocator<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> mRequestMap;
+    struct multimap<MediaLibraryRequestKey, MediaLibraryRequest *, std::__1::less<MediaLibraryRequestKey>, std::__1::allocator<std::__1::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> mRequestMap;
 }
 
 + (id)getInstance;
@@ -29,10 +31,10 @@
 - (short)scale;
 - (unsigned long long)roundingMode;
 - (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned long long)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
-- (unsigned int)getLibraryModificationDateUTC:(_Bool)arg1;
-- (int)waitForProperty:(id)arg1 onObject:(id)arg2 withTimeout:(double)arg3 withMainThreadCallback:(function_c0cefb33)arg4 shouldKeepObserver:(_Bool)arg5 progressInfo:(struct ProgressInfo *)arg6 resultObject:(id *)arg7;
+- (unsigned int)getLibraryModificationDateUTC:(int)arg1;
+- (int)waitForProperty:(id)arg1 onObject:(id)arg2 withTimeout:(double)arg3 withMainThreadCallback:(function_10f65880)arg4 progressInfo:(struct ProgressInfo *)arg5 resultObject:(id *)arg6;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (int)copyRootMediaGroup:(_Bool)arg1 fromMediaSource:(id)arg2 resultRootMediaGroup:(id *)arg3 forceUpdate:(_Bool)arg4 progressInfo:(struct ProgressInfo *)arg5;
+- (int)copyRootMediaGroup:(int)arg1 fromMediaSource:(id)arg2 resultRootMediaGroup:(id *)arg3 forceUpdate:(_Bool)arg4 progressInfo:(struct ProgressInfo *)arg5;
 - (int)copyMediaSourcesDictionary:(id *)arg1 forceUpdate:(_Bool)arg2 progressInfo:(struct ProgressInfo *)arg3;
 - (id)getMediaLibrary;
 - (void)dealloc;

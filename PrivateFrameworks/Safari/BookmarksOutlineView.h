@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)validateProposedFirstResponder:(id)arg1 forEvent:(id)arg2;
 - (void)drawGridInClipRect:(struct CGRect)arg1;
+- (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
 - (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 @property(readonly, nonatomic) NSSearchField *searchField;

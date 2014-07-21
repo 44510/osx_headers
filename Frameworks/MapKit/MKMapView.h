@@ -18,7 +18,7 @@
 #import "VKMapViewDelegate.h"
 #import "VKPuckAnimatorDelegate.h"
 
-@class MKAccessibilityItem, MKAnnotationContainerView, MKAnnotationManager, MKCompassView, MKLabelMarker, MKMapCamera, MKOverlayContainerView, MKScaleView, MKUserLocation, NSArray, NSObject<OS_dispatch_source>, NSOrderedSet, NSString, NSTimer, VKMapView, VKPuckAnimator, _MKEnvironmentLabel;
+@class MKAccessibilityItem, MKAnnotationContainerView, MKAnnotationManager, MKCompassView, MKLabelMarker, MKMapCamera, MKOverlayContainerView, MKScaleView, MKUserLocation, NSArray, NSObject<OS_dispatch_source>, NSOrderedSet, NSSegmentedControl, NSString, NSTimer, VKMapView, VKPuckAnimator, _MKEnvironmentLabel;
 
 @interface MKMapView : NSView <GEOResourceManifestTileGroupObserver, MKScaleViewDelegate, VKMapViewDelegate, VKPuckAnimatorDelegate, MKLocationManagerObserver, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, MKAnnotationContainerViewDelegate, MKOverlayContainerViewDelegate, MKCompassViewDelegate, NSCoding>
 {
@@ -60,7 +60,6 @@
     struct CGPoint _cursorPositionOnMouseDown;
     struct CGPoint _cursorPositionOnMouseDownRelativeToMapView;
     BOOL _shouldHideCursor;
-    double _zoomingSpeed;
     long long _arrowsMask;
     struct CGPoint _translationDirection;
     double _arrowNavigationStartTimestamp;
@@ -99,7 +98,7 @@
     MKLabelMarker *_selectedLabelMarker;
     long long _notifyMapRegionUpdateCounter;
     MKMapCamera *_camera;
-    NSArray *_zoomButtons;
+    NSSegmentedControl *_zoomButtons;
     NSTimer *_compassHideTimer;
     BOOL _showsAttribution;
     BOOL _showsAttributionBadge;
@@ -145,7 +144,7 @@
 @property(nonatomic) BOOL showsAboutMapInContextualMenu; // @synthesize showsAboutMapInContextualMenu=_showsAboutMapInContextualMenu;
 @property(nonatomic) BOOL showsAttributionBadge; // @synthesize showsAttributionBadge=_showsAttributionBadge;
 @property(nonatomic) BOOL showsAttribution; // @synthesize showsAttribution=_showsAttribution;
-@property(retain, nonatomic) NSArray *zoomButtons; // @synthesize zoomButtons=_zoomButtons;
+@property(retain, nonatomic) NSSegmentedControl *zoomButtons; // @synthesize zoomButtons=_zoomButtons;
 @property(retain, nonatomic) MKCompassView *compass; // @synthesize compass=_compass;
 @property(nonatomic) BOOL animating; // @synthesize animating=_isAnimating;
 @property(nonatomic) BOOL canSelectAllLabels; // @synthesize canSelectAllLabels=_canSelectAllLabels;
@@ -380,6 +379,7 @@
 - (void)_pauseFlyoverAnimation;
 - (void)_stopFlyoverAnimation;
 - (void)_startFlyoverTourAnimation:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_performFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2;
 - (void)_performFlyoverAnimation:(id)arg1;
 - (void)_prepareFlyoverAnimation:(id)arg1 inBackground:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)seamlessOpeningURLForMapItems:(id)arg1 launchOptions:(id)arg2;
@@ -487,7 +487,6 @@
 - (void)_setSafeDelegate:(id)arg1;
 @property(retain) NSView *settingsView; // @synthesize settingsView=_settingsView;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (struct CGRect)constrainedFrame:(struct CGRect)arg1;
 - (BOOL)isOpaque;
 - (long long)labelTextSize;
 - (void)setLabelTextSize:(long long)arg1;

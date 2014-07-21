@@ -57,7 +57,6 @@
 - (void)cancelDownloadForProductKey:(id)arg1;
 - (void)_cancelDownloadOpForProductKeys:(id)arg1 fixupState:(BOOL)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
 - (void)_setStateForProductKey:(id)arg1 newState:(unsigned long long)arg2;
-- (void)_moveProductToRecentsList:(id)arg1;
 - (id)_statusForProduct:(id)arg1 createIfMissing:(BOOL)arg2;
 - (void)_installStatus:(id)arg1 didChangeForProductKey:(id)arg2;
 - (id)_serviceConnection;

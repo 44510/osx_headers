@@ -80,11 +80,13 @@
 - (void)beginModalSheetForWindow:(id)arg1;
 - (void)dealloc;
 - (void)loadURLRequest:(id)arg1;
+- (id)initForStorageManagementWithAccountID:(id)arg1 inView:(id)arg2;
 - (id)initForStorageManagementWithAccountID:(id)arg1;
 - (id)initForTermsOfServiceWithAccountID:(id)arg1 password:(id)arg2;
 - (id)initForNotesAccountCreationWithAccountID:(id)arg1;
 - (id)initForMailAccountCreationWithAccountID:(id)arg1;
 - (id)initForAccountCreation;
+- (id)initInView:(id)arg1;
 - (id)init;
 
 // Remaining properties

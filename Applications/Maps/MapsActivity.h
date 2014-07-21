@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class DirectionsPlan, GEOURLOptions, NSMutableArray, NSString;
+@class DirectionsPlan, GEOMapItemStorage, GEOURLOptions, MSPDroppedPin, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MapsActivity : PBCodable <NSCopying>
@@ -17,16 +17,26 @@ __attribute__((visibility("hidden")))
     int _collectionsMode;
     DirectionsPlan *_directionsPlan;
     GEOURLOptions *_displayOptions;
+    MSPDroppedPin *_droppedPin;
+    GEOMapItemStorage *_presentedMapItem;
     NSMutableArray *_searchPlaces;
     NSString *_searchString;
+    BOOL _isDroppedPinPresented;
+    BOOL _isDroppedPinSelected;
     BOOL _isPresentingSelectedPlace;
     struct {
         unsigned int selectedPlaceIndex:1;
         unsigned int collectionsMode:1;
+        unsigned int isDroppedPinPresented:1;
+        unsigned int isDroppedPinSelected:1;
         unsigned int isPresentingSelectedPlace:1;
     } _has;
 }
 
+@property(retain, nonatomic) GEOMapItemStorage *presentedMapItem; // @synthesize presentedMapItem=_presentedMapItem;
+@property(nonatomic) BOOL isDroppedPinPresented; // @synthesize isDroppedPinPresented=_isDroppedPinPresented;
+@property(nonatomic) BOOL isDroppedPinSelected; // @synthesize isDroppedPinSelected=_isDroppedPinSelected;
+@property(retain, nonatomic) MSPDroppedPin *droppedPin; // @synthesize droppedPin=_droppedPin;
 @property(retain, nonatomic) DirectionsPlan *directionsPlan; // @synthesize directionsPlan=_directionsPlan;
 @property(nonatomic) BOOL isPresentingSelectedPlace; // @synthesize isPresentingSelectedPlace=_isPresentingSelectedPlace;
 @property(nonatomic) unsigned long long selectedPlaceIndex; // @synthesize selectedPlaceIndex=_selectedPlaceIndex;
@@ -35,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int collectionsMode; // @synthesize collectionsMode=_collectionsMode;
 @property(retain, nonatomic) GEOURLOptions *displayOptions; // @synthesize displayOptions=_displayOptions;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -43,6 +54,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasPresentedMapItem;
+@property(nonatomic) BOOL hasIsDroppedPinPresented;
+@property(nonatomic) BOOL hasIsDroppedPinSelected;
+@property(readonly, nonatomic) BOOL hasDroppedPin;
 @property(readonly, nonatomic) BOOL hasDirectionsPlan;
 @property(nonatomic) BOOL hasIsPresentingSelectedPlace;
 @property(nonatomic) BOOL hasSelectedPlaceIndex;
@@ -53,6 +68,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasSearchString;
 @property(nonatomic) BOOL hasCollectionsMode;
 @property(readonly, nonatomic) BOOL hasDisplayOptions;
+- (id)bzip2CompressedData;
+- (id)initWithBzip2CompressedData:(id)arg1;
 
 @end
 

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     int ipChangeNotificationToken;
     NSString *_deviceIP;
     NSThread *_locationThread;
+    BOOL _updatingLocation;
     BOOL _enabled;
     BOOL _safeModeEnabled;
     BOOL _feedbackEnabled;
@@ -84,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)_performBlockOnLocationThread:(CDUnknownBlockType)arg1 wait:(BOOL)arg2;
 - (void)_performBlockOnLocationThreadAndWait:(CDUnknownBlockType)arg1;
 - (void)_performBlockOnLocationThread:(CDUnknownBlockType)arg1;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (BOOL)_hasLocationServicesEffectiveBundleEntitlement;
 - (void)_fetchStoreFrontIdentifier;

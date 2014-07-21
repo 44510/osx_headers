@@ -28,6 +28,8 @@
 - (void)updateBluetoothBandwidthState:(long long)arg1;
 - (void)updateState:(long long)arg1;
 - (void)messageArrived:(id)arg1;
+- (void)stopTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1;
 - (void)disconnectFromPeer:(id)arg1;
 - (void)sendData:(id)arg1 toPeer:(id)arg2;
 - (void)connectToPeer:(id)arg1;

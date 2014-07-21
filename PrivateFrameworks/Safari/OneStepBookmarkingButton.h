@@ -6,27 +6,15 @@
 
 #import <Safari/OneStepBookmarkingBasicButton.h>
 
-@class NSTrackingArea;
-
 __attribute__((visibility("hidden")))
 @interface OneStepBookmarkingButton : OneStepBookmarkingBasicButton
 {
     BOOL _useCheckmarkIcon;
-    int _mouseLocation;
-    NSTrackingArea *_trackingArea;
 }
 
 + (Class)cellClass;
 @property(nonatomic) BOOL useCheckmarkIcon; // @synthesize useCheckmarkIcon=_useCheckmarkIcon;
-@property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
-@property(nonatomic) int mouseLocation; // @synthesize mouseLocation=_mouseLocation;
-- (void).cxx_destruct;
 - (void)showBookmarkingCompletedUI;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
-- (void)updateTrackingAreas;
-- (void)_removeTrackingArea;
-- (void)_addTrackingArea;
 - (void)_updateIcon;
 - (void)_flashCheckmarkIcon;
 - (void)_fadeCheckmarkToPlusIcon;

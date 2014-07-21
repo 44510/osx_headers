@@ -9,6 +9,7 @@
 @class CALayer;
 
 @interface CAAnimation (SubEffects)
+- (void)SHK_startWith:(id)arg1;
 - (void)SHK_startAfter:(id)arg1;
 - (void)SHK_setSubEffects:(id)arg1;
 @property(copy) CDUnknownBlockType SHK_completionBlock;

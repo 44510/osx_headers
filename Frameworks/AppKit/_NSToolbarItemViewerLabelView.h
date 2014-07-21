@@ -22,6 +22,7 @@
 - (void)mouseDown:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 - (id)initWithFrame:(struct CGRect)arg1 text:(id)arg2;
+- (BOOL)allowsVibrancy;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 
 @end

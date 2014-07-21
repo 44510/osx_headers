@@ -29,6 +29,8 @@
 @property(retain, nonatomic) NSString *targetString; // @synthesize targetString=_targetString;
 @property(readonly, nonatomic) PadViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+- (BOOL)findBarUsesRegularControls;
+- (BOOL)findBarDrawsBackground;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_viewDidScroll:(id)arg1;
 - (void)_viewDidResize:(id)arg1;

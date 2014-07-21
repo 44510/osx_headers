@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSBox.h"
+#import "NSView.h"
 
-@interface AKGridViewBox : NSBox
+@class AKBezelFreeButton_Mac, NSVisualEffectView;
+
+@interface AKGridViewBox : NSView
 {
     BOOL _showsSelectionState;
+    BOOL _transparent;
 }
 
+@property(nonatomic) BOOL transparent; // @synthesize transparent=_transparent;
 @property BOOL showsSelectionState; // @synthesize showsSelectionState=_showsSelectionState;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)setTransparent:(BOOL)arg1;
+@property(readonly, nonatomic) AKBezelFreeButton_Mac *button;
+@property(readonly, nonatomic) NSVisualEffectView *selectionIndicator;
 
 @end
 

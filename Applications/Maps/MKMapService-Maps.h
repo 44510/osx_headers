@@ -7,22 +7,18 @@
 #import "MKMapService.h"
 
 @interface MKMapService (Maps)
+- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2;
 - (void)submitUsageAction:(int)arg1 includeStarkInfo:(BOOL)arg2 mapItem:(id)arg3 timestamp:(double)arg4 resultIndex:(int)arg5 mapRegion:(id)arg6 zoomLevel:(double)arg7;
 - (void)submitUsageAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3 includeStarkInfo:(BOOL)arg4;
 - (void)submitUsageAction:(int)arg1 includeStarkInfo:(BOOL)arg2;
-- (id)ticketForQuerySearch:(id)arg1 source:(int)arg2;
-- (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 source:(int)arg3 mapRegion:(id)arg4;
-- (id)_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3;
-- (id)ticketForReverseGeocodeDroppedPinCoordinate:(CDStruct_c3b9c2ee)arg1;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
+- (id)ticketForQuerySearch:(id)arg1 source:(int)arg2 includeETA:(BOOL)arg3;
+- (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
+- (id)_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 includeETA:(BOOL)arg2;
-- (id)ticketForForwardGeocodeAddressString:(id)arg1 source:(int)arg2;
-- (id)ticketForForwardGeocodeAddress:(id)arg1 source:(int)arg2;
-- (id)ticketForForwardGeocodeAddress:(id)arg1 source:(int)arg2 mapRegion:(id)arg3;
-- (id)ticketForMUIDs:(id)arg1 includeETA:(BOOL)arg2 mapRegion:(id)arg3;
 - (id)mapsDefaultTraitsForAction:(int)arg1 includeStarkInfo:(BOOL)arg2;
-- (id)mapsDefaultTraitsForSource:(int)arg1;
-- (id)mapsDefaultTraitsForMapRegion:(id)arg1;
+- (id)mapsDefaultTraitsForMapView:(id)arg1 mapViewEnteredForegroundDate:(id)arg2 mapViewportChangedDate:(id)arg3;
 - (id)mapsDefaultTraitsForMapRegion:(id)arg1 source:(int)arg2;
-- (id)mapsDefaultTraits;
+- (id)_mapsDefaultTraits;
 @end
 

@@ -39,6 +39,8 @@
 - (void)_refreshStatus;
 - (void)removeConfigurationItem:(id)arg1;
 - (void)addConfigurationItem:(id)arg1;
+- (void)endGrouping;
+- (void)beginGrouping;
 - (void)_addSampleContent:(id)arg1 description:(id)arg2 image:(id)arg3;
 - (void)viewDidLoad;
 - (id)initWithTodayController:(id)arg1;

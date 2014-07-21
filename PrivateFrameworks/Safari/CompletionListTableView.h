@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)drawRow:(long long)arg1 clipRect:(struct CGRect)arg2;
 - (BOOL)isOpaque;
 - (void)mouseDown:(id)arg1;
-- (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -13,6 +13,7 @@
 - (int)startPreview;
 
 @optional
+- (int)frameBecameAvailableCount:(int *)arg1 figBufferQueueEmptyCount:(int *)arg2 figBufferQueueErrorCount:(int *)arg3;
 - (int)getPreviewFrameCount:(int *)arg1 captureFrameCount:(int *)arg2 reset:(BOOL)arg3;
 - (int)setFrameRatePercentage:(double)arg1 newFramerate:(int *)arg2;
 - (int)getCameraType:(int *)arg1;

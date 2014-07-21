@@ -31,6 +31,7 @@
     } _has;
 }
 
++ (id)entityForPlaceData:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *localizedCategorys; // @synthesize localizedCategorys=_localizedCategorys;
 @property(retain, nonatomic) NSMutableArray *spokenNames; // @synthesize spokenNames=_spokenNames;
 @property(retain, nonatomic) NSMutableArray *names; // @synthesize names=_names;

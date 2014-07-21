@@ -11,6 +11,7 @@
 @protocol _GEOPlaceDataCacheProxy <NSObject>
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(void (^)(unsigned long long))arg2;
 - (void)calculateFreeableSpaceWithHandler:(void (^)(unsigned long long))arg1;
+- (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (void)evictPlaceDataForKey:(struct _GEOTileKey)arg1;
 - (void)evictPlaceDataForMUID:(unsigned long long)arg1;

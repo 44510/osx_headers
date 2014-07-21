@@ -22,9 +22,11 @@
     NSMutableDictionary *_recordErrors;
     NSDictionary *_desiredPackageFileIndices;
     NSDictionary *_recordIDsToVersionETags;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 + (id)fetchCurrentUserRecordOperation;
+@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 @property(retain, nonatomic) NSDictionary *recordIDsToVersionETags; // @synthesize recordIDsToVersionETags=_recordIDsToVersionETags;
 @property(nonatomic) BOOL isFetchCurrentUserOperation; // @synthesize isFetchCurrentUserOperation=_isFetchCurrentUserOperation;
 @property(copy, nonatomic) NSDictionary *desiredPackageFileIndices; // @synthesize desiredPackageFileIndices=_desiredPackageFileIndices;

@@ -22,6 +22,8 @@
 + (id)spriteNodeWithImageNamed:(id)arg1;
 @property(nonatomic) BOOL shouldRepeatTexture; // @synthesize shouldRepeatTexture=_shouldRepeatTexture;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (BOOL)containsPoint:(struct CGPoint)arg1;

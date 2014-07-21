@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct shared_ptr<ggl::IndexDataTyped<unsigned short>> _indexData;
     struct shared_ptr<ggl::RenderState> _gglRenderState;
     struct RenderItem *_renderItem;
+    BOOL _needsNewStyle;
 }
 
 + (BOOL)reloadOnStylesheetChange;
@@ -33,13 +34,14 @@ __attribute__((visibility("hidden")))
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue *)arg3;
 - (void)dealloc;
 - (id)init;
+- (void)updateStyle;
 - (void)stylesheetDidChange;
 @property(readonly, nonatomic) VKStyleManager *styleManager;
 - (unsigned long long)mapLayerPosition;
 - (void)setHorizonColor:(Matrix_5173352a)arg1;
-@property(readonly, nonatomic) Matrix_5173352a horizonColor;
+- (Matrix_5173352a)horizonColor;
 - (void)setFillColor:(Matrix_5173352a)arg1;
-@property(readonly, nonatomic) Matrix_5173352a fillColor;
+- (Matrix_5173352a)fillColor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

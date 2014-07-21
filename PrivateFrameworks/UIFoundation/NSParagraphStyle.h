@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSArray;
 
-@interface NSParagraphStyle : NSObject <NSCopying, NSMutableCopying, NSCoding>
+@interface NSParagraphStyle : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     double _lineSpacing;
     double _paragraphSpacing;

@@ -8,10 +8,9 @@
 
 @interface NCConfigButtonCell : NSButtonCell
 {
-    _Bool _showsIndicator;
 }
 
-@property _Bool showsIndicator; // @synthesize showsIndicator=_showsIndicator;
+- (struct CGRect)_imageViewFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 
 @end

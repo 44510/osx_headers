@@ -101,6 +101,8 @@ struct BookmarksControllerOld {
     struct Notifier<Safari::BookmarksControllerOld> _field5;
 };
 
+struct BrowserContentLoaderClient;
+
 struct BrowserContentViewController {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
@@ -108,7 +110,7 @@ struct BrowserContentViewController {
     _Bool _field4;
     _Bool _field5;
     id _field6;
-    struct Deque<Safari::BannerAction> _field7;
+    struct Deque<Safari::BannerAction, 0> _field7;
     id _field8;
     struct Notifier<Safari::SearchableWebContentViewController> _field9;
     struct Frame _field10;
@@ -184,87 +186,88 @@ struct BrowserContentViewController {
     _Bool _field60;
     id _field61;
     struct RefPtr<Safari::ReaderController> _field62;
-    struct unique_ptr<Safari::BrowserPageContextMenuClient, std::__1::default_delete<Safari::BrowserPageContextMenuClient>> _field63;
-    struct unique_ptr<Safari::BrowserPageFindClient, std::__1::default_delete<Safari::BrowserPageFindClient>> _field64;
-    struct unique_ptr<Safari::BrowserPageFormClient, std::__1::default_delete<Safari::BrowserPageFormClient>> _field65;
-    struct unique_ptr<Safari::BrowserPageLoaderClient, std::__1::default_delete<Safari::BrowserPageLoaderClient>> _field66;
-    struct unique_ptr<Safari::BrowserPagePolicyClient, std::__1::default_delete<Safari::BrowserPagePolicyClient>> _field67;
-    struct unique_ptr<Safari::BrowserPageUIClient, std::__1::default_delete<Safari::BrowserPageUIClient>> _field68;
-    struct RefPtr<Safari::FormCompletionController> _field69;
-    _Bool _field70;
-    unsigned long long _field71;
-    _Bool _field72;
-    struct BackForwardListItem _field73;
+    struct BrowserContentLoaderClient *_field63;
+    struct unique_ptr<Safari::BrowserPageContextMenuClient, std::__1::default_delete<Safari::BrowserPageContextMenuClient>> _field64;
+    struct unique_ptr<Safari::BrowserPageFindClient, std::__1::default_delete<Safari::BrowserPageFindClient>> _field65;
+    struct unique_ptr<Safari::BrowserPageFormClient, std::__1::default_delete<Safari::BrowserPageFormClient>> _field66;
+    struct unique_ptr<Safari::BrowserPageLoaderClient, std::__1::default_delete<Safari::BrowserPageLoaderClient>> _field67;
+    struct unique_ptr<Safari::BrowserPagePolicyClient, std::__1::default_delete<Safari::BrowserPagePolicyClient>> _field68;
+    struct unique_ptr<Safari::BrowserPageUIClient, std::__1::default_delete<Safari::BrowserPageUIClient>> _field69;
+    struct RefPtr<Safari::FormCompletionController> _field70;
+    _Bool _field71;
+    unsigned long long _field72;
+    _Bool _field73;
     struct BackForwardListItem _field74;
-    unique_ptr_b4bbd85b _field75;
-    _Bool _field76;
-    struct unique_ptr<Safari::QueuedNavigation, std::__1::default_delete<Safari::QueuedNavigation>> _field77;
-    id _field78;
+    struct BackForwardListItem _field75;
+    unique_ptr_ed026c72 _field76;
+    _Bool _field77;
+    struct unique_ptr<Safari::QueuedNavigation, std::__1::default_delete<Safari::QueuedNavigation>> _field78;
     id _field79;
     id _field80;
     id _field81;
-    _Bool _field82;
+    id _field82;
     _Bool _field83;
-    id _field84;
-    unsigned long long _field85;
-    id _field86;
-    unsigned long long _field87;
-    _Bool _field88;
-    struct unique_ptr<Safari::PerformanceCollector, std::__1::default_delete<Safari::PerformanceCollector>> _field89;
-    struct RefPtr<Safari::PerformanceTesting> _field90;
-    unsigned int _field91;
-    Vector_ffb0c598 _field92;
+    _Bool _field84;
+    id _field85;
+    unsigned long long _field86;
+    id _field87;
+    unsigned long long _field88;
+    _Bool _field89;
+    struct unique_ptr<Safari::PerformanceCollector, std::__1::default_delete<Safari::PerformanceCollector>> _field90;
+    struct RefPtr<Safari::PerformanceTesting> _field91;
+    unsigned int _field92;
+    Vector_ffb0c598 _field93;
     struct String {
         struct RetainPtr<const __CFString *> _field1;
-    } _field93;
-    _Bool _field94;
-    void *_field95;
+    } _field94;
+    _Bool _field95;
+    void *_field96;
     struct String {
         struct RetainPtr<const __CFString *> _field1;
-    } _field96;
-    _Bool _field97;
-    void *_field98;
-    _Bool _field99;
-    double _field100;
-    struct RefPtr<Safari::SheetRequest> _field101;
-    struct Vector<Safari::WK::AuthenticationChallenge, 0, WTF::CrashOnOverflow> _field102;
-    struct RefPtr<Safari::BCVCSafeBrowsingObserver> _field103;
-    struct unique_ptr<Safari::SecurityInfo, std::__1::default_delete<Safari::SecurityInfo>> _field104;
-    _Bool _field105;
+    } _field97;
+    _Bool _field98;
+    void *_field99;
+    _Bool _field100;
+    double _field101;
+    struct RefPtr<Safari::SheetRequest> _field102;
+    struct Vector<Safari::WK::AuthenticationChallenge, 0, WTF::CrashOnOverflow> _field103;
+    struct RefPtr<Safari::BCVCSafeBrowsingObserver> _field104;
+    struct unique_ptr<Safari::SecurityInfo, std::__1::default_delete<Safari::SecurityInfo>> _field105;
     _Bool _field106;
     _Bool _field107;
     _Bool _field108;
     _Bool _field109;
     _Bool _field110;
     _Bool _field111;
-    id _field112;
-    _Bool _field113;
+    _Bool _field112;
+    id _field113;
     _Bool _field114;
     _Bool _field115;
-    int _field116;
-    _Bool _field117;
-    struct PageLoadTestWithChrome *_field118;
-    id _field119;
-    _Bool _field120;
-    id _field121;
-    _Bool _field122;
-    struct RefPtr<Safari::RemoteNotificationVerificationRequest> _field123;
-    _Bool _field124;
+    _Bool _field116;
+    int _field117;
+    _Bool _field118;
+    struct PageLoadTestWithChrome *_field119;
+    id _field120;
+    _Bool _field121;
+    id _field122;
+    _Bool _field123;
+    struct RefPtr<Safari::RemoteNotificationVerificationRequest> _field124;
     _Bool _field125;
-    struct HashSet<Safari::WK::Frame, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>> _field126;
-    id _field127;
-    struct Frame _field128;
-    id _field129;
+    _Bool _field126;
+    struct HashSet<Safari::WK::Frame, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>> _field127;
+    id _field128;
+    struct Frame _field129;
     id _field130;
     id _field131;
     id _field132;
     id _field133;
-    _Bool _field134;
-    id _field135;
-    _Bool _field136;
+    id _field134;
+    _Bool _field135;
+    id _field136;
     _Bool _field137;
-    int _field138;
-    _Bool _field139;
+    _Bool _field138;
+    int _field139;
+    _Bool _field140;
 };
 
 struct BrowserPageContextMenuClient;
@@ -301,32 +304,33 @@ struct BrowserTab {
 
 struct BrowserWindowController {
     CDUnknownFunctionPointerType *_field1;
-    struct HashMap<WTF::RetainPtr<const __CFString *>, unsigned int, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<unsigned int>> _field2;
-    struct HashMap<Safari::EventTargetTracker *, WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*>>*, WTF::PtrHash<Safari::EventTargetTracker *>, WTF::HashTraits<Safari::EventTargetTracker *>, WTF::HashTraits<WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*>>*>> _field3;
-    struct Vector<Safari::FiringEventIterator, 1, WTF::CrashOnOverflow> _field4;
-    _Bool _field5;
-    unsigned int _field6;
-    CDUnknownFunctionPointerType *_field7;
-    id _field8;
-    struct unique_ptr<Safari::TabBarController, std::__1::default_delete<Safari::TabBarController>> _field9;
-    struct unique_ptr<Safari::FormTextStatusWatcher, std::__1::default_delete<Safari::FormTextStatusWatcher>> _field10;
+    unsigned int _field2;
+    CDUnknownFunctionPointerType *_field3;
+    struct HashMap<WTF::RetainPtr<const __CFString *>, unsigned int, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<unsigned int>> _field4;
+    struct HashMap<Safari::EventTargetTracker *, WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*>>*, WTF::PtrHash<Safari::EventTargetTracker *>, WTF::HashTraits<Safari::EventTargetTracker *>, WTF::HashTraits<WTF::HashMap<WTF::RetainPtr<const __CFString *>, WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*, WTF::RetainPtrObjectHash<const __CFString *>, WTF::RetainPtrObjectHashTraits<const __CFString *>, WTF::HashTraits<WTF::Vector<WTF::RefPtr<Safari::RegisteredEventListener>, 1, WTF::CrashOnOverflow>*>>*>> _field5;
+    struct Vector<Safari::FiringEventIterator, 1, WTF::CrashOnOverflow> _field6;
+    _Bool _field7;
+    CDUnknownFunctionPointerType *_field8;
+    id _field9;
+    struct unique_ptr<Safari::TabBarController, std::__1::default_delete<Safari::TabBarController>> _field10;
     struct unique_ptr<Safari::FormTextStatusWatcher, std::__1::default_delete<Safari::FormTextStatusWatcher>> _field11;
-    unsigned long long _field12;
-    _Bool _field13;
-    struct RefPtr<Safari::BrowserTab> _field14;
-    int _field15;
-    _Bool _field16;
+    struct unique_ptr<Safari::FormTextStatusWatcher, std::__1::default_delete<Safari::FormTextStatusWatcher>> _field12;
+    unsigned long long _field13;
+    _Bool _field14;
+    struct RefPtr<Safari::BrowserTab> _field15;
+    int _field16;
     _Bool _field17;
-    struct Timer<Safari::BrowserWindowController> _field18;
-    unsigned int _field19;
-    double _field20;
-    unsigned int _field21;
-    _Bool _field22;
+    _Bool _field18;
+    struct Timer<Safari::BrowserWindowController> _field19;
+    unsigned int _field20;
+    double _field21;
+    unsigned int _field22;
     _Bool _field23;
     _Bool _field24;
     _Bool _field25;
     _Bool _field26;
     _Bool _field27;
+    _Bool _field28;
 };
 
 struct BundleFrame {
@@ -447,9 +451,9 @@ struct Data {
     struct WKRetainPtr<const void *> _field1;
 };
 
-struct Deque<NSURL *>;
+struct Deque<NSURL *, 0>;
 
-struct Deque<Safari::BannerAction> {
+struct Deque<Safari::BannerAction, 0> {
     unsigned long long _field1;
     unsigned long long _field2;
     struct VectorBuffer<Safari::BannerAction, 0> _field3;
@@ -1109,17 +1113,19 @@ struct ReaderController {
         struct RetainPtr<const __CFString *> _field1;
     } _field8;
     int _field9;
+    id _field10;
+    id _field11;
     struct String {
         struct RetainPtr<const __CFString *> _field1;
-    } _field10;
-    _Bool _field11;
-    _Bool _field12;
-    int _field13;
-    id _field14;
-    id _field15;
+    } _field12;
+    _Bool _field13;
+    _Bool _field14;
+    int _field15;
     id _field16;
-    _Bool _field17;
+    id _field17;
     id _field18;
+    _Bool _field19;
+    id _field20;
 };
 
 struct ReaderPageContextMenuClient;
@@ -1137,7 +1143,7 @@ struct ReaderViewController {
     _Bool _field4;
     _Bool _field5;
     id _field6;
-    struct Deque<Safari::BannerAction> _field7;
+    struct Deque<Safari::BannerAction, 0> _field7;
     id _field8;
     struct Notifier<Safari::SearchableWebContentViewController> _field9;
     struct Frame _field10;
@@ -1358,7 +1364,7 @@ struct SearchableWebContentViewController {
     _Bool _field4;
     _Bool _field5;
     id _field6;
-    struct Deque<Safari::BannerAction> _field7;
+    struct Deque<Safari::BannerAction, 0> _field7;
     id _field8;
     struct Notifier<Safari::SearchableWebContentViewController> _field9;
     struct Frame _field10;
@@ -1496,21 +1502,23 @@ struct UnifiedFieldCompletionController {
     CDUnknownFunctionPointerType *_field19;
     CDUnknownFunctionPointerType *_field20;
     struct FindOnPageMatchCounterClient *_field21;
-    struct unique_ptr<Safari::UnifiedFieldCompletionListGenerator, std::__1::default_delete<Safari::UnifiedFieldCompletionListGenerator>> _field22;
-    struct Timer<Safari::UnifiedFieldCompletionController> _field23;
-    struct Timer<Safari::UnifiedFieldCompletionController> _field24;
-    id _field25;
-    struct BrowserWindowController *_field26;
-    _Bool _field27;
-    _Bool _field28;
+    id _field22;
+    id _field23;
+    struct unique_ptr<Safari::UnifiedFieldCompletionListGenerator, std::__1::default_delete<Safari::UnifiedFieldCompletionListGenerator>> _field24;
+    struct Timer<Safari::UnifiedFieldCompletionController> _field25;
+    struct Timer<Safari::UnifiedFieldCompletionController> _field26;
+    id _field27;
+    struct BrowserWindowController *_field28;
     _Bool _field29;
-    long long _field30;
-    unsigned long long _field31;
-    id _field32;
-    id _field33;
+    _Bool _field30;
+    _Bool _field31;
+    long long _field32;
+    unsigned long long _field33;
     id _field34;
-    _Bool _field35;
+    id _field35;
     id _field36;
+    _Bool _field37;
+    id _field38;
 };
 
 struct UnifiedFieldCompletionListGenerator;
@@ -1935,9 +1943,9 @@ struct unique_ptr<SnippetEditorDelegate, std::__1::default_delete<SnippetEditorD
     } __ptr_;
 };
 
-struct unique_ptr<WTF::Deque<NSURL *>, std::__1::default_delete<WTF::Deque<NSURL *>>> {
-    struct __compressed_pair<WTF::Deque<NSURL *>*, std::__1::default_delete<WTF::Deque<NSURL *>>> {
-        struct Deque<NSURL *> *_field1;
+struct unique_ptr<WTF::Deque<NSURL *, 0>, std::__1::default_delete<WTF::Deque<NSURL *, 0>>> {
+    struct __compressed_pair<WTF::Deque<NSURL *, 0>*, std::__1::default_delete<WTF::Deque<NSURL *, 0>>> {
+        struct Deque<NSURL *, 0> *_field1;
     } _field1;
 };
 
@@ -2089,9 +2097,9 @@ typedef struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::dura
     struct duration<long long, std::__1::ratio<1, 1000000000>> __d_;
 } time_point_e708cccf;
 
-typedef struct unique_ptr<WTF::Deque<NSURL *>, std::__1::default_delete<WTF::Deque<NSURL *>>> {
-    struct __compressed_pair<WTF::Deque<NSURL *>*, std::__1::default_delete<WTF::Deque<NSURL *>>> {
-        struct Deque<NSURL *> *_field1;
+typedef struct unique_ptr<WTF::Deque<NSURL *, 0>, std::__1::default_delete<WTF::Deque<NSURL *, 0>>> {
+    struct __compressed_pair<WTF::Deque<NSURL *, 0>*, std::__1::default_delete<WTF::Deque<NSURL *, 0>>> {
+        struct Deque<NSURL *, 0> *_field1;
     } _field1;
-} unique_ptr_b4bbd85b;
+} unique_ptr_ed026c72;
 

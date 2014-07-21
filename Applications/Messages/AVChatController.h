@@ -142,7 +142,6 @@
 - (id)extraMenuItemsForAVSegmentedControl:(id)arg1;
 - (void)addParticipant:(id)arg1;
 - (void)inviteIMHandles:(id)arg1;
-- (void)_inviteAlertDidEnd:(id)arg1 returnCode:(int)arg2 contextInfo:(void *)arg3;
 - (BOOL)isFullScreen;
 - (id)layerView;
 - (void)toggleRecording:(id)arg1;

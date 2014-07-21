@@ -11,6 +11,7 @@
 }
 
 + (void)addBridgeKeys:(id)arg1;
+- (BOOL)allowsImplicitResizeRequests;
 - (BOOL)allowsWindowFrameOriginChanges;
 - (unsigned long long)acceptableStyleMask;
 

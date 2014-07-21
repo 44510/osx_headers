@@ -21,7 +21,7 @@
 @property(retain, nonatomic) NSArray *invitationsToAccept; // @synthesize invitationsToAccept=_invitationsToAccept;
 @property(copy, nonatomic) CDUnknownBlockType shareInvitationResponseProgressBlock; // @synthesize shareInvitationResponseProgressBlock=_shareInvitationResponseProgressBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleInvitationRespondedTo:(id)arg1 invitationID:(id)arg2 responseCode:(id)arg3;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

@@ -47,6 +47,7 @@
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithPredicate:(id)arg1;
 - (id)fetchWithCallTypes:(unsigned int)arg1;
+- (id)fetchAllNoLimit;
 - (id)fetchAll;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;

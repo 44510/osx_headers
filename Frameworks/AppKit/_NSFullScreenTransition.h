@@ -75,7 +75,7 @@ __attribute__((visibility("hidden")))
 - (void)enterFullScreenInstantly;
 - (void)exitFullScreenTransitionFinished;
 - (void)exitFullScreenStatusItemClicked:(id)arg1;
-- (void)destroyExitFullScreenStatusItem;
+- (void)destroyExitFullScreenStatusItemIfNecessary;
 - (void)makeExitFullScreenStatusItem;
 - (void)startExitFullScreenTransitionForCGWindow:(unsigned int)arg1 targetFrame:(struct CGRect)arg2 duration:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)prepareToStartExitFullScreenTransitionForCGWindow:(unsigned int)arg1 startFrame:(struct CGRect)arg2 snapshotStartFrame:(struct CGRect)arg3;

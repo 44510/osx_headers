@@ -13,8 +13,14 @@ __attribute__((visibility("hidden")))
 {
     int _orientation;
     SCRElement *_valueIndicator;
+    unsigned char _echoState;
 }
 
+@property(nonatomic) unsigned char echoState; // @synthesize echoState=_echoState;
+- (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
+- (void)echoValueChangeToRequest:(id)arg1;
+- (BOOL)handleReadValueChangeCallbackForEvent:(id)arg1 request:(id)arg2;
+- (void)handleAttributeChange:(id)arg1;
 - (BOOL)brailleLineAllowsChildren;
 - (id)brailleLineElementForUIElement:(id)arg1;
 - (void)updateBrailleLineWithFocusedElement:(id)arg1;

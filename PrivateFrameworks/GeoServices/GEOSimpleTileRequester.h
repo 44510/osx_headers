@@ -19,6 +19,7 @@
     NSMutableArray *_errors;
 }
 
++ (long long)eTagType;
 - (void)dealloc;
 - (void)cancel;
 - (void)_cleanup;

@@ -58,6 +58,7 @@
 - (void)refreshAVBEnabledState:(id)arg1;
 - (void)cleanup;
 - (void)dealloc;
+- (void)sizeTableToFit:(id)arg1;
 - (void)panelDidLoad;
 - (void)createFilteredItemList;
 - (void)updateViewEnabledState;

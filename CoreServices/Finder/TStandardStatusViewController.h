@@ -34,11 +34,11 @@
 @property(nonatomic) _Bool indeterminate; // @synthesize indeterminate=_indeterminate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)setCancelButtonFunctor:(const struct function<void ()> *)arg1 validatorID:(long long)arg2;
+- (void)setCancelButtonFunctor:(const function_f9feaa7d *)arg1 validatorID:(long long)arg2;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
-- (void)updateTrackingAreas:(id)arg1;
+- (void)updateTrackingAreas;
 - (void)setIcon:(const struct TIconRef *)arg1;
 @property(copy, nonatomic) NSImage *image; // @dynamic image;
 @property(readonly, nonatomic) struct CGSize imageViewSize; // @dynamic imageViewSize;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property __weak id <BRCTransferQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)trySchedulingOperation:(id)arg1 forKey:(id)arg2;
+- (void)cancelAllOperations;
 - (void)cancelOperationForKey:(id)arg1;
 - (id)inflightOperationForKey:(id)arg1;
 - (void)noteShouldRequestsOperations;

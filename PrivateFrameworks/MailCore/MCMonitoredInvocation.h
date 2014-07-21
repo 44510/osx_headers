@@ -11,6 +11,7 @@
 @interface MCMonitoredInvocation : NSInvocation
 {
     MCActivityMonitor *_monitor;
+    long long _requestedQualityOfService;
 }
 
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 object3:(id)arg5 object4:(id)arg6 taskName:(id)arg7 priority:(unsigned char)arg8 canBeCancelled:(BOOL)arg9;
@@ -23,6 +24,7 @@
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2;
+@property long long requestedQualityOfService; // @synthesize requestedQualityOfService=_requestedQualityOfService;
 - (void).cxx_destruct;
 - (unsigned char)priority;
 - (void)invokeWithTarget:(id)arg1;

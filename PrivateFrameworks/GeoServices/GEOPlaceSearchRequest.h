@@ -47,6 +47,7 @@
     GEOAddress *_preserveFields;
     NSString *_search;
     NSString *_searchContext;
+    GEOLatLng *_searchLocation;
     int _searchSource;
     int _sequenceNumber;
     NSMutableArray *_serviceTags;
@@ -61,6 +62,7 @@
     BOOL _includeFeatureSets;
     BOOL _includeGeoId;
     BOOL _includeMatchedToken;
+    BOOL _includeNameForForwardGeocodingResults;
     BOOL _includePhonetics;
     BOOL _includeQuads;
     BOOL _includeRevgeoRequestTemplate;
@@ -99,6 +101,7 @@
         unsigned int includeFeatureSets:1;
         unsigned int includeGeoId:1;
         unsigned int includeMatchedToken:1;
+        unsigned int includeNameForForwardGeocodingResults:1;
         unsigned int includePhonetics:1;
         unsigned int includeQuads:1;
         unsigned int includeRevgeoRequestTemplate:1;
@@ -116,6 +119,8 @@
     } _has;
 }
 
+@property(nonatomic) BOOL includeNameForForwardGeocodingResults; // @synthesize includeNameForForwardGeocodingResults=_includeNameForForwardGeocodingResults;
+@property(retain, nonatomic) GEOLatLng *searchLocation; // @synthesize searchLocation=_searchLocation;
 @property(nonatomic) int searchSource; // @synthesize searchSource=_searchSource;
 @property(nonatomic) BOOL includeMatchedToken; // @synthesize includeMatchedToken=_includeMatchedToken;
 @property(nonatomic) BOOL includeRevgeoRequestTemplate; // @synthesize includeRevgeoRequestTemplate=_includeRevgeoRequestTemplate;
@@ -183,6 +188,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIncludeNameForForwardGeocodingResults;
+@property(readonly, nonatomic) BOOL hasSearchLocation;
 - (void)setOptionalSuppressionReasons:(int *)arg1 count:(unsigned long long)arg2;
 - (int)optionalSuppressionReasonAtIndex:(unsigned long long)arg1;
 - (void)addOptionalSuppressionReason:(int)arg1;
@@ -272,7 +279,6 @@
 @property(readonly, nonatomic) unsigned long long *businessIDs;
 @property(readonly, nonatomic) unsigned long long businessIDsCount;
 - (void)dealloc;
-- (BOOL)isEqualForHistoryToRequest:(id)arg1;
 - (id)initWithTraits:(id)arg1 maxResults:(int)arg2;
 - (id)initWithTraits:(id)arg1 includeEntryPoints:(BOOL)arg2;
 - (id)initWithTraits:(id)arg1;

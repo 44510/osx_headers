@@ -7,6 +7,7 @@
 #import "NSString.h"
 
 @interface NSString (SafariNSBundleExtras)
++ (id)_safari_userAgentBundleVersionFromFullVersion:(id)arg1;
 + (id)_safari_userVisibleSafariBundleVersionFromFullVersion:(id)arg1;
 @end
 

@@ -26,9 +26,7 @@
     BOOL _fadeLayers;
     double endingBackgroundOpacity;
     double startingBackgroundOpacity;
-    NSView *_backgroundFullScreenTextureView;
     NSView *_backgroundColorView;
-    NSView *_fadingBackgroundColorView;
     CDUnknownBlockType _bumpAnimationCompletionBlock;
 }
 
@@ -67,8 +65,6 @@
 - (void)teardownBackgroundLayers;
 - (void)teardownBackgroundColorView;
 - (void)setupBackgroundColorView;
-- (void)teardownTexturedUnderlayView;
-- (void)setupTexturedUnderlayView;
 - (id)simulatedBumpAnimationForLayer:(id)arg1 forward:(BOOL)arg2 axis:(int)arg3;
 - (float)opacityForBackgroundLayerWithStartValue:(double)arg1 endingValue:(double)arg2 t:(double)arg3;
 - (float)opacityForLayer:(id)arg1 t:(double)arg2 forward:(BOOL)arg3 isStartLayer:(BOOL)arg4;

@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class BRCItemID, BRFieldCKInfo, NSData, NSString;
+@class BRCItemID, BRFieldCKInfo, BRiWorkSharingInfo, NSData, NSString;
 
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding>
 {
@@ -24,10 +24,14 @@
     BOOL _hiddenExt;
     NSData *_xattrSignature;
     NSData *_finderTags;
+    NSData *_lazyXattr;
+    BRiWorkSharingInfo *_iWorkSharingInfo;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) BRiWorkSharingInfo *iWorkSharingInfo; // @synthesize iWorkSharingInfo=_iWorkSharingInfo;
 @property(retain, nonatomic) NSData *finderTags; // @synthesize finderTags=_finderTags;
+@property(retain, nonatomic) NSData *lazyXattr; // @synthesize lazyXattr=_lazyXattr;
 @property(retain, nonatomic) NSData *xattrSignature; // @synthesize xattrSignature=_xattrSignature;
 @property(nonatomic, getter=isHiddenExt) BOOL hiddenExt; // @synthesize hiddenExt=_hiddenExt;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filenameOrAliasTarget;
@@ -55,6 +59,7 @@
 @property(readonly, nonatomic) NSString *aliasTargetContainerID;
 @property(readonly, nonatomic) NSString *aliasTargetZoneName;
 @property(readonly, nonatomic) NSString *displayName;
+- (BOOL)isiWorkShareable;
 
 @end
 

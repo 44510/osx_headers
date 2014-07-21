@@ -10,6 +10,9 @@
 {
 }
 
+- (void)sizeTableHeaderCellsToFit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (long long)levelForRow:(long long)arg1;
 - (long long)levelForItem:(id)arg1;
 

@@ -50,6 +50,7 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

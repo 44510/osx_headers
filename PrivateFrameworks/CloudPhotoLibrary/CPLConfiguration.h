@@ -18,6 +18,7 @@
     NSObject<OS_dispatch_queue> *_lock;
 }
 
++ (void)disableConfigurationFetching;
 - (void).cxx_destruct;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForKey:(id)arg1;

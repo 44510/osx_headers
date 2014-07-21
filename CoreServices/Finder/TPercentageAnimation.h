@@ -8,9 +8,9 @@
 
 @interface TPercentageAnimation : NSAnimation
 {
-    function_e430924f _startHandler;
-    function_07d19d41 _progressHandler;
-    function_e430924f _completionHandler;
+    function_f9feaa7d _startHandler;
+    function_754b78de _progressHandler;
+    function_f9feaa7d _completionHandler;
     double _startPercentage;
     double _endPercentage;
 }
@@ -21,7 +21,7 @@
 - (void)startAnimation;
 - (void)finalize;
 - (void)dealloc;
-- (id)initWithStartPercentage:(double)arg1 endPercentage:(double)arg2 startHandler:(const struct function<void ()> *)arg3 progressHandler:(const struct function<void (double)> *)arg4 completionHandler:(const struct function<void ()> *)arg5;
+- (id)initWithStartPercentage:(double)arg1 endPercentage:(double)arg2 startHandler:(const function_f9feaa7d *)arg3 progressHandler:(const function_754b78de *)arg4 completionHandler:(const function_f9feaa7d *)arg5;
 
 @end
 

@@ -25,7 +25,7 @@
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(copy, nonatomic) CDUnknownBlockType recordVersionFetchedBlock; // @synthesize recordVersionFetchedBlock=_recordVersionFetchedBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleRecordVersionsFecthedForID:(id)arg1 isDeleted:(BOOL)arg2 versions:(id)arg3 responseCode:(id)arg4;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

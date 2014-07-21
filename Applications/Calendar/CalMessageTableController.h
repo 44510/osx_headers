@@ -41,7 +41,8 @@
 - (id)_visibleMessages;
 - (unsigned long long)_messageCount;
 - (void)_clearTombstonesForMissingMessages;
-- (void)_addTombstonesForMessagesAndNotify:(id)arg1;
+- (void)_removeTombstonesForMessageIDs:(id)arg1;
+- (void)_addTombstonesForMessages:(id)arg1;
 - (BOOL)messageIsLastElement:(id)arg1;
 - (void)messageDoubleClicked:(id)arg1;
 - (void)messageSelected:(id)arg1;

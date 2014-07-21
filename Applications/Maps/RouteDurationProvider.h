@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastUpdatedETATransportType;
     MKDirections *_inProgressETAUpdate;
     BOOL _lastETAUpdateHadError;
-    BOOL _lastUpdatedTransportTypeIsRecommendedTransportType;
     MKMapItem *_destination;
 }
 
@@ -28,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (void)setEstimatedTravelTime:(double)arg1 distance:(double)arg2 fromOrigin:(CDStruct_c3b9c2ee)arg3 transportType:(unsigned long long)arg4;
 - (BOOL)isEstimatedTravelTimeValidForOrigin:(CDStruct_c3b9c2ee)arg1 transportType:(unsigned long long)arg2;
 - (BOOL)shouldUpdateEstimatedTravelTimeForNewOrigin:(CDStruct_c3b9c2ee)arg1 transportType:(unsigned long long)arg2;
-- (BOOL)_shouldRequestRecommendedTransportTypeAndETA;
 - (void)getEstimatedTravelTimeForTransportType:(unsigned long long)arg1 getDistanceBasedWalkingRecommendation:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_singleTransportType:(unsigned long long)arg1;
 - (id)initWithDestination:(id)arg1;

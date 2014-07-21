@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSView.h"
+#import "NSVisualEffectView.h"
 
 @class CALayer, NCMaterialLayer;
 
-@interface NCRoundedWindowContentView : NSView
+@interface NCRoundedWindowContentView : NSVisualEffectView
 {
-    CALayer *_backgroundLayer;
+    CALayer *_shadowImageLayer;
     CALayer *_hitLayer;
     double _height;
     double _lastDragDeltaX;
@@ -34,11 +34,15 @@
 
 @property(nonatomic) __weak id <NCRoundedWindowContentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateBackdropLayerForBlendingInsideWindow;
+- (void)_updateLayerToPokeOutWindowPixels;
+- (void)_update;
 - (void)_closeButtonPressed:(id)arg1;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
 - (void)scrollWheel:(id)arg1;
 - (void)mouseUp:(id)arg1;
@@ -54,6 +58,7 @@
 - (void)_updateLayerMasksToBoundsFromView;
 - (BOOL)clipsToBounds;
 - (void)awakeFromNib;
+- (void)_setupAppearance;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

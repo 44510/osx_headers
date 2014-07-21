@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (Class)tableColumnViewControllerClass;
 + (void)setGlobalGroupingForAllColumns:(_Bool)arg1;
 + (Class)browserTableViewClass;
++ (Class)browserColumnViewClass;
 @property(nonatomic) _Bool shouldPerformDoClickOnMouseUp; // @synthesize shouldPerformDoClickOnMouseUp=_shouldPerformDoClickOnMouseUp;
 @property(nonatomic) _Bool shouldIgnoreNextDoClick; // @synthesize shouldIgnoreNextDoClick=_shouldIgnoreNextDoClick;
 @property(readonly, nonatomic) FI_TColumnViewController *controller; // @synthesize controller=_controller;

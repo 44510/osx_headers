@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) _Bool drawsRoundedSelection; // @synthesize drawsRoundedSelection=_drawsRoundedSelection;
+- (BOOL)isEmphasized;
 - (void)drawSelectionInRect:(struct CGRect)arg1;
 
 @end

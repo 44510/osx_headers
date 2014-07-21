@@ -14,10 +14,8 @@
 {
     CalUIDayViewGadget *_view;
     EKEventStore *_eventStore;
-    BOOL _eventStoreAccessGranted;
     NSDate *_dayOfInterest;
     NSDate *_lastRefresh;
-    NSObject<OS_dispatch_group> *_eventStoreReadyGroup;
     NSSet *_disabledCalendars;
     NSDate *_startOfDay;
     NSDate *_endOfDay;
@@ -31,8 +29,6 @@
 @property(readonly, nonatomic) NSDate *endOfDay; // @synthesize endOfDay=_endOfDay;
 @property(readonly, nonatomic) NSDate *startOfDay; // @synthesize startOfDay=_startOfDay;
 @property(retain) NSSet *disabledCalendars; // @synthesize disabledCalendars=_disabledCalendars;
-@property(retain) NSObject<OS_dispatch_group> *eventStoreReadyGroup; // @synthesize eventStoreReadyGroup=_eventStoreReadyGroup;
-@property BOOL eventStoreAccessGranted; // @synthesize eventStoreAccessGranted=_eventStoreAccessGranted;
 @property(retain) NSDate *lastRefresh; // @synthesize lastRefresh=_lastRefresh;
 @property(retain, nonatomic) NSDate *dayOfInterest; // @synthesize dayOfInterest=_dayOfInterest;
 - (void).cxx_destruct;
@@ -48,6 +44,8 @@
 - (void)calendarChanged:(id)arg1;
 - (void)refreshAsync;
 - (void)refreshShouldForceDisplay:(BOOL)arg1;
+@property(readonly) BOOL eventStoreAccessGranted;
+@property(readonly) NSObject<OS_dispatch_group> *eventStoreReadyGroup;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

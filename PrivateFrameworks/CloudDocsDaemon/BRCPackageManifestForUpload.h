@@ -6,24 +6,24 @@
 
 #import "NSObject.h"
 
-@class BRCAccountSession, BRCLocalItem, NSString;
+@class BRCAccountSession, BRCLocalItem;
 
 __attribute__((visibility("hidden")))
 @interface BRCPackageManifestForUpload : NSObject
 {
     BRCAccountSession *_session;
-    unsigned long long _manifestFileID;
     long long _firstAssetRankMissingSignature;
     unsigned long long _firstPackageItemIndexMissingSignature;
     BRCLocalItem *_item;
-    NSString *_manifestPath;
 }
 
 @property(readonly, nonatomic) BRCLocalItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (BOOL)finishPackageUploadWithRecord:(id)arg1 error:(id *)arg2;
 - (id)constructPackageAndWriteManifestWithError:(id *)arg1;
-@property(readonly, nonatomic) NSString *manifestPath; // @synthesize manifestPath=_manifestPath;
+- (id)assetWithError:(id *)arg1;
+- (id)ck_manifestURL;
+- (id)br_manifestURL;
 - (id)initWithLocalItem:(id)arg1;
 
 @end

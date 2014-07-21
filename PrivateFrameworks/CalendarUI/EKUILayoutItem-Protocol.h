@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class EKEvent, EKEventViewController, EKUIGadgetContainer, EKUIGadgetContainerAnimation, NSArray, NSDictionary, NSString, NSView;
+@class EKEvent, EKEventViewController, EKUIGadgetContainer, EKUIGadgetContainerAnimation, NSArray, NSDictionary, NSScrollView, NSString, NSView;
 
 @protocol EKUILayoutItem <NSObject>
 - (void)updateScrollState;
@@ -16,6 +16,7 @@
 - (BOOL)wantsAnimationSuppression;
 - (BOOL)needsExpansion;
 - (BOOL)isEditable;
+- (BOOL)isScrolling;
 - (BOOL)isSeparator;
 - (BOOL)isContainer;
 - (NSView *)lastKeyView;
@@ -29,6 +30,7 @@
 - (void)setEventViewController:(EKEventViewController *)arg1;
 - (EKEventViewController *)eventViewController;
 - (NSString *)uuid;
+- (NSScrollView *)scrollView;
 - (NSView *)view;
 - (id)initWithEventViewController:(EKEventViewController *)arg1;
 

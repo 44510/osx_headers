@@ -10,7 +10,6 @@
 
 @interface NCTodayItem : NSObject
 {
-    _Bool _configurationShowAsNew;
     _Bool _hasHeader;
     _Bool _headerHidesText;
     _Bool _enabled;
@@ -54,7 +53,6 @@
 @property _Bool hasHeader; // @synthesize hasHeader=_hasHeader;
 @property(copy) NSURL *url; // @synthesize url=_url;
 @property(copy) NSURL *containgURL; // @synthesize containgURL=_containgURL;
-@property _Bool configurationShowAsNew; // @synthesize configurationShowAsNew=_configurationShowAsNew;
 @property(copy) NSString *configurationImageBundlePath; // @synthesize configurationImageBundlePath=_configurationImageBundlePath;
 @property(copy) NSString *configurationImagePath; // @synthesize configurationImagePath=_configurationImagePath;
 @property(retain) NSImage *configurationImage; // @synthesize configurationImage=_configurationImage;
@@ -65,6 +63,7 @@
 @property(retain) NCTodayHeaderViewController *headerController; // @synthesize headerController=_headerController;
 @property(retain) NCTodayItemViewController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(readonly) _Bool configurationShowAsNew;
 @property(readonly) _Bool contentIsVisible;
 @property(readonly) _Bool isRemoteItem;
 @property(readonly) NSMutableDictionary *dictionaryRepresentation;

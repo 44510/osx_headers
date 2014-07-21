@@ -7,12 +7,12 @@
 #import "NSViewController.h"
 
 #import "PageWithHeaderViewDelegate.h"
-#import "ReaderInstallation.h"
+#import "ReaderInstallationTarget.h"
 
 @class BrowserWKView, ContinuousReadingBannerLayer, FlippedView, NSAttributedString, NSImage, NSMutableArray, NSString, NSTimer, ReaderContainerView, SearchableWKView;
 
 __attribute__((visibility("hidden")))
-@interface PageWithHeaderViewController : NSViewController <PageWithHeaderViewDelegate, ReaderInstallation>
+@interface PageWithHeaderViewController : NSViewController <PageWithHeaderViewDelegate, ReaderInstallationTarget>
 {
     BOOL _isSocial;
     NSMutableArray *_historyOperations;

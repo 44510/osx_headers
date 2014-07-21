@@ -64,6 +64,7 @@
 + (void)removeRuleAtIndex:(unsigned long long)arg1;
 + (id)ruleAtIndex:(unsigned long long)arg1;
 + (unsigned long long)numberOfRules;
++ (id)activeRules;
 + (id)rules;
 + (void)_synchronouslyWriteRulesToDisk;
 + (void)_writeRulesToDiskInBackground;

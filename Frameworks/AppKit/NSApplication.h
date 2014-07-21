@@ -113,6 +113,7 @@
 - (void)_setSupressGestureSubMaskChangesEnabled:(BOOL)arg1;
 - (void)setGestureEventMask:(unsigned long long)arg1;
 - (void)_setGestureEventMask:(unsigned long long)arg1;
+- (unsigned long long)_gestureEventMask;
 - (unsigned long long)gestureEventMask;
 - (BOOL)_processSwitchesEnabled;
 - (BOOL)isFullKeyboardAccessEnabled;
@@ -399,6 +400,7 @@
 - (void)_setDoubleClickBehavior;
 - (void)_eventBlockingTransitionDidEnd;
 - (void)_eventBlockingTransitionWillBegin;
+- (void)_axContrastChanged:(id)arg1;
 - (void)_aquaColorVariantChanged;
 - (id)init;
 - (void)_initializeAutomaticTermination;

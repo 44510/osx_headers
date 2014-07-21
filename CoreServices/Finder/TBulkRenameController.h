@@ -17,6 +17,7 @@
     TBulkRenameMakeSequentialController *_makeSequentialViewController;
     NSTextField *_exampleFld;
     NSButton *_renameBtn;
+    struct TString _initialExampleFldStr;
     NSStackView *_stackView;
     TBulkRenameFormatterController *_currentFormatter;
     struct TNSRef<NSMutableArray *> _formattedPathnames;

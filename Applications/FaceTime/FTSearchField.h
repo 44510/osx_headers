@@ -11,6 +11,7 @@
 @interface FTSearchField : NSSearchField
 {
     BOOL _transitionIsAnimating;
+    NSButton *_peoplePickerButton;
     NSButton *_addButton;
     NSButton *_clearButton;
     NSMutableString *_delayedSearchString;
@@ -20,6 +21,7 @@
 @property(retain, nonatomic) NSMutableString *delayedSearchString; // @synthesize delayedSearchString=_delayedSearchString;
 @property(nonatomic) __weak NSButton *clearButton; // @synthesize clearButton=_clearButton;
 @property(nonatomic) __weak NSButton *addButton; // @synthesize addButton=_addButton;
+@property(retain, nonatomic) NSButton *peoplePickerButton; // @synthesize peoplePickerButton=_peoplePickerButton;
 - (void).cxx_destruct;
 - (void)__searchTransitionDidEnd;
 - (void)_transitionForFirstResponder:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;

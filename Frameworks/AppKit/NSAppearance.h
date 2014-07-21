@@ -16,15 +16,14 @@
     NSBundle *_bundle;
     void *_private;
     id _reserved;
+    id _auxiliary;
 }
 
 + (void)_performWithCurrentAppearance:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_coreUIOptionsSharedKeySet;
 + (id)_defaultAppearance;
-+ (id)_accessibilityAppearance;
 + (id)_vibrantLightAppearance;
 + (id)_vibrantDarkAppearance;
-+ (id)_syrahGraphiteAppearance;
 + (id)_syrahAppearance;
 + (id)_mavericksAppearance;
 + (id)_contentBackgroundAppearance;
@@ -39,12 +38,18 @@
 - (long long)_internalVisualEffectMaterialForTitlebar;
 - (long long)_internalVisualEffectMaterialForBlendingMode:(long long)arg1;
 - (BOOL)_shouldBurSidebars;
+- (BOOL)shouldBeArchived;
+- (void)setShouldBeArchived:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
+- (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)_isBuiltinAppearance;
+- (id)uniqueIdentifier;
 - (id)description;
 - (id)compositingFilterForStyleName:(id)arg1 styleConfiguration:(id)arg2;
 - (int)blendModeForStyleName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForStyleName:(id)arg1 styleConfiguration:(id)arg2;
+- (id)resolvedAppearanceForWidget:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForWidget:(id)arg1;
 - (struct CGSize)_intrinsicContentSizeForDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
 - (BOOL)_setCustomStrokeColor:(id)arg1;
@@ -62,6 +67,7 @@
 - (void)_createOrUpdateLayer:(id *)arg1 options:(id)arg2;
 - (void)_drawInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
 - (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1;
+- (BOOL)_backstoppedByDefaultAppearance;
 - (BOOL)_isDefaultAppearance;
 - (id)_coreUICatalog;
 - (struct OpaqueCUIRendererRef *)_coreUIRenderer;

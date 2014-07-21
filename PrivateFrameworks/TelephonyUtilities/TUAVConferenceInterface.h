@@ -46,6 +46,7 @@
 - (void)conference:(id)arg1 didStopWithCallID:(long long)arg2 error:(id)arg3;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(BOOL)arg3;
+- (BOOL)_shouldIgnoreAVConferenceError:(id)arg1;
 - (void)_cleanUpConference;
 - (void)_cleanUpConferenceConnection:(id)arg1 error:(id)arg2;
 - (void)_cleanUpAllConferenceConnectionsWithError:(id)arg1;

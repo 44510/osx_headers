@@ -41,7 +41,7 @@
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (void)_itemClicked:(id)arg1;
 - (void)_handleClickedItem:(struct OpaqueWKContextMenuItem *)arg1;
-- (void)_addProposedContextMenuItems:(struct OpaqueWKArray *)arg1 toMenu:(struct OpaqueWKArray **)arg2;
+- (void)_addProposedContextMenuItems:(struct OpaqueWKArray *)arg1 toMenu:(struct OpaqueWKArray **)arg2 includeLinkItems:(BOOL)arg3;
 - (id)_applicationNameFromIdentifier:(id)arg1;
 - (struct WKPageContextMenuClientV2)contextMenuClient;
 

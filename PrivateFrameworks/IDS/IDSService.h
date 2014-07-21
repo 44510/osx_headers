@@ -17,6 +17,7 @@
 - (id)deviceForFromID:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *devices;
 @property(readonly, copy, nonatomic) NSSet *accounts;
+- (id)iCloudAccount;
 - (id)serviceDomain;
 - (BOOL)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (BOOL)cancelIdentifier:(id)arg1 error:(id *)arg2;

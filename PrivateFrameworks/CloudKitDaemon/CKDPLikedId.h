@@ -21,6 +21,7 @@
 @property(retain, nonatomic) CKDPIdentifier *commentIdentifier; // @synthesize commentIdentifier=_commentIdentifier;
 @property(retain, nonatomic) CKDPShareIdentifier *shareIdentifier; // @synthesize shareIdentifier=_shareIdentifier;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

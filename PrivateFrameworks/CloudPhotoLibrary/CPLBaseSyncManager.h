@@ -12,13 +12,14 @@
 
 @interface CPLBaseSyncManager : CPLPlatformObject <CPLEngineSyncManagerImplementation>
 {
-    BOOL _hasPowerTransaction;
     BOOL _foreground;
     NSProgress *_progress;
     unsigned long long _currentState;
+    BOOL _closed;
 }
 
 - (void).cxx_destruct;
+- (void)prepareForClose;
 - (void)didProgress:(float)arg1 forState:(unsigned long long)arg2;
 - (void)didMoveToState:(unsigned long long)arg1;
 - (long long)_baseProgressForState:(unsigned long long)arg1 totalUnits:(long long *)arg2;

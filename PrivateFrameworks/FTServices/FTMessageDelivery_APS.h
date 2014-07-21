@@ -20,7 +20,6 @@
     long long _largeMessageSize;
     NSMutableArray *_enabledTopics;
     NSMutableDictionary *_ftMessageMap;
-    NSMutableDictionary *_uuidFtMessageMap;
     NSMutableDictionary *_startDateMap;
     NSMutableDictionary *_bodyMap;
     NSMutableDictionary *_apsMessageMap;

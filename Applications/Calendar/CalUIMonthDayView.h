@@ -92,6 +92,7 @@
 - (void)updateMoreFieldVisibility;
 - (void)updateWeekNumberView;
 - (void)_addWeekLunarSpacingConstraint;
+- (void)_addDateViewLunarSpacingConstraint;
 - (void)updateLunarOverlay;
 - (void)overlayCalendarChanged;
 - (void)updateForDateChange;

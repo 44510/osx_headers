@@ -91,6 +91,9 @@
 - (id)_statusItemMenu;
 - (void)setAlternateImage:(id)arg1;
 - (id)alternateImage;
+- (void)_statusBarButtonDidSetAlternateImage;
+- (void)_statusBarButtonDidSetImage;
+- (void)_statusBarButtonDidSetTitle;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (void)setAttributedTitle:(id)arg1;

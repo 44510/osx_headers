@@ -10,6 +10,7 @@
 {
     int _keychainChangedNotificationToken;
     int _keybagStatusChangedNotificationToken;
+    int _keychainSyncStatusChangedNotificationToken;
 }
 
 + (long long)version;

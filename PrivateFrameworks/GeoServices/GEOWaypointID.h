@@ -8,13 +8,21 @@
 
 #import "NSCopying.h"
 
+@class GEOLatLng, GEOStructuredAddress, NSString;
+
 @interface GEOWaypointID : PBCodable <NSCopying>
 {
     unsigned long long _muid;
     unsigned long long _resultProviderId;
+    GEOStructuredAddress *_addressHint;
+    GEOLatLng *_locationHint;
+    NSString *_placeNameHint;
     CDStruct_12a4a01e _has;
 }
 
+@property(retain, nonatomic) NSString *placeNameHint; // @synthesize placeNameHint=_placeNameHint;
+@property(retain, nonatomic) GEOStructuredAddress *addressHint; // @synthesize addressHint=_addressHint;
+@property(retain, nonatomic) GEOLatLng *locationHint; // @synthesize locationHint=_locationHint;
 @property(nonatomic) unsigned long long resultProviderId; // @synthesize resultProviderId=_resultProviderId;
 @property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
 - (void)mergeFrom:(id)arg1;
@@ -26,8 +34,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasPlaceNameHint;
+@property(readonly, nonatomic) BOOL hasAddressHint;
+@property(readonly, nonatomic) BOOL hasLocationHint;
 @property(nonatomic) BOOL hasResultProviderId;
 @property(nonatomic) BOOL hasMuid;
+- (void)dealloc;
 
 @end
 

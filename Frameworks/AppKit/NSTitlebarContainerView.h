@@ -25,7 +25,9 @@ __attribute__((visibility("hidden")))
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)_nextResponderForEvent:(id)arg1;
+- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
 - (BOOL)mouseDownCanMoveWindow;
+- (id)menuForEvent:(id)arg1;
 - (id)_themeFrame;
 - (void)dealloc;
 

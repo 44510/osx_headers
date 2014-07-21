@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSArray *emailsToDiscover; // @synthesize emailsToDiscover=_emailsToDiscover;
 @property(copy, nonatomic) CDUnknownBlockType discoverUserInfosProgressBlock; // @synthesize discoverUserInfosProgressBlock=_discoverUserInfosProgressBlock;
 - (void).cxx_destruct;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

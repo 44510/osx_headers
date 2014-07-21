@@ -26,7 +26,7 @@
 - (void)parser:(NSXMLParser *)arg1 foundExternalEntityDeclarationWithName:(NSString *)arg2 publicID:(NSString *)arg3 systemID:(NSString *)arg4;
 - (void)parser:(NSXMLParser *)arg1 foundInternalEntityDeclarationWithName:(NSString *)arg2 value:(NSString *)arg3;
 - (void)parser:(NSXMLParser *)arg1 foundElementDeclarationWithName:(NSString *)arg2 model:(NSString *)arg3;
-- (void)parser:(NSXMLParser *)arg1 foundAttributeDeclarationWithName:(NSString *)arg2 forElement:(NSString *)arg3 type:(NSString *)arg4 defaultValue:(NSString *)arg5;
+- (void)parser:(NSXMLParser *)arg1 foundAttributeDeclarationWithName:(NSString *)arg2 forElement:(NSString *)arg3 retval:(NSString *)arg4 defaultValue:(NSString *)arg5;
 - (void)parser:(NSXMLParser *)arg1 foundUnparsedEntityDeclarationWithName:(NSString *)arg2 publicID:(NSString *)arg3 systemID:(NSString *)arg4 notationName:(NSString *)arg5;
 - (void)parser:(NSXMLParser *)arg1 foundNotationDeclarationWithName:(NSString *)arg2 publicID:(NSString *)arg3 systemID:(NSString *)arg4;
 - (void)parserDidEndDocument:(NSXMLParser *)arg1;

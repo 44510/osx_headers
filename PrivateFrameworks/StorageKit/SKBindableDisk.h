@@ -10,7 +10,6 @@
 
 @interface SKBindableDisk : NSObject
 {
-    BOOL _isObserving;
     BOOL _isValid;
     BOOL _canBeDeleted;
     BOOL _isDiskImage;
@@ -23,6 +22,7 @@
     BOOL _isNetwork;
     BOOL _isLocked;
     BOOL _canSupportRecoveryPartition;
+    BOOL _isObserving;
     SKDisk *_representedDisk;
     NSString *_role;
     NSString *_type;
@@ -40,6 +40,7 @@
 }
 
 + (id)keysToObserve;
+@property BOOL isObserving; // @synthesize isObserving=_isObserving;
 @property BOOL canSupportRecoveryPartition; // @synthesize canSupportRecoveryPartition=_canSupportRecoveryPartition;
 @property BOOL isLocked; // @synthesize isLocked=_isLocked;
 @property BOOL isNetwork; // @synthesize isNetwork=_isNetwork;

@@ -21,8 +21,10 @@
 @property(retain) id gridViewEventMonitor; // @synthesize gridViewEventMonitor=_gridViewEventMonitor;
 @property BOOL itemsShowSelection; // @synthesize itemsShowSelection=_itemsShowSelection;
 @property BOOL itemsAllowDrag; // @synthesize itemsAllowDrag=_itemsAllowDrag;
-@property AKGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
+@property __weak AKGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
 - (void).cxx_destruct;
+- (void)selectAll:(id)arg1;
+- (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (id)newItemForRepresentedObject:(id)arg1;
 - (void)viewDidMoveToSuperview;

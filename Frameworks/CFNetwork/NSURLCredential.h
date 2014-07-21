@@ -20,6 +20,7 @@
 + (id)credentialForTrust:(struct __SecTrust *)arg1;
 + (id)credentialWithIdentity:(struct OpaqueSecIdentityRef *)arg1 certificates:(id)arg2 persistence:(unsigned long long)arg3;
 + (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned long long)arg3;
+- (void)_removeSWCACreatorAttribute;
 - (BOOL)_hasSWCACreatorAttribute;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

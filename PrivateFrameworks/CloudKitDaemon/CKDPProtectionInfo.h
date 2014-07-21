@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSString *protectionInfoTag; // @synthesize protectionInfoTag=_protectionInfoTag;
 @property(retain, nonatomic) NSData *protectionInfo; // @synthesize protectionInfo=_protectionInfo;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

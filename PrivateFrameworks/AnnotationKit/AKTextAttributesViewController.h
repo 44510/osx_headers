@@ -13,6 +13,7 @@
 
 @interface AKTextAttributesViewController : NSViewController <AKFontChooserUserInterfaceItem, AKTextAttributesUserInterfaceItem>
 {
+    BOOL _buildingFontFamilyMenu;
     NSPopUpButton *_fontFamilyPopup;
     NSPopUpButton *_fontFacePopup;
     NSTextField *_fontSizeText;
@@ -28,6 +29,8 @@
 }
 
 + (void)_setupTextStyleImages:(id)arg1;
++ (id)_buildFontFamilyMenuOperationQueue;
+@property BOOL buildingFontFamilyMenu; // @synthesize buildingFontFamilyMenu=_buildingFontFamilyMenu;
 @property(retain) AKTextAttributesUIItemDelegate *textAttributesUIItemDelegate; // @synthesize textAttributesUIItemDelegate=_textAttributesUIItemDelegate;
 @property(retain) AKFontChooserUIItemDelegate *fontUIItemDelegate; // @synthesize fontUIItemDelegate=_fontUIItemDelegate;
 @property(retain) id lastActionValue; // @synthesize lastActionValue=_lastActionValue;

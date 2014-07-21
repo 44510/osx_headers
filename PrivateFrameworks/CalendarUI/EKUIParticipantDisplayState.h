@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)offlineStatusIcon;
 + (id)malformedStatusSelectedIcon;
 + (id)malformedStatusIcon;
 + (id)unknownStatusSelectedIcon;
@@ -27,7 +26,6 @@
 + (id)displayImageForFreeBusyType:(int)arg1 selected:(BOOL)arg2;
 + (int)displayImageStateForParticipant:(id)arg1 event:(id)arg2 freeBusyType:(int)arg3;
 + (id)displayImageForParticipant:(id)arg1 event:(id)arg2 freeBusyType:(int)arg3 selected:(BOOL)arg4;
-+ (id)displayAttributedStringForParticipant:(id)arg1 event:(id)arg2 freeBusyType:(int)arg3 selected:(BOOL)arg4;
 + (void)setupStatusIconAccessibility;
 + (void)initializeStatusIcons;
 + (void)initialize;

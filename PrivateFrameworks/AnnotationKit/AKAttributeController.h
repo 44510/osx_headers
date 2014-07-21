@@ -12,11 +12,11 @@
 {
     BOOL _strokeIsDashed;
     BOOL _hasShadow;
-    BOOL _hasBrushStyle;
     AKPageModelController *modelControllerToObserveForSelections;
     NSColor *_strokeColor;
     NSColor *_fillColor;
     double _strokeWidth;
+    long long _brushStyle;
     unsigned long long _arrowHeadStyle;
     NSFont *_font;
     NSDictionary *_textAttributes;
@@ -28,7 +28,7 @@
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(retain) NSFont *font; // @synthesize font=_font;
 @property unsigned long long arrowHeadStyle; // @synthesize arrowHeadStyle=_arrowHeadStyle;
-@property BOOL hasBrushStyle; // @synthesize hasBrushStyle=_hasBrushStyle;
+@property long long brushStyle; // @synthesize brushStyle=_brushStyle;
 @property BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
 @property BOOL strokeIsDashed; // @synthesize strokeIsDashed=_strokeIsDashed;
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

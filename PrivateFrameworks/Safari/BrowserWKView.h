@@ -6,19 +6,20 @@
 
 #import <Safari/SearchableWKView.h>
 
-@class BrowserDocument, NSMutableDictionary, NSMutableSet, WhitePlaceholderView;
+@class BrowserDocument, NSMutableDictionary, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface BrowserWKView : SearchableWKView
 {
     BrowserDocument *_document;
-    WhitePlaceholderView *_whitePlaceholderView;
     NSMutableDictionary *_renderTreeCreationHandlerMap;
     NSMutableSet *_WKViewMouseTrackingBlockerSet;
     BOOL _webPageIsUnresponsive;
+    BOOL _shouldBlockAllMouseEvents;
 }
 
 + (void)closeWKViews:(id)arg1;
+@property(nonatomic) BOOL shouldBlockAllMouseEvents; // @synthesize shouldBlockAllMouseEvents=_shouldBlockAllMouseEvents;
 @property(nonatomic) BOOL webPageIsUnresponsive; // @synthesize webPageIsUnresponsive=_webPageIsUnresponsive;
 - (void).cxx_destruct;
 - (id)createFullScreenWindow;
@@ -30,13 +31,15 @@ __attribute__((visibility("hidden")))
 - (id)textProviderForAppleScript;
 - (id)sourceProviderForAppleScript;
 - (BOOL)performKeyEquivalent:(id)arg1;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
 - (id)_hitTestWindowAtWindowCoordinate:(struct CGPoint)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)unblockWKViewMouseTrackingWithObject:(id)arg1;
 - (void)blockWKViewMouseTrackingWithObject:(id)arg1;
+- (void)mouseDragged:(id)arg1;
+- (void)mouseUp:(id)arg1;
+- (void)mouseExited:(id)arg1;
+- (void)mouseEntered:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)viewDidMoveToWindow;

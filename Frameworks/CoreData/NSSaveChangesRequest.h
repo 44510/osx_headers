@@ -14,8 +14,8 @@
     NSSet *_updatedObjects;
     NSSet *_deletedObjects;
     NSSet *_optimisticallyLockedObjects;
+    unsigned long long _flags;
     void *_reserved1;
-    void *_reserved2;
 }
 
 + (void)initialize;
@@ -28,6 +28,8 @@
 - (id)init;
 - (void)dealloc;
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
+- (void)_setRetryHandlerCount:(int)arg1;
+- (int)_retryHandlerCount;
 - (BOOL)hasChanges;
 - (void)setDeletedObjects:(id)arg1;
 

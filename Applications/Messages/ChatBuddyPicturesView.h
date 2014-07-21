@@ -6,31 +6,24 @@
 
 #import "NSView.h"
 
-@class NSArray, NSImage;
+@class NSArray;
 
 @interface ChatBuddyPicturesView : NSView
 {
     NSArray *_monogramImages;
-    NSImage *_defaultImage;
-    double _pictureFrameAlpha;
+    long long _backgroundStyle;
     NSArray *_internalConstraints;
 }
 
 @property(retain) NSArray *internalConstraints; // @synthesize internalConstraints=_internalConstraints;
-@property(nonatomic) double pictureFrameAlpha; // @synthesize pictureFrameAlpha=_pictureFrameAlpha;
-@property(retain, nonatomic) NSImage *defaultImage; // @synthesize defaultImage=_defaultImage;
+@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(retain, nonatomic) NSArray *monogramImages; // @synthesize monogramImages=_monogramImages;
 - (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (CDStruct_d2b197d1)alignmentRectInsets;
-- (BOOL)wantsUpdateLayer;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)_invalidateInternalConstraints;
-- (void)_commonChatBuddyPicturewViewInit;
 @property(readonly) double pictureScaling;
-@property(readonly) struct CGRect overlappedArea;
+@property(readonly) double monogramDiameter; // @dynamic monogramDiameter;
 @property(nonatomic) unsigned long long displayedPictureCount; // @dynamic displayedPictureCount;
 
 @end

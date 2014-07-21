@@ -58,6 +58,7 @@
 - (double)durationRange;
 @property(nonatomic) double duration;
 - (struct SCNCAction *)caction;
+@property(nonatomic) CDUnknownBlockType timingFunction;
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setKey:(id)arg1;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;

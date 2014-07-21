@@ -19,6 +19,7 @@
 + (void)initialize;
 - (id)description;
 - (CDStruct_1b6d18a9)posterTime;
+- (BOOL)containsMovieFragments;
 @property(readonly, nonatomic) BOOL canContainMovieFragments;
 - (BOOL)_shouldPrepareToOptimizeForExclusivePlayback;
 - (unsigned long long)referenceRestrictions;

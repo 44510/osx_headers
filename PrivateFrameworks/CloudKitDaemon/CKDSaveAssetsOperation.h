@@ -32,7 +32,7 @@
 - (BOOL)_shouldRetryError:(id)arg1;
 - (void)_retryOrFinishWithError:(id)arg1;
 - (void)cancel;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressForMMCSItem:(id)arg1;
 - (void)_handleAuthTokensForPutRequest:(id)arg1 items:(id)arg2;
 - (void)_handleItemGroupSetRegistered:(id)arg1 items:(id)arg2;

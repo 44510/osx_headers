@@ -6,11 +6,12 @@
 
 #import "SPResultWithSubItemsPreviewControllerViewController.h"
 
-@class NSDateFormatter;
+@class NSDateFormatter, NSObject<OS_dispatch_queue>;
 
 @interface SPFolderPreviewController : SPResultWithSubItemsPreviewControllerViewController
 {
     NSDateFormatter *_formatter;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedPreviewController;

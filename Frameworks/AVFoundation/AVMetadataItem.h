@@ -35,6 +35,7 @@
 - (void)cancelLoading;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)statusOfValueForKey:(id)arg1 error:(id *)arg2;
+- (id)_conformingDataTypes;
 @property(readonly, copy) NSDictionary *extraAttributes;
 - (id)_serializationDataType;
 @property(readonly, copy) NSString *dataType;

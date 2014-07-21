@@ -34,8 +34,7 @@
 @property(nonatomic) id <ABCardCollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) id <ABCardCollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(getter=isLoaded) BOOL loaded; // @synthesize loaded;
-- (void)updateFaceTimeAudioAvailability:(BOOL)arg1;
-- (void)updateFaceTimeVideoAvailability:(BOOL)arg1;
+- (void)updateFaceTimeAvailability:(BOOL)arg1;
 - (void)setNotesEditable:(BOOL)arg1;
 - (void)restoreNoteFirstResponder;
 - (void)saveNoteFirstResponder;
@@ -83,6 +82,7 @@
 - (unsigned long long)insertionIndexOfItem:(id)arg1;
 - (void)insertItemWithSeparatorFollowing:(id)arg1;
 - (unsigned long long)stackViewIndexOfLastItemWithValueKeypath:(id)arg1;
+- (void)adjustStackViewSpacingAfterItem:(id)arg1;
 - (void)addItem:(id)arg1 sort:(BOOL)arg2;
 - (void)addNewItem:(id)arg1 giveFocus:(BOOL)arg2;
 - (id)addNewItemForKey:(id)arg1 giveFocus:(BOOL)arg2;

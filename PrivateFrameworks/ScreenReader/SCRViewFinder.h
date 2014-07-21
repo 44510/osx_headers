@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _style;
     double _lastMousePostTime;
     BOOL _preventMouseSyncingDuringUpdate;
+    BOOL _registeredObservers;
     struct {
         unsigned int isAppFrontmost:1;
         unsigned int isWindowFocused:1;
@@ -104,6 +105,8 @@ __attribute__((visibility("hidden")))
 - (void)_defaultsChangedForKeyPath:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (float)_getMagFactor;
+- (void)removeObservers;
+- (void)registerObservers;
 - (id)initWithScreenRect:(struct CGRect)arg1;
 
 @end

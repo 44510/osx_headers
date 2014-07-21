@@ -6,11 +6,16 @@
 
 #import "NSObject.h"
 
+@class NSArray, NSLock;
+
 @interface MKMapService : NSObject
 {
+    NSArray *_activeInputModeLanguages;
+    NSLock *_activeInputModesLock;
 }
 
 + (id)sharedService;
+- (void).cxx_destruct;
 - (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 traits:(id)arg3;
 - (void)_mapItemsForResponseData:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
@@ -20,17 +25,23 @@
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1;
 - (id)_mk_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3;
-- (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 traits:(id)arg5;
+- (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
+- (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeDroppedPinCoordinate:(CDStruct_c3b9c2ee)arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)_ticketForReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 includeEntryPoints:(BOOL)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForForwardGeocodeString:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
-- (id)ticketForPhoneNumbers:(id)arg1 traits:(id)arg2;
+- (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)defaultTraitsWithTraits:(id)arg1;
 - (id)defaultTraits;
+- (void)_invalidateActiveInputModeLanguages;
+- (id)_activeInputModeLanguages;
+- (void)dealloc;
+- (id)init;
 
 @end
 

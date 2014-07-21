@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CHManager, NSMutableOrderedSet;
+@class CHManager, NSMutableOrderedSet, NSString;
 
 @interface RecentsManager : NSObject
 {
@@ -14,9 +14,13 @@
     long long _filterType;
     CHManager *_recentCallsManager;
     NSMutableOrderedSet *_recentPeopleList;
+    NSMutableOrderedSet *_currentSearchResults;
+    NSString *_previousSearchString;
 }
 
 + (id)sharedManager;
+@property(retain, nonatomic) NSString *previousSearchString; // @synthesize previousSearchString=_previousSearchString;
+@property(retain, nonatomic) NSMutableOrderedSet *currentSearchResults; // @synthesize currentSearchResults=_currentSearchResults;
 @property(nonatomic) BOOL isAccountSetup; // @synthesize isAccountSetup=_isAccountSetup;
 @property(retain, nonatomic) NSMutableOrderedSet *recentPeopleList; // @synthesize recentPeopleList=_recentPeopleList;
 @property(retain, nonatomic) CHManager *recentCallsManager; // @synthesize recentCallsManager=_recentCallsManager;
@@ -28,17 +32,18 @@
 - (void)createBatchHistory:(id)arg1;
 - (void)_upgradePrefsIfNecessary;
 - (id)_createRecentCallWithHandle:(id)arg1 missed:(BOOL)arg2 outgoing:(BOOL)arg3 isVideo:(BOOL)arg4 duration:(double)arg5 endedReason:(unsigned int)arg6 withDate:(id)arg7;
+- (void)recentPeopleWithSearchString:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)reloadUsingFilter:(long long)arg1;
 - (void)addToCallHistory:(id)arg1;
 - (void)markAllCallsAsRead;
 - (void)deleteRecentsHistoryForCHUniqueID:(id)arg1;
+- (void)deleteRecentsHistoryForAddressBookID:(id)arg1;
 - (void)deleteRecentsHistoryForHandle:(id)arg1;
 - (void)deleteRecentsHistoryForHandles:(id)arg1;
-- (void)recentPeopleWithSearchString:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)recentPeople;
 - (void)rebuildListAndPost:(BOOL)arg1 manualAction:(BOOL)arg2;
 - (id)init;
-- (id)postFetchingPredicate;
+- (unsigned int)limitingCallTypes;
 
 @end
 

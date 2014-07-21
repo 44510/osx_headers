@@ -18,6 +18,7 @@
 + (id)options;
 @property(retain, nonatomic) CKDPIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

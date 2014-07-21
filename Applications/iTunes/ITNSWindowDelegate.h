@@ -26,7 +26,6 @@
 - (struct CGSize)window:(id)arg1 willUseFullScreenContentSize:(struct CGSize)arg2;
 - (BOOL)windowShouldZoom:(id)arg1 toFrame:(struct CGRect)arg2;
 - (struct CGRect)windowWillUseStandardFrame:(id)arg1 defaultFrame:(struct CGRect)arg2;
-- (void)windowDidChangeScreenProfile:(id)arg1;
 - (void)windowDidChangeScreen:(id)arg1;
 - (void)windowDidChangeBackingProperties:(id)arg1;
 - (void)windowDidDeminiaturize:(id)arg1;

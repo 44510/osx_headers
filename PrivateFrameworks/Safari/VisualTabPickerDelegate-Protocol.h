@@ -10,6 +10,5 @@
 
 @protocol VisualTabPickerDelegate <NSObject>
 - (void)willStartExitAnimationForVisualTabPickerController:(VisualTabPickerViewController *)arg1;
-- (void)visualTabPickerControllerWillClose:(VisualTabPickerViewController *)arg1;
 @end
 

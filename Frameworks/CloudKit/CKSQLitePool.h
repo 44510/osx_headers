@@ -29,7 +29,7 @@
 - (BOOL)performWithDatabase:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (void)closeAll;
 - (void)releaseDatabase:(id)arg1;
-- (id)acquireDatabase;
+- (id)acquireDatabase:(BOOL)arg1;
 - (id)_acquireDatabaseWithError:(id *)arg1;
 - (id)initWithFactory:(CDUnknownBlockType)arg1;
 

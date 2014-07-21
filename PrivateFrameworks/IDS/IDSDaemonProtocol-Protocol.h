@@ -11,6 +11,8 @@
 @protocol IDSDaemonProtocol <NSObject>
 
 @optional
+- (void)continuityStopTrackingPeer:(NSString *)arg1;
+- (void)continuityStartTrackingPeer:(NSString *)arg1;
 - (void)continuityDisconnectFromPeer:(NSString *)arg1;
 - (void)continuityConnectToPeer:(NSString *)arg1;
 - (void)continuityStopScanningForType:(long long)arg1;
@@ -32,6 +34,7 @@
 - (void)cancelInvitation:(NSString *)arg1;
 - (void)sendInvitation:(NSString *)arg1 withData:(NSData *)arg2;
 - (void)sendInvitation:(NSString *)arg1 withOptions:(NSDictionary *)arg2;
+- (void)cleanupSession:(NSString *)arg1;
 - (void)setupNewSessionWithConfiguration:(NSDictionary *)arg1;
 - (void)setNSUUID:(NSString *)arg1 onDeviceWithUniqueID:(NSString *)arg2 forService:(NSString *)arg3;
 - (void)closeSocketWithOptions:(NSDictionary *)arg1;
@@ -45,8 +48,9 @@
 - (void)sendPersistedFile:(NSURL *)arg1 userInfo:(NSDictionary *)arg2 toDestinations:(NSArray *)arg3 usingAccountWithUniqueID:(NSString *)arg4 identifier:(NSString *)arg5;
 - (void)cancelItemWithIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)sendMessageWithSendParameters:(NSDictionary *)arg1;
-- (void)receivedPublicKeyAck;
 - (void)savePublicKey:(NSData *)arg1 withIdentifier:(NSString *)arg2;
+- (void)getPairedDeviceInfo;
+- (void)getLocalDeviceInfo;
 - (void)deletePairedDevice:(NSString *)arg1;
 - (void)addPairedDevice:(NSString *)arg1;
 - (void)localSetupCompleted;

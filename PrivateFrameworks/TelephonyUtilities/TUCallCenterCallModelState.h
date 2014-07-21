@@ -6,18 +6,15 @@
 
 #import <TelephonyUtilities/TUCallModelState.h>
 
-#import "TUCallModelDelegate.h"
+@class TUFaceTimeAudioCallModel, TUProxyCallModel;
 
-@class NSString, TUFaceTimeAudioCallModel, TUProxyCallModel;
-
-@interface TUCallCenterCallModelState : TUCallModelState <TUCallModelDelegate>
+@interface TUCallCenterCallModelState : TUCallModelState
 {
-    TUFaceTimeAudioCallModel *_faceTimeAudioCallModel;
 }
 
-@property(retain, nonatomic) TUFaceTimeAudioCallModel *faceTimeAudioCallModel; // @synthesize faceTimeAudioCallModel=_faceTimeAudioCallModel;
-- (void)callModelDidChange:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (void)faceTimeAudioCallModelDidChange:(id)arg1;
+- (void)telephonyCallModelDidChange:(id)arg1;
+- (id)description;
 - (BOOL)isAmbiguous;
 - (BOOL)_updateSendToVoicemailAllowed;
 - (BOOL)_updateHoldAndAnswerAllowed;
@@ -37,13 +34,9 @@
 - (BOOL)_onlySupportsCallModelType:(int)arg1;
 - (BOOL)_supportsCallModelType:(int)arg1;
 @property(readonly, retain, nonatomic) TUProxyCallModel *proxyCallModel;
+@property(readonly, retain, nonatomic) TUFaceTimeAudioCallModel *faceTimeAudioCallModel;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

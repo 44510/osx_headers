@@ -49,7 +49,7 @@
 @property(readonly, nonatomic) BOOL locationMetadataAvailable;
 @property(readonly, nonatomic) AVPlayer *player;
 - (id)locationFromMetadataGroup:(id)arg1;
-- (void)readingDidFinishSuccessfully:(BOOL)arg1 withError:(id)arg2;
+- (void)readingDidFinishSuccessfully:(BOOL)arg1;
 - (BOOL)startReadingAndOutputReturningError:(id *)arg1;
 - (BOOL)setUpReaderReturningError:(id *)arg1;
 - (BOOL)readMetadata;

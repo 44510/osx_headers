@@ -17,7 +17,8 @@
     id _tabViewControllerPrivateData;
     struct {
         unsigned int _changingSelection:1;
-        unsigned int __extra:31;
+        unsigned int _addingInitialTabViewItems:1;
+        unsigned int __extra:30;
     } _tabViewControllerFlags;
 }
 
@@ -59,6 +60,7 @@
 - (id)title;
 @property unsigned long long transitionOptions;
 @property long long selectedTabViewItemIndex;
+- (void)_updateSelectedTabViewItemIndexInUI;
 @property long long tabStyle;
 - (void)_tabStyleChangedFrom:(long long)arg1 to:(long long)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

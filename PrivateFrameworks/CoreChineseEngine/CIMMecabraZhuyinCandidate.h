@@ -24,7 +24,6 @@
 @property(nonatomic, getter=isFacemarkCandidate) BOOL facemarkCandidate; // @synthesize facemarkCandidate=_facemarkCandidate;
 @property(nonatomic, getter=isDirectlyCommitCandidate) BOOL directlyCommitCandidate; // @synthesize directlyCommitCandidate=_directlyCommitCandidate;
 @property(nonatomic, getter=isWholeInputCandidate) BOOL wholeInputCandidate; // @synthesize wholeInputCandidate=_wholeInputCandidate;
-- (id).cxx_construct;
 @property(readonly) BOOL hasUnsupportedReading;
 
 @end

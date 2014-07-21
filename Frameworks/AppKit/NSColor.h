@@ -49,6 +49,7 @@
 + (id)highlightedMenuTextColor;
 + (id)highlightedMenuColor;
 + (id)controlAlternatingRowBackgroundColors;
++ (id)systemGrayColor;
 + (id)systemPurpleColor;
 + (id)systemPinkColor;
 + (id)systemBrownColor;
@@ -182,7 +183,6 @@
 + (id)mainWindowFrameColor;
 + (id)notActiveWindowFrameColor;
 + (void)updateFrameColors:(id)arg1;
-+ (id)_colorDodgeTextColor;
 + (id)controlFillColor;
 + (id)scriptingColorWithDescriptor:(id)arg1;
 - (id)pasteboardPropertyListForType:(id)arg1;

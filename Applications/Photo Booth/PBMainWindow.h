@@ -10,7 +10,7 @@
 #import "NSSharingServicePickerDelegate.h"
 #import "NSWindowDelegate.h"
 
-@class CALayer, NSButton, NSLayoutConstraint, NSString, PBCountdownView, PBEmbossedTextField, PBFullscreenBorderView, PBMetalSwitcher, PBProfileController, PBRecordingTimerView, PBShutterButton, PBTabViewWithGradientBackground, PBTextureView, PBTexturedButton, PBTransitionWindow, PBTrayView, PBView, QLAnimationWindowEffect;
+@class CALayer, NSButton, NSLayoutConstraint, NSString, PBCountdownView, PBEmbossedTextField, PBFullscreenBorderView, PBMetalSwitcher, PBProfileController, PBRecordingTimerView, PBShutterButton, PBTabViewWithGradientBackground, PBTextureView, PBTransitionWindow, PBTrayView, PBView, QLAnimationWindowEffect;
 
 @interface PBMainWindow : NSWindow <NSWindowDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
@@ -26,10 +26,10 @@
     PBShutterButton *stillImageShutterButton;
     NSButton *fullscreenEffectsButton;
     NSButton *fullscreenShareButton;
-    PBTexturedButton *shareButton;
     NSButton *stopRecordingButton;
     PBRecordingTimerView *recordingTimerView;
     NSLayoutConstraint *trayHeight;
+    NSButton *shareButton;
     struct CGRect _windowFrame;
     struct CGRect _windowVideoViewFrame;
     struct CGRect _windowTrayBoxFrame;

@@ -19,13 +19,13 @@
 + (id)typeWithName:(id)arg1;
 + (id)structWithTag:(id)arg1 properties:(id)arg2;
 + (id)methodWithReturnValueTypeName:(id)arg1 argumentTypeNames:(id)arg2;
-+ (id)methodWithReturnValueType:(id)arg1 argumentTypes:(id)arg2;
++ (id)methodWithReturnValueType:(id)arg1 argumentTypes:(id)arg2 variadic:(BOOL)arg3 nullTerminated:(BOOL)arg4;
 + (id)method;
 + (id)blockWithReturnValueTypeName:(id)arg1 argumentTypeNames:(id)arg2;
-+ (id)blockWithReturnValueType:(id)arg1 argumentTypes:(id)arg2;
++ (id)blockWithReturnValueType:(id)arg1 argumentTypes:(id)arg2 variadic:(BOOL)arg3 nullTerminated:(BOOL)arg4;
 + (id)block;
 + (id)functionWithReturnValueTypeName:(id)arg1 argumentTypeNames:(id)arg2;
-+ (id)functionWithReturnValueType:(id)arg1 argumentTypes:(id)arg2;
++ (id)functionWithReturnValueType:(id)arg1 argumentTypes:(id)arg2 variadic:(BOOL)arg3 nullTerminated:(BOOL)arg4;
 + (id)function;
 + (id)selector;
 + (id)class;
@@ -62,6 +62,8 @@
 @property(readonly) BOOL isReference;
 @property(readonly) BOOL isVoid;
 @property(readonly) NSString *structTag;
+@property(readonly) BOOL nullTerminated;
+@property(readonly) BOOL variadic;
 @property(readonly) long long firstVisibleArgument;
 @property(readonly) long long numberOfArguments;
 - (id)argumentTypeAtIndex:(long long)arg1;

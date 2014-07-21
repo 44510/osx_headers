@@ -24,10 +24,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasCaughtUp; // @synthesize hasCaughtUp=_hasCaughtUp;
 - (void).cxx_destruct;
 - (void)main;
+- (void)scheduleFetchQuotaAndSyncDown;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)_zoneCreationOperationWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)_fetchRecordChangesOperation;
+- (id)_fetchRecordChangesOperationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_saveRecordBatchIfNecessaryWithRecords:(id)arg1 deletedStructureRecordIDs:(id)arg2;
 - (id)initWithServerContainer:(id)arg1;
 

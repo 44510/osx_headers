@@ -15,6 +15,7 @@
 - (BOOL)view:(NSRemoteViewBase *)arg1 shouldResize:(struct CGSize)arg2;
 - (void)viewDidRetreatToConfigPhase:(NSRemoteViewBase *)arg1;
 - (void)viewDidAdvanceToRunPhase:(NSRemoteViewBase *)arg1;
+- (void)viewDidAdvanceToConfigPhase:(NSRemoteViewBase *)arg1;
 - (void)viewDidInvalidate:(NSRemoteViewBase *)arg1;
 - (void)viewWillInvalidate:(NSRemoteViewBase *)arg1;
 - (NSColor *)view:(NSRemoteViewBase *)arg1 willHaveServiceFontSmoothingBackgroundColor:(NSColor *)arg2;

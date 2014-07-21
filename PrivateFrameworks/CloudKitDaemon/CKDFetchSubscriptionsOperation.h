@@ -21,7 +21,7 @@
 @property(copy, nonatomic) CDUnknownBlockType subscriptionFetchedProgressBlock; // @synthesize subscriptionFetchedProgressBlock=_subscriptionFetchedProgressBlock;
 @property(retain, nonatomic) NSArray *subscriptions; // @synthesize subscriptions=_subscriptions;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleSubscriptionFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

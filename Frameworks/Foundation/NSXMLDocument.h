@@ -89,6 +89,7 @@
 - (id)initWithXMLString:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)init;
 - (void)dealloc;
+- (id)initWithKind:(unsigned long long)arg1 options:(unsigned long long)arg2;
 
 @end
 

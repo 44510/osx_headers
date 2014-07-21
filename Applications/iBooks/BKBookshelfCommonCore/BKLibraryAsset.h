@@ -38,6 +38,7 @@
 + (id)predicateForLibraryAssetsThatWarnedAboutDesktopSupport;
 + (id)predicateForLibraryAssetsWithoutCoverURL;
 + (id)predicateForLibraryAssetsWithDataSourceIdentifier:(id)arg1;
++ (id)predicateForLibraryAssetsNotMarkedAsOld;
 + (id)predicateForLibraryAssetsMarkedAsNew;
 + (id)predicateForLibraryAssetsMatchingSearchString:(id)arg1;
 + (id)predicateForLibraryAssetsWithGenre:(id)arg1;
@@ -46,6 +47,7 @@
 + (id)predicateForLibraryAssetsRecentlyOpened;
 + (id)predicateForNonCloudLibraryAssetsAndContainers;
 + (id)predicateForNonCloudLibraryAssets;
++ (id)predicateForLocalOrImportingLibraryAssets;
 + (id)predicateForLocalLibraryAssets;
 + (id)predicateForLibraryAssetsInCloud;
 + (id)predicateForLibraryAssetsFromStore;

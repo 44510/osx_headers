@@ -6,7 +6,7 @@
 
 #import <GameCenterPrivateUIMac/GKCollectionViewController.h>
 
-@class GKGame, NSArray;
+@class GKGame, GKSearchBarView, NSArray;
 
 @interface GKPlayerPickerViewController : GKCollectionViewController
 {
@@ -14,6 +14,7 @@
     long long _maxSelectable;
     GKGame *_game;
     id <GKNearbyBrowserDelegate> _nearbyDelegate;
+    GKSearchBarView *_searchBar;
     CDUnknownBlockType _handler;
     NSArray *_preselectedPlayers;
 }
@@ -22,10 +23,13 @@
 + (id)multiplayerPickerForGame:(id)arg1 hiddenPlayers:(id)arg2;
 @property(retain) NSArray *preselectedPlayers; // @synthesize preselectedPlayers=_preselectedPlayers;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
+@property(nonatomic) GKSearchBarView *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) id <GKNearbyBrowserDelegate> nearbyDelegate; // @synthesize nearbyDelegate=_nearbyDelegate;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
 @property(nonatomic) BOOL supportsNearby; // @synthesize supportsNearby=_supportsNearby;
 @property(nonatomic) long long maxSelectable; // @synthesize maxSelectable=_maxSelectable;
+- (void)didEnterNoContentState;
+- (void)configureSearchBar:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)cancel;

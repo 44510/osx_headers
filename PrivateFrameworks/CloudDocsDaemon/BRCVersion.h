@@ -23,6 +23,7 @@
     NSData *_xattrSignature;
     NSData *_quarantineInfo;
     NSMutableSet *_conflictLoserEtags;
+    NSData *_lazyXattr;
     NSNumber *_lastEditorDeviceKey;
     NSString *_lastEditorDeviceName;
 }
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
 @property(retain, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;
 @property(retain, nonatomic) NSNumber *lastEditorDeviceKey; // @synthesize lastEditorDeviceKey=_lastEditorDeviceKey;
+@property(retain, nonatomic) NSData *lazyXattr; // @synthesize lazyXattr=_lazyXattr;
 @property(retain, nonatomic) NSData *xattrSignature; // @synthesize xattrSignature=_xattrSignature;
 @property(retain, nonatomic) NSSet *conflictLoserEtags; // @synthesize conflictLoserEtags=_conflictLoserEtags;
 @property(retain, nonatomic) NSData *contentSignature; // @synthesize contentSignature=_contentSignature;

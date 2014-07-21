@@ -28,10 +28,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isShowingReader; // @synthesize isShowingReader=_isShowingReader;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) NSDictionary *dictionaryRepresentationForUserActivityUserInfo;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (BOOL)hasSameUUIDAndURLAsTab:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(BOOL)arg4 readerScrollPosition:(id)arg5;
+- (id)initWithDictionaryFromUserActivityUserInfo:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

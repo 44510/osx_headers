@@ -12,7 +12,7 @@
 
 @interface CKRecord (BRCItemAdditions) <PQLBindable>
 + (id)desiredKeysWithMask:(unsigned short)arg1;
-+ (id)assetsOnlyDocumentContentsRecordForLocalItem:(id)arg1 thumbnail1024URL:(id)arg2 thumbnailMetadata:(id)arg3 packageManifest:(id *)arg4 error:(id *)arg5;
++ (id)assetsOnlyDocumentContentsRecordForLocalItem:(id)arg1 thumbnail1024Asset:(id)arg2 thumbnailMetadata:(id)arg3 packageManifest:(id *)arg4 error:(id *)arg5;
 + (id)documentStructureRecordForLocalItem:(id)arg1;
 + (id)directoryRecordForLocalItem:(id)arg1;
 + (id)aliasRecordForLocalItem:(id)arg1;
@@ -28,6 +28,8 @@
 - (BOOL)saveStructureRecordInContainer:(id)arg1;
 - (BOOL)saveInconsistentRecordInContainer:(id)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
+- (id)brc_updateDroppedReason;
+- (id)brc_oplockMergeEtag;
 - (BOOL)brc_isInterestingRecordForSyncDown;
 
 // Remaining properties

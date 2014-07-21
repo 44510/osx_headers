@@ -22,6 +22,7 @@
 + (id)inspectionOnlyAssetWithStreamDataParser:(id)arg1 tracks:(id)arg2;
 + (id)inspectionOnlyAssetWithFigAsset:(struct OpaqueFigAsset *)arg1;
 - (BOOL)_hasResourceLoaderDelegate;
+- (BOOL)containsMovieFragments;
 - (BOOL)canContainMovieFragments;
 - (BOOL)isComposable;
 - (BOOL)isReadable;

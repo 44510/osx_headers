@@ -21,7 +21,7 @@
 @property(retain, nonatomic) NSArray *likeIDsToFetch; // @synthesize likeIDsToFetch=_likeIDsToFetch;
 @property(copy, nonatomic) CDUnknownBlockType likesFetchedProgressBlock; // @synthesize likesFetchedProgressBlock=_likesFetchedProgressBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleLikesFetched:(id)arg1 count:(unsigned long long)arg2 likes:(id)arg3 response:(id)arg4;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

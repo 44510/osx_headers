@@ -6,16 +6,16 @@
 
 #import "NSInspectorBar.h"
 
-@class NSWindow, _MailInspectorBarSeparatorView;
+@class NSView, NSWindow;
 
 @interface MailInspectorBar : NSInspectorBar
 {
     NSWindow *_window;
-    _MailInspectorBarSeparatorView *_separatorView;
+    NSView *_separatorView;
 }
 
 + (Class)standardItemControllerClass;
-@property(retain, nonatomic) _MailInspectorBarSeparatorView *separatorView; // @synthesize separatorView=_separatorView;
+@property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) __weak NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
 - (void)_tile;

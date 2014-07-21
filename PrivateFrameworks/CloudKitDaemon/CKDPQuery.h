@@ -28,6 +28,7 @@
 @property(retain, nonatomic) NSMutableArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic) NSMutableArray *types; // @synthesize types=_types;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

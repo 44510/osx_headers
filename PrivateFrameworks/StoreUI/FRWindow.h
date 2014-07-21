@@ -6,14 +6,14 @@
 
 #import "NSWindow.h"
 
-@class FRProgressSpin, FRToolbarManager, NSDictionary, NSString, NSTextField;
+@class FRToolbarManager, NSDictionary, NSProgressIndicator, NSString, NSTextField;
 
 @interface FRWindow : NSWindow
 {
     NSTextField *_statusView;
     NSDictionary *_statusAttributes;
     long long _activityIndicatorStackDepth;
-    FRProgressSpin *_loadingProgressIndicator;
+    NSProgressIndicator *_loadingProgressIndicator;
     struct CGColor *_frBackgroundColor;
     double _adjustToolbarHeightBy;
     BOOL _settingStyleMask;

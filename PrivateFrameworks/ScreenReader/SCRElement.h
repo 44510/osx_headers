@@ -58,7 +58,8 @@
         unsigned int isEmbeddedTextAttachment:1;
         unsigned int registeredAnimationOccurredNotification:1;
         unsigned int registeredElementBusyChangedNotification:1;
-        unsigned int reserved:11;
+        unsigned int didEverPopulateChildren:1;
+        unsigned int reserved:10;
     } _sreFlags;
 }
 
@@ -92,6 +93,7 @@
 - (id)_ancestorMatchStartElement:(id)arg1 matchBlock:(CDUnknownBlockType)arg2;
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
 - (BOOL)handleWordWillBeSpokenCallbackForEvent:(id)arg1 request:(id)arg2;
+- (BOOL)handleReadValueChangeCallbackForEvent:(id)arg1 request:(id)arg2;
 - (BOOL)handleReadContentsCallbackForEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (BOOL)shouldTerminateReadContentForSource:(id)arg1;
 - (id)nextReadContentsElementVisibleOnly:(BOOL)arg1;
@@ -233,6 +235,7 @@
 - (id)moveToUIElement:(id)arg1 options:(int)arg2;
 - (id)moveToUIElement:(id)arg1;
 - (BOOL)shouldIncludeDescendants;
+- (BOOL)allowRecursiveFocusOnChildren;
 - (BOOL)shouldAutoFocusOnChildren;
 - (BOOL)canNavigateToChildren;
 - (BOOL)shouldNavigateElement:(id)arg1;
@@ -372,6 +375,7 @@
 - (id)deepestChild;
 - (void)addDescendantsToArray:(id)arg1 additionalToRetain:(id)arg2 additionalToSkip:(id)arg3;
 - (void)setChildren:(id)arg1;
+- (BOOL)didEverPopulateChildren;
 - (id)children;
 - (id)parent;
 - (void)setParent:(id)arg1;
@@ -726,6 +730,8 @@
 - (void)_performDefaultActionAsynchronously;
 - (void)_performDefaultTransientUIAction:(id)arg1 request:(id)arg2;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
+- (BOOL)doubleClickOnElement;
+- (BOOL)_clickOnElement:(unsigned int)arg1;
 - (BOOL)clickOnElement;
 - (void)handleInteractionOutput:(id)arg1 forCommand:(id)arg2 withStatus:(BOOL)arg3;
 - (BOOL)handleDirectInteractionWithEvent:(id)arg1 request:(id)arg2;
@@ -769,6 +775,7 @@
 - (BOOL)rewind:(id)arg1 request:(id)arg2;
 - (BOOL)fastForwardEnded:(id)arg1 request:(id)arg2;
 - (BOOL)fastForward:(id)arg1 request:(id)arg2;
+- (BOOL)isLineChangeEvent:(id)arg1;
 - (BOOL)isNavigationEvent:(id)arg1;
 - (id)currentPopupItems;
 - (id)currentPopupItem;
@@ -932,6 +939,7 @@
 - (void)_findTextDispatchHandler:(struct __SCREventDispatcherHandlerInfo *)arg1;
 - (void)_wordWillBeSpokenDispatchHandler:(struct __SCREventDispatcherHandlerInfo *)arg1;
 - (void)_readWindowContentsDispatchHandler:(struct __SCREventDispatcherHandlerInfo *)arg1;
+- (void)_readValueChangedDispatchHandler:(struct __SCREventDispatcherHandlerInfo *)arg1;
 - (void)_readContentsDispatchHandler:(struct __SCREventDispatcherHandlerInfo *)arg1;
 - (BOOL)openDataDetectorMenuForAXRange:(struct __AXTextMarkerRange *)arg1;
 - (id)dataDetectorTypeForAXRange:(struct __AXTextMarkerRange *)arg1;

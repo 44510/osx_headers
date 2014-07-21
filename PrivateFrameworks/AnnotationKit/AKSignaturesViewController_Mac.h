@@ -15,6 +15,7 @@
 {
     AKSignatureCaptureViewController_Mac *_captureViewController;
     double _signaturesListWidth;
+    double _tableViewBottomConstant;
     CDUnknownBlockType _completionHandler;
     id _presentingContainer;
     NSTableView *_tableView;
@@ -52,6 +53,7 @@
 - (long long)tag;
 - (id)signatures;
 - (struct CGSize)idealContentSize;
+- (void)_setupListViewForNoCaptureAvailable;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithController:(id)arg1;

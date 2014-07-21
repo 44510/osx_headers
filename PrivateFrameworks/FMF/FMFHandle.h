@@ -19,6 +19,7 @@
     NSArray *_aliasServerIds;
     NSArray *_invitationSentToIds;
     NSDictionary *_expiresByGroupId;
+    NSString *_hashedDSID;
     NSNumber *_trackingTimestamp;
     NSString *__prettyNameInternal;
 }
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) NSString *_prettyNameInternal; // @synthesize _prettyNameInternal=__prettyNameInternal;
 @property(copy) NSNumber *trackingTimestamp; // @synthesize trackingTimestamp=_trackingTimestamp;
 @property(getter=isPending) BOOL pending; // @synthesize pending=_pending;
+@property(copy, nonatomic) NSString *hashedDSID; // @synthesize hashedDSID=_hashedDSID;
 @property(copy, nonatomic) NSDictionary *expiresByGroupId; // @synthesize expiresByGroupId=_expiresByGroupId;
 @property(copy, nonatomic) NSArray *invitationSentToIds; // @synthesize invitationSentToIds=_invitationSentToIds;
 @property(copy, nonatomic) NSArray *aliasServerIds; // @synthesize aliasServerIds=_aliasServerIds;

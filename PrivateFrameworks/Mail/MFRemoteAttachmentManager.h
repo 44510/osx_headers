@@ -18,8 +18,8 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSOperationQueue *downloadQueue; // @synthesize downloadQueue=_downloadQueue;
 - (void).cxx_destruct;
-- (id)_attachmentForURL:(id)arg1 filename:(id)arg2 mimeType:(id)arg3 filesize:(long long)arg4 downloadDirectory:(id)arg5 isImageArchive:(BOOL)arg6 isAutoArchive:(BOOL)arg7;
-- (id)remoteAttachmentsByURLForMessage:(id)arg1;
+- (id)_attachmentForURL:(id)arg1 filename:(id)arg2 mimeType:(id)arg3 filesize:(long long)arg4 downloadDirectory:(id)arg5 isImageArchive:(BOOL)arg6 isAutoArchive:(BOOL)arg7 allowDownloading:(BOOL)arg8;
+- (id)remoteAttachmentsByURLForMessage:(id)arg1 allowDownloading:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
 

@@ -106,6 +106,7 @@
 - (void)_chatDisplayControllerRecipientHandlesDidChange:(id)arg1;
 - (void)removeParticipant:(id)arg1;
 - (void)updateLocationTracking;
+- (void)tableViewWasDoubleClicked:(id)arg1;
 - (void)showContactCard:(id)arg1;
 - (void)addParticipant:(id)arg1;
 - (void)muteUnmute:(id)arg1;

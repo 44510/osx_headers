@@ -80,6 +80,7 @@
 + (void)initialize;
 - (Class)_animatorClass;
 - (void)_updateForSizeModeChange;
+- (void)_sizeModeChangeForRowView:(id)arg1 row:(long long)arg2;
 - (void)_showMoreShowLessClicked:(id)arg1;
 - (id)_defaultShowMoreViewForRow:(long long)arg1;
 - (void)setUsesShowMoreRow:(BOOL)arg1;
@@ -257,6 +258,7 @@
 - (BOOL)_delegateShouldShowOutlineCellForItem:(id)arg1;
 - (void)_setNeedsDisplayInRow:(long long)arg1;
 - (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
+- (BOOL)_isOutlineView;
 - (BOOL)shouldShowOutlineCellInlineForRow:(long long)arg1;
 - (double)_indentationForRow:(long long)arg1 withLevel:(long long)arg2 isSourceListGroupRow:(BOOL)arg3;
 - (double)_outlineCellIndentation;

@@ -44,8 +44,10 @@
 - (void)captureStateTimingFeedbackCollection:(id)arg1;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
+- (void)captureMapsLaunchFeedbackCollection:(id)arg1;
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureDirectionsFeedbackCollection:(id)arg1;
+- (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (BOOL)shouldIgnoreCollectionForCountry;

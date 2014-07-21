@@ -272,6 +272,7 @@
 - (BOOL)representsService:(id)arg1;
 @property(retain, nonatomic) Account *representedAccount;
 @property(retain, nonatomic) NSArray *representedAccounts;
+- (void)_addressBookPreferencesDidChange:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
 - (void)_accountInfoChanged:(id)arg1;

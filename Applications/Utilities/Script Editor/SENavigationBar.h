@@ -14,7 +14,6 @@
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (void)layout;
 
 @end
 

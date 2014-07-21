@@ -12,7 +12,9 @@
 }
 
 @property double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+- (void)dealloc;
 - (void)awakeFromNib;
+- (void)appearanceChanged:(id)arg1;
 
 @end
 

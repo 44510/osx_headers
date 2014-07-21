@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) int key; // @synthesize key=_key;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

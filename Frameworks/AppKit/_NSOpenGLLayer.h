@@ -17,6 +17,7 @@
 - (void)drawInCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(struct _CGLPixelFormatObject *)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
 - (void)display;
 - (void)_NS_invalidateSuggestedContentsScale;
+- (void)drawInContext:(struct CGContext *)arg1;
 - (id)description;
 - (id)init;
 - (void)_appkitViewBackingLayerUniqueMethod;

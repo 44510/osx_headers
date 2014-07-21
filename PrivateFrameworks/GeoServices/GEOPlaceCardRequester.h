@@ -20,13 +20,14 @@
 + (void)useLocalProxy;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(CDUnknownBlockType)arg2;
 - (void)calculateFreeableSpaceWithHandler:(CDUnknownBlockType)arg1;
+- (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 networkActivity:(CDUnknownBlockType)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)trackPlaceData:(id)arg1;
-- (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 networkActivity:(CDUnknownBlockType)arg3 requesterHandler:(CDUnknownBlockType)arg4;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 networkActivity:(CDUnknownBlockType)arg4 requesterHandler:(CDUnknownBlockType)arg5;
 - (void)requestMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3 networkActivity:(CDUnknownBlockType)arg4 requesterHandler:(CDUnknownBlockType)arg5;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(CDUnknownBlockType)arg1;
-- (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)requestMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (id)init;

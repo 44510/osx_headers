@@ -6,48 +6,30 @@
 
 #import "NSObject.h"
 
-@class NSObject<OS_dispatch_source>, NSOperationQueue;
+@class NSBackgroundActivityScheduler, NSObject<OS_dispatch_source>;
 
 @interface PowerManager : NSObject
 {
-    NSObject<OS_dispatch_source> *_fetchCheckPointTimer;
-    struct __IOPMConnection *_connection;
-    unsigned int _powerAssertion;
-    BOOL _registeredForSleepServices;
+    unsigned int _powerStateNotifier;
+    unsigned int _powerStateSession;
+    struct IONotificationPort *_powerStateNotificationPort;
     struct __CFRunLoopSource *_powerSourceRunLoopSource;
-    BOOL _alreadyHeldPowerAssertionThisDarkWake;
-    BOOL _shouldLogPowerEvents;
-    NSOperationQueue *_workQueue;
-    long long _currentPowerState;
-    long long _previousPowerState;
+    NSBackgroundActivityScheduler *_applicationRefreshActivity;
+    NSObject<OS_dispatch_source> *_fetchCheckPointTimer;
+    CDUnknownBlockType _applicationRefreshCompletionHandler;
 }
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) BOOL shouldLogPowerEvents; // @synthesize shouldLogPowerEvents=_shouldLogPowerEvents;
-@property BOOL alreadyHeldPowerAssertionThisDarkWake; // @synthesize alreadyHeldPowerAssertionThisDarkWake=_alreadyHeldPowerAssertionThisDarkWake;
-@property long long previousPowerState; // @synthesize previousPowerState=_previousPowerState;
-@property long long currentPowerState; // @synthesize currentPowerState=_currentPowerState;
-@property(readonly, nonatomic) NSOperationQueue *workQueue; // @synthesize workQueue=_workQueue;
+@property(copy) CDUnknownBlockType applicationRefreshCompletionHandler; // @synthesize applicationRefreshCompletionHandler=_applicationRefreshCompletionHandler;
+@property(readonly, nonatomic) NSObject<OS_dispatch_source> *fetchCheckPointTimer; // @synthesize fetchCheckPointTimer=_fetchCheckPointTimer;
+@property(readonly, nonatomic) NSBackgroundActivityScheduler *applicationRefreshActivity; // @synthesize applicationRefreshActivity=_applicationRefreshActivity;
 - (void).cxx_destruct;
-- (void)_fetchCheckPointTimerFired;
-- (void)_stopFetchCheckPointTimer;
-- (void)_startFetchCheckPointTimer;
-- (void)_accountBecameReachable:(id)arg1;
-- (void)_networkConfigurationChanged:(id)arg1;
-- (void)_releasePowerAssertion;
-- (void)_holdPowerAssertion;
-- (void)_systemFullWoke;
-- (void)_systemDarkWoke;
+- (void)_applicationRefreshDidEnd;
+- (CDUnknownBlockType)_applicationRefreshShouldBegin;
+- (void)_systemHasPoweredOn;
 - (void)_systemWillSleep;
-- (void)_mailAccountsDidChange:(id)arg1;
-- (void)_autoFetchFrequencyChanged;
-- (BOOL)_atLeastOneActiveAccountIsIncludedInAutoFetch;
-- (BOOL)_atLeastOneActiveAccountIsUsingIDLE;
-- (BOOL)_shouldRegisterForSleepServices;
-- (void)_registerForSleepServices:(BOOL)arg1;
 - (void)registerForPowerEvents;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;
 

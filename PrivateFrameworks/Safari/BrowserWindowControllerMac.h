@@ -103,7 +103,6 @@ __attribute__((visibility("hidden")))
     BOOL _switchingTabs;
     BOOL _forceEnableTitlebarBlurFilters;
     BOOL _prefersSidebarVisible;
-    BOOL _isClosingVisualTabPicker;
     int _windowType;
     ScrollableTabBarView *_scrollableTabBarView;
     AuxiliaryToolbarView *_collapsibleBarsContainerView;
@@ -121,6 +120,7 @@ __attribute__((visibility("hidden")))
     NSView *_backgroundSidebarAnimationView;
     NSView *_continuousBannerSidebarAnimationView;
     CDUnknownBlockType _completionHandlerForLastSheetEndingOnWindow;
+    BarBackground *_popupWindowUnifiedFieldContainer;
     UnifiedField *_popupWindowUnifiedField;
 }
 
@@ -132,6 +132,7 @@ __attribute__((visibility("hidden")))
 + (id)orderedWindowControllers;
 + (id)activeWindowController;
 @property(nonatomic) __weak UnifiedField *popupWindowUnifiedField; // @synthesize popupWindowUnifiedField=_popupWindowUnifiedField;
+@property(nonatomic) __weak BarBackground *popupWindowUnifiedFieldContainer; // @synthesize popupWindowUnifiedFieldContainer=_popupWindowUnifiedFieldContainer;
 @property(copy, nonatomic) CDUnknownBlockType completionHandlerForLastSheetEndingOnWindow; // @synthesize completionHandlerForLastSheetEndingOnWindow=_completionHandlerForLastSheetEndingOnWindow;
 @property(retain, nonatomic) NSView *continuousBannerSidebarAnimationView; // @synthesize continuousBannerSidebarAnimationView=_continuousBannerSidebarAnimationView;
 @property(retain, nonatomic) NSView *backgroundSidebarAnimationView; // @synthesize backgroundSidebarAnimationView=_backgroundSidebarAnimationView;
@@ -139,7 +140,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSView *firstResponderViewBeforeFullScreenTransition; // @synthesize firstResponderViewBeforeFullScreenTransition=_firstResponderViewBeforeFullScreenTransition;
 @property(retain, nonatomic) AutomaticReadingListContentProvider *automaticReadingListContentProvider; // @synthesize automaticReadingListContentProvider=_automaticReadingListContentProvider;
 @property(retain, nonatomic) ReadingListContentProvider *readingListContentProvider; // @synthesize readingListContentProvider=_readingListContentProvider;
-@property(readonly, nonatomic) BOOL isClosingVisualTabPicker; // @synthesize isClosingVisualTabPicker=_isClosingVisualTabPicker;
 @property int windowType; // @synthesize windowType=_windowType;
 @property(nonatomic) BOOL prefersSidebarVisible; // @synthesize prefersSidebarVisible=_prefersSidebarVisible;
 @property(nonatomic) BOOL forceEnableTitlebarBlurFilters; // @synthesize forceEnableTitlebarBlurFilters=_forceEnableTitlebarBlurFilters;
@@ -158,21 +158,23 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isPopupWindowUnifiedFieldVisible) BOOL popupWindowUnifiedFieldVisible;
-- (void)_updatePopupWindowUnifiedFieldFrameYOrigin;
+- (void)_updatePopupWindowUnifiedFieldContainerFrameYOrigin;
 - (void)_setupPopupWindowUnifiedField;
 - (void)_addOrRemoveNewTabButtonInToolbarIfNecessary;
+- (id)_createTitlebarAccessoryViewController;
 - (BOOL)_systemHasNewTitlebarAccessoryViewSupport;
 - (void)_updateContentViewTopContentInset;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingContentLayoutRectChanges;
 - (void)_startObservingContentLayoutRectChanges;
+- (BOOL)_isToolbarBlurringEnabledInFullScreen;
 - (long long)_readerButtonState;
 - (void)_setReaderButtonState:(long long)arg1 animate:(BOOL)arg2;
 - (void)willStartExitAnimationForVisualTabPickerController:(id)arg1;
-- (void)visualTabPickerControllerWillClose:(id)arg1;
 - (void)_updateVisualTabPickerButton;
 - (void)toggleVisualTabPicker:(id)arg1;
 - (void)focusVisualTabPickerSearchField;
+@property(readonly, nonatomic) BOOL isClosingVisualTabPicker;
 - (BOOL)isShowingVisualTabPicker;
 - (struct CGRect)visualTabPickerRootViewFrame;
 - (void)_updateVisualTabPickerFrame;
@@ -233,7 +235,7 @@ __attribute__((visibility("hidden")))
 - (double)_windowWidthForTabSwitcherWidth:(double)arg1;
 - (BOOL)_windowIsFullHeight;
 - (void)_updateKeyboardLoop;
-- (void)_tryMultipleURLs:(unique_ptr_b4bbd85b)arg1 windowPolicy:(long long)arg2;
+- (void)_tryMultipleURLs:(unique_ptr_ed026c72)arg1 windowPolicy:(long long)arg2;
 - (void)_updateReaderButton:(int)arg1;
 - (BOOL)_stopReloadButtonShouldBeVisible;
 - (id)_forwardListMenuForButton:(id)arg1;
@@ -426,11 +428,12 @@ __attribute__((visibility("hidden")))
 - (void)userDidScrollDownInBrowserWKView:(id)arg1;
 - (void)updateWindowTitlebarBlurFilters;
 - (void)_setTitlebarBlurFiltersDisabled:(BOOL)arg1;
+- (void)webViewReaderDidBecomeUnavailableUnexpectedly:(struct BrowserContentViewController *)arg1;
 - (void)webViewReaderDidDeactivate:(struct BrowserContentViewController *)arg1;
 - (void)webViewReaderWillDeactivate:(struct BrowserContentViewController *)arg1;
 - (void)webViewReaderDidActivate:(struct BrowserContentViewController *)arg1;
+- (void)webViewReaderWillActivate:(struct BrowserContentViewController *)arg1;
 - (void)webViewMainContentViewDidChange:(struct BrowserContentViewController *)arg1;
-- (void)webViewDidUpdateReaderAvailability:(struct BrowserContentViewController *)arg1;
 - (void)webViewBlockedFromKeyViewLoopHasChanged:(struct BrowserContentViewController *)arg1;
 - (void)tabsWereRearranged;
 - (void)didSelectTabViewItem;
@@ -578,8 +581,6 @@ __attribute__((visibility("hidden")))
 - (id)unifiedFieldPlaceholderString;
 - (void)showCertificateSheet:(id)arg1;
 - (void)_certificateTrustSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
-- (id)_pageStatusForOneStepAddBookmarkButton;
-- (void)mouseLocationChangedForOneStepBookmarkingButton;
 - (id)dynamicForwardMenu;
 - (id)dynamicBackMenu;
 - (id)toolbarViewWindow;

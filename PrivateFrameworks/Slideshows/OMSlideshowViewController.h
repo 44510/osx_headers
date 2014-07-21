@@ -50,9 +50,9 @@
 - (unsigned long long)authorWithTheme:(id)arg1 mediaURLs:(id)arg2 attributes:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 resultHandler:(CDUnknownBlockType)arg5;
 @property id <OMSlideshowViewControllerPlaybackDelegate> playbackDelegate; // @synthesize playbackDelegate=_playbackDelegate;
 @property id <OMSlideshowViewControllerPrepareDelegate> prepareDelegate; // @synthesize prepareDelegate=_prepareDelegate;
-- (void)gotoNextPage;
-- (void)gotoPreviousPage;
-- (void)gotoPoster;
+- (void)gotoNextPage:(BOOL)arg1;
+- (void)gotoPreviousPage:(BOOL)arg1;
+- (void)gotoPoster:(BOOL)arg1;
 - (id)synopsisPath;
 - (void)gotoItemAtSynopsisPath:(id)arg1 animated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)pause;

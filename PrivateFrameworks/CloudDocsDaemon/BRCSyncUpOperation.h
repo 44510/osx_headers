@@ -8,7 +8,7 @@
 
 #import "BRCOperationSubclass.h"
 
-@class CKModifyRecordsOperation, NSString;
+@class CKModifyRecordsOperation, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface BRCSyncUpOperation : BRCOperation <BRCOperationSubclass>
@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     float _cost;
     CKModifyRecordsOperation *_modifyOperation;
     CDUnknownBlockType _syncUpCompletionBlock;
+    NSArray *_recordsNeedingSharingInfo;
 }
 
 + (id)syncUpOperationForContainer:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long *)arg3;
-+ (id)modifyRecordsOperationForContainer:(id)arg1 maxCost:(float)arg2 cost:(float *)arg3 retryAfter:(unsigned long long *)arg4;
++ (id)modifyRecordsOperationForContainer:(id)arg1 maxCost:(float)arg2 cost:(float *)arg3 retryAfter:(unsigned long long *)arg4 recordsNeedingSharingInfo:(id *)arg5;
+@property(readonly, nonatomic) NSArray *recordsNeedingSharingInfo; // @synthesize recordsNeedingSharingInfo=_recordsNeedingSharingInfo;
 @property(readonly, nonatomic) float cost; // @synthesize cost=_cost;
 @property(copy, nonatomic) CDUnknownBlockType syncUpCompletionBlock; // @synthesize syncUpCompletionBlock=_syncUpCompletionBlock;
 @property(readonly, nonatomic) CKModifyRecordsOperation *modifyOperation; // @synthesize modifyOperation=_modifyOperation;
@@ -27,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithContainer:(id)arg1 cost:(float)arg2 modifyOperation:(id)arg3;
+- (id)initWithContainer:(id)arg1 cost:(float)arg2 modifyOperation:(id)arg3 recordsNeedingSharingInfo:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

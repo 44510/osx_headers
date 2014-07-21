@@ -19,6 +19,8 @@
 - (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+- (void)viewWillDraw;
+- (void)awakeFromNib;
 - (void)_accountHeaderTableCellViewCommonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -58,7 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)notificationsReceiverDidFinishGathering:(id)arg1;
 - (void)notificationsReceiverDidInvalidate:(id)arg1;
 - (void)setSendHasUpdateNotification:(BOOL)arg1;
-- (void)_sendSingleShotHasUpdateNotificationIfNeeded;
+- (void)_sendHasUpdateNotificationIfNeeded;
 - (void)processUpdates;
 - (void)_processChanges:(id)arg1;
 - (void)_processUpdates;
@@ -84,7 +84,6 @@ __attribute__((visibility("hidden")))
 - (void)_runQuery;
 - (void)_startReceiver;
 - (void)stop;
-- (void)_performBlockSynchronously:(CDUnknownBlockType)arg1;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)enableUpdates;
 - (void)disableUpdates;

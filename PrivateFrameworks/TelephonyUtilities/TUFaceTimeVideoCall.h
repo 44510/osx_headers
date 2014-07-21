@@ -14,6 +14,7 @@
 - (id)audioCategory;
 - (int)endedError;
 - (unsigned int)endedReason;
+- (BOOL)hasReceivedFirstFrame;
 - (void)setIsSendingVideo:(BOOL)arg1;
 - (BOOL)isSendingVideo;
 - (int)callStatus;

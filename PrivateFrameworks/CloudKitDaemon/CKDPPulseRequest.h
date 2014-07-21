@@ -35,6 +35,7 @@
 @property(retain, nonatomic) CKDPResource *resource; // @synthesize resource=_resource;
 @property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

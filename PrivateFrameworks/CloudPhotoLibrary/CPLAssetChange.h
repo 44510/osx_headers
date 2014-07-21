@@ -15,6 +15,7 @@
     NSString *_masterIdentifier;
     NSDate *_lastSharedDate;
     NSDate *_addedDate;
+    NSDate *_assetDate;
     NSArray *_resources;
     NSString *_caption;
     NSString *_extendedDescription;
@@ -34,8 +35,10 @@
     unsigned long long _assetSubtype;
     unsigned long long _assetHDRType;
     CPLAdjustments *_adjustments;
+    unsigned long long _originalChoice;
 }
 
+@property(nonatomic) unsigned long long originalChoice; // @synthesize originalChoice=_originalChoice;
 @property(retain, nonatomic) CPLAdjustments *adjustments; // @synthesize adjustments=_adjustments;
 @property(nonatomic) unsigned long long assetHDRType; // @synthesize assetHDRType=_assetHDRType;
 @property(nonatomic) unsigned long long assetSubtype; // @synthesize assetSubtype=_assetSubtype;
@@ -57,6 +60,7 @@
 @property(copy, nonatomic) NSString *extendedDescription; // @synthesize extendedDescription=_extendedDescription;
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
+@property(copy, nonatomic) NSDate *assetDate; // @synthesize assetDate=_assetDate;
 @property(copy, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(copy, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
 @property(copy, nonatomic) NSString *masterIdentifier; // @synthesize masterIdentifier=_masterIdentifier;

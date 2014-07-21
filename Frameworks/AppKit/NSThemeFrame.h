@@ -36,7 +36,8 @@
         unsigned int titlebarViewInFullScreen:1;
         unsigned int useViewsHeight:1;
         unsigned int useViewsMinHeight:1;
-        unsigned int reserved:14;
+        unsigned int ignoreFullScreenMask:1;
+        unsigned int reserved:13;
     } _tFlags;
     int widgetState;
     NSString *_displayName;
@@ -182,6 +183,7 @@
 - (struct CGRect)_titlebarTitleRect;
 - (struct CGRect)_defaultTitlebarTitleRect;
 - (double)_titlebarHeight;
+- (double)_titlebarHeight2;
 - (double)_sideTitlebarWidth;
 - (double)_minYTitlebarTitleOffset;
 - (double)_minYTitlebarButtonsOffset;
@@ -240,6 +242,7 @@
 - (double)_topBarHeight;
 - (double)startingYLocationForSheets;
 - (double)_topBarHeightWithoutContentBorderThickness;
+- (unsigned long long)styleMask;
 - (double)contentBorderThicknessForEdge:(unsigned long long)arg1;
 - (void)setContentBorderThickness:(double)arg1 forEdge:(unsigned long long)arg2;
 - (void)_bottomBarHeightChanged;
@@ -250,6 +253,8 @@
 - (void)_reacquireToolbarFullScreenAuxiliaryView:(id)arg1;
 - (void)_reacquireToolbarViewFromFullScreenWindowAndShow:(BOOL)arg1;
 - (void)_surrenderToolbarViewForFullScreenWindow;
+- (void)updateTitlebarViewBlendingMode;
+- (BOOL)_needsBehindWindowBlendingForFullScreenTitlebar;
 - (void)_hideToolbarWithAnimation:(BOOL)arg1;
 - (void)_showToolbarWithAnimation:(BOOL)arg1;
 - (void)_showHideToolbar:(int)arg1 resizeWindow:(BOOL)arg2 animate:(BOOL)arg3;
@@ -327,6 +332,7 @@
 - (void)addAuxiliaryTitlebarView:(id)arg1;
 - (void)_setTitlebarViewController:(id)arg1;
 - (id)_titlebarViewControllerIfAvailable;
+- (id)titlebarAccessoryViewControllers;
 - (id)titlebarViewController;
 - (void)_relayoutAuxiliaryViews;
 - (void)relayoutAuxiliaryViewsOfType:(unsigned long long)arg1;
@@ -334,6 +340,7 @@
 - (void)_syncAuxillaryViewPositions;
 - (void)_moveTitlebarViewsToView:(id)arg1;
 - (struct CGRect)_currentTitlebarContainerViewFrame;
+- (void)setAppearance:(id)arg1;
 - (id)_makeTitlebarViewWithFrame:(struct CGRect)arg1;
 - (void)_updateContentViewFrame;
 - (void)_updateContentLayoutViewFrame;
@@ -401,6 +408,7 @@
 - (void)backgroundColorChanged:(id)arg1;
 - (unsigned long long)_currentThemeStyle;
 - (void)_updateTitleTextField;
+- (long long)_backgroundStyleForTitleTextField;
 - (void)_updateTitleTextFieldView;
 - (BOOL)_shouldHideTitleView;
 - (id)_currentTitleTextFieldAttributedString;
@@ -478,11 +486,12 @@
 - (void)_setTextShadow:(BOOL)arg1;
 - (void)_drawFrameInterior:(struct CGRect *)arg1 clip:(struct CGRect)arg2;
 - (BOOL)_wantsTitleBar;
-- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2;
+- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
 - (struct CGSRegionObject *)_opaqueFullSizeContentViewRegionWithClipRect:(struct CGRect)arg1;
 - (void)drawOverlayRect:(struct CGRect)arg1;
 - (struct CGRect)overlayBounds;
 - (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
+- (id)fontSmoothingBackgroundColor;
 - (void)_setContentView:(id)arg1;
 - (void)setAssociatedViewsToUnderTitlebarViews:(id)arg1;
 - (id)associatedViewsToUnderTitlebarViews;

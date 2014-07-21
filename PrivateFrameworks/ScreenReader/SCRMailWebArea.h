@@ -6,20 +6,36 @@
 
 #import <ScreenReader/SCRWebArea.h>
 
+#import "SCRMailContent.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface SCRMailWebArea : SCRWebArea
+@interface SCRMailWebArea : SCRWebArea <SCRMailContent>
 {
     unsigned long long _lastQuoteLevel;
 }
 
 @property(nonatomic) unsigned long long lastQuoteLevel; // @synthesize lastQuoteLevel=_lastQuoteLevel;
+- (void)addContentToRequest:(id)arg1;
 - (id)roleDescription;
 - (id)newOutputRequestForTextMarkerRange:(id)arg1 withUIElement:(id)arg2 command:(CDStruct_43d3e2ba)arg3 lastSelectedTextMarkerRange:(id)arg4 selectedTextMarkerRange:(id)arg5;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)chainEvent:(id)arg1 request:(id)arg2;
+- (id)typeDescription;
+- (id)valueDescription;
+- (id)attributedValueDescription;
 - (unsigned long long)_quoteLevelForTextMarker:(id)arg1 withUIElement:(id)arg2;
 - (void)_prependOutputRequest:(id)arg1 withQuoteLevel:(unsigned long long)arg2;
+- (BOOL)_isMagicPressEvent:(id)arg1;
 - (BOOL)_advanceInsertionPointByLineWithDirection:(unsigned long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

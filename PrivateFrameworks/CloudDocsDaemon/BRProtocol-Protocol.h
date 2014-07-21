@@ -7,14 +7,19 @@
 @class NSArray, NSDictionary, NSFileHandle, NSSet, NSString, NSURL;
 
 @protocol BRProtocol
+- (void)performiWorkPublishingOperationAtURL:(NSURL *)arg1 forPublish:(BOOL)arg2 readonly:(BOOL)arg3 reply:(void (^)(NSError *))arg4;
 - (void)getTheoriticalContainerURLWithID:(NSString *)arg1 forPID:(int)arg2 reply:(void (^)(NSURL *, NSError *))arg3;
 - (void)getTheoriticalContainerURLWithID:(NSString *)arg1 reply:(void (^)(NSURL *, NSError *))arg2;
+- (void)getIsContainerWithIDOverQuota:(NSString *)arg1 reply:(void (^)(NSNumber *, NSError *))arg2;
+- (void)getContainerLastServerUpdateWithID:(NSString *)arg1 reply:(void (^)(NSDate *, NSError *))arg2;
+- (void)getContainerStatusWithID:(NSString *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;
 - (void)getApplicationStatusWithPID:(int)arg1 reply:(void (^)(BOOL, NSError *))arg2;
 - (void)getApplicationStatus:(void (^)(BOOL, NSError *))arg1;
 - (void)forceConflictForURL:(NSURL *)arg1 bookmarkData:(NSString *)arg2 forcedEtag:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)getPublishedURLForItemAtURL:(NSURL *)arg1 forStreaming:(BOOL)arg2 requestedTTL:(unsigned long long)arg3 reply:(void (^)(NSURL *, NSDate *, NSError *))arg4;
 - (void)resolveBookmarkDataToURL:(NSString *)arg1 reply:(void (^)(NSURL *, NSData *, NSURL *, NSData *, NSError *))arg2;
 - (void)getBookmarkDataForURL:(NSURL *)arg1 reply:(void (^)(NSString *, NSString *, NSError *))arg2;
+- (void)getMigrationStatusForPrimaryiCloudAccount:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)forceAccountUpdateAfterMigration;
 - (void)getContainersNeedingUpload:(void (^)(NSSet *, NSError *))arg1;
 - (void)currentAccountCopyTokenWithBundleID:(NSString *)arg1 version:(NSString *)arg2 reply:(void (^)(NSData *, NSError *))arg3;

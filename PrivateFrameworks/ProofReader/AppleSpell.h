@@ -78,6 +78,7 @@
 - (BOOL)checkNegativeWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4;
 - (BOOL)checkNegativeWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4 depth:(unsigned long long)arg5;
 - (BOOL)checkNoPredictWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4;
+- (BOOL)checkNoPredictWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4 depth:(unsigned long long)arg5;
 - (BOOL)checkNameWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4 globalOnly:(BOOL)arg5;
 - (BOOL)checkWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4 index:(unsigned long long)arg5;
 - (id)linguisticTaggerForLanguage:(id)arg1 string:(id)arg2 range:(struct _NSRange)arg3 taggerIndex:(unsigned long long *)arg4;

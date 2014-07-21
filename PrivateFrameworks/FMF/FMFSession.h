@@ -113,6 +113,8 @@
 - (BOOL)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (id)getHandlesFollowingMyLocation;
 - (id)getHandlesSharingLocationsWithMe;
+- (void)stopSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)startSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

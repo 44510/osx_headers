@@ -6,12 +6,20 @@
 
 #import "NSObject.h"
 
-@class NSButton, NSDrawer, NSMenu, NSPopUpButton, NSString, NSTextField, NSView, SEDocument, SEOutlineView;
+#import "NSSplitViewDelegate.h"
 
-@interface SEBundleContentsController : NSObject
+@class NSButton, NSDrawer, NSMenu, NSPopUpButton, NSSplitViewController, NSString, NSTextField, NSView, NSViewController, SEDocument, SEOutlineView, SESplitView;
+
+@interface SEBundleContentsController : NSObject <NSSplitViewDelegate>
 {
     SEDocument *_document;
     NSDrawer *_drawer;
+    SESplitView *_splitView;
+    NSView *_contentSplitItemView;
+    NSView *_sideBarSplitItemView;
+    NSSplitViewController *_splitViewController;
+    NSViewController *_contentSplitItemViewController;
+    NSViewController *_sideBarSplitItemViewController;
     NSTextField *_bundleNameView;
     NSTextField *_bundleIdentifierView;
     NSTextField *_bundleShortVersionView;
@@ -39,11 +47,13 @@
 @property(readonly) NSTextField *bundleShortVersionView; // @synthesize bundleShortVersionView=_bundleShortVersionView;
 @property(readonly) NSTextField *bundleIdentifierView; // @synthesize bundleIdentifierView=_bundleIdentifierView;
 @property(readonly) NSTextField *bundleNameView; // @synthesize bundleNameView=_bundleNameView;
+@property(readonly) SESplitView *splitView; // @synthesize splitView=_splitView;
 @property(retain) SEDocument *document; // @synthesize document=_document;
 - (id)_pathForItem:(id)arg1 isFolder:(char *)arg2;
 - (id)_pathForItem:(id)arg1;
 - (id)_pathsOfSelectedItems;
-- (void)_updateDrawer;
+- (void)_updateBundleContents;
+- (void)_updateBundleContentsAnimating:(BOOL)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)renameItem:(id)arg1;
 - (void)revealItems:(id)arg1;
@@ -52,7 +62,10 @@
 - (void)deleteItems:(id)arg1;
 - (void)newFolder:(id)arg1;
 - (void)toggleBundleContents:(id)arg1;
-- (BOOL)drawerVisible;
+- (void)toggleBundleContents:(id)arg1 resizingWindow:(BOOL)arg2;
+- (void)showBundleContents:(BOOL)arg1 animating:(BOOL)arg2 resizingWindow:(BOOL)arg3;
+@property double positionOfDivider;
+@property BOOL contentsVisible;
 - (id)actionButton;
 - (id)actionMenu;
 - (id)outlineView;
@@ -77,6 +90,12 @@
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(int)arg2 ofItem:(id)arg3;
 - (id)_filterContentsOfPath:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

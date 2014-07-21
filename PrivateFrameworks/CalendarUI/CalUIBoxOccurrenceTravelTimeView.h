@@ -6,7 +6,7 @@
 
 #import <CalendarUI/CalUILayerBackedView.h>
 
-@class CalUIFontSmoothedTextField, NSColor, NSDictionary, NSImageView;
+@class CalUIFontSmoothedTextField, NSColor, NSDictionary, NSImageView, NSLayoutConstraint;
 
 @interface CalUIBoxOccurrenceTravelTimeView : CalUILayerBackedView
 {
@@ -15,8 +15,12 @@
     CalUILayerBackedView *_divider;
     NSColor *_fontSmoothingColor;
     NSDictionary *_attributes;
+    NSLayoutConstraint *_iconTextAlignmentConstraint;
+    CalUILayerBackedView *_colorBar;
 }
 
+@property(retain) CalUILayerBackedView *colorBar; // @synthesize colorBar=_colorBar;
+@property(retain) NSLayoutConstraint *iconTextAlignmentConstraint; // @synthesize iconTextAlignmentConstraint=_iconTextAlignmentConstraint;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSColor *fontSmoothingColor; // @synthesize fontSmoothingColor=_fontSmoothingColor;
 @property(retain) CalUILayerBackedView *divider; // @synthesize divider=_divider;
@@ -28,7 +32,7 @@
 - (void)setTravelDuration:(double)arg1;
 - (void)updateText;
 - (void)setStringAttributes:(id)arg1;
-- (void)setColor:(id)arg1;
+- (void)setDividerColor:(id)arg1 backgroundColor:(id)arg2 stripeColor:(id)arg3;
 - (void)setBackgroundColorForFontSmoothing:(id)arg1;
 - (void)setTravelTypeIsWalking:(BOOL)arg1;
 - (id)init;

@@ -8,7 +8,7 @@
 
 @interface CKRecord (BRCSerializationAdditions)
 - (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2;
-- (void)serializeStatInfo:(id)arg1 container:(id)arg2 diffs:(unsigned long long)arg3;
+- (void)serializeStatInfo:(id)arg1 itemID:(id)arg2 container:(id)arg3 diffs:(unsigned long long)arg4;
 - (void)serializeStructuralPluginHints:(id)arg1;
 - (void)serializeFilename:(id)arg1 forCreation:(BOOL)arg2;
 - (void)serializeSystemFields:(id)arg1;

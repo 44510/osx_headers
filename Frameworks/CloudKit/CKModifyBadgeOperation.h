@@ -8,13 +8,11 @@
 
 @interface CKModifyBadgeOperation : CKOperation
 {
-    BOOL _thisDeviceOnly;
     unsigned long long _badgeValue;
     CDUnknownBlockType _modifyBadgeCompletionBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType modifyBadgeCompletionBlock; // @synthesize modifyBadgeCompletionBlock=_modifyBadgeCompletionBlock;
-@property(nonatomic) BOOL thisDeviceOnly; // @synthesize thisDeviceOnly=_thisDeviceOnly;
 @property(nonatomic) unsigned long long badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

@@ -14,28 +14,15 @@ __attribute__((visibility("hidden")))
     NSString *_storageString;
 }
 
-+ (id)formattedAddressesForPerson:(id)arg1 useSimpleDescriptionForPrimaryAddress:(BOOL)arg2;
-+ (id)formattedPhoneNumbersForPerson:(id)arg1;
-+ (id)formattedAddressWithName:(id)arg1 email:(id)arg2 useQuotes:(BOOL)arg3;
 + (id)partialSurnames;
-+ (id)nameExtensionsThatDoNotNeedCommas;
 + (id)nameExtensions;
 + (id)extractorWithString:(id)arg1;
 - (void).cxx_destruct;
-- (id)matchingPersonsWithEmailAddressOrPhoneNumbers;
-- (id)matchingPersonsWithEmailAddress;
 - (id)matchingPersons;
-- (id)bestMatchingPerson;
 - (id)_matchingPersonsBestMatchOnly:(BOOL)arg1;
-- (id)addressDomain;
-- (id)searchStringComponents;
-- (id)componentsSeparatedByCharactersRespectingQuotesAndParens:(id)arg1;
-- (id)componentsSeparatedByCommaRespectingQuotesAndParens;
-- (id)addressList;
 - (void)firstName:(id *)arg1 middleName:(id *)arg2 lastName:(id *)arg3 extension:(id *)arg4;
 - (BOOL)firstNameShouldBeFirst;
 - (id)addressComment;
-- (id)uncommentedAddressRespectingGroups;
 - (id)uncommentedAddress;
 - (BOOL)appearsToBeAnInitial;
 

@@ -25,6 +25,7 @@
 - (void)didBecomeAssociatedWithRemoteWindow:(unsigned int)arg1 inActiveApp:(BOOL)arg2;
 - (void)willBecomeAssociatedWithRemoteWindow:(unsigned int)arg1 atLevel:(long long)arg2 withReply:(void (^)(BOOL))arg3;
 - (void)advanceToRunPhase:(void (^)(BOOL))arg1;
+- (void)remoteViewContainingWindowOcclusionStateDidChange:(unsigned long long)arg1;
 - (void)remoteViewDidMove:(struct CGPoint)arg1;
 - (void)remoteWindowLevelDidChange:(long long)arg1;
 - (void)remoteWindowChangedEdgeResizingRects:(NSArray *)arg1;

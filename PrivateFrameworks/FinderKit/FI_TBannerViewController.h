@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)updateButtonStateForBurnFolder;
 - (void)updateTitleForBurnFolder;
 - (void)emptyTrash:(id)arg1;
+- (void)upgradeToICloudDrive:(id)arg1;
 - (void)preferencesUpdated:(id)arg1;
 - (struct TString)titleForTrashButton;
 - (void)updateButtonStateForTrashFolder;

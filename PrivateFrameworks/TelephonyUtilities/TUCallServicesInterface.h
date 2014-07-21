@@ -13,6 +13,7 @@
 
 @interface TUCallServicesInterface : NSObject <TUCallServicesDaemonObserver, TUCallServicesProxyCallActions>
 {
+    BOOL _muted;
     id <TUCallServicesDaemonDelegate> _daemonDelegate;
     TUCallCenterCallsCache *_callsCache;
     NSArray *_currentProxyCalls;
@@ -27,6 +28,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *xpcConnectionCreationSemaphore; // @synthesize xpcConnectionCreationSemaphore=_xpcConnectionCreationSemaphore;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(retain, nonatomic) NSData *remoteFrequency; // @synthesize remoteFrequency=_remoteFrequency;
 @property(retain, nonatomic) NSData *localFrequency; // @synthesize localFrequency=_localFrequency;
 @property(retain, nonatomic) TUProxyCallModel *proxyCallModel; // @synthesize proxyCallModel=_proxyCallModel;
@@ -37,6 +39,8 @@
 - (void)handleCurrentProxyCallsChanged:(id)arg1;
 - (void)handleCallContinuityStateChangedForProxyCall:(id)arg1;
 - (void)handleCallStatusChangedForProxyCall:(id)arg1;
+- (void)handleHardPauseDigitsAvailibilityChangedTo:(unsigned short)arg1 digits:(id)arg2;
+- (void)handleMutedChangedTo:(BOOL)arg1;
 - (void)handleRemoteFrequencyChangedTo:(id)arg1;
 - (void)handleLocalFrequencyChangedTo:(id)arg1;
 - (void)handleDisconnectedReasonChangedTo:(int)arg1 forCallWithUUID:(id)arg2;
@@ -45,6 +49,9 @@
 - (BOOL)relayableClientDeviceExists;
 - (BOOL)relayableHostDeviceExists;
 - (void)setRelayCallingEnabled:(BOOL)arg1;
+- (void)unmuteCall:(id)arg1;
+- (void)muteCall:(id)arg1;
+- (void)sendHardPauseDigits;
 - (void)disconnectAllCalls;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (void)endHeldAndAnswerCall:(id)arg1;
@@ -66,6 +73,7 @@
 - (id)callStateForCall:(id)arg1;
 - (void)requestPendingCallNotifications;
 - (void)handleCallStatusChanged:(id)arg1;
+- (void)_tearDownXPCConnection;
 - (void)_setUpXPCConnection;
 - (id)daemonDelegateWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

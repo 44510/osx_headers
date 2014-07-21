@@ -7,8 +7,6 @@
 #import "NSURL.h"
 
 @interface NSURL (BRCUbiquitousAttributes)
-- (id)brc_notificationInfoWithAccountSession:(id)arg1 error:(id *)arg2;
-- (id)brc_attributesValues:(id)arg1 accountSession:(id)arg2 error:(id *)arg3;
-- (BOOL)_brc_resolveUrlWithAccountSession:(id)arg1 andDo:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (id)brc_attributesValues:(id)arg1 container:(id)arg2 lookup:(id)arg3;
 @end
 

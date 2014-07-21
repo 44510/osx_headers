@@ -13,32 +13,26 @@
 #import "QLPreviewPanelDelegate.h"
 #import "QLSeamlessOpenerDelegate.h"
 
-@class EKUIAttachmentTableView, EKUIPlusButton, EKUITextButton, NSArray, NSDictionary, NSLayoutConstraint, NSString, NSView;
+@class EKUIAttachmentTableView, EKUITextButton, NSArray, NSDictionary, NSLayoutConstraint, NSString, NSView;
 
 @interface EKUIAttachmentGadget : EKUIIsolateableSingleViewGadget <QLSeamlessOpenerDelegate, QLPreviewPanelDelegate, QLPreviewPanelDataSource, CalUIResizingTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource>
 {
     NSArray *_attachments;
-    EKUITextButton *_addAttachmentLabel;
+    EKUITextButton *_addButton;
     NSLayoutConstraint *_heightConstraint;
     EKUIAttachmentTableView *_tableView;
     NSView *_container;
-    EKUIPlusButton *_plusButton;
     NSArray *_attachmentConstraints;
     NSDictionary *_viewMetrics;
-    NSLayoutConstraint *_betweenTableLabelConstraint;
-    NSLayoutConstraint *_betweenPlusLabelConstraint;
 }
 
 + (id)interestedChangeKeys;
-@property(retain) NSLayoutConstraint *betweenPlusLabelConstraint; // @synthesize betweenPlusLabelConstraint=_betweenPlusLabelConstraint;
-@property(retain) NSLayoutConstraint *betweenTableLabelConstraint; // @synthesize betweenTableLabelConstraint=_betweenTableLabelConstraint;
 @property(retain) NSDictionary *viewMetrics; // @synthesize viewMetrics=_viewMetrics;
 @property(retain) NSArray *attachmentConstraints; // @synthesize attachmentConstraints=_attachmentConstraints;
-@property(retain) EKUIPlusButton *plusButton; // @synthesize plusButton=_plusButton;
 @property(retain) NSView *container; // @synthesize container=_container;
 @property(retain) EKUIAttachmentTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
-@property(retain) EKUITextButton *addAttachmentLabel; // @synthesize addAttachmentLabel=_addAttachmentLabel;
+@property(retain) EKUITextButton *addButton; // @synthesize addButton=_addButton;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
 - (id)seamlessOpener:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
@@ -55,7 +49,6 @@
 - (void)_launchFilePicker:(id)arg1;
 - (void)removeSelectedFiles;
 - (void)attachmentTableDoubleClick:(id)arg1;
-- (void)updateTableViewConstraints;
 - (id)_getAttachmentsAtIndices:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
@@ -75,11 +68,11 @@
 - (BOOL)isEditable;
 - (void)updateConstraints;
 - (void)setExpanded:(BOOL)arg1;
+- (BOOL)shouldDisplayForEvent:(id)arg1;
 - (void)updateAttachments;
 - (void)updateWithChanges:(id)arg1;
 - (BOOL)hasData;
 - (id)control;
-- (double)maxHeight;
 - (id)initWithEventViewController:(id)arg1;
 
 // Remaining properties

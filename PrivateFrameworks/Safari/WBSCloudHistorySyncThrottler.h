@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _numberOfSecondsToMonitor;
     unsigned long long _maximumNumberOfOperationWithinMonitoredPeriod;
     id <WBSCloudHistorySyncThrottlerDataStore> _dataStore;
-    unsigned long long _numberOfDevicesInSyncCircle;
 }
 
-@property(nonatomic) unsigned long long numberOfDevicesInSyncCircle; // @synthesize numberOfDevicesInSyncCircle=_numberOfDevicesInSyncCircle;
++ (id)_distributionBucketsFromConfiguration:(id)arg1;
++ (BOOL)policyStringRepresentsValidPolicy:(id)arg1;
 @property(retain, nonatomic) id <WBSCloudHistorySyncThrottlerDataStore> dataStore; // @synthesize dataStore=_dataStore;
 - (void).cxx_destruct;
 - (unsigned long long)_test_maximumNumberOfOperationWithinMonitoredPeriod;
@@ -29,14 +29,18 @@ __attribute__((visibility("hidden")))
 - (void)_addSyncOperationAtDate:(id)arg1;
 - (void)_pruneExpiredOrInvalidSyncEntries;
 - (double)_currentMinimumTimeIntervalBetweenSyncOperations;
-- (id)_nextPermittedSyncTime;
-- (void)_loadSyncDistributionConfiguration;
+- (double)_minimumTimeBetweenSyncOperationsForSyncOperations:(id)arg1;
+- (double)_timeIntervalUntilSyncOperationShouldBePruned:(id)arg1;
+- (double)_timeIntervalUntilNextPermittedSyncAttemptWithNormalPriority;
+- (id)_dateOfNextPermittedSyncAttemptWithNormalPriority;
 - (BOOL)_loadDistributionConfiguration:(id)arg1;
-- (id)_distributionBucketsFromConfiguration:(id)arg1;
+- (void)setPolicyString:(id)arg1;
 - (BOOL)_throttlerIsActive;
 - (id)description;
 - (void)syncAttemptWithPriority:(long long)arg1 didCompleteWithResult:(long long)arg2;
+- (id)dateOfNextPermittedSyncAttemptWithPriority:(long long)arg1;
 - (BOOL)throttlingPolicyPermitsSyncAttemptWithPriority:(long long)arg1;
+- (id)initWithPolicyString:(id)arg1;
 - (id)init;
 
 @end

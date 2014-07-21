@@ -33,7 +33,6 @@
     NSString *_oldApplicationCachesDirectory;
     NSString *_applicationCachesDirectory;
     NSArray *_sandboxExtensions;
-    NSString *_secondaryApplicationBundleID;
     NSString *_containerHardwareIDHash;
     long long _type;
     long long _usesAPSPublicToken;
@@ -45,6 +44,7 @@
     NSMutableDictionary *_fakeErrorByClassName;
     NSObject<OS_dispatch_semaphore> *_sema;
     NSObject<OS_dispatch_queue> *_accountLoaderQueue;
+    NSString *_contextID;
 }
 
 + (id)contextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
@@ -53,6 +53,7 @@
 + (id)_sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
 + (id)sharedContexts;
 + (id)applicationContainerPathForBundleID:(id)arg1 bundleURL:(id *)arg2 type:(long long *)arg3;
+@property(readonly, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=isSandboxed) BOOL sandboxed; // @synthesize sandboxed=_sandboxed;
 @property BOOL accountReloadRequired; // @synthesize accountReloadRequired=_accountReloadRequired;
 @property BOOL accountRefreshInProgress; // @synthesize accountRefreshInProgress=_accountRefreshInProgress;
@@ -71,7 +72,6 @@
 @property(nonatomic) long long usesAPSPublicToken; // @synthesize usesAPSPublicToken=_usesAPSPublicToken;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *containerHardwareIDHash; // @synthesize containerHardwareIDHash=_containerHardwareIDHash;
-@property(retain, nonatomic) NSString *secondaryApplicationBundleID; // @synthesize secondaryApplicationBundleID=_secondaryApplicationBundleID;
 @property(readonly, nonatomic) NSArray *sandboxExtensions; // @synthesize sandboxExtensions=_sandboxExtensions;
 @property(readonly, nonatomic) NSString *applicationCachesDirectory; // @synthesize applicationCachesDirectory=_applicationCachesDirectory;
 @property(readonly, nonatomic) NSString *oldApplicationCachesDirectory; // @synthesize oldApplicationCachesDirectory=_oldApplicationCachesDirectory;

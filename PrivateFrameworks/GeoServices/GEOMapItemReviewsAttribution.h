@@ -12,6 +12,7 @@
 {
 }
 
+- (id)urlsForSelectedItemWithItems:(id)arg1;
 - (id)urlsForReviewWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *addReviewURLs;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 yelpID:(id)arg3;

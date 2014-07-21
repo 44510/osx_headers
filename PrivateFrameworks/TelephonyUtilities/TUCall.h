@@ -62,10 +62,10 @@
 @property(nonatomic) int faceTimeIDStatus; // @synthesize faceTimeIDStatus=_faceTimeIDStatus;
 @property(nonatomic) int disconnectedReason; // @synthesize disconnectedReason=_disconnectedReason;
 @property(copy) NSString *suggestedDisplayName; // @synthesize suggestedDisplayName=_suggestedDisplayName;
-- (BOOL)canBeRelayed;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateWithCall:(id)arg1;
+@property(readonly, nonatomic) BOOL supportsRelayingAudioOrVideo;
 - (void)_loadCallDetails;
 - (id)abUID;
 @property(readonly, retain, nonatomic) NSString *conferenceIdentifier;
@@ -86,6 +86,7 @@
 - (id)audioCategory;
 @property(readonly, nonatomic) BOOL statusIsProvisional;
 - (int)callStatus;
+@property(readonly, nonatomic, getter=isStatusFinal) BOOL statusFinal;
 @property(readonly, nonatomic) int status;
 - (id)totalDataUsed;
 - (id)callDurationString;

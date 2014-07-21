@@ -19,8 +19,10 @@
     NSMutableDictionary *_underline;
     BOOL _hovering;
     BOOL _showPointingHandCursorWhenHovering;
+    BOOL _drawsDisabledWhenNotMainWindow;
 }
 
+@property(nonatomic) BOOL drawsDisabledWhenNotMainWindow; // @synthesize drawsDisabledWhenNotMainWindow=_drawsDisabledWhenNotMainWindow;
 @property(nonatomic) BOOL showPointingHandCursorWhenHovering; // @synthesize showPointingHandCursorWhenHovering=_showPointingHandCursorWhenHovering;
 @property(nonatomic) BOOL hovering; // @synthesize hovering=_hovering;
 - (void).cxx_destruct;

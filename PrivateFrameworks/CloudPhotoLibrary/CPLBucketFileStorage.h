@@ -27,6 +27,7 @@
 - (BOOL)releaseFileURL:(id)arg1 error:(id *)arg2;
 - (id)retainFileURLForIdentity:(id)arg1 resourceType:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)linkOrCopyFileWithIdentity:(id)arg1 destinationURL:(id)arg2 error:(id *)arg3;
+- (void)checkFileSizeForIdentity:(id)arg1;
 - (BOOL)hasFileWithIdentity:(id)arg1;
 - (BOOL)storeUnretainedData:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)storeUnretainedFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 error:(id *)arg4;

@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleQueryRequestFinished:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

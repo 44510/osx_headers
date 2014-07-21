@@ -81,7 +81,7 @@
 - (void)_request:(id)arg1 match:(id)arg2 rematchID:(id)arg3 serverHosted:(BOOL)arg4 playerCount:(long long)arg5 connectionData:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)invitePlayersWithRequest:(id)arg1 serverHosted:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)invitePlayersWithRequest:(id)arg1 serverHosted:(BOOL)arg2 onlineConnectionData:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)reportResponse:(long long)arg1 forInvitees:(id)arg2;
+- (void)reportResponse:(long long)arg1 forInvitees:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)matchForInvite:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)matchForRemoteInvite:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)matchForNearbyInvite:(id)arg1 handler:(CDUnknownBlockType)arg2;

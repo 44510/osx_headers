@@ -19,13 +19,14 @@
 @property(readonly, nonatomic) NSData *bytes; // @synthesize bytes=_bytes;
 - (void).cxx_destruct;
 - (id)description;
+- (id)_formatHexData:(id)arg1 to:(id)arg2;
 @property(readonly, nonatomic) NSArray *protocols;
 - (id)interfaceGroupForProtocol:(unsigned long long)arg1;
 - (id)interfaceGroupAtIndex:(long long)arg1;
 - (id)parseFromSource:(CDUnknownBlockType)arg1;
 - (id)initWithSource:(CDUnknownBlockType)arg1;
 - (id)initWithBytes:(id)arg1;
-- (id)historicalRecords;
+@property(readonly, nonatomic) NSArray *historicalRecords;
 
 @end
 

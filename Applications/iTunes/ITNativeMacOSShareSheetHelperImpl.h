@@ -38,7 +38,7 @@
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
 - (id)sharingService:(id)arg1 imageForShareItem:(id)arg2 size:(struct CGSize)arg3 contentRect:(struct CGRect *)arg4;
-- (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(int *)arg3;
+- (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)sharingService:(id)arg1 sourceFrameOnScreenForShareItem:(id)arg2;
 - (id)_createWebArchive;

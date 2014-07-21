@@ -31,9 +31,6 @@
 @property(copy) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (id)captureWriteHandle:(id)arg1;
-- (id)captureReadHandle:(id)arg1;
-- (void)serviceStreamsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToService:(id)arg1;

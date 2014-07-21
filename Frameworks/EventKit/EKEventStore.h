@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class EKBackingStore, EKCalendar, NSObject<OS_dispatch_queue>, NSString;
+@class EKBackingStore, EKCalendar, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface EKEventStore : NSObject
 {
@@ -41,6 +41,7 @@
 - (id)loadDraftOfEventWithOccurrenceID:(id)arg1;
 - (BOOL)_saveDraftOfEvent:(id)arg1 toDirectory:(id)arg2;
 - (BOOL)saveDraftOfEvent:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_group> *backingStoreAvailableGroup;
 - (id)_newBackingStoreForType:(int)arg1 includeEnabledDelegates:(BOOL)arg2 sourceFilters:(id)arg3 asyncWithCompletion:(CDUnknownBlockType)arg4;
 - (id)_moveEventHelperRequireReinviteAttendees:(id)arg1 toCalendar:(id)arg2 requirements:(long long)arg3 error:(id *)arg4;
 - (id)_moveEventHelperRequireDuplication:(id)arg1 toCalendar:(id)arg2 requirements:(long long)arg3;

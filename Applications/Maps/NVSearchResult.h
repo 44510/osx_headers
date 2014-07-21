@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     double timestamp;
     GEOPlace *_place;
     long long _type;
-    NSString *_suggestedQuery;
     CDStruct_612aec5b sessionGUID;
 }
 
@@ -35,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasResultIndex; // @synthesize hasResultIndex=_hasResultIndex;
 @property(nonatomic) BOOL hasSequenceNumber; // @synthesize hasSequenceNumber=_hasSequenceNumber;
 @property(nonatomic) BOOL hasSessionGUID; // @synthesize hasSessionGUID=_hasSessionGUID;
-@property(copy, nonatomic) NSString *suggestedQuery; // @synthesize suggestedQuery=_suggestedQuery;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(retain, nonatomic) NSArray *formattedAddressLines; // @synthesize formattedAddressLines=_formattedAddressLines;

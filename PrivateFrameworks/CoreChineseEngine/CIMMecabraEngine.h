@@ -98,7 +98,6 @@
 @property(nonatomic) BOOL shuangpinModeEnabled; // @synthesize shuangpinModeEnabled=_shuangpinModeEnabled;
 @property(nonatomic) BOOL autocorrectionEnabled; // @synthesize autocorrectionEnabled=_autocorrectionEnabled;
 @property(nonatomic) BOOL adjustsWordFrequency; // @synthesize adjustsWordFrequency=_adjustsWordFrequency;
-- (id).cxx_construct;
 - (void)adaptCandidateContext:(id)arg1 stringContext:(id)arg2;
 @property(readonly, nonatomic) BOOL isApplyingToneFilter;
 @property(readonly, nonatomic) BOOL canApplyToneFilter; // @synthesize canApplyToneFilter=_canApplyToneFilter;

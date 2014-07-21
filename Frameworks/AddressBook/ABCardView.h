@@ -9,7 +9,7 @@
 #import "ABScrollViewDelegate.h"
 #import "ABShareKitTransitionProvider.h"
 
-@class ABAddressBook, ABCardCollectionView, ABCardCollectionViewController, ABCardHeaderView, ABCardViewSeparator, ABCardViewStyleProvider, ABManagedObjectContext, ABNameFrameView, ABOverlayView, ABProfilePictureView, ABScrollView, NSArray, NSDictionary, NSMutableDictionary, NSObjectController, NSOperationQueue, NSScrollView, NSString, NSTextField, NSTimer;
+@class ABAddressBook, ABCardCollectionView, ABCardCollectionViewController, ABCardHeaderView, ABCardViewImageLoading, ABCardViewSeparator, ABCardViewStyleProvider, ABManagedObjectContext, ABNameFrameView, ABOverlayView, ABProfilePictureView, ABScrollView, NSArray, NSDictionary, NSMutableDictionary, NSObjectController, NSOperationQueue, NSScrollView, NSString, NSTextField, NSTimer;
 
 @interface ABCardView : NSView <ABScrollViewDelegate, ABShareKitTransitionProvider>
 {
@@ -20,6 +20,7 @@
     ABCardCollectionView *mCollectionView;
     ABCardViewSeparator *_topContentIndicator;
     ABCardViewSeparator *_bottomContentIndicator;
+    ABCardViewImageLoading *_imageLoadingHelper;
     ABOverlayView *_overlayView;
     NSView *mNextKeyView;
     NSTextField *mNoCardLabelTextField;
@@ -93,8 +94,7 @@
 - (void)displayNoCardInfo;
 - (id)noCardLabelFont;
 - (void)setNoCardLabel:(id)arg1;
-- (void)updateFaceTimeAudioAvailability:(BOOL)arg1;
-- (void)updateFaceTimeVideoAvailability:(BOOL)arg1;
+- (void)updateFaceTimeAvailability:(BOOL)arg1;
 - (void)updateShareLabel;
 - (void)reloadNameDataForKey:(id)arg1;
 - (void)reloadNameData;
@@ -203,6 +203,7 @@
 @property(readonly) double leftMargin;
 @property(readonly) double bottomMargin;
 @property(readonly) double topMargin;
+@property long long backgroundStyle;
 - (void)scrollWheel:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)viewDidMoveToWindow;

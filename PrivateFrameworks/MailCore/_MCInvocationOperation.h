@@ -8,10 +8,8 @@
 
 @interface _MCInvocationOperation : MCThrowingInvocationOperation
 {
-    BOOL _allowBackgroundThreadPriority;
 }
 
-@property BOOL allowBackgroundThreadPriority; // @synthesize allowBackgroundThreadPriority=_allowBackgroundThreadPriority;
 - (void)main;
 
 @end

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class ArtworkController, ITComboBoxDataSource, NSArray, NSBox, NSButton, NSButtonCell, NSMutableArray, NSMutableDictionary, NSProgressIndicator, NSString, NSTabView, NSTabViewItem, NSTextFieldCell, NSTextView, NSToolbar, NSView, NSWindow;
+@class ArtworkController, ITComboBoxDataSource, NSArray, NSBox, NSButton, NSButtonCell, NSMutableDictionary, NSProgressIndicator, NSString, NSTabView, NSTabViewItem, NSTextFieldCell, NSTextView, NSToolbar, NSView, NSWindow;
 
 @interface CocoaDialogUtilitiesController : NSObject
 {
@@ -29,16 +29,7 @@
     NSMutableDictionary *_tableModels;
     struct _NSModalSession *_session;
     NSTabViewItem *_willSelectTabItem;
-    long long _progressIndicatorID;
-    long long _lineBoxID;
-    long long _lineBox2ID;
-    long long _textViewID;
-    long long _tabViewID;
     NSMutableDictionary *_tabViewSizes;
-    NSMutableArray *_progressIndicatorIDs;
-    NSMutableArray *_lineBoxIDs;
-    NSMutableArray *_lineBox2IDs;
-    NSMutableArray *_textViewIDs;
     NSMutableDictionary *_toolbarItems;
     NSArray *_selectableToolbarItems;
     long long _dismissedButton;
@@ -116,7 +107,6 @@
 - (long long)selectedTabIndexTabViewWithTag:(long long)arg1;
 - (void)selectTabViewItemWithIdentifier:(id)arg1 tabViewWithTag:(long long)arg2;
 - (void)selectTabViewItemAtIndex:(long long)arg1 tabViewWithTag:(long long)arg2;
-- (void)setTabViewTag:(long long)arg1;
 - (id)tabViewWithTag:(long long)arg1;
 - (double)valueForRatingButtonWithTag:(long long)arg1;
 - (void)setValue:(double)arg1 forRatingButtonWithTag:(long long)arg2;
@@ -135,7 +125,6 @@
 - (void)stopAnimationForProgresssIndicatorWithTag:(long long)arg1;
 - (void)startAnimationForProgresssIndicatorWithTag:(long long)arg1;
 - (id)progressIndicatorWithTag:(long long)arg1;
-- (void)setProgressIndicatorTag:(long long)arg1;
 - (void)setButtonTextColor:(id)arg1 viewWithTag:(long long)arg2;
 - (void)setAllowedInputSourceLocales:(id)arg1 forViewWithTag:(long long)arg2;
 - (void)setTextItalicForItemAtIndex:(long long)arg1 menuItemWithTag:(long long)arg2;
@@ -278,11 +267,6 @@
 - (struct CGRect)viewCarbonRectFromCocoaRect:(struct CGRect)arg1;
 - (struct CGRect)flipRect:(struct CGRect)arg1 isCarbonInputRect:(BOOL)arg2 inContainerRect:(struct CGRect)arg3;
 - (struct CGSize)sizeToFitSizeViewWithTag:(long long)arg1;
-- (void)setTextViewTag:(long long)arg1;
-- (void)setBoxLine2Tag:(long long)arg1;
-- (void)setBoxLineTag:(long long)arg1;
-- (void)restoreTagIdsForTabIndex:(long long)arg1;
-- (void)saveTagIdsForTabIndex:(long long)arg1;
 - (void)show;
 - (void)center;
 - (void)centerAndShow;

@@ -55,10 +55,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)textStorageWillProcessEditing:(id)arg1;
-- (void)_preferredServiceDidChange:(id)arg1;
 - (void)_updateRecipientHandles;
 - (void)_chatDisplayNameDidChange:(id)arg1;
-- (void)_imHandleRegistrarNameStyleDidChangeNotification:(id)arg1;
+- (void)_addressBookPreferencesChanged:(id)arg1;
 - (void)_handleInfoChanged:(id)arg1;
 - (void)_chatRecipientsDidChange:(id)arg1;
 - (void)chatDisplayNameDidChange;
@@ -73,8 +72,6 @@
 - (BOOL)appendFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;
 - (BOOL)insertFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;
 - (BOOL)canInsertFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;
-- (void)updateToPreferredService:(id)arg1;
-- (void)updateToPreferredServiceCheckingServer:(BOOL)arg1;
 - (unsigned long long)validateIMHandle:(id)arg1;
 - (void)recipientHandlesDidChange;
 - (void)recipientsDidChange;

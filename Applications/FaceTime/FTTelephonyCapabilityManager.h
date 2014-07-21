@@ -15,7 +15,10 @@
 + (id)sharedInstance;
 @property(nonatomic) BOOL hasCheckedForTelephonySupport; // @synthesize hasCheckedForTelephonySupport=_hasCheckedForTelephonySupport;
 @property(nonatomic) BOOL supportsTelephonyCalls; // @synthesize supportsTelephonyCalls=_supportsTelephonyCalls;
+- (void)capabilitiesDidChange:(id)arg1;
 - (BOOL)hasTelephonyCapability;
+- (void)dealloc;
+- (id)init;
 
 @end
 

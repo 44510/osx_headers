@@ -83,6 +83,7 @@
 - (void)update;
 - (void)reshape;
 - (BOOL)lockFocusIfCanDraw;
+- (id)_scnlayerBackedOpenGLContext;
 - (void)setAsynchronousLoading:(BOOL)arg1;
 - (void)setAllowsBrowsing:(BOOL)arg1;
 - (void)set_ibWantsMultisampling:(BOOL)arg1;
@@ -91,6 +92,8 @@
 - (id)_ibSceneName;
 @property(nonatomic) unsigned long long antialiasingMode;
 - (id)_authoringEnvironment;
+- (void)_cancelMouseMovedTracking;
+- (void)_beginMouseMovedTracking;
 - (void)set_showsAuthoringEnvironment:(BOOL)arg1;
 - (BOOL)_showsAuthoringEnvironment;
 - (void)switchToNextCamera;

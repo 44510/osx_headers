@@ -7,7 +7,6 @@
 #import "IMHandle.h"
 
 @interface IMHandle (SocialAppsCoreAdditions)
-+ (id)currentQueryStatusForHandles:(id)arg1 idsService:(id)arg2;
 + (void)setNameStyle:(long long)arg1;
 + (long long)nameStyle;
 + (id)normalizedIMessageIDWithID:(id)arg1;

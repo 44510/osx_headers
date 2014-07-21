@@ -70,6 +70,9 @@
 - (BOOL)__startEventMonitoring;
 - (void)dealloc;
 - (void)finalize;
+- (id)awdlOperatingMode;
+- (id)virtualInterfaceRole;
+- (id)parentInterfaceName;
 - (BOOL)connectToTetherDevice:(id)arg1 remember:(BOOL)arg2 error:(id *)arg3;
 - (id)lastTetherDeviceJoined;
 - (void)relinquishBluetoothPagingLockAndReply:(CDUnknownBlockType)arg1;

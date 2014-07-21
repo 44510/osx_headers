@@ -10,7 +10,7 @@
 {
     struct StoreHTMLDisplay *mHtmlDisplay;
     unsigned int mRequestIDMaster;
-    struct unordered_set<unsigned int, std::tr1::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int>, false> *mNavIDsSet;
+    struct unordered_set<unsigned int, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<unsigned int>> *mNavIDsSet;
 }
 
 + (void)initialize;

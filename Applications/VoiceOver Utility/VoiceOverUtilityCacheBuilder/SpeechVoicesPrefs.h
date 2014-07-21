@@ -6,7 +6,7 @@
 
 #import "PrefsBase.h"
 
-@class NSButton, NSDictionary, NSStepper, NSTextField, SCRCIndexMap, SOVoicePopUpButton;
+@class NSButton, NSDictionary, SCRCIndexMap, SOVoicePopUpButton;
 
 __attribute__((visibility("hidden")))
 @interface SpeechVoicesPrefs : PrefsBase
@@ -18,24 +18,6 @@ __attribute__((visibility("hidden")))
     SOVoicePopUpButton *_typeVoicePopUp;
     SOVoicePopUpButton *_attributesVoicePopUp;
     SOVoicePopUpButton *_guideVoicePopUp;
-    NSTextField *_defaultCategoryLabel;
-    NSTextField *_contentCategoryLabel;
-    NSTextField *_defaultRateTextField;
-    NSTextField *_contentRateTextField;
-    NSStepper *_defaultRateStepper;
-    NSStepper *_contentRateStepper;
-    NSTextField *_defaultPitchTextField;
-    NSTextField *_contentPitchTextField;
-    NSStepper *_defaultPitchStepper;
-    NSStepper *_contentPitchStepper;
-    NSTextField *_defaultVolumeTextField;
-    NSTextField *_contentVolumeTextField;
-    NSStepper *_defaultVolumeStepper;
-    NSStepper *_contentVolumeStepper;
-    NSTextField *_defaultIntonationTextField;
-    NSTextField *_contentIntonationTextField;
-    NSStepper *_defaultIntonationStepper;
-    NSStepper *_contentIntonationStepper;
     BOOL _categoriesHidden;
     NSDictionary *_popUpLookUpDictionary;
     BOOL _addedObservers;
@@ -58,10 +40,6 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_changePopUpSelection:(id)arg1 toVoiceIdentifier:(id)arg2;
 - (void)_changePopUpSelectionToDefault:(id)arg1;
-- (void)constrainTrailingOf:(id)arg1 to:(id)arg2;
-- (void)constrainLeadingOf:(id)arg1 to:(id)arg2;
-- (void)constrainLeadingAndTrailingOf:(id)arg1 to:(id)arg2;
-- (void)addAutolayoutConstraints;
 - (void)awakeFromNib;
 - (id)_keysToObserve;
 - (void)_initializeMenus;

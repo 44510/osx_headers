@@ -6,13 +6,15 @@
 
 #import "CKDatabaseOperationInfo.h"
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @interface CKDDecryptRecordsOperationInfo : CKDatabaseOperationInfo
 {
     NSArray *_recordsToDecrypt;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
+@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 @property(retain, nonatomic) NSArray *recordsToDecrypt; // @synthesize recordsToDecrypt=_recordsToDecrypt;
 - (void).cxx_destruct;
 

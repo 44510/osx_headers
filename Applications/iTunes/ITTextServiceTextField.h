@@ -29,6 +29,7 @@
 - (shared_ptr_8092bbf7)associatedITView;
 - (shared_ptr_8092bbf7)owningITTextServiceUnignoredAncestorView;
 - (shared_ptr_bd1bd18b)owningITTextService;
+- (BOOL)_handleArrowKeyWithEvent:(id)arg1;
 - (BOOL)_handleNewline;
 - (BOOL)_handleTabInForwardDirection:(BOOL)arg1;
 - (BOOL)_provideTextInputToAssociatedITEditTextWithEvent:(id)arg1;

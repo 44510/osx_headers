@@ -8,7 +8,7 @@
 
 #import "NCWidgetListItemDelegate.h"
 
-@class NCListItemViewController, NCVerticalListController, NSArray, NSButton, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSTextField, NSView;
+@class NCListItemViewController, NCVerticalListController, NSArray, NSButton, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, NSView;
 
 @interface NCWidgetListViewController : NSViewController <NCWidgetListItemDelegate>
 {
@@ -16,6 +16,7 @@
     BOOL _editing;
     BOOL _disableShieldInEditMode;
     BOOL _hideDeleteArea;
+    BOOL _confirmDeletes;
     BOOL _haveReorderableItems;
     CDStruct_3c058996 _innerInsets;
     NSMutableDictionary *_listItemViewControllers;
@@ -46,14 +47,10 @@
     NSView *_editingAccessoryContainerView;
     NSButton *_addButton;
     NSButton *_addTextButton;
-    NSTextField *_addTextField;
     NSButton *_showMoreButton;
-    NSTextField *_showMoreTextField;
 }
 
-@property(retain, nonatomic) NSTextField *showMoreTextField; // @synthesize showMoreTextField=_showMoreTextField;
 @property(retain, nonatomic) NSButton *showMoreButton; // @synthesize showMoreButton=_showMoreButton;
-@property(retain, nonatomic) NSTextField *addTextField; // @synthesize addTextField=_addTextField;
 @property(retain, nonatomic) NSButton *addTextButton; // @synthesize addTextButton=_addTextButton;
 @property(retain, nonatomic) NSButton *addButton; // @synthesize addButton=_addButton;
 @property(retain, nonatomic) NSView *editingAccessoryContainerView; // @synthesize editingAccessoryContainerView=_editingAccessoryContainerView;
@@ -97,6 +94,8 @@
 - (id)viewControllerAtRow:(unsigned long long)arg1 makeIfNecessary:(BOOL)arg2;
 - (void)setInnerInsets:(CDStruct_3c058996)arg1;
 - (CDStruct_3c058996)innerInsets;
+- (void)set_confirmDeletes:(BOOL)arg1;
+- (BOOL)_confirmDeletes;
 - (void)set_hideDeleteArea:(BOOL)arg1;
 - (BOOL)_hideDeleteArea;
 - (void)set_disableShieldInEditMode:(BOOL)arg1;
@@ -110,6 +109,12 @@
 - (void)awakeFromNib;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

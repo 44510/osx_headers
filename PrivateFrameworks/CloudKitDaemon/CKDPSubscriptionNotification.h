@@ -15,15 +15,19 @@
     NSMutableArray *_additionalFields;
     CKDPSubscriptionNotificationAlert *_alert;
     BOOL _shouldBadge;
+    BOOL _shouldSendContentAvailable;
     struct {
         unsigned int shouldBadge:1;
+        unsigned int shouldSendContentAvailable:1;
     } _has;
 }
 
+@property(nonatomic) BOOL shouldSendContentAvailable; // @synthesize shouldSendContentAvailable=_shouldSendContentAvailable;
 @property(retain, nonatomic) NSMutableArray *additionalFields; // @synthesize additionalFields=_additionalFields;
 @property(nonatomic) BOOL shouldBadge; // @synthesize shouldBadge=_shouldBadge;
 @property(retain, nonatomic) CKDPSubscriptionNotificationAlert *alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -32,6 +36,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasShouldSendContentAvailable;
 - (id)additionalFieldsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)additionalFieldsCount;
 - (void)addAdditionalFields:(id)arg1;

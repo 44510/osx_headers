@@ -9,17 +9,15 @@
 #import "SFCompanionServiceManagerClient.h"
 #import "SFCompanionXPCManagerObserver.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString;
 
 @interface SFCompanionManager : NSObject <SFCompanionServiceManagerClient, SFCompanionXPCManagerObserver>
 {
     NSString *_identifier;
-    NSMutableArray *_serviceTypes;
     id <SFCompanionServiceManagerProtocol> _managerProxy;
     NSString *_deviceID;
     NSString *_deviceIP;
     NSString *_deviceName;
-    NSMutableDictionary *_handlers;
     NSMutableDictionary *_services;
     NSMutableDictionary *_streamHandlers;
     struct dispatch_semaphore_s *_managerSemaphore;
@@ -29,26 +27,22 @@
 @property struct dispatch_semaphore_s *managerSemaphore; // @synthesize managerSemaphore=_managerSemaphore;
 @property(retain) NSMutableDictionary *streamHandlers; // @synthesize streamHandlers=_streamHandlers;
 @property(retain) NSMutableDictionary *services; // @synthesize services=_services;
-@property(retain) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy) NSString *deviceIP; // @synthesize deviceIP=_deviceIP;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain) id <SFCompanionServiceManagerProtocol> managerProxy; // @synthesize managerProxy=_managerProxy;
-@property(retain) NSMutableArray *serviceTypes; // @synthesize serviceTypes=_serviceTypes;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (id)captureWriteHandle:(id)arg1;
-- (id)captureReadHandle:(id)arg1;
-- (void)disableServiceWithName:(id)arg1;
-- (void)enableServiceWithName:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2 streamHandler:(CDUnknownBlockType)arg3;
-- (void)enableServiceWithName:(id)arg1 withConnectionHandler:(CDUnknownBlockType)arg2;
-- (id)enabledServiceNames;
+- (void)streamsFromFileHandle:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)disableStreamSupportForIdentifier:(id)arg1;
+- (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(CDUnknownBlockType)arg2;
+- (void)getStreamsForData:(id)arg1 withStreamHandler:(CDUnknownBlockType)arg2;
 - (void)xpcManagerDidInvalidate:(id)arg1;
-- (void)xpcManagerDidResumeConnection:(id)arg1;
 - (void)xpcManagerConnectionInterrupted;
-- (void)streamToService:(id)arg1 withReadHandle:(id)arg2 writeHandle:(id)arg3 acceptReply:(CDUnknownBlockType)arg4;
+- (void)streamToService:(id)arg1 withFileHandle:(id)arg2 acceptReply:(CDUnknownBlockType)arg3;
 - (void)signalSemaphore;
 - (void)retrieveManagerProxy;
-- (id)companionServiceForType:(id)arg1;
+- (id)streamDataForIdentifier:(id)arg1;
+- (id)serviceForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

@@ -100,9 +100,9 @@
 - (void)_appendBezierPath:(id)arg1 withBottomRoundRect:(struct CGRect)arg2 cornerRadius:(double)arg3;
 - (BOOL)_shouldTweakRoundingBehaviorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
+- (BOOL)_funkyOptOutLogicThatShouldGoAwayForView:(id)arg1 semanticContext:(int)arg2;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1 forAttributedTitle:(id)arg2;
-- (BOOL)_customForegroundColorInTitle:(id)arg1;
 - (BOOL)_hasCustomForegroundColor;
 - (BOOL)_titleTextIsScrollable;
 - (void)drawImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
@@ -145,6 +145,8 @@
 - (id)_layerKeysForCachingWithFrame:(struct CGRect)arg1 inView:(id)arg2 drawingRect:(struct CGRect *)arg3;
 - (id)_semanticContextKeyForView:(id)arg1;
 - (BOOL)wantsUpdateLayerInView:(id)arg1;
+- (BOOL)_subclassOverridesAnyDrawMethods;
+- (Class)_classForOverrideCheck;
 - (BOOL)_subclassOverridesDrawImage;
 - (BOOL)_bezelStyleWantsUpdateLayerInView:(id)arg1;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;

@@ -6,16 +6,18 @@
 
 #import "NSView.h"
 
-@class CALayer, NSColor, NSImage;
+@class CALayer, NSColor, NSImage, NSShadow;
 
 __attribute__((visibility("hidden")))
 @interface GridViewImageView : NSView
 {
+    CALayer *_shadowLayer;
     CALayer *_imageLayer;
     CALayer *_selectionOverlayLayer;
     BOOL _usesCustomContentsRect;
     BOOL _selected;
     BOOL _roundsImage;
+    NSShadow *_imageShadow;
     NSImage *_image;
     NSColor *_backgroundColor;
 }
@@ -25,12 +27,19 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL usesCustomContentsRect; // @synthesize usesCustomContentsRect=_usesCustomContentsRect;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSShadow *imageShadow; // @synthesize imageShadow=_imageShadow;
 - (void).cxx_destruct;
 - (void)_performBlockDisablingLayerActionsIfNeeded:(CDUnknownBlockType)arg1;
 - (void)_updateCustomContentsRectIfNeeded;
+- (struct CGRect)_insetBounds;
+- (void)applyIconTreatment;
 - (void)layout;
+- (CDStruct_3c058996)alignmentRectInsets;
+- (void)_updateShadow;
+@property(nonatomic) double imageBorderWidth;
 - (struct CGRect)_contentsRectForSnapshot:(id)arg1 inBounds:(struct CGRect)arg2;
 - (void)_setUpSelectionOverlayLayer;
+- (void)_createShadowLayerIfNeeded;
 - (void)_setUpImageLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 

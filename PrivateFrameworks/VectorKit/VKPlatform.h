@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) BOOL useCheapTrafficShader; // @synthesize useCheapTrafficShader=_useCheapTrafficShader;
 @property(readonly, nonatomic) BOOL proceduralRoadAlpha; // @synthesize proceduralRoadAlpha=_proceduralRoadAlpha;
 @property(readonly, nonatomic) unsigned long long memorySize; // @synthesize memorySize=_memSize;
+@property(readonly, nonatomic) BOOL supportsBuildingShadows;
 @property(readonly, nonatomic) unsigned int tileDecodeQueueWidth;
 @property(readonly, nonatomic) BOOL shouldPregenerateLabelGlyphs;
 @property(readonly, nonatomic) BOOL shouldStyleLabelsInParallel;

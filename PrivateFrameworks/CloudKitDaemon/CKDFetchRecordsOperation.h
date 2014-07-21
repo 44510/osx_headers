@@ -11,7 +11,6 @@
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation
 {
     BOOL _useCachedEtags;
-    BOOL _returnProtectionData;
     BOOL _shouldFetchAssetContent;
     NSArray *_fullRecordsToFetch;
     CDUnknownBlockType _recordFetchProgressBlock;
@@ -32,8 +31,10 @@
     unsigned long long _requestedTTL;
     unsigned long long _URLOptions;
     CKDRecordCache *_cache;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
+@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 @property(retain, nonatomic) CKDRecordCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) unsigned long long URLOptions; // @synthesize URLOptions=_URLOptions;
 @property(nonatomic) unsigned long long requestedTTL; // @synthesize requestedTTL=_requestedTTL;
@@ -54,10 +55,9 @@
 @property(copy, nonatomic) CDUnknownBlockType recordFetchCompletionBlock; // @synthesize recordFetchCompletionBlock=_recordFetchCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordFetchProgressBlock; // @synthesize recordFetchProgressBlock=_recordFetchProgressBlock;
 @property(retain, nonatomic) NSArray *fullRecordsToFetch; // @synthesize fullRecordsToFetch=_fullRecordsToFetch;
-@property(nonatomic) BOOL returnProtectionData; // @synthesize returnProtectionData=_returnProtectionData;
 @property(nonatomic) BOOL useCachedEtags; // @synthesize useCachedEtags=_useCachedEtags;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_enqueuePackage:(id)arg1 forRecord:(id)arg2;
 - (void)_didFetchPackage:(id)arg1 withError:(id)arg2;

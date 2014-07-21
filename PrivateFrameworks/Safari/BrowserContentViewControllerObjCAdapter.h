@@ -6,12 +6,14 @@
 
 #import "NSObject.h"
 
+#import "ReaderActivationDelegate.h"
+#import "ReaderAvailabilityDelegate.h"
 #import "WBSFluidProgressStateSource.h"
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface BrowserContentViewControllerObjCAdapter : NSObject <WBSFluidProgressStateSource>
+@interface BrowserContentViewControllerObjCAdapter : NSObject <ReaderActivationDelegate, ReaderAvailabilityDelegate, WBSFluidProgressStateSource>
 {
     struct BrowserContentViewController *_browserContentViewController;
 }
@@ -22,6 +24,15 @@ __attribute__((visibility("hidden")))
 - (id)progressState;
 - (void)clearFluidProgressState;
 - (BOOL)createFluidProgressState;
+- (void)readerControllerDidBecomeUnavailableUnexpectedly:(const struct ReaderController *)arg1;
+- (void)readerController:(const struct ReaderController *)arg1 didUpdateAvailability:(int)arg2;
+- (void)readerControllerDidDeactivate:(const struct ReaderController *)arg1;
+- (void)readerControllerWillDeactivate:(const struct ReaderController *)arg1;
+- (void)readerControllerDidActivate:(const struct ReaderController *)arg1;
+- (void)readerControllerWillActivate:(const struct ReaderController *)arg1;
+- (BOOL)readerControllerShouldUsePrivateBrowsing:(const struct ReaderController *)arg1;
+- (BOOL)readerControllerShouldActivateUponDeterminingAvailability:(const struct ReaderController *)arg1;
+- (id)installationTargetForReaderController:(const struct ReaderController *)arg1;
 - (void)_pickCertificateForAuthenticationChallengeSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_continueHTTPSConnectionSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_continueHTTPSConnectionWithIdentitySheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;

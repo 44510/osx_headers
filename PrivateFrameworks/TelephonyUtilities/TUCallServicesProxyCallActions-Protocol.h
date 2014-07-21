@@ -9,6 +9,9 @@
 @class TUProxyCall;
 
 @protocol TUCallServicesProxyCallActions <NSObject>
+- (void)unmuteCall:(TUProxyCall *)arg1;
+- (void)muteCall:(TUProxyCall *)arg1;
+- (void)sendHardPauseDigits;
 - (void)disconnectAllCalls;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (void)endHeldAndAnswerCall:(TUProxyCall *)arg1;

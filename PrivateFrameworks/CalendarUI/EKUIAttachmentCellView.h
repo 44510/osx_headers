@@ -21,6 +21,7 @@
 - (struct CGSize)fileIconSize;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)initWithAttachemnt:(id)arg1 andFont:(id)arg2;
+- (BOOL)allowsVibrancy;
 
 @end
 

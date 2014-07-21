@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1;
 - (BOOL)NS_contentsAligningEnabled;
+- (void)NS_didChangeDefaultContentsScale:(double)arg1;
 - (void)_NS_invalidateSuggestedContentsScale;
 - (void)setSublayerTransform:(struct CATransform3D)arg1;
 - (void)setTransform:(struct CATransform3D)arg1;

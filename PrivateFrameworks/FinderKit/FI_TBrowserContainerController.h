@@ -109,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
 - (void)configureWindowForBrowserSplitViewChange:(double)arg1;
-- (double)configureBrowserSplitViewForAdditionalPane:(double)arg1;
+- (double)configureBrowserSplitViewForAdditionalPane:(double *)arg1 isPreviewPane:(_Bool)arg2;
 - (void)configureBrowserSplitView;
 - (void)tearDownBrowserSplitView;
 @property(readonly, retain, nonatomic) FI_TSplitView *browserSplitView; // @dynamic browserSplitView;

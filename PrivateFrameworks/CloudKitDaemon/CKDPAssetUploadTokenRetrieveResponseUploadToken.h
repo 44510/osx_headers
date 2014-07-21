@@ -19,6 +19,7 @@
 @property(retain, nonatomic) CKDPAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -10,8 +10,10 @@
 
 @interface AEScriptableEntity : NSObject
 {
-    BOOL _strict;
     BOOL _includeStandardAdditions;
+    BOOL _strictPropertyScope;
+    BOOL _strictCommandScope;
+    BOOL _strictParameterType;
     NSString *_name;
     NSString *_bundleID;
     NSMutableDictionary *_classesForNames;
@@ -28,12 +30,15 @@
 @property(retain) NSMutableDictionary *enumerationsForNames; // @synthesize enumerationsForNames=_enumerationsForNames;
 @property(retain) NSMutableDictionary *classNamesForCodes; // @synthesize classNamesForCodes=_classNamesForCodes;
 @property(retain) NSMutableDictionary *classesForNames; // @synthesize classesForNames=_classesForNames;
+@property BOOL strictParameterType; // @synthesize strictParameterType=_strictParameterType;
+@property BOOL strictCommandScope; // @synthesize strictCommandScope=_strictCommandScope;
+@property BOOL strictPropertyScope; // @synthesize strictPropertyScope=_strictPropertyScope;
 @property BOOL includeStandardAdditions; // @synthesize includeStandardAdditions=_includeStandardAdditions;
-@property BOOL strict; // @synthesize strict=_strict;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)sendAppleEvent:(id)arg1 modifiers:(id)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
+- (id)sendAppleEvent:(id)arg1 timeout:(long long)arg2 withContext:(id)arg3 waitForReply:(BOOL)arg4 error:(id *)arg5;
 - (id)sendAppleEvent:(id)arg1 withContext:(id)arg2 waitForReply:(BOOL)arg3 error:(id *)arg4;
 - (id)emptyAppleEventWithEventClass:(unsigned int)arg1 eventID:(unsigned int)arg2;
 - (void)buildTypeDictionary:(id)arg1;
@@ -47,6 +52,7 @@
 - (BOOL)handlerIsStandardAddition:(id)arg1;
 - (id)enumerationForCode:(unsigned int)arg1;
 - (id)enumeratorsForEnumeration:(id)arg1;
+- (unsigned int)enumeratorCodeForName:(id)arg1;
 - (id)enumeratorNameForCode:(unsigned int)arg1;
 - (id)parameterTypeForName:(id)arg1 inCommand:(id)arg2;
 - (id)parameterNamesForCommand:(id)arg1;
@@ -73,6 +79,9 @@
 - (id)classNameForCode:(unsigned int)arg1;
 - (unsigned int)classCodeForName:(id)arg1;
 - (id)classNames;
+- (BOOL)isRemoteApplication;
+- (void)setupInstanceVariables;
+- (id)initRemoteApplicationWithPath:(id)arg1;
 - (id)initCurrentApplication;
 - (id)initWithPath:(id)arg1;
 

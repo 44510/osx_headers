@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSData, NSString, SFCompanionService;
+@class NSData, NSString;
 
 @interface SFCompanionAdvertiser : NSObject
 {
@@ -16,13 +16,12 @@
 }
 
 @property(readonly, copy) NSString *serviceType; // @synthesize serviceType=_serviceType;
+@property BOOL supportsStreams; // @synthesize supportsStreams=_supportsStreams;
 @property id <SFCompanionAdvertiserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)stop;
 - (void)start;
 - (void)getContinuationStreamsWithEndpointData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) NSData *serviceEndpointData;
-@property(readonly) SFCompanionService *serviceEndpoint;
-@property BOOL supportsStreams; // @synthesize supportsStreams=_supportsStreams;
 - (void)dealloc;
 - (id)initWithServiceType:(id)arg1;
 

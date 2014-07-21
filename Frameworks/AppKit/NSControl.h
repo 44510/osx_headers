@@ -63,6 +63,8 @@
 - (void)endEditing:(id)arg1;
 - (void)selectWithFrame:(struct CGRect)arg1 editor:(id)arg2 delegate:(id)arg3 start:(long long)arg4 length:(long long)arg5;
 - (void)editWithFrame:(struct CGRect)arg1 editor:(id)arg2 delegate:(id)arg3 event:(id)arg4;
+- (void)setSkipEditValidation:(BOOL)arg1;
+- (BOOL)skipEditValidation;
 - (void)validateEditing;
 - (void)_validateEditing:(id)arg1;
 - (BOOL)abortEditing;
@@ -152,7 +154,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1;
 - (BOOL)_canShowExpansionTooltips;
 - (void)setAllowsExpansionToolTips:(BOOL)arg1;
 - (BOOL)allowsExpansionToolTips;

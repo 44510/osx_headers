@@ -6,10 +6,8 @@
 
 #import "NSObject.h"
 
-@class NSURL;
-
 @protocol BRNonLocalVersionSending <NSObject>
 - (oneway void)invalidate;
-- (void)listNonLocalVersionsAtURL:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)listNonLocalVersionsWithReply:(void (^)(NSError *))arg1;
 @end
 

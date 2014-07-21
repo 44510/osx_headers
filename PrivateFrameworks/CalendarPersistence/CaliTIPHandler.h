@@ -14,7 +14,7 @@
 + (id)diffsFromCalDAVOccurrenceChange:(id)arg1;
 + (id)diffForAttendeeAddress:(id)arg1;
 + (id)_findOrMakeMessageForEvent:(id)arg1 inContext:(id)arg2;
-+ (void)replyToInviteMessages:(id)arg1 withStatus:(int)arg2 placingInCalendar:(id)arg3 inContext:(id)arg4 conflictDecisionBlock:(CDUnknownBlockType)arg5 doAsyncWithCompletionBlock:(CDUnknownBlockType)arg6;
++ (BOOL)replyToInviteMessages:(id)arg1 withStatus:(int)arg2 placingInCalendar:(id)arg3 inContext:(id)arg4 conflictDecisionBlock:(CDUnknownBlockType)arg5 doAsyncWithCompletionBlock:(CDUnknownBlockType)arg6;
 + (void)replyToMessage:(id)arg1 withStatus:(int)arg2 placingInCalendar:(id)arg3 conflictDecisionBlock:(CDUnknownBlockType)arg4 doAsyncWithCompletionBlock:(CDUnknownBlockType)arg5;
 + (void)removeMessages:(id)arg1 doAsyncWithCompletionBlock:(CDUnknownBlockType)arg2;
 + (void)removeMessages:(id)arg1;

@@ -75,6 +75,7 @@
 @property(readonly) id owner;
 @property(readonly, copy) NSString *windowNibPath;
 @property(readonly, copy) NSString *windowNibName;
+- (void)_setRetainedSelf:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_compatibility_initWithUnkeyedCoder:(id)arg1;

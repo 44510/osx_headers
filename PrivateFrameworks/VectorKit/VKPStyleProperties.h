@@ -145,9 +145,12 @@ __attribute__((visibility("hidden")))
     NSString *_labelLayoutIcon;
     int _labelLayoutStyle;
     unsigned int _labelLineWrap;
+    unsigned int _labelLineWrapLogograms;
     float _labelMultiShieldGap;
+    float _labelOffset;
     float _labelOffsetLarge;
     float _labelOffsetMedium;
+    int _labelOffsetPosition;
     float _labelOffsetSmall;
     float _labelOffsetXLarge;
     float _labelOffsetXXLarge;
@@ -400,9 +403,12 @@ __attribute__((visibility("hidden")))
         unsigned int labelLayer:1;
         unsigned int labelLayoutStyle:1;
         unsigned int labelLineWrap:1;
+        unsigned int labelLineWrapLogograms:1;
         unsigned int labelMultiShieldGap:1;
+        unsigned int labelOffset:1;
         unsigned int labelOffsetLarge:1;
         unsigned int labelOffsetMedium:1;
+        unsigned int labelOffsetPosition:1;
         unsigned int labelOffsetSmall:1;
         unsigned int labelOffsetXLarge:1;
         unsigned int labelOffsetXXLarge:1;
@@ -554,6 +560,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float trafficAnitialiasingOffset; // @synthesize trafficAnitialiasingOffset=_trafficAnitialiasingOffset;
 @property(nonatomic) unsigned int lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) unsigned int horizonColor; // @synthesize horizonColor=_horizonColor;
+@property(nonatomic) float labelOffset; // @synthesize labelOffset=_labelOffset;
+@property(nonatomic) int labelOffsetPosition; // @synthesize labelOffsetPosition=_labelOffsetPosition;
 @property(nonatomic) float labelDiagonalPositionHorizontalMargin; // @synthesize labelDiagonalPositionHorizontalMargin=_labelDiagonalPositionHorizontalMargin;
 @property(nonatomic) int labelAlternateTextPositions; // @synthesize labelAlternateTextPositions=_labelAlternateTextPositions;
 @property(nonatomic) int labelDefaultTextPosition; // @synthesize labelDefaultTextPosition=_labelDefaultTextPosition;
@@ -702,6 +710,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int widthCurve; // @synthesize widthCurve=_widthCurve;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(nonatomic) BOOL visible; // @synthesize visible=_visible;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -752,6 +761,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasTrafficAnitialiasingOffset;
 @property(nonatomic) BOOL hasLineColor;
 @property(nonatomic) BOOL hasHorizonColor;
+@property(nonatomic) BOOL hasLabelOffset;
+@property(nonatomic) BOOL hasLabelOffsetPosition;
+@property(nonatomic) BOOL hasLabelLineWrapLogograms;
+@property(nonatomic) unsigned int labelLineWrapLogograms; // @synthesize labelLineWrapLogograms=_labelLineWrapLogograms;
 @property(nonatomic) BOOL hasLabelDiagonalPositionVerticalMargin;
 @property(nonatomic) float labelDiagonalPositionVerticalMargin; // @synthesize labelDiagonalPositionVerticalMargin=_labelDiagonalPositionVerticalMargin;
 @property(nonatomic) BOOL hasLabelDiagonalPositionHorizontalMargin;

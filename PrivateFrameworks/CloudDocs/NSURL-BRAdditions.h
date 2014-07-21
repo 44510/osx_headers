@@ -19,5 +19,7 @@
 - (id)_br_pathRelativeToMobileDocuments;
 - (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
+- (BOOL)br_isParentOfURL:(id)arg1;
+- (BOOL)br_isStrictParentOfURL:(id)arg1;
 @end
 

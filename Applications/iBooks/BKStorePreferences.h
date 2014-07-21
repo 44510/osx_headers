@@ -6,35 +6,21 @@
 
 #import "BKPreferencesModule.h"
 
-#import "CKPushNotificationManagerDelegate.h"
+@class NSButton, NSTextField;
 
-@class NSButton, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSTextField;
-
-@interface BKStorePreferences : BKPreferencesModule <CKPushNotificationManagerDelegate>
+@interface BKStorePreferences : BKPreferencesModule
 {
     NSButton *_downloadNewPurchasesButton;
     NSTextField *_downloadDescriptionTextField;
-    NSObject<OS_dispatch_semaphore> *_pushManagerSemaphore;
-    NSObject<OS_dispatch_queue> *_pushManagerQueue;
 }
 
 - (void).cxx_destruct;
 - (void)accountChangedNotification:(id)arg1;
-- (void)pushNotificationManagerDidChange:(id)arg1;
-- (void)pushNotificationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)pushNotificationManagerDidSucceed:(id)arg1;
 - (void)downloadNewPurchasesAction:(id)arg1;
-- (void)checkAutoPushState;
 - (void)updateControls;
 - (BOOL)isResizable;
 - (void)dealloc;
 - (void)awakeFromNib;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

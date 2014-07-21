@@ -17,7 +17,8 @@
 }
 
 + (BOOL)isAccountStillUsingUbiquity;
-+ (id)_inSystemStoreAccountIDForUbiquityDataclass;
++ (id)inSystemStoreAccountIDForUbiquityDataclass;
++ (id)inSystemStoreAccountIDValidatingUbiquityEnabled:(BOOL)arg1;
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 @property(readonly, nonatomic) BRCAccountSession *accountSession; // @synthesize accountSession=_accountSession;
 @property(nonatomic) __weak id <BRCAccountHandlerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -34,6 +35,7 @@
 - (BOOL)_loadCurrentOnDiskAccountSessionWithError:(id *)arg1;
 - (void)_destroyCurrentSessionSynchronously;
 - (void)startAndLoadCurrentAccountSynchronously;
+- (void)_cleanupPushAndActivitiesStatesWhenNoSessionExists;
 - (BOOL)setOnDiskAccountID:(id)arg1;
 - (id)onDiskAccountID;
 - (id)accountIDPath;

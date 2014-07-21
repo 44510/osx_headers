@@ -17,8 +17,13 @@
 + (double)heightOfViewWithThumbnail:(BOOL)arg1;
 @property(readonly) NSImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(readonly) NSTextField *resultTitle; // @synthesize resultTitle=_resultTitle;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)viewWillDraw;
+- (void)setObjectValue:(id)arg1;
+- (void)stopObservingObject:(id)arg1;
+- (void)startObservingObject:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 
 @end
 

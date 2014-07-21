@@ -29,7 +29,7 @@
 - (void)session:(VCCallSession *)arg1 inititiateRelayRequest:(NSDictionary *)arg2;
 - (void)remoteVideoDidPause:(BOOL)arg1 callID:(unsigned int)arg2;
 - (void)remoteAudioDidPause:(BOOL)arg1 callID:(unsigned int)arg2;
-- (_Bool)stopVideoIO:(BOOL)arg1 error:(id *)arg2;
+- (BOOL)session:(VCCallSession *)arg1 didStopVideoIO:(BOOL)arg2 error:(id *)arg3;
 - (_Bool)session:(VCCallSession *)arg1 receivedRemoteFrame:(struct __CVBuffer *)arg2 atTime:(CDStruct_198678f7)arg3 withScreenAttributes:(VideoAttributes *)arg4 videoAttributes:(VideoAttributes *)arg5 isFirstFrame:(BOOL)arg6 isVideoPaused:(BOOL)arg7;
 - (_Bool)session:(VCCallSession *)arg1 startVideoIO:(id *)arg2 captureRule:(VCVideoRule *)arg3 isUnpausing:(BOOL)arg4;
 - (void)session:(VCCallSession *)arg1 didStopWithError:(NSError *)arg2;

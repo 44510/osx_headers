@@ -10,7 +10,7 @@
 #import "RolloverTrackingButtonDelegate.h"
 #import "WBSFluidProgressControllerDelegate.h"
 
-@class CALayer, InteriorUnifiedField, NSArray, NSColor, NSEvent, NSImage, NSString, NSTimer, NSTrackingArea, NSURL, NSView, OneStepBookmarkingBasicButton, RolloverImageButton, TextFieldThatIgnoresClicks, UnifiedFieldComponent, WBSFluidProgressState, WebBookmark;
+@class CALayer, InteriorUnifiedField, NSArray, NSColor, NSEvent, NSImage, NSImageView, NSString, NSTimer, NSTrackingArea, NSURL, NSView, OneStepBookmarkingBasicButton, RolloverImageButton, TextFieldThatIgnoresClicks, UnifiedFieldComponent, WBSFluidProgressState, WebBookmark;
 
 __attribute__((visibility("hidden")))
 @interface UnifiedField : NSTextField <RolloverTrackingButtonDelegate, WBSFluidProgressControllerDelegate, NSAnimationDelegate>
@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
     NSString *_originalString;
     NSString *_detailString;
     NSString *_pageTitle;
-    BOOL _showsPageTitle;
     BOOL _updatingDetailString;
     BOOL _toolTipRectanglesUpToDate;
     double _progressBarValue;
@@ -79,11 +78,13 @@ __attribute__((visibility("hidden")))
     NSView *_overlayStaticTextFieldClipView;
     CALayer *_overlayStaticTextFieldOverflowFadeOutMaskLayer;
     BOOL _overlayStaticTextFieldNeedsResize;
+    BOOL _pageStatusTextFieldNeedUpdate;
+    TextFieldThatIgnoresClicks *_pageStatusTextField;
     RolloverImageButton *_stopReloadButton;
     RolloverImageButton *_magnifyingGlassButton;
     RolloverImageButton *_lockButton;
     RolloverImageButton *_readerButton;
-    NSView *_faviconView;
+    NSImageView *_faviconView;
     NSTrackingArea *_unifiedFieldTrackingArea;
     BOOL _mouseIsInsideUnifiedField;
     OneStepBookmarkingBasicButton *_oneStepBookmarkingButton;
@@ -120,6 +121,8 @@ __attribute__((visibility("hidden")))
 - (void)_animateToResignFirstResponder;
 - (void)_animatePlaceholderTextOrSearchTermsToResignFirstResponder;
 - (void)_animateToBecomeFirstResponder;
+- (void)_showFaviconViewAnimated:(BOOL)arg1;
+- (void)_hideFaviconViewAnimated:(BOOL)arg1;
 - (BOOL)_isAnimatingURL;
 - (id)_animationWithFromValuesByKeyPathDictionary:(id)arg1;
 - (void)_setUpTextFieldForAnimationWithTextSelected:(BOOL)arg1;
@@ -142,12 +145,14 @@ __attribute__((visibility("hidden")))
 - (void)_updateFaviconViewImage;
 - (void)_updateFaviconViewVisibility;
 - (void)_createFaviconViewIfNeeded;
-- (BOOL)_faviconViewIsVisible;
+- (BOOL)_canShowFaviconView;
 - (void)_layOutOneStepBookmarkingButtonAndDividerIfNeeded;
 - (void)_showOneStepBookmarkingButtonNow:(id)arg1;
 - (void)_cancelShowOneStepBookmarkingButtonTimer;
 - (void)_showOneStepBookmarkingButtonSoon;
 - (void)_updateOneStepBookmarkingButtonVisibility;
+- (void)_showOneStepBookmarkingButtonWithAnimation;
+- (void)_hideOneStepBookmarkingButtonWithAnimation;
 - (BOOL)_oneStepBookmarkingButtonShouldBeVisible;
 - (BOOL)_shouldReserveSpaceForOneStepBookmarkingButton;
 @property(readonly, nonatomic) OneStepBookmarkingBasicButton *oneStepBookmarkingButton;
@@ -204,6 +209,8 @@ __attribute__((visibility("hidden")))
 - (void)_notifyDelegateOfBecameFirstResponderSoon;
 - (void)_updateTruncationSoon;
 - (void)_updateTruncationNow;
+- (id)_pageStatusStringColor;
+- (id)_pageStatusString;
 - (id)_hintStringColor;
 - (id)_hintString;
 - (BOOL)_hintStringIsDetailString;

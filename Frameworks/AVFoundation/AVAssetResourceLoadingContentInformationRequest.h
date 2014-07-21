@@ -23,6 +23,7 @@
 - (id)description;
 - (void)finalize;
 - (void)dealloc;
+- (id)initWithLoadingRequest:(id)arg1;
 - (id)init;
 
 @end

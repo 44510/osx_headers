@@ -10,12 +10,13 @@
 #import "BKAssetHandler.h"
 #import "BKLibraryMigrationService.h"
 #import "IMAssetViewerDelegate.h"
+#import "ISUIHostProtocol.h"
 #import "NSApplicationDelegate.h"
 #import "NSMenuDelegate.h"
 
 @class AEAnnotationProvider, BKBookKeeperManager, BKLibrary, BKLibraryAssetIsNewManager, BKLibraryAssetModificationDateManager, BKLibraryAssetPostProcessor, IMPlatformAbstraction, IMWindow, NSArray, NSMenu, NSMenuItem, NSMutableDictionary, NSMutableSet, NSOpenPanel, NSString, NSURL;
 
-@interface BKAppDelegate : NSObject <BKLibraryMigrationService, BKAssetHandler, AEAnnotationProviderDelegate, IMAssetViewerDelegate, NSApplicationDelegate, NSMenuDelegate>
+@interface BKAppDelegate : NSObject <BKLibraryMigrationService, BKAssetHandler, AEAnnotationProviderDelegate, IMAssetViewerDelegate, NSApplicationDelegate, NSMenuDelegate, ISUIHostProtocol>
 {
     BOOL _bookstoreDisabled;
     BOOL _isFinishedLaunching;
@@ -143,6 +144,9 @@
 - (void)application:(id)arg1 openFiles:(id)arg2;
 - (BOOL)application:(id)arg1 openFile:(id)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
+- (void)serviceDismissDialog:(id)arg1 withExitCode:(long long)arg2;
+- (void)serviceDisplayDialog:(id)arg1 withServiceDelegate:(id)arg2 replyBlock:(CDUnknownBlockType)arg3;
+- (void)serviceDisplayDialog:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;
 - (void)applicationWillFinishLaunching:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

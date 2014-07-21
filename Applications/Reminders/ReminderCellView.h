@@ -87,6 +87,7 @@
 - (BOOL)buttonStateIsLocked;
 - (void)resetCursorRects;
 - (void)viewDidMoveToSuperview;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2 reminder:(id)arg3;
 

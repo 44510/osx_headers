@@ -13,7 +13,7 @@
     NSObject<AKFormFeatureDetectorDelegate> *_delegate;
 }
 
-+ (struct CGContext *)_makeBitmapFromCGPDFDocument:(struct CGPDFDocument *)arg1;
++ (struct CGContext *)_newBitmapFromCGPDFDocument:(struct CGPDFDocument *)arg1;
 + (struct CGContext *)_newBitmapInRect:(struct CGRect)arg1 onPage:(id)arg2 scale:(double)arg3;
 @property(nonatomic) __weak NSObject<AKFormFeatureDetectorDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

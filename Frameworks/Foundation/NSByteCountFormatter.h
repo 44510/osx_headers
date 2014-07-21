@@ -16,7 +16,8 @@
     BOOL _includesActualByteCount;
     BOOL _adaptive;
     BOOL _zeroPadsFractionDigits;
-    int _reserved[6];
+    int _formattingContext;
+    int _reserved[5];
 }
 
 + (id)stringFromByteCount:(long long)arg1 countStyle:(long long)arg2;

@@ -67,7 +67,7 @@
 @property id client; // @synthesize client=_client;
 @property(readonly, nonatomic) CIMCandidateCommitHistory *candidateCommitHistory; // @synthesize candidateCommitHistory=_candidateCommitHistory;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
-- (id).cxx_construct;
+@property(readonly, nonatomic) BOOL hasMarkedText;
 @property(readonly, nonatomic) BOOL inputModeShowsDynamicCandidates;
 - (id)candidateStringsMatchingInline;
 - (void *)mecabraCandidateFromCandidate:(id)arg1;

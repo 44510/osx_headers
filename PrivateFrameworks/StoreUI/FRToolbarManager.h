@@ -9,13 +9,15 @@
 #import "NSToolbarDelegate.h"
 #import "NSWindowDelegate.h"
 
-@class FRAppDelegate, FRNavigationController, FRProgressSpin, FRStoreViewController, NSButton, NSMutableArray, NSMutableDictionary, NSSearchField, NSSegmentedControl, NSString, NSToolbar, NSView;
+@class FRAppDelegate, FRNavigationController, FRStoreViewController, NSButton, NSMutableArray, NSMutableDictionary, NSProgressIndicator, NSSearchField, NSSegmentedControl, NSString, NSToolbar, NSView;
 
 @interface FRToolbarManager : NSObject <NSToolbarDelegate, NSWindowDelegate>
 {
     NSToolbar *_toolbar;
     NSSegmentedControl *_ToolbarHistoryControl;
+    NSSegmentedControl *_ToolbarPageControl;
     FRAppDelegate *_appDelegate;
+    NSProgressIndicator *_toolbarViewProgressSpinner;
     NSSearchField *_searchField;
     NSButton *_accountButton;
     NSMutableArray *_toolbarDefaultItems;
@@ -30,14 +32,13 @@
     NSString *_itemToSelectOnUpdate;
     NSView *_toolbarView;
     NSView *_toolbarViewButtonsSubview;
-    FRProgressSpin *_toolbarViewProgressSpinner;
     FRStoreViewController *_storeViewController;
     FRNavigationController *_navigationController;
 }
 
 + (BOOL)restrictToolbarItemID:(id)arg1;
 @property(retain) FRNavigationController *navigationController; // @synthesize navigationController=_navigationController;
-@property(readonly) FRProgressSpin *toolbarViewProgressSpinner; // @synthesize toolbarViewProgressSpinner=_toolbarViewProgressSpinner;
+@property(readonly) NSProgressIndicator *toolbarViewProgressSpinner; // @synthesize toolbarViewProgressSpinner=_toolbarViewProgressSpinner;
 @property __weak FRStoreViewController *storeViewController; // @synthesize storeViewController=_storeViewController;
 @property(readonly) BOOL updateInProgress; // @synthesize updateInProgress=_updateInProgress;
 @property BOOL historyButtonEnabledOverwritten; // @synthesize historyButtonEnabledOverwritten=_historyButtonEnabledOverwritten;
@@ -46,10 +47,13 @@
 - (void)windowWillExitFullScreen:(id)arg1;
 - (void)windowDidEnterFullScreen:(id)arg1;
 - (void)windowWillEnterFullScreen:(id)arg1;
+- (void)toolbarDidRemoveItem:(id)arg1;
+- (void)toolbarWillAddItem:(id)arg1;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
 - (id)toolbarSelectableItemIdentifiers:(id)arg1;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
+- (struct CGRect)progressSpinnerFramingViewRect;
 - (struct CGRect)searchFieldFramingViewRect;
 - (struct CGPoint)searchFieldFrameOriginInFullScreen:(BOOL)arg1;
 - (struct CGRect)historySegmentedControlFramingViewRect;
@@ -65,6 +69,7 @@
 - (void)goForward:(id)arg1;
 - (void)goBack:(id)arg1;
 - (void)selectToolbarItemForCurrentPageInWebView;
+- (void)selectPage:(id)arg1;
 - (void)traverseHistory:(id)arg1;
 - (void)performSearchForString:(id)arg1;
 - (void)doSearch:(id)arg1;

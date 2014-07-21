@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float fontSize; // @synthesize fontSize=_fontSize;
 @property(retain, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 @property(nonatomic) float textBaseline; // @synthesize textBaseline=_textBaseline;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

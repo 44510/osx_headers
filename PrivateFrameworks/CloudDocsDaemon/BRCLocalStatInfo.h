@@ -49,9 +49,9 @@ __attribute__((visibility("hidden")))
 - (void)_markAlmostDead;
 - (void)_markReserved;
 - (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1 itemID:(id)arg2;
-- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
-- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
-- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
+- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
+- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (unsigned long long)diffAgainstLocalInfo:(id)arg1;
 - (void)_clearBouncedName;
 - (void)_migrateBouncedNameToLocalName;
@@ -68,7 +68,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (id)initWithLocalStatInfo:(id)arg1;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2 container:(id)arg3;
 - (id)description;

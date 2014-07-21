@@ -45,6 +45,7 @@
     BOOL mPausedSublayersForTransition;
     BOOL mControlsSublayerTimes;
     BOOL mNeedsToResyncToSerializer;
+    BOOL mHasWarnedDelegateAboutNearingEnd;
     MRLayer *mSublayerToPrecompute;
     id mPrecomputingTarget;
     unsigned long long mPrecomputingType;

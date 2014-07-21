@@ -6,10 +6,12 @@
 
 #import <ScreenReader/SCRWebText.h>
 
-@class NSNumber;
+#import "SCRMailContent.h"
+
+@class NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
-@interface SCRMailWebText : SCRWebText
+@interface SCRMailWebText : SCRWebText <SCRMailContent>
 {
     struct CGPoint _currentTextMarkerCenterPoint;
     NSNumber *_previousBlockQuoteLevel;
@@ -18,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)uiElementIsNoteEditor:(id)arg1;
 + (BOOL)uiElementIsNoteContainer:(id)arg1;
 + (BOOL)_uiElementIsNoteType:(id)arg1 type:(id)arg2;
+- (void)addContentToRequest:(id)arg1;
 - (void)echoDataInRange:(id)arg1 request:(id)arg2 showOnScreen:(BOOL)arg3 feedbackType:(int)arg4 withScrolling:(BOOL)arg5;
 - (void)beginFocusFromElement:(id)arg1 withEvent:(id)arg2;
 - (id)helpDescription;
@@ -33,6 +36,12 @@ __attribute__((visibility("hidden")))
 - (id)lastPosition;
 - (id)firstPosition;
 - (BOOL)isNoteEditor;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

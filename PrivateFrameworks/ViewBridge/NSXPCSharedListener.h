@@ -16,6 +16,7 @@
 
 + (void)warmUpClassNamed:(id)arg1 inServiceNamed:(id)arg2;
 + (id)sharedServiceListener;
++ (void)connectionToService:(id)arg1 listener:(id)arg2 queue:(struct dispatch_queue_s *)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)connectionForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2;
 + (id)endpointForListenerNamed:(id)arg1 fromServiceNamed:(id)arg2;
 + (id)endpointForListenerNamed:(id)arg1 fromConnection:(struct _xpc_connection_s *)arg2;

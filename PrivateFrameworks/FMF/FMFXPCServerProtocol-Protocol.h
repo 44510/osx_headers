@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-@class FMFDevice, FMFFriendshipRequest, FMFHandle, NSDate, NSSet, NSString;
+@class FMFDevice, FMFFriendshipRequest, FMFHandle, NSDate, NSNumber, NSSet, NSString;
 
 @protocol FMFXPCServerProtocol <NSObject>
 - (oneway void)forceRefresh;
 - (oneway void)getAllLocations:(void (^)(NSSet *, NSError *))arg1;
 - (oneway void)invalidateMappingPackets:(NSSet *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)importMappingPacket:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
+- (oneway void)stopSharingMyLocationToFamilyMemberWithDSID:(NSNumber *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)startSharingMyLocationToFamilyMemberWithDSID:(NSNumber *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)getHandlesWithPendingOffers:(void (^)(NSSet *, NSError *))arg1;
 - (oneway void)getOfferExpirationForHandle:(FMFHandle *)arg1 groupId:(NSString *)arg2 callerId:(FMFHandle *)arg3 completion:(void (^)(NSDate *, NSError *))arg4;
 - (oneway void)getPendingFriendshipRequestsWithCompletion:(void (^)(NSSet *, NSSet *, NSError *))arg1;

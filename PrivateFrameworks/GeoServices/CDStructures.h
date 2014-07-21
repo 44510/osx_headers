@@ -1024,6 +1024,11 @@ typedef struct {
 } CDStruct_db93fd0f;
 
 typedef struct {
+    unsigned int maxResults:1;
+    unsigned int sortOrder:1;
+} CDStruct_6c9bcd7c;
+
+typedef struct {
     unsigned int muid:1;
     unsigned int resultProviderId:1;
 } CDStruct_12a4a01e;

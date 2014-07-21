@@ -8,11 +8,10 @@
 
 #import "IDSIDQueryControllerDelegate.h"
 
-@class NSMutableArray, NSString, TUCall, TUCallCenterCallsCache, TUCallModelState;
+@class NSArray, NSMutableArray, NSString, TUCall, TUCallCenterCallsCache, TUCallModelState;
 
 @interface TUCallCenter : NSObject <IDSIDQueryControllerDelegate>
 {
-    TUCall *_incomingCall;
     NSMutableArray *_displayedCalls;
     NSMutableArray *_conferenceParticipantCalls;
     TUCallCenterCallsCache *_callsCache;
@@ -30,7 +29,6 @@
 @property(retain, nonatomic) TUCallCenterCallsCache *callsCache; // @synthesize callsCache=_callsCache;
 @property(retain, nonatomic) NSMutableArray *conferenceParticipantCalls; // @synthesize conferenceParticipantCalls=_conferenceParticipantCalls;
 @property(retain, nonatomic) NSMutableArray *displayedCalls; // @synthesize displayedCalls=_displayedCalls;
-@property(retain, nonatomic) TUCall *incomingCall; // @synthesize incomingCall=_incomingCall;
 - (void)endEmergencyCallBackMode;
 - (void)_callStatusChangedInternal:(id)arg1;
 - (void)filteredIncomingIMAVChat:(id)arg1;
@@ -75,6 +73,8 @@
 - (BOOL)isHoldAllowed;
 - (BOOL)isMergeable;
 - (BOOL)isSwappable;
+- (void)disconnectNonRelayingCalls;
+- (void)disconnectRelayingCalls;
 - (void)requestHandoffForAllCalls;
 - (void)disconnectAllCalls;
 - (void)disconnectCurrentCallAndActivateHeld;
@@ -87,7 +87,6 @@
 - (void)holdActiveAndAnswerCall:(id)arg1;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2 wantsHoldMusic:(BOOL)arg3;
 - (void)answerCallWithHoldMusic:(id)arg1;
-- (void)answerAndEnableHoldMusicForCall:(id)arg1;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2;
 - (void)answerCall:(id)arg1;
 - (id)displayedCallFromCalls:(id)arg1;
@@ -98,7 +97,11 @@
 - (id)dial:(id)arg1 callID:(id)arg2 service:(int)arg3;
 - (id)dial:(id)arg1 service:(int)arg2;
 - (id)_dialFaceTimeCall:(id)arg1 isVideo:(BOOL)arg2 callID:(id)arg3 sourceIdentifier:(id)arg4;
+- (BOOL)allCallsAreOfService:(int)arg1;
+- (id)callsHostedOrAnEndpointElsewhere;
+- (BOOL)anyCallIsEndpointOnCurrentDevice;
 - (BOOL)anyCallIsHostedOnCurrentDevice;
+- (BOOL)canInitiateCallForService:(int)arg1;
 - (BOOL)canInitiateCalls;
 - (id)sourceAccount:(BOOL)arg1;
 - (id)proxyCallWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(BOOL)arg5 conferenceIdentifier:(id)arg6 voicemail:(BOOL)arg7 callerNameFromNetwork:(id)arg8;
@@ -114,6 +117,8 @@
 - (id)currentCalls;
 - (id)currentCallGroups;
 - (id)_callGroupsFromCalls:(id)arg1;
+@property(readonly, retain, nonatomic) NSArray *incomingCalls;
+@property(readonly, retain, nonatomic) TUCall *incomingCall;
 - (void)dealloc;
 - (id)initWithDaemonDelegate:(id)arg1;
 - (void)_handleCallControlFailure:(id)arg1;

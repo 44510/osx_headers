@@ -27,12 +27,22 @@
     NSMenuItem *_annotationRectangleMenuItem;
     NSMenuItem *_annotationOvalMenuItem;
     NSMenuItem *_annotationLineMenuItem;
+    NSMenuItem *_annotationArrowMenuItem;
     NSMenuItem *_annotationTextMenuItem;
     NSMenuItem *_annotationSpeechBubbleMenuItem;
+    NSMenuItem *_annotationStarMenuItem;
+    NSMenuItem *_annotationPolygonMenuItem;
+    NSMenuItem *_annotationLoupeMenuItem;
+    NSMenuItem *_annotationMaskMenuItem;
 }
 
+@property(retain) NSMenuItem *annotationMaskMenuItem; // @synthesize annotationMaskMenuItem=_annotationMaskMenuItem;
+@property(retain) NSMenuItem *annotationLoupeMenuItem; // @synthesize annotationLoupeMenuItem=_annotationLoupeMenuItem;
+@property(retain) NSMenuItem *annotationPolygonMenuItem; // @synthesize annotationPolygonMenuItem=_annotationPolygonMenuItem;
+@property(retain) NSMenuItem *annotationStarMenuItem; // @synthesize annotationStarMenuItem=_annotationStarMenuItem;
 @property(retain) NSMenuItem *annotationSpeechBubbleMenuItem; // @synthesize annotationSpeechBubbleMenuItem=_annotationSpeechBubbleMenuItem;
 @property(retain) NSMenuItem *annotationTextMenuItem; // @synthesize annotationTextMenuItem=_annotationTextMenuItem;
+@property(retain) NSMenuItem *annotationArrowMenuItem; // @synthesize annotationArrowMenuItem=_annotationArrowMenuItem;
 @property(retain) NSMenuItem *annotationLineMenuItem; // @synthesize annotationLineMenuItem=_annotationLineMenuItem;
 @property(retain) NSMenuItem *annotationOvalMenuItem; // @synthesize annotationOvalMenuItem=_annotationOvalMenuItem;
 @property(retain) NSMenuItem *annotationRectangleMenuItem; // @synthesize annotationRectangleMenuItem=_annotationRectangleMenuItem;

@@ -6,45 +6,28 @@
 
 #import "NSObject.h"
 
-@class NSMutableSet, NSOperationQueue;
+@class NSBackgroundActivityScheduler;
 
 @interface PowerManager : NSObject
 {
-    NSMutableSet *_accountsWatchedForReachability;
-    struct __IOPMConnection *_connection;
-    unsigned int _powerAssertion;
-    BOOL _registeredForSleepServices;
-    NSOperationQueue *_workQueue;
-    BOOL _alreadyIssuedFetchRequestForThisDarkWake;
-    BOOL _waitingForConfirmationThatDarkWakeFetchStarted;
-    BOOL _waitingForDarkWakeFetchToComplete;
-    BOOL _shouldFetchOnNetworkUp;
-    unsigned long long _currentPowerState;
-    unsigned long long _previousPowerState;
+    unsigned int _powerStateNotifier;
+    unsigned int _powerStateSession;
+    struct IONotificationPort *_powerStateNotificationPort;
+    NSBackgroundActivityScheduler *_applicationRefreshActivity;
+    CDUnknownBlockType _applicationRefreshCompletionHandler;
 }
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property unsigned long long previousPowerState; // @synthesize previousPowerState=_previousPowerState;
-@property unsigned long long currentPowerState; // @synthesize currentPowerState=_currentPowerState;
-@property BOOL shouldFetchOnNetworkUp; // @synthesize shouldFetchOnNetworkUp=_shouldFetchOnNetworkUp;
-@property BOOL waitingForDarkWakeFetchToComplete; // @synthesize waitingForDarkWakeFetchToComplete=_waitingForDarkWakeFetchToComplete;
-@property BOOL waitingForConfirmationThatDarkWakeFetchStarted; // @synthesize waitingForConfirmationThatDarkWakeFetchStarted=_waitingForConfirmationThatDarkWakeFetchStarted;
-@property BOOL alreadyIssuedFetchRequestForThisDarkWake; // @synthesize alreadyIssuedFetchRequestForThisDarkWake=_alreadyIssuedFetchRequestForThisDarkWake;
+@property(copy) CDUnknownBlockType applicationRefreshCompletionHandler; // @synthesize applicationRefreshCompletionHandler=_applicationRefreshCompletionHandler;
+@property(readonly, nonatomic) NSBackgroundActivityScheduler *applicationRefreshActivity; // @synthesize applicationRefreshActivity=_applicationRefreshActivity;
 - (void).cxx_destruct;
+- (void)_applicationRefreshDidEnd;
+- (void)_accountSyncingDidChange:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_startDarkWakeFetch;
-- (void)_stopWatchingReachabilityForAllAccounts;
-- (void)_accountBecameReachable:(id)arg1;
-- (void)_networkConfigurationChanged:(id)arg1;
-- (void)_releasePowerAssertion;
-- (BOOL)_holdPowerAssertion;
-- (void)_cleanUpOnSleepAndFullWake;
-- (void)_systemFullWoke;
-- (void)_systemDarkWoke;
+- (CDUnknownBlockType)_applicationRefreshShouldBegin;
+- (void)_systemHasPoweredOn;
 - (void)_systemWillSleep;
-- (void)_registerForSleepServices:(BOOL)arg1;
-- (void)accountsDidChange;
 - (void)registerForPowerEvents;
 - (void)dealloc;
 - (id)init;

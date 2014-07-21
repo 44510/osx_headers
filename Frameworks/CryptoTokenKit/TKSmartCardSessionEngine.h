@@ -13,18 +13,19 @@
 @interface TKSmartCardSessionEngine : NSObject <TKProtocolSmartCardSession>
 {
     TKSmartCardSlotEngine *_slot;
-    BOOL _terminated;
     BOOL _transmitting;
     BOOL _valid;
-    CDUnknownBlockType _sessionRequestReply;
+    BOOL _active;
+    long long _endPolicy;
 }
 
+@property long long endPolicy; // @synthesize endPolicy=_endPolicy;
+@property BOOL active; // @synthesize active=_active;
 @property BOOL valid; // @synthesize valid=_valid;
-@property(copy) CDUnknownBlockType sessionRequestReply; // @synthesize sessionRequestReply=_sessionRequestReply;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)terminate;
-- (void)setSensitive:(BOOL)arg1;
+- (void)setSessionEndPolicy:(long long)arg1;
 - (void)sessionRequested:(CDUnknownBlockType)arg1;
 - (void)transmit:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)initWithSlot:(id)arg1;

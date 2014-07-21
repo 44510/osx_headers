@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol FAServiceProtocol <NSObject>
+- (void)launchiCloudFamilySettings;
 - (void)didReceiveFamilyEventPushNotificationWithPayload:(NSDictionary *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)clearFamilyCircleCacheWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)registerPushToken:(NSData *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(NSError *))arg3;

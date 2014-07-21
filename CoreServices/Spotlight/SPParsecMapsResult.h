@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSString *title_note;
 - (BOOL)isMaps;
 @property(retain, nonatomic) NSString *templateName;
+- (BOOL)openWithSearchString:(id)arg1;
 - (id)textContent;
 
 // Remaining properties

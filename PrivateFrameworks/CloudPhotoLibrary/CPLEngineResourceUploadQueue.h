@@ -12,7 +12,7 @@
 
 @interface CPLEngineResourceUploadQueue : CPLEngineStorage <CPLAbstractObject>
 {
-    char _immediateUploads[17];
+    char _immediateUploads[18];
 }
 
 - (BOOL)openWithError:(id *)arg1;

@@ -19,9 +19,9 @@
     BOOL _holdAndAnswerAllowed;
     BOOL _sendToVoicemailAllowed;
     int _ambiguityState;
-    id <TUCallModelDelegate> _delegate;
 }
 
++ (id)sharedInstance;
 @property(readonly, nonatomic, getter=isSendToVoicemailAllowed) BOOL sendToVoicemailAllowed; // @synthesize sendToVoicemailAllowed=_sendToVoicemailAllowed;
 @property(readonly, nonatomic, getter=isHoldAndAnswerAllowed) BOOL holdAndAnswerAllowed; // @synthesize holdAndAnswerAllowed=_holdAndAnswerAllowed;
 @property(readonly, nonatomic, getter=isEndAndAnswerAllowed) BOOL endAndAnswerAllowed; // @synthesize endAndAnswerAllowed=_endAndAnswerAllowed;
@@ -33,7 +33,6 @@
 @property(readonly, nonatomic, getter=isSwappable) BOOL swappable; // @synthesize swappable=_swappable;
 @property(readonly, nonatomic) int ambiguityState; // @synthesize ambiguityState=_ambiguityState;
 @property(readonly, nonatomic, getter=isAmbiguous) BOOL ambiguous; // @synthesize ambiguous=_ambiguous;
-@property(nonatomic) id <TUCallModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)description;
 
 @end

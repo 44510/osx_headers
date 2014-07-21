@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)persistenceURL;
 - (id)allElements;
 - (BOOL)isValidElement:(id)arg1;
-- (void)addElement:(id)arg1;
+- (id)addElement:(id)arg1;
 - (id)_newElementFromSearchRequestStorage:(id)arg1;
 - (id)newSyncedItemForSyncData:(id)arg1;
 - (BOOL)syncShouldUseItemPositions;

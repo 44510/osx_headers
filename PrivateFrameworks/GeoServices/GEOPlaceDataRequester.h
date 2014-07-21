@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
++ (id)_serviceTypeNumber;
 + (unsigned long long)_urlType;
 - (id)_validateResponse:(id)arg1;
 - (void)cancelRequest:(id)arg1;

@@ -98,8 +98,6 @@
 - (void)_removeMessagesInStores:(id)arg1 fromMessages:(id)arg2 storeCache:(id)arg3;
 - (id)_handleComponentStoreStructureChanged:(id)arg1;
 - (void)_componentStoreStructureChanged:(id)arg1;
-- (id)_handleComponentStoreWillOpen:(id)arg1;
-- (void)_componentStoreWillOpen:(id)arg1;
 - (id)_handleMessagesAdded:(id)arg1;
 - (void)_componentStoreMessagesWereAdded:(id)arg1;
 - (id)_storeFinishedLoading:(id)arg1;
@@ -108,7 +106,6 @@
 - (id)_removeMessages:(id)arg1 reason:(id)arg2;
 - (id)_addStore:(id)arg1;
 - (void)_addMessagesToByStoreTables:(id)arg1;
-- (id)_updateOriginalsForMessageIDs:(id)arg1;
 - (id)_threadForMessage:(id)arg1;
 - (CDUnknownFunctionPointerType)_secondarySortFunction;
 - (CDUnknownFunctionPointerType)_primarySortFunction;
@@ -154,10 +151,11 @@
 - (void)ungroupMessages;
 - (id)_groupMessages;
 - (void)groupMessages;
-- (id)_invertFilteredList;
-- (void)invertFilteredList;
-- (id)_resortWithPrimarySortOrder:(id)arg1 secondarySortOrder:(id)arg2;
-- (void)resortWithPrimarySortOrder:(id)arg1 secondarySortOrder:(id)arg2;
+- (id)_findPendingObjectsInList;
+- (id)_invertFilteredListWithViewingState:(id)arg1;
+- (void)invertFilteredListWithViewingState:(id)arg1;
+- (id)_resortWithPrimarySortOrder:(id)arg1 secondarySortOrder:(id)arg2 viewingState:(id)arg3;
+- (void)resortWithPrimarySortOrder:(id)arg1 secondarySortOrder:(id)arg2 viewingState:(id)arg3;
 - (void)_clearAllMessageInfo;
 - (void)_unrollViewingState:(id)arg1;
 - (id)_setStores:(id)arg1 sortOrder:(id)arg2 isSortedAscending:(BOOL)arg3 isInThreadedMode:(BOOL)arg4 includeDeleted:(BOOL)arg5 viewingState:(id)arg6;

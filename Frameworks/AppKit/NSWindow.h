@@ -166,9 +166,9 @@
 @property BOOL titlebarAppearsTransparent;
 @property long long titleVisibility;
 - (long long)titleMode;
+- (void)setTitleMode:(long long)arg1;
 - (void)setTitleHidden:(BOOL)arg1;
 - (BOOL)titleHidden;
-- (void)setTitleMode:(long long)arg1;
 @property(retain) NSViewController *contentViewController;
 - (void)_contentViewControllerChanged;
 - (void)_hierarchyDidChangeInView:(id)arg1;
@@ -741,6 +741,7 @@
 - (long long)_resizeWeighting;
 - (void)_setResizeWeighting:(long long)arg1;
 - (id)_updateButtonsForFullScreen;
+- (BOOL)_wantsMenuBarFullScreenButton;
 - (BOOL)showsFullScreenButton;
 - (void)lockButtonClicked:(id)arg1;
 - (BOOL)showsLockButton;
@@ -918,7 +919,6 @@
 - (void)_cleanupToolbarFromFullScreen;
 - (void)_removeFullScreenManager;
 - (void)_tileAndUpdateFullScreenManager;
-- (BOOL)_shouldIncludeTrafficLightsInFullScreen;
 - (void)_createFullScreenManager;
 - (BOOL)_needsFullScreenManager;
 - (void)_setFullScreenWindowManager:(id)arg1;
@@ -1062,6 +1062,7 @@
 - (id)_getActiveUndoManager;
 - (id)_getUndoManager:(BOOL)arg1;
 @property(readonly) unsigned long long occlusionState;
+- (void)_setOcclusionStateIsVisible:(BOOL)arg1;
 - (void)setWindowController:(id)arg1;
 - (id)windowController;
 - (BOOL)_isDeallocating;
@@ -1263,6 +1264,7 @@
 - (BOOL)hasMainAppearance;
 - (void)resignKeyAppearance;
 - (void)acquireKeyAppearance;
+- (BOOL)_hasDescendentThatSharesKeyStatusWithSelfAndHasKeyAppearanceIncludingSheets:(BOOL)arg1;
 - (BOOL)hasKeyAppearanceIncludingSheets:(BOOL)arg1;
 - (BOOL)hasKeyAppearance;
 - (void)_setHasActiveAppearance:(BOOL)arg1;

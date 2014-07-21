@@ -17,6 +17,7 @@
 @property(nonatomic) BOOL suppressAdjustToScreen; // @synthesize suppressAdjustToScreen=_suppressAdjustToScreen;
 @property(nonatomic) BOOL forceActiveAppearance; // @synthesize forceActiveAppearance=_forceActiveAppearance;
 - (void)_adjustWindowToScreen;
+- (void)responderChainWasInitialized;
 - (BOOL)isInFullScreenDisplayMode;
 - (BOOL)_hasActiveAppearance;
 - (struct CGImage *)windowImageNominalResolution;
@@ -29,6 +30,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)performWindowClose:(id)arg1;
 - (void)performClose:(id)arg1;
+- (void)_close:(id)arg1;
 
 @end
 

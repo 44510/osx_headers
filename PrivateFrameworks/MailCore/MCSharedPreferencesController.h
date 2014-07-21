@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)_preferencesChangedExternally:(id)arg1;
 - (void)_postPreferencesDidChangeNotifications;
+@property(readonly) BOOL intranetDomainsManagedByProfile;
 @property BOOL shouldCheckIntranetDomains;
 @property(retain) NSArray *intranetDomains;
 @property long long addressDisplayMode;

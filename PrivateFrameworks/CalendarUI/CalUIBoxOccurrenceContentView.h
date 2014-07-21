@@ -8,7 +8,7 @@
 
 #import "CUIKSingleDayTimelineViewItem.h"
 
-@class CalDrawOccurrenceColor, CalUIBoxOccurrenceTextField, CalUIBoxOccurrenceTravelTimeView, CalUIRowView, EKEvent, NSDate, NSDictionary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString;
+@class CalDrawOccurrenceColor, CalDrawOccurrenceColorImage, CalUIBoxOccurrenceTextField, CalUIBoxOccurrenceTravelTimeView, CalUIRowView, EKEvent, NSDate, NSDictionary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface CalUIBoxOccurrenceContentView : CalUILayerBackedView <CUIKSingleDayTimelineViewItem>
 {
@@ -21,12 +21,12 @@
     BOOL _showsTravelTime;
     BOOL _hideTimeDueToOccurrenceStartingOnPreviousDay;
     BOOL _titleIsMultiLine;
-    BOOL _isScrolling;
     int _titleLayoutState;
     int _locationLayoutState;
     EKEvent *_event;
     id <CalUIBoxOccurrenceContentDelegate> _delegate;
     CalDrawOccurrenceColor *_color;
+    CalDrawOccurrenceColorImage *_backgroundImage;
     CalUIBoxOccurrenceTextField *_timeField;
     CalUIBoxOccurrenceTextField *_titleField;
     CalUIBoxOccurrenceTextField *_locationField;
@@ -86,7 +86,6 @@
 @property(retain) NSLayoutConstraint *constraintForCenteringAccount; // @synthesize constraintForCenteringAccount=_constraintForCenteringAccount;
 @property(retain) NSLayoutConstraint *constraintForCenteringTitle; // @synthesize constraintForCenteringTitle=_constraintForCenteringTitle;
 @property(retain) NSMutableDictionary *cachedConstraints; // @synthesize cachedConstraints=_cachedConstraints;
-@property BOOL isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(retain) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(retain) NSDictionary *views; // @synthesize views=_views;
 @property double currentFontSize; // @synthesize currentFontSize=_currentFontSize;
@@ -112,6 +111,7 @@
 @property(retain) CalUIBoxOccurrenceTextField *locationField; // @synthesize locationField=_locationField;
 @property(retain) CalUIBoxOccurrenceTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain) CalUIBoxOccurrenceTextField *timeField; // @synthesize timeField=_timeField;
+@property(retain) CalDrawOccurrenceColorImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain) CalDrawOccurrenceColor *color; // @synthesize color=_color;
 @property __weak id <CalUIBoxOccurrenceContentDelegate> delegate; // @synthesize delegate=_delegate;
 @property struct CGSize singleLineTitleSize; // @synthesize singleLineTitleSize=_singleLineTitleSize;
@@ -129,6 +129,7 @@
 - (BOOL)accessibilityIsIgnored;
 - (struct CGRect)stagedFrame;
 - (void)setStagedFrame:(struct CGRect)arg1;
+- (void)setTravelTimeHeight:(double)arg1;
 @property(readonly) BOOL visibleHeightLocked;
 @property struct CGRect unPinnedViewFrame;
 @property(readonly, nonatomic) double viewMaxNaturalTextHeight;
@@ -169,6 +170,7 @@
 - (void)addLocationConstraints:(id)arg1;
 - (void)addTitleConstraints:(id)arg1;
 - (void)addTitleFieldIfNeeded;
+- (void)updateTravelTimeColors;
 - (void)rebuildString;
 - (struct CGColor *)newCurrentTextColor;
 - (void)updateAccountIconVerticalPositionConstraint;

@@ -9,6 +9,7 @@
 @interface HUDHandlerView : NSView
 {
     struct WebKitHUDViewController *_hudHandler;
+    struct WebKitHUDViewControllerViewCallback *_hudHandlerCallback;
 }
 
 - (void)mouseMoved:(id)arg1;

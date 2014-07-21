@@ -12,6 +12,16 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AlphaAtlas {
+    unsigned int _field1;
+    _Bool _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    float _field6;
+    struct Texture2D *_field7;
+};
+
 struct AltitudeDebugSettings {
     char altitudePauseLoading;
     char altitudeTexturePaging;
@@ -411,6 +421,15 @@ struct IndexDataTyped<unsigned short>;
 
 struct InfoLabel;
 
+struct IsoAlphaAtlas {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    float _field5;
+    struct Texture2D *_field6;
+};
+
 struct LabelFeatureInfo {
     unsigned long long _field1;
     unsigned char _field2;
@@ -585,6 +604,7 @@ struct PatternedLayer {
     struct shared_ptr<ggl::RenderState> _field6[2];
     unsigned long long _field7;
     struct PatternedManager *_field8;
+    id _field9;
 };
 
 struct PatternedManager;
@@ -761,13 +781,12 @@ struct RoadLayer {
     struct shared_ptr<ggl::RenderState> _field6[4];
     unsigned long long _field7;
     struct RoadManager *_field8;
+    id _field9;
 };
 
 struct RoadManager;
 
 struct RouteJunctionInfo;
-
-struct RouteLineArrowLayer;
 
 struct RouteLineArrowManager;
 
@@ -984,6 +1003,7 @@ struct TrafficLayer {
     struct shared_ptr<ggl::RenderState> _field6[1];
     unsigned long long _field7;
     struct TrafficManager *_field8;
+    id _field9;
 };
 
 struct TrafficManager;
@@ -1084,30 +1104,30 @@ struct VKLabelNavRouteRoadEdge {
 struct VKLabelStyle {
     char _field1;
     unsigned int _field2;
-    float _field3;
-    char _field4;
-    Matrix_5173352a _field5;
+    unsigned int _field3;
+    float _field4;
+    char _field5;
     Matrix_5173352a _field6;
-    unsigned int _field7;
-    float _field8;
+    Matrix_5173352a _field7;
+    unsigned int _field8;
     float _field9;
-    int _field10;
-    CDStruct_44d855de _field11;
-    int _field12;
-    char _field13;
-    float _field14;
+    float _field10;
+    int _field11;
+    CDStruct_44d855de _field12;
+    int _field13;
+    char _field14;
     float _field15;
     float _field16;
     float _field17;
-    Matrix_5173352a _field18;
+    float _field18;
     Matrix_5173352a _field19;
-    int _field20;
+    Matrix_5173352a _field20;
     int _field21;
-    long long _field22;
-    char _field23;
+    int _field22;
+    long long _field23;
     char _field24;
     char _field25;
-    float _field26;
+    char _field26;
     float _field27;
     float _field28;
     float _field29;
@@ -1117,35 +1137,37 @@ struct VKLabelStyle {
     float _field33;
     float _field34;
     float _field35;
-    char _field36;
-    int _field37;
-    float _field38;
+    float _field36;
+    char _field37;
+    int _field38;
     float _field39;
     float _field40;
-    unsigned char _field41;
-    unsigned short _field42;
+    float _field41;
+    unsigned char _field42;
     unsigned char _field43;
-    unsigned char _field44;
+    unsigned short _field44;
     unsigned char _field45;
     unsigned char _field46;
     unsigned char _field47;
-    char _field48;
-    char _field49;
-    float _field50;
-    int _field51;
-    char _field52;
-    char _field53;
-    float _field54;
+    unsigned char _field48;
+    unsigned char _field49;
+    char _field50;
+    char _field51;
+    float _field52;
+    int _field53;
+    char _field54;
     char _field55;
-    char _field56;
-    struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field57;
-    struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field58;
+    float _field56;
+    char _field57;
+    char _field58;
     struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field59;
     struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field60;
     struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field61;
-    Matrix_5173352a _field62;
-    char _field63;
-    struct FontOptions _field64;
+    struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field62;
+    struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> _field63;
+    Matrix_5173352a _field64;
+    char _field65;
+    struct FontOptions _field66;
 };
 
 struct VKNavigationCameraModel {
@@ -2132,6 +2154,12 @@ struct unique_ptr<(null)<anonymous>::YFlipPass, std::__1::default_delete<(null)<
     } __ptr_;
 };
 
+struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas>> {
+    struct __compressed_pair<ggl::AlphaAtlas *, std::__1::default_delete<ggl::AlphaAtlas>> {
+        struct AlphaAtlas *__first_;
+    } __ptr_;
+};
+
 struct unique_ptr<ggl::ClearItem, std::__1::default_delete<ggl::ClearItem>> {
     struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem>> {
         struct ClearItem *__first_;
@@ -2333,6 +2361,12 @@ struct unique_ptr<ggl::Grid::Shader::Setup, std::__1::default_delete<ggl::Grid::
 struct unique_ptr<ggl::IOSurfaceTexture, std::__1::default_delete<ggl::IOSurfaceTexture>> {
     struct __compressed_pair<ggl::IOSurfaceTexture *, std::__1::default_delete<ggl::IOSurfaceTexture>> {
         struct IOSurfaceTexture *__first_;
+    } __ptr_;
+};
+
+struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas>> {
+    struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas>> {
+        struct IsoAlphaAtlas *__first_;
     } __ptr_;
 };
 
@@ -2727,11 +2761,7 @@ struct unique_ptr<vk::RoadManager, std::__1::default_delete<vk::RoadManager>> {
     } __ptr_;
 };
 
-struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>> {
-    struct __compressed_pair<vk::RouteLineArrowLayer *, std::__1::default_delete<vk::RouteLineArrowLayer>> {
-        struct RouteLineArrowLayer *__first_;
-    } __ptr_;
-};
+struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>;
 
 struct unique_ptr<vk::RouteLineArrowManager, std::__1::default_delete<vk::RouteLineArrowManager>> {
     struct __compressed_pair<vk::RouteLineArrowManager *, std::__1::default_delete<vk::RouteLineArrowManager>> {
@@ -3483,6 +3513,14 @@ struct vector<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delet
     struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable>> *__end_;
     struct __compressed_pair<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable>>*, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable>>>> {
         struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable>> *__first_;
+    } __end_cap_;
+};
+
+struct vector<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>>> {
+    struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>> *__begin_;
+    struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>> *__end_;
+    struct __compressed_pair<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>*, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>>> {
+        struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>> *__first_;
     } __end_cap_;
 };
 

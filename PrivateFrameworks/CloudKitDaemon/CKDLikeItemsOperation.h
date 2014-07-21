@@ -21,7 +21,7 @@
 @property(retain, nonatomic) NSArray *itemIDsToLike; // @synthesize itemIDsToLike=_itemIDsToLike;
 @property(copy, nonatomic) CDUnknownBlockType itemLikedProgressBlock; // @synthesize itemLikedProgressBlock=_itemLikedProgressBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleLike:(id)arg1 withResponse:(id)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

@@ -10,9 +10,6 @@
 {
 }
 
-- (BOOL)isOpaque;
-- (BOOL)_hasSourceListBackground;
-- (BOOL)_shouldAdjustPatternPhase;
 - (void)drawGridInClipRect:(struct CGRect)arg1;
 
 @end

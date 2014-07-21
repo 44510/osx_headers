@@ -20,6 +20,7 @@
     NSXPCConnection *_connection;
 }
 
++ (BOOL)_connectToService;
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSString *longDescriptionString; // @synthesize longDescriptionString=_longDescriptionString;
@@ -43,7 +44,6 @@
 @property(readonly, retain) NSString *currentLocalization;
 @property(readonly) long long action;
 @property(readonly, retain) NSString *longDescription;
-- (BOOL)_connectToService;
 @property(readonly, retain) NSString *versionString;
 @property(readonly, retain) NSString *title;
 - (id)description;

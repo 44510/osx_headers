@@ -27,6 +27,7 @@
 }
 
 - (void)dealloc;
+- (void)validateControls;
 - (void)openKeyboardPrefs:(id)arg1;
 - (void)openUniversalAccess:(id)arg1;
 - (void)_openPreferencePane:(id)arg1;

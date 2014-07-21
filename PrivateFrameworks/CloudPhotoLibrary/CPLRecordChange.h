@@ -14,6 +14,7 @@
 @interface CPLRecordChange : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _shouldFilterDefaultValuesForNewProperties;
+    NSDate *_dateDeleted;
     BOOL _inTrash;
     BOOL _inExpunged;
     NSString *_identifier;
@@ -40,6 +41,8 @@
 @property(copy, nonatomic) NSDate *recordModificationDate; // @synthesize recordModificationDate=_recordModificationDate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)setDateDeleted:(id)arg1;
+- (id)dateDeleted;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (BOOL)shouldFilterDefaultValuesForNewProperties;
 - (void)setShouldFilterDefaultValuesForNewProperties:(BOOL)arg1;

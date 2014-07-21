@@ -13,14 +13,14 @@
     BOOL _usesBackgroundSession;
     BOOL _allowsCellularAccess;
     NSString *_applicationBundleID;
-    NSString *_secondaryApplicationBundleID;
+    NSString *_applicationSecondaryID;
     NSString *_containerID;
 }
 
 @property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
 @property(nonatomic) BOOL usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
 @property(retain, nonatomic) NSString *containerID; // @synthesize containerID=_containerID;
-@property(retain, nonatomic) NSString *secondaryApplicationBundleID; // @synthesize secondaryApplicationBundleID=_secondaryApplicationBundleID;
+@property(retain, nonatomic) NSString *applicationSecondaryID; // @synthesize applicationSecondaryID=_applicationSecondaryID;
 @property(retain, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
 - (void).cxx_destruct;
 - (id)MMCSOptions;

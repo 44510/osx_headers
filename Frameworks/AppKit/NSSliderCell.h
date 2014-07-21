@@ -60,6 +60,7 @@
 - (struct __CFString *)_coreUICircularState:(id)arg1;
 - (id)_tickMarkCUIOptions;
 - (struct __CFString *)_coreUILinearKnobWidget:(id)arg1;
+- (struct __CFString *)_coreUILayoutDirection:(id)arg1;
 - (struct __CFBoolean *)_coreUILinearBarFillsValue:(id)arg1;
 - (struct CGStyle *)_coreUILinearBarFocusStyleWithView:(id)arg1;
 - (struct __CFBoolean *)_coreUILinearBarIsFocused:(id)arg1;

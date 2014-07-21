@@ -24,6 +24,7 @@
 @property(retain, nonatomic) NSString *currentKeyVersion; // @synthesize currentKeyVersion=_currentKeyVersion;
 @property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

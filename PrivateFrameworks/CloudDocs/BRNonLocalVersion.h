@@ -18,10 +18,11 @@
     NSString *_lastEditorDeviceName;
     BOOL _hasThumbnail;
     GSPermanentStorage *_versionsStore;
+    long long _sandboxHandle;
 }
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
-@property(readonly, nonatomic) BOOL hasThumbnail; // @synthesize hasThumbnail=_hasThumbnail;
+@property(nonatomic) BOOL hasThumbnail; // @synthesize hasThumbnail=_hasThumbnail;
 @property(readonly, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
@@ -31,7 +32,7 @@
 - (id)description;
 @property(readonly, nonatomic) id <NSCopying><NSSecureCoding> persistentIdentifier;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 etag:(id)arg3 lastEditorDeviceName:(id)arg4 versionsStore:(id)arg5;
+- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 extension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 lastEditorDeviceName:(id)arg6 versionsStore:(id)arg7;
 @property(readonly, nonatomic) BOOL isLatestVersion;
 
 @end

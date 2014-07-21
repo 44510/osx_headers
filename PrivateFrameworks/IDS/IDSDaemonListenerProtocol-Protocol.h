@@ -21,9 +21,15 @@
 - (void)continuityDidFailToStartAdvertisingOfType:(long long)arg1 withError:(NSError *)arg2;
 - (void)continuityDidStopAdvertisingOfType:(long long)arg1;
 - (void)continuityDidStartAdvertisingOfType:(long long)arg1;
+- (void)continuityDidStopTrackingPeer:(NSString *)arg1;
+- (void)continuityDidStartTrackingPeer:(NSString *)arg1 error:(NSError *)arg2;
 - (void)continuityDidLosePeer:(NSString *)arg1;
 - (void)continuityDidUpdateState:(long long)arg1;
+- (void)device:(NSString *)arg1 pairingAdded:(BOOL)arg2;
+- (void)device:(NSString *)arg1 pairingDeleted:(BOOL)arg2;
 - (void)device:(NSString *)arg1 nsuuidChanged:(NSString *)arg2;
+- (void)pairedDeviceInfo:(NSDictionary *)arg1;
+- (void)localDeviceInfo:(NSDictionary *)arg1;
 - (void)xpcObject:(void *)arg1 objectContext:(NSDictionary *)arg2;
 - (void)openedSocket:(void *)arg1 forHandlerID:(NSString *)arg2 error:(NSError *)arg3;
 - (void)session:(NSString *)arg1 audioEnabled:(BOOL)arg2;
@@ -36,6 +42,7 @@
 - (void)sessionAcceptReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;
 - (void)sessionInvitationReceivedWithPayload:(NSDictionary *)arg1 forTopic:(NSString *)arg2 sessionID:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 transportType:(NSNumber *)arg6;
 - (void)IDQueryCompletedWithFromURI:(NSString *)arg1 idStatusUpdates:(NSDictionary *)arg2 service:(NSString *)arg3 success:(BOOL)arg4 error:(NSError *)arg5;
+- (void)account:(NSString *)arg1 localDeviceRemoved:(NSDictionary *)arg2;
 - (void)account:(NSString *)arg1 localDeviceAdded:(NSDictionary *)arg2;
 - (void)account:(NSString *)arg1 dependentDevicesUpdated:(NSArray *)arg2;
 - (void)activeDevicesUpdatedForAccount:(NSString *)arg1;

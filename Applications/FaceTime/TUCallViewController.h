@@ -68,7 +68,7 @@
 - (void)inviteViewControllerRequestedMessageUI:(id)arg1;
 - (void)inviteViewControllerDeclined:(id)arg1;
 - (void)inviteViewControllerAccpted:(id)arg1;
-- (void)showiPhoneUnavailableWithName:(id)arg1;
+- (void)showFailureText:(id)arg1 withName:(id)arg2;
 - (void)addDTMFTone:(id)arg1 forCall:(id)arg2;
 - (void)cleanupFrequencyMeterTimer;
 - (void)showCallPromptFor:(id)arg1;
@@ -80,6 +80,7 @@
 - (void)cancel:(id)arg1;
 - (void)callPromptCall:(id)arg1;
 - (void)errorCallBack:(id)arg1;
+- (void)hardPause:(id)arg1;
 - (void)merge:(id)arg1;
 - (void)swap:(id)arg1;
 - (void)faceTime:(id)arg1;

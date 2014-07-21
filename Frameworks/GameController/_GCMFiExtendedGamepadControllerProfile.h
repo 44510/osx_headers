@@ -8,17 +8,20 @@
 
 #import "_GCACHomeButtonDelegate.h"
 
-@class NSString, _GCACHomeButton;
+@class GCMotion, NSString, _GCACHomeButton;
 
 __attribute__((visibility("hidden")))
 @interface _GCMFiExtendedGamepadControllerProfile : _GCExtendedGamepad <_GCACHomeButtonDelegate>
 {
     _GCACHomeButton *_acHome;
+    GCMotion *_motion;
 }
 
 - (void).cxx_destruct;
 - (void)toggleSuspendResume;
 - (id)inputForElement:(struct __IOHIDElement *)arg1;
+- (void)set_motion:(id)arg1;
+- (id)motion;
 - (void)setPlayerIndex:(long long)arg1;
 - (id)name;
 - (id)initWithController:(id)arg1;

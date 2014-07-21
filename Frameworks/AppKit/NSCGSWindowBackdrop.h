@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long level;
 @property(readonly) struct CGRect rect;
 @property(readonly) long long windowNumber;
+- (id)description;
 - (id)initWithWindowNumber:(long long)arg1 rect:(struct CGRect)arg2 level:(unsigned long long)arg3 materialTypeName:(id)arg4 vibrancyEffectName:(id)arg5 active:(BOOL)arg6;
 - (void)finalize;
 - (void)dealloc;

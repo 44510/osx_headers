@@ -13,7 +13,6 @@
 @interface AKMainEventHandler : NSResponder <AKFormFeatureDetectorDelegate>
 {
     BOOL _mainEventHandlerIsInTrackingLoop;
-    BOOL _shouldIgnoreNextLeftMouseDown;
     BOOL _shouldEatNextLeftMouseUp;
     BOOL _shouldEatNextRightMouseUp;
     BOOL _mainEventHandlerTrackingLoopIsForIntelligentSketch;
@@ -40,7 +39,6 @@
 @property BOOL mainEventHandlerTrackingLoopIsForIntelligentSketch; // @synthesize mainEventHandlerTrackingLoopIsForIntelligentSketch=_mainEventHandlerTrackingLoopIsForIntelligentSketch;
 @property BOOL shouldEatNextRightMouseUp; // @synthesize shouldEatNextRightMouseUp=_shouldEatNextRightMouseUp;
 @property BOOL shouldEatNextLeftMouseUp; // @synthesize shouldEatNextLeftMouseUp=_shouldEatNextLeftMouseUp;
-@property BOOL shouldIgnoreNextLeftMouseDown; // @synthesize shouldIgnoreNextLeftMouseDown=_shouldIgnoreNextLeftMouseDown;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property unsigned long long currentModifierFlags; // @synthesize currentModifierFlags=_currentModifierFlags;
 @property(retain) AKAnnotationEventHandler *annotationEventHandler; // @synthesize annotationEventHandler=_annotationEventHandler;

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSString *_bundleID;
     NSString *_sessionID;
     unsigned long long _retryCount;
+    unsigned long long _lowThroughputTimerRetryCount;
     long long _basePriority;
     NSString *_uniqueIdentifier;
     long long _countOfBytesReceived;
@@ -54,6 +55,7 @@ __attribute__((visibility("hidden")))
 @property long long basePriority; // @synthesize basePriority=_basePriority;
 @property BOOL shouldCancelOnDisconnect; // @synthesize shouldCancelOnDisconnect=_shouldCancelOnDisconnect;
 @property BOOL disablesRetry; // @synthesize disablesRetry=_disablesRetry;
+@property unsigned long long lowThroughputTimerRetryCount; // @synthesize lowThroughputTimerRetryCount=_lowThroughputTimerRetryCount;
 @property unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property BOOL establishedConnection; // @synthesize establishedConnection=_establishedConnection;
 @property BOOL expectingResumeCallback; // @synthesize expectingResumeCallback=_expectingResumeCallback;

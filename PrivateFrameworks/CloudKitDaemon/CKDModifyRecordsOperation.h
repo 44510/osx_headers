@@ -6,10 +6,12 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDRecordCache, NSData, NSMutableDictionary, NSObject<OS_dispatch_group>;
+@class CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_group>;
 
 @interface CKDModifyRecordsOperation : CKDDatabaseOperation
 {
+    CKDProtocolTranslator *_translator;
+    BOOL _retryPCSFailures;
     BOOL _retriedRecords;
     BOOL _shouldOnlySaveAssetContent;
     BOOL _haveOutstandingMetadatas;
@@ -18,6 +20,11 @@
     CDUnknownBlockType _saveProgressBlock;
     CDUnknownBlockType _saveCompletionBlock;
     CDUnknownBlockType _deleteCompletionBlock;
+    NSArray *_recordsToSave;
+    NSArray *_recordIDsToDelete;
+    NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
+    NSDictionary *_metadatasByRecordID;
     NSMutableDictionary *_modifyMetadatasByZoneID;
     long long _savePolicy;
     NSData *_clientChangeTokenData;
@@ -35,11 +42,17 @@
 @property(nonatomic) long long savePolicy; // @synthesize savePolicy=_savePolicy;
 @property(nonatomic) int numPCSRetries; // @synthesize numPCSRetries=_numPCSRetries;
 @property(retain, nonatomic) NSMutableDictionary *modifyMetadatasByZoneID; // @synthesize modifyMetadatasByZoneID=_modifyMetadatasByZoneID;
+@property(retain, nonatomic) NSDictionary *metadatasByRecordID; // @synthesize metadatasByRecordID=_metadatasByRecordID;
+@property(retain, nonatomic) NSDictionary *conflictLosersToResolveByRecordID; // @synthesize conflictLosersToResolveByRecordID=_conflictLosersToResolveByRecordID;
+@property(retain, nonatomic) NSDictionary *recordIDsToDeleteToEtags; // @synthesize recordIDsToDeleteToEtags=_recordIDsToDeleteToEtags;
+@property(retain, nonatomic) NSArray *recordIDsToDelete; // @synthesize recordIDsToDelete=_recordIDsToDelete;
+@property(retain, nonatomic) NSArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
 @property(copy, nonatomic) CDUnknownBlockType deleteCompletionBlock; // @synthesize deleteCompletionBlock=_deleteCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType saveCompletionBlock; // @synthesize saveCompletionBlock=_saveCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType saveProgressBlock; // @synthesize saveProgressBlock=_saveProgressBlock;
+@property(nonatomic) BOOL retryPCSFailures; // @synthesize retryPCSFailures=_retryPCSFailures;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (BOOL)_topoSortRecords;
 - (void)_fetchRecordPCSData;
@@ -57,16 +70,19 @@
 - (BOOL)_prepareRecordsForSave;
 - (BOOL)_wrapEncryptedDataOnRecord:(id)arg1;
 - (BOOL)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection *)arg2 forField:(id)arg3;
+- (void)_verifyRecordEncryption;
+- (void)_handleDecryptionFailure:(id)arg1 forRecordID:(id)arg2;
+@property(readonly, nonatomic) CKDProtocolTranslator *translator;
 - (void)_continueRecordsModify;
 - (id)_createModifyRequestWithRecordsToSave:(id)arg1 recordsToDelete:(id)arg2 recordsToDeleteToEtags:(id)arg3 metadatasByRecordID:(id)arg4;
 - (void)_handleRecordDeleted:(id)arg1 metadata:(id)arg2 responseCode:(id)arg3;
 - (void)_handleRecordSaved:(id)arg1 metadata:(id)arg2 etag:(id)arg3 dateStatistics:(id)arg4 responseCode:(id)arg5 keysAssociatedWithETag:(id)arg6 recordForOplockFailure:(id)arg7;
 - (void)_clearProtectionDataForRecord:(id)arg1;
-- (id)nameForState:(unsigned long long)arg1;
-- (BOOL)makeStateTransition;
 - (void)_performMetadataCallbacks;
 - (void)_performCallbacksForAtomicZoneMetadatas:(id)arg1;
 - (void)_performCallbacksForNonAtomicZoneMetadatas:(id)arg1;
+- (id)nameForState:(unsigned long long)arg1;
+- (BOOL)makeStateTransition;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 
 // Remaining properties

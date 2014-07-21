@@ -22,9 +22,11 @@
     NSSet *_assetFieldNamesToPublishURLs;
     unsigned long long _requestedTTL;
     unsigned long long _URLOptions;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 @property(nonatomic) unsigned long long URLOptions; // @synthesize URLOptions=_URLOptions;
 @property(nonatomic) unsigned long long requestedTTL; // @synthesize requestedTTL=_requestedTTL;
 @property(retain, nonatomic) NSSet *assetFieldNamesToPublishURLs; // @synthesize assetFieldNamesToPublishURLs=_assetFieldNamesToPublishURLs;

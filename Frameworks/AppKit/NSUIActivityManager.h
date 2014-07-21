@@ -28,7 +28,10 @@ __attribute__((visibility("hidden")))
 - (void)_restoreProviders:(id)arg1 withUserActivity:(id)arg2;
 - (void)userActivityWillSave:(id)arg1;
 - (id)infoForProvider:(id)arg1;
-- (void)provider:(id)arg1 setUserActivity:(id)arg2 withSetter:(CDUnknownBlockType)arg3;
+- (void)addProvider:(id)arg1 toUserActivity:(id)arg2 withSetter:(CDUnknownBlockType)arg3;
+- (void)queue_addProvider:(id)arg1 toUserActivity:(id)arg2;
+- (void)removeProviderFromUserActivity:(id)arg1;
+- (id)queue_removeProviderFromUserActivity:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (id)init;

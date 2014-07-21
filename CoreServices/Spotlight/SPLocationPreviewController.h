@@ -6,9 +6,11 @@
 
 #import "SPPreviewController.h"
 
-@class _MKPlaceViewController;
+#import "_MKPlaceViewControllerDelegate.h"
 
-@interface SPLocationPreviewController : SPPreviewController
+@class NSString, _MKPlaceViewController;
+
+@interface SPLocationPreviewController : SPPreviewController <_MKPlaceViewControllerDelegate>
 {
     _MKPlaceViewController *_placeViewController;
 }
@@ -16,11 +18,20 @@
 + (id)sharedPreviewController;
 @property(retain) _MKPlaceViewController *placeViewController; // @synthesize placeViewController=_placeViewController;
 - (void).cxx_destruct;
+- (BOOL)placeViewController:(id)arg1 shouldOpenHomePage:(id)arg2;
+- (void)placeViewControllerDidSelectDirectionsFromAddress:(id)arg1;
+- (void)placeViewControllerDidSelectDirectionsToAddress:(id)arg1;
 - (id)view;
 - (void)loadView;
 - (void)setRepresentedObject:(id)arg1;
 - (void)refresh:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

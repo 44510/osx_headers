@@ -26,6 +26,9 @@
 + (id)parentLocaleIdentifierForIdentifier:(id)arg1;
 + (id)preferredLanguagesForRegion:(id)arg1;
 + (int)UDisplayContextForIUDisplayNameContext:(unsigned long long)arg1;
++ (void)setYearlessYear:(id)arg1 forCalendar:(id)arg2;
++ (BOOL)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
++ (long long)yearlessYearForMonth:(long long)arg1 withCalendar:(id)arg2;
 + (BOOL)isLunarCalendarDefaultOn;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)localeForCalendarID:(id)arg1;

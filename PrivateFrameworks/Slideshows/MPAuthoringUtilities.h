@@ -27,6 +27,7 @@
 + (double)breakDurationScaleFromOptions:(id)arg1;
 + (BOOL)scaleEffectsForPanoramasFromOptions:(id)arg1;
 + (double)fadeOutDurationFromOptions:(id)arg1;
++ (id)customDurationsFromOptions:(id)arg1;
 + (id)subtitlesFromOptions:(id)arg1;
 + (BOOL)performFaceDetectionFromOptions:(id)arg1;
 + (unsigned long long)regionOfInterestPickModeFromOptions:(id)arg1;

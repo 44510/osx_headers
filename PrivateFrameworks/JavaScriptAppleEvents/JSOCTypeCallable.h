@@ -12,17 +12,21 @@
 {
     JSOCType *_returnValueType;
     NSArray *_argumentTypes;
+    BOOL _variadic;
+    BOOL _nullTerminated;
 }
 
 @property(readonly) NSArray *argumentTypes; // @synthesize argumentTypes=_argumentTypes;
 - (void).cxx_destruct;
+- (BOOL)nullTerminated;
+- (BOOL)variadic;
 - (long long)numberOfArguments;
 - (id)argumentTypeAtIndex:(long long)arg1;
 @property(readonly) JSOCType *returnValueType;
 - (const char *)objCTypes;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithReturnValueType:(id)arg1 argumentTypes:(id)arg2;
+- (id)initWithReturnValueType:(id)arg1 argumentTypes:(id)arg2 variadic:(BOOL)arg3 nullTerminated:(BOOL)arg4;
 
 @end
 

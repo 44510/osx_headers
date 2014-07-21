@@ -23,8 +23,12 @@ __attribute__((visibility("hidden")))
     NSTimer *animationTimer;
     struct CGRect animatedFocusRingBounds;
     NSWindow *alreadyFocusedWindow;
+    NSView *lastNonNilFocusRingView;
+    double nilFocusTime;
 }
 
+@property double nilFocusTime; // @synthesize nilFocusTime;
+@property(retain) NSView *lastNonNilFocusRingView; // @synthesize lastNonNilFocusRingView;
 @property(retain) NSWindow *alreadyFocusedWindow; // @synthesize alreadyFocusedWindow;
 @property struct CGRect animatedFocusRingBounds; // @synthesize animatedFocusRingBounds;
 @property(retain) NSTimer *animationTimer; // @synthesize animationTimer;

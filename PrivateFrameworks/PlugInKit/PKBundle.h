@@ -12,10 +12,8 @@
 {
     NSString *_supportPath;
     NSObject<OS_xpc_object> *__bundle;
-    NSURL *_url;
 }
 
-@property(readonly) NSURL *url; // @synthesize url=_url;
 @property(retain) NSObject<OS_xpc_object> *_bundle; // @synthesize _bundle=__bundle;
 - (void).cxx_destruct;
 @property(readonly) NSString *plugInsPath;
@@ -23,10 +21,13 @@
 - (id)bundleDirectory:(id)arg1;
 @property(readonly) NSString *supportPath; // @synthesize supportPath=_supportPath;
 @property(readonly) NSString *path;
+@property(readonly) NSURL *url;
 @property(readonly) NSString *bundleIdentifier;
 @property(readonly) NSDictionary *infoDictionary;
 - (id)stringProperty:(int)arg1;
 - (id)initWithXPCBundle:(id)arg1;
+- (id)initWithExecutablePath:(id)arg1;
+- (id)initWithExecutableURL:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initForMainBundle;

@@ -36,6 +36,8 @@
     BOOL _paintLabelCollisionLines;
     BOOL _paintLabelCounts;
     BOOL _hideDirectionalArrows;
+    BOOL _labelHideLineFeatures;
+    BOOL _labelHidePointFeatures;
     BOOL _paintTrafficSkeleton;
     BOOL _loadGreenTraffic;
     BOOL _paintRoadsStitchedByName;
@@ -120,6 +122,8 @@
 @property(nonatomic) BOOL useStaticTrafficFeed; // @synthesize useStaticTrafficFeed=_useStaticTrafficFeed;
 @property(nonatomic) BOOL loadGreenTraffic; // @synthesize loadGreenTraffic=_loadGreenTraffic;
 @property(nonatomic) BOOL paintTrafficSkeleton; // @synthesize paintTrafficSkeleton=_paintTrafficSkeleton;
+@property(nonatomic) BOOL labelHidePointFeatures; // @synthesize labelHidePointFeatures=_labelHidePointFeatures;
+@property(nonatomic) BOOL labelHideLineFeatures; // @synthesize labelHideLineFeatures=_labelHideLineFeatures;
 @property(nonatomic) BOOL hideDirectionalArrows; // @synthesize hideDirectionalArrows=_hideDirectionalArrows;
 @property(nonatomic) BOOL paintLabelCounts; // @synthesize paintLabelCounts=_paintLabelCounts;
 @property(nonatomic) BOOL paintLabelCollisionLines; // @synthesize paintLabelCollisionLines=_paintLabelCollisionLines;

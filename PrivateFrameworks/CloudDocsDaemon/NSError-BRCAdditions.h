@@ -11,6 +11,8 @@
 - (id)br_wrappedError;
 - (BOOL)br_isBlacklistError;
 - (BOOL)br_isCloudKitErrorRequiringAssetReupload;
+- (BOOL)br_isCloudKitUnknownItemError;
+- (BOOL)br_isCloudKitOutOfQuota;
 - (BOOL)br_isCloudKitCancellationError;
 - (id)br_cloudKitErrorForRecordID:(id)arg1;
 - (id)br_cloudKitErrorForSubscriptionID:(id)arg1;

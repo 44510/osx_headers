@@ -10,7 +10,6 @@
 {
 }
 
-- (BOOL)allowsVibrancy;
 - (id)init;
 
 @end

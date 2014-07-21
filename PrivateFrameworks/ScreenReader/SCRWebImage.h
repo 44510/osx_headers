@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldIncludeInItemChooser;
 - (BOOL)_shouldBeHidden;
 - (BOOL)toggleSingleSelectionWithRequest:(id)arg1;
+- (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
 - (BOOL)isWebElement;
 - (id)captionDescriptionContainsUserLabel:(char *)arg1 containsAncestorLabel:(char *)arg2;
 - (id)fullNameDescription;

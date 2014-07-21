@@ -6,20 +6,26 @@
 
 #import <AppKit/NSStoryboardSegue.h>
 
-__attribute__((visibility("hidden")))
+@class NSView;
+
 @interface NSStoryboardPopoverSegue : NSStoryboardSegue
 {
-    id _privateStoryboardPopoverSegueData;
+    struct CGRect _anchorRect;
+    NSView *_anchorView;
+    long long _popoverBehavior;
+    unsigned long long _preferredEdge;
 }
 
-- (void)_setPopoverBehavior:(long long)arg1;
-- (long long)_popoverBehavior;
-- (void)_setPreferredEdge:(unsigned long long)arg1;
-- (unsigned long long)_preferredEdge;
-- (id)_anchorView;
-- (void)_setAnchorView:(id)arg1;
+@property long long popoverBehavior; // @synthesize popoverBehavior=_popoverBehavior;
+@property unsigned long long preferredEdge; // @synthesize preferredEdge=_preferredEdge;
+@property(retain) NSView *anchorView; // @synthesize anchorView=_anchorView;
+@property struct CGRect anchorRect; // @synthesize anchorRect=_anchorRect;
 - (void)perform;
+- (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3;
+@property(setter=_setPopoverBehavior:) long long _popoverBehavior;
+@property(setter=_setPreferredEdge:) unsigned long long _preferredEdge;
+@property(retain, setter=_setAnchorView:) NSView *_anchorView;
 
 @end
 

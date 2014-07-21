@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     const struct XCredentialStorage *_xCreds;
     long long _xCredsOnce;
     NSArray *_localProtocolClassesForDefaultSession;
+    BOOL _isInvalid;
 }
 
 - (void)_removeProtocolClassForDefaultSession:(Class)arg1;

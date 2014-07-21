@@ -19,6 +19,7 @@
 @property(readonly) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_requestCompletionBlock;
 @property(readonly) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 - (void)dealloc;
+- (id)description;
 - (unsigned long long)requestType;
 - (id)initWithFetchRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 

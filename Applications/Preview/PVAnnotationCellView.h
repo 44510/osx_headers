@@ -41,6 +41,9 @@
 @property(retain) NSView *contentColorLine; // @synthesize contentColorLine=_contentColorLine;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 - (void)select;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
+- (void)setBackgroundStyle:(long long)arg1;
+- (void)viewWillDraw;
 - (void)setContentHeightConstraintConstant:(double)arg1;
 - (void)resetChangeableConstraints;
 - (void)_intializeAutoLayoutConstraints;

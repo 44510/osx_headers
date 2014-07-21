@@ -8,13 +8,11 @@
 
 #import "ConversionDelegate.h"
 
-@class ConversionController, LCDController, NSButton, NSDictionary, NSMenu, NSMenuItem, NSMutableArray, NSMutableDictionary, NSSavePanel, NSString, NSView, NSWindow, PaperTapeController, SpeechController;
+@class ConversionController, LCDController, NSButton, NSDictionary, NSLayoutConstraint, NSMenu, NSMenuItem, NSMutableArray, NSMutableDictionary, NSSavePanel, NSString, PaperTapeController, SpeechController;
 
 @interface CalculatorController : NSWindowController <ConversionDelegate>
 {
     NSMenu *mConvertMenu;
-    NSWindow *mWindow;
-    NSView *mDisplayBox;
     NSMenu *mPrecisionMenu;
     NSButton *mClearTapeButton;
     PaperTapeController *mTapeWindow;
@@ -28,6 +26,8 @@
     NSMenuItem *mRPNContextualMenuItem;
     NSMenuItem *mCloseMenuItem;
     NSMenu *mDebugMenu;
+    NSLayoutConstraint *parentLCDHeight;
+    NSLayoutConstraint *parentLCDWidth;
     LCDController *mLCD;
     NSDictionary *mSpeakableItemsDict;
     NSMenu *_ViewsMenu;
@@ -45,7 +45,6 @@
 }
 
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(readonly) NSWindow *window; // @synthesize window=mWindow;
 - (void)window:(id)arg1 willEncodeRestorableState:(id)arg2;
 - (void)windowDidLoad;
 - (void)windowWillClose:(id)arg1;

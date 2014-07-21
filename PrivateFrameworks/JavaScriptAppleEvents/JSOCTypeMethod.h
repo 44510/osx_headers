@@ -11,7 +11,7 @@
 }
 
 - (long long)firstVisibleArgument;
-- (id)initWithReturnValueType:(id)arg1 argumentTypes:(id)arg2;
+- (id)initWithReturnValueType:(id)arg1 argumentTypes:(id)arg2 variadic:(BOOL)arg3 nullTerminated:(BOOL)arg4;
 
 @end
 

@@ -47,7 +47,7 @@
 - (void)drawTabDragImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (double)maxCellWidthForTabFrame:(struct CGRect)arg1;
 @property(nonatomic) struct TString label; // @dynamic label;
-- (void)drawCloseButtonInFrame:(struct CGRect)arg1 windowStatePrefix:(const struct TString *)arg2 tabStatePrefix:(const struct TString *)arg3 tabActive:(_Bool)arg4 windowActive:(_Bool)arg5 mouseOverState:(int)arg6;
+- (void)drawCloseButtonInFrame:(struct CGRect)arg1 tabActive:(_Bool)arg2 windowActive:(_Bool)arg3 mouseOverState:(int)arg4;
 - (BOOL)isFlipped;
 - (void)dealloc;
 - (id)initWithContainerController:(id)arg1;

@@ -8,5 +8,6 @@
 
 @interface NSColor (SocialUIAdditions)
 + (id)borderlessControlBlue;
++ (id)messagesTintColor;
 @end
 

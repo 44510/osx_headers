@@ -115,6 +115,10 @@
 - (void)runRaftTest:(const struct TString *)arg1 optionalArgs:(const struct TString *)arg2 andQuit:(_Bool)arg3;
 - (void)cmdToggleDSDiagnosticLogging:(id)arg1;
 - (_Bool)validateToggleDSDiagnosticLogging:(id)arg1;
+- (void)cmdPurgeInfoExtractorCache:(id)arg1;
+- (void)cmdDumpInfoExtractorCache:(id)arg1;
+- (void)cmdPurgeThumbnailCache:(id)arg1;
+- (void)cmdDumpThumbnailCache:(id)arg1;
 - (void)cmdShowTagLists:(id)arg1;
 - (void)cmdResetTagList:(id)arg1;
 - (void)cmdTogglePref:(id)arg1;

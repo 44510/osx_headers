@@ -20,6 +20,7 @@
 - (void)tucViewControllerCanceled:(TUCallViewController *)arg1;
 - (void)tucViewControllerCallPromptCall:(TUCallViewController *)arg1;
 - (void)tucViewControllerCallBack:(TUCallViewController *)arg1;
+- (void)tucViewControllerHardPause:(TUCallViewController *)arg1;
 - (void)tucViewControllerMerge:(TUCallViewController *)arg1;
 - (void)tucViewControllerSwap:(TUCallViewController *)arg1;
 - (void)tucViewControllerFaceTime:(TUCallViewController *)arg1;

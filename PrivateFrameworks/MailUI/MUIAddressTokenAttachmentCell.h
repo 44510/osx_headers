@@ -9,9 +9,11 @@
 @interface MUIAddressTokenAttachmentCell : NSTokenAttachmentCell
 {
     BOOL _displayAsExternal;
+    BOOL _neverShowSeparator;
 }
 
 + (id)colorForExternalDomain;
+@property BOOL neverShowSeparator; // @synthesize neverShowSeparator=_neverShowSeparator;
 @property(nonatomic) BOOL displayAsExternal; // @synthesize displayAsExternal=_displayAsExternal;
 - (id)tokenTintColor;
 

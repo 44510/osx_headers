@@ -17,7 +17,6 @@
 - (BOOL)shouldScrollToClickedLocation;
 - (void)dealloc;
 - (id)init;
-- (void)_handleScrollBarVariantChanged:(id)arg1;
 - (void)_handleNoRedisplayAppearanceChanged:(id)arg1;
 
 @end

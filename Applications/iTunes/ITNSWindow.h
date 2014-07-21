@@ -27,7 +27,6 @@
 - (void)dispatchMenuCommand:(id)arg1 withCommand:(unsigned int)arg2;
 - (id)windowFrameWidget:(id)arg1;
 - (id)accessibilityFocusedUIElement;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)flagsChanged:(id)arg1;
 - (void)swipeWithEvent:(id)arg1;

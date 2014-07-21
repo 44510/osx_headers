@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)sendToNode:(const struct TFENode *)arg1;
 - (void)updateDataSource:(id)arg1 senderOpController:(struct TAirDropSenderOperationController *)arg2;
 - (void)configureForAirDropAvailability;
-- (void)airDropAvailabilityChanged:(id)arg1;
+- (void)airDropAvailabilityChanged;
 - (_Bool)isAirDropAvailable;
 @property(readonly, nonatomic) _Bool isTransferInProgress;
 @property(readonly, nonatomic) _Bool hideExplanationTextFld; // @dynamic hideExplanationTextFld;

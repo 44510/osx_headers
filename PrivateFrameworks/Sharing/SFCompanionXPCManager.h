@@ -40,7 +40,7 @@
 - (void)unlockManagerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)companionStreamsForService:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)streamsForService:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)companionConnectionProxyForService:(id)arg1 client:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)serviceManagerProxyForIdentifier:(id)arg1 client:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)companionBrowserProxyforIdentifier:(id)arg1 serviceType:(id)arg2 client:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;

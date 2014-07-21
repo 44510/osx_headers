@@ -72,7 +72,9 @@
 - (void)replaceSubview:(id)arg1 with:(id)arg2;
 - (BOOL)preservesContentDuringLiveResize;
 - (BOOL)mouseDownCanMoveWindow;
+- (void)_invalidateCursorRectsAndDragRegion;
 - (void)mouseDown:(id)arg1;
+- (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (id)_cursorOfDividerAtIndex:(unsigned long long)arg1 position:(double)arg2 dragLimits:(CDStruct_0a28aba5)arg3;
 - (BOOL)isOpaque;
 - (BOOL)_allSubviewsAreOpaque;

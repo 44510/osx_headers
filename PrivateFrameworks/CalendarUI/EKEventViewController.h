@@ -23,14 +23,6 @@
     EKUIGadgetContainer *_topLevelContainer;
     EKUIGadgetContainer *_footerContainer;
     EKUITitleCalendarCompositeGadget *_titleGadget;
-    EKUIGadgetContainer *_titleLocationContainer;
-    EKUIGadgetContainer *_dateTimeContainer;
-    EKUIGadgetContainer *_attendeesContainer;
-    EKUIGadgetContainer *_noteURLAttachmentContainer;
-    EKUIGadgetContainer *_noteContainer;
-    EKUIGadgetContainer *_attachmentContainer;
-    EKUIGadgetContainer *_urlContainer;
-    EKUIGadgetContainer *_commentContainer;
     EKEditingContext *_editingContext;
     NSResponder *_lastResponder;
     EKEvent *_lastSnapshottedEvent;
@@ -67,14 +59,6 @@
 @property BOOL isClosing; // @synthesize isClosing=_isClosing;
 @property(retain) NSResponder *lastResponder; // @synthesize lastResponder=_lastResponder;
 @property(retain) EKEditingContext *editingContext; // @synthesize editingContext=_editingContext;
-@property(retain) EKUIGadgetContainer *commentContainer; // @synthesize commentContainer=_commentContainer;
-@property(retain) EKUIGadgetContainer *urlContainer; // @synthesize urlContainer=_urlContainer;
-@property(retain) EKUIGadgetContainer *attachmentContainer; // @synthesize attachmentContainer=_attachmentContainer;
-@property(retain) EKUIGadgetContainer *noteContainer; // @synthesize noteContainer=_noteContainer;
-@property(retain) EKUIGadgetContainer *noteURLAttachmentContainer; // @synthesize noteURLAttachmentContainer=_noteURLAttachmentContainer;
-@property(retain) EKUIGadgetContainer *attendeesContainer; // @synthesize attendeesContainer=_attendeesContainer;
-@property(retain) EKUIGadgetContainer *dateTimeContainer; // @synthesize dateTimeContainer=_dateTimeContainer;
-@property(retain) EKUIGadgetContainer *titleLocationContainer; // @synthesize titleLocationContainer=_titleLocationContainer;
 @property(retain) EKUITitleCalendarCompositeGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
 @property(retain) EKUIGadgetContainer *footerContainer; // @synthesize footerContainer=_footerContainer;
 @property(retain) EKUIGadgetContainer *topLevelContainer; // @synthesize topLevelContainer=_topLevelContainer;
@@ -85,6 +69,7 @@
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
 - (void)oldEvent:(id)arg1 didUpdateTo:(id)arg2;
+- (void)updateSuddenTerminationWithNewEvent:(id)arg1;
 - (BOOL)hasUnsentChanges;
 - (BOOL)contextShouldStayOpenWhenCommitIsReverted;
 - (BOOL)contextShouldStayOpenWhenCommitIsCanceled;
@@ -95,8 +80,10 @@
 - (BOOL)commitFromCommitButton:(BOOL)arg1;
 - (BOOL)commitButtonPressed;
 - (BOOL)closeAndCommit;
-- (BOOL)saveCompleteChangeFromCommitButton:(BOOL)arg1;
+- (BOOL)saveCompleteChangeWithImpliedCommitDecision:(BOOL)arg1;
+- (BOOL)saveCompleteChangeWithoutPromptingUserAboutDecline;
 - (BOOL)saveCompleteChange;
+- (void)applicationWillTerminate:(id)arg1;
 - (BOOL)savePartialChange;
 - (void)updateWithChangesFromEvent:(id)arg1;
 - (void)setEventStartDate:(id)arg1 endDate:(id)arg2;
@@ -108,6 +95,7 @@
 - (double)rightMargin;
 - (double)leftMargin;
 - (BOOL)useWideSpacing;
+- (id)lastVisibleGadget;
 - (void)animator:(id)arg1 calculatedHeightChange:(double)arg2;
 - (void)setRangeOfInterest:(id)arg1;
 - (void)gadgetContainer:(id)arg1 didMouseUpWithEvent:(id)arg2;
@@ -124,8 +112,8 @@
 - (void)selectTitleText;
 - (void)makeFirstResponder;
 - (void)dealloc;
+- (void)updateTopLevelContainer;
 - (void)updateFooter;
-- (void)updateSpacing;
 - (void)configureFonts;
 - (id)initWithSettings:(id)arg1;
 - (id)initCanResizeWindow:(BOOL)arg1 withMarginsTop:(double)arg2 bottom:(double)arg3 left:(double)arg4 right:(double)arg5;

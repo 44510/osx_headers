@@ -10,6 +10,7 @@
 
 @protocol ISAssetService <ISServiceRemoteObject>
 - (void)didClickOnWhatsNewMenuItem;
+- (void)redownloadBooksWithItemIdentifiers:(NSArray *)arg1 dsid:(NSNumber *)arg2;
 - (void)pollForPurchasedBooksWithReplyBlock:(void (^)(BOOL))arg1;
 - (void)removeLibraryObserver:(id <ISBookLibraryObserver>)arg1;
 - (void)addLibraryObserver:(id <ISBookLibraryObserver>)arg1;

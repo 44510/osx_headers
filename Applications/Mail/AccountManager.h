@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class ActivityViewerMailSound, NSBackgroundActivityScheduler, NSDate, NSOperationQueue, NSUserDefaults;
+@class ActivityViewerMailSound, NSDate, NSOperationQueue, NSTimer, NSUserDefaults;
 
 @interface AccountManager : NSObject
 {
@@ -14,7 +14,7 @@
     BOOL _dailyCleanupDisabled;
     BOOL _missedDailyCleanup;
     NSOperationQueue *_automaticFetchQueue;
-    NSBackgroundActivityScheduler *_fetchActivity;
+    NSTimer *_fetchTimer;
     NSDate *_lastAutomaticFetchDate;
     ActivityViewerMailSound *_activityViewerMailSound;
 }
@@ -26,7 +26,7 @@
 @property(nonatomic) BOOL dailyCleanupDisabled; // @synthesize dailyCleanupDisabled=_dailyCleanupDisabled;
 @property(readonly, nonatomic) ActivityViewerMailSound *activityViewerMailSound; // @synthesize activityViewerMailSound=_activityViewerMailSound;
 @property(retain, nonatomic) NSDate *lastAutomaticFetchDate; // @synthesize lastAutomaticFetchDate=_lastAutomaticFetchDate;
-@property(nonatomic) NSBackgroundActivityScheduler *fetchActivity; // @synthesize fetchActivity=_fetchActivity;
+@property(retain, nonatomic) NSTimer *fetchTimer; // @synthesize fetchTimer=_fetchTimer;
 @property(readonly, nonatomic) NSOperationQueue *automaticFetchQueue; // @synthesize automaticFetchQueue=_automaticFetchQueue;
 @property(nonatomic) BOOL automaticFetchingShouldBeDisabled; // @synthesize automaticFetchingShouldBeDisabled=_automaticFetchingShouldBeDisabled;
 - (void).cxx_destruct;
@@ -40,12 +40,12 @@
 - (void)_backgroundFetchCompleted:(id)arg1;
 - (void)_mailAccountNeedsChecking:(id)arg1;
 - (void)_fetchForAllAccountsIsAutomatic:(BOOL)arg1;
-- (void)_fetchForAccount:(id)arg1 isAutomatic:(BOOL)arg2;
+- (void)fetchForAccount:(id)arg1 isAutomatic:(BOOL)arg2;
 - (void)_automaticFetchDateDidArrive;
-- (void)fetchForAccount:(id)arg1;
 - (void)_startSynchronizationForNewAccount:(id)arg1;
 - (void)performInitialAccountSynchronization;
 - (void)initializeAutomaticFetchingAndPerformInitialFetch;
+- (void)_fetchTimerFired:(id)arg1;
 - (void)_adjustFetchActivityAndReset:(BOOL)arg1;
 - (void)disableAutomaticFetching;
 - (void)enableAutomaticFetchingAndFetchIfNecessary;

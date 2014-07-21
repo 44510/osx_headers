@@ -23,6 +23,7 @@
     double _maximumHeightBeforeScrolling;
     NSString *_accessibilityDescription;
     EKUIGadgetContainer *_nextContainer;
+    EKUIGadgetContainer *_previousContainer;
     EKUIGadget *_firstGadget;
     EKEventViewController *_eventViewController;
     id <EKUILayoutItem> _parentItem;
@@ -59,6 +60,7 @@
 @property __weak id <EKUILayoutItem> parentItem; // @synthesize parentItem=_parentItem;
 @property __weak EKEventViewController *eventViewController; // @synthesize eventViewController=_eventViewController;
 @property __weak EKUIGadget *firstGadget; // @synthesize firstGadget=_firstGadget;
+@property __weak EKUIGadgetContainer *previousContainer; // @synthesize previousContainer=_previousContainer;
 @property __weak EKUIGadgetContainer *nextContainer; // @synthesize nextContainer=_nextContainer;
 @property BOOL isTopLevelContainer; // @synthesize isTopLevelContainer=_isTopLevelContainer;
 @property(copy) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
@@ -68,10 +70,7 @@
 @property BOOL doNotPassdownExpandedState; // @synthesize doNotPassdownExpandedState=_doNotPassdownExpandedState;
 @property double maximumHeightBeforeScrolling; // @synthesize maximumHeightBeforeScrolling=_maximumHeightBeforeScrolling;
 - (void).cxx_destruct;
-- (void)_updateWindowRangeOfInterest;
 - (double)_bottomSpacingForLayoutItem:(id)arg1 withDisplayedItems:(id)arg2;
-- (double)_defaultContainerBottomSpacing;
-- (double)_defaultContainerTopSpacing;
 @property(readonly) BOOL hasKeyboardFocus;
 - (BOOL)containerView:(id)arg1 didReceiveOpenEvent:(id)arg2;
 - (void)containerViewResignedFirstResponder:(id)arg1;
@@ -84,6 +83,7 @@
 - (BOOL)_windowIsVisible;
 - (BOOL)subItemsAreAnimating;
 - (void)collapseAllSubitemsExceptItem:(id)arg1;
+- (void)_collapseAllSubItemsForThisContainerOnlyExceptItem:(id)arg1;
 - (void)subItem:(id)arg1 didSetExpandedState:(BOOL)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)mouseUpInContainerView:(id)arg1;
 - (BOOL)isExpansionAllowed;
@@ -95,9 +95,9 @@
 - (id)topConstraint;
 - (void)updateConstraints;
 - (void)updateGadgetVisibilityWithUpdateConstraints:(BOOL)arg1;
-- (void)_containerViewFrameDidChange:(id)arg1;
 - (BOOL)makeFirstValidKeyViewFirstResponder;
 - (id)firstValidKeyView;
+- (id)lastVisibleGadget;
 - (id)_lastVisibleItem;
 - (id)_lastItem;
 - (id)_firstVisibleItem;
@@ -105,7 +105,7 @@
 - (void)_addHiddenConstraintToSubitem:(id)arg1;
 - (void)_addHorizontalConstraintToSubitem:(id)arg1 previousItem:(id)arg2 nextItem:(id)arg3;
 - (void)_addConstraintBetweenTopItem:(id)arg1 bottomItem:(id)arg2;
-- (void)_updateBottomConstraintToView:(id)arg1;
+- (void)_updateBottomConstraint;
 - (void)_updateTopConstraintToView:(id)arg1;
 - (void)recalculateKeyViewLoopForSubitems;
 - (void)enumerateAllDescendantsDepthFirstUsingBlock:(CDUnknownBlockType)arg1;
@@ -126,6 +126,7 @@
 - (id)event;
 - (id)enclosingGadgetContainer;
 - (id)alignmentLabel;
+- (BOOL)isScrolling;
 - (BOOL)isSeparator;
 - (BOOL)isContainer;
 - (BOOL)wantsAnimationSuppression;
@@ -143,9 +144,10 @@
 - (void)_printKeyViewLoop;
 - (BOOL)shouldDisplayForEvent:(id)arg1;
 - (void)setNeedsUpdateConstraints:(BOOL)arg1;
+- (id)scrollView;
 - (id)view;
-- (void)dealloc;
-- (void)setTopSpacing:(double)arg1 bottomSpacing:(double)arg2 betweenSpacingExpanded:(double)arg3 betweenSpacingCollapsed:(double)arg4;
+- (void)setTopSpacing:(double)arg1 topSpacingExpanded:(double)arg2 bottomSpacing:(double)arg3 bottomSpacingExpanded:(double)arg4 betweenSpacing:(double)arg5 betweenSpacingExpanded:(double)arg6;
+- (void)setTopSpacing:(double)arg1 bottomSpacing:(double)arg2 betweenSpacing:(double)arg3;
 - (id)initWithEventViewController:(id)arg1 isTopLevel:(BOOL)arg2;
 - (id)initWithEventViewController:(id)arg1;
 

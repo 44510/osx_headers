@@ -15,6 +15,7 @@
     _Bool _handlingMouseMoved;
 }
 
+- (BOOL)becomeFirstResponder;
 - (void)mouseMoved:(id)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setHUDViewController:(struct WebKitHUDViewController *)arg1;

@@ -8,17 +8,13 @@
 
 #import "ResizeableEditingFieldDelegate.h"
 
-@class NSImage, NSImageView, NSString, RemindersList;
+@class NSString, RemindersList;
 
 @interface ListCellView : SidebarCellView <ResizeableEditingFieldDelegate>
 {
     RemindersList *_list;
-    NSImage *_image;
-    NSImage *_selectedImage;
 }
 
-@property(retain) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
-@property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) RemindersList *list; // @synthesize list=_list;
 - (void).cxx_destruct;
 - (void)cancelOperation:(id)arg1;
@@ -29,10 +25,9 @@
 - (void)showShareView;
 - (id)button;
 - (void)beginEditing;
-- (double)titleFieldInset;
 - (BOOL)buttonShouldAlwaysBeShown;
 - (double)maxWidthForTextField;
-- (void)setBackgroundStyle:(long long)arg1;
+- (void)viewWillDraw;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2 list:(id)arg3;
 
@@ -40,7 +35,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(retain) NSImageView *imageView;
 @property(readonly) Class superclass;
 
 @end

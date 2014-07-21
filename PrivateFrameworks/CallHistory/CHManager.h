@@ -11,6 +11,7 @@
 @interface CHManager : CHSynchronizedLoggable
 {
     BOOL _showsFaceTimeCalls;
+    BOOL _showsFaceTimeVideoCalls;
     BOOL _showsFaceTimeAudioCalls;
     BOOL _showsTelephonyCalls;
     BOOL _generateSyncTransactions;
@@ -45,6 +46,7 @@
 @property BOOL generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
 @property(nonatomic) BOOL showsTelephonyCalls; // @synthesize showsTelephonyCalls=_showsTelephonyCalls;
 @property(nonatomic) BOOL showsFaceTimeAudioCalls; // @synthesize showsFaceTimeAudioCalls=_showsFaceTimeAudioCalls;
+@property(nonatomic) BOOL showsFaceTimeVideoCalls; // @synthesize showsFaceTimeVideoCalls=_showsFaceTimeVideoCalls;
 @property(nonatomic) BOOL showsFaceTimeCalls; // @synthesize showsFaceTimeCalls=_showsFaceTimeCalls;
 @property(retain, nonatomic) NSArray *recentCalls; // @synthesize recentCalls=_recentCalls;
 - (void).cxx_destruct;

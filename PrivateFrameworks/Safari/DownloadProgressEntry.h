@@ -47,11 +47,13 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_cachedBundlePathAccessQueue;
     NSArray *_tags;
     NSDate *_dateAdded;
+    NSDate *_dateFinished;
     NSString *_cachedBundlePath;
 }
 
 @property(copy, nonatomic) NSString *cachedBundlePath; // @synthesize cachedBundlePath=_cachedBundlePath;
-@property(readonly) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
+@property(readonly, nonatomic) NSDate *dateFinished; // @synthesize dateFinished=_dateFinished;
+@property(readonly, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 - (id).cxx_construct;
 - (void).cxx_destruct;

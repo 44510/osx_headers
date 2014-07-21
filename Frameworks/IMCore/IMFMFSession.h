@@ -8,15 +8,17 @@
 
 #import "FMFSessionDelegate.h"
 
-@class FMFSession, NSString;
+@class FMFDevice, FMFSession, NSString;
 
 @interface IMFMFSession : NSObject <FMFSessionDelegate>
 {
     FMFSession *_session;
     NSString *_establishingAccountID;
+    FMFDevice *_activeDevice;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) FMFDevice *activeDevice; // @synthesize activeDevice=_activeDevice;
 @property(retain, nonatomic) NSString *establishingAccountID; // @synthesize establishingAccountID=_establishingAccountID;
 @property(retain, nonatomic) FMFSession *session; // @synthesize session=_session;
 - (id)fmfGroupIdGroup;
@@ -27,6 +29,7 @@
 - (id)_callerIDForChat:(id)arg1;
 - (id)_bestAccountForAddresses:(id)arg1;
 - (void)didUpdateHidingStatus:(BOOL)arg1;
+- (void)didChangeActiveLocationSharingDevice:(id)arg1;
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStartAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStopSharingMyLocationWithHandle:(id)arg1;
@@ -34,16 +37,21 @@
 - (void)friendshipWasRemoved:(id)arg1;
 - (void)friendshipRequestReceived:(id)arg1;
 - (void)didReceiveLocation:(id)arg1;
+- (void)makeThisDeviceActiveDevice;
+- (void)_updateActiveDevice;
 - (id)timedOfferExpirationForChat:(id)arg1;
 - (BOOL)allChatParticipantsFollowingMyLocation:(id)arg1;
 - (BOOL)chatHasParticipantsFollowingMyLocation:(id)arg1;
+- (BOOL)fmfHandleIsFollowingMyLocation:(id)arg1;
 - (BOOL)handleIsFollowingMyLocation:(id)arg1;
 - (BOOL)allChatParticipantsSharingLocationWithMe:(id)arg1;
 - (BOOL)chatHasSiblingParticipantsSharingLocationWithMe:(id)arg1;
 - (BOOL)chatHasParticipantsSharingLocationWithMe:(id)arg1;
+- (BOOL)fmfHandleIsSharingLocationWithMe:(id)arg1;
 - (BOOL)handleIsSharingLocationWithMe:(id)arg1;
 - (void)refreshLocationForChat:(id)arg1;
 - (void)refreshLocationForHandle:(id)arg1 inChat:(id)arg2;
+- (id)locationForHandleOrSibling:(id)arg1;
 - (id)locationForFMFHandle:(id)arg1;
 - (id)locationForHandle:(id)arg1;
 - (void)stopSharingWithChat:(id)arg1;

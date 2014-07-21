@@ -54,8 +54,9 @@ struct AppProgressBar {
     struct MessageReceiver _field17;
     CDUnknownFunctionPointerType _field18;
     void *_field19;
-    _Bool _field20;
+    struct function<void (AppProgressBar *)> _field20;
     _Bool _field21;
+    _Bool _field22;
 };
 
 struct Array {
@@ -71,17 +72,6 @@ struct Array {
 };
 
 struct ArtistInfo;
-
-struct BookletJSEventDelegate {
-    CDUnknownFunctionPointerType *_field1;
-    struct __CFDictionary *_field2;
-};
-
-struct BorderInfo {
-    struct ITColor _field1;
-    struct ITColor _field2;
-    double _field3;
-};
 
 struct CDData;
 
@@ -124,18 +114,6 @@ struct ChapterDataMetrics {
     unsigned int _field17;
 };
 
-struct CloudTrackInfo {
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned char _field1;
-    int _field2;
-    unsigned int _field3;
-};
-
 struct DBStringCacheIndex;
 
 struct DLinkElement;
@@ -146,10 +124,8 @@ struct DLinkList {
 };
 
 struct DriveID {
-    unsigned char _field1[32];
+    char _field1[32];
 };
-
-struct ExtendedTrackInfo;
 
 struct FSRef {
     unsigned char _field1[80];
@@ -209,10 +185,8 @@ struct HUDVisibleInfo {
 };
 
 struct HashMap<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>> {
-    struct HashTable<boost::shared_ptr<ITView>, std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> _field1;
+    struct HashTable<boost::shared_ptr<ITView>, std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> _field1;
 };
-
-struct HashMap<unsigned int, Playlist *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<Playlist *>>;
 
 struct HashMap<unsigned int, PlaylistItem *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<PlaylistItem *>>;
 
@@ -220,15 +194,13 @@ struct HashMap<unsigned int, TrackInfo *, IT::IntHash<unsigned int>, IT::HashTra
 
 struct HashMap<unsigned int, TrackInstance *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<TrackInstance *>>;
 
-struct HashMap<unsigned int, boost::shared_ptr<PodcastStation>, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<boost::shared_ptr<PodcastStation>>>;
-
 struct HashMap<unsigned long long, Playlist *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<Playlist *>>;
 
 struct HashMap<unsigned long long, PlaylistItem *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<PlaylistItem *>>;
 
 struct HashMap<unsigned long long, TrackInfo *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<TrackInfo *>>;
 
-struct HashTable<boost::shared_ptr<ITView>, std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> {
+struct HashTable<boost::shared_ptr<ITView>, std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> {
     struct pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>> *_field1;
     int _field2;
     int _field3;
@@ -245,8 +217,6 @@ struct IT3DRenderingPostEffect;
 struct ITAccessible;
 
 struct ITAnimation;
-
-struct ITBitmapContext;
 
 struct ITCAContext;
 
@@ -293,12 +263,7 @@ struct ITFontInfo {
     double _field5;
 };
 
-struct ITFrameMetrics {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-};
+struct ITFrameRateMeter;
 
 struct ITGestureEvent {
     CDUnknownFunctionPointerType *_field1;
@@ -310,8 +275,6 @@ struct ITGestureEvent {
     struct CGPoint _field7;
     _Bool _field8;
 };
-
-struct ITISEngine;
 
 struct ITImage;
 
@@ -330,7 +293,7 @@ struct ITLibraryPrefs;
 struct ITMacApplication {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<ITObject> _field2;
-    struct map<ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
+    struct map<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, std::__1::allocator<std::__1::pair<const ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
     struct AppContext *_field4;
     struct AppConfig *_field5;
     struct ITLibraryPrefs *_field6;
@@ -348,11 +311,13 @@ struct ITMacApplication {
     _Bool _field18;
     shared_ptr_6c658b32 _field19;
     unsigned int _field20;
-    struct list<boost::shared_ptr<ITWindowController>, std::allocator<boost::shared_ptr<ITWindowController>>> _field21;
+    struct list<boost::shared_ptr<ITWindowController>, std::__1::allocator<boost::shared_ptr<ITWindowController>>> _field21;
     struct shared_ptr<SelectedObjects> _field22;
     shared_ptr_6c658b32 _field23;
     _Bool _field24;
     shared_ptr_18972007 _field25;
+    int _field26;
+    struct dispatch_source_s *_field27;
 };
 
 struct ITMachinePrefs;
@@ -394,150 +359,6 @@ struct ITPopover;
 
 struct ITPopupButtonNative;
 
-struct ITScrollBar {
-    CDUnknownFunctionPointerType *_field1;
-    struct weak_ptr<ITObject> _field2;
-    struct map<ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
-    _Bool _field4;
-    unsigned long long _field5;
-    struct ITString _field6;
-    struct ITString _field7;
-    id _field8;
-    CDUnknownFunctionPointerType *_field9;
-    shared_ptr_8092bbf7 _field10;
-    shared_ptr_8092bbf7 _field11;
-    shared_ptr_8092bbf7 _field12;
-    shared_ptr_8092bbf7 _field13;
-    struct weak_ptr<ITView> _field14;
-    id _field15;
-    struct weak_ptr<ITWindow> _field16;
-    unsigned char _field17;
-    unsigned int :4;
-    unsigned int :4;
-    unsigned int :4;
-    unsigned int :2;
-    unsigned int :2;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    struct CGRect _field18;
-    struct CGPoint _field19;
-    struct CGPoint _field20;
-    struct CGSize _field21;
-    struct CGSize _field22;
-    struct ITVector _field23;
-    double _field24;
-    int _field25;
-    struct ITFrameMetrics _field26;
-    struct BorderInfo _field27[4];
-    struct weak_ptr<ITViewController> _field28;
-    struct weak_ptr<ITViewAdapter> _field29;
-    struct weak_ptr<ITViewVisibilityDelegate> _field30;
-    struct weak_ptr<ITViewGeometryDelegate> _field31;
-    struct weak_ptr<ITViewMouseInterceptDelegate> _field32;
-    struct weak_ptr<ITViewTrackingDelegate> _field33;
-    struct weak_ptr<ITViewContextMenuDelegate> _field34;
-    struct weak_ptr<ITViewDragDelegate> _field35;
-    struct weak_ptr<ITViewTextInputDelegate> _field36;
-    struct weak_ptr<ITViewDrawSelfDelegate> _field37;
-    struct weak_ptr<ITViewToolTipDelegate> _field38;
-    struct shared_ptr<ITViewLayoutAdapter> _field39;
-    struct shared_ptr<ITISEngine> _field40;
-    short _field41;
-    int _field42;
-    int _field43;
-    unsigned int :4;
-    unsigned int :4;
-    unsigned int :4;
-    unsigned int :4;
-    struct map<int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> _field44;
-    struct map<int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> _field45;
-    struct map<int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> _field46;
-    struct JRTextStyle _field47;
-    struct JRTextStyle _field48;
-    struct JRTextStyle _field49;
-    struct ITColor _field50;
-    struct ITString _field51;
-    struct ITString _field52;
-    struct shared_ptr<ITBitmapContext> _field53;
-    shared_ptr_8092bbf7 _field54;
-    struct shared_ptr<ITAnimation> _field55;
-    struct shared_ptr<ITAnimation> _field56;
-    struct shared_ptr<ITAnimation> _field57;
-    struct shared_ptr<ITAnimation> _field58;
-    struct shared_ptr<ITAnimation> _field59;
-    unsigned int _field60;
-    unsigned int _field61;
-    struct NSITTrackingArea *_field62;
-    int _field63;
-    struct function<void (boost::shared_ptr<ITControl>, unsigned int)> _field64;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    struct function<ITValue (boost::shared_ptr<ITControl>, ITValue)> _field65;
-    unsigned char _field66;
-    struct ITValue _field67;
-    _Bool _field68;
-    CDUnknownFunctionPointerType *_field69;
-    struct ITScrollBarDelegate *_field70;
-    double _field71;
-    double _field72;
-    double _field73;
-    int _field74;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    short _field75;
-    struct CGPoint _field76;
-    struct CGPoint _field77;
-    struct CGRect _field78;
-    double _field79;
-    shared_ptr_6c658b32 _field80;
-    struct function<void (boost::shared_ptr<ITScrollBar>)> _field81;
-    int _field82;
-    double _field83;
-    shared_ptr_6c658b32 _field84;
-    shared_ptr_8092bbf7 _field85;
-    id _field86;
-};
-
-struct ITScrollBarDelegate;
-
-struct ITScrollView;
-
-struct ITShRemoteLibraryInfo;
-
 struct ITSliderNative;
 
 struct ITString {
@@ -550,7 +371,13 @@ struct ITStringBuffer<unsigned char>;
 struct ITStringBuffer<unsigned short>;
 
 struct ITStringList {
-    struct _List_impl _field1;
+    struct __list_node_base<ITString, void *> {
+        struct __list_node<ITString, void *> *_field1;
+        struct __list_node<ITString, void *> *_field2;
+    } _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<ITString, void *>>> {
+        unsigned long long _field1;
+    } _field2;
 };
 
 struct ITTextServiceMacOS;
@@ -561,53 +388,17 @@ struct ITTrackingArea;
 
 struct ITUserPrefs;
 
-struct ITValue {
-    int _field1;
-    struct ITString _field2;
-    union {
-        _Bool _field1;
-        long long _field2;
-        double _field3;
-    } _field3;
-};
-
-struct ITVector {
-    double _field1;
-    double _field2;
-    double _field3;
-};
-
 struct ITView;
 
 struct ITViewAdapter;
 
 struct ITViewAdapterShim;
 
-struct ITViewContextMenuDelegate;
-
-struct ITViewController;
-
-struct ITViewDragDelegate;
-
-struct ITViewDrawSelfDelegate;
-
 struct ITViewFocusInterestDelegate;
-
-struct ITViewGeometryDelegate;
-
-struct ITViewLayoutAdapter;
-
-struct ITViewMouseInterceptDelegate;
 
 struct ITViewTabOrderDelegate;
 
 struct ITViewTextInputDelegate;
-
-struct ITViewToolTipDelegate;
-
-struct ITViewTrackingDelegate;
-
-struct ITViewVisibilityDelegate;
 
 struct ITWebKitView;
 
@@ -616,14 +407,14 @@ struct ITWebKitViewMacOS;
 struct ITWindow {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<ITObject> _field2;
-    struct map<ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
+    struct map<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, std::__1::allocator<std::__1::pair<const ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
     CDUnknownFunctionPointerType *_field4;
     CDUnknownFunctionPointerType *_field5;
     CDUnknownFunctionPointerType *_field6;
     id _field7;
     shared_ptr_8092bbf7 _field8;
     struct shared_ptr<ITWindowFrameView> _field9;
-    struct vector<ITTrackingArea *, std::allocator<ITTrackingArea *>> _field10;
+    struct vector<ITTrackingArea *, std::__1::allocator<ITTrackingArea *>> _field10;
     struct CGRect _field11;
     _Bool _field12;
     _Bool _field13;
@@ -636,7 +427,7 @@ struct ITWindow {
     _Bool _field20;
     struct CGRect _field21;
     unsigned int _field22;
-    unsigned int _field23;
+    int _field23;
     unsigned int _field24;
     unsigned int _field25;
     _Bool _field26;
@@ -656,10 +447,11 @@ struct ITWindow {
     struct CGSize _field40;
     struct weak_ptr<ITView> _field41;
     shared_ptr_8092bbf7 _field42;
-    _Bool _field43;
-    id _field44;
+    struct shared_ptr<ITFrameRateMeter> _field43;
+    _Bool _field44;
     id _field45;
-    struct shared_ptr<ITAnimation> _field46;
+    id _field46;
+    struct shared_ptr<ITAnimation> _field47;
 };
 
 struct ITWindowController;
@@ -709,7 +501,7 @@ struct JRMenu {
     id _field7;
     id _field8;
     short _field9;
-    struct deque<JRMenuItem, std::allocator<JRMenuItem>> _field10;
+    struct deque<JRMenuItem, std::__1::allocator<JRMenuItem>> _field10;
     unsigned char _field11;
     unsigned char _field12;
     unsigned char _field13;
@@ -734,7 +526,8 @@ struct JRMenuItemAdjustorInfo {
     unsigned char _field9;
     short _field10;
     struct ITString _field11;
-    struct shared_ptr<MenuProcessingData> _field12;
+    unsigned char _field12;
+    struct shared_ptr<MenuProcessingData> _field13;
 };
 
 struct JRNavFileFormatDesc;
@@ -779,7 +572,7 @@ struct JRTextStyle {
     short _field6;
     struct ITColor _field7;
     unsigned char _field8[256];
-    char _field9[256];
+    unsigned char _field9[256];
     unsigned int _field10;
     struct ITColor _field11;
     struct ITColor _field12;
@@ -790,8 +583,9 @@ struct JRTextStyle {
     struct ITColor _field17;
     struct ITColor _field18;
     struct ITColor _field19;
-    short _field20;
-    struct ITFontInfo _field21;
+    struct ITColor _field20;
+    short _field21;
+    struct ITFontInfo _field22;
 };
 
 struct Lock;
@@ -844,8 +638,6 @@ struct PMRect {
     double _field3;
     double _field4;
 };
-
-struct PlaybackPositionInfo;
 
 struct Playlist {
     unsigned int _field1;
@@ -905,7 +697,7 @@ struct Playlist {
     unsigned int _field38;
     unsigned int _field39;
     unsigned int _field40;
-    unsigned int _field41;
+    int _field41;
     unsigned long long _field42;
     unsigned long long _field43;
     unsigned long long _field44;
@@ -918,7 +710,6 @@ struct Playlist {
     struct SmartPlaylistOptions _field47;
     struct TrackBitFields _field48;
     struct MessageReceiver _field49;
-    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -1002,17 +793,19 @@ struct Playlist {
     unsigned char _field99;
     unsigned char _field100;
     unsigned char _field101;
-    struct PlaylistViewOptions _field102[16];
-    struct PlaylistObjectData *_field103;
-    struct HashMap<unsigned int, PlaylistItem *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<PlaylistItem *>> *_field104;
-    struct HashMap<unsigned long long, PlaylistItem *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<PlaylistItem *>> *_field105;
+    unsigned int _field102;
+    unsigned char _field103;
+    struct PlaylistViewOptions _field104[16];
+    struct PlaylistObjectData *_field105;
+    struct HashMap<unsigned int, PlaylistItem *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<PlaylistItem *>> *_field106;
+    struct HashMap<unsigned long long, PlaylistItem *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<PlaylistItem *>> *_field107;
     union {
         CDStruct_69d7cc99 _field1;
         CDStruct_69d7cc99 _field2;
         struct {
             unsigned char _field1;
         } _field3;
-    } _field106;
+    } _field108;
 };
 
 struct PlaylistCloudMatchInfo {
@@ -1032,7 +825,7 @@ struct PlaylistCloudMatchInfo {
 
 struct PlaylistColumnBrowseInfo {
     unsigned int _field1;
-    unsigned int _field2[6];
+    int _field2[6];
 };
 
 struct PlaylistColumnSet;
@@ -1046,86 +839,7 @@ struct PlaylistColumnSetsHandler {
 
 struct PlaylistIndexLookupTable;
 
-struct PlaylistItem {
-    struct Playlist *_field1;
-    struct PlaylistItem *_field2;
-    struct PlaylistItem *_field3;
-    struct PlaylistItem *_field4;
-    unsigned long long _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    struct TrackInfo *_field8;
-    struct PlaylistItem *_field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned char _field12;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned char _field13;
-    unsigned char _field14;
-    union {
-        struct {
-            struct PlaylistItem *_field1;
-            struct PlaylistItem *_field2;
-            unsigned int _field3;
-            unsigned int _field4;
-            int _field5;
-            int _field6;
-            unsigned char _field7;
-            union {
-                struct {
-                    short _field1;
-                    unsigned short _field2;
-                    unsigned int :1;
-                    unsigned int :1;
-                    unsigned int :1;
-                    unsigned int :1;
-                    unsigned int :1;
-                } _field1;
-                struct {
-                    void *_field1;
-                    void *_field2;
-                    int _field3;
-                } _field2;
-                CDStruct_69d7cc99 _field3;
-            } _field8;
-        } _field1;
-        struct {
-            unsigned int _field1;
-            void *_field2;
-            unsigned char _field3;
-            unsigned long long _field4;
-            union {
-                struct {
-                    unsigned int _field1;
-                } _field1;
-                struct {
-                    int _field1;
-                    void *_field2;
-                } _field2;
-            } _field5;
-        } _field2;
-    } _field15;
-};
+struct PlaylistItem;
 
 struct PlaylistItemLookupTable;
 
@@ -1176,11 +890,12 @@ struct PlaylistViewGroupingSortSettings {
 };
 
 struct PlaylistViewOptions {
-    unsigned int _field1;
-    unsigned int _field2;
+    int _field1;
+    int _field2;
     unsigned char _field3;
     unsigned char _field4;
-    unsigned short _field5;
+    unsigned char _field5;
+    unsigned char _field6;
 };
 
 struct PrintSession {
@@ -1223,8 +938,6 @@ struct RGBColor {
     unsigned short _field3;
 };
 
-struct RadioTrackInfo;
-
 struct RefPtr<ITStringBuffer<unsigned char>> {
     struct ITStringBuffer<unsigned char> *m_ptr;
 };
@@ -1232,6 +945,8 @@ struct RefPtr<ITStringBuffer<unsigned char>> {
 struct RefPtr<ITStringBuffer<unsigned short>> {
     struct ITStringBuffer<unsigned short> *m_ptr;
 };
+
+struct RemoteLibraryInterface;
 
 struct RootLayerInfo {
     struct shared_ptr<ITCAContext> _field1;
@@ -1270,12 +985,13 @@ struct SmartPlaylistOptions {
     unsigned char _field5;
     unsigned char _field6;
     unsigned char _field7;
-    struct SearchCriteriaList *_field8;
-    struct ITObjectList *_field9;
-    unsigned int _field10;
-    unsigned char _field11;
-    unsigned int _field12;
+    unsigned char _field8;
+    struct SearchCriteriaList *_field9;
+    struct ITObjectList *_field10;
+    unsigned int _field11;
+    unsigned char _field12;
     unsigned int _field13;
+    unsigned int _field14;
 };
 
 struct StoreHTMLDisplay {
@@ -1295,18 +1011,20 @@ struct StoreHTMLDisplay {
     struct __CFSet *_field14;
 };
 
+struct StoreHistory;
+
 struct StorePageContext {
-    struct ITObjectSpec _field1;
-    double _field2;
-    _Bool _field3;
-    struct __CFArray *_field4;
-    long long _field5;
-    int _field6;
-    struct MusicStorePage *_field7;
-    unsigned int _field8;
-    struct __CFSet *_field9;
-    struct shared_ptr<StoreHTMLDisplay> _field10;
-    struct ITString _field11;
+    int _field1;
+    struct MusicStorePage *_field2;
+    unsigned int _field3;
+    _Bool _field4;
+    _Bool _field5;
+    struct ITObjectSpec _field6;
+    double _field7;
+    struct ITString _field8;
+    struct shared_ptr<StoreHistory> _field9;
+    struct __CFSet *_field10;
+    struct shared_ptr<StoreHTMLDisplay> _field11;
 };
 
 struct StoreXMLDisplay;
@@ -1332,22 +1050,23 @@ struct TrackData {
     unsigned int _field6;
     unsigned int _field7;
     unsigned int _field8;
-    unsigned int _field9;
+    int _field9;
     unsigned int _field10;
     unsigned int _field11;
     unsigned int _field12;
     unsigned int _field13;
-    struct Playlist *_field14;
+    unsigned int _field14;
     struct Playlist *_field15;
-    struct TrackInfo *_field16;
+    struct Playlist *_field16;
     struct TrackInfo *_field17;
-    struct AlbumInfo *_field18;
+    struct TrackInfo *_field18;
     struct AlbumInfo *_field19;
     struct AlbumInfo *_field20;
-    struct ArtistInfo *_field21;
+    struct AlbumInfo *_field21;
     struct ArtistInfo *_field22;
     struct ArtistInfo *_field23;
     struct ArtistInfo *_field24;
+    struct ArtistInfo *_field25;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -1377,9 +1096,12 @@ struct TrackData {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
-    unsigned short _field25;
-    int _field26;
-    struct FixedMemAllocator *_field27;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned short _field26;
+    int _field27;
     struct FixedMemAllocator *_field28;
     struct FixedMemAllocator *_field29;
     struct FixedMemAllocator *_field30;
@@ -1390,11 +1112,11 @@ struct TrackData {
     struct FixedMemAllocator *_field35;
     struct FixedMemAllocator *_field36;
     struct FixedMemAllocator *_field37;
-    CDUnknownFunctionPointerType _field38;
-    void *_field39;
-    struct MessageSender _field40;
-    struct MessageReceiver _field41;
-    struct JRStringCache _field42;
+    struct FixedMemAllocator *_field38;
+    CDUnknownFunctionPointerType _field39;
+    void *_field40;
+    struct MessageSender _field41;
+    struct MessageReceiver _field42;
     struct JRStringCache _field43;
     struct JRStringCache _field44;
     struct JRStringCache _field45;
@@ -1418,98 +1140,100 @@ struct TrackData {
     struct JRStringCache _field63;
     struct JRStringCache _field64;
     struct JRStringCache _field65;
-    struct JRStringCache _field66[50];
+    struct JRStringCache _field66;
     struct JRStringCache _field67;
     struct JRStringCache _field68;
-    struct JRStringCache _field69;
+    struct JRStringCache _field69[50];
     struct JRStringCache _field70;
     struct JRStringCache _field71;
-    int _field72;
-    struct HashMap<unsigned int, TrackInfo *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<TrackInfo *>> *_field73;
-    struct HashMap<unsigned long long, TrackInfo *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<TrackInfo *>> *_field74;
-    struct HashMap<unsigned long long, TrackInfo *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<TrackInfo *>> *_field75;
-    struct HashMap<unsigned int, TrackInstance *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<TrackInstance *>> *_field76;
-    struct multimap<unsigned long long, TrackInstance *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInstance *>>> *_field77;
-    struct multimap<unsigned long long, TrackInstance *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInstance *>>> *_field78;
-    struct multimap<unsigned long long, TrackInstance *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInstance *>>> *_field79;
-    struct multimap<unsigned long long, TrackInstance *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInstance *>>> *_field80;
-    struct HashMap<unsigned int, Playlist *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<Playlist *>> *_field81;
-    struct HashMap<unsigned long long, Playlist *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<Playlist *>> *_field82;
-    struct map<unsigned long long, ITString, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, ITString>>> *_field83;
-    struct multimap<unsigned long long, TrackInfo *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInfo *>>> *_field84;
-    unsigned short _field85[256];
-    struct TrackInfoLookupTable *_field86;
-    unsigned short _field87;
-    struct JRFileSpec _field88;
-    unsigned long long _field89;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned long long _field90;
+    struct JRStringCache _field72;
+    struct JRStringCache _field73;
+    struct JRStringCache _field74;
+    int _field75;
+    struct HashMap<unsigned int, TrackInfo *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<TrackInfo *>> *_field76;
+    struct HashMap<unsigned long long, TrackInfo *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<TrackInfo *>> *_field77;
+    struct HashMap<unsigned long long, TrackInfo *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<TrackInfo *>> *_field78;
+    struct HashMap<unsigned int, TrackInstance *, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<TrackInstance *>> *_field79;
+    struct multimap<unsigned long long, TrackInstance *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInstance *>>> *_field80;
+    struct multimap<unsigned long long, TrackInstance *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInstance *>>> *_field81;
+    struct multimap<unsigned long long, TrackInstance *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInstance *>>> *_field82;
+    struct multimap<unsigned long long, TrackInstance *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInstance *>>> *_field83;
+    struct HashMap<unsigned long long, Playlist *, IT::IntHash<unsigned long long>, IT::HashTraits<unsigned long long>, IT::HashTraits<Playlist *>> *_field84;
+    struct map<unsigned long long, ITString, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, ITString>>> *_field85;
+    struct multimap<unsigned long long, TrackInfo *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInfo *>>> *_field86;
+    unsigned short _field87[256];
+    struct TrackInfoLookupTable *_field88;
+    unsigned short _field89;
+    struct JRFileSpec _field90;
     unsigned long long _field91;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
     unsigned long long _field92;
-    unsigned int _field93;
+    unsigned long long _field93;
     unsigned long long _field94;
-    unsigned long long _field95;
-    struct Array _field96;
-    unsigned int _field97;
-    unsigned int _field98;
-    int _field99;
-    struct AppProgressBar *_field100;
-    double _field101;
-    double _field102;
-    unsigned short _field103[256];
-    unsigned short _field104[256];
-    unsigned int _field105;
-    unsigned int _field106;
-    struct WorkThreadPool *_field107;
-    void *_field108;
-    struct vector<RecentlyPlayedItem, std::allocator<RecentlyPlayedItem>> *_field109;
+    unsigned int _field95;
+    unsigned long long _field96;
+    unsigned long long _field97;
+    struct Array _field98;
+    unsigned int _field99;
+    unsigned int _field100;
+    int _field101;
+    struct AppProgressBar *_field102;
+    double _field103;
+    double _field104;
+    unsigned short _field105[256];
+    unsigned short _field106[256];
+    unsigned int _field107;
+    unsigned int _field108;
+    struct WorkThreadPool *_field109;
+    void *_field110;
+    struct vector<RecentlyPlayedItem, std::__1::allocator<RecentlyPlayedItem>> *_field111;
     unsigned int :1;
     unsigned int :1;
-    unsigned char _field110;
-    unsigned int _field111;
-    unsigned int _field112;
-    struct vector<CloudModifiedTrackItem, std::allocator<CloudModifiedTrackItem>> *_field113;
-    struct vector<unsigned long long, std::allocator<unsigned long long>> *_field114;
-    struct vector<unsigned long long, std::allocator<unsigned long long>> *_field115;
-    struct vector<CloudDeleteTrackItem, std::allocator<CloudDeleteTrackItem>> *_field116;
-    struct SQLDatabase *_field117;
-    unsigned int _field118;
-    void *_field119;
-    struct __CFData *_field120;
-    unsigned int _field121;
-    struct GeniusRequestInfo *_field122;
-    struct shared_ptr<ITShRemoteLibraryInfo> _field123;
-    struct shared_ptr<ITShRemoteLibraryInfo> _field124;
-    struct shared_ptr<ITShRemoteLibraryInfo> _field125;
-    struct HashMap<unsigned int, boost::shared_ptr<PodcastStation>, IT::IntHash<unsigned int>, IT::HashTraits<unsigned int>, IT::HashTraits<boost::shared_ptr<PodcastStation>>> *_field126;
+    unsigned char _field112;
+    unsigned int _field113;
+    unsigned int _field114;
+    struct vector<CloudModifiedTrackItem, std::__1::allocator<CloudModifiedTrackItem>> *_field115;
+    struct vector<unsigned long long, std::__1::allocator<unsigned long long>> *_field116;
+    struct vector<unsigned long long, std::__1::allocator<unsigned long long>> *_field117;
+    struct vector<CloudDeleteTrackItem, std::__1::allocator<CloudDeleteTrackItem>> *_field118;
+    struct SQLDatabase *_field119;
+    unsigned int _field120;
+    void *_field121;
+    struct __CFData *_field122;
+    unsigned int _field123;
+    struct GeniusRequestInfo *_field124;
+    struct shared_ptr<RemoteLibraryInterface> _field125;
+    struct shared_ptr<RemoteLibraryInterface> _field126;
+    struct shared_ptr<RemoteLibraryInterface> _field127;
+    struct unordered_map<unsigned int, boost::shared_ptr<PodcastStation>, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, boost::shared_ptr<PodcastStation>>>> *_field128;
     union {
         struct CDData *_field1;
         struct {
-            unsigned int _field1;
+            int _field1;
             struct IPodDeviceInfo *_field2;
             unsigned short _field3;
             unsigned int :1;
@@ -1519,151 +1243,20 @@ struct TrackData {
             unsigned int :1;
             unsigned int :1;
             unsigned int :1;
-            struct map<unsigned long long, JRFileSpec, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, JRFileSpec>>> *_field4;
+            struct map<unsigned long long, JRFileSpec, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, JRFileSpec>>> *_field4;
         } _field2;
         struct TunerData *_field3;
         void *_field4;
-    } _field127;
-    struct PlaylistLookupTable *_field128;
-    struct PlaylistLookupTable *_field129;
+    } _field129;
+    struct PlaylistLookupTable *_field130;
+    struct PlaylistLookupTable *_field131;
 };
 
-struct TrackInfo {
-    unsigned long long _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    struct TrackData *_field4;
-    struct TrackInfo *_field5;
-    struct TrackInfo *_field6;
-    struct AlbumInfo *_field7;
-    struct TrackInfo *_field8;
-    struct TrackInfo *_field9;
-    struct ArtistInfo *_field10;
-    struct TrackInfo *_field11;
-    struct TrackInfo *_field12;
-    struct TrackInstance *_field13;
-    struct PlaylistItem *_field14;
-    struct ExtendedTrackInfo *_field15;
-    struct VideoTrackInfo *_field16;
-    struct PlaybackPositionInfo *_field17;
-    struct RadioTrackInfo *_field18;
-    struct CloudTrackInfo _field19;
-    unsigned char _field20;
-    unsigned char _field21;
-    unsigned char _field22[6];
-    unsigned char _field23;
-    unsigned char _field24;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned char _field25;
-    unsigned char _field26;
-    unsigned char _field27;
-    unsigned char _field28;
-    unsigned char _field29;
-    unsigned int _field30;
-    unsigned int _field31;
-    unsigned int _field32;
-    int _field33;
-    int _field34;
-    int _field35;
-    int _field36;
-    int _field37;
-    int _field38;
-    int _field39;
-    int _field40;
-    int _field41;
-    int _field42;
-    int _field43;
-    int _field44;
-    unsigned int _field45;
-    unsigned int _field46;
-    unsigned int _field47;
-    unsigned int _field48;
-    unsigned int _field49;
-    unsigned int _field50;
-    unsigned int _field51;
-    unsigned int _field52;
-    unsigned short _field53;
-    short _field54;
-    short _field55;
-    char _field56;
-    unsigned char _field57;
-    char _field58;
-    unsigned char _field59;
-    unsigned short _field60;
-    unsigned short _field61;
-    unsigned short _field62;
-    unsigned short _field63;
-    unsigned char _field64;
-    unsigned int _field65;
-    unsigned int _field66;
-    unsigned int _field67;
-    unsigned int _field68;
-    unsigned int _field69;
-    unsigned int _field70;
-    unsigned short _field71;
-    unsigned short _field72;
-    unsigned int _field73;
-    unsigned long long _field74;
-    unsigned long long _field75;
-    unsigned long long _field76;
-    unsigned long long _field77;
-    unsigned int _field78;
-    unsigned int _field79;
-    int _field80[6];
-    struct TrackBitFields _field81;
-    struct __CFDictionary *_field82;
-};
+struct TrackInfo;
 
 struct TrackInfoLookupTable;
 
-struct TrackInstance;
-
 struct TunerData;
-
-struct VideoTrackInfo;
 
 struct WKMediaLocationHandler;
 
@@ -1672,7 +1265,7 @@ struct WeakActionSupportBase;
 struct WebKitHUDViewController {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<ITObject> _field2;
-    struct map<ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
+    struct map<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, std::__1::allocator<std::__1::pair<const ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field3;
     CDUnknownFunctionPointerType *_field4;
     CDUnknownFunctionPointerType *_field5;
     struct weak_ptr<ITViewTextInputDelegate> _field6;
@@ -1715,8 +1308,14 @@ struct WebKitHUDViewController {
     struct ITString _field43;
     _Bool _field44;
     struct shared_ptr<ITCALayer> _field45;
-    struct IViewCallback *_field46;
-    shared_ptr_8092bbf7 _field47;
+    _Bool _field46;
+    struct IViewCallback *_field47;
+    shared_ptr_8092bbf7 _field48;
+};
+
+struct WebKitHUDViewControllerViewCallback {
+    CDUnknownFunctionPointerType *_field1;
+    id _field2;
 };
 
 struct WebView {
@@ -1735,7 +1334,7 @@ struct WebView {
     struct __VFlags {
         unsigned int :1;
         unsigned int :1;
-        unsigned int :6;
+        unsigned int :5;
         unsigned int :1;
         unsigned int :1;
         unsigned int :1;
@@ -1748,7 +1347,7 @@ struct WebView {
         unsigned int :1;
         unsigned int :1;
         unsigned int :1;
-        unsigned int :1;
+        unsigned int :2;
         unsigned int :1;
         unsigned int :1;
         unsigned int :1;
@@ -1774,170 +1373,103 @@ struct WindowPosition {
 
 struct WorkThreadPool;
 
-struct _Deque_impl {
-    struct JRMenuItem **_field1;
-    unsigned long long _field2;
-    struct _Deque_iterator<JRMenuItem, JRMenuItem &, JRMenuItem *> _field3;
-    struct _Deque_iterator<JRMenuItem, JRMenuItem &, JRMenuItem *> _field4;
-};
-
-struct _Deque_iterator<JRMenuItem, JRMenuItem &, JRMenuItem *> {
-    struct JRMenuItem *_field1;
-    struct JRMenuItem *_field2;
-    struct JRMenuItem *_field3;
-    struct JRMenuItem **_field4;
-};
-
-struct _Hash_node<unsigned int, false>;
-
-struct _Identity<unsigned int>;
-
-struct _List_impl {
-    struct _List_node_base _field1;
-};
-
-struct _List_node_base {
-    struct _List_node_base *_field1;
-    struct _List_node_base *_field2;
-};
-
-struct _Mod_range_hashing;
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
 };
 
-struct _Prime_rehash_policy {
-    float _field1;
-    float _field2;
-    unsigned long long _field3;
-};
-
-struct _Rb_tree<ITString, std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>, std::_Select1st<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> {
-    struct _Rb_tree_impl<std::less<ITString>, false> _field1;
-};
-
-struct _Rb_tree<MediaLibraryRequestKey, std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>, std::_Select1st<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>, std::less<MediaLibraryRequestKey>, std::allocator<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> {
-    struct _Rb_tree_impl<std::less<MediaLibraryRequestKey>, false> _M_impl;
-};
-
-struct _Rb_tree<int, std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>, std::_Select1st<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> {
-    struct _Rb_tree_impl<std::less<int>, false> _field1;
-};
-
-struct _Rb_tree_impl<std::less<ITString>, false> {
-    struct less<ITString> _field1;
-    struct _Rb_tree_node_base _field2;
-    unsigned long long _field3;
-};
-
-struct _Rb_tree_impl<std::less<MediaLibraryRequestKey>, false> {
-    struct less<MediaLibraryRequestKey> _M_key_compare;
-    struct _Rb_tree_node_base _M_header;
-    unsigned long long _M_node_count;
-};
-
-struct _Rb_tree_impl<std::less<int>, false> {
-    struct less<int> _field1;
-    struct _Rb_tree_node_base _field2;
-    unsigned long long _field3;
-};
-
-struct _Rb_tree_node_base {
-    int _M_color;
-    struct _Rb_tree_node_base *_M_parent;
-    struct _Rb_tree_node_base *_M_left;
-    struct _Rb_tree_node_base *_M_right;
-};
-
-struct _Vector_impl {
-    struct ITTrackingArea **_field1;
-    struct ITTrackingArea **_field2;
-    struct ITTrackingArea **_field3;
-};
-
-struct __CFDictionary;
-
 struct __CFSet;
 
-struct allocator<std::tr1::__detail::_Hash_node<unsigned int, false>>;
+struct __hash_node<unsigned int, void *>;
 
-struct deque<JRMenuItem, std::allocator<JRMenuItem>> {
-    struct _Deque_impl _field1;
+struct __list_node<ITString, void *>;
+
+struct __list_node<boost::shared_ptr<ITWindowController>, void *>;
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *__left_;
 };
 
-struct equal_to<unsigned int>;
-
-struct function<ITValue (boost::shared_ptr<ITControl>, ITValue)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
+struct deque<JRMenuItem, std::__1::allocator<JRMenuItem>> {
+    struct __split_buffer<JRMenuItem *, std::__1::allocator<JRMenuItem *>> {
+        struct JRMenuItem **_field1;
+        struct JRMenuItem **_field2;
+        struct JRMenuItem **_field3;
+        struct __compressed_pair<JRMenuItem **, std::__1::allocator<JRMenuItem *>> {
+            struct JRMenuItem **_field1;
+        } _field4;
+    } _field1;
+    unsigned long long _field2;
+    struct __compressed_pair<unsigned long, std::__1::allocator<JRMenuItem>> {
+        unsigned long long _field1;
+    } _field3;
 };
+
+struct dispatch_source_s;
 
 struct function<bool (AppContext &, JRMenuItemAdjustorInfo &)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct type _field1;
+    struct __base<bool (AppContext &, JRMenuItemAdjustorInfo &)> *_field2;
 };
 
 struct function<bool (JRMenuEventData &, AppContext &)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct type _field1;
+    struct __base<bool (JRMenuEventData &, AppContext &)> *_field2;
 };
 
-struct function<void (boost::shared_ptr<ITControl>, unsigned int)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-};
-
-struct function<void (boost::shared_ptr<ITScrollBar>)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
+struct function<void (AppProgressBar *)> {
+    struct type _field1;
+    struct __base<void (AppProgressBar *)> *_field2;
 };
 
 struct function<void (const __CFString *)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct type _field1;
+    struct __base<void (const __CFString *)> *_field2;
 };
 
 struct function<void (unsigned int, void *, void *, void *)>;
 
-struct hash<unsigned int>;
-
-struct less<ITString>;
-
-struct less<MediaLibraryRequestKey>;
-
-struct less<int>;
-
-struct list<boost::shared_ptr<ITWindowController>, std::allocator<boost::shared_ptr<ITWindowController>>> {
-    struct _List_impl _field1;
+struct list<boost::shared_ptr<ITWindowController>, std::__1::allocator<boost::shared_ptr<ITWindowController>>> {
+    struct __list_node_base<boost::shared_ptr<ITWindowController>, void *> {
+        struct __list_node<boost::shared_ptr<ITWindowController>, void *> *_field1;
+        struct __list_node<boost::shared_ptr<ITWindowController>, void *> *_field2;
+    } _field1;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<boost::shared_ptr<ITWindowController>, void *>>> {
+        unsigned long long _field1;
+    } _field2;
 };
 
-struct map<ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> {
-    struct _Rb_tree<ITString, std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>, std::_Select1st<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>, std::less<ITString>, std::allocator<std::pair<const ITString, std::vector<boost::weak_ptr<ITPropertyObserver>, std::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> _field1;
+struct map<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, std::__1::allocator<std::__1::pair<const ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> {
+    struct __tree<std::__1::pair<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>, std::__1::__map_value_compare<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, true>, std::__1::allocator<std::__1::pair<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>>> {
+        struct __tree_node<std::__1::pair<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>, void *> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<ITString, std::__1::vector<boost::weak_ptr<ITPropertyObserver>, std::__1::allocator<boost::weak_ptr<ITPropertyObserver>>>, std::__1::less<ITString>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
-struct map<int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> {
-    struct _Rb_tree<int, std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>, std::_Select1st<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>, std::less<int>, std::allocator<std::pair<const int, std::vector<boost::shared_ptr<ITView>, std::allocator<boost::shared_ptr<ITView>>>>>> _field1;
+struct map<unsigned long long, ITString, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, ITString>>>;
+
+struct map<unsigned long long, JRFileSpec, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, JRFileSpec>>>;
+
+struct multimap<MediaLibraryRequestKey, MediaLibraryRequest *, std::__1::less<MediaLibraryRequestKey>, std::__1::allocator<std::__1::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> {
+    struct __tree<std::__1::pair<MediaLibraryRequestKey, MediaLibraryRequest *>, std::__1::__map_value_compare<MediaLibraryRequestKey, MediaLibraryRequest *, std::__1::less<MediaLibraryRequestKey>, true>, std::__1::allocator<std::__1::pair<MediaLibraryRequestKey, MediaLibraryRequest *>>> {
+        struct __tree_node<std::__1::pair<MediaLibraryRequestKey, MediaLibraryRequest *>, void *> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<MediaLibraryRequestKey, MediaLibraryRequest *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<MediaLibraryRequestKey, MediaLibraryRequest *, std::__1::less<MediaLibraryRequestKey>, true>> {
+            unsigned long long __first_;
+        } __pair3_;
+    } __tree_;
 };
 
-struct map<unsigned long long, ITString, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, ITString>>>;
+struct multimap<unsigned long long, TrackInfo *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInfo *>>>;
 
-struct map<unsigned long long, JRFileSpec, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, JRFileSpec>>>;
-
-struct multimap<MediaLibraryRequestKey, MediaLibraryRequest *, std::less<MediaLibraryRequestKey>, std::allocator<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> {
-    struct _Rb_tree<MediaLibraryRequestKey, std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>, std::_Select1st<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>, std::less<MediaLibraryRequestKey>, std::allocator<std::pair<const MediaLibraryRequestKey, MediaLibraryRequest *>>> _M_t;
-};
-
-struct multimap<unsigned long long, TrackInfo *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInfo *>>>;
-
-struct multimap<unsigned long long, TrackInstance *, std::less<unsigned long long>, std::allocator<std::pair<const unsigned long long, TrackInstance *>>>;
+struct multimap<unsigned long long, TrackInstance *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, TrackInstance *>>>;
 
 struct pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>;
 
@@ -1970,11 +1502,6 @@ struct shared_ptr<ITAnimation> {
     struct shared_count _field2;
 };
 
-struct shared_ptr<ITBitmapContext> {
-    struct ITBitmapContext *_field1;
-    struct shared_count _field2;
-};
-
 struct shared_ptr<ITCAContext> {
     struct ITCAContext *_field1;
     struct shared_count _field2;
@@ -1995,8 +1522,8 @@ struct shared_ptr<ITCheckBoxNative> {
     struct shared_count _field2;
 };
 
-struct shared_ptr<ITISEngine> {
-    struct ITISEngine *_field1;
+struct shared_ptr<ITFrameRateMeter> {
+    struct ITFrameRateMeter *_field1;
     struct shared_count _field2;
 };
 
@@ -2012,21 +1539,6 @@ struct shared_ptr<ITPopover> {
 
 struct shared_ptr<ITPopupButtonNative> {
     struct ITPopupButtonNative *_field1;
-    struct shared_count _field2;
-};
-
-struct shared_ptr<ITScrollBar> {
-    struct ITScrollBar *px;
-    struct shared_count pn;
-};
-
-struct shared_ptr<ITScrollView> {
-    struct ITScrollView *_field1;
-    struct shared_count _field2;
-};
-
-struct shared_ptr<ITShRemoteLibraryInfo> {
-    struct ITShRemoteLibraryInfo *_field1;
     struct shared_count _field2;
 };
 
@@ -2058,11 +1570,6 @@ struct shared_ptr<ITViewAdapter> {
 struct shared_ptr<ITViewAdapterShim> {
     struct ITViewAdapterShim *px;
     struct shared_count pn;
-};
-
-struct shared_ptr<ITViewLayoutAdapter> {
-    struct ITViewLayoutAdapter *_field1;
-    struct shared_count _field2;
 };
 
 struct shared_ptr<ITWebKitView> {
@@ -2105,6 +1612,11 @@ struct shared_ptr<NSITViewAdapter> {
     struct shared_count pn;
 };
 
+struct shared_ptr<RemoteLibraryInterface> {
+    struct RemoteLibraryInterface *_field1;
+    struct shared_count _field2;
+};
+
 struct shared_ptr<SelectedObjects> {
     struct SelectedObjects *_field1;
     struct shared_count _field2;
@@ -2112,6 +1624,11 @@ struct shared_ptr<SelectedObjects> {
 
 struct shared_ptr<StoreHTMLDisplay> {
     struct StoreHTMLDisplay *_field1;
+    struct shared_count _field2;
+};
+
+struct shared_ptr<StoreHistory> {
+    struct StoreHistory *_field1;
     struct shared_count _field2;
 };
 
@@ -2132,29 +1649,55 @@ struct shared_ptr<WeakActionSupportBase> {
 
 struct sp_counted_base;
 
-struct unordered_set<unsigned int, std::tr1::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int>, false> {
-    struct _Identity<unsigned int> _field1;
-    struct equal_to<unsigned int> _field2;
-    struct hash<unsigned int> _field3;
-    struct _Mod_range_hashing _field4;
-    struct allocator<std::tr1::__detail::_Hash_node<unsigned int, false>> _field5;
-    struct _Hash_node<unsigned int, false> **_field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    struct _Prime_rehash_policy _field9;
+struct type {
+    unsigned char _field1[24];
 };
 
-struct vector<CloudDeleteTrackItem, std::allocator<CloudDeleteTrackItem>>;
-
-struct vector<CloudModifiedTrackItem, std::allocator<CloudModifiedTrackItem>>;
-
-struct vector<ITTrackingArea *, std::allocator<ITTrackingArea *>> {
-    struct _Vector_impl _field1;
+struct unique_ptr<std::__1::__hash_node<unsigned int, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<unsigned int, void *>*>>> {
+    struct __compressed_pair<std::__1::__hash_node<unsigned int, void *>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<unsigned int, void *>*>>> {
+        struct __hash_node<unsigned int, void *> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<unsigned int, void *>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<unsigned int, void *>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
 };
 
-struct vector<RecentlyPlayedItem, std::allocator<RecentlyPlayedItem>>;
+struct unordered_map<unsigned int, boost::shared_ptr<PodcastStation>, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, boost::shared_ptr<PodcastStation>>>>;
 
-struct vector<unsigned long long, std::allocator<unsigned long long>>;
+struct unordered_set<unsigned int, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<unsigned int>> {
+    struct __hash_table<unsigned int, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<unsigned int>> {
+        struct unique_ptr<std::__1::__hash_node<unsigned int, void *>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<unsigned int, void *>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<unsigned int, void *>*>, std::__1::allocator<std::__1::__hash_node<unsigned int, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<unsigned int, void *>*> {
+                struct __hash_node<unsigned int, void *> *_field1;
+            } _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::hash<unsigned int>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::equal_to<unsigned int>> {
+            float _field1;
+        } _field4;
+    } _field1;
+};
+
+struct vector<CloudDeleteTrackItem, std::__1::allocator<CloudDeleteTrackItem>>;
+
+struct vector<CloudModifiedTrackItem, std::__1::allocator<CloudModifiedTrackItem>>;
+
+struct vector<ITTrackingArea *, std::__1::allocator<ITTrackingArea *>> {
+    struct ITTrackingArea **_field1;
+    struct ITTrackingArea **_field2;
+    struct __compressed_pair<ITTrackingArea **, std::__1::allocator<ITTrackingArea *>> {
+        struct ITTrackingArea **_field1;
+    } _field3;
+};
+
+struct vector<RecentlyPlayedItem, std::__1::allocator<RecentlyPlayedItem>>;
+
+struct vector<unsigned long long, std::__1::allocator<unsigned long long>>;
 
 struct weak_count {
     struct sp_counted_base *pi_;
@@ -2190,11 +1733,6 @@ struct weak_ptr<ITPopupButtonNative> {
     struct weak_count pn;
 };
 
-struct weak_ptr<ITScrollView> {
-    struct ITScrollView *px;
-    struct weak_count pn;
-};
-
 struct weak_ptr<ITSliderNative> {
     struct ITSliderNative *px;
     struct weak_count pn;
@@ -2210,43 +1748,8 @@ struct weak_ptr<ITView> {
     struct weak_count pn;
 };
 
-struct weak_ptr<ITViewAdapter> {
-    struct ITViewAdapter *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewContextMenuDelegate> {
-    struct ITViewContextMenuDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewController> {
-    struct ITViewController *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewDragDelegate> {
-    struct ITViewDragDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewDrawSelfDelegate> {
-    struct ITViewDrawSelfDelegate *_field1;
-    struct weak_count _field2;
-};
-
 struct weak_ptr<ITViewFocusInterestDelegate> {
     struct ITViewFocusInterestDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewGeometryDelegate> {
-    struct ITViewGeometryDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewMouseInterceptDelegate> {
-    struct ITViewMouseInterceptDelegate *_field1;
     struct weak_count _field2;
 };
 
@@ -2257,21 +1760,6 @@ struct weak_ptr<ITViewTabOrderDelegate> {
 
 struct weak_ptr<ITViewTextInputDelegate> {
     struct ITViewTextInputDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewToolTipDelegate> {
-    struct ITViewToolTipDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewTrackingDelegate> {
-    struct ITViewTrackingDelegate *_field1;
-    struct weak_count _field2;
-};
-
-struct weak_ptr<ITViewVisibilityDelegate> {
-    struct ITViewVisibilityDelegate *_field1;
     struct weak_count _field2;
 };
 
@@ -2323,14 +1811,13 @@ typedef struct {
 
 // Template types
 typedef struct HashMap<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>> {
-    struct HashTable<boost::shared_ptr<ITView>, std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> _field1;
-} HashMap_9195d314;
+    struct HashTable<boost::shared_ptr<ITView>, std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>, IT::PairFirstExtractor<std::__1::pair<boost::shared_ptr<ITView>, IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::SharedPtrHash<boost::shared_ptr<ITView>>, IT::PairHashTraits<IT::HashTraits<boost::shared_ptr<ITView>>, IT::HashTraits<IT::Vector<ITViewNSViewWrapper *, 0>>>, IT::HashTraits<boost::shared_ptr<ITView>>> _field1;
+} HashMap_8e96d517;
 
 typedef struct function<void (const __CFString *)> {
-    union _Any_data _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-} function_c0cefb33;
+    struct type _field1;
+    struct __base<void (const __CFString *)> *_field2;
+} function_10f65880;
 
 typedef struct shared_ptr<ITAccessible> {
     struct ITAccessible *_field1;
@@ -2351,11 +1838,6 @@ typedef struct shared_ptr<ITPopupButtonNative> {
     struct ITPopupButtonNative *_field1;
     struct shared_count _field2;
 } shared_ptr_b05016cb;
-
-typedef struct shared_ptr<ITScrollView> {
-    struct ITScrollView *_field1;
-    struct shared_count _field2;
-} shared_ptr_ac65d49e;
 
 typedef struct shared_ptr<ITSliderNative> {
     struct ITSliderNative *_field1;
@@ -2416,17 +1898,4 @@ typedef struct shared_ptr<StoreXMLDisplay> {
     struct StoreXMLDisplay *_field1;
     struct shared_count _field2;
 } shared_ptr_18972007;
-
-#pragma mark Named Unions
-
-union _Any_data {
-    union _Nocopy_types _field1;
-    char _field2[16];
-};
-
-union _Nocopy_types {
-    void *_field1;
-    void *_field2;
-    CDUnknownFunctionPointerType _field3;
-};
 

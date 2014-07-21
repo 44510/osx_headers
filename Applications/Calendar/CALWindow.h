@@ -19,11 +19,13 @@
 @property(retain, nonatomic) NSString *defaultTitle; // @synthesize defaultTitle=_defaultTitle;
 @property(readonly) __weak CALMainController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
-- (BOOL)makeFirstResponder:(id)arg1;
+- (void)restoreUserActivityState:(id)arg1;
+- (void)updateUserActivityState:(id)arg1;
 - (struct CGRect)_customTitleFrame;
 - (void)setTitleUpdating:(BOOL)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)close;
+- (void)orderWindow:(long long)arg1 relativeTo:(long long)arg2;
 - (void)sendEvent:(id)arg1;
 - (struct CGRect)_growBoxRect;
 - (void)becomeMainWindow;

@@ -99,6 +99,7 @@
 - (void)mouseEntered:(id)arg1;
 - (id)_edgeResizingTrackingAreas;
 - (void)updateTrackingAreas;
+- (id)contentLayoutGuide;
 - (void)dealloc;
 - (id)doIconify:(id)arg1;
 - (id)zoomButton;

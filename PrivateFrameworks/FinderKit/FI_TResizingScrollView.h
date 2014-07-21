@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)resizeToFitDocumentView;
-- (void)documentViewFrameChanged:(id)arg1;
 - (void)stopObservingDocumentView;
 - (void)startObservingDocumentView;
 - (void)setDocumentView:(id)arg1;

@@ -16,18 +16,24 @@
 }
 
 @property(readonly, retain, nonatomic) NSDate *expirationDate;
+@property(nonatomic) BOOL fireAndForget;
+@property(nonatomic) BOOL bypassSizeCheck;
+@property(nonatomic) BOOL nonWaking;
 @property(nonatomic) BOOL activityContinuation;
 @property(nonatomic) BOOL bypassDuet;
 @property(nonatomic) double timeout;
+@property(nonatomic) BOOL requireBluetooth;
 @property(nonatomic) BOOL localDelivery;
 @property(nonatomic) BOOL highPriority;
 @property(nonatomic) BOOL wantsDeliveryStatus;
 @property(nonatomic) BOOL wantsResponse;
+@property(nonatomic) BOOL compressPayload;
 @property(nonatomic) BOOL encryptPayload;
 @property(nonatomic) BOOL wantsAppAck;
 @property(nonatomic) BOOL useDictAsTopLevel;
 @property(nonatomic) BOOL compressed;
 @property(nonatomic) BOOL expectsPeerResponse;
+@property(retain, nonatomic) NSString *queueOneIdentifier;
 @property(retain, nonatomic) NSArray *interestingRegistrationProperties;
 @property(retain, nonatomic) NSArray *requireAllRegistrationProperties;
 @property(retain, nonatomic) NSString *peerResponseIdentifier;

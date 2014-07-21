@@ -6,16 +6,17 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSCoding>
+@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)_setAttributedDictionaryClass:(Class)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -23,6 +23,7 @@
 + (void)parseExtensionItem:(id)arg1 getBodyMessage:(id *)arg2 includeURLsInBodyMessage:(BOOL)arg3 getFileURLs:(id *)arg4 getDistantURLs:(id *)arg5 getImages:(id *)arg6 getImageCount:(long long *)arg7 writeImagesAsFileURLs:(BOOL)arg8;
 + (void)parseExtensionItem:(id)arg1 getBodyMessage:(id *)arg2 includeURLsInBodyMessage:(BOOL)arg3 getFileURLs:(id *)arg4 getDistantURLs:(id *)arg5 getImages:(id *)arg6 writeImagesAsFileURLs:(BOOL)arg7;
 + (void)extractFromExtensionItem:(id)arg1 getTextItems:(id *)arg2 getFileURLItems:(id *)arg3 getDistantURLItems:(id *)arg4 getImageItems:(id *)arg5 treatImagesAsFileURLItems:(BOOL)arg6;
++ (void)_extractFromExtensionItem:(id)arg1 getTextItems:(id *)arg2 getFileURLItems:(id *)arg3 getDistantURLs:(id *)arg4 getUrlToItemProvider:(id *)arg5 getImageItems:(id *)arg6 treatImagesAsFileURLItems:(BOOL)arg7;
 + (id)attributedStringByTrimmingCharactersInSet:(id)arg1 inAttributedString:(id)arg2;
 + (BOOL)frameworkModificationDateIsEqual:(id)arg1;
 + (id)frameworkLastModificationDate;

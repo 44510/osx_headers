@@ -386,7 +386,25 @@ struct _xmlParserCtxt {
     unsigned long long _field89;
 };
 
-struct _xmlParserInput;
+struct _xmlParserInput {
+    struct _xmlParserInputBuffer *_field1;
+    char *_field2;
+    char *_field3;
+    char *_field4;
+    char *_field5;
+    char *_field6;
+    int _field7;
+    int _field8;
+    int _field9;
+    unsigned long long _field10;
+    CDUnknownFunctionPointerType _field11;
+    char *_field12;
+    char *_field13;
+    int _field14;
+    int _field15;
+};
+
+struct _xmlParserInputBuffer;
 
 struct _xmlParserNodeInfo;
 

@@ -33,6 +33,7 @@
 @property(retain) NSMutableDictionary *addressToSearchResults; // @synthesize addressToSearchResults=_addressToSearchResults;
 @property(retain) NSMutableDictionary *searchResults; // @synthesize searchResults=_searchResults;
 - (void).cxx_destruct;
+- (void)locationDidGeocode:(id)arg1 forEvent:(id)arg2 string:(id)arg3 error:(id)arg4;
 - (void)locationDidGeocode:(id)arg1 error:(id)arg2;
 - (id)calAddressWrapperForLocation:(id)arg1;
 - (id)iconForCalAddressWrapper:(id)arg1 selected:(BOOL)arg2;
@@ -41,6 +42,7 @@
 - (id)iconForLocationSuggestion:(id)arg1 selected:(BOOL)arg2;
 - (void)controlDidReceiveServerResults:(id)arg1;
 - (void)userDidDismissFromLocationField;
+- (void)controlDidFinishEditing:(id)arg1;
 - (void)controlDidDeleteLocationObject:(id)arg1;
 - (void)controlDidSelectLocationObject:(id)arg1;
 - (BOOL)isFreeBusySupported;
@@ -49,8 +51,9 @@
 - (BOOL)updateAttendeesFromPasteboard:(id)arg1;
 - (id)textField;
 - (BOOL)performDragOperation:(id)arg1;
+- (void)_geocodeLocationString:(id)arg1;
 - (void)_saveCompleteChangeIfNotSaving;
-- (void)_saveLocationAsStructuredLocation:(id)arg1;
+- (void)_saveLocationAsStructuredLocation:(id)arg1 onEvent:(id)arg2;
 - (void)_saveLocationAsParticipant:(id)arg1;
 - (void)_saveStructuredLocation;
 - (id)claimedPboardTypes;

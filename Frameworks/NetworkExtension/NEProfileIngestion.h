@@ -44,6 +44,7 @@
 - (BOOL)saveIngestedConfiguration;
 - (BOOL)saveConfiguration:(id)arg1;
 - (BOOL)createConfigurationFromPayload:(id)arg1 payloadType:(id)arg2;
+- (void)removeOrphanConfigurations:(id)arg1 profileUUID:(id)arg2;
 - (BOOL)isInstalled:(id)arg1;
 - (id)findConfigurationByConfigurationID:(id)arg1;
 - (id)findConfigurationByPayloadUUID:(id)arg1;

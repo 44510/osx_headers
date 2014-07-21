@@ -39,7 +39,10 @@
 - (void)dismissSecurityAgentLoginProgressWindow;
 - (void)loginDone;
 - (id)authorizationRefMgr;
+- (void)continueAuthPluginRequestAfterFamilyControlsCheck;
+- (void)familyControlsDeniedLogin;
 - (void)performAuthPluginRequest:(id)arg1;
+- (void)checkFamilyControlsForLoginApproval;
 - (void)authPluginSuccessContinueLogin;
 - (long long)setAuditInfo;
 - (void)invokeAuthPlugin_NORMAL_LOGIN_WAITING_ON_AUTHENTICATION;

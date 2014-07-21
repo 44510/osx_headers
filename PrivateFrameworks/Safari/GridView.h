@@ -22,12 +22,11 @@ __attribute__((visibility("hidden")))
     SeparatorView *_separator;
     NSLayoutConstraint *_separatorWidthConstraint;
     BOOL _needsReload;
+    BOOL _needsLayoutOnAppear;
     unsigned long long _numberOfColumns;
     struct CGSize _cellSize;
     struct CGSize _cellMargin;
     CDStruct_3c058996 _contentInsets;
-    BOOL _suppressUpdateConstraints;
-    BOOL _suppressNextLayoutPass;
     NSEvent *_initialMouseDownEvent;
     unsigned long long _selectedCellIndex;
     GridCellView *_selectedCell;
@@ -149,6 +148,8 @@ __attribute__((visibility("hidden")))
 - (void)_createTitleViewIfNeeded;
 @property(copy, nonatomic) NSString *title;
 - (void)_updatePresentationModeAttributes;
+- (void)_unregisterForScrollViewNotificationsIfNeeded;
+- (void)_registerForScrollViewNotificationsIfNeeded;
 - (void)_recalculateKeyLoop;
 - (double)_calculatedMaximumGridViewHeight;
 - (double)_calculatedMinimumGridViewWidth;
@@ -169,8 +170,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateGridViewWidths;
 - (void)layout;
 - (void)updateConstraints;
-- (void)setFrameSize:(struct CGSize)arg1;
-- (void)_scrollViewFrameDidChange:(id)arg1;
+- (void)viewDidUnhide;
+- (void)viewDidHide;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (id)viewForCellAtIndex:(unsigned long long)arg1;

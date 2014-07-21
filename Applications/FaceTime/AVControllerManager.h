@@ -21,7 +21,6 @@
     unsigned int _invitationAssertionID;
     AVController *_currentController;
     NSString *_remoteiMessageAddress;
-    AVController *_persistentController;
     AVController *_migrationController;
     AVController *_inviteController;
     AVController *_hiddenController;
@@ -41,7 +40,6 @@
 @property(retain, nonatomic) AVController *hiddenController; // @synthesize hiddenController=_hiddenController;
 @property(retain, nonatomic) AVController *inviteController; // @synthesize inviteController=_inviteController;
 @property(retain, nonatomic) AVController *migrationController; // @synthesize migrationController=_migrationController;
-@property(retain, nonatomic) AVController *persistentController; // @synthesize persistentController=_persistentController;
 @property(retain, nonatomic) NSString *remoteiMessageAddress; // @synthesize remoteiMessageAddress=_remoteiMessageAddress;
 - (void).cxx_destruct;
 - (void)controllerCanceled:(id)arg1;

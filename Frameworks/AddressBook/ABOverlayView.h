@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) NSView *overlaidView; // @synthesize overlaidView=_overlaidView;
+- (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)isOverlayDrawingNeeded;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)constraintsAttachingOverlayToOverlaidView;

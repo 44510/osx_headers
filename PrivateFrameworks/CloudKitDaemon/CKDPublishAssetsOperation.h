@@ -28,7 +28,7 @@
 @property(copy, nonatomic) CDUnknownBlockType assetPublishedBlock; // @synthesize assetPublishedBlock=_assetPublishedBlock;
 - (void).cxx_destruct;
 - (void)cancel;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_fetchRecords;
 - (void)_fetchPCSForRecords;

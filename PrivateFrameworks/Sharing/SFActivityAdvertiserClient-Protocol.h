@@ -10,6 +10,6 @@
 
 @protocol SFActivityAdvertiserClient <NSObject>
 - (void)didSendPayloadForActivityIdentifier:(NSUUID *)arg1 toDeviceIdentifier:(NSString *)arg2 error:(NSError *)arg3;
-- (void)activityPayloadForAdvertisementPayload:(NSData *)arg1 requestedByDeviceIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(NSUUID *, NSData *))arg3;
+- (void)activityPayloadForAdvertisementPayload:(NSData *)arg1 requestedByDeviceIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(NSUUID *, NSData *, NSError *))arg3;
 @end
 

@@ -13,6 +13,7 @@
 @interface CalUICalendarListDataSourceEK : NSObject <NSOutlineViewDataSource>
 {
     BOOL _hasServerCalendars;
+    BOOL _hasWritableServerCalendars;
     BOOL _isCurrentlyDeleting;
     BOOL _dataEverLoaded;
     id <CalUICalendarListDataSourceDelegateEK> _delegate;
@@ -47,6 +48,7 @@
 @property(retain) NSMutableSet *contextsToResortOnDidSave; // @synthesize contextsToResortOnDidSave=_contextsToResortOnDidSave;
 @property(retain) CalManagedObjectContext *context; // @synthesize context=_context;
 @property BOOL isCurrentlyDeleting; // @synthesize isCurrentlyDeleting=_isCurrentlyDeleting;
+@property BOOL hasWritableServerCalendars; // @synthesize hasWritableServerCalendars=_hasWritableServerCalendars;
 @property BOOL hasServerCalendars; // @synthesize hasServerCalendars=_hasServerCalendars;
 @property unsigned long long groupCount; // @synthesize groupCount=_groupCount;
 @property unsigned long long calendarCount; // @synthesize calendarCount=_calendarCount;

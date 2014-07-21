@@ -8,7 +8,7 @@
 
 #import "BRItemNotificationSending.h"
 
-@class BRCItemID, BRCNotificationGatherer, BRCNotificationManager, BRCRelativePath, BRCXPCClient, BRNotificationQueue, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class BRCItemID, BRCNotificationGatherer, BRCNotificationManager, BRCRelativePath, BRCXPCClient, BRNotificationQueue, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending>
@@ -27,15 +27,18 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _boostReply;
     BRCXPCClient *_client;
     unsigned short _watchItemOptions;
+    BRCItemID *_oldWatchedAncestorItemID;
     BRCItemID *_watchedAncestorItemID;
     NSNumber *_watchedAncestorFileObjectID;
-    NSMutableArray *_watchedAncestorPathComponentsToItem;
+    NSString *_watchedAncestorFilenameToItem;
     BRCNotificationGatherer *_gatherer;
     BOOL _hasUpdatesInFlight;
     BOOL _volumeIsCaseSensitive;
 }
 
 - (void).cxx_destruct;
+- (void)watchItemInProcessAtURL:(id)arg1 options:(unsigned short)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)watchItemAtURL:(id)arg1 container:(id)arg2 lookup:(id)arg3 options:(unsigned short)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)watchScopes:(unsigned short)arg1 trustedContainerIDs:(id)arg2 gatheringDone:(CDUnknownBlockType)arg3;
 - (void)close;
 - (void)_stopWatchingItems;

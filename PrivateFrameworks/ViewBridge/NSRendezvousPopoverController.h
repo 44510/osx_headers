@@ -11,6 +11,7 @@
 }
 
 + (void)addBridgeKeys:(id)arg1;
+- (id)objectToObserveForKey:(id)arg1 withWindow:(id)arg2;
 
 @end
 

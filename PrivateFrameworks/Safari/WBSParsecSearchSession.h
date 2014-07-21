@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WBSParsecSearchSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (double)_timeToFirstByteForDataTask:(id)arg1;
 - (void)_addParsecAndSearchSuggestionDeltaForQuery:(id)arg1 toFeedbackDictionary:(id)arg2;
 - (void)_processBestResultSetOnMainThread:(id)arg1 forQuery:(id)arg2;
 - (void)_processSearchResponseOnMainThread:(id)arg1 forQuery:(id)arg2 timeToFirstByte:(double)arg3;

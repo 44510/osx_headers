@@ -230,6 +230,8 @@
 - (id)menuForEvent:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)selectAll:(id)arg1;
+- (void)scrollToEndOfDocument:(id)arg1;
+- (void)scrollToBeginningOfDocument:(id)arg1;
 - (void)moveDownAndModifySelection:(id)arg1;
 - (void)moveDown:(id)arg1;
 - (void)moveUpAndModifySelection:(id)arg1;

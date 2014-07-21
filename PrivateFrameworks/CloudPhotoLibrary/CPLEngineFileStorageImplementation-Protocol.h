@@ -16,6 +16,7 @@
 - (BOOL)releaseFileURL:(NSURL *)arg1 error:(id *)arg2;
 - (NSURL *)retainFileURLForIdentity:(CPLResourceIdentity *)arg1 resourceType:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)linkOrCopyFileWithIdentity:(CPLResourceIdentity *)arg1 destinationURL:(NSURL *)arg2 error:(id *)arg3;
+- (void)checkFileSizeForIdentity:(CPLResourceIdentity *)arg1;
 - (BOOL)hasFileWithIdentity:(CPLResourceIdentity *)arg1;
 - (BOOL)storeUnretainedData:(NSData *)arg1 identity:(CPLResourceIdentity *)arg2 isOriginal:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)storeUnretainedFileAtURL:(NSURL *)arg1 identity:(CPLResourceIdentity *)arg2 isOriginal:(BOOL)arg3 error:(id *)arg4;

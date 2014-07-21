@@ -121,6 +121,7 @@
 - (id)customPreviewController;
 - (id)iconImage;
 - (BOOL)openWithSearchString:(id)arg1;
+- (id)targetString;
 - (void)supplementWithResult:(id)arg1;
 
 // Remaining properties

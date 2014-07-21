@@ -19,7 +19,7 @@
     BOOL _callerIdIsFormatted;
     BOOL _answered;
     BOOL _mobileOriginated;
-    int _callerIdAvailability;
+    unsigned int _callerIdAvailability;
     unsigned int _callType;
     unsigned int _callStatus;
     NSString *_callerNetworkName;
@@ -93,7 +93,7 @@
 - (id)getLocalizedStringSync:(id)arg1;
 - (id)callerNameSync;
 @property(copy, nonatomic) NSString *callerNetworkName; // @synthesize callerNetworkName=_callerNetworkName;
-@property(nonatomic) int callerIdAvailability; // @synthesize callerIdAvailability=_callerIdAvailability;
+@property(nonatomic) unsigned int callerIdAvailability; // @synthesize callerIdAvailability=_callerIdAvailability;
 - (BOOL)callerIdIsEmailAddress;
 - (BOOL)callerIdIsEmailAddressSync;
 - (id)addressBookCallerIDMultiValueIdSync;
@@ -106,6 +106,7 @@
 - (unsigned long long)numberOfOccurrencesSync;
 - (void)addOccurrencesFromArraySync:(id)arg1;
 - (BOOL)coalesceWithCall:(id)arg1 withStrategy:(id)arg2;
+- (BOOL)canCoalesceWithCall:(id)arg1 withStrategy:(id)arg2;
 - (id)coalescingHash;
 - (BOOL)canCoalesceSyncWithCall:(id)arg1 withStrategy:(id)arg2;
 - (BOOL)canCoalesceSyncWithCollapseIfEqualStrategyWithCall:(id)arg1;

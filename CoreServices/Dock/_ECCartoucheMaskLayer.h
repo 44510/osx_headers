@@ -10,6 +10,7 @@
 {
     CALayer *_roundRectLayer;
     CALayer *_cartoucheLayer;
+    CALayer *_hackLinePreventionLayer;
 }
 
 - (void).cxx_destruct;

@@ -6,7 +6,9 @@
 
 #import <CloudKit/CKOperationInfo.h>
 
-@interface CKDatabaseOperationInfo : CKOperationInfo
+#import "NSSecureCoding.h"
+
+@interface CKDatabaseOperationInfo : CKOperationInfo <NSSecureCoding>
 {
     long long _databaseScope;
 }

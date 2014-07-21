@@ -8,7 +8,7 @@
 
 #import "GEOMapItemPrivate.h"
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMapServiceTraits, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDictionary, NSMapTable, NSString, NSURL;
+@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMapServiceTraits, GEOPDFlyover, GEOPDPlace, GEOPlace, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface _GEOPlaceDataItem : NSObject <GEOMapItemPrivate>
@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSMapTable *_attributionMap;
 }
 
+- (id)_mapItemByStrippingOptionalData;
+@property(readonly, nonatomic, getter=_additionalPlaceInfos) NSArray *additionalPlaceInfos;
 @property(readonly, nonatomic, getter=_customIconID) unsigned long long customIconID;
 @property(readonly, nonatomic, getter=_styleAttributes) GEOFeatureStyleAttributes *styleAttributes;
 - (id)_placeDataStyleAttributes;
@@ -62,6 +64,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_sampleSizeForUserRatingScore) unsigned int sampleSizeForUserRatingScore;
 @property(readonly, nonatomic, getter=_hasUserRatingScore) BOOL hasUserRatingScore;
 @property(readonly, nonatomic, getter=_businessURL) NSString *businessURL;
+@property(readonly, nonatomic, getter=_areaInMeters) double areaInMeters;
+@property(readonly, nonatomic, getter=_hasAreaInMeters) BOOL hasAreaInMeters;
 @property(readonly, nonatomic, getter=_muid) unsigned long long muid;
 @property(readonly, nonatomic, getter=_hasMUID) BOOL hasMUID;
 @property(readonly, nonatomic, getter=_flyover) GEOPDFlyover *flyover;
@@ -70,6 +74,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_hasResultProviderID) BOOL hasResultProviderID;
 @property(readonly, nonatomic, getter=_sequenceNumber) unsigned int sequenceNumber;
 @property(readonly, nonatomic, getter=_sessionGUID) CDStruct_612aec5b sessionGUID;
+@property(readonly, nonatomic, getter=_hasSessionGUID) BOOL hasSessionGUID;
 @property(readonly, nonatomic, getter=_roadAccessPoints) NSArray *roadAccessPoints;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
 - (unsigned int)_travelDistanceForTransportType:(int)arg1;
@@ -81,8 +86,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_placeAsData) NSData *placeAsData;
 @property(readonly, nonatomic, getter=_clientAttributes) GEOMapItemClientAttributes *clientAttributes;
 @property(readonly, nonatomic, getter=_place) GEOPlace *place;
+@property(readonly, nonatomic, getter=_placeType) int placeType;
 @property(readonly, nonatomic, getter=_hasResolvablePartialInformation) BOOL hasResolvablePartialInformation;
 @property(readonly, nonatomic, getter=_placeData) GEOPDPlace *placeData;
+@property(readonly, nonatomic) BOOL isEventAllDay;
+@property(readonly, nonatomic) NSDate *eventDate;
 @property(readonly, nonatomic) NSString *eventName;
 @property(readonly, nonatomic) BOOL contactIsMe;
 @property(readonly, nonatomic) NSString *contactSpokenName;
@@ -96,6 +104,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDStruct_c3b9c2ee centerCoordinate;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 @property(readonly, nonatomic, getter=isDisputed) BOOL disputed;
+@property(readonly, nonatomic) NSData *data;
+@property(readonly, nonatomic) NSData *encodedData;
 - (id)spokenNameForLocale:(id)arg1;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;

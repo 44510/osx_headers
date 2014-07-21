@@ -33,6 +33,7 @@
 - (void)connectionDied;
 - (void)connectionInterrupted;
 - (void)messageArrived:(id)arg1;
+- (void)ignoreDevice;
 - (void)stopAdvertising;
 - (void)startAdvertising;
 - (void)stopScan;

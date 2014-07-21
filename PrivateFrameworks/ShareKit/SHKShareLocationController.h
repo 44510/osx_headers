@@ -22,7 +22,7 @@
 
 + (id)keyPathsForValuesAffectingCurrentLocationDisplayName;
 + (id)keyPathsForValuesAffectingCurrentLocation;
-@property(retain) id <SHKShareLocationControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <SHKShareLocationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) CDUnknownBlockType updateLocationsBlock; // @synthesize updateLocationsBlock=_updateLocationsBlock;
 @property long long currentLocationIndex; // @synthesize currentLocationIndex=_currentLocationIndex;
 - (void).cxx_destruct;

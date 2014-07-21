@@ -52,6 +52,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) EKEvent *event;
 @property(readonly, nonatomic) BOOL hideTravelTime;
+- (void)setTravelTimeHeight:(double)arg1;
 - (void)setVisibleHeight:(double)arg1;
 @property(readonly) BOOL visibleHeightLocked;
 @property struct CGRect unPinnedViewFrame;

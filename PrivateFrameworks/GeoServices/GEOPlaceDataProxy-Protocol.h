@@ -9,12 +9,13 @@
 @class GEOMapServiceTraits, GEOPDPlace, GEOPDPlaceRequest, NSArray;
 
 @protocol GEOPlaceDataProxy <NSObject>
+- (void)applyRAPUpdatedMapItems:(NSArray *)arg1;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(void (^)(unsigned long long))arg2;
 - (void)calculateFreeableSpaceWithHandler:(void (^)(unsigned long long))arg1;
 - (void)performPlaceDataRequest:(GEOPDPlaceRequest *)arg1 traits:(GEOMapServiceTraits *)arg2 requesterHandler:(void (^)(GEOPDPlaceResponse *, NSError *))arg3;
 - (void)trackPlaceData:(GEOPDPlace *)arg1;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)requestPhoneNumbers:(NSArray *)arg1 traits:(GEOMapServiceTraits *)arg2 requesterHandler:(void (^)(NSArray *, NSError *))arg3;
+- (void)requestPhoneNumbers:(NSArray *)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(GEOMapServiceTraits *)arg3 requesterHandler:(void (^)(NSArray *, NSError *))arg4;
 - (void)requestMUIDs:(NSArray *)arg1 includeETA:(BOOL)arg2 traits:(GEOMapServiceTraits *)arg3 requesterHandler:(void (^)(NSArray *, NSError *))arg4;
 @end
 

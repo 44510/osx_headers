@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     FIAirDropProgressView *_progressView;
     FI_TTextField *_personNameTxtFld;
     struct TKeyValueBinder _percentCompleteBinder;
-    function_06505f9d _clickHandler;
+    function_988d70bf _clickHandler;
 }
 
 @property(readonly, retain) FI_TTextField *personNameTxtFld; // @synthesize personNameTxtFld=_personNameTxtFld;
@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)_hitTestWithLocalPoint:(const struct CGPoint *)arg1;
 @property(readonly, retain) FI_TTextField *machineNameTxtFld; // @dynamic machineNameTxtFld;
-- (void)setClickHandler:(const struct function<void (FIAirDropListViewCellView *)> *)arg1;
+- (void)setClickHandler:(const function_988d70bf *)arg1;
 - (void)awakeFromNib;
 
 @end

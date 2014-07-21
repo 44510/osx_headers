@@ -19,8 +19,6 @@
 - (BOOL)isOpaque;
 - (void)__drawLTRRect:(struct CGRect)arg1;
 - (void)__drawRTLRect:(struct CGRect)arg1;
-- (id)__attributedStringForMenuImage:(id)arg1;
-- (id)__attributedStringForTitle;
 - (unsigned long long)idealMenuItemWidth;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 menuItem:(id)arg2 images:(id)arg3 isPopupMenuItem:(BOOL)arg4;

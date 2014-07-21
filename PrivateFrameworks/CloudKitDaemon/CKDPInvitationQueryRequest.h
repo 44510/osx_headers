@@ -20,6 +20,7 @@
 
 + (id)options;
 @property(nonatomic) int queryType; // @synthesize queryType=_queryType;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

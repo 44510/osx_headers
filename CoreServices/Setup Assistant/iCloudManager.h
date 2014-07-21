@@ -33,7 +33,7 @@
     BOOL _noPostLoginDelegates;
     BOOL _agreedToTOS;
     BOOL _naggedAboutFMM;
-    BOOL _isSignInReprompt;
+    BOOL _isFirstAccountLogin;
     BOOL _commerceAccountNeedsRepair;
     BOOL _iCloudSecurityCodeIsGenerated;
     BOOL _iCloudSecurityCodeIsComplex;
@@ -106,7 +106,7 @@
 @property(copy) NSString *commerceAccountUsername; // @synthesize commerceAccountUsername=_commerceAccountUsername;
 @property(retain) NSDictionary *mainAccountTOSVersionsDict; // @synthesize mainAccountTOSVersionsDict=_mainAccountTOSVersionsDict;
 @property(retain) NSDictionary *mainAccountResponseDict; // @synthesize mainAccountResponseDict=_mainAccountResponseDict;
-@property BOOL isSignInReprompt; // @synthesize isSignInReprompt=_isSignInReprompt;
+@property BOOL isFirstAccountLogin; // @synthesize isFirstAccountLogin=_isFirstAccountLogin;
 @property BOOL naggedAboutFMM; // @synthesize naggedAboutFMM=_naggedAboutFMM;
 @property(retain) NSMutableSet *iCloudServicesToEnable; // @synthesize iCloudServicesToEnable;
 @property BOOL noPostLoginDelegates; // @synthesize noPostLoginDelegates=_noPostLoginDelegates;
@@ -134,6 +134,7 @@
 - (void)_callAOSMethodOnQuitIfNecessary;
 @property(readonly) NSDictionary *FDEState;
 - (id)_keychainSyncState;
+- (void)_setUpPostLoginDictionaryForBRMigration;
 - (BOOL)_doPostUserCreationSetup:(id *)arg1 inProcess:(BOOL)arg2 window:(id)arg3;
 - (BOOL)hasAppleProvidedID;
 - (BOOL)applySettings:(id *)arg1;

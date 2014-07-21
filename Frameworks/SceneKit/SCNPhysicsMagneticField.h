@@ -11,6 +11,7 @@
 }
 
 + (id)SCNJSExportProtocol;
+- (void)setDirection:(struct SCNVector3)arg1;
 -     // Error parsing type: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8, name: _createField
 
 @end

@@ -10,21 +10,28 @@
 {
 }
 
++ (void)invalidateCachedValues;
++ (void)_sendNecessaryNotificationsAfterRunningBlock:(CDUnknownBlockType)arg1;
 + (void)_setRelayCallingEnabledDefault:(BOOL)arg1;
 + (BOOL)_relayCallingEnabledDefault;
 + (void)_setCanEnableRelayCallingDefault:(BOOL)arg1;
 + (BOOL)_canEnableRelayCallingDefault;
++ (void)_setSupportsRelayCallingDefault:(BOOL)arg1;
++ (BOOL)_supportsRelayCallingDefault;
 + (void)setRelayCallingEnabled:(BOOL)arg1;
 + (BOOL)isRelayCallingEnabled;
 + (BOOL)canEnableRelayCalling;
++ (BOOL)supportsRelayCalling;
 + (void)_tearDownRelayCallingListeners;
 + (void)_setUpRelayCallingListeners;
 + (void)_initializeState;
++ (BOOL)isWiFiCallingCurrentlyAvailable;
 + (void)setWiFiCallingCapabilityInformation:(id)arg1;
 + (id)wiFiCallingCapabilityInformation;
 + (void)setWiFiCallingEnabled:(BOOL)arg1;
 + (BOOL)isWiFiCallingEnabled;
 + (BOOL)canEnableWiFiCalling;
++ (BOOL)supportsSimultaneousVoiceAndData;
 + (BOOL)supportsDisplayingFaceTimeVideoCalls;
 + (BOOL)supportsDisplayingFaceTimeAudioCalls;
 + (BOOL)supportsDisplayingTelephonyCalls;
@@ -33,7 +40,7 @@
 + (BOOL)supportsRelayingTelephonyCalls;
 + (BOOL)supportsHostingFaceTimeVideoCalls;
 + (BOOL)supportsHostingFaceTimeAudioCalls;
-+ (BOOL)supportsCellularCalls;
++ (BOOL)supportsHostingTelephonyCalls;
 + (BOOL)supportsFaceTimeVideoCalls;
 + (BOOL)supportsFaceTimeAudioCalls;
 + (BOOL)supportsTelephonyCalls;

@@ -9,10 +9,11 @@
 #import "NSTableViewDataSource.h"
 #import "NSTableViewDelegate.h"
 
-@class AMSBTLEMIDIWindowController, MIDISetupManager, MIDIStudioSetupView, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSSlider, NSString, NSTableView, NSTextField, NSWindow, NetWindowController;
+@class AMSBTLEMIDIWindowController, AMSToolbarItem, MIDISetupManager, MIDIStudioSetupView, NSArray, NSButton, NSMenuItem, NSMutableArray, NSPopUpButton, NSSlider, NSString, NSTableView, NSTextField, NSWindow, NetWindowController;
 
 @interface MIDIPanelController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 {
+    AMSToolbarItem *configToolbarItem;
     NSPopUpButton *uiConfigurationPopUp;
     NSButton *uiDuplicateConfigurationButton;
     NSButton *uiRenameConfigurationButton;

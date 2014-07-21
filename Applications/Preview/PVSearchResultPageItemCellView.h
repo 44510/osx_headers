@@ -16,6 +16,7 @@
 
 @property(readonly) NSImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 @property(readonly) NSTextField *resultTitle; // @synthesize resultTitle=_resultTitle;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)viewWillDraw;
 - (void)stopObservingObject:(id)arg1;

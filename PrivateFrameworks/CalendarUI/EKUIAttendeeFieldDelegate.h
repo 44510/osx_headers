@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "NSTokenFieldDelegate.h"
+#import "EKUITokenFieldDelegate.h"
 
 @class CalFreeBusyCache, EKEvent, NSDate, NSMutableArray, NSMutableDictionary, NSObject<EKUIAttendeesViewController>, NSString, NSTextField<CalUIAutocompletingField>;
 
-@interface EKUIAttendeeFieldDelegate : NSObject <NSTokenFieldDelegate>
+@interface EKUIAttendeeFieldDelegate : NSObject <EKUITokenFieldDelegate>
 {
     NSTextField<CalUIAutocompletingField> *_attendeesField;
     NSMutableArray *_cachedAttendees;
@@ -80,6 +80,7 @@
 - (void)_inviteAttendeeAgain:(id)arg1;
 - (void)inviteAgain:(id)arg1;
 - (void)addToAddressBook:(id)arg1;
+- (void)doubleClickOnTokenCell:(id)arg1;
 - (void)openInAddressBook:(id)arg1;
 - (void)previewAttendee:(id)arg1;
 - (void)copyAddress:(id)arg1;

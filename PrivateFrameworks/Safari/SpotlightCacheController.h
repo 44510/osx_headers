@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)fullUpdateNeededForType:(id)arg1;
 - (BOOL)fileIsSpotlightCacheFile:(id)arg1;
 - (void)updaterThreadBody:(id)arg1;
-- (void)moveOldBookmarkCacheFiles;
 - (void)deleteAllCachedFilesForType:(id)arg1;
 - (BOOL)updateCacheFilesForType:(id)arg1;
 - (BOOL)fileManager:(id)arg1 shouldProceedAfterError:(id)arg2 removingItemAtPath:(id)arg3;

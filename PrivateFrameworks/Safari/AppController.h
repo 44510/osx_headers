@@ -192,10 +192,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasFinishedLaunching;
 - (BOOL)isTerminating;
 - (void)applicationWillTerminate:(id)arg1;
-- (void)shouldTerminateAfterTryingToCloseAllPages:(BOOL)arg1;
-- (void)_tryClosingAllPagesToTerminateAndReplyToApplicationShouldTerminateIfNecessary;
 - (void)_clearICloudTabsIfNecessaryDuringTermination;
+- (void)_continueDeferredTerminationDeterminationFromState:(int)arg1;
+- (void)shouldTerminateAfterTryingToCloseAllPages:(BOOL)arg1;
+- (void)shouldTerminateAfterTryingToSaveChangesToCloudHistory;
 - (void)shouldTerminateAfterShowingDownloadsTerminationPrompt:(BOOL)arg1;
+- (unsigned long long)_applicationShouldTerminateFromState:(int)arg1;
 - (unsigned long long)applicationShouldTerminate:(id)arg1;
 - (BOOL)systemRestoresWindowsWhenReopeningApps;
 - (void)openURL:(id)arg1 forcingHTMLMIMEType:(BOOL)arg2;

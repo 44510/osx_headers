@@ -43,14 +43,12 @@
 - (void)xpcObject:(void *)arg1 objectContext:(id)arg2;
 - (void)_deferredSetupOnIvarQueue:(id)arg1;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
-- (void)session:(id)arg1 audioEnabled:(BOOL)arg2;
-- (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
-- (void)sessionStarted:(id)arg1;
 - (void)device:(id)arg1 nsuuidChanged:(id)arg2;
 - (id)dependentDevicesForAccount:(id)arg1 blocking:(BOOL)arg2;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)registrationFailedForAccount:(id)arg1 needsDeletion:(id)arg2;
+- (void)account:(id)arg1 localDeviceRemoved:(id)arg2;
 - (void)account:(id)arg1 localDeviceAdded:(id)arg2;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
 - (void)account:(id)arg1 displayNameChanged:(id)arg2;

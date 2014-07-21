@@ -104,7 +104,6 @@
 - (void)launchLoadEffects;
 - (void)launchAddCameras;
 - (void)showTray:(BOOL)arg1;
-- (BOOL)isShowingTray;
 - (double)trayHeight;
 - (void)resetEffect:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;

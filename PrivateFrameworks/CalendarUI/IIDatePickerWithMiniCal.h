@@ -105,6 +105,7 @@
 - (void)setup;
 - (void)awakeFromNib;
 - (id)initWithEventViewController:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

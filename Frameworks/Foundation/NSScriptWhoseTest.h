@@ -16,6 +16,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)isTrue;
+- (id)init;
 
 @end
 

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
     struct sqlite3_stmt *_queryPhoneNumber;
     struct sqlite3_stmt *_queryAllPlaceDataEntries;
+    struct sqlite3_stmt *_queryAllPhoneNumberEntries;
 }
 
 - (id)_placeCardDataForMuid:(unsigned long long)arg1;

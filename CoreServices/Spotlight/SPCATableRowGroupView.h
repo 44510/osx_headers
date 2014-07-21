@@ -6,12 +6,19 @@
 
 #import "SPCATableRowView.h"
 
+@class NSVisualEffectView, SPDarkenView;
+
 @interface SPCATableRowGroupView : SPCATableRowView
 {
+    NSVisualEffectView *_backdrop;
+    SPDarkenView *_darken;
 }
 
+- (void).cxx_destruct;
 - (void)awakeFromNib;
+- (void)appearanceChanged:(id)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
+- (void)dealloc;
 
 @end
 

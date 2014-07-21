@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NVRecentsViewController, NVSerializableObject;
+@class CNContact, NSString, NVRecentsViewController, NVSerializableObject;
 
 @protocol NVRecentsViewControllerDelegate <NSObject>
 - (void)recentsViewControllerShouldMakeSearchFieldFirstResponder:(NVRecentsViewController *)arg1;
+- (void)recentsViewController:(NVRecentsViewController *)arg1 selectedContact:(CNContact *)arg2 address:(NSString *)arg3;
 - (void)recentsViewController:(NVRecentsViewController *)arg1 selectedPlaceOrTrip:(NVSerializableObject *)arg2;
 - (void)recentsViewControllerSelectedSavedLocations:(NVRecentsViewController *)arg1;
 @end

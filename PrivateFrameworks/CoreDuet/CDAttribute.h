@@ -18,6 +18,8 @@
     NSMutableArray *resourceCallbackList;
     NSObject<OS_dispatch_queue> *resourceCallbackQueue;
     int resourceCallToken;
+    int focalAppToken;
+    int conditionChangeToken;
     unsigned short _admissionMask;
 }
 
@@ -27,6 +29,7 @@
 @property(readonly) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (BOOL)setAdmissionManualType:(_Bool)arg1 error:(id *)arg2;
 - (BOOL)requestStatisticFromDevice:(id)arg1 statistic:(long long)arg2 forHistoryWindow:(id)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
 - (BOOL)requestPeerForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(long long)arg4 error:(id *)arg5 handler:(CDUnknownBlockType)arg6;
@@ -49,7 +52,7 @@
 - (id)fullNameFromString:(id)arg1 clientId:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)setResourceAvailabilityBlockWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)setResourceDispatch:(id *)arg1;
-- (void)callListOfCallbacks:(id)arg1 token:(int)arg2 oneshotCall:(BOOL)arg3;
+- (void)callListOfCallbacks:(id)arg1 token:(int *)arg2 oneshotCall:(BOOL)arg3;
 - (BOOL)setTrendBlockForValue:(id)arg1 withConfig:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 - (BOOL)admissionCheckOfValue:(id)arg1 type:(long long)arg2 options:(id)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
 - (BOOL)admissionCheckOfValue:(id)arg1 andOccurredWithValue:(id)arg2 cost:(long long)arg3 type:(long long)arg4 options:(id)arg5 error:(id *)arg6 handler:(CDUnknownBlockType)arg7;

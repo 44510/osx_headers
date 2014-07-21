@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSArray *_phoneNumbers;
     GEOMapServiceTraits *_traits;
     BOOL _canceled;
+    BOOL _allowCellularDataForLookup;
 }
 
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic, getter=isCanceled) BOOL canceled; // @synthesize canceled=_canceled;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithPhoneNumbers:(id)arg1 traits:(id)arg2;
+- (id)initWithPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

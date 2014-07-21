@@ -9,13 +9,13 @@
 #import "MVTerminationHandler.h"
 #import "NSWindowDelegate.h"
 
-@class FlippedView, NSDate, NSMutableArray, NSPanel, NSScrollView, NSString, NSTimer;
+@class NSDate, NSMutableArray, NSPanel, NSScrollView, NSStackView, NSString, NSTimer;
 
 @interface ActivityViewer : NSObject <MVTerminationHandler, NSWindowDelegate>
 {
     NSMutableArray *_entries;
     BOOL _userIsBeingPromptedForTermination;
-    FlippedView *_docView;
+    NSStackView *_docView;
     NSScrollView *_scrollView;
     NSPanel *_window;
     NSTimer *_updateTimer;
@@ -27,7 +27,7 @@
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) NSPanel *window; // @synthesize window=_window;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property(nonatomic) __weak FlippedView *docView; // @synthesize docView=_docView;
+@property(nonatomic) __weak NSStackView *docView; // @synthesize docView=_docView;
 - (void).cxx_destruct;
 - (struct CGRect)windowWillUseStandardFrame:(id)arg1 defaultFrame:(struct CGRect)arg2;
 - (void)windowWillClose:(id)arg1;
@@ -40,7 +40,6 @@
 - (BOOL)needsToPromptUserBeforeTermination:(id)arg1;
 - (long long)countOfBackgroundActivities;
 - (BOOL)hasBackgroundActivity;
-- (void)_tileViews;
 - (void)removeEntry:(id)arg1;
 - (void)_appendEntry:(id)arg1;
 - (void)_addViewToViewerWindow:(id)arg1;

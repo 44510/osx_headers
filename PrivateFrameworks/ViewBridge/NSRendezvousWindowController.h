@@ -25,6 +25,7 @@
 @property(readonly) NSWindow *window; // @synthesize window=_window;
 - (unsigned long long)acceptableStyleMask;
 - (unsigned long long)awakeFromRemoteView;
+- (id)objectToObserveForKey:(id)arg1 withWindow:(id)arg2;
 - (unsigned char)inclusiveLayerBackOverride;
 - (id)effectiveParentViewServiceMarshal;
 - (void)loadView;

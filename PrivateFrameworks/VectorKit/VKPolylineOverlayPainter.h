@@ -22,7 +22,7 @@
     struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager>> _trafficManager;
     struct unique_ptr<vk::TrafficLayer, std::__1::default_delete<vk::TrafficLayer>> _trafficLayer;
     struct unique_ptr<vk::RouteLineArrowManager, std::__1::default_delete<vk::RouteLineArrowManager>> _arrowManager;
-    struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>> _arrowLayer;
+    struct vector<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer>>>> _arrowLayers;
     struct unique_ptr<vk::RouteLineManager, std::__1::default_delete<vk::RouteLineManager>> _routeLineManager;
     struct unique_ptr<vk::RouteLineLayer, std::__1::default_delete<vk::RouteLineLayer>> _routeLineLayer;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState>> _debugRenderState;

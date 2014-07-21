@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_saveElementsSoon;
 - (BOOL)isValidElement:(id)arg1;
 - (void)removeElement:(id)arg1;
-- (void)addElement:(id)arg1;
+- (id)addElement:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_unregisterElement:(id)arg1;
 - (void)_registerElement:(id)arg1;

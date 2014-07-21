@@ -46,7 +46,6 @@
 - (void)stopProgressIndicator;
 - (void)startProgressIndicator;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)_setupConstraints;
 - (void)_createPrivateStorageSession;
 
 @end

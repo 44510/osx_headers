@@ -117,9 +117,7 @@
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)attachmentsDirectoryForMessage:(id)arg1;
 - (void)setColor:(id)arg1 highlightTextOnly:(BOOL)arg2 forMessages:(id)arg3;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2;
+- (void)setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (id)async_setFlagWithKey:(id)arg1 state:(BOOL)arg2 forMessages:(id)arg3;
 - (id)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;

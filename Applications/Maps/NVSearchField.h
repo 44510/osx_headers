@@ -6,37 +6,33 @@
 
 #import "NVDropTargetSearchField.h"
 
-#import "NSPopoverDelegate.h"
 #import "NSTextFieldDelegate.h"
 #import "NVRecentsViewControllerDelegate.h"
 
-@class CNContactPicker, NSString, NVRecentsViewController;
+@class NSString, NVRecentsViewController;
 
 __attribute__((visibility("hidden")))
-@interface NVSearchField : NVDropTargetSearchField <NSPopoverDelegate, NVRecentsViewControllerDelegate, NSTextFieldDelegate>
+@interface NVSearchField : NVDropTargetSearchField <NVRecentsViewControllerDelegate, NSTextFieldDelegate>
 {
     unsigned long long _displayType;
-    NVRecentsViewController *_recentsPopover;
-    CNContactPicker *_bookmarksPopover;
-    BOOL _showingPopover;
-    BOOL _closingPopover;
+    NVRecentsViewController *_recentsController;
+    BOOL _showingMenu;
+    BOOL _closingMenu;
 }
 
 @property(nonatomic) unsigned long long displayType; // @synthesize displayType=_displayType;
 - (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)recentsViewControllerShouldMakeSearchFieldFirstResponder:(id)arg1;
+- (void)recentsViewController:(id)arg1 selectedContact:(id)arg2 address:(id)arg3;
 - (void)recentsViewController:(id)arg1 selectedPlaceOrTrip:(id)arg2;
+- (id)currentMainWindowController;
 - (void)recentsViewControllerSelectedSavedLocations:(id)arg1;
-- (void)popoverWillClose:(id)arg1;
-- (BOOL)popoverShouldClose:(id)arg1;
-- (BOOL)popoverShouldDetach:(id)arg1;
-- (void)closePopover;
-- (void)showPopoverIfNecessary;
-- (void)updatePopover;
+- (void)closeMenu;
+- (void)showMenuIfNecessary;
+- (void)updateMenu;
 - (BOOL)isViewOrSubviewFirstResponder:(id)arg1;
-- (id)bookmarksPopover;
-- (id)recentsPopover;
+- (id)recentsController;
 - (BOOL)becomeFirstResponder;
 - (void)textDidChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

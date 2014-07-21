@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class CALayer, FIAirDropViewGutsController, FIIconViewICloudSortViewController, FIScrollViewMirrorView, FI_IActionButtonCell, FI_IPropertyValueExtractor, FI_NewFolderController, FI_TAirDropDiscoveryController, FI_TAirDropLegacyModePopoverViewController, FI_TAirDropProgressLayer, FI_TBrowserBackgroundView, FI_TBrowserViewDataSource, FI_TBrowserViewSwitchAnimator, FI_TColumnPreviewController, FI_TColumnViewController, FI_TDelayedPopulationViewController, FI_TDrawRectView, FI_TFileSizeFormatter, FI_TFloatingInputView, FI_TGradientSeparator, FI_TICloudNoDocumentsViewController, FI_TIconView, FI_TIconViewCellOffscreenRenderer, FI_TIconViewSettings, FI_TImageView, FI_TInlineCancelButtonLayer, FI_TInlinePreviewData, FI_TInlineProgressBarLayer, FI_TLayer, FI_TLayoutBinder, FI_TListHeaderCellView, FI_TListViewSettings, FI_TNodeViewSettings, FI_TPopover, FI_TPopoverController, FI_TProgressView, FI_TProgressWindowController, FI_TQLPreviewViewZoomController, FI_TScrollView, FI_TShrinkToFitWindow, FI_TSidebarSplitView, FI_TSplitView, FI_TStandardStatusViewController, FI_TTagColumnTableViewController, FI_TTagEditorController, FI_TTagOperationDelegate, FI_TTagSuggestionsWindowController, FI_TTaggingSuggestionsViewController, FI_TTargetActionFunctor, FI_TTextField, FI_TTextWithTitleFieldImpl, FI_TTitleField, FI_TUpdateLayerView, FI_TValidatingDateFormatter, FI_TView, FI_TViewController, FI_TWindowHistory, NSArray, NSColor, NSData, NSDate, NSDateComponents, NSDictionary, NSFont, NSFormatter, NSImage, NSImageView, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject, NSOperationQueue, NSString, NSTimer, NSTrackingArea, NSURL, NSView, NSWindow, QLPreviewPanel, SFAirDropDiscoveryController, SFWirelessSettingsController, TBackupContainerDelegate, TBulkRenameController;
+@class CALayer, FIAirDropViewGutsController, FIDisabledScrollingScrollView, FIIconViewICloudSortViewController, FIScrollViewMirrorView, FITopBarTitlebarAccessoryViewController, FI_IActionButtonCell, FI_IPropertyValueExtractor, FI_NewFolderController, FI_TAirDropDiscoveryController, FI_TAirDropLegacyModePopoverViewController, FI_TAirDropProgressLayer, FI_TBrowserBackgroundView, FI_TBrowserViewDataSource, FI_TBrowserViewSwitchAnimator, FI_TColumnPreviewController, FI_TColumnViewController, FI_TDelayedPopulationViewController, FI_TDrawRectView, FI_TFileSizeFormatter, FI_TFloatingInputView, FI_TGradientSeparator, FI_TICloudNoDocumentsViewController, FI_TIconView, FI_TIconViewCellOffscreenRenderer, FI_TIconViewSettings, FI_TImageView, FI_TInlineCancelButtonLayer, FI_TInlinePreviewData, FI_TInlineProgressBarLayer, FI_TLayer, FI_TLayoutBinder, FI_TListHeaderCellView, FI_TListViewSettings, FI_TNodeViewSettings, FI_TPopover, FI_TPopoverController, FI_TProgressView, FI_TProgressWindowController, FI_TQLPreviewViewZoomController, FI_TScrollView, FI_TShrinkToFitWindow, FI_TSidebarSplitView, FI_TSplitView, FI_TStandardStatusViewController, FI_TTagColumnTableViewController, FI_TTagEditorController, FI_TTagOperationDelegate, FI_TTagSuggestionsWindowController, FI_TTaggingSuggestionsViewController, FI_TTargetActionFunctor, FI_TTextField, FI_TTextWithTitleFieldImpl, FI_TTitleField, FI_TUpdateLayerView, FI_TValidatingDateFormatter, FI_TView, FI_TViewController, FI_TWindowHistory, NSArray, NSColor, NSData, NSDate, NSDateComponents, NSDictionary, NSFont, NSFormatter, NSImage, NSImageView, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject, NSOperationQueue, NSString, NSTimer, NSTrackingArea, NSURL, NSView, NSWindow, QLPreviewPanel, SFAirDropDiscoveryController, SFWirelessSettingsController, TBackupContainerDelegate, TBulkRenameController;
 
 #pragma mark Blocks
 
@@ -489,20 +489,8 @@ struct TInfoExtractor {
     struct TMutex _field1;
     struct TInfoExtractorThread *_field2;
     unsigned long long _field3;
-    struct function<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-        struct function<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-            struct type _field1;
-            struct __base<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> *_field2;
-        } _field1;
-        struct TNSRef<void (^)(const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> _field2;
-    } _field4;
-    struct function<bool (const TFENode &, TInfoExtractorData &)> {
-        struct function<bool (const TFENode &, TInfoExtractorData &)> {
-            struct type _field1;
-            struct __base<bool (const TFENode &, TInfoExtractorData &)> *_field2;
-        } _field1;
-        struct TNSRef<bool (^)(const TFENode &, TInfoExtractorData &)> _field2;
-    } _field5;
+    struct function<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> _field4;
+    struct function<bool (const TFENode &, TInfoExtractorData &)> _field5;
     _Bool _field6;
 };
 
@@ -635,12 +623,20 @@ struct TNSRef<FIAirDropViewGutsController *> {
     FIAirDropViewGutsController *fRef;
 };
 
+struct TNSRef<FIDisabledScrollingScrollView *> {
+    FIDisabledScrollingScrollView *fRef;
+};
+
 struct TNSRef<FIIconViewICloudSortViewController *> {
     FIIconViewICloudSortViewController *fRef;
 };
 
 struct TNSRef<FIScrollViewMirrorView *> {
     FIScrollViewMirrorView *fRef;
+};
+
+struct TNSRef<FITopBarTitlebarAccessoryViewController *> {
+    FITopBarTitlebarAccessoryViewController *fRef;
 };
 
 struct TNSRef<FI_IActionButtonCell *> {
@@ -911,10 +907,6 @@ struct TNSRef<NSFormatter *> {
     NSFormatter *fRef;
 };
 
-struct TNSRef<NSImage *(^)(TFENode, double)> {
-    CDUnknownBlockType _field1;
-};
-
 struct TNSRef<NSImage *> {
     NSImage *fRef;
 };
@@ -991,10 +983,6 @@ struct TNSRef<TBulkRenameController *> {
     TBulkRenameController *fRef;
 };
 
-struct TNSRef<bool (^)(const TFENode &, TInfoExtractorData &)> {
-    CDUnknownBlockType _field1;
-};
-
 struct TNSRef<id<FI_TAirDropNotAvailableDelegateProtocol>> {
     id fRef;
 };
@@ -1005,30 +993,6 @@ struct TNSRef<id<TStdAlertSheetClientProtocol>> {
 
 struct TNSRef<id> {
     id fRef;
-};
-
-struct TNSRef<void (^)()> {
-    CDUnknownBlockType fRef;
-};
-
-struct TNSRef<void (^)(FIAirDropListViewCellView *)> {
-    CDUnknownBlockType fRef;
-};
-
-struct TNSRef<void (^)(const TFENode &)> {
-    CDUnknownBlockType fRef;
-};
-
-struct TNSRef<void (^)(const TFENodeVector &, const TError &)> {
-    CDUnknownBlockType fRef;
-};
-
-struct TNSRef<void (^)(const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-    CDUnknownBlockType _field1;
-};
-
-struct TNSRef<void (^)(long)> {
-    CDUnknownBlockType fRef;
 };
 
 struct TNewFolderAction {
@@ -1133,7 +1097,7 @@ struct TNodeToChildrenMap {
 };
 
 struct TNotificationCenterObserver {
-    NSObject *fObserver;
+    struct TNSRef<NSObject *> fFunctorGlue;
     struct TString fNotificationName;
     id fObject;
 };
@@ -1150,13 +1114,7 @@ struct TPromiseDragReceiverThread {
     _Bool _field2;
     struct _opaque_pthread_t *_field3;
     struct TThreadSafeQueue<TNSRef<NSURL *>> _field4;
-    struct function<void (const TFENodeVector &, const TError &)> {
-        struct function<void (const TFENodeVector &, const TError &)> {
-            struct type _field1;
-            struct __base<void (const TFENodeVector &, const TError &)> *_field2;
-        } _field1;
-        struct TNSRef<void (^)(const TFENodeVector &, const TError &)> _field2;
-    } _field5;
+    struct function<void (const TFENodeVector &, const TError &)> _field5;
     _Bool _field6;
     _Bool _field7;
 };
@@ -1434,6 +1392,51 @@ struct _opaque_pthread_mutex_t {
 };
 
 struct dispatch_queue_s;
+
+struct function<NSImage *(TFENode, double)> {
+    struct type _field1;
+    struct __base<NSImage *(TFENode, double)> *_field2;
+};
+
+struct function<bool (const TFENode &, TInfoExtractorData &)> {
+    struct type _field1;
+    struct __base<bool (const TFENode &, TInfoExtractorData &)> *_field2;
+};
+
+struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+};
+
+struct function<void (FIAirDropListViewCellView *)> {
+    struct type __buf_;
+    struct __base<void (FIAirDropListViewCellView *)> *__f_;
+};
+
+struct function<void (NSNotification *)> {
+    struct type __buf_;
+    struct __base<void (NSNotification *)> *__f_;
+};
+
+struct function<void (const TFENode &)> {
+    struct type __buf_;
+    struct __base<void (const TFENode &)> *__f_;
+};
+
+struct function<void (const TFENodeVector &, const TError &)> {
+    struct type __buf_;
+    struct __base<void (const TFENodeVector &, const TError &)> *__f_;
+};
+
+struct function<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
+    struct type _field1;
+    struct __base<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> *_field2;
+};
+
+struct function<void (long)> {
+    struct type __buf_;
+    struct __base<void (long)> *__f_;
+};
 
 struct list<TNSRef<NSURL *>, std::__1::allocator<TNSRef<NSURL *>>> {
     struct __list_node_base<TNSRef<NSURL *>, void *> {
@@ -2063,6 +2066,14 @@ struct vector<TMDQueryAliasNode::SearchScopeDefinition, std::__1::allocator<TMDQ
     } _field3;
 };
 
+struct vector<TNSRef<FIScrollViewMirrorView *>, std::__1::allocator<TNSRef<FIScrollViewMirrorView *>>> {
+    struct TNSRef<FIScrollViewMirrorView *> *__begin_;
+    struct TNSRef<FIScrollViewMirrorView *> *__end_;
+    struct __compressed_pair<TNSRef<FIScrollViewMirrorView *>*, std::__1::allocator<TNSRef<FIScrollViewMirrorView *>>> {
+        struct TNSRef<FIScrollViewMirrorView *> *__first_;
+    } __end_cap_;
+};
+
 struct vector<TNSRef<NSURL *>, std::__1::allocator<TNSRef<NSURL *>>> {
     struct TNSRef<NSURL *> *_field1;
     struct TNSRef<NSURL *> *_field2;
@@ -2135,105 +2146,42 @@ struct vector<std::__1::unique_ptr<TIconLayoutBitmap, std::__1::default_delete<T
     } _field3;
 };
 
-#if 0
-// Names with conflicting types:
-typedef struct ?<NSImage *(TFENode, double)> {
-    struct type _field1;
-    struct __base<NSImage *(TFENode, double)> *_field2;
-} function_ef29e158;
-
-typedef struct ?<bool (const TFENode &, TInfoExtractorData &)> {
-    struct type _field1;
-    struct __base<bool (const TFENode &, TInfoExtractorData &)> *_field2;
-} function_67946993;
-
-typedef struct ?<void ()> {
-    struct type __buf_;
-    struct __base<void ()> *__f_;
-} function_f9feaa7d;
-
-typedef struct ?<void (FIAirDropListViewCellView *)> {
-    struct type __buf_;
-    struct __base<void (FIAirDropListViewCellView *)> *__f_;
-} function_988d70bf;
-
-typedef struct ?<void (const TFENode &)> {
-    struct type __buf_;
-    struct __base<void (const TFENode &)> *__f_;
-} function_35ade228;
-
-typedef struct ?<void (const TFENodeVector &, const TError &)> {
-    struct type __buf_;
-    struct __base<void (const TFENodeVector &, const TError &)> *__f_;
-} function_85df7881;
-
-typedef struct ?<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-    struct type _field1;
-    struct __base<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> *_field2;
-} function_ebaa1d07;
-
-typedef struct ?<void (long)> {
-    struct type __buf_;
-    struct __base<void (long)> *__f_;
-} function_2d7db078;
-
-typedef struct ?<NSImage *(TFENode, double)> {
-    struct function<NSImage *(TFENode, double)> {
-        struct type _field1;
-        struct __base<NSImage *(TFENode, double)> *_field2;
-    } _field1;
-    struct TNSRef<NSImage *(^)(TFENode, double)> _field2;
-} function_a54c24b5;
-
-typedef struct ?<bool (const TFENode &, TInfoExtractorData &)> {
-    struct function<bool (const TFENode &, TInfoExtractorData &)> {
-        struct type _field1;
-        struct __base<bool (const TFENode &, TInfoExtractorData &)> *_field2;
-    } _field1;
-    struct TNSRef<bool (^)(const TFENode &, TInfoExtractorData &)> _field2;
-} function_ee22d9c0;
-
-typedef struct ?<void ()> {
-    function_f9feaa7d fStandardFunction;
-    struct TNSRef<void (^)()> fManagedBlock;
-} function_e430924f;
-
-typedef struct ?<void (FIAirDropListViewCellView *)> {
-    function_988d70bf fStandardFunction;
-    struct TNSRef<void (^)(FIAirDropListViewCellView *)> fManagedBlock;
-} function_06505f9d;
-
-typedef struct ?<void (const TFENode &)> {
-    function_35ade228 fStandardFunction;
-    struct TNSRef<void (^)(const TFENode &)> fManagedBlock;
-} function_966f7bb5;
-
-typedef struct ?<void (const TFENodeVector &, const TError &)> {
-    function_85df7881 fStandardFunction;
-    struct TNSRef<void (^)(const TFENodeVector &, const TError &)> fManagedBlock;
-} function_40a2a9af;
-
-typedef struct ?<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-    struct function<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> {
-        struct type _field1;
-        struct __base<void (const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> *_field2;
-    } _field1;
-    struct TNSRef<void (^)(const std::__1::vector<TInfoExtractorData, std::__1::allocator<TInfoExtractorData>>&)> _field2;
-} function_31d84ef5;
-
-typedef struct ?<void (long)> {
-    function_2d7db078 fStandardFunction;
-    struct TNSRef<void (^)(long)> fManagedBlock;
-} function_1729d245;
-
-#endif
-
 #pragma mark Typedef'd Structures
 
 // Template types
 typedef struct TRef<TUndoableAction *, TRefCountedRetainReleasePolicy> {
     struct TUndoableAction *fRef;
 } TRef_9e01da98;
+
+typedef struct function<NSImage *(TFENode, double)> {
+    struct type _field1;
+    struct __base<NSImage *(TFENode, double)> *_field2;
+} function_ef29e158;
+
+typedef struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+} function_f9feaa7d;
+
+typedef struct function<void (FIAirDropListViewCellView *)> {
+    struct type __buf_;
+    struct __base<void (FIAirDropListViewCellView *)> *__f_;
+} function_988d70bf;
+
+typedef struct function<void (NSNotification *)> {
+    struct type __buf_;
+    struct __base<void (NSNotification *)> *__f_;
+} function_5450a8ab;
+
+typedef struct function<void (const TFENode &)> {
+    struct type __buf_;
+    struct __base<void (const TFENode &)> *__f_;
+} function_35ade228;
+
+typedef struct function<void (long)> {
+    struct type __buf_;
+    struct __base<void (long)> *__f_;
+} function_2d7db078;
 
 typedef struct map<TFENode, CGRect, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, CGRect>>> {
     struct __tree<std::__1::__value_type<TFENode, CGRect>, std::__1::__map_value_compare<TFENode, std::__1::__value_type<TFENode, CGRect>, std::__1::less<TFENode>, true>, std::__1::allocator<std::__1::__value_type<TFENode, CGRect>>> {

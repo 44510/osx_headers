@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int quadIndex; // @synthesize quadIndex=_quadIndex;
 @property(nonatomic) unsigned int atlasIndex; // @synthesize atlasIndex=_atlasIndex;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

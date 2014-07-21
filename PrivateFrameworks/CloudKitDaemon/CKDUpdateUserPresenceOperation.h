@@ -27,7 +27,7 @@
 @property(retain, nonatomic) CKShareID *shareID; // @synthesize shareID=_shareID;
 @property(copy, nonatomic) CDUnknownBlockType updateCompletionBlock; // @synthesize updateCompletionBlock=_updateCompletionBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleUserPresences:(id)arg1 etag:(id)arg2 response:(id)arg3;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

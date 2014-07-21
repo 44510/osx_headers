@@ -18,10 +18,7 @@
     NSData *_suggestionEntryMetadata;
     NSData *_suggestionMetadata;
     GEOPDViewportInfo *_viewportInfo;
-    struct {
-        unsigned int maxResults:1;
-        unsigned int sortOrder:1;
-    } _has;
+    CDStruct_6c9bcd7c _has;
 }
 
 @property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;

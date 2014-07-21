@@ -9,13 +9,12 @@
 @class FAFamilyMember, NSString, PRRequest;
 
 @protocol PRRequestDelegate <NSObject>
-- (void)permissionRequest:(PRRequest *)arg1 didChangeStatusTo:(unsigned long long)arg2;
-
-@optional
 - (NSString *)responseNotificationStringForRequest:(PRRequest *)arg1 fromFamilyMember:(FAFamilyMember *)arg2;
 - (NSString *)requestNotificationStringForRequest:(PRRequest *)arg1 fromFamilyMember:(FAFamilyMember *)arg2;
 - (void)attemptLocalApprovalForRequest:(PRRequest *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)performCancellationForDeclinedRequest:(PRRequest *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)performAuthorizationForApprovedRequest:(PRRequest *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
+- (void)permissionRequest:(PRRequest *)arg1 didChangeStatusTo:(unsigned long long)arg2;
+- (void)didCreateNewPermissionRequest:(PRRequest *)arg1;
 @end
 

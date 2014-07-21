@@ -21,6 +21,7 @@
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
+- (BOOL)allowsVibrancy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

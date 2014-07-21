@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)setDoubleValue:(double)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setIntegerValue:(long long)arg1;
-- (void)_checkForAndAppendSuffix;
+- (BOOL)_hasFullSelection;
+- (void)_checkForAndAppendSuffixWithFullSelection:(BOOL)arg1;
 - (struct _NSRange)textView:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange)arg2 toCharacterRange:(struct _NSRange)arg3;
 
 // Remaining properties

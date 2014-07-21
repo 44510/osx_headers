@@ -16,7 +16,6 @@
 @property(readonly) CALMainController *mainController; // @synthesize mainController=_mainController;
 - (void).cxx_destruct;
 - (void)restoreUserActivityState:(id)arg1;
-- (void)showWindow:(id)arg1;
 - (id)initWithDelegateUID:(id)arg1;
 
 @end

@@ -14,6 +14,8 @@
 @interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher, CKXPCDaemon>
 {
     BOOL _sandboxed;
+    BOOL _canUsePackages;
+    BOOL _canOpenByID;
     int _pid;
     CKDClientContext *_context;
     NSOperationQueue *_operationQueue;
@@ -25,6 +27,8 @@
 }
 
 + (id)sharedClientThrottlingOperationQueue;
+@property(nonatomic) BOOL canOpenByID; // @synthesize canOpenByID=_canOpenByID;
+@property(nonatomic) BOOL canUsePackages; // @synthesize canUsePackages=_canUsePackages;
 @property(retain, nonatomic) CKWatchdog *watchdog; // @synthesize watchdog=_watchdog;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
@@ -35,6 +39,7 @@
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) CKDClientContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (BOOL)canUsePackagesWithError:(id *)arg1;
 - (BOOL)canReadMMCSItem:(id)arg1 error:(id *)arg2;
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
@@ -46,13 +51,12 @@
 - (void)clearRecordCacheWithDatabaseScope:(long long)arg1;
 - (void)clearAssetCacheWithDatabaseScope:(long long)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
-- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setContainerID:(id)arg1 bundleID:(id)arg2 accountInfoOverride:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)_bundleURL;
 - (id)_executablePath;
 - (void)cancelOperationWithIdentifier:(id)arg1;
+- (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)getAccountOverrides:(CDUnknownBlockType)arg1;
 - (void)tossConfigWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetAllApplicationPermissionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -60,6 +64,7 @@
 - (void)accountChangedWithID:(id)arg1;
 - (void)accountsDidRevokeAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)accountsDidGrantAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
+- (void)performFetchUserQuotaOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performUpdateUserPresenceOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performFetchLikesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performLikeItemsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
@@ -75,6 +80,8 @@
 - (void)performFetchSubscriptionsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performModifySubscriptionsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performQueryOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)getNewWebSharingIdentity:(CDUnknownBlockType)arg1;
+- (void)performModifyWebSharingOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performPublishAssetsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performFetchRecordVersionsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performFetchRecordChangesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

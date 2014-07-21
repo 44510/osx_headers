@@ -11,10 +11,12 @@
 @interface ITBackingHostView : NSView <ITViewAssociating>
 {
     struct weak_ptr<ITView> _owner;
-    BOOL _accessibilityIgnored;
     unsigned long long _accessibilityCapacityHint;
+    BOOL _accessibilityIgnored;
+    BOOL _debugDrawing;
 }
 
+@property(nonatomic) BOOL debugDrawing; // @synthesize debugDrawing=_debugDrawing;
 @property(nonatomic) BOOL ignored; // @synthesize ignored=_accessibilityIgnored;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -37,6 +39,8 @@
 - (id)description;
 - (void)rightMouseDown:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)viewWillDraw;
+- (void)prepareContentInRect:(struct CGRect)arg1;
 - (struct CGRect)_opaqueRect;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;

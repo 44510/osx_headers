@@ -15,12 +15,11 @@
 - (void)mouseDown:(id)arg1;
 - (void)uncollapse;
 - (void)collapse;
-- (void)setMinimumPosition:(double)arg1;
-- (double)minimumPosition;
-- (void)setOriginalPosition:(double)arg1;
-- (double)originalPosition;
-- (BOOL)expanded;
-- (BOOL)collapsed;
+@property double minimumPosition;
+@property double originalPosition;
+@property double dividerPosition;
+@property(readonly) BOOL expanded;
+@property(readonly) BOOL collapsed;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

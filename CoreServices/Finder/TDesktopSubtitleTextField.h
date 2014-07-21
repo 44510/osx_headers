@@ -10,6 +10,7 @@
 {
 }
 
+- (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;

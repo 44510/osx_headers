@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setCanDrawSubviewsIntoLayer:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)_removeSubview:(id)arg1;
 - (void)_addSubview:(id)arg1;

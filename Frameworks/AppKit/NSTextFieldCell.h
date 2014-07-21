@@ -48,11 +48,13 @@
 - (void)_windowChangedKeyStateInView:(id)arg1;
 - (BOOL)_needRedrawOnWindowChangedKeyState;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
+- (BOOL)_shouldStyleUneditableTextInView:(id)arg1;
 - (BOOL)_permitDarkenedTextForDisabled;
 - (BOOL)_textDimsWhenDisabled;
 - (void)_updateCoreUIOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
 - (int)_effectiveBackgroundStyleInView:(id)arg1;
 - (long long)interiorBackgroundStyle;
+- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
 - (id)setUpFieldEditorAttributes:(id)arg1;
 - (void)_getTextColor:(id *)arg1 backgroundColor:(id *)arg2;
 @property(copy) NSArray *allowedInputSourceLocales;

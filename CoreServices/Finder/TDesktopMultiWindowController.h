@@ -49,7 +49,6 @@
 - (void)removeWindowController:(id)arg1;
 - (void)addWindowControllerWhileLocked:(id)arg1;
 - (void)addWindowController:(id)arg1;
-- (void)displayChangedNotification:(id)arg1;
 - (void)syncWithScreens;
 - (void)tearDownWindowController:(id)arg1;
 - (id)createWindowControllerForScreen:(id)arg1;

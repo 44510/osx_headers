@@ -6,13 +6,14 @@
 
 #import <VectorKit/VKTile.h>
 
-@class GEOVoltaireRasterTileTrafficData, NSArray, NSMutableArray;
+@class GEOVoltaireRasterTileTrafficData, NSArray, NSMutableArray, VKSharedResources;
 
 __attribute__((visibility("hidden")))
 @interface VKRasterTrafficTile : VKTile
 {
     GEOVoltaireRasterTileTrafficData *_modelTile;
     NSMutableArray *_incidents;
+    VKSharedResources *_sharedResources;
     struct unique_ptr<vk::TrafficLayer, std::__1::default_delete<vk::TrafficLayer>> _trafficLayer;
 }
 
@@ -23,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)_buildIncidents;
 - (void)_buildGGLLayer:(struct Device *)arg1;
 @property(readonly, nonatomic) struct TrafficLayer *trafficLayer;
-- (id)initWithKey:(const struct VKTileKey *)arg1 downloadKey:(const struct _GEOTileKey *)arg2 trafficData:(id)arg3 device:(struct Device *)arg4;
+- (id)initWithKey:(const struct VKTileKey *)arg1 downloadKey:(const struct _GEOTileKey *)arg2 sharedResources:(id)arg3 trafficData:(id)arg4;
 
 @end
 

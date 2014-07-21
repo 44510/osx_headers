@@ -86,6 +86,7 @@
 - (void)_cacheReusableViewController:(id)arg1 identifier:(id)arg2;
 - (id)_effectiveContentView;
 - (void)_updateContentView;
+- (void)_removeFromResponderChainOfView:(id)arg1;
 - (void)_viewFrameChanged:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingView:(id)arg1;

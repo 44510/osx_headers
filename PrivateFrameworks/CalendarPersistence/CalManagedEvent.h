@@ -153,7 +153,7 @@
 @property(readonly) BOOL changesWillResultIniMIPScheduling;
 - (id)checkAndPromptForConflictsWithStatus:(int)arg1 conflictDecisionBlock:(CDUnknownBlockType)arg2;
 - (void)createExceptionsAndMessages:(id)arg1 forConflicts:(id)arg2 sender:(id)arg3;
-- (BOOL)replyWithStatus:(int)arg1 fromMessage:(id)arg2 putInCalendar:(id)arg3 conflictDecisionBlock:(CDUnknownBlockType)arg4;
+- (BOOL)replyWithStatus:(int)arg1 fromMessage:(id)arg2 putInCalendar:(id)arg3 conflictDecisionBlock:(CDUnknownBlockType)arg4 handledMessage:(char *)arg5;
 - (void)_finishNonImplicitReplyOnMasterEvent:(id)arg1 forEvents:(id)arg2 status:(int)arg3 putInCalendar:(id)arg4 context:(id)arg5;
 - (void)_finishImplicitReplyOnMasterEvent:(id)arg1 forEvents:(id)arg2 status:(int)arg3 putInCalendar:(id)arg4;
 - (void)sendiTIP:(int)arg1 withInfo:(id)arg2 changeRequest:(id *)arg3;

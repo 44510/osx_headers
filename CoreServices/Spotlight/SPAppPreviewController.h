@@ -6,12 +6,17 @@
 
 #import "SPResultWithSubItemsPreviewControllerViewController.h"
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface SPAppPreviewController : SPResultWithSubItemsPreviewControllerViewController
 {
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedPreviewController;
+- (void).cxx_destruct;
 - (void)setupForObject:(id)arg1;
+- (id)init;
 
 @end
 

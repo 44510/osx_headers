@@ -23,21 +23,23 @@
     NSOperationQueue *_throttlingOperationQueue;
     CKOperationCallbackManager *_callbackManager;
     CKOperationFlowControlManager *_flowControlManager;
-    NSString *_fakeBundleID;
     CKAccountInfo *_accountInfoOverride;
     ACAccountStore *_accountStore;
     NSMutableArray *_sandboxExtensionHandles;
+    NSString *_sourceApplicationBundleIdentifier;
+    NSString *_sourceApplicationSecondaryIdentifier;
 }
 
-+ (void)getAccountOverrides:(CDUnknownBlockType)arg1;
++ (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)containerWithIdentifier:(id)arg1;
 + (id)defaultContainer;
+@property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
+@property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(retain, nonatomic) NSMutableArray *sandboxExtensionHandles; // @synthesize sandboxExtensionHandles=_sandboxExtensionHandles;
 @property(nonatomic) int killSwitchToken; // @synthesize killSwitchToken=_killSwitchToken;
 @property(nonatomic) int statusReportToken; // @synthesize statusReportToken=_statusReportToken;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(copy, nonatomic) CKAccountInfo *accountInfoOverride; // @synthesize accountInfoOverride=_accountInfoOverride;
-@property(retain, nonatomic) NSString *fakeBundleID; // @synthesize fakeBundleID=_fakeBundleID;
 @property(retain, nonatomic) CKOperationFlowControlManager *flowControlManager; // @synthesize flowControlManager=_flowControlManager;
 @property(retain, nonatomic) CKOperationCallbackManager *callbackManager; // @synthesize callbackManager=_callbackManager;
 @property(retain, nonatomic) NSOperationQueue *throttlingOperationQueue; // @synthesize throttlingOperationQueue=_throttlingOperationQueue;
@@ -54,8 +56,6 @@
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
 - (void)setEffectiveClientBundleIdentifier:(id)arg1;
-- (void)setSourceApplicationBundleIdentifier:(id)arg1;
-- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)tossConfigWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -90,6 +90,7 @@
 - (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)discoverAllContactUserInfosWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchUserRecordIDWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getNewWebSharingIdentity:(CDUnknownBlockType)arg1;
 - (void)fetchLikesForItem:(id)arg1 inShareWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setLike:(BOOL)arg1 forItem:(id)arg2 inShareWithID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteCommentWithID:(id)arg1 inShareWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -14,6 +14,7 @@
 }
 
 @property(readonly) PVStaticLinkText *resultPath; // @synthesize resultPath=_resultPath;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)viewWillDraw;
 

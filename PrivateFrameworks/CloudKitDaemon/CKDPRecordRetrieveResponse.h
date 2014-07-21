@@ -22,6 +22,7 @@
 @property(nonatomic) BOOL clientVersionETagMatch; // @synthesize clientVersionETagMatch=_clientVersionETagMatch;
 @property(retain, nonatomic) CKDPRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

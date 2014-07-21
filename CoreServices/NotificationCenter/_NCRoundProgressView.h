@@ -6,12 +6,20 @@
 
 #import "NSView.h"
 
+@class NSObject<OS_dispatch_source>;
+
 @interface _NCRoundProgressView : NSView
 {
+    double _progressTime;
+    double _progressStart;
+    double _progressEnd;
+    double _progressCurrent;
+    NSObject<OS_dispatch_source> *_animation_timer;
     double _progress;
 }
 
-@property double progress; // @synthesize progress=_progress;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
+- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

@@ -97,11 +97,12 @@
 @property(retain) CalEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (void).cxx_destruct;
 - (void)restoreUserActivityState:(id)arg1;
-- (void)userActivityWillSave:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
 - (void)_trackUserActivityType:(id)arg1 activityObject:(id)arg2;
 - (void)trackDateSelection:(id)arg1;
 - (void)trackEventSelection:(id)arg1;
+- (void)_setMainUserActivity:(id)arg1;
+- (id)_mainUserActivity;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)windowWillReturnUndoManager:(id)arg1;
 - (void)closeInlineInspector;
@@ -195,6 +196,7 @@
 - (void)performClose:(id)arg1;
 - (void)performZoom:(id)arg1;
 - (void)performMiniaturize:(id)arg1;
+- (void)windowWillBecomeVisible:(id)arg1;
 - (void)prepareWindowForTermination;
 - (void)saveVisibleDates;
 - (void)saveSidebarState;
@@ -311,6 +313,7 @@
 - (void)beSureWindowIsVisibleForSheet:(BOOL)arg1;
 - (void)saveWindowFrameUsingName:(id)arg1;
 - (void)calendarsDidChange;
+- (void)checkedCalendarsDidChange;
 - (void)deferredSetup;
 - (BOOL)isMainWindowController;
 - (void)windowWillCloseNotification:(id)arg1;

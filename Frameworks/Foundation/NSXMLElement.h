@@ -100,6 +100,7 @@
 - (id)initWithName:(id)arg1 URI:(id)arg2;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
 - (id)initWithLocalName:(id)arg1 URI:(id)arg2;
+- (id)initWithKind:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)initWithName:(id)arg1;
 - (id)init;
 - (void)dealloc;

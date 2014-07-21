@@ -10,21 +10,23 @@
 
 @interface GCMotion : NSObject
 {
-    struct GCAcceleration _gravity;
-    struct GCAcceleration _userAcceleration;
+    CDStruct_31142d93 _gravity;
+    CDStruct_31142d93 _userAcceleration;
     struct GCQuaternion _attitude;
     CDStruct_31142d93 _rotationRate;
-    GCController *controller;
-    CDUnknownBlockType valueChangedHandler;
+    GCController *_controller;
+    CDUnknownBlockType _valueChangedHandler;
 }
 
-@property(copy) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler;
-@property(readonly) __weak GCController *controller; // @synthesize controller;
+@property(copy) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
+@property(readonly) __weak GCController *controller; // @synthesize controller=_controller;
 @property(readonly) CDStruct_31142d93 rotationRate; // @synthesize rotationRate=_rotationRate;
 @property(readonly) struct GCQuaternion attitude; // @synthesize attitude=_attitude;
-@property(readonly) struct GCAcceleration userAcceleration; // @synthesize userAcceleration=_userAcceleration;
-@property(readonly) struct GCAcceleration gravity; // @synthesize gravity=_gravity;
+@property(readonly) CDStruct_31142d93 userAcceleration; // @synthesize userAcceleration=_userAcceleration;
+@property(readonly) CDStruct_31142d93 gravity; // @synthesize gravity=_gravity;
 - (void).cxx_destruct;
+- (void)_stopDeviceMotionUpdates;
+- (void)_startDeviceMotionUpdates;
 - (id)initWithController:(id)arg1;
 
 @end

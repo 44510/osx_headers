@@ -7,6 +7,8 @@
 #import "NSObject.h"
 
 @protocol SHKSharingViewService <NSObject>
+- (void)performQueuedCompletionActions;
+- (void)performQueuedAnimationActionsWithCompletionBlock:(void (^)(void))arg1;
 - (void)proceedWithSharingTransitionOutWithSuccess:(BOOL)arg1 duration:(double)arg2;
 - (void)proceedWithSharingTransitionIn;
 - (void)proceedWithInstantTransitionOut;

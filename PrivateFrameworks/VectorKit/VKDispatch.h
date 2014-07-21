@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultDispatch;
++ (id)stylesheetLoadQueue;
 + (id)preemptiveLoadQueue;
 + (id)textureManagerRootQueue;
 + (id)iconRenderQueue;

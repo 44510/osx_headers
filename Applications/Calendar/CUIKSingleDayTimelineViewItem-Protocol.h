@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) NSDate *end;
 @property(readonly, nonatomic) NSDate *start;
 @property(readonly, nonatomic) NSDate *startWithTravelTime;
+- (void)setTravelTimeHeight:(double)arg1;
 - (void)setVisibleHeight:(double)arg1;
 - (struct CGRect)stagedFrame;
 - (void)setStagedFrame:(struct CGRect)arg1;

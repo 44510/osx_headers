@@ -25,6 +25,8 @@
 @property(copy) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_setDebuggerRunLoop:(struct __CFRunLoop *)arg1;
+- (struct __CFRunLoop *)_debuggerRunLoop;
 - (void)_setIncludesNativeCallStackWhenReportingExceptions:(BOOL)arg1;
 - (BOOL)_includesNativeCallStackWhenReportingExceptions;
 - (void)_setRemoteInspectionEnabled:(BOOL)arg1;

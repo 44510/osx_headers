@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

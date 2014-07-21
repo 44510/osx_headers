@@ -71,7 +71,10 @@
 - (id)pageControllerForPageModelController:(id)arg1;
 - (id)currentPageController;
 - (BOOL)_validateCutCopyDelete;
+- (BOOL)validateSelectAll;
 - (void)selectAll:(id)arg1;
+- (BOOL)validateDuplicate;
+- (void)duplicate:(id)arg1;
 - (BOOL)validateDelete;
 - (void)delete:(id)arg1;
 - (BOOL)validatePaste;
@@ -80,6 +83,10 @@
 - (void)copy:(id)arg1;
 - (BOOL)validateCut;
 - (void)cut:(id)arg1;
+- (BOOL)validateRedo;
+- (void)redo:(id)arg1;
+- (BOOL)validateUndo;
+- (void)undo:(id)arg1;
 - (id)signaturesMenu;
 - (void)resetToDefaultToolMode;
 - (id)toolbarButtonItemOfType:(unsigned long long)arg1 style:(unsigned long long)arg2;

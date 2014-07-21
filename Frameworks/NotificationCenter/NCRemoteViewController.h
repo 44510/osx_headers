@@ -61,7 +61,8 @@
 - (void)viewWillInvalidate:(id)arg1;
 - (void)_takeDownRemoteView;
 - (void)_addRemoteView;
-- (BOOL)_setupRemoteView;
+- (void)_setupRemoteView;
+- (void)_setupRemoteViewFailedDueToReason:(id)arg1;
 - (double)remotePlugInDefaultWidth:(id)arg1;
 - (void)remotePlugInDidFailToActivate:(id)arg1;
 - (void)remotePlugInDidDeActivate:(id)arg1;

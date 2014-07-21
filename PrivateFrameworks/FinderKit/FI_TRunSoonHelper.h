@@ -10,11 +10,11 @@ __attribute__((visibility("hidden")))
 @interface FI_TRunSoonHelper : NSObject
 {
     unsigned long long _owningTargetID;
-    function_e430924f _functor;
+    function_f9feaa7d _functor;
     int _dispatchType;
 }
 
-+ (void)postFunctor:(const struct function<void ()> *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
++ (void)postFunctor:(const function_f9feaa7d *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
 + (void)initialize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)post;
 - (void)repost;
 - (id)runLoopModes;
-- (id)initWithFunctor:(const struct function<void ()> *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
+- (id)initWithFunctor:(const function_f9feaa7d *)arg1 withOwningTargetID:(unsigned long long)arg2 andDispatchType:(int)arg3;
 
 @end
 

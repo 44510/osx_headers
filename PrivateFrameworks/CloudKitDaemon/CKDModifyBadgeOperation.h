@@ -8,11 +8,9 @@
 
 @interface CKDModifyBadgeOperation : CKDDatabaseOperation
 {
-    BOOL _thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
-@property(readonly, nonatomic) BOOL thisDeviceOnly; // @synthesize thisDeviceOnly=_thisDeviceOnly;
 @property(readonly, nonatomic) unsigned long long badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void)main;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

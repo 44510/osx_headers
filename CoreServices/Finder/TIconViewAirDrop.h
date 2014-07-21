@@ -27,6 +27,9 @@
     _Bool _isUpdatingAirDropLayout;
     struct map<TFENode, TNSRef<TAirDropPerson *>, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<TAirDropPerson *>>>> _airDropPeople;
     struct TNotificationCenterObserver _infoViewImageIsInvalidObserver;
+    struct TNotificationCenterObserver _airDropScrollViewWillMoveToSuperviewObserver;
+    struct TNotificationCenterObserver _airDropScrollViewDidMoveToSuperviewObserver;
+    struct TNotificationCenterObserver _airDropPersonAnimationCompletedObserver;
 }
 
 + (id)IKOpenGLDefaultPixelFormat;
@@ -71,7 +74,6 @@
 - (_Bool)airDropOverMeAreaWithPocket:(const struct CGPoint *)arg1;
 - (struct CGPoint)airDropMeCenterPoint;
 - (struct CGRect)airDropMeFrame;
-- (void)airDropInfoViewIsInvalid:(id)arg1;
 - (id)airDropInfoView;
 - (id)airDropLayout;
 - (void)configureForAirDrop:(_Bool)arg1 infoViewController:(id)arg2;

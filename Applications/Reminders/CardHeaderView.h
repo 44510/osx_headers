@@ -6,7 +6,7 @@
 
 #import "NSView.h"
 
-@class CardContentViewController, NSButton;
+@class CardContentViewController, NSButton, NSColor;
 
 @interface CardHeaderView : NSView
 {
@@ -20,6 +20,7 @@
 - (void)refresh;
 - (void)cardPlusClicked;
 - (void)updateTitleDate:(id)arg1;
+@property(retain, setter=updateColor:) NSColor *color;
 - (void)updateTitle:(id)arg1;
 - (void)setAddButtonHidden:(BOOL)arg1;
 - (double)titleInset;

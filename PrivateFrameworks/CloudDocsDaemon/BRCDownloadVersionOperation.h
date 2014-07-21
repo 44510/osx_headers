@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
-- (void)_putRecordInGenstore:(id)arg1 stagedFileID:(id)arg2 statInfo:(id)arg3 version:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_putRecordInGenstore:(id)arg1 stageURL:(id)arg2 statInfo:(id)arg3 version:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_stageRecord:(id)arg1 error:(id *)arg2;
 - (id)_stageFileWithRecord:(id)arg1 error:(id *)arg2;
 - (id)_stagePackageWithRecord:(id)arg1 error:(id *)arg2;

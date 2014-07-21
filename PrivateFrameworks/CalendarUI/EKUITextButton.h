@@ -6,14 +6,17 @@
 
 #import "NSButton.h"
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSImage, NSString;
 
 @interface EKUITextButton : NSButton
 {
     NSDictionary *_textAttributes;
     NSString *_text;
+    NSImage *_originalImage;
 }
 
++ (Class)cellClass;
+@property(retain) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain) NSString *text; // @synthesize text=_text;
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 - (void).cxx_destruct;
@@ -22,6 +25,8 @@
 - (BOOL)acceptsFirstResponder;
 - (void)setTitle:(id)arg1 withAttributes:(id)arg2;
 - (BOOL)canBecomeKeyView;
+- (struct CGSize)intrinsicContentSize;
+- (BOOL)allowsVibrancy;
 - (id)init;
 
 @end

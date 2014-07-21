@@ -73,6 +73,7 @@
 - (BOOL)openInMapsWithLaunchOptions:(id)arg1;
 @property(readonly, nonatomic, getter=_sequenceNumber) unsigned int sequenceNumber;
 @property(readonly, nonatomic, getter=_sessionGUID) CDStruct_4bcfbbae sessionGUID;
+@property(readonly, nonatomic, getter=_hasSessionGUID) BOOL hasSessionGUID;
 - (unsigned int)_travelDistanceForTransportType:(int)arg1;
 - (unsigned int)_travelTimeForTransportType:(int)arg1;
 - (int)_recommendedTransportType;

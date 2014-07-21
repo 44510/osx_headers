@@ -45,6 +45,7 @@
 - (void)_handleResetClientCacheWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)noteSyncSessionSucceeded;
 - (void)noteSyncSessionStateWillBeAttempted:(unsigned long long)arg1;
+- (void)noteNetworkStateDidChange;
 - (void)noteServerIsUnavailableWithError:(id)arg1;
 - (void)_noteServerIsUnavailableWithErrorLocked:(id)arg1;
 - (void)_disableRetryAfterLocked;

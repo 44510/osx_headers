@@ -6,16 +6,18 @@
 
 #import "NSViewController.h"
 
+#import "CNContactPickerViewControllerDelegate.h"
 #import "NSTableViewDataSource.h"
 #import "NSTableViewDelegate.h"
 
-@class NSSearchField, NSString, NSTableView, NSView, NVRecentsWindow;
+@class CNContactPickerViewController, NSSearchField, NSString, NSTableView, NSView, NVRecentsWindow;
 
 __attribute__((visibility("hidden")))
-@interface NVRecentsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+@interface NVRecentsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, CNContactPickerViewControllerDelegate>
 {
-    BOOL _showingInPopover;
+    BOOL _showingInMenu;
     NVRecentsWindow *_window;
+    CNContactPickerViewController *_bookmarksController;
     NSSearchField *_positioningView;
     id <NVRecentsViewControllerDelegate> _delegate;
     NSTableView *_tableView;
@@ -24,9 +26,11 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-@property(nonatomic) BOOL showingInPopover; // @synthesize showingInPopover=_showingInPopover;
+@property(nonatomic) BOOL showingInMenu; // @synthesize showingInMenu=_showingInMenu;
 @property(nonatomic) __weak id <NVRecentsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)contactPickerViewController:(id)arg1 didChooseContact:(id)arg2 key:(id)arg3 value:(id)arg4;
+- (void)setFavoritesVisible:(BOOL)arg1;
 - (void)tableViewDidArrowUpBeyondStart:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRow:(long long)arg2;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
@@ -39,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)referenceWindowMoved;
 - (void)showRelativeToView:(id)arg1;
 - (void)_updateRecentsWindowFrameRelativeToView:(id)arg1 maxHeight:(double)arg2;
+- (void)deleteElementAction:(id)arg1;
+- (id)bookmarksController;
 - (id)manager;
 - (id)nibName;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -8,7 +8,7 @@
 
 #import "PBRequesterDelegate.h"
 
-@class GEORequester, NSString, PBRequest;
+@class GEORequester, NSNumber, NSString, PBRequest;
 
 __attribute__((visibility("hidden")))
 @interface _GEOServiceRequesterOp : NSObject <PBRequesterDelegate>
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL _cancelled;
     GEORequester *_requester;
     NSString *_appIdentifier;
+    NSNumber *_serviceTypeNumber;
 }
 
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
@@ -29,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 appIdentifier:(id)arg2 urlType:(unsigned long long)arg3 debugRequestName:(id)arg4;
+- (id)initWithRequest:(id)arg1 appIdentifier:(id)arg2 urlType:(unsigned long long)arg3 debugRequestName:(id)arg4 serviceType:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

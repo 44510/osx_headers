@@ -28,6 +28,7 @@
 - (void)updateWithChanges:(id)arg1;
 - (BOOL)shouldDisplayForEvent:(id)arg1;
 - (id)control;
+- (void)setActiveKeyboardHover:(BOOL)arg1;
 - (id)initWithEventViewController:(id)arg1;
 
 // Remaining properties

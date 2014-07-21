@@ -21,7 +21,7 @@
 @property(copy, nonatomic) CDUnknownBlockType shareInvitationFetchedProgressBlock; // @synthesize shareInvitationFetchedProgressBlock=_shareInvitationFetchedProgressBlock;
 @property(retain, nonatomic) NSArray *shareInvitations; // @synthesize shareInvitations=_shareInvitations;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleShareInvitationFetched:(id)arg1 responseCode:(id)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

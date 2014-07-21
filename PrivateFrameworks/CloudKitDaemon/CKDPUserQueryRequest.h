@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSMutableArray *sortedBys; // @synthesize sortedBys=_sortedBys;
 @property(retain, nonatomic) CKDPUserAlias *alias; // @synthesize alias=_alias;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

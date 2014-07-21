@@ -6,11 +6,11 @@
 
 #import "NSView.h"
 
-#import "CLLocationManagerDelegate.h"
+#import "MKLocationManagerObserver.h"
 
-@class CLLocation, CLLocationManager, MKImageView, MKMapItem, MKUILabel, NSArray, NSColor, NSMutableArray, NSString;
+@class CLLocation, MKImageView, MKLocationManager, MKMapItem, MKUILabel, NSArray, NSColor, NSMutableArray, NSString, NSTimer;
 
-@interface _MKResultView : NSView <CLLocationManagerDelegate>
+@interface _MKResultView : NSView <MKLocationManagerObserver>
 {
     NSArray *_mapItems;
     CLLocation *_referenceLocation;
@@ -20,9 +20,11 @@
     BOOL _selected;
     BOOL _showsDistance;
     NSMutableArray *_resultConstraints;
-    CLLocationManager *_locManager;
+    MKLocationManager *_locManager;
     NSString *_primaryLabelText;
     NSString *_secondaryLabelText;
+    NSTimer *_refLocationTimer;
+    BOOL _significantTime;
     MKUILabel *_nameLabel;
     MKUILabel *_secondaryLabel;
     MKUILabel *_tertiaryLabel;
@@ -44,15 +46,20 @@
 @property(retain, nonatomic) MKUILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) MKUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 - (void).cxx_destruct;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
+- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
+- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (void)locationManagerDidReset:(id)arg1;
+- (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
+- (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)mouseUp:(id)arg1;
 @property(retain, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
+- (void)_invalidateReferenceLocationTimer;
 @property(retain, nonatomic) NSString *secondaryLabelText;
 @property(retain, nonatomic) NSString *primaryLabelText;
 @property(retain, nonatomic) NSArray *mapItems;
 @property(retain, nonatomic) MKMapItem *mapItem;
+- (void)updateLayout;
 - (void)updateSubviews;
 - (double)_expectedHeightForLabels;
 - (id)_defaultSecondaryCategoryLabel;
@@ -66,6 +73,8 @@
 - (struct CGSize)intrinsicContentSize;
 @property(readonly, nonatomic) double preferredHeight;
 - (void)updateConstraints;
+- (void)setNeedsUpdateConstraints;
+- (void)updateImageView;
 - (void)dealloc;
 - (void)_updateSecondaryColors;
 - (void)_updatePrimaryColors;
@@ -78,6 +87,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
 - (id)initWithMapItem:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

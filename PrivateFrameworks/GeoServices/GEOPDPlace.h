@@ -53,6 +53,8 @@
 - (void)dealloc;
 - (id)compactDebugDescription;
 - (id)geoMapItem;
+- (void)setFirstSeenTimestamp:(double)arg1;
+- (id)copyWithStrippedOptionalData;
 - (void)_removeETAComponents;
 - (id)copyWithoutETAComponents;
 - (id)businessURL;

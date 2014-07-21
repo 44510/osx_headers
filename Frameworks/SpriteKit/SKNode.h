@@ -32,6 +32,7 @@
 
 + (id)nodeWithFileNamed:(id)arg1;
 + (id)node;
++ (unsigned long long)hashDataWithBuffer:(char *)arg1 ofSize:(unsigned long long)arg2;
 @property(retain, nonatomic) NSMutableDictionary *userData; // @synthesize userData=_userData;
 @property(copy, nonatomic) SKReachConstraints *reachConstraints; // @synthesize reachConstraints=_reachConstraints;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -104,6 +105,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) shared_ptr_11a7378b _aether;
 - (void)removeAction:(id)arg1;
 - (struct SKCSprite *)csprite;

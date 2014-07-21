@@ -8,19 +8,16 @@
 
 #import "ITViewAssociating.h"
 
-@class ITWebKitViewNSScrollerStyleMonitor;
-
 @interface ITWebKitViewMacOSPrivateWebView : WebView <ITViewAssociating>
 {
     struct weak_ptr<ITWebKitViewMacOS> mOwningITWebKitView;
-    ITWebKitViewNSScrollerStyleMonitor *mScrollerStyleMonitor;
-    _Bool mSkinnedScrollbars;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
+- (id)webView:(id)arg1 plugInViewWithArguments:(id)arg2;
 - (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
 - (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
 - (unsigned long long)webView:(id)arg1 dragSourceActionMaskForPoint:(struct CGPoint)arg2;
@@ -43,14 +40,10 @@
 - (BOOL)mouseDownCanMoveWindow;
 - (BOOL)isOpaque;
 - (shared_ptr_8092bbf7)associatedITView;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 owningITWebKitView:(shared_ptr_f26eb1a3)arg2;
 - (BOOL)enableLinenBackground;
 - (id)_childWebScrollView;
 - (id)_childWebClipView;
-- (void)unskinScrollbars;
-- (void)skinScrollbars;
-- (BOOL)_skinScrollbarsWithClass:(Class)arg1;
 - (void)scrollWheel:(id)arg1;
 - (void)trackSwipeWithEvent:(id)arg1;
 - (BOOL)wantsScrollEventsForSwipeTrackingOnAxis:(long long)arg1;

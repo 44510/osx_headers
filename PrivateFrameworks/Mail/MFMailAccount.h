@@ -221,6 +221,7 @@
 - (Class)storeClassForMailbox:(id)arg1;
 - (id)storeForMailbox:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)storeForMailbox:(id)arg1;
+- (void)_autodiscoveredSSLSetting:(id)arg1 portNumberSetting:(id)arg2 otherSettingsChanged:(BOOL)arg3 needToResetMailboxURLs:(BOOL)arg4;
 - (void)autodiscoverSettings;
 - (id)connectionError;
 - (void)setConnectionError:(id)arg1;

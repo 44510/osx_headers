@@ -35,6 +35,7 @@
 + (void)_AddMappingsForResourceType:(unsigned long long)arg1 prefix:(id)arg2;
 + (id)CPLErrorForCloudKitError:(id)arg1 description:(id)arg2 arguments:(struct __va_list_tag [1])arg3;
 + (id)CPLErrorForCloudKitError:(id)arg1 description:(id)arg2;
++ (id)bestErrorForUnderlyingError:(id)arg1;
 @property(retain, nonatomic) CKRecordZone *primaryZone; // @synthesize primaryZone=_primaryZone;
 @property(retain, nonatomic) CKRecord *userRecord; // @synthesize userRecord=_userRecord;
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;

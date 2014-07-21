@@ -35,6 +35,7 @@
     unsigned int _locationNeedsUpdating:1;
     unsigned int _isStatic:1;
     unsigned int _hasSelectedBackgroundView:1;
+    unsigned int _hasDropTargetBackgroundView:1;
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
@@ -93,6 +94,7 @@
 - (void)_removeSelectedBackgroundView;
 - (BOOL)_alwaysNeedsSelectedBackgroundView;
 - (void)_updateSelectedBackgroundView;
+- (void)_updateDropTargetBackdropView;
 - (BOOL)_shouldRemoveSelectedBackgroundViewWhenNotSelected;
 - (id)_makeBlurBackgroundView;
 - (id)_makeSelectedBackgroundView;
@@ -176,6 +178,7 @@
 - (void)_decodeStaticContentWithCoder:(id)arg1;
 - (void)_encodeStaticContentWithCoder:(id)arg1;
 @property BOOL isStatic;
+- (void)prepareForReuse;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonTRVInit;

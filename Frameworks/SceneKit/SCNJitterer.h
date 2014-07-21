@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)update;
 - (BOOL)isAborting;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
+- (void)delegateWillDie;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

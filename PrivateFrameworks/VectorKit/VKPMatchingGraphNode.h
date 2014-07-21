@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int score; // @synthesize score=_score;
 @property(nonatomic) unsigned int styleReference; // @synthesize styleReference=_styleReference;
 @property(nonatomic) unsigned int key; // @synthesize key=_key;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

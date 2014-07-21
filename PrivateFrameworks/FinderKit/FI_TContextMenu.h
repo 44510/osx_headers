@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 + (_Bool)handleMouseDownAsRightMouseDown:(id)arg1;
 + (void)handleContextMenuCommon:(unsigned int)arg1 nodes:(const struct TFENodeVector *)arg2 event:(id)arg3 clickedView:(id)arg4 browserViewController:(id)arg5 addPlugIns:(_Bool)arg6;
 + (void)buildContextMenu:(id)arg1 forContext:(unsigned int)arg2 browserViewController:(id)arg3 clickedView:(id)arg4 maxItems:(unsigned long long)arg5 addServices:(_Bool)arg6;
-+ (void)addSharingServicesToMenu:(id)arg1 forCommand:(SEL)arg2 browserViewController:(id)arg3 andNodes:(const struct TFENodeVector *)arg4;
 + (void)contextMenuClickedOnContainer:(const struct TFENode *)arg1 event:(id)arg2 clickedView:(id)arg3 browserViewController:(id)arg4;
 + (void)contextMenuClickedOnNodes:(const struct TFENodeVector *)arg1 event:(id)arg2 clickedView:(id)arg3 browserViewController:(id)arg4;
 + (_Bool)allowContextualMenuForEvent:(id)arg1;

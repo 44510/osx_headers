@@ -6,23 +6,23 @@
 
 #import <ScreenReader/SCRMapElement.h>
 
-@class SCRTextMarkerRange;
+@class SCRElement, SCRTextMarkerRange;
 
 __attribute__((visibility("hidden")))
 @interface SCRTextArea : SCRMapElement
 {
     CDStruct_43d3e2ba _command;
+    SCRElement *_magicPressElement;
     BOOL _observingSelectedTextChangedNotification;
 }
 
+@property(retain, nonatomic) SCRElement *magicPressElement; // @synthesize magicPressElement=_magicPressElement;
 @property(nonatomic, getter=isObservingSelectedTextChangedNotification) BOOL observingSelectedTextChangedNotification; // @synthesize observingSelectedTextChangedNotification=_observingSelectedTextChangedNotification;
 @property(nonatomic) CDStruct_43d3e2ba command; // @synthesize command=_command;
-- (id)typeDescription;
-- (id)valueDescription;
-- (id)attributedValueDescription;
 @property(retain, nonatomic) SCRTextMarkerRange *lastSelectedTextMarkerRange;
 - (void)setSelectedTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
 - (id)selectedTextMarkerRangeWithUIElement:(id)arg1;
+- (id)markerRangeWithUIElement:(id)arg1;
 - (BOOL)shouldHandleTextSelection;
 - (BOOL)shouldHandleTextNavigation;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
@@ -31,7 +31,11 @@ __attribute__((visibility("hidden")))
 - (void)handleTextSelectionWithUIElement:(id)arg1 command:(CDStruct_43d3e2ba)arg2 lastSelectedTextMarkerRange:(id)arg3 selectedTextMarkerRange:(id)arg4;
 - (void)handleTextNavigationWithUIElement:(id)arg1 command:(CDStruct_43d3e2ba)arg2 lastSelectedTextMarkerRange:(id)arg3 selectedTextMarkerRange:(id)arg4;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
+- (BOOL)chainEvent:(id)arg1 request:(id)arg2;
 - (void)dealloc;
+- (void)_addBoundaryTextOutput:(id)arg1 withSelectionRange:(id)arg2 forRange:(id)arg3;
+- (void)_addLastGranularTextSegment:(unsigned long long)arg1 forEdge:(int)arg2 withRequest:(id)arg3;
+- (BOOL)_isSelectionAtBoundary:(id)arg1 forRange:(id)arg2;
 - (void)_updateCursorWithElement:(id)arg1 bounds:(struct CGRect)arg2;
 - (void)_updateCommandWithEvent:(id)arg1;
 - (id)_outputRequestComponentsForAttributedString:(id)arg1;
@@ -40,10 +44,10 @@ __attribute__((visibility("hidden")))
 - (id)_lineFeedCharacterAttributedString;
 - (void)_handleSelectedTextChangedNotification:(id)arg1;
 - (id)_firstNavigableElementForTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
-- (id)_firstLinkOrNavigableElementForTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
+- (id)_firstLinkForTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
 - (unsigned long long)_clampedLengthForTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
 - (id)_attachmentCharacterAttributedString;
-- (void)_addAttributedStringOutputToOutputRequest:(id)arg1 attributedString:(id)arg2;
+- (void)addAttributedStringOutputToOutputRequest:(id)arg1 attributedString:(id)arg2;
 
 @end
 

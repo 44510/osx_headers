@@ -21,7 +21,9 @@
 - (void)_disassociate:(CDUnknownBlockType)arg1;
 - (void)renewGState;
 - (void)remoteWindowLevelDidChange:(id)arg1;
-- (void)remoteWindowDidMove:(id)arg1;
+- (void)containingWindowDidChangeOcclusionState:(id)arg1;
+- (void)containingWindowDidMove:(id)arg1;
+- (void)_containingWindowOcclusionStateMayHaveChanged;
 - (void)_remoteViewMayHaveMoved;
 - (void)_remoteWindowLevelDidChange;
 - (BOOL)maintainAssociationForcingDisassociation:(BOOL)arg1;

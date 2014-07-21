@@ -6,7 +6,7 @@
 
 #import "JSContext.h"
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSProgress, NSString;
 
 @interface JSContext (JSAE)
 - (void)setupJSAE;
@@ -15,8 +15,10 @@
 - (void)addHandlerDetails:(id)arg1;
 @property(readonly) NSMutableDictionary *librariesForIdentifiers;
 @property(readonly) NSMutableDictionary *appsForIdentifiers;
+- (void)runActiveProc;
 - (void)setActiveProc:(CDUnknownFunctionPointerType)arg1 withRefCon:(void *)arg2;
 - (void)setSendProc:(CDUnknownFunctionPointerType)arg1 withRefCon:(void *)arg2;
+@property(retain) NSProgress *progress;
 @property(retain) NSString *defaultTarget;
 @end
 

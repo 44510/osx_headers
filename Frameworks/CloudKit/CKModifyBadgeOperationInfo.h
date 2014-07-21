@@ -10,12 +10,10 @@
 
 @interface CKModifyBadgeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
-    BOOL _thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) BOOL thisDeviceOnly; // @synthesize thisDeviceOnly=_thisDeviceOnly;
 @property(nonatomic) unsigned long long badgeValue; // @synthesize badgeValue=_badgeValue;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

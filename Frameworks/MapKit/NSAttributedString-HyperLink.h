@@ -8,6 +8,6 @@
 
 @interface NSAttributedString (HyperLink)
 + (id)hyperlinkFromString:(id)arg1 withURL:(id)arg2;
-+ (id)hyperlinkFromString:(id)arg1 font:(id)arg2 withURL:(id)arg3;
++ (id)hyperlinkFromString:(id)arg1 font:(id)arg2 withURL:(id)arg3 lineBreakMode:(unsigned long long)arg4;
 @end
 

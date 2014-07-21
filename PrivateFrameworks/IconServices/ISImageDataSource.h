@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _pixelSize;
     NSData *_data;
-    struct CGImageBlockSet *_blockset;
 }
 
 + (struct CGImage *)newCGImageWithDataSource:(id)arg1;

@@ -13,6 +13,7 @@
     GEOComposedRoute *_route;
 }
 
+- (id)matchToClosestPointOnRouteWithLocation:(id)arg1;
 - (id)matchToRouteWithLocation:(id)arg1;
 - (void)dealloc;
 - (id)initWithRoute:(id)arg1;

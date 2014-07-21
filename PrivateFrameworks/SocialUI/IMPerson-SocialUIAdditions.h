@@ -8,5 +8,6 @@
 
 @interface IMPerson (SocialUIAdditions)
 - (id)valuesAndLabelsForProperty:(id)arg1 unified:(BOOL)arg2;
+- (void)faceTimeCallWithVideo:(_Bool)arg1;
 @end
 

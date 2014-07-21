@@ -9,7 +9,7 @@
 @class GKAchievementInternal, GKAuthenticateResponse, GKChallengeInternal, GKGameInternal, GKLocalPlayerInternal, GKScoreInternal, NSDictionary, NSError;
 
 @protocol GKClientProtocol <NSObject>
-- (oneway void)setLogBits:(unsigned int)arg1;
+- (oneway void)setLogBits:(int)arg1;
 - (oneway void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(NSDictionary *)arg2;
 - (oneway void)setBadgeCount:(unsigned long long)arg1 forType:(unsigned long long)arg2;
 - (oneway void)achievementSelected:(GKAchievementInternal *)arg1;

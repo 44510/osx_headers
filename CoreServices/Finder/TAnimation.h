@@ -8,13 +8,13 @@
 
 @interface TAnimation : NSAnimation
 {
-    function_db4eacf8 _progress;
+    function_611ef6ed _progress;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)setCurrentProgress:(float)arg1;
-- (id)init:(struct function<void (float)>)arg1;
+- (id)init:(function_611ef6ed)arg1;
 
 @end
 

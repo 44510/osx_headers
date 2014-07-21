@@ -21,7 +21,7 @@
 }
 
 + (id)sharedManager;
-- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(double)arg3 scaleFactor:(long long)arg4 customIconID:(unsigned long long)arg5;
+- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(double)arg3 size:(long long)arg4 customIconID:(unsigned long long)arg5;
 - (id)imageForName:(id)arg1 contentScale:(double)arg2;
 - (id)_allResourceNames;
 - (id)artworkForFeatureID:(unsigned long long)arg1 withResourceNames:(id)arg2 style:(CDStruct_44d855de *)arg3 contentScale:(double)arg4 size:(long long)arg5;

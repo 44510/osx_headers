@@ -19,10 +19,12 @@
     DOMHTMLDocument *_htmlDocument;
     NSDictionary *_remoteAttachments;
     NSURL *_imageArchiveURL;
+    NSURL *_imageArchiveDownloadURL;
     NSDate *_expirationDate;
 }
 
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(retain, nonatomic) NSURL *imageArchiveDownloadURL; // @synthesize imageArchiveDownloadURL=_imageArchiveDownloadURL;
 @property(retain, nonatomic) NSURL *imageArchiveURL; // @synthesize imageArchiveURL=_imageArchiveURL;
 @property(copy, nonatomic) NSDictionary *remoteAttachments; // @synthesize remoteAttachments=_remoteAttachments;
 @property(retain, nonatomic) DOMHTMLDocument *htmlDocument; // @synthesize htmlDocument=_htmlDocument;

@@ -7,8 +7,7 @@
 #import "CALayer.h"
 
 @interface CALayer (SafariExtras)
-- (void)_safari_applyIconTreatmentWithCornerRadius:(double)arg1;
-- (void)safari_applyFavoritesTreatment;
+- (void)safari_applyIconTreatmentWithCornerRadius:(double)arg1;
 - (void)safari_applyIconTreatment;
 @end
 

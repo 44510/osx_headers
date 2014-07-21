@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     CDStruct_aa5aacbc _viewMatrix;
     CDStruct_aa5aacbc _viewMatrixUnscaled;
     CDStruct_aa5aacbc _projectionMatrixUnscaled;
+    CDStruct_aa5aacbc _projectionMatrixUnscaledWithoutOffset;
     CDStruct_aa5aacbc _viewProjectionMatrixUnscaled;
     CDStruct_aa5aacbc _worldMatrix;
     VKViewVolume *_viewVolume;
@@ -98,6 +99,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VKViewVolume *viewVolume;
 @property(readonly, nonatomic) const CDStruct_aa5aacbc *worldMatrix;
 @property(readonly, nonatomic) const CDStruct_aa5aacbc *projectionMatrixUnscaled;
+@property(readonly, nonatomic) const CDStruct_aa5aacbc *projectionMatrixUnscaledWithoutOffset;
 @property(readonly, nonatomic) const CDStruct_aa5aacbc *viewProjectionMatrixUnscaled;
 @property(readonly, nonatomic) const CDStruct_aa5aacbc *viewMatrixUnscaled;
 @property(readonly, nonatomic) const CDStruct_aa5aacbc *viewMatrix;

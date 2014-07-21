@@ -10,7 +10,7 @@
 #import "NSWindowDelegate.h"
 #import "SPResultViewControllerDelegate.h"
 
-@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSStatusItem, NSString, NSTimer, NSView, NSViewController<SPMainViewController>, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView;
+@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSString, NSTimer, NSView, NSViewController<SPMainViewController>, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView;
 
 @interface SPAppDelegate : NSObject <SPResultViewControllerDelegate, NSApplicationDelegate, NSWindowDelegate>
 {
@@ -30,7 +30,6 @@
     NSString *_userQueryString;
     SPQuery *_query;
     NSArray *_results;
-    NSStatusItem *_statusItem;
     SPStatusItemView *_statusItemView;
     SPSearchPanel *_window;
     NSView *_mainView;
@@ -58,6 +57,7 @@
     SPResultViewController *_currentViewController;
 }
 
++ (void)initialize;
 @property BOOL internalIsHidingSearchWindow; // @synthesize internalIsHidingSearchWindow=_internalIsHidingSearchWindow;
 @property(retain) SPResultViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(readonly) SPSearchFieldEditor *searchFieldEditor; // @synthesize searchFieldEditor=_searchFieldEditor;
@@ -87,7 +87,6 @@
 @property(getter=isPendingReveal) BOOL pendingReveal; // @synthesize pendingReveal=_pendingReveal;
 @property(getter=isPendingOpen) BOOL pendingOpen; // @synthesize pendingOpen=_pendingOpen;
 @property(readonly) SPStatusItemView *statusItemView; // @synthesize statusItemView=_statusItemView;
-@property(readonly) NSStatusItem *statusItem; // @synthesize statusItem=_statusItem;
 @property(retain) NSArray *results; // @synthesize results=_results;
 @property(retain) SPQuery *query; // @synthesize query=_query;
 @property(readonly, getter=isQueryReadyForLaunch) BOOL queryReadyForLaunch; // @synthesize queryReadyForLaunch=_queryReadyForLaunch;
@@ -150,6 +149,7 @@
 - (void)hideSearchWindow;
 - (void)finishHiding;
 - (void)toggleSearchWindow;
+- (void)clearTopHit;
 - (void)applicationDidHide:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
@@ -162,6 +162,8 @@
 - (BOOL)_inSimpleFinderMode;
 - (void)awakeFromNib;
 - (void)setupOnLaunch;
+- (void)_preheat;
+- (void)preheat;
 - (void)updateCurrentView:(id)arg1;
 - (void)registerCommandKeys;
 - (id)init;

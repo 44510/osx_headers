@@ -18,6 +18,7 @@
 @property(nonatomic) __weak id <MKPlaceActivityProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)activityAnnotationView;
+- (id)appleActivityURL;
 - (id)activityURL;
 - (id)activityTitle;
 - (id)initWithMapItem:(id)arg1;

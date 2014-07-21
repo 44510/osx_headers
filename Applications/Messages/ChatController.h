@@ -43,7 +43,6 @@
     InstantMessage *_lastRemoteMessage;
     InstantMessage *_typingIndicatorMessage;
     NSString *_summary;
-    unsigned long long _unreadMessageCount;
     InstantMessage *_invitationReplyMessage;
     NSMutableArray *_recentParticipants;
     long long _lastSavedMessageID;
@@ -84,7 +83,6 @@
 @property(nonatomic) long long lastSavedMessageID; // @synthesize lastSavedMessageID=_lastSavedMessageID;
 @property(retain, nonatomic) NSMutableArray *recentParticipants; // @synthesize recentParticipants=_recentParticipants;
 @property(retain, nonatomic) InstantMessage *invitationReplyMessage; // @synthesize invitationReplyMessage=_invitationReplyMessage;
-@property(nonatomic) unsigned long long unreadMessageCount; // @synthesize unreadMessageCount=_unreadMessageCount;
 @property(nonatomic) BOOL summaryFromMe; // @synthesize summaryFromMe=_summaryFromMe;
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) InstantMessage *typingIndicatorMessage; // @synthesize typingIndicatorMessage=_typingIndicatorMessage;
@@ -126,6 +124,7 @@
 - (BOOL)_isIdle;
 - (BOOL)_needsMarkAsRead;
 - (id)chatItems;
+- (id)transcriptChatItemForGUID:(id)arg1;
 - (void)deleteAllHistory;
 - (void)_postDeleteFinished;
 - (void)purgeMessages:(unsigned long long)arg1;

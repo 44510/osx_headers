@@ -41,6 +41,7 @@
 @property(retain, nonatomic) EKRecurrenceEnd *cachedEnd; // @synthesize cachedEnd=_cachedEnd;
 - (void).cxx_destruct;
 - (id)humanReadableDescriptionWithStartDate:(id)arg1;
+- (void)canonicalize;
 - (id)stringValueAsDateOnly:(BOOL)arg1 isFloating:(BOOL)arg2;
 - (void)reset;
 - (void)setSetPositions:(id)arg1;

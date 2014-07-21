@@ -14,7 +14,9 @@
 {
     NSMutableArray *_directionsFeedbackCollections;
     NSMutableArray *_leaveNowFeedbackCollections;
+    NSMutableArray *_mapsLaunchFeedbackCollections;
     NSMutableArray *_mapsUsageFeedbackCollections;
+    NSMutableArray *_placeDataCacheFeedbackCollections;
     NSMutableArray *_stateTimingFeedbackCollections;
     NSMutableArray *_suggestionsFeedbackCollections;
     NSMutableArray *_trafficRerouteFeedbackCollections;
@@ -22,6 +24,8 @@
     NSMutableArray *_usageCollections;
 }
 
+@property(retain, nonatomic) NSMutableArray *placeDataCacheFeedbackCollections; // @synthesize placeDataCacheFeedbackCollections=_placeDataCacheFeedbackCollections;
+@property(retain, nonatomic) NSMutableArray *mapsLaunchFeedbackCollections; // @synthesize mapsLaunchFeedbackCollections=_mapsLaunchFeedbackCollections;
 @property(retain, nonatomic) NSMutableArray *leaveNowFeedbackCollections; // @synthesize leaveNowFeedbackCollections=_leaveNowFeedbackCollections;
 @property(retain, nonatomic) NSMutableArray *trafficRerouteFeedbackCollections; // @synthesize trafficRerouteFeedbackCollections=_trafficRerouteFeedbackCollections;
 @property(retain, nonatomic) NSMutableArray *stateTimingFeedbackCollections; // @synthesize stateTimingFeedbackCollections=_stateTimingFeedbackCollections;
@@ -41,6 +45,14 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)placeDataCacheFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (unsigned long long)placeDataCacheFeedbackCollectionsCount;
+- (void)addPlaceDataCacheFeedbackCollection:(id)arg1;
+- (void)clearPlaceDataCacheFeedbackCollections;
+- (id)mapsLaunchFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (unsigned long long)mapsLaunchFeedbackCollectionsCount;
+- (void)addMapsLaunchFeedbackCollection:(id)arg1;
+- (void)clearMapsLaunchFeedbackCollections;
 - (id)leaveNowFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)leaveNowFeedbackCollectionsCount;
 - (void)addLeaveNowFeedbackCollection:(id)arg1;

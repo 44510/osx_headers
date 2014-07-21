@@ -29,6 +29,7 @@
 - (NEConfiguration *)findConfigurationByPayloadUUID:(NSString *)arg1;
 - (NEConfiguration *)findConfigurationByName:(NSString *)arg1;
 - (BOOL)loadConfigurationsForceReloadFromDisk;
+- (void)removeOrphanConfigurations:(NSString *)arg1 profileUUID:(NSString *)arg2;
 - (id)initWithNameAndAuthorization:(NSString *)arg1 authorization:(struct AuthorizationOpaqueRef *)arg2;
 - (id)initWithNameAndType:(NSString *)arg1 payloadType:(NSString *)arg2;
 @end

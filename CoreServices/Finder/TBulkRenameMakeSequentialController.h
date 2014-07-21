@@ -15,15 +15,17 @@
     NSTextField *_customNameFld;
     NSTextField *_startIndexFld;
     NSString *_customName;
+    struct TNotificationCenterObserver _customNameTextDidChangeObserver;
+    struct TNotificationCenterObserver _startIndexTextDidChangeObserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)reformat:(id)arg1 row:(unsigned long long)arg2;
 - (id)padIndex:(unsigned long long)arg1 padAmount:(unsigned long long)arg2;
-- (id)timestamp;
+- (id)timestamp:(id)arg1;
 - (void)whereChanged:(id)arg1;
 - (void)nameFormatChanged:(id)arg1;
-- (void)customNameChanged:(id)arg1;
-- (void)textChanged:(id)arg1;
 - (void)updateUI;
 - (long long)customIndex;
 - (_Bool)resetCounterForEachFile;
@@ -31,7 +33,7 @@
 - (id)displayName;
 - (int)formatterType;
 - (void)aboutToTearDown;
-- (void)awakeFromNib;
+- (void)viewLoaded;
 
 @end
 

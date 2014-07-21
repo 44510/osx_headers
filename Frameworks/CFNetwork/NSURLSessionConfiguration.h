@@ -37,6 +37,7 @@
     BOOL __forcesNewConnections;
     BOOL __supportsAVAssetDownloads;
     BOOL __proxySession;
+    BOOL __disallowsSPDY;
     BOOL __preventsIdleSleep;
     BOOL __usePipeliningHeuristics;
     int _TLSMinimumSupportedProtocol;
@@ -86,6 +87,7 @@
 @property(copy) NSArray *_contentDispHeadEncFallback; // @synthesize _contentDispHeadEncFallback=__contentDispHeadEncFallback;
 @property BOOL _usePipeliningHeuristics; // @synthesize _usePipeliningHeuristics=__usePipeliningHeuristics;
 @property BOOL _preventsIdleSleep; // @synthesize _preventsIdleSleep=__preventsIdleSleep;
+@property BOOL _disallowsSPDY; // @synthesize _disallowsSPDY=__disallowsSPDY;
 @property(getter=_isProxySession) BOOL _proxySession; // @synthesize _proxySession=__proxySession;
 @property BOOL _supportsAVAssetDownloads; // @synthesize _supportsAVAssetDownloads=__supportsAVAssetDownloads;
 @property(copy) NSDictionary *_socketStreamProperties; // @synthesize _socketStreamProperties=__socketStreamProperties;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     BOOL _waitingToShowTerminationPrompt;
     float _totalProgress;
     NSTimer *_updateTotalProgressTimer;
+    NSTimer *_removeDownloadsAfterOneDayTimer;
 }
 
 + (id)downloadBundleExtension;
@@ -56,11 +57,17 @@ __attribute__((visibility("hidden")))
 - (void)_addEntry:(id)arg1 withNotification:(BOOL)arg2;
 - (void)_insertEntry:(id)arg1 atIndex:(unsigned int)arg2 withNotification:(BOOL)arg3 removeOld:(BOOL)arg4;
 - (void)_noteDownloadsChanged;
+- (void)_cancelRemoveDownloadsAfterOneDayTimer;
+- (void)_scheduleCleanupOfOldestDownload;
 - (void)_saveDownloadHistory;
+- (void)_removeEntriesFinishedOverOneDayAgoAndUpdateTimerIfAppropriate;
 - (id)_prepareToWriteDownloadHistory;
 - (void)_updateSuddenTerminationSetting;
 - (BOOL)_needToWriteHistoryFileOnQuit;
+- (BOOL)_shouldCleanupHistoryAfterOneDay;
 - (BOOL)_shouldClearHistoryOnQuit;
+- (void)_downloadEntryStageChanged:(id)arg1;
+- (void)_defaultsChanged:(id)arg1;
 - (id)downloadMetadataIOQueue;
 - (void)setEntry:(id)arg1 forDownload:(id)arg2;
 - (void)savePendingChangesBeforeTermination;
@@ -75,6 +82,7 @@ __attribute__((visibility("hidden")))
 - (int)totalIdle;
 - (int)totalBusy;
 - (int)total;
+- (void)removeEntriesFinishedBeforeDate:(id)arg1;
 - (void)removeEntriesAddedAfterDate:(id)arg1;
 - (void)removePassFileDownloadForWKDownload:(const struct Download *)arg1;
 - (void)removeIdleEntries;

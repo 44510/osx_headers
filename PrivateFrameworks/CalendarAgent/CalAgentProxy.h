@@ -8,18 +8,23 @@
 
 #import "CalendarAgent.h"
 
+@class NSMutableDictionary;
+
 @interface CalAgentProxy : CalendarLinkProxy <CalendarAgent>
 {
+    NSMutableDictionary *_identifiersToRecentContacts;
 }
 
 + (BOOL)_clientHasEntitlement:(id)arg1;
 + (BOOL)_clientIsReminders;
 + (BOOL)_clientIsiCal;
+- (void).cxx_destruct;
 - (void)isLocalToServerInProgressForEvents:(CDUnknownBlockType)arg1;
 - (void)isLocalToServerInProgressForReminders:(CDUnknownBlockType)arg1;
 - (void)_isLocalToServerInProgressForComponentType:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)isPersistenceAvailableWithReply:(CDUnknownBlockType)arg1;
-- (void)_removeRecentsEntry:(id)arg1;
+- (void)removeRecentsEntry:(id)arg1;
+- (void)removeRecentsEntryWithIdentifier:(id)arg1;
 - (void)recentContactSearchWithSearchString:(id)arg1 sourceID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)_loadCoreRecents;
 - (void)setDefaultCalendarForRemindersToCalendarIdentifier:(id)arg1;

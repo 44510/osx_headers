@@ -11,17 +11,21 @@ __attribute__((visibility("hidden")))
 {
     struct sqlite3_stmt *_insertPhoneNumber;
     struct sqlite3_stmt *_insertKeyString;
+    struct sqlite3_stmt *_deletePhoneNumberMappingStatement;
+    struct sqlite3_stmt *_deleteKeyStringStatement;
     BOOL _canCreateDebugTable;
 }
 
 - (void)performTableCreationTasks;
 - (void)performStatementPreparationTasks;
 - (void)_createKeyStringTable;
-- (void)_setMUID:(unsigned long long)arg1 forKey:(struct _GEOTileKey)arg2;
+- (void)_setMUID:(id)arg1 forKey:(struct _GEOTileKey)arg2;
 - (void)_createPhoneNumberTable;
 - (void)_setMUID:(unsigned long long)arg1 forPhoneNumber:(long long)arg2;
 - (void)_openIfNecessary;
 - (void)_populateDBKey:(struct _GEOTileKey *)arg1 forMUID:(unsigned long long)arg2;
+- (void)_deleteKeystringForKey:(struct _GEOTileKey)arg1;
+- (void)deletePhoneNumberMapping;
 - (void)deletePlaceDataForMUID:(unsigned long long)arg1;
 - (void)deletePlaceDataForKey:(struct _GEOTileKey)arg1;
 - (void)setPlaceData:(id)arg1 forMUID:(unsigned long long)arg2;

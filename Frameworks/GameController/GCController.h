@@ -16,6 +16,9 @@
 + (void)startWirelessControllerDiscoveryWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)_startWirelessControllerDiscoveryWithCompanions:(BOOL)arg1 btClassic:(BOOL)arg2 btle:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)controllers;
++ (void)__daemon__controllerWithUDID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3;
++ (void)__daemon__removeController:(id)arg1;
++ (void)__daemon__addController:(id)arg1;
 + (void)__daemon__requestConnectedHostUpdatesWithHandler:(CDUnknownBlockType)arg1;
 + (void)__daemon__startBonjourService;
 + (void)__setLogger__:(CDUnknownBlockType)arg1;

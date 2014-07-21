@@ -30,7 +30,7 @@
 - (void)didShowSectionWithIdentifier:(id)arg1;
 - (void)didSearchForString:(id)arg1;
 - (void)didSelectContact:(id)arg1 key:(id)arg2 value:(id)arg3;
-- (void)popoverDidCreate;
+- (void)pickerDidCreate;
 - (void)setDisplayedKeys:(id)arg1;
 - (void)establishConnection;
 - (id)pickerControlProxy;

@@ -6,7 +6,7 @@
 
 #import "NCTodayItemViewController.h"
 
-@class NCButton, NCTodaySummaryItem, NSLayoutConstraint, NSMutableArray, NSStackView;
+@class NCTodaySummaryItem, NSLayoutConstraint, NSMutableArray, NSStackView;
 
 @interface NCTodaySummaryController : NCTodayItemViewController
 {
@@ -15,12 +15,10 @@
     _Bool _hasTopMargin;
     NSLayoutConstraint *_topMarginConstraint;
     NSStackView *_summaryStack;
-    NCButton *_removeButton;
     double _extraTopMargin;
 }
 
 @property(readonly) double extraTopMargin; // @synthesize extraTopMargin=_extraTopMargin;
-@property(retain) NCButton *removeButton; // @synthesize removeButton=_removeButton;
 @property NSStackView *summaryStack; // @synthesize summaryStack=_summaryStack;
 @property NSLayoutConstraint *topMarginConstraint; // @synthesize topMarginConstraint=_topMarginConstraint;
 @property(nonatomic) _Bool hasTopMargin; // @synthesize hasTopMargin=_hasTopMargin;

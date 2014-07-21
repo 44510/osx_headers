@@ -14,6 +14,7 @@
 @interface CKNotificationInfo : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _shouldBadge;
+    BOOL _shouldSendContentAvailable;
     NSString *_alertBody;
     NSString *_alertLocalizationKey;
     NSArray *_alertLocalizationArgs;
@@ -25,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)notificationInfo;
+@property(nonatomic) BOOL shouldSendContentAvailable; // @synthesize shouldSendContentAvailable=_shouldSendContentAvailable;
 @property(nonatomic) BOOL shouldBadge; // @synthesize shouldBadge=_shouldBadge;
 @property(copy, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(copy, nonatomic) NSString *soundName; // @synthesize soundName=_soundName;

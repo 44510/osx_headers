@@ -45,6 +45,7 @@
 - (void)trashBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)removeBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)updateBook:(id)arg1 withMetadata:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)evaluateBooksForFamilyContentDeletion:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)prioritizeImport:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)importBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchImportingBooks:(CDUnknownBlockType)arg1;

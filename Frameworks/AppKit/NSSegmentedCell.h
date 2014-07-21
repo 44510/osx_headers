@@ -26,7 +26,8 @@
         unsigned int style:8;
         unsigned int flatMinX:1;
         unsigned int flatMaxX:1;
-        unsigned int reserved:11;
+        unsigned int segmentedSeparated:1;
+        unsigned int reserved:10;
     } _seFlags;
     id _segmentTrackingInfo;
     id _menuUniquer;
@@ -76,6 +77,7 @@
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_vibrancyFilterForControlView:(id)arg1;
 - (BOOL)_allowsVibrancyForControlView:(id)arg1;
+- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
 - (struct __CFDictionary *)_copyCoreUIBackgroundDrawOptionsForSegment:(long long)arg1 inView:(id)arg2 drawFlags:(unsigned long long *)arg3;
 - (long long)_segmentHighlightState:(long long)arg1;
 - (unsigned long long)_getVisualStateForSegment:(unsigned long long)arg1;
@@ -138,7 +140,9 @@
 - (long long)_segmentedCellStyle;
 - (void)_setSegmentedCellStyle:(long long)arg1;
 @property long long segmentStyle;
+- (void)_setFlagsForStyle:(long long)arg1;
 - (BOOL)_isStyleSeparated:(long long)arg1;
+- (BOOL)_isStyleAutomatic:(long long)arg1;
 - (BOOL)_inactiveStateShowsRolloversForSegment:(long long)arg1;
 - (void)_setInactiveStateShowsRollovers:(BOOL)arg1 forSegment:(long long)arg2;
 - (BOOL)_needsRolloverTracking;

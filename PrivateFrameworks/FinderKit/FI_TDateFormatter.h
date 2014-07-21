@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)fileNameDateTime:(id)arg1;
 + (id)fileNameTime:(id)arg1;
 + (id)timeOnly:(id)arg1;
 + (id)relativeFullDateOnly:(id)arg1;

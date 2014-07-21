@@ -6,25 +6,29 @@
 
 #import "SPSliceViewController.h"
 
-@class NSArray, NSImageView, NSTextField;
+@class NSArray, NSImageView, NSLayoutConstraint, NSTextField;
 
 @interface SPWebSliceController : SPSliceViewController
 {
     NSImageView *_siteIcon;
     NSTextField *_siteName;
     NSTextField *_siteDomain;
+    NSLayoutConstraint *_siteDomainBaseToSiteNameBase;
+    NSLayoutConstraint *_siteDomainBaseToBottomConstraint;
     NSArray *_siteIconConstraints;
+    NSLayoutConstraint *_siteNameBaseToBottom;
 }
 
+@property(retain) NSLayoutConstraint *siteNameBaseToBottom; // @synthesize siteNameBaseToBottom=_siteNameBaseToBottom;
 @property(retain) NSArray *siteIconConstraints; // @synthesize siteIconConstraints=_siteIconConstraints;
+@property __weak NSLayoutConstraint *siteDomainBaseToBottomConstraint; // @synthesize siteDomainBaseToBottomConstraint=_siteDomainBaseToBottomConstraint;
+@property __weak NSLayoutConstraint *siteDomainBaseToSiteNameBase; // @synthesize siteDomainBaseToSiteNameBase=_siteDomainBaseToSiteNameBase;
 @property __weak NSTextField *siteDomain; // @synthesize siteDomain=_siteDomain;
 @property __weak NSTextField *siteName; // @synthesize siteName=_siteName;
 @property __weak NSImageView *siteIcon; // @synthesize siteIcon=_siteIcon;
 - (void).cxx_destruct;
 - (double)height;
 - (void)setViewWidth:(double)arg1;
-- (void)viewDidLayout;
-- (void)viewWillLayout;
 - (void)setRepresentedObject:(id)arg1;
 - (void)awakeFromNib;
 - (void)setupForObject:(id)arg1;

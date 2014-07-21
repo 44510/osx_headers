@@ -12,6 +12,7 @@
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2;
+@property(readonly) long long requestedQualityOfService;
 @property(readonly) unsigned char priority;
 @end
 

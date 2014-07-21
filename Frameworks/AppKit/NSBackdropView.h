@@ -6,21 +6,11 @@
 
 #import <AppKit/NSVisualEffectView.h>
 
-@class NSView;
-
 @interface NSBackdropView : NSVisualEffectView
 {
 }
 
-- (BOOL)allowsVibrancy;
-@property(readonly) NSView *contentView;
-- (long long)blendingMode;
-- (void)setBlendingMode:(long long)arg1;
-@property unsigned long long compositingOperation;
-- (void)setState:(long long)arg1;
-- (long long)state;
-@property long long materialType;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)setMaterialType:(long long)arg1;
 
 @end
 

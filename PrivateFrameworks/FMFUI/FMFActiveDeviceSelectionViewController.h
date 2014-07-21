@@ -18,8 +18,10 @@
     FMFDevice *_currentActiveDevice;
     FMFDevice *_nowActiveDevice;
     FMFSession *_fmfSession;
+    long long _specifierStartIndex;
 }
 
+@property(nonatomic) long long specifierStartIndex; // @synthesize specifierStartIndex=_specifierStartIndex;
 @property(retain, nonatomic) FMFSession *fmfSession; // @synthesize fmfSession=_fmfSession;
 @property(retain, nonatomic) FMFDevice *nowActiveDevice; // @synthesize nowActiveDevice=_nowActiveDevice;
 @property(retain, nonatomic) FMFDevice *currentActiveDevice; // @synthesize currentActiveDevice=_currentActiveDevice;

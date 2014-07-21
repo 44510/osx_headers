@@ -17,13 +17,11 @@
     NSMutableArray *_certificatesAlreadyPrompted;
     BOOL _isSyncing;
     BOOL _isOffline;
-    BOOL _deduplicatedAccounts;
     NSOperationQueue *_invalidationQueue;
 }
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property BOOL deduplicatedAccounts; // @synthesize deduplicatedAccounts=_deduplicatedAccounts;
 @property(readonly) NSOperationQueue *invalidationQueue; // @synthesize invalidationQueue=_invalidationQueue;
 @property BOOL isOffline; // @synthesize isOffline=_isOffline;
 @property BOOL isSyncing; // @synthesize isSyncing=_isSyncing;
@@ -39,7 +37,6 @@
 - (void)_mainContextObjectsDidChange:(id)arg1;
 - (id)accountProxyForAccount:(id)arg1;
 - (id)allAccountProxies;
-- (id)_deduplicatedActiveAccountIDsWithContext:(id)arg1 error:(id *)arg2;
 - (void)_reloadAccounts;
 - (void)_performFetchForAccountsWithIdentifiers:(id)arg1;
 - (void)performFetchForAccount:(id)arg1;

@@ -24,6 +24,7 @@
 - (BOOL)_viewIsEnabledAtIndex:(long long)arg1;
 - (BOOL)_applicableLabelIsEnabledAtIndex:(long long)arg1 forDisplayMode:(unsigned long long)arg2 isInPalette:(BOOL)arg3;
 - (id)_applicableLabelsArrayForDisplayMode:(unsigned long long)arg1 isInPalette:(BOOL)arg2;
+- (void)_wrapperViewDidUpdateFrameSize:(struct CGSize)arg1;
 - (void)dealloc;
 - (BOOL)_participatesInDefiningMinimumGridWidthForCustomizationPalette;
 - (id)initWithWrappedItem:(id)arg1;

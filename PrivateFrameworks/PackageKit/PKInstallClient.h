@@ -18,6 +18,7 @@
     NSTimer *_statusTimer;
     double _lastProgress;
     BOOL _isRegistering;
+    BOOL _isInitialized;
 }
 
 + (id)_connectToDaemonForAuthLevel:(int)arg1 privileged:(BOOL)arg2 recursiveInstall:(BOOL)arg3 forInstance:(id)arg4;

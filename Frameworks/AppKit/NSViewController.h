@@ -119,8 +119,7 @@
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
 - (void)viewWillAppear;
-- (void)_setParentViewController:(id)arg1;
-- (id)parentViewController;
+@property(setter=_setParentViewController:) NSViewController *parentViewController;
 @property(retain) NSView *view;
 - (void)_insertInResponderChain;
 - (void)setNextResponder:(id)arg1;
@@ -142,6 +141,7 @@
 - (void)_sendViewDidLoad;
 - (BOOL)_viewControllerSupports10_10Features;
 @property(copy) NSString *identifier;
+- (void)_finishedMakingConnections;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;

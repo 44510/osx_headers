@@ -24,12 +24,14 @@
     long long _transportType;
     int _socket;
     BOOL _isAudioEnabled;
+    BOOL _isLegacy;
     long long _inviteTimeout;
     unsigned int _sessionEndedReason;
 }
 
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)xpcObject:(void *)arg1 objectContext:(id)arg2;
 - (void)session:(id)arg1 audioEnabled:(BOOL)arg2;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;

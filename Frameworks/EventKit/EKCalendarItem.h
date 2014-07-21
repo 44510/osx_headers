@@ -126,6 +126,7 @@
 - (void)setStartDateUnadjustedFromUTC:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *startDateUnadjustedFromUTC;
 @property(copy, nonatomic) NSDate *startDate;
+- (void)_canonicalizeRecurrenceRules;
 @property(readonly, nonatomic) BOOL hasNotes;
 @property(readonly, nonatomic) BOOL hasAlarms;
 @property(readonly, nonatomic) BOOL hasAttendees;

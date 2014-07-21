@@ -14,7 +14,6 @@
     NSDictionary *_serverContainerConfigurationDict;
     NSMutableDictionary *_cache;
     NSString *_containerIdentifer;
-    BOOL _isAppleInternalInstall;
 }
 
 + (void)saveServerConfigToDB:(id)arg1;
@@ -24,7 +23,6 @@
 + (id)defaultsForMetadataContainer;
 + (id)defaultsForContainerIdentifier:(id)arg1;
 + (id)_userDefaultsManager;
-@property(readonly, nonatomic) BOOL isAppleInternalInstall; // @synthesize isAppleInternalInstall=_isAppleInternalInstall;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int minEvictableFilesize;
 @property(readonly, nonatomic) unsigned int publishURLTimeout;

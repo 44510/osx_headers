@@ -22,7 +22,7 @@
 #import "PVTextSearchQueryDelegate.h"
 #import "PVTransitionOverlayViewDelegate.h"
 
-@class IKHierarchicalDatasourceAdaptor, IKSaveOptions, NSArray, NSArrayController, NSButton, NSColor, NSCountedSet, NSDictionary, NSDocument, NSLayoutConstraint, NSMenu, NSMutableArray, NSMutableSet, NSObject<PVMediaElement>, NSOperationQueue, NSOutlineView, NSPanel, NSScreenBackgroundView, NSString, NSTableView, NSTimer, NSView, NSView<PVContentView>, NSWindow, PVActivityMonitor, PVAnnotationsSidebarController, PVBookmarksSidebarController, PVC3DView, PVContentLoadingView, PVEditBannerViewController, PVFloatingSidebarWindow, PVFloatingStringPanel, PVFullScreenOverlayView, PVIKImageBrowserView, PVIKImageView2, PVInlineScanViewController, PVLegacyBookmark, PVMediaContainerBase, PVNSSplitView, PVPDFView, PVPSFileContainer, PVPlaceholderThumbnailItem, PVQuickLookView, PVSearchBannerViewController, PVSearchResultsController, PVSidebarView, PVSubToolbarItemView, PVToolController, PVToolbarAccessoryViewSeparatorLineView, PVTransitionOverlayView, PVUndoCoalescer, PVUndoManager, SidebarPaneBottomView;
+@class IKHierarchicalDatasourceAdaptor, IKSaveOptions, NSArray, NSArrayController, NSButton, NSColor, NSCountedSet, NSDictionary, NSDocument, NSLayoutConstraint, NSMenu, NSMutableArray, NSMutableSet, NSObject<PVMediaElement>, NSOperationQueue, NSOutlineView, NSPanel, NSString, NSTableView, NSTimer, NSTitlebarAccessoryViewController, NSView, NSView<PVContentView>, NSWindow, PVActivityMonitor, PVAnnotationsSidebarController, PVBookmarksSidebarController, PVC3DView, PVContentLoadingView, PVEditBannerViewController, PVFloatingSidebarWindow, PVFloatingStringPanel, PVFullScreenOverlayView, PVIKImageBrowserView, PVIKImageView2, PVInlineScanViewController, PVLegacyBookmark, PVMediaContainerBase, PVNSSplitView, PVPDFView, PVPSFileContainer, PVPlaceholderThumbnailItem, PVQuickLookView, PVSearchBannerViewController, PVSearchResultsController, PVSidebarView, PVSubToolbarItemView, PVToolController, PVToolbarAccessoryViewSeparatorLineView, PVTransitionOverlayView, PVUndoCoalescer, PVUndoManager, SidebarPaneBottomView;
 
 @interface PVWindowController : NSWindowController <IKHierarchicalDatasource, NSTextFieldDelegate, NSToolbarDelegate, NSSplitViewDelegate, PVC3DCameraElementDelegate, PVTextSearchQueryDelegate, PVEventInterceptorDelegate, PVFullScreenToolbarDelegate, PVFloatingSidebarDelegate, NSOpenSavePanelDelegate, PVTransitionOverlayViewDelegate, PVResizeOverlayViewDelegate, NSSharingServiceDelegate, NSMenuDelegate, AKControllerDelegateProtocol>
 {
@@ -174,13 +174,14 @@
     BOOL _isViewStateSynchingEnabled;
     BOOL _didFinishValidatingContainers;
     BOOL _pendingUpdateFileBookmarksInRestorableState;
+    id _annotationSelectionChangeAdditionObserver;
+    id _annotationSelectionChangeRemovalObserver;
     unsigned long long _regularWindowMask;
     struct CGRect _windowedContentRect;
     BOOL _sidebarWasOpen;
     long long _windowedViewMode;
     NSWindow *_fullScreenOverlayWindow;
     PVFullScreenOverlayView *_fullScreenOverlayView;
-    NSScreenBackgroundView *_fullScreenTexturedBackgroundColorView;
     BOOL _isInFullScreenMode;
     BOOL _isEnteringFullScreen;
     BOOL _isExitingFullScreen;
@@ -204,9 +205,6 @@
     char *_swipeAnimationCanceled;
     PVFloatingSidebarWindow *_sidebarOverlayWindow;
     NSView *_utilityViewBeforeSearch;
-    NSView *_fullscreenToolbarAuxiliaryView;
-    NSView *_fullscreenBannerContainer;
-    NSView *_fullscreenBannerContainerSubview;
     BOOL _isMovingBannerInOut;
     BOOL _readyToPreloadLayers;
     NSMutableArray *_batchEditErrorsAndRecoveryBlocks;
@@ -229,8 +227,8 @@
     NSCountedSet *_windowOpeningContainerTypeCountsForMessageTracer;
     NSMutableArray *_conflictResolutionBlocks;
     BOOL _isHandlingConflictResolutionBlocks;
-    NSView *_editBannerAuxiliaryViewContainer;
-    NSView *_searchBannerAuxiliaryViewContainer;
+    NSTitlebarAccessoryViewController *_editBannerAuxiliaryViewContainerController;
+    NSTitlebarAccessoryViewController *_searchBannerAuxiliaryViewContainerController;
     PVPSFileContainer *_observedFileConversionOperation;
     NSArray *_lastSelectedAnnotations;
     NSLayoutConstraint *_contentViewWidthConstraint;
@@ -255,15 +253,11 @@
     NSLayoutConstraint *_contentViewHolderPinToTopConstraint;
     NSLayoutConstraint *_contentViewHolderPinToBottomConstraint;
     NSLayoutConstraint *_contentRootViewPinToBottomConstraint;
-    NSLayoutConstraint *_editBannerToTopConstraint;
-    NSLayoutConstraint *_searchBannerToTopConstraint;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (void)initialize;
-@property(retain, nonatomic) NSLayoutConstraint *searchBannerToTopConstraint; // @synthesize searchBannerToTopConstraint=_searchBannerToTopConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *editBannerToTopConstraint; // @synthesize editBannerToTopConstraint=_editBannerToTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contentRootViewPinToBottomConstraint; // @synthesize contentRootViewPinToBottomConstraint=_contentRootViewPinToBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewHolderPinToBottomConstraint; // @synthesize contentViewHolderPinToBottomConstraint=_contentViewHolderPinToBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewHolderPinToTopConstraint; // @synthesize contentViewHolderPinToTopConstraint=_contentViewHolderPinToTopConstraint;
@@ -680,16 +674,10 @@
 - (id)customWindowsToEnterFullScreenForWindow:(id)arg1;
 - (id)_targetLayerForImageViewFromSourceRect:(struct CGRect)arg1 toDestRect:(struct CGRect)arg2 storeBaseTransform:(struct CGAffineTransform *)arg3;
 - (unsigned long long)window:(id)arg1 willUseFullScreenPresentationOptions:(unsigned long long)arg2;
-- (BOOL)_shouldUseTexturedBackgroundForCurrentContentViewKind;
-- (struct CGColor *)_windowBackgroundCGColorForFullScreenMode:(id)arg1 withWindowOffset:(struct CGPoint)arg2;
-- (id)_windowBackgroundColorForFullScreenMode:(id)arg1;
 - (void)_goToWindowedAppearance;
 - (void)_goToFullScreenAppearance;
 - (id)_getLayerForPage:(id)arg1 withScale:(double)arg2;
 - (id)_windowScreenshotLayer;
-- (void)_teardownFullscreenTexturedBackgroundColorView;
-- (void)_resizeFullscreenTexturedBackgroundColorView;
-- (void)_setupFullscreenTexturedBackgroundColorView;
 - (void)_tearDownFullscreenAnimationOverlayWindow;
 - (void)_setupFullscreenAnimationOverlayWindow;
 - (long long)_fullscreenPageViewMode;
@@ -717,6 +705,7 @@
 - (void)setSidebarHolderUsesHUDStyle:(BOOL)arg1;
 - (void)_updateSidebarStyleForThumbnails;
 - (void)_applySidebarHolderMargins;
+- (double)_fullscreenToolbarHeight;
 - (struct CGRect)_parentRectForFloatingSidebar;
 - (void)openToBookmark:(id)arg1;
 - (void)navigateToBookmark:(id)arg1;
@@ -821,9 +810,7 @@
 - (oneway void)release;
 - (id)retain;
 - (id)initWithWindowNibName:(id)arg1;
-- (void)_clearBannerConstraints;
 - (void)_setupToolbarAuxiliaryViewContainers;
-- (void)_setupFullScreenToolbarAuxiliaryView;
 - (void)_adjustContentViewInsetForEditBannerHeight:(double)arg1;
 - (void)bannerDidUninstall:(id)arg1;
 - (void)bannerWillUninstall:(id)arg1;
@@ -831,7 +818,6 @@
 - (void)bannerWillInstall:(id)arg1;
 - (void)installBanner:(id)arg1 animated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)uninstallBanner:(id)arg1 animated:(BOOL)arg2;
-- (id)viewBannerWillDisplace:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;

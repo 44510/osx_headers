@@ -11,6 +11,7 @@
 }
 
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)updateAppearance:(BOOL)arg1;
 
 @end
 

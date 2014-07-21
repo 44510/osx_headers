@@ -131,6 +131,7 @@
 - (void)bagDidUpdate:(id)arg1;
 - (void)removeContentViewControllerWithIdentifier:(id)arg1;
 - (void)addContentViewController:(id)arg1 withIdentifier:(id)arg2;
+- (void)adjustPrimaryWebViewContent;
 @property(readonly) FRWKView *currentWebView;
 - (void)_performDelayedInitialLoads;
 - (void)_visibleWebViewInitialLoadCommitted;

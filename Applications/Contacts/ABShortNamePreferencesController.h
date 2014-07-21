@@ -16,6 +16,7 @@
 
 @property NSButton *preferNicknameCheckbox; // @synthesize preferNicknameCheckbox=_preferNicknameCheckbox;
 @property NSPopUpButton *formatPopupButton; // @synthesize formatPopupButton=_formatPopupButton;
+- (void)postPreferencesChangedDistributedNotification;
 - (void)togglePreferNicknames:(id)arg1;
 - (void)updateFormat:(id)arg1;
 - (void)restorePreferNicknamesPreference;

@@ -58,8 +58,6 @@ __attribute__((visibility("hidden")))
     BrowserToolbarItem *_showDownloadsItem;
     BrowserToolbarItem *_showWebInspectorItem;
     BrowserToolbarItem *_bookmarksBarItem;
-    BrowserToolbarItem *_newTabItem;
-    BrowserToolbarItem *_cloudTabsItem;
     BrowserToolbarItem *_shareItem;
     BrowserToolbarItem *_backForwardCustomizeItem;
     BrowserToolbarItem *_unifiedFieldContainerCustomizeItem;
@@ -84,7 +82,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSidebarButtonVisible;
 - (BOOL)isBackForwardVisible;
 - (BOOL)toolbarContainsUnifiedField;
-- (void)_mouseLocationChangedForOneStepBookmarkingButton:(id)arg1;
 - (id)oneStepAddBookmarkButton;
 - (id)shareButton;
 - (id)sidebarButton;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
     double minWait;
     double maxWait;
-    double deltaOnSuccess;
+    double ratioOnSuccess;
     double ratioOnFailure;
     double inactivityKickbackDelay;
     double inactivityKickbackRatio;
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double inactivityKickbackRatio; // @synthesize inactivityKickbackRatio;
 @property(nonatomic) double inactivityKickbackDelay; // @synthesize inactivityKickbackDelay;
 @property(nonatomic) double ratioOnFailure; // @synthesize ratioOnFailure;
-@property(nonatomic) double deltaOnSuccess; // @synthesize deltaOnSuccess;
+@property(nonatomic) double ratioOnSuccess; // @synthesize ratioOnSuccess;
 @property(nonatomic) double maxWait; // @synthesize maxWait;
 @property(nonatomic) double minWait; // @synthesize minWait;
 - (id)initWithParams:(id)arg1 defaults:(id)arg2;

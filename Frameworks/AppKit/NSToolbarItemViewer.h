@@ -75,7 +75,7 @@
 - (void)trackMouseForPopupMenuFormRepresentation:(id)arg1;
 - (void)trackMouseForPopupMenuFormRepresentation:(id)arg1 forItem:(id)arg2 forLabelView:(id)arg3;
 - (void)_popUpMenuFormRepresentationInLabelView:(id)arg1;
-- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2;
+- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
 - (BOOL)_shouldPreventCustomViewFromDraggingWindow:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)performClick:(id)arg1;

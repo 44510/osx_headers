@@ -12,13 +12,13 @@
 
 @interface SPSearchFieldEditor : NSTextView <NSTextInputClient_IncrementalSearch>
 {
-    unsigned long long _completionLength;
-    unsigned long long _targetLength;
     NSString *_completionAndTargetString;
     NSDictionary *_defaultAttributes;
     NSDictionary *_completionStringAttributes;
     NSDictionary *_targetStringAttributes;
     BOOL _resigning;
+    unsigned long long _completionLength;
+    unsigned long long _targetLength;
     NSString *_tabCompletionString;
     unsigned long long _completionAndTargetOptions;
     NSString *_lastMarked;
@@ -32,6 +32,8 @@
 @property(retain) NSString *lastMarked; // @synthesize lastMarked=_lastMarked;
 @property(readonly) unsigned long long completionAndTargetOptions; // @synthesize completionAndTargetOptions=_completionAndTargetOptions;
 @property(readonly) NSString *tabCompletionString; // @synthesize tabCompletionString=_tabCompletionString;
+@property unsigned long long targetLength; // @synthesize targetLength=_targetLength;
+@property unsigned long long completionLength; // @synthesize completionLength=_completionLength;
 - (void).cxx_destruct;
 - (BOOL)readSelectionFromPasteboard:(id)arg1 type:(id)arg2;
 - (id)attributedStringForCompletion:(id)arg1 target:(id)arg2 options:(unsigned long long)arg3;
@@ -67,6 +69,7 @@
 - (unsigned long long)_userLength;
 - (void)fixCompletionAndTarget;
 - (void)_clearCompletionAndTargetVars;
+- (void)clearCompletionAndTarget;
 - (void)_setCompletionAndTargetString:(id)arg1 completionLength:(unsigned long long)arg2 targetLength:(unsigned long long)arg3 options:(unsigned long long)arg4;
 - (struct _NSRange)selectionRangeForProposedRange:(struct _NSRange)arg1 granularity:(unsigned long long)arg2;
 - (void)deleteBackward:(id)arg1;

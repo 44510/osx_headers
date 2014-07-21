@@ -53,6 +53,7 @@
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

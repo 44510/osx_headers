@@ -40,8 +40,10 @@
 @property(nonatomic) BOOL hasMuid;
 @property(nonatomic) BOOL hasResultProviderId;
 - (void)dealloc;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (id)initWithCoordinateHint:(CDStruct_c3b9c2ee)arg1 addressHint:(id)arg2 placeNameHint:(id)arg3;
 - (id)initWithMapItemToRefine:(id)arg1;
+- (id)initWithMuid:(unsigned long long)arg1 addressHint:(id)arg2 locationHint:(CDStruct_c3b9c2ee)arg3 placeNameHint:(id)arg4 resultProviderId:(int)arg5;
 
 @end
 

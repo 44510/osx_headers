@@ -50,6 +50,7 @@
     _Bool _ignorePrefSync;
     _Bool _isVisible;
     _Bool _showDebugSummary;
+    _Bool _debugReset;
     NSDate *_updateDate;
     NSDate *_lastOpenDate;
     NSDate *_lastDuetUpdate;

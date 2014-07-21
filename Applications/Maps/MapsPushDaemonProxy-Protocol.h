@@ -8,6 +8,7 @@
 
 @protocol MapsPushDaemonProxy
 - (void)clearBulletinWithRecordID:(NSString *)arg1;
+- (void)fetchCurrentAnnouncement:(void (^)(GEOAnnouncement *))arg1;
 - (void)resetShownAnnouncements;
 - (void)clearCurrentAnnouncement;
 - (void)simulateAnnouncement:(GEOAnnouncement *)arg1;

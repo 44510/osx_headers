@@ -4,36 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import <AppKit/NSTitlebarContainerView.h>
+#import <AppKit/NSVisualEffectView.h>
 
-@class NSTrackingArea, NSVisualEffectView;
+@class NSTrackingArea;
 
 __attribute__((visibility("hidden")))
-@interface NSTitlebarView : NSTitlebarContainerView
+@interface NSTitlebarView : NSVisualEffectView
 {
-    NSVisualEffectView *_backdropView;
+    BOOL _transparent;
     NSTrackingArea *_buttonGroupTrackingArea;
-    BOOL _disableBlurFilter;
-    BOOL _drawsSeparator;
 }
 
-@property BOOL disableBlurFilter; // @synthesize disableBlurFilter=_disableBlurFilter;
-@property(readonly, retain) NSVisualEffectView *visualEffectView; // @dynamic visualEffectView;
+@property BOOL transparent; // @synthesize transparent=_transparent;
+- (id)titleFont;
+- (id)menuForEvent:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;
 - (void)_removeTrackingAreaIfNeeded;
-- (void)setTransparent:(BOOL)arg1;
-- (void)updateLayer;
-- (void)_windowChangedKeyState;
-- (void)displayLayer:(id)arg1;
-- (BOOL)wantsUpdateLayer;
-- (void)drawRect:(struct CGRect)arg1;
+- (id)associatedThemeFrame;
 @property BOOL drawsSeparator;
-- (void)setAssociatedThemeFrame:(id)arg1;
-- (void)_makeBackdropViewIfNeeded;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

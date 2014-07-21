@@ -35,7 +35,7 @@
 - (void)_setAccount:(id)arg1;
 - (void)_nearbyStateChanged;
 - (void)_addIdentity:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *_identities;
+@property(readonly, retain, nonatomic) NSArray *identities;
 @property(readonly, retain, nonatomic) NSData *pushToken;
 @property(readonly, retain, nonatomic) NSString *enclosureColor;
 @property(readonly, retain, nonatomic) NSString *deviceColor;
@@ -55,6 +55,9 @@
 @property(readonly, retain, nonatomic) NSString *service;
 @property(readonly, retain, nonatomic) NSString *name;
 @property(readonly, retain, nonatomic) NSString *modelIdentifier;
+@property(readonly, nonatomic) NSString *productVersion;
+@property(readonly, nonatomic) NSString *productName;
+@property(readonly, nonatomic) NSString *productBuildVersion;
 @property(readonly, retain, nonatomic) NSString *uniqueID;
 - (void)_connect;
 - (void)dealloc;

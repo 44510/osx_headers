@@ -85,7 +85,7 @@
 - (void)setDocumentEdited:(BOOL)arg1;
 - (long long)resizeFlags;
 - (void)resizeWithEvent:(id)arg1;
-- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2;
+- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
 - (struct CGRect)_validFrameForResizeFrame:(struct CGRect)arg1 fromResizeEdge:(unsigned long long)arg2;
 - (void)mouseUp:(id)arg1;
 - (BOOL)_handlePossibleDoubleClickForEvent:(id)arg1;

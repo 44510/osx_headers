@@ -195,10 +195,6 @@ struct TNSRef<id<BUStarfieldTimelineItem>> {
     id _field1;
 };
 
-struct TNSRef<void (^)()> {
-    CDUnknownBlockType fRef;
-};
-
 struct TRef<CGColor *, TRetainReleasePolicy<CGColorRef>> {
     struct CGColor *fRef;
 };
@@ -1311,6 +1307,11 @@ struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
 
 struct dispatch_queue_s;
 
+struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+};
+
 struct set<TString, std::__1::less<TString>, std::__1::allocator<TString>> {
     struct __tree<TString, std::__1::less<TString>, std::__1::allocator<TString>> {
         struct __tree_node<TString, void *> *__begin_node_;
@@ -1391,20 +1392,6 @@ struct vector<char, std::__1::allocator<char>> {
     } __end_cap_;
 };
 
-#if 0
-// Names with conflicting types:
-typedef struct ?<void ()> {
-    struct type __buf_;
-    struct __base<void ()> *__f_;
-} function_f9feaa7d;
-
-typedef struct ?<void ()> {
-    function_f9feaa7d fStandardFunction;
-    struct TNSRef<void (^)()> fManagedBlock;
-} function_e430924f;
-
-#endif
-
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -1473,6 +1460,11 @@ typedef struct {
 } CDStruct_e50ab651;
 
 // Template types
+typedef struct function<void ()> {
+    struct type __buf_;
+    struct __base<void ()> *__f_;
+} function_f9feaa7d;
+
 typedef struct set<double, std::__1::less<double>, std::__1::allocator<double>> {
     struct __tree<double, std::__1::less<double>, std::__1::allocator<double>> {
         struct __tree_node<double, void *> *_field1;

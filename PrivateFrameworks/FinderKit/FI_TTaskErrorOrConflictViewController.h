@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)setCanSkip:(_Bool)arg1;
 - (void)initCommon;
 - (id)initWithViewKind:(int)arg1;
-- (void)flagsDidChange:(id)arg1;
 
 @end
 

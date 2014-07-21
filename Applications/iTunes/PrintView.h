@@ -14,11 +14,11 @@
     void *mData;
 }
 
-+ (id)createPrintView:(struct PrintSession *)arg1 playlist:(struct Playlist *)arg2 objectList:(struct ITObjectList *)arg3 data:(void *)arg4;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)rectForPage:(long long)arg1;
 - (BOOL)knowsPageRange:(struct _NSRange *)arg1;
 - (void)dealloc;
+- (id)initWithSession:(struct PrintSession *)arg1 playlist:(struct Playlist *)arg2 objectList:(struct ITObjectList *)arg3 data:(void *)arg4;
 
 @end
 

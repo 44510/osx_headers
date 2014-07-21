@@ -88,6 +88,7 @@
 - (void)performUndoableOperation:(id)arg1;
 - (BOOL)hasChangesForSaveType:(long long)arg1;
 - (id)diffSummarySinceLastSaveType:(long long)arg1 commit:(BOOL)arg2;
+- (void)moveEventsToNewCalendarIfNecessary;
 - (BOOL)saveActionIsDecline;
 - (BOOL)saveChange:(long long)arg1 sender:(id)arg2;
 - (void)revert:(id)arg1;

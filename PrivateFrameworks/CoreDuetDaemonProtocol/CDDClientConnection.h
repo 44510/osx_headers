@@ -19,6 +19,7 @@
 @property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 @property(readonly) CDDXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (BOOL)bundleIdChange:(id *)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (BOOL)attributeId:(unsigned long long)arg1 admissionCheckOfValue:(id)arg2 admissionCheckType:(int)arg3 attributeType:(int)arg4 options:(id)arg5 cost:(long long)arg6 onDate:(id)arg7 risingEdge:(BOOL)arg8 fallingEdge:(BOOL)arg9 error:(id *)arg10 replyHandler:(CDUnknownBlockType)arg11;
 - (BOOL)setManualType:(unsigned long long)arg1 type:(BOOL)arg2 error:(id *)arg3 replyHandler:(CDUnknownBlockType)arg4;
 - (BOOL)readRemoteRequestResult:(unsigned long long)arg1 error:(id *)arg2 replyHandler:(CDUnknownBlockType)arg3;

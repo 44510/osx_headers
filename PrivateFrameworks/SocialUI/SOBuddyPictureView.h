@@ -18,13 +18,11 @@
     BuddyPicture *_buddyPicture;
     NSString *_baseFilename;
     SEL _doubleAction;
-    CDUnknownBlockType _maskDrawingBlock;
     CALayer *_contentSublayer;
 }
 
 @property(retain, nonatomic) CALayer *contentSublayer; // @synthesize contentSublayer=_contentSublayer;
 @property(nonatomic) BOOL displaysImageCopy; // @synthesize displaysImageCopy=_displaysImageCopy;
-@property(copy, nonatomic) CDUnknownBlockType maskDrawingBlock; // @synthesize maskDrawingBlock=_maskDrawingBlock;
 @property(nonatomic) SEL doubleAction; // @synthesize doubleAction=_doubleAction;
 @property(nonatomic) BOOL allowsDrag; // @synthesize allowsDrag=_allowsDrag;
 @property(copy, nonatomic) NSString *baseFilename; // @synthesize baseFilename=_baseFilename;
@@ -62,7 +60,6 @@
 - (void)mouseDown:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (BOOL)acceptsFirstResponder;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)layout;

@@ -27,7 +27,7 @@
 - (unsigned long long)characterIndexToTruncateAttrString:(id)arg1 width:(double)arg2 maxLines:(unsigned long long)arg3;
 - (unsigned long long)characterIndexOfBreakInString:(id)arg1 atOrBeforeCharacterIndex:(unsigned long long)arg2;
 - (void)_makeTextObjectsForLayout;
-- (id)fullSubtitleAttributedStringForMovie:(id)arg1;
+- (id)fullSubtitleAttributedStringForMovie:(id)arg1 view:(id)arg2;
 - (id)subtitleTextViewMinHeightConstraintAtIndex:(unsigned long long)arg1;
 - (id)subtitleTextViewAtIndex:(unsigned long long)arg1;
 - (id)titleTextFieldAtIndex:(unsigned long long)arg1;

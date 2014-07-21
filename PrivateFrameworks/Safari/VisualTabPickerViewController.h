@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldStackThumbnails;
     BOOL _tabsShouldBeClosable;
     BOOL _addingNewTab;
+    BOOL _closing;
     BrowserWindowControllerMac *_browserWindowController;
     id <VisualTabPickerDelegate> _delegate;
     NSImage *_tabBarSnapshot;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 
 + (id)springAnimationForVisualTabPicker;
 @property(retain, nonatomic) NSImage *tabBarSnapshot; // @synthesize tabBarSnapshot=_tabBarSnapshot;
+@property(readonly, nonatomic, getter=isClosing) BOOL closing; // @synthesize closing=_closing;
 @property(readonly, nonatomic, getter=isAddingNewTab) BOOL addingNewTab; // @synthesize addingNewTab=_addingNewTab;
 @property(nonatomic) BOOL tabsShouldBeClosable; // @synthesize tabsShouldBeClosable=_tabsShouldBeClosable;
 @property(nonatomic) BOOL shouldStackThumbnails; // @synthesize shouldStackThumbnails=_shouldStackThumbnails;

@@ -195,7 +195,7 @@
 - (void)unpairAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (BOOL)_setupUnpairingUI:(id)arg1;
 - (void)pairOptionsAlertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
-- (void)_setupPairingOptionsUI:(id)arg1;
+- (void)_setupPairingOptionsUI:(id)arg1 dictForPairing:(id)arg2;
 - (void)cancelGoBack:(id)arg1;
 - (void)continueUnpairing:(id)arg1;
 - (void)pairUsingOptions:(id)arg1;

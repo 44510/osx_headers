@@ -8,12 +8,13 @@
 
 #import "NSCopying.h"
 
-@class GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDPlaceLookupResult, GEOPDPlaceRefinementResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDSiriSearchResult;
+@class GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDLocationDirectedSearchResult, GEOPDPlaceLookupResult, GEOPDPlaceRefinementResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDSiriSearchResult;
 
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying>
 {
     GEOPDCanonicalLocationSearchResult *_canonicalSearchResult;
     GEOPDGeocodingResult *_geocodingResult;
+    GEOPDLocationDirectedSearchResult *_locationDirectedSearchResult;
     GEOPDPlaceLookupResult *_placeLookupResult;
     GEOPDPlaceRefinementResult *_placeRefinementResult;
     GEOPDReverseGeocodingResult *_reverseGeocodingResult;
@@ -21,6 +22,7 @@
     GEOPDSiriSearchResult *_siriSearchResult;
 }
 
+@property(retain, nonatomic) GEOPDLocationDirectedSearchResult *locationDirectedSearchResult; // @synthesize locationDirectedSearchResult=_locationDirectedSearchResult;
 @property(retain, nonatomic) GEOPDSiriSearchResult *siriSearchResult; // @synthesize siriSearchResult=_siriSearchResult;
 @property(retain, nonatomic) GEOPDPlaceRefinementResult *placeRefinementResult; // @synthesize placeRefinementResult=_placeRefinementResult;
 @property(retain, nonatomic) GEOPDPlaceLookupResult *placeLookupResult; // @synthesize placeLookupResult=_placeLookupResult;
@@ -37,6 +39,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasLocationDirectedSearchResult;
 @property(readonly, nonatomic) BOOL hasSiriSearchResult;
 @property(readonly, nonatomic) BOOL hasPlaceRefinementResult;
 @property(readonly, nonatomic) BOOL hasPlaceLookupResult;

@@ -34,7 +34,6 @@
 - (id)freeSpace;
 - (id)capacity;
 - (id)uniqueID;
-- (id)hfsPath;
 - (const struct FSRef *)fsref;
 - (void)dealloc;
 - (id)initDiskWithParent:(id)arg1 andName:(id)arg2;

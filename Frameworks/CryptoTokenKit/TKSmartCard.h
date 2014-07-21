@@ -6,15 +6,17 @@
 
 #import "NSObject.h"
 
-@class TKSmartCardSlot;
+@class NSNumber, TKSmartCardSlot;
 
 @interface TKSmartCard : NSObject
 {
     TKSmartCardSlot *_slot;
     BOOL _sensitive;
     id <TKProtocolSmartCardSession> _session;
-    int _sessionCounter;
+    long long _sessionCounter;
     BOOL _someoneWantsSession;
+    long long _sessionEndPolicy;
+    NSNumber *_reservedProtocols;
     BOOL _useExtendedLength;
     unsigned char _cla;
     BOOL _valid;
@@ -37,6 +39,10 @@
 @property BOOL sensitive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithSlot:(id)arg1;
+@property(nonatomic) long long sessionEndPolicy;
+- (BOOL)revalidate;
+- (void)unreserve;
+- (void)reserveExclusive:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)sendIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 le:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)transmitEnvelopedRequest:(id)arg1 fromOffset:(unsigned long long)arg2 le:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)encodeLength:(unsigned long long)arg1 into:(id)arg2 sized:(long long)arg3;

@@ -12,6 +12,7 @@
 
 @interface PKService : NSObject <NSXPCListenerDelegate>
 {
+    BOOL _shared;
     id <PKServiceDelegate> _delegate;
     NSXPCListener *_serviceListener;
     NSMutableDictionary *_personalities;
@@ -25,6 +26,7 @@
 + (id)defaultService;
 + (void)main;
 @property unsigned long long scheduledTermination; // @synthesize scheduledTermination=_scheduledTermination;
+@property BOOL shared; // @synthesize shared=_shared;
 @property(retain) NSArray *subsystems; // @synthesize subsystems=_subsystems;
 @property(retain) NSObject<OS_dispatch_queue> *_sync; // @synthesize _sync=__sync;
 @property(retain) PKServicePersonality *solePersonality; // @synthesize solePersonality=_solePersonality;
@@ -34,15 +36,18 @@
 - (void).cxx_destruct;
 - (void)cancelTermination;
 - (void)scheduleTermination:(double)arg1;
-- (void)checkEnvironment;
+- (void)checkEnvironment:(id)arg1;
 - (BOOL)unregisterPersonality:(id)arg1;
 - (void)registerPersonality:(id)arg1;
+- (id)personalityNamed:(id)arg1 forHostPid:(int)arg2;
 - (id)personalityNamed:(id)arg1;
 - (id)connectionForPlugInNamed:(id)arg1;
 - (id)embeddedPrincipalForPlugInNamed:(id)arg1;
 - (id)hostPrincipalForPlugInNamed:(id)arg1;
 - (id)plugInPrincipalForPlugInNamed:(id)arg1;
 - (id)defaultsForPlugInNamed:(id)arg1;
+- (void)copyAppStoreReceipt:(CDUnknownBlockType)arg1;
+- (void)launchContainingApplicationForPlugInNamed:(id)arg1;
 - (id)discoverSubsystemNamed:(id)arg1 logMissing:(BOOL)arg2;
 - (void)mergeSubsystemList:(id)arg1 from:(id)arg2;
 - (void)mergeSubsystems:(id)arg1 from:(id)arg2;

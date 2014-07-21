@@ -23,6 +23,7 @@
 - (BOOL)_testWithComparisonOperator:(unsigned long long)arg1 object1:(id)arg2 object2:(id)arg3;
 - (void)dealloc;
 - (id)initWithObjectSpecifier:(id)arg1 comparisonOperator:(unsigned long long)arg2 testObject:(id)arg3;
+- (id)init;
 - (id)_initFromRecord:(id)arg1;
 
 @end

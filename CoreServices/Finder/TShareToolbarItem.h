@@ -12,8 +12,11 @@
 
 @interface TShareToolbarItem : TToolbarItem <NSMenuDelegate>
 {
+    struct TNSRef<NSSharingServicePicker *> _sharingServicePicker;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)validate;
 - (void)setEnabled:(BOOL)arg1;
 - (void)menuNeedsUpdate:(id)arg1;

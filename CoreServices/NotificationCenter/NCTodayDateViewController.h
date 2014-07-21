@@ -20,6 +20,7 @@
 @property NSLayoutConstraint *leftMarginConstraint; // @synthesize leftMarginConstraint=_leftMarginConstraint;
 - (void)willBeShown;
 - (void)updateDateString;
+- (void)awakeFromNib;
 - (id)dateFormatForLocale:(id)arg1 singleLine:(BOOL)arg2;
 - (BOOL)isDateOrdinalSupportedForLocale:(id)arg1;
 - (id)initWithItem:(id)arg1;

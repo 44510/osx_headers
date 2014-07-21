@@ -34,6 +34,7 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) CKDPIdentifier *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

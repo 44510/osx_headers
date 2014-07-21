@@ -14,6 +14,7 @@
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding>
 {
     BOOL _wasCached;
+    BOOL _hasSize;
     BOOL _uploaded;
     NSURL *_fileURL;
     NSData *_signature;
@@ -52,6 +53,7 @@
 @property(copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
 @property(nonatomic) __weak CKRecord *record; // @synthesize record=_record;
 @property(nonatomic, getter=isUploaded) BOOL uploaded; // @synthesize uploaded=_uploaded;
+@property(nonatomic) BOOL hasSize; // @synthesize hasSize=_hasSize;
 @property(nonatomic) BOOL wasCached; // @synthesize wasCached=_wasCached;
 @property(copy, nonatomic) NSString *uploadReceipt; // @synthesize uploadReceipt=_uploadReceipt;
 @property(retain, nonatomic) NSString *referenceIdentifierString; // @synthesize referenceIdentifierString=_referenceIdentifierString;

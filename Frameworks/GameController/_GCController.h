@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (unsigned long long)deviceHash;
 
 @end

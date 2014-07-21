@@ -9,14 +9,14 @@
 #import "ECEventHandling.h"
 #import "ECEventHandlingDelegate.h"
 
-@class CALayer, ECButtonLayer, ECCalloutLayer, ECShadowTextLayer, NSString;
+@class CALayer, ECButtonLayer, ECCartoucheBackdropLayer, ECShadowTextLayer, NSString;
 
 @interface ECAlertPanel : NSObject <ECEventHandlingDelegate, ECEventHandling>
 {
     id <ECAlertPanelDelegate> _delegate;
     CALayer *_layer;
     CALayer *_iconLayer;
-    ECCalloutLayer *_backgroundLayer;
+    ECCartoucheBackdropLayer *_backgroundLayer;
     ECShadowTextLayer *_titleLayer;
     ECShadowTextLayer *_messageLayer;
     ECButtonLayer *_cancelButtonLayer;

@@ -25,6 +25,7 @@
 - (void)refreshField;
 - (void)didAddSubview:(id)arg1;
 - (id)_addressTextView;
+- (id)textView:(id)arg1 completions:(id)arg2 forPartialWordRange:(struct _NSRange)arg3 indexOfSelectedItem:(long long *)arg4;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (unsigned long long)textView:(id)arg1 dragOperationForDraggingInfo:(id)arg2 type:(id)arg3;
 - (id)tokenFieldCell:(id)arg1 shouldUseReadablePasteboardTypes:(id)arg2;

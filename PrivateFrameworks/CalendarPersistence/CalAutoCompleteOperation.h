@@ -59,6 +59,14 @@
 - (void)setIgnoredAddresses:(id)arg1;
 - (void)setIgnoredParticipants:(id)arg1;
 - (id)allResults;
+- (void)_preprocessResultsForCoalescing;
+- (void)_removeRecentAndServerResultsFromLocalResults;
+- (void)_sortServerResults;
+- (void)_removeRecentGroupsAndServerDuplicateResults;
+- (void)_moveServerResult:(id)arg1 toRecentsAsReplacementForResult:(id)arg2;
+- (void)_removeGroupRecentResult:(id)arg1;
+- (id)_serverAndRecentResults;
+- (id)_emailsToResultsFromResults:(id)arg1;
 @property(readonly) BOOL gotResults;
 - (BOOL)isRunning;
 - (void)cancelSearch;

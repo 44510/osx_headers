@@ -7,11 +7,12 @@
 #import <IMPlatformCore/IMWindow.h>
 
 #import "IMPlugIn.h"
+#import "IMUndoDelegateHost.h"
 #import "NSToolbarDelegate.h"
 
 @class IMPlugInInstanceDescriptor, IMToolbarWindowFrame, NSString;
 
-@interface IMToolbarWindow : IMWindow <IMPlugIn, NSToolbarDelegate>
+@interface IMToolbarWindow : IMWindow <IMPlugIn, IMUndoDelegateHost, NSToolbarDelegate>
 {
     IMToolbarWindowFrame *_windowFrame;
     IMPlugInInstanceDescriptor *_descriptor;
@@ -19,14 +20,14 @@
     BOOL _supportIMReaderWindowPlugInProxy;
     BOOL _windowCanEnterFullScreen;
     int _state;
-    id <IMToolbarWindowUndoDelegate> _undoDelegate;
+    id <IMWindowUndoDelegate> undoDelegate;
 }
 
 + (BOOL)isFullKeyboardAccessEnabled;
 + (Class)frameViewClassForStyleMask:(unsigned long long)arg1;
-@property __weak id <IMToolbarWindowUndoDelegate> undoDelegate; // @synthesize undoDelegate=_undoDelegate;
 @property BOOL windowCanEnterFullScreen; // @synthesize windowCanEnterFullScreen=_windowCanEnterFullScreen;
 @property(readonly) __weak IMToolbarWindowFrame *windowFrame; // @synthesize windowFrame=_windowFrame;
+@property __weak id <IMWindowUndoDelegate> undoDelegate; // @synthesize undoDelegate;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
@@ -41,6 +42,8 @@
 - (void)removeChildWindow:(id)arg1;
 - (void)addChildWindow:(id)arg1 ordered:(long long)arg2;
 - (void)showToolbarPresentingWindow:(BOOL)arg1;
+- (void)redo:(id)arg1;
+- (void)undo:(id)arg1;
 - (void)sendEvent:(id)arg1;
 - (void)imToggleFullScreen:(id)arg1;
 - (void)toggleFullScreen:(id)arg1;
@@ -60,6 +63,7 @@
 - (void)becomeKeyWindow;
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
+- (void)responderChainWasInitialized;
 - (void)setContentView:(id)arg1;
 - (BOOL)_usesCustomDrawing;
 - (void)setBackgroundColor:(id)arg1;

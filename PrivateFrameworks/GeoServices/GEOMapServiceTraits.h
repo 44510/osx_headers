@@ -30,6 +30,7 @@
     GEOLocation *_deviceLocation;
     NSString *_deviceSpokenLocale;
     GEOMapRegion *_mapRegion;
+    int _mode;
     NSMutableArray *_photoSizes;
     unsigned int _photosCount;
     NSMutableArray *_reviewUserPhotoSizes;
@@ -46,6 +47,7 @@
         unsigned int mapZoomLevel:1;
         unsigned int action:1;
         unsigned int carHeadunitInteractionModel:1;
+        unsigned int mode:1;
         unsigned int photosCount:1;
         unsigned int reviewUserPhotosCount:1;
         unsigned int sequenceNumber:1;
@@ -56,6 +58,7 @@
     } _has;
 }
 
+@property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) double mapZoomLevel; // @synthesize mapZoomLevel=_mapZoomLevel;
 @property(nonatomic) double carHeadunitPixelHeight; // @synthesize carHeadunitPixelHeight=_carHeadunitPixelHeight;
 @property(nonatomic) double carHeadunitPixelWidth; // @synthesize carHeadunitPixelWidth=_carHeadunitPixelWidth;
@@ -91,6 +94,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasMode;
 @property(nonatomic) BOOL hasMapZoomLevel;
 @property(nonatomic) BOOL hasCarHeadunitPixelHeight;
 @property(nonatomic) BOOL hasCarHeadunitPixelWidth;

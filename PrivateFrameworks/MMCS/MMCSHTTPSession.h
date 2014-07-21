@@ -16,6 +16,7 @@
 __attribute__((visibility("hidden")))
 @interface MMCSHTTPSession : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate>
 {
+    BOOL _isBackground;
     NSString *_sessionName;
     NSString *_sessionConfigurationId;
     NSURLSession *_urlSession;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_contextsForTasks;
 }
 
+@property BOOL isBackground; // @synthesize isBackground=_isBackground;
 @property(retain, nonatomic) NSMutableDictionary *contextsForTasks; // @synthesize contextsForTasks=_contextsForTasks;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSURLSessionConfiguration *urlSessionConfiguration; // @synthesize urlSessionConfiguration=_urlSessionConfiguration;

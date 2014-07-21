@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct TRef<__CFMachPort *, TRetainReleasePolicy<CFMachPortRef>> _localEventMonitor;
     struct TRef<__CFRunLoopSource *, TRetainReleasePolicy<CFRunLoopSourceRef>> _localEventSource;
     _Bool _hideSuggestionsWindowOnMouseUp;
+    _Bool _isShowingSuggestionsWindow;
     struct TNotificationCenterObserver _tfWillMoveToWindowObserver;
     struct TNotificationCenterObserver _tfDidMoveToWindowObserver;
     struct TNotificationCenterObserver _tfFrameDidChangeObserver;

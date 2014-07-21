@@ -21,16 +21,18 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_placeHashes;
 }
 
+- (void)_callHistoryRecentsClearedObserver:(id)arg1;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(CDUnknownBlockType)arg2;
 - (void)calculateFreeableSpaceWithHandler:(CDUnknownBlockType)arg1;
+- (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
-- (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey)arg2;
+- (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey)arg2 shouldOptimizeWritesToDisk:(BOOL)arg3;
 - (id)_cachedPlaceForGeocodingParameters:(id)arg1;
 - (void)_trackPlaceData:(id)arg1 forGeocodingParameters:(id)arg2;
 - (void)trackPlaceData:(id)arg1;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(CDUnknownBlockType)arg1;
 - (long long)_invalidationStateForPlace:(id)arg1;
-- (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)requestMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)cancelRequest:(id)arg1;
 - (void)startRequest:(id)arg1 traits:(id)arg2 finished:(CDUnknownBlockType)arg3 networkActivity:(CDUnknownBlockType)arg4 error:(CDUnknownBlockType)arg5;

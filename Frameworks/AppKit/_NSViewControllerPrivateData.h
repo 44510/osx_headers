@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSMapTable, NSMutableArray, NSStoryboard, NSString, NSViewController;
+@class NSArray, NSDictionary, NSMapTable, NSMutableArray, NSStoryboard, NSString, NSViewController;
 
 __attribute__((visibility("hidden")))
 @interface _NSViewControllerPrivateData : NSObject
@@ -20,16 +20,19 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
     NSMapTable *_externalObjectsTableForViewLoading;
     CDUnknownBlockType _constrainServiceScreenFrameBlock;
+    NSDictionary *_segueDestinationOptions;
     struct {
         unsigned int preventInsertAndRemoveChildViewControllersFromSendingKVO:1;
         unsigned int _sentViewWillAppear:1;
         unsigned int _sentViewWillDisappear:1;
+        unsigned int _sentViewDidLoad:1;
         unsigned int _scheduledBridgedServiceLayoutPropertyChange:1;
-        unsigned int _reserved:28;
+        unsigned int _reserved:27;
     } _flags;
 }
 
 @property(copy) CDUnknownBlockType constrainServiceScreenFrameBlock; // @synthesize constrainServiceScreenFrameBlock=_constrainServiceScreenFrameBlock;
+@property(retain) NSDictionary *segueDestinationOptions; // @synthesize segueDestinationOptions=_segueDestinationOptions;
 @property(retain) NSMapTable *externalObjectsTableForViewLoading; // @synthesize externalObjectsTableForViewLoading=_externalObjectsTableForViewLoading;
 @property(retain) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 @property(retain) NSArray *segueTemplates; // @synthesize segueTemplates=_segueTemplates;

@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class CKDPAssetUploadTokenRetrieveResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPInvitationAcceptResponse, CKDPInvitationDeclineResponse, CKDPInvitationQueryResponse, CKDPLikeResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPkiRegisterResponse, CKDPPkiRetrieveResponse, CKDPPostCommentResponse, CKDPPromoteContainerSchemaResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResetContainerResponse, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareCreateResponse, CKDPShareDeleteResponse, CKDPShareParticipantCreateResponse, CKDPShareParticipantDeleteResponse, CKDPShareParticipantUpdateResponse, CKDPShareRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
+@class CKDPAssetUploadTokenRetrieveResponse, CKDPDeleteCommentResponse, CKDPDeleteContainerResponse, CKDPGetCommentResponse, CKDPGetCommentsResponse, CKDPGetLikesResponse, CKDPInvitationAcceptResponse, CKDPInvitationDeclineResponse, CKDPInvitationQueryResponse, CKDPLikeResponse, CKDPMescalSignatureResponse, CKDPNotificationMarkReadResponse, CKDPNotificationSyncResponse, CKDPOperation, CKDPPkiRegisterResponse, CKDPPkiRetrieveResponse, CKDPPostCommentResponse, CKDPPromoteContainerSchemaResponse, CKDPPulseResponse, CKDPQueryRetrieveResponse, CKDPRecordDeleteResponse, CKDPRecordRetrieveChangesResponse, CKDPRecordRetrieveResponse, CKDPRecordRetrieveVersionsResponse, CKDPRecordSaveResponse, CKDPResetContainerResponse, CKDPResponseOperationResult, CKDPSetBadgeCountResponse, CKDPShareCreateResponse, CKDPShareDeleteResponse, CKDPShareParticipantCreateResponse, CKDPShareParticipantDeleteResponse, CKDPShareParticipantUpdateResponse, CKDPShareRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPSubscriptionDeleteResponse, CKDPSubscriptionRetrieveResponse, CKDPTokenRegistrationResponse, CKDPTokenUnregistrationResponse, CKDPUnlikeResponse, CKDPUserAvailableQuotaResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPUserPrivacySettingsResetResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserQueryResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneRetrieveResponse, CKDPZoneSaveResponse;
 
 @interface CKDPResponseOperation : PBCodable <NSCopying>
 {
@@ -54,6 +54,7 @@
     CKDPTokenRegistrationResponse *_tokenRegistrationResponse;
     CKDPTokenUnregistrationResponse *_tokenUnregistrationResponse;
     CKDPUnlikeResponse *_unlikeResponse;
+    CKDPUserAvailableQuotaResponse *_userAvailableQuotaResponse;
     CKDPUserPrivacySettingsBatchLookupResponse *_userPrivacySettingsBatchLookupResponse;
     CKDPUserPrivacySettingsResetResponse *_userPrivacySettingsResetResponse;
     CKDPUserPrivacySettingsRetrieveResponse *_userPrivacySettingsRetrieveResponse;
@@ -73,6 +74,7 @@
 @property(retain, nonatomic) CKDPOperation *response; // @synthesize response=_response;
 @property(nonatomic) unsigned int operationCost; // @synthesize operationCost=_operationCost;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -101,6 +103,8 @@
 @property(readonly, nonatomic) BOOL hasRecordRetrieveChangesResponse;
 @property(retain, nonatomic) CKDPRecordDeleteResponse *recordDeleteResponse;
 @property(readonly, nonatomic) BOOL hasRecordDeleteResponse;
+@property(retain, nonatomic) CKDPUserAvailableQuotaResponse *userAvailableQuotaResponse;
+@property(readonly, nonatomic) BOOL hasUserAvailableQuotaResponse;
 @property(retain, nonatomic) CKDPUserRetrieveResponse *userRetrieveResponse;
 @property(readonly, nonatomic) BOOL hasUserRetrieveResponse;
 @property(retain, nonatomic) CKDPQueryRetrieveResponse *queryRetrieveResponse;

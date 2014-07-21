@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned long long created; // @synthesize created=_created;
 @property(retain, nonatomic) NSMutableArray *fields; // @synthesize fields=_fields;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSData, NSError, NSMutableArray;
+@class NSData, NSError, NSMutableArray, NSSet, NSURL;
 
 @interface NSXMLParser : NSObject
 {
@@ -25,8 +25,13 @@
     BOOL _haveDetectedEncoding;
     NSData *_bomChunk;
     unsigned long long _chunkSize;
+    NSSet *_allowedEntityURLs;
+    NSURL *_url;
+    unsigned long long _externalEntityResolvingPolicy;
 }
 
++ (id)currentParser;
++ (void)setCurrentParser:(id)arg1;
 - (void)_initializeSAX2Callbacks;
 - (void)_popNamespaces;
 - (void)_pushNamespaces:(id)arg1;
@@ -47,9 +52,13 @@
 - (BOOL)_handleParseResult:(long long)arg1;
 - (BOOL)shouldContinueAfterFatalError;
 - (void)setShouldContinueAfterFatalError:(BOOL)arg1;
-@property BOOL shouldResolveExternalEntities;
+- (BOOL)shouldResolveExternalEntities;
 @property BOOL shouldReportNamespacePrefixes;
 @property BOOL shouldProcessNamespaces;
+- (struct _xmlParserInput *)_xmlExternalEntityWithURL:(const char *)arg1 identifier:(const char *)arg2 context:(struct _xmlParserCtxt *)arg3 originalLoaderFunction:(CDUnknownFunctionPointerType)arg4;
+@property unsigned long long externalEntityResolvingPolicy;
+@property(copy) NSSet *allowedExternalEntityURLs;
+- (void)setShouldResolveExternalEntities:(BOOL)arg1;
 @property id <NSXMLParserDelegate> delegate;
 - (id)initWithStream:(id)arg1;
 - (id)initForIncrementalParsing;

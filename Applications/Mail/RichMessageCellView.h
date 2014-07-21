@@ -103,8 +103,6 @@
 - (void)viewWillMoveToWindow:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)canBecomeKeyView;
-- (id)_tableView;
-- (BOOL)isSelected;
 @property(nonatomic) unsigned long long photoSize;
 @property(nonatomic) unsigned long long numberOfSnippetLines; // @synthesize numberOfSnippetLines=_numberOfSnippetLines;
 - (void)setBackgroundStyle:(long long)arg1;

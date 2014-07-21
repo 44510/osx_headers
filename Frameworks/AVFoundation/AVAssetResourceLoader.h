@@ -32,6 +32,7 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1;
+- (id)init;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSData, NSDictionary, NSNumber, NSString, NSURL;
+@class NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL;
 
 @interface FAFamilyNotification : NSObject <NSSecureCoding>
 {
@@ -18,6 +18,8 @@
     NSString *_identifier;
     NSString *_title;
     NSString *_informativeText;
+    NSDate *_relevanceDate;
+    NSDate *_expiryDate;
     NSNumber *_familyMemberDSID;
     unsigned long long _displayStyle;
     NSString *_actionButtonLabel;
@@ -52,6 +54,8 @@
 @property BOOL shouldPersistWhenActivated; // @synthesize shouldPersistWhenActivated=_shouldPersistWhenActivated;
 @property unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(copy) NSNumber *familyMemberDSID; // @synthesize familyMemberDSID=_familyMemberDSID;
+@property(copy) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
+@property(copy) NSDate *relevanceDate; // @synthesize relevanceDate=_relevanceDate;
 @property(copy) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;

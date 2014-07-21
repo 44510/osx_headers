@@ -21,7 +21,6 @@
     NSString *_directionsSourceAddressString;
     NSString *_directionsDestinationAddressString;
     NSString *_searchQuery;
-    NSString *_displayQuery;
     CDStruct_2c43369c _searchCoordinate;
     CDStruct_feeb6407 _searchRegion;
     int _searchProviderID;
@@ -35,7 +34,6 @@
 @property(readonly) int searchProviderID; // @synthesize searchProviderID=_searchProviderID;
 @property(readonly) CDStruct_90e2a262 searchRegion; // @synthesize searchRegion=_searchRegion;
 @property(readonly) CDStruct_c3b9c2ee searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
-@property(readonly) NSString *displayQuery; // @synthesize displayQuery=_displayQuery;
 @property(readonly) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(readonly) NSString *directionsDestinationAddressString; // @synthesize directionsDestinationAddressString=_directionsDestinationAddressString;
 @property(readonly) NSString *directionsSourceAddressString; // @synthesize directionsSourceAddressString=_directionsSourceAddressString;
@@ -50,6 +48,7 @@
 - (unsigned long long)_indexOfHiDpi:(id)arg1;
 - (void)_drawImage:(id)arg1 point:(struct CGPoint)arg2 inContext:(struct CGContext *)arg3 hiDpi:(BOOL)arg4;
 - (void)renderSnapshotWithOptions:(id)arg1 imageSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
+- (CDStruct_90e2a262)regionFromMapItems:(id)arg1;
 - (BOOL)resolveWithViewSize:(struct CGSize)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)resolveWithViewSize:(struct CGSize)arg1 options:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (CDStruct_90e2a262)regionWithViewSize:(struct CGSize)arg1;

@@ -21,6 +21,7 @@
 - (id)SHK_string;
 - (id)SHK_attributedString;
 - (id)SHK_image;
+- (id)SHK_urlForTypeIdentifier:(id)arg1;
 - (id)SHK_url;
 @end
 

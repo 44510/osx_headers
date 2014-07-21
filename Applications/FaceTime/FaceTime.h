@@ -14,7 +14,7 @@
 #import "NSUserNotificationCenterDelegate.h"
 #import "SOURLFetcherDelegate.h"
 
-@class FTDockTileHelper, FTPreferencesWindowController, IMConnectionMonitor, NSMenu, NSMenuItem, NSMutableArray, NSString, SOURLFetcher, TUCallServicesRecentsController;
+@class FTDockTileHelper, FTPreferencesWindowController, IMConnectionMonitor, NSMenu, NSMenuItem, NSMutableArray, NSString, SOURLFetcher;
 
 @interface FaceTime : NSObject <NSApplicationDelegate, IMAVControllerDelegate, IMConnectionMonitorDelegate, IMReachabilityDelegate, SOURLFetcherDelegate, NSUserNotificationCenterDelegate, FTDockTileHelperDelegate>
 {
@@ -33,7 +33,6 @@
     double _appStartTime;
     BOOL _hasSetupAV;
     FTPreferencesWindowController *_prefsWindowController;
-    TUCallServicesRecentsController *_recentsController;
     FTDockTileHelper *_dockMenuHelper;
 }
 
@@ -43,7 +42,6 @@
 + (id)sharedInstance;
 + (BOOL)showPhoneCallUI;
 @property(retain, nonatomic) FTDockTileHelper *dockMenuHelper; // @synthesize dockMenuHelper=_dockMenuHelper;
-@property(retain, nonatomic) TUCallServicesRecentsController *recentsController; // @synthesize recentsController=_recentsController;
 @property BOOL hasSetupAV; // @synthesize hasSetupAV=_hasSetupAV;
 @property(retain, nonatomic) FTPreferencesWindowController *prefsWindowController; // @synthesize prefsWindowController=_prefsWindowController;
 - (void).cxx_destruct;

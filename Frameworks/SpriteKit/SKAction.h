@@ -85,6 +85,7 @@
 - (id)init;
 @property(nonatomic) long long timingMode;
 @property(nonatomic) double duration;
+@property(nonatomic) CDUnknownBlockType timingFunction;
 - (struct SKCAction *)caction;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
 - (void)willStartWithTarget:(id)arg1 atTime:(double)arg2;

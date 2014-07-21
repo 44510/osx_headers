@@ -22,6 +22,7 @@
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(nonatomic) int version; // @synthesize version=_version;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

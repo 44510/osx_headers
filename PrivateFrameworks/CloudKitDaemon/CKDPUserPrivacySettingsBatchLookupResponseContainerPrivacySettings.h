@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSMutableArray *applicationBundles; // @synthesize applicationBundles=_applicationBundles;
 @property(retain, nonatomic) NSString *applicationContainer; // @synthesize applicationContainer=_applicationContainer;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

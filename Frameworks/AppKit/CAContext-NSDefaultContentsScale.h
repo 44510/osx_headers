@@ -7,9 +7,7 @@
 #import "CAContext.h"
 
 @interface CAContext (NSDefaultContentsScale)
-+ (BOOL)automaticallyNotifiesObserversOfNS_automaticallyUpdatesDefaultContentsScale;
 + (BOOL)automaticallyNotifiesObserversOfNS_defaultContentsScale;
-@property(getter=NS_automaticallyUpdatesDefaultContentsScale, setter=NS_setAutomaticallyUpdatesDefaultContentsScale:) BOOL NS_automaticallyUpdatesDefaultContentsScale;
 @property(getter=NS_defaultContentsScale, setter=NS_setDefaultContentsScale:) double NS_defaultContentsScale;
 @end
 

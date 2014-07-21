@@ -23,7 +23,7 @@
 @property(retain, nonatomic) CKCommentCursor *nextCursor; // @synthesize nextCursor=_nextCursor;
 @property(copy, nonatomic) CDUnknownBlockType commentFetchedProgressBlock; // @synthesize commentFetchedProgressBlock=_commentFetchedProgressBlock;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;
 - (void)main;

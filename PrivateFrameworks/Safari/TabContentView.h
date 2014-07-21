@@ -6,12 +6,12 @@
 
 #import "NSView.h"
 
-#import "ReaderInstallation.h"
+#import "ReaderInstallationTarget.h"
 
 @class AutoLayoutCompatibleView, BookmarksView, BrowserWKView, ContinuousPageView, NSMutableArray, NSString, ReaderWKView, ResizableContentContainer;
 
 __attribute__((visibility("hidden")))
-@interface TabContentView : NSView <ReaderInstallation>
+@interface TabContentView : NSView <ReaderInstallationTarget>
 {
     ResizableContentContainer *_resizableContentContainer;
     BookmarksView *_bookmarksView;

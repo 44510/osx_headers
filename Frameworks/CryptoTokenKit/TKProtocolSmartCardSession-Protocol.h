@@ -8,7 +8,7 @@
 
 @protocol TKProtocolSmartCardSession
 - (void)terminate;
-- (void)setSensitive:(BOOL)arg1;
+- (void)setEndPolicy:(long long)arg1;
 - (void)sessionRequested:(void (^)(void))arg1;
 - (void)transmit:(NSData *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
 @end

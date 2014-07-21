@@ -40,6 +40,7 @@
     struct shared_ptr<ggl::TextureAlphaMask::Shader::Setup> _arrowShaderSetup;
     struct shared_ptr<ggl::RenderItem> _arrowRenderItem;
     struct shared_ptr<ggl::RenderItem> _circleRenderItem;
+    BOOL _needsTextureUpdate;
 }
 
 @property(nonatomic) int style; // @synthesize style=_style;
@@ -57,7 +58,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2 style:(int)arg3;
-- (void)_updateTextures;
+- (void)_updateTexturesIfNeeded;
 @property(nonatomic) double presentationCourse;
 @property(nonatomic) CDStruct_ff03d24e innerColor;
 

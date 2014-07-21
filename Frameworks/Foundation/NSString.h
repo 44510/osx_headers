@@ -148,6 +148,7 @@
 - (BOOL)_isCString;
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (const unsigned short *)_fastCharacterContents;
+- (id)init;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 @property(readonly) unsigned long long length;
 - (BOOL)_getCString:(char *)arg1 maxLength:(unsigned long long)arg2 encoding:(unsigned int)arg3;

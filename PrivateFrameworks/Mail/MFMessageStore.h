@@ -108,9 +108,7 @@
 - (void)fetchSynchronously;
 - (id)status;
 - (void)sendResponseType:(BOOL)arg1 forMeetingMessage:(id)arg2;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2;
+- (void)setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
 - (void)updateMessageColorsSynchronouslyForMessages:(id)arg1;
 - (void)updateNumberOfAttachmentsAndColorsForMessages:(id)arg1;
 - (void)updateNumberOfAttachmentsForMessages:(id)arg1;

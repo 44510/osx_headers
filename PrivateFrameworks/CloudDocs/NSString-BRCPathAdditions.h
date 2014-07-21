@@ -21,9 +21,9 @@
 - (id)brc_representableHFSFileNameWithSuffix:(id)arg1 addedExtension:(id)arg2 makeDotFile:(BOOL)arg3;
 - (BOOL)brc_nameIsRepresentableOnHFS;
 - (id)brc_realpath;
+- (id)brc_realpathKeepingLastSymlink;
 - (const char *)brc_fileSystemRepresentation;
 - (BOOL)brc_isAbsolutePath;
-- (BOOL)brc_isSubpathOfPath:(id)arg1;
 - (id)brc_pathRelativeToPath:(id)arg1;
 - (id)brc_pathRelativeToPackageRoot;
 - (id)brc_pathOfPackageRoot;

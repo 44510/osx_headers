@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TDelayedPopulationViewController *> _delayedPopulationViewController;
 }
 
-+ (id)appCentricLibraryFolderIcon:(const struct TFENode *)arg1 iconSize:(double)arg2 includeAppIconOverlay:(_Bool)arg3 thumbnailGetter:(struct function<NSImage *(TFENode, double)>)arg4;
++ (id)appCentricLibraryFolderIcon:(const struct TFENode *)arg1 iconSize:(double)arg2 includeAppIconOverlay:(_Bool)arg3 thumbnailGetter:(function_ef29e158)arg4;
 + (id)imageForUbiquityStatus:(const struct TFENode *)arg1;
 + (id)ubiquityStatusTextForNode:(const struct TFENode *)arg1;
 @property _Bool shouldRestoreScrollDistance; // @synthesize shouldRestoreScrollDistance=_shouldRestoreScrollDistance;

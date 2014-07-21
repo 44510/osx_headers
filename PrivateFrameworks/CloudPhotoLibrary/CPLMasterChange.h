@@ -19,8 +19,10 @@
     NSString *_mediaMetaDataType;
     NSData *_mediaMetaData;
     long long _originalOrientation;
+    unsigned long long _fullSizeJPEGSource;
 }
 
+@property(nonatomic) unsigned long long fullSizeJPEGSource; // @synthesize fullSizeJPEGSource=_fullSizeJPEGSource;
 @property(nonatomic) long long originalOrientation; // @synthesize originalOrientation=_originalOrientation;
 @property(retain, nonatomic) NSData *mediaMetaData; // @synthesize mediaMetaData=_mediaMetaData;
 @property(copy, nonatomic) NSString *mediaMetaDataType; // @synthesize mediaMetaDataType=_mediaMetaDataType;
@@ -34,6 +36,7 @@
 - (BOOL)supportsResources;
 - (id)name;
 - (void)setName:(id)arg1;
+- (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
 - (id)propertiesForChangeType:(unsigned long long)arg1;

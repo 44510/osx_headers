@@ -11,6 +11,8 @@
 @interface CKDMMCSItem : NSObject
 {
     BOOL _finished;
+    BOOL _hasSize;
+    BOOL _hasOffset;
     unsigned int _chunkCount;
     unsigned int _packageIndex;
     unsigned long long _itemID;
@@ -41,6 +43,8 @@
 }
 
 + (int)openFileDescriptorForDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3 path:(id)arg4 error:(id *)arg5;
+@property(nonatomic) BOOL hasOffset; // @synthesize hasOffset=_hasOffset;
+@property(nonatomic) BOOL hasSize; // @synthesize hasSize=_hasSize;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSString *referenceIdentifierString; // @synthesize referenceIdentifierString=_referenceIdentifierString;
 @property(retain, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;

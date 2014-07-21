@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_mergeImportedBookmarkFolder:(id)arg1 withExistingFolder:(id)arg2;
 - (id)_existingBookmarkForReimportedBookmark:(id)arg1;
 - (id)_previouslyImportedBookmarksByImportOriginUUID;
-- (void)_processImportedBookmarkDictionary:(id)arg1 andInsertIntoBookmarkIfPossible:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)_processImportedBookmarkDictionary:(id)arg1 andAppendToBookmarkIfPossible:(id)arg2;
 - (id)_keyForImportInfo:(id)arg1;
 - (void)_didFinishSuccessfully:(BOOL)arg1;
 - (id)_importInfoForBookmarkWithImportOriginUUID:(id)arg1;

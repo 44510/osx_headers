@@ -8,17 +8,15 @@
 
 @interface CKDModifyBadgeURLRequest : CKDURLRequest
 {
-    BOOL _thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
-@property(readonly, nonatomic) BOOL thisDeviceOnly; // @synthesize thisDeviceOnly=_thisDeviceOnly;
 @property(readonly, nonatomic) unsigned long long badgeValue; // @synthesize badgeValue=_badgeValue;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperations;
 - (id)requestOperationClasses;
 - (int)operationType;
-- (id)initWithBadgeValue:(unsigned long long)arg1 thisDeviceOnly:(BOOL)arg2;
+- (id)initWithBadgeValue:(unsigned long long)arg1;
 
 @end
 

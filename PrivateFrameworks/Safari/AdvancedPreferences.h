@@ -61,6 +61,8 @@ __attribute__((visibility("hidden")))
 - (void)updateMinFontSizeViews;
 - (int)sanityCheckMinimumFontSize:(int)arg1;
 - (void)awakeFromNib;
+- (void)_setWidthConstraintForTabToAllOptionHintTextField;
+- (double)_widthOfTextField:(id)arg1 usingString:(id)arg2;
 - (void)takeDefaultCharacterSetFrom:(id)arg1;
 - (void)updateDefaultCharacterSetPopup;
 - (void)chooseStyleSheetFromFileBrowser:(id)arg1;

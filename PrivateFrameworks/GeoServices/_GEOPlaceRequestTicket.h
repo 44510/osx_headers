@@ -8,12 +8,13 @@
 
 #import "GEOMapServiceTicket.h"
 
-@class GEOMapRegion, GEOMapServiceTraits, GEOPDPlaceRequest, NSString;
+@class GEOMapRegion, GEOMapServiceTraits, GEOPDPlaceRequest, GEOPDPlaceResponse, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _GEOPlaceRequestTicket : NSObject <GEOMapServiceTicket>
 {
     GEOPDPlaceRequest *_request;
+    GEOPDPlaceResponse *_response;
     GEOMapServiceTraits *_traits;
     GEOMapRegion *_resultBoundingRegion;
     BOOL _canceled;
@@ -22,14 +23,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion; // @synthesize resultBoundingRegion=_resultBoundingRegion;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic, getter=isCanceled) BOOL canceled; // @synthesize canceled=_canceled;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 networkActivity:(CDUnknownBlockType)arg2;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 networkActivity:(CDUnknownBlockType)arg2;
-- (void)_processHandler:(CDUnknownBlockType)arg1 refinedHandler:(CDUnknownBlockType)arg2 networkActivity:(CDUnknownBlockType)arg3;
+- (void)_processRequest:(id)arg1 withHandler:(CDUnknownBlockType)arg2 refinedHandler:(CDUnknownBlockType)arg3 networkActivity:(CDUnknownBlockType)arg4;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;

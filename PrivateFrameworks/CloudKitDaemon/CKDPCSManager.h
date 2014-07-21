@@ -6,30 +6,28 @@
 
 #import "NSObject.h"
 
-@class CKDClientContext, CKDPCSCache, CKDPCSData, NSMutableDictionary, NSOperationQueue, NSString;
+@class CKDClientContext, CKDPCSCache, NSMutableDictionary, NSOperationQueue, NSString;
 
 @interface CKDPCSManager : NSObject
 {
     struct _PCSIdentityData *_publicZoneIdentity;
     CKDClientContext *_context;
+    NSString *_currentAccountIdentifier;
     NSOperationQueue *_operationQueue;
     CKDPCSCache *_zoneCache;
     CKDPCSCache *_shareCache;
-    CKDPCSCache *_publicRecordCache;
     NSMutableDictionary *_recordCacheByPrivateZoneID;
     struct _PCSIdentityData *_myPCSIdentity;
     NSString *_serviceName;
-    CKDPCSData *_defaultPublicZonePCSData;
 }
 
-@property(readonly, nonatomic) CKDPCSData *defaultPublicZonePCSData; // @synthesize defaultPublicZonePCSData=_defaultPublicZonePCSData;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic) struct _PCSIdentityData *myPCSIdentity; // @synthesize myPCSIdentity=_myPCSIdentity;
 @property(retain, nonatomic) NSMutableDictionary *recordCacheByPrivateZoneID; // @synthesize recordCacheByPrivateZoneID=_recordCacheByPrivateZoneID;
-@property(retain, nonatomic) CKDPCSCache *publicRecordCache; // @synthesize publicRecordCache=_publicRecordCache;
 @property(retain, nonatomic) CKDPCSCache *shareCache; // @synthesize shareCache=_shareCache;
 @property(retain, nonatomic) CKDPCSCache *zoneCache; // @synthesize zoneCache=_zoneCache;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
+@property(retain) NSString *currentAccountIdentifier; // @synthesize currentAccountIdentifier=_currentAccountIdentifier;
 @property(readonly, nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)referenceSignatureFromAssetKey:(id)arg1;
@@ -48,6 +46,12 @@
 - (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_fetchPCSForZoneWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (void)_saveNewPCSOnDefaultZone:(id)arg1 operation:(id)arg2 cache:(id)arg3;
+- (id)removeWebSharingIdentity:(struct _PCSIdentityData *)arg1 fromRecordPCS:(struct _OpaquePCSShareProtection *)arg2;
+- (id)addWebSharingIdentity:(struct _PCSIdentityData *)arg1 toRecordPCS:(struct _OpaquePCSShareProtection *)arg2;
+- (struct _OpaquePCSShareProtection *)createRecordPCSFromData:(id)arg1 webSharingIdentity:(struct _PCSIdentityData *)arg2 error:(id *)arg3;
+- (struct _PCSIdentityData *)createWebSharingIdentityFromData:(id)arg1 error:(id *)arg2;
+- (id)dataFromWebSharingIdentity:(struct _PCSIdentityData *)arg1 error:(id *)arg2;
+- (struct _PCSIdentityData *)createWebSharingIdentityWithError:(id *)arg1;
 - (id)etagFromRecordPCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (struct _OpaquePCSShareProtection *)createRecordPCSFromData:(id)arg1 zonePCS:(struct _OpaquePCSShareProtection *)arg2 error:(id *)arg3;
 - (id)dataFromRecordPCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
@@ -57,10 +61,8 @@
 - (struct _OpaquePCSShareProtection *)createZonePCSFromData:(id)arg1 error:(id *)arg2;
 - (id)dataFromZonePCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (struct _OpaquePCSShareProtection *)createZonePCSWithError:(id *)arg1;
-- (id)defaultPublicZonePCSDataWithError:(id *)arg1;
 - (id)etagFromPCSData:(id)arg1;
 - (struct _PCSIdentityData *)copyServiceIdentityWithError:(id *)arg1;
-- (struct _PCSIdentityData *)copyPublicZoneIdentity;
 - (void)dealloc;
 - (id)initWithClientContext:(id)arg1;
 - (id)_serviceNameForContainerID:(id)arg1;

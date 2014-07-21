@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int settingTabViewItems:1;
         unsigned int canPropagateSelectedChildViewControllerTitle:1;
+        unsigned int ibWillSetTabViewItems:1;
         unsigned int _reserved:29;
     } _flags;
 }

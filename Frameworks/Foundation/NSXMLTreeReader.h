@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _fidelityMask;
     NSData *_data;
     NSString *uri;
-    NSURL *url;
+    NSURL *_url;
     NSSet *_allowedEntityURLs;
     NSXMLNode *_root;
     NSXMLNode *_current;
@@ -40,6 +40,8 @@ __attribute__((visibility("hidden")))
     Class _nodeClass;
 }
 
++ (id)currentReader;
++ (void)setCurrentReader:(id)arg1;
 - (id)DTDString;
 - (void)_addEntity:(id)arg1;
 - (void)_addContent;
@@ -47,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)setCurrent:(id)arg1;
 - (id)root;
 - (void)setRoot:(id)arg1;
+- (struct _xmlParserInput *)_xmlExternalEntityWithURL:(const char *)arg1 identifier:(const char *)arg2 context:(struct _xmlParserCtxt *)arg3 originalLoaderFunction:(CDUnknownFunctionPointerType)arg4;
 - (void)processXMLDeclaration:(struct _xmlTextReader *)arg1;
 - (void)processEndEntity:(struct _xmlTextReader *)arg1;
 - (void)processSignificantWhitespace:(struct _xmlTextReader *)arg1;

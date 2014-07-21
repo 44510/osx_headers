@@ -24,12 +24,14 @@
     struct TNSRef<TValidatingDateFormatter *> _fullDateOnlyFormatterRelative;
     struct TNSRef<TValidatingDateFormatter *> _timeOnlyFormatter;
     struct TNSRef<TValidatingDateFormatter *> _fileNameTimeFormatter;
+    struct TNSRef<TValidatingDateFormatter *> _fileNameDateTimeFormatter;
 }
 
 + (id)dateFormatterController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)reset;
+- (id)fileNameDateTimeFormatter;
 - (id)fileNameTimeFormatter;
 - (id)timeOnlyFormatter;
 - (id)fullDateOnlyFormatter:(_Bool)arg1;

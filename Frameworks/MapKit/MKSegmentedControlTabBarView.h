@@ -6,13 +6,17 @@
 
 #import "NSView.h"
 
+#import "MKStackingViewControllerSelectorView.h"
 #import "MKStackingViewControllerSizableView.h"
 
-@class NSSegmentedControl, NSString;
+@class MKViewWithHairline, NSSegmentedControl, NSString, NSVisualEffectView;
 
-@interface MKSegmentedControlTabBarView : NSView <MKStackingViewControllerSizableView>
+@interface MKSegmentedControlTabBarView : NSView <MKStackingViewControllerSizableView, MKStackingViewControllerSelectorView>
 {
     BOOL _constrained;
+    MKViewWithHairline *_separator;
+    NSVisualEffectView *_blurView;
+    BOOL _isBlurred;
     CDUnknownBlockType didChangeSelectedSegmentIndex;
     NSSegmentedControl *_segmentedControl;
 }
@@ -20,6 +24,7 @@
 + (BOOL)requiresConstraintBasedLayout;
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(copy, nonatomic) CDUnknownBlockType didChangeSelectedSegmentIndex; // @synthesize didChangeSelectedSegmentIndex;
+@property(nonatomic) BOOL isBlurred; // @synthesize isBlurred=_isBlurred;
 - (void).cxx_destruct;
 - (void)_selectionDidChange:(id)arg1;
 - (void)setContentFromViewController:(id)arg1;
@@ -27,6 +32,7 @@
 - (void)updateConstraints;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (BOOL)isFlipped;
+- (void)updateSelectorView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

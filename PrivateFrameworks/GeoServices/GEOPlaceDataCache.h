@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (void)setDiskCachePath:(id)arg1;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(CDUnknownBlockType)arg2;
 - (void)calculateFreeableSpaceWithHandler:(CDUnknownBlockType)arg1;
+- (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (void)evictPlaceDataForKey:(struct _GEOTileKey)arg1;
 - (void)evictPlaceDataForMUID:(unsigned long long)arg1;

@@ -13,6 +13,5 @@
 
 @optional
 - (void)terminateSetupCompletion;
-- (NSString *)delegateAccountInformation;
 @end
 

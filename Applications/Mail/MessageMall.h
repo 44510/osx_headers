@@ -27,6 +27,7 @@
     NSDictionary *_messageCopiesByMessageID;
     MFLibraryStore *_searchStore;
     BOOL _filteredListIncludesAllMessages;
+    BOOL _isOpened;
     BOOL _inSearchMode;
     BOOL _wasPreviouslyOrderedAscending;
     BOOL _wasPreviouslyInThreadedMode;
@@ -55,6 +56,7 @@
 @property(nonatomic) long long activeSearchField; // @synthesize activeSearchField=_activeSearchField;
 @property(readonly, nonatomic) MessageFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) BOOL inSearchMode; // @synthesize inSearchMode=_inSearchMode;
+@property(nonatomic) BOOL isOpened; // @synthesize isOpened=_isOpened;
 @property BOOL filteredListIncludesAllMessages; // @synthesize filteredListIncludesAllMessages=_filteredListIncludesAllMessages;
 - (void).cxx_destruct;
 - (unsigned long long)sizeForMessage:(id)arg1;
@@ -69,6 +71,7 @@
 - (id)repliesToMessage:(id)arg1;
 - (void)postNotifications:(id)arg1;
 - (void)storesLoaded:(BOOL)arg1;
+- (void)storesDidOpen;
 - (void)setFilteredMessages:(id)arg1 totalMessageCount:(unsigned long long)arg2 openThreadIndexes:(id)arg3 originalMessageByMessageID:(id)arg4 messageCopiesByMessageID:(id)arg5;
 - (void)getIndexesOfMessages:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)closeAllThreads;
@@ -98,9 +101,7 @@
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)attachmentsDirectoryForMessage:(id)arg1;
 - (void)setColor:(id)arg1 highlightTextOnly:(BOOL)arg2 forMessages:(id)arg3;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3;
-- (id)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2;
+- (void)setJunkMailLevel:(long long)arg1 forMessages:(id)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (id)async_setFlagWithKey:(id)arg1 state:(BOOL)arg2 forMessages:(id)arg3;
 - (id)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
@@ -143,7 +144,7 @@
 - (BOOL)includeDeleted;
 - (id)secondarySortOrder;
 - (id)sortOrder;
-- (void)setSortOrder:(id)arg1 ascending:(BOOL)arg2;
+- (void)setSortOrder:(id)arg1 ascending:(BOOL)arg2 viewingState:(id)arg3;
 - (BOOL)selectionIncludesSmartMailbox;
 - (id)openThreads;
 - (id)filteredMessageAtIndex:(unsigned long long)arg1 isChildOfThread:(char *)arg2;
@@ -152,7 +153,6 @@
 - (id)filteredMessagesAtIndexes:(id)arg1;
 - (id)filteredMessageAtIndex:(unsigned long long)arg1;
 - (unsigned long long)filteredMessagesCount;
-- (BOOL)isOpened;
 - (BOOL)supportsSearching;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)shouldShowRecipientForMailboxes:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)updateSizeForContent;
 - (void)awakeFromNib;
 
 @end

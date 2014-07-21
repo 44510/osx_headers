@@ -23,7 +23,7 @@
 - (void)insertAddressBookInfoIntoCache:(id)arg1 forKey:(id)arg2;
 - (void)performQuery_sync:(CDUnknownBlockType)arg1;
 - (void)revertAddressBook:(BOOL)arg1;
-- (void)sendABChangedNotificationSync;
+- (void)sendABChangedNotificationSyncWithUserInfo:(id)arg1;
 - (void)sendABChangedNotification:(id)arg1;
 - (void)createAddressBook;
 - (void)dealloc;

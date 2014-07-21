@@ -10,6 +10,8 @@
 
 @interface SOAccountRegistrationController : NSObject
 {
+    BOOL _isSigningOut;
+    BOOL _isSignedIn;
     int _registrationState;
     int _enabledState;
     IMAccount *_account;
@@ -24,6 +26,8 @@
 + (id)faceTimeRegistrationController;
 + (id)registrationController;
 @property(retain) NSTimer *authenticationTimer; // @synthesize authenticationTimer=_authenticationTimer;
+@property(nonatomic) BOOL isSignedIn; // @synthesize isSignedIn=_isSignedIn;
+@property(nonatomic) BOOL isSigningOut; // @synthesize isSigningOut=_isSigningOut;
 @property(retain, nonatomic) IMServiceImpl *serviceType; // @synthesize serviceType=_serviceType;
 @property(retain, nonatomic) SOAccountAliasController *aliasController; // @synthesize aliasController=_aliasController;
 @property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
@@ -42,7 +46,6 @@
 - (void)_accountAliasCountChanged:(id)arg1;
 - (BOOL)accountOnlineAndRegistered;
 - (BOOL)accountIsSignedIn;
-- (void)_setIsSignedIn:(BOOL)arg1;
 - (id)loginName;
 - (id)localizedRegistrationErrorMessage;
 - (BOOL)readReceiptsEnabled;

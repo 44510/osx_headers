@@ -10,7 +10,7 @@
 #import "NSTableViewDataSource.h"
 #import "NSTableViewDelegate.h"
 
-@class ColorBackgroundView, DocumentEditor, FlatTableView, NSArray, NSMutableArray, NSMutableDictionary, NSScrollView, NSString, NSTextField, StationeryLoader, ThumbnailMatrix;
+@class ColorBackgroundView, DocumentEditor, FlatTableView, NSArray, NSMutableArray, NSMutableDictionary, NSScrollView, NSString, NSTextField, NSView, StationeryLoader, ThumbnailMatrix;
 
 @interface StationerySelector : NSObject <NSDraggingSource, NSTableViewDataSource, NSTableViewDelegate>
 {
@@ -27,7 +27,7 @@
     NSTextField *_emptyFavoritesMessageView;
     NSScrollView *_thumbnailsScrollView;
     ColorBackgroundView *_bottomDivider;
-    ColorBackgroundView *_verticalDivider;
+    NSView *_verticalDivider;
     StationeryLoader *_stationeryLoader;
     NSArray *_categoryDictionaries;
 }
@@ -37,7 +37,7 @@
 @property(nonatomic) BOOL isFirstShowOfCategoriesForFavorites; // @synthesize isFirstShowOfCategoriesForFavorites=_isFirstShowOfCategoriesForFavorites;
 @property(copy, nonatomic) NSArray *categoryDictionaries; // @synthesize categoryDictionaries=_categoryDictionaries;
 @property(readonly, nonatomic) __weak StationeryLoader *stationeryLoader; // @synthesize stationeryLoader=_stationeryLoader;
-@property(nonatomic) __weak ColorBackgroundView *verticalDivider; // @synthesize verticalDivider=_verticalDivider;
+@property(nonatomic) __weak NSView *verticalDivider; // @synthesize verticalDivider=_verticalDivider;
 @property(nonatomic) __weak ColorBackgroundView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
 @property(nonatomic) __weak NSScrollView *thumbnailsScrollView; // @synthesize thumbnailsScrollView=_thumbnailsScrollView;
 @property(nonatomic) __weak NSTextField *emptyFavoritesMessageView; // @synthesize emptyFavoritesMessageView=_emptyFavoritesMessageView;

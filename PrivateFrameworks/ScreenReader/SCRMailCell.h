@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_contentElementUnderElement:(id)arg1;
++ (id)_contentElementDescendantOfElement:(id)arg1;
 - (void)addElementSummaryToRequest:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (void)addCellLabelToRequest:(id)arg1;

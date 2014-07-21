@@ -32,6 +32,7 @@
 @property(retain, nonatomic) NSMutableArray *aggregatedTypes; // @synthesize aggregatedTypes=_aggregatedTypes;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -95,6 +95,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int minTrafficTypeUnknownZ; // @synthesize minTrafficTypeUnknownZ=_minTrafficTypeUnknownZ;
 @property(nonatomic) unsigned int buildingChangeoverZ; // @synthesize buildingChangeoverZ=_buildingChangeoverZ;
 @property(nonatomic) unsigned int rasterPolygonChangeoverZ; // @synthesize rasterPolygonChangeoverZ=_rasterPolygonChangeoverZ;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

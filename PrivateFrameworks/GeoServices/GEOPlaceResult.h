@@ -80,6 +80,7 @@
 - (void)addAdditionalPlace:(id)arg1;
 - (void)clearAdditionalPlaces;
 - (void)dealloc;
+- (id)geoMapItem;
 
 @end
 

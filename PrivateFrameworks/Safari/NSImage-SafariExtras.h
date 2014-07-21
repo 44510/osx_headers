@@ -7,12 +7,15 @@
 #import "NSImage.h"
 
 @interface NSImage (SafariExtras)
++ (id)safari_imageWithCGImage:(struct CGImage *)arg1 size:(struct CGSize)arg2;
 + (id)safari_imageWithContentsOfURL:(id)arg1;
 + (id)safari_imageWithImage:(id)arg1 tintColor:(id)arg2;
 + (id)safari_TIFFNamed:(id)arg1;
 + (id)safari_PNGNamed:(id)arg1;
+@property(nonatomic, setter=safari_setTransparencyAnalysisResult:) long long safari_transparencyAnalysisResult;
 - (id)safari_flatImageWithColor:(id)arg1;
 - (id)safari_imageByScalingToSize:(struct CGSize)arg1 withImageInterpolation:(unsigned long long)arg2;
 - (id)safari_imageByApplyingShadowForDragging;
+- (BOOL)safari_isEqualToImage:(id)arg1;
 @end
 

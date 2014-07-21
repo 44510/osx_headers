@@ -17,7 +17,6 @@
 + (void)handleContextMenuCommon:(unsigned int)arg1 nodes:(const struct TFENodeVector *)arg2 event:(id)arg3 clickedView:(id)arg4 browserViewController:(id)arg5 addPlugIns:(_Bool)arg6;
 + (void)buildContextMenu:(id)arg1 forContext:(unsigned int)arg2 browserViewController:(id)arg3 clickedView:(id)arg4 maxItems:(unsigned long long)arg5 addServices:(_Bool)arg6;
 + (void)addViewSpecificStuffToMenu:(id)arg1 clickedView:(id)arg2 browserViewController:(id)arg3 context:(unsigned int)arg4;
-+ (void)addSharingServicesToMenu:(id)arg1 forCommand:(SEL)arg2 browserViewController:(id)arg3 andNodes:(const struct TFENodeVector *)arg4;
 + (void)populateActionMenu:(id)arg1 browserViewController:(id)arg2;
 + (void)contextMenuClickedOnContainer:(const struct TFENode *)arg1 event:(id)arg2 clickedView:(id)arg3 browserViewController:(id)arg4;
 + (void)contextMenuClickedOnNodes:(const struct TFENodeVector *)arg1 event:(id)arg2 clickedView:(id)arg3 browserViewController:(id)arg4;

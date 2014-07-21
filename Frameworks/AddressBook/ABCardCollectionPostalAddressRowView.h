@@ -32,7 +32,8 @@ __attribute__((visibility("hidden")))
 - (void)rebuildAddressEntryFields;
 - (id)firstTextField;
 - (void)setAddressFieldsEnabled:(BOOL)arg1;
-- (id)baselineAlignmentConstraints;
+- (id)labelTopInsetConstraint;
+- (id)baselineAlignmentConstraint;
 - (id)actionGlyphButton;
 - (void)updateConstraints;
 - (id)valueView;

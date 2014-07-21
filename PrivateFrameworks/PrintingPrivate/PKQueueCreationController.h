@@ -9,11 +9,10 @@
 #import "PMXPCSupportDelegate.h"
 #import "SUSoftwareUpdateControllerDelegate.h"
 
-@class NSArray, NSArrayController, NSBox, NSDictionary, NSString, NSView, PKBrowser, PKDriver, PKNode, PMXPCSupport, PPInstallableOptionsView;
+@class NSArray, NSArrayController, NSDictionary, NSString, NSView, PKBrowser, PKDriver, PKNode, PMXPCSupport, PPInstallableOptionsView;
 
 @interface PKQueueCreationController : NSWindowController <SUSoftwareUpdateControllerDelegate, PMXPCSupportDelegate>
 {
-    NSBox *contentView;
     NSView *progressView;
     NSView *optionsView;
     NSView *browserView;

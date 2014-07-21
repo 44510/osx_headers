@@ -28,6 +28,7 @@
 - (id)hitTest:(struct CGPoint)arg1;
 - (struct CGSize)buttonSize;
 - (id)initWithEventViewController:(id)arg1;
+- (BOOL)allowsVibrancy;
 
 @end
 

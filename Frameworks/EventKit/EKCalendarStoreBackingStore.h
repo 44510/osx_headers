@@ -167,6 +167,7 @@
 - (void)_updatePersistenceAvailability;
 - (void)dealloc;
 - (id)initWithSourceFilters:(id)arg1 includeEnabledDelegates:(BOOL)arg2 asyncWithCompletion:(CDUnknownBlockType)arg3 orWithExistingStore:(id)arg4;
+- (id)backingStoreAvailableGroup;
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithSourceFilters:(id)arg1 includeEnabledDelegates:(BOOL)arg2 asyncWithCompletion:(CDUnknownBlockType)arg3;
 - (id)init;

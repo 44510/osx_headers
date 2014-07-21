@@ -21,7 +21,7 @@
 @property(retain, nonatomic) NSArray *notificationIDs; // @synthesize notificationIDs=_notificationIDs;
 @property(copy, nonatomic) CDUnknownBlockType notificationMarkedRead; // @synthesize notificationMarkedRead=_notificationMarkedRead;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleNotificationID:(id)arg1 withResponse:(id)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

@@ -29,7 +29,7 @@
 @property(nonatomic) BOOL fetchAssetContents; // @synthesize fetchAssetContents=_fetchAssetContents;
 @property(retain, nonatomic) NSArray *recordResponsesToFetch; // @synthesize recordResponsesToFetch=_recordResponsesToFetch;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_flushFetchedRecordsToConsumer;
 - (void)_fetchRecordsFromServer:(id)arg1 fullRecords:(id)arg2;

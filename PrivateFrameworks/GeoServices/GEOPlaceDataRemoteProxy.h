@@ -16,11 +16,12 @@ __attribute__((visibility("hidden")))
     struct dispatch_queue_s *_requestQ;
 }
 
+- (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(CDUnknownBlockType)arg2;
 - (void)calculateFreeableSpaceWithHandler:(CDUnknownBlockType)arg1;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
 - (void)trackPlaceData:(id)arg1;
-- (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 requesterHandler:(CDUnknownBlockType)arg3;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(CDUnknownBlockType)arg1;
 - (void)requestMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3 requesterHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;

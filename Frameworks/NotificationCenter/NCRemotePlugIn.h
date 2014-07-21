@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import "NSExtensionContext.h"
 
-@class NSDate, NSImage, NSString, NSXPCConnection;
+#import "NSXPCListenerDelegate.h"
 
-@interface NCRemotePlugIn : NSObject
+@class NCRemoteHostExtensionContext, NSDate, NSExtension, NSImage, NSString, NSUUID, NSXPCListener;
+
+@interface NCRemotePlugIn : NSExtensionContext <NSXPCListenerDelegate>
 {
     _Bool _pluginUsing;
-    _Bool _pluginActive;
-    NSXPCConnection *_pluginConnection;
+    NSUUID *_extensionRequestIdentifier;
+    NSXPCListener *_listener;
     _Bool _outOfBundle;
     int _activationType;
     id <NCRemotePlugInClient> _delegate;
-    id <PKPlugInPrivate> _plugin;
+    NSExtension *_extension;
     NSString *_name;
     NSImage *_image;
     NSString *_imagePath;
@@ -24,10 +26,12 @@
     double _defaultHeight;
     NSString *_configurationDescription;
     NSDate *_modificationDate;
+    NCRemoteHostExtensionContext *_extensionContext;
     struct CGSize _maxSize;
 }
 
 + (void)initialize;
+@property(retain) NCRemoteHostExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(readonly) _Bool outOfBundle; // @synthesize outOfBundle=_outOfBundle;
 @property(readonly) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
@@ -37,22 +41,28 @@
 @property(readonly) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(readonly) NSImage *image; // @synthesize image=_image;
 @property(readonly) NSString *name; // @synthesize name=_name;
-@property(retain) id <PKPlugInPrivate> plugin; // @synthesize plugin=_plugin;
+@property(readonly) NSExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;
+- (void)_serviceDied;
+- (void)_serviceAlive;
 - (void)_notifyDelegateOfActiveStateChange:(_Bool)arg1;
 - (void)_deactivatePlugIn;
 - (void)_activatePlugIn;
 @property __weak id <NCRemotePlugInClient> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_setupPlugIn;
-- (void)_resetConnection;
 @property(readonly) id <NCPlugInProtocol> proxyObject;
 @property(readonly) int processIdentifier;
 @property(readonly) _Bool isLive;
 @property int activationType; // @synthesize activationType=_activationType;
 @property(readonly) NSString *identifier;
 @property(readonly) NSString *path;
-- (id)description;
-- (id)initWithPlugIn:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (id)initWithExtension:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

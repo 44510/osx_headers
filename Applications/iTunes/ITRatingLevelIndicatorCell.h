@@ -12,12 +12,12 @@
     BOOL _allowHalfRating;
 }
 
+@property(nonatomic) shared_ptr_11b4b364 multistateImage; // @synthesize multistateImage=_multistateImage;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)keyDown:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (BOOL)hasHalfStar;
-- (void)setAllowHalfRating:(BOOL)arg1;
-- (BOOL)allowHalfRating;
+@property BOOL allowHalfRating; // @synthesize allowHalfRating=_allowHalfRating;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
@@ -26,8 +26,6 @@
 - (id)accessibilityAttributeNames;
 - (void)_drawTickMarksWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawRatingWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (shared_ptr_11b4b364)multistateImage;
-- (id)initWithCell:(id)arg1 allowHalfRating:(BOOL)arg2;
 - (id)initWithCell:(id)arg1;
 - (id)init;
 

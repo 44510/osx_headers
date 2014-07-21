@@ -25,11 +25,12 @@
 - (id)clarifyingNameForTimeZone:(id)arg1;
 - (id)simpleNameForTimeZone:(id)arg1;
 - (void)clarifyTimeZonesInMenuWithDuplicateNames;
-- (id)newMenuItemForTimeZone:(id)arg1 withTitle:(id)arg2;
+- (id)newMenuItemForTimeZone:(id)arg1;
 - (void)addTimeZonesToMenu:(id)arg1;
 - (void)refresh;
 - (void)popUpButtonWillPopUp;
 - (void)dealloc;
+- (BOOL)allowsVibrancy;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

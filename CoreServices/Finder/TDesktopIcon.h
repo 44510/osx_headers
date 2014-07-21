@@ -116,7 +116,6 @@
 @property(retain) NSDictionary *dataSourceItemData; // @dynamic dataSourceItemData;
 @property NSObject<TDraggingDestinationDelegate> *delegate; // @dynamic delegate;
 - (void)viewWillMoveToSuperview:(id)arg1;
-- (void)desktopWindowMainStateChanged:(id)arg1;
 - (void)updateSubtitleFieldAttributesWithTitleFontSize:(unsigned long long)arg1;
 - (void)updateSubtitleFieldAttributes;
 - (void)updateTitleFieldAttributesWithFontSize:(unsigned long long)arg1;

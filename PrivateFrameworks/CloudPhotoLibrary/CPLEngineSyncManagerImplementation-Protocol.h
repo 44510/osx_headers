@@ -9,6 +9,7 @@
 @class NSError, NSString;
 
 @protocol CPLEngineSyncManagerImplementation <CPLPlatformImplementation>
+- (void)prepareForClose;
 - (void)endClientWork:(NSString *)arg1;
 - (void)beginClientWork:(NSString *)arg1;
 - (void)setSyncSessionShouldBeForeground:(BOOL)arg1;

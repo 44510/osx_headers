@@ -13,7 +13,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)superviewFrameChanged:(id)arg1;
+- (void)superviewFrameChanged;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)initCommon;
 

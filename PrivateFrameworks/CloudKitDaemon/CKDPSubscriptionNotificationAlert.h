@@ -27,6 +27,7 @@
 @property(retain, nonatomic) NSString *localizedKey; // @synthesize localizedKey=_localizedKey;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -64,7 +64,9 @@
 @property(readonly, nonatomic) BOOL hasAnalyticMetadata;
 - (void)dealloc;
 - (BOOL)isForwardGeocoderRequest;
-- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(BOOL)arg5 traits:(id)arg6;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 traits:(id)arg3;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 traits:(id)arg5;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(BOOL)arg5 includeETA:(BOOL)arg6 traits:(id)arg7;
 - (id)initWithCoordinateHint:(CDStruct_c3b9c2ee)arg1 addressHint:(id)arg2 placeNameHint:(id)arg3 traits:(id)arg4;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
@@ -73,8 +75,6 @@
 - (id)initWithReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 includeEntryPoints:(BOOL)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)initWithMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(BOOL)arg3 includeEntryPoints:(BOOL)arg4;
-- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(BOOL)arg3;
-- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2;
 
 @end
 

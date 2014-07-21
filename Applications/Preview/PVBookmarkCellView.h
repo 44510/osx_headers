@@ -22,6 +22,9 @@
 @property(retain) NSTextField *content; // @synthesize content=_content;
 @property(retain) NSTextField *page; // @synthesize page=_page;
 - (void)setContentHeightConstraintConstant:(double)arg1;
+- (void)_setTextColorForBackgroundStyle:(long long)arg1;
+- (void)setBackgroundStyle:(long long)arg1;
+- (void)viewWillDraw;
 - (void)awakeFromNib;
 - (void)dealloc;
 - (id)init;

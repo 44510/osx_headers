@@ -27,8 +27,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _resumeCallback;
     long long _initialResumeSize;
     NSDictionary *_originalResumeInfo;
+    unsigned long long __transientWriteProgress;
+    CDUnknownBlockType __afterDidReportProgressOnQueue;
 }
 
+@property(copy) CDUnknownBlockType _afterDidReportProgressOnQueue; // @synthesize _afterDidReportProgressOnQueue=__afterDidReportProgressOnQueue;
+@property unsigned long long _transientWriteProgress; // @synthesize _transientWriteProgress=__transientWriteProgress;
 @property(retain) NSDictionary *originalResumeInfo; // @synthesize originalResumeInfo=_originalResumeInfo;
 @property long long initialResumeSize; // @synthesize initialResumeSize=_initialResumeSize;
 @property(copy) CDUnknownBlockType resumeCallback; // @synthesize resumeCallback=_resumeCallback;

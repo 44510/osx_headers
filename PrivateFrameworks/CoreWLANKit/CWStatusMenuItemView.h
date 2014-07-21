@@ -15,9 +15,8 @@
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (void)drawLTRRect:(struct CGRect)arg1;
-- (void)drawRTLRect:(struct CGRect)arg1;
-- (id)attributedString;
+- (void)__drawLTRRect:(struct CGRect)arg1;
+- (void)__drawRTLRect:(struct CGRect)arg1;
 - (unsigned long long)idealMenuItemWidth;
 - (void)stopIndicator;
 - (void)startIndicator;

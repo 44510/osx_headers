@@ -29,7 +29,7 @@
 - (BOOL)_shouldRetryError:(id)arg1;
 - (void)_retryOrFinishWithError:(id)arg1;
 - (void)cancel;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_fetchAssets;
 - (void)_sendMMCSItemGetForGroupSet:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2 assetsToFetch:(id)arg3;

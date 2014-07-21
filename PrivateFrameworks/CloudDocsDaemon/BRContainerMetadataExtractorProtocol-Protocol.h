@@ -8,6 +8,5 @@
 
 @protocol BRContainerMetadataExtractorProtocol
 - (void)extractContainerMetadataForContainerID:(NSString *)arg1 bundleID:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg3;
-- (void)entitlementsForBundleID:(NSString *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

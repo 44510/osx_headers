@@ -12,16 +12,19 @@
 {
     NSTextField *_findFld;
     NSTextField *_replaceFld;
+    struct TNotificationCenterObserver _findTextDidChangeObserver;
+    struct TNotificationCenterObserver _replaceTextDidChangeObserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)reformat:(id)arg1 row:(unsigned long long)arg2;
-- (void)textChanged:(id)arg1;
 - (_Bool)resetCounterForEachFile;
 - (_Bool)allowRename;
 - (id)displayName;
 - (int)formatterType;
 - (void)aboutToTearDown;
-- (void)awakeFromNib;
+- (void)viewLoaded;
 
 @end
 

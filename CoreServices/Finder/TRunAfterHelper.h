@@ -11,7 +11,7 @@
     unsigned long long _postID;
 }
 
-+ (unsigned long long)postFunctor:(const struct function<void ()> *)arg1 withOwningTargetID:(unsigned long long)arg2 delayInSec:(double)arg3;
++ (unsigned long long)postFunctor:(const function_f9feaa7d *)arg1 withOwningTargetID:(unsigned long long)arg2 delayInSec:(double)arg3;
 @property unsigned long long postID; // @synthesize postID=_postID;
 - (void)callFunctor:(id)arg1;
 

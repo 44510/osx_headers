@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSData *advertisementPayload; // @synthesize advertisementPayload=_advertisementPayload;
 - (void)dealloc;
+- (id)description;
 - (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2;
 
 @end

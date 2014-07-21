@@ -256,7 +256,7 @@
 - (void)session:(id)arg1 inititiateRelayRequest:(id)arg2;
 - (void)remoteVideoDidPause:(BOOL)arg1 callID:(unsigned int)arg2;
 - (void)remoteAudioDidPause:(BOOL)arg1 callID:(unsigned int)arg2;
-- (_Bool)stopVideoIO:(BOOL)arg1 error:(id *)arg2;
+- (BOOL)session:(id)arg1 didStopVideoIO:(BOOL)arg2 error:(id *)arg3;
 - (_Bool)session:(id)arg1 startVideoIO:(id *)arg2 captureRule:(id)arg3 isUnpausing:(BOOL)arg4;
 - (void)session:(id)arg1 didReceiveData:(id)arg2 withCallID:(unsigned int)arg3;
 - (void)session:(id)arg1 didReceiveARPLData:(id)arg2 fromCallID:(unsigned int)arg3;

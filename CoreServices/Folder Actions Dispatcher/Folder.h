@@ -13,7 +13,6 @@
 - (id)url;
 - (id)uniqueID;
 - (void)createWithParent:(id)arg1;
-- (id)hfsPath;
 - (void)dealloc;
 - (id)initFolderWithParent:(id)arg1 andName:(id)arg2;
 - (id)initFolderWithParent:(id)arg1 andURL:(id)arg2;

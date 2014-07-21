@@ -41,6 +41,8 @@
     NSURL *_localRepresentationURL;
     id _replacement;
     BOOL _isNetworkOffline;
+    long long _logicalHandle;
+    long long _physicalHandle;
 }
 
 + (id)askDaemonQueryItemForURL:(id)arg1;
@@ -64,6 +66,7 @@
 @property(nonatomic) id replacement;
 - (void)merge:(id)arg1;
 - (void)setTransferAttribute:(id)arg1 forKey:(id)arg2 diff:(unsigned short)arg3;
+- (void)_mergeURL:(id)arg1;
 - (void)_mergeAttrs:(id)arg1;
 @property(readonly, nonatomic) BOOL hasTransferStatuses;
 - (BOOL)isEqual:(id)arg1;

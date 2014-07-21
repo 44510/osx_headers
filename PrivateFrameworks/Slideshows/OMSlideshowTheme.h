@@ -24,6 +24,7 @@
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(readonly) NSArray *audioFilePaths;
 @property(readonly) NSArray *supportedCustomTransitions;
+- (BOOL)supportsCustomTransitionID:(id)arg1;
 @property(readonly) BOOL supportsCaptions;
 @property(readonly) BOOL supportsCustomKenBurns;
 @property(readonly) BOOL supportsScaleToFitOrFill;

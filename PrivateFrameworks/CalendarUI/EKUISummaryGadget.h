@@ -15,6 +15,7 @@
 }
 
 - (void)updateWithChanges:(id)arg1;
+- (void)setActiveKeyboardHover:(BOOL)arg1;
 - (id)attributedSummaryString;
 - (id)summaryString;
 - (BOOL)isEditable;

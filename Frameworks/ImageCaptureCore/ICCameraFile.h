@@ -43,6 +43,8 @@
 @property(readonly) long long fileSize;
 - (id)modificationDate;
 - (id)creationDate;
+@property(readonly) long long height;
+@property(readonly) long long width;
 - (id)description;
 - (void)finalize;
 - (void)dealloc;

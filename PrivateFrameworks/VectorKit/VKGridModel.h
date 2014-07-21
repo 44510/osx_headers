@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState>> _simpleGridRenderState;
     struct RenderItem *_gridRenderItem;
     struct RenderItem *_simpleGridRenderItem;
+    BOOL _needsUpdatedColor;
 }
 
 + (BOOL)reloadOnStylesheetChange;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)stylesheetDoneChanging;
 - (void)stylesheetDidChange;
 - (void)updateGridColor;
+- (void)setNeedsUpdatedGridColor;
 @property(readonly, nonatomic) VKStyleManager *styleManager;
 - (unsigned long long)mapLayerPosition;
 

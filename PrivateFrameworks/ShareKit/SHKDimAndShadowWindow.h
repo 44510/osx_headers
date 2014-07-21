@@ -15,8 +15,10 @@
     CALayer *shadowLayer;
     CALayer *shadowCenterKnockoutLayer;
     NSWindow *_remoteWindow;
+    NSWindow *_sourceWindow;
 }
 
+@property __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property __weak NSWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property BOOL animatesTransitions; // @synthesize animatesTransitions;
 - (void).cxx_destruct;

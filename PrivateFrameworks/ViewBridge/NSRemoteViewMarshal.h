@@ -21,7 +21,7 @@
 @property(readonly) NSViewBridge *bridge; // @synthesize bridge=_bridge;
 @property(readonly) NSRemoteViewBase *view; // @synthesize view=_view;
 - (void)associateMouseAndMouseCursorPosition:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)addChildWindow:(id)arg1 windowBase:(unsigned char)arg2 ordered:(long long)arg3;
+- (void)addChildWindow:(id)arg1 windowBase:(unsigned char)arg2 ordered:(long long)arg3 content:(struct CGRect)arg4;
 - (void)setServiceWindowEventMask:(unsigned long long)arg1;
 - (void)dragWindowRelativeToMouseDown:(struct CGPoint)arg1;
 - (void)suspendInFavorOfEndpoint:(id)arg1 serviceName:(id)arg2 serviceSubclassName:(id)arg3 serviceWindowIsKey:(BOOL)arg4 initialBridge:(id)arg5 completion:(CDUnknownBlockType)arg6;
@@ -33,7 +33,7 @@
 - (void)handleEventFromService:(id)arg1 eventOwner:(unsigned int)arg2 withReply:(CDUnknownBlockType)arg3;
 - (BOOL)shouldSendEventToApplicationBypassingSubclasses;
 - (void)orderWindow:(unsigned int)arg1 mode:(long long)arg2 relativeTo:(unsigned int)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)lastCallImpliedByAdvancingToRunPhase;
+- (void)lastCallImpliedByAdvancingToPhase:(unsigned char)arg1;
 - (void)serviceAccessoryViewBecameFirstResponder:(unsigned long long)arg1;
 - (void)serviceAccessoryViewResignedFirstResponder;
 - (void)setAccessoryViewOrigin:(struct CGPoint)arg1;

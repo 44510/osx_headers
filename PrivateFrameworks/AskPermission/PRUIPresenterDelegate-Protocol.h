@@ -7,7 +7,7 @@
 @class NSString;
 
 @protocol PRUIPresenterDelegate
-- (void)userDidDeclineRequestWithRequestID:(NSString *)arg1;
+- (void)userDidDeclineRequestWithRequestID:(NSString *)arg1 responseHandler:(void (^)(BOOL))arg2;
 - (void)userDidApproveRequestWithRequestID:(NSString *)arg1 responseHandler:(void (^)(BOOL))arg2;
 @end
 

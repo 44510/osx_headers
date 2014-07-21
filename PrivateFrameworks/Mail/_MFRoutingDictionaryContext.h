@@ -10,7 +10,7 @@
 
 @interface _MFRoutingDictionaryContext : NSObject
 {
-    NSMutableArray *_successfullyRouted;
+    NSMutableArray *_transferredOrDeleted;
     NSMutableArray *_rejectedMessages;
     NSMutableArray *_messagesToBeDeleted;
     NSMutableSet *_destinationStores;
@@ -19,8 +19,9 @@
 @property(retain, nonatomic) NSMutableSet *destinationStores; // @synthesize destinationStores=_destinationStores;
 @property(retain, nonatomic) NSMutableArray *messagesToBeDeleted; // @synthesize messagesToBeDeleted=_messagesToBeDeleted;
 @property(retain, nonatomic) NSMutableArray *rejectedMessages; // @synthesize rejectedMessages=_rejectedMessages;
-@property(retain, nonatomic) NSMutableArray *successfullyRouted; // @synthesize successfullyRouted=_successfullyRouted;
+@property(retain, nonatomic) NSMutableArray *transferredOrDeleted; // @synthesize transferredOrDeleted=_transferredOrDeleted;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

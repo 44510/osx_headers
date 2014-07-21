@@ -106,6 +106,7 @@
 - (id)subtextForLocation:(id)arg1;
 - (void)updateLocationIconForLocation:(id)arg1;
 - (void)selectLocationObject:(id)arg1;
+- (void)_commitEnteredLocationIfNeeded;
 - (void)commitLocation:(id)arg1;
 - (void)commitEnteredLocation;
 - (void)commitSelectedLocation;

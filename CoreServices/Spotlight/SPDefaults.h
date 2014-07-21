@@ -89,6 +89,7 @@
 - (void)_used;
 - (long long)useCount;
 @property(readonly) BOOL firstUse;
+@property(readonly, getter=isWebSearchAllowed) BOOL webSearchAllowed;
 @property(readonly, getter=isParsecAllowed) BOOL parsecAllowed;
 @property(readonly) BOOL groupResults;
 - (id)init;

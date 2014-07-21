@@ -20,6 +20,7 @@
 @property(retain, nonatomic) CKDPPublicKey *publicKey; // @synthesize publicKey=_publicKey;
 @property(retain, nonatomic) NSString *currentKeyHash; // @synthesize currentKeyHash=_currentKeyHash;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

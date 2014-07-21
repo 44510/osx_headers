@@ -26,6 +26,7 @@
 @property(retain, nonatomic) NSData *continuationMarker; // @synthesize continuationMarker=_continuationMarker;
 @property(nonatomic) int totalCount; // @synthesize totalCount=_totalCount;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

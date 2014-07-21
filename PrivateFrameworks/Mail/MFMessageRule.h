@@ -121,7 +121,7 @@
 - (void)_performAutoResponseActionOnMessages:(id)arg1;
 - (id)_performAutoResponseActionOnMessage:(id)arg1 encrypt:(BOOL)arg2 includeOrignalMessageText:(BOOL)arg3;
 - (void)_performUserNotificationAction:(id)arg1;
-- (void)performActionsOnMessages:(id)arg1 sourceStores:(id)arg2 destinationStores:(id)arg3 rejectedMessages:(id)arg4 messagesToBeDeleted:(id)arg5;
+- (void)performActionsOnMessages:(id)arg1 sourceStores:(id)arg2 destinationStores:(id)arg3 transferredOrDeleted:(id)arg4 rejectedMessages:(id)arg5 messagesToBeDeleted:(id)arg6;
 - (void)_appendMessages:(id)arg1 fromSourceMailbox:(id)arg2 toDestinationMailbox:(id)arg3 destinationStores:(id)arg4 rejectedMessages:(id)arg5 messagesToBeDeleted:(id)arg6;
 - (void)_updateDefaultAppleEmailAddressRule;
 - (id)dictionaryRepresentation;

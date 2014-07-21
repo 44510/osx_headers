@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
 - (void)removeConflictLoserEtag:(id)arg1;
-- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 xattrSig:(id)arg2;
-- (void)updateFromFSAtPath:(id)arg1 xattrSig:(id)arg2;
+- (void)updateLocationAndMetaFromFSAtPath:(id)arg1;
+- (void)updateFromFSAtPath:(id)arg1;
 - (void)clearVersionSignatures:(unsigned long long)arg1 isPackage:(BOOL)arg2;
 - (BOOL)isMissingUploadsWithDiffs:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

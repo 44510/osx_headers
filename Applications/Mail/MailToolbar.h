@@ -10,7 +10,6 @@
 {
     BOOL _stateIsTemporary;
     BOOL _previousVisible;
-    BOOL _neverShowsBaselineSeparator;
     BOOL _frozen;
     unsigned long long _previousDisplayMode;
     long long _temporaryItemTag;
@@ -20,7 +19,6 @@
 + (void)upgradeToolbarWithIdentifier:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_plistForToolbarWithIdentifier:(id)arg1;
 @property(nonatomic) BOOL frozen; // @synthesize frozen=_frozen;
-@property(nonatomic) BOOL neverShowsBaselineSeparator; // @synthesize neverShowsBaselineSeparator=_neverShowsBaselineSeparator;
 @property(nonatomic) BOOL previousVisible; // @synthesize previousVisible=_previousVisible;
 @property(nonatomic) BOOL stateIsTemporary; // @synthesize stateIsTemporary=_stateIsTemporary;
 @property(nonatomic) long long temporaryItemTag; // @synthesize temporaryItemTag=_temporaryItemTag;
@@ -28,8 +26,6 @@
 - (void)validateVisibleItems;
 - (void)unfreeze;
 - (void)freeze;
-- (void)setShowsBaselineSeparator:(BOOL)arg1;
-- (BOOL)showsBaselineSeparator;
 - (void)removeItemAtIndex:(long long)arg1;
 - (void)insertItemWithItemIdentifier:(id)arg1 atIndex:(long long)arg2;
 - (void)setVisible:(BOOL)arg1;

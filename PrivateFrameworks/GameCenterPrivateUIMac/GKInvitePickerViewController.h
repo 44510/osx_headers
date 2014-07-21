@@ -18,8 +18,10 @@
 
 @property(retain) NSSet *hiddenPlayers; // @synthesize hiddenPlayers=_hiddenPlayers;
 @property(retain) GKInvitePickerDataSource *invitePickerDataSource; // @synthesize invitePickerDataSource=_invitePickerDataSource;
-- (void)didEnterNoContentState;
+- (void)didBecomeReadyToDisplayData;
+- (void)didEnterLoadedState;
 - (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned long long)arg2 didSelectDataSourceWithIndex:(long long)arg3;
+- (void)updateNoContentTitles;
 - (void)configureNearbyDataSource;
 - (void)setSupportsNearby:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

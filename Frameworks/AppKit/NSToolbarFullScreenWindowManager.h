@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
 - (void)_disableFullScreenForceVisibleForToolbar:(id)arg1;
 - (void)_disableFullScreenAutohidingForToolbar:(id)arg1;
 - (void)_enableFullScreenAutohidingForToolbar:(id)arg1;
+- (void)updateTitlebarViewBlendingMode;
+- (BOOL)autohideDisabled;
 - (void)removeAsChildOfContentWindow;
 - (void)addAsChildOfContentWindow;
 - (id)window;

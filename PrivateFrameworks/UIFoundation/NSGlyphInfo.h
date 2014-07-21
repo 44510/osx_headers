@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
+#import "NSSecureCoding.h"
 
 @class NSString;
 
-@interface NSGlyphInfo : NSObject <NSCopying, NSCoding>
+@interface NSGlyphInfo : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_baseString;
 }

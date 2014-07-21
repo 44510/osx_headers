@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSVisualEffectView.h"
+#import "NSView.h"
 
-@interface UACPanelView : NSVisualEffectView
+@interface UACPanelView : NSView
 {
     struct CGImage *_imageMask;
     struct CGRect _imageMaskViewRect;
@@ -18,8 +18,7 @@
 - (struct CGPath *)_copyOutlinePath;
 - (struct CGImage *)_imageMaskForPath:(struct CGPath *)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)updateLayer;
-- (void)awakeFromNib;
+- (void)drawRect:(struct CGRect)arg1;
 
 @end
 

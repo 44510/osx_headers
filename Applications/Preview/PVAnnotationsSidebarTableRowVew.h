@@ -11,9 +11,6 @@
 }
 
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
-- (void)drawBackgroundInRect:(struct CGRect)arg1;
-- (void)drawSelectionInRect:(struct CGRect)arg1;
-- (BOOL)isOpaque;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

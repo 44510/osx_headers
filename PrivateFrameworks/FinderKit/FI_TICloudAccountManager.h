@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     struct TriStateBool fUserHasDeclinedUpgrade;
 }
 
++ (_Bool)showICloudNode;
 + (_Bool)userHasDeclinedUpgrade;
 + (_Bool)userIsLoggedInICloud;
 + (_Bool)userIsSynchingDocuments;

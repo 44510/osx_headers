@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)_validateStyleMask:(unsigned long long)arg1;
 + (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 appearance:(long long)arg2 anchorSize:(struct CGSize)arg3 contentInset:(CDStruct_3c058996)arg4 hasTitlebar:(BOOL)arg5;
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 appearance:(long long)arg2 anchorSize:(struct CGSize)arg3 contentInset:(CDStruct_3c058996)arg4 hasTitlebar:(BOOL)arg5;
++ (id)keyPathsForValuesAffectingAnchorPoint;
 @property BOOL animates; // @synthesize animates=_animates;
 @property(retain) id popoverAccessibilityParent; // @synthesize popoverAccessibilityParent=_popoverAccessibilityParent;
 @property NSPopover *_popover; // @synthesize _popover;

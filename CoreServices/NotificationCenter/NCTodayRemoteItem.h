@@ -6,18 +6,17 @@
 
 #import "NCTodayItem.h"
 
-@class NCRemotePlugIn, NSUUID;
+@class NCRemotePlugIn;
 
 @interface NCTodayRemoteItem : NCTodayItem
 {
     NCRemotePlugIn *_remotePlugIn;
-    NSUUID *_remoteUUID;
 }
 
 + (id)itemFromTeplate:(id)arg1;
-@property(copy) NSUUID *remoteUUID; // @synthesize remoteUUID=_remoteUUID;
 @property(retain) NCRemotePlugIn *remotePlugIn; // @synthesize remotePlugIn=_remotePlugIn;
 - (void).cxx_destruct;
+- (_Bool)configurationShowAsNew;
 - (void)setEnabled:(_Bool)arg1;
 - (_Bool)enabled;
 - (_Bool)isRemoteItem;

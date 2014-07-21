@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)styleForFeatureAttributes:(id)arg1 clientAttributes:(CDStruct_335c4e21 *)arg2;
 - (void)clearCaches;
 - (void)dealloc;
-- (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4 vendor:(id)arg5 targetDisplay:(long long)arg6 isDevResource:(BOOL)arg7;
+- (id)initWithData:(id)arg1 miniData:(id)arg2 forName:(id)arg3 scale:(float)arg4 ppi:(float)arg5 vendor:(id)arg6 targetDisplay:(long long)arg7 isDevResource:(BOOL)arg8;
 - (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(long long)arg4 vendor:(id)arg5 resourceManager:(id)arg6;
 - (id)init;
 

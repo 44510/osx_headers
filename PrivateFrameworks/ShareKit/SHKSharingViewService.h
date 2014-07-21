@@ -9,7 +9,7 @@
 #import "SHKClientWindowSyncDelegate.h"
 #import "SHKSharingViewService.h"
 
-@class NSImageView, NSLayoutConstraint, NSMutableArray, NSSharingUIExtensionContext, NSString, NSUUID, NSView, NSWindow;
+@class NSImageView, NSLayoutConstraint, NSMutableArray, NSSharingUIExtensionContext, NSString, NSUUID, NSView, NSWindow, SHKBlockQueue;
 
 @interface SHKSharingViewService : NSViewService <SHKClientWindowSyncDelegate, SHKSharingViewService>
 {
@@ -17,14 +17,17 @@
     BOOL _animatesLikeMarkup;
     BOOL _animateMarkupWithoutImageCopy;
     BOOL _serviceUsesAutoLayout;
-    int _serviceKind;
+    unsigned long long _serviceMask;
     NSView *_containerView;
     NSWindow *_window;
     NSUUID *_uuid;
     NSSharingUIExtensionContext *_extensionContext;
     NSImageView *_itemImageView;
+    NSView *_itemBorderView;
     NSMutableArray *_queuedSharingAnimations;
     CDUnknownBlockType _closingFinishedBlock;
+    SHKBlockQueue *_animationBlockQueue;
+    SHKBlockQueue *_completionBlockQueue;
     NSLayoutConstraint *_sameCenterXConstraint;
     NSLayoutConstraint *_sameCenterYConstraint;
     struct CGPoint _originOffset;
@@ -32,8 +35,11 @@
 
 @property __weak NSLayoutConstraint *sameCenterYConstraint; // @synthesize sameCenterYConstraint=_sameCenterYConstraint;
 @property __weak NSLayoutConstraint *sameCenterXConstraint; // @synthesize sameCenterXConstraint=_sameCenterXConstraint;
+@property(retain) SHKBlockQueue *completionBlockQueue; // @synthesize completionBlockQueue=_completionBlockQueue;
+@property(retain) SHKBlockQueue *animationBlockQueue; // @synthesize animationBlockQueue=_animationBlockQueue;
 @property(copy) CDUnknownBlockType closingFinishedBlock; // @synthesize closingFinishedBlock=_closingFinishedBlock;
 @property(retain) NSMutableArray *queuedSharingAnimations; // @synthesize queuedSharingAnimations=_queuedSharingAnimations;
+@property(retain) NSView *itemBorderView; // @synthesize itemBorderView=_itemBorderView;
 @property(retain) NSImageView *itemImageView; // @synthesize itemImageView=_itemImageView;
 @property BOOL serviceUsesAutoLayout; // @synthesize serviceUsesAutoLayout=_serviceUsesAutoLayout;
 @property BOOL animateMarkupWithoutImageCopy; // @synthesize animateMarkupWithoutImageCopy=_animateMarkupWithoutImageCopy;
@@ -43,7 +49,7 @@
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
-@property int serviceKind; // @synthesize serviceKind=_serviceKind;
+@property unsigned long long serviceMask; // @synthesize serviceMask=_serviceMask;
 - (void).cxx_destruct;
 - (void)invalidate;
 - (BOOL)clientHasSourceWindow;
@@ -72,6 +78,7 @@
 - (void)moveClientWindowWithEvent:(id)arg1;
 - (void)setup;
 - (void)setupEditorServiceWithView:(id)arg1;
+- (id)_effectiveSourceItemView;
 - (void)setupWithSourceWindowFrame:(struct CGRect)arg1;
 - (void)setupWithOptionsDictionary:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -79,6 +86,8 @@
 - (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
 - (struct CGRect)serviceViewScreenFrame;
 - (void)requestResizeToNeededRemoteViewFrameThenDo:(CDUnknownBlockType)arg1;
+- (void)performQueuedCompletionActions;
+- (void)performQueuedAnimationActionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_setServiceWindowFrame:(struct CGRect)arg1 withClientWindowSync:(BOOL)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_setServiceWindowFrame:(struct CGRect)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)remoteViewControllerInterface;
@@ -87,6 +96,7 @@
 - (id)singleItemSourceImage;
 - (struct CGRect)singleItemSourceFrameForEditorService;
 - (struct CGRect)sourceWindowContentRect;
+- (struct CGRect)sourceWindowScreenVisibleFrame;
 - (struct CGRect)sourceWindowFrame;
 - (void)loadView;
 - (id)exportedObject;

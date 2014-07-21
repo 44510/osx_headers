@@ -8,7 +8,7 @@
 
 #import "NSFilePresenter.h"
 
-@class NSConditionLock, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSURL;
+@class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSURL;
 
 @interface ILMediaBrowserPathWatcher : NSObject <NSFilePresenter>
 {
@@ -23,6 +23,7 @@
     NSMutableArray *spotlightToDoQueue;
     NSMutableArray *watchedQueryToDoQueue;
     NSLock *_watchedQueryToDoLock;
+    BOOL _terminating;
     NSMutableDictionary *spotlightQueriesByPath;
     BOOL alwaysNotify;
     long long startingFDCount;
@@ -32,8 +33,6 @@
     struct dispatch_queue_s *dispatch_queue_fsevents;
     struct dispatch_queue_s *dispatch_queue_spotlight;
     struct dispatch_queue_s *dispatch_queue_diskArb;
-    struct dispatch_source_s *dispatch_source_spotlight;
-    NSConditionLock *spotlightExitConditionLock;
     unsigned long long _latestFSEventId;
     NSOperationQueue *_presentedItemOperationQueue;
     NSURL *_presentedItemURL;
@@ -112,8 +111,9 @@
 - (void)_delayAndStartFSEventStream;
 - (id)fsEventWatchedPaths;
 - (void)iLMBGCDSetup;
-- (void)iLMBGCDTimerFireWithEvent;
-- (void)iLMBGCDFinalize;
+- (void)cancelSpotlightRoutine;
+- (void)scheduleSpotlightRoutine;
+- (BOOL)isThereSpotlightWorkToDo;
 - (void)stopFSEventStream;
 - (BOOL)startFSEventStream:(id)arg1;
 - (void)setWatcherStreamRef:(struct __FSEventStream *)arg1;

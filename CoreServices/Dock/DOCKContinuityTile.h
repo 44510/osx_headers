@@ -10,6 +10,8 @@
 {
 }
 
+- (int)axCopyAttributeValue:(struct __CFString *)arg1 value:(const void **)arg2;
+- (struct __CFArray *)axCopyAttributeNames;
 - (BOOL)isRemovable;
 - (BOOL)doAction:(unsigned int)arg1 fromKeyboard:(BOOL)arg2;
 - (void)setImage:(id)arg1 title:(id)arg2 from:(id)arg3;

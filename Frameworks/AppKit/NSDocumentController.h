@@ -166,7 +166,7 @@
 - (BOOL)_showOpenPanel;
 - (BOOL)_openUntitled;
 - (BOOL)_isAutoreopening;
-- (void)_autoreopenDocumentsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_autoreopenDocumentsIgnoringExpendable:(BOOL)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_autoreopenDocumentsFromRecords:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_permitAutoreopeningOfDocuments;
 - (id)_autosaveRecordPathCreateIfNecessary:(BOOL)arg1;

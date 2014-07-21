@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)createOverriddenPopup;
-+ (id)createLevelIndicator;
-+ (id)createToPopup;
++ (id)newOverriddenPopup;
++ (id)newLevelIndicator;
++ (id)newToPopup;
 + (void)configureTimeTextField:(id)arg1;
 + (void)configureNumericTextField:(id)arg1 withDefaultString:(id)arg2;
 + (id)predicateEditorRowTemplatesArrayWithTrackData:(struct TrackData *)arg1 playlist:(struct Playlist *)arg2;

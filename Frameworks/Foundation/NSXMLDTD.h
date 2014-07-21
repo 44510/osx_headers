@@ -63,6 +63,7 @@
 - (void)setName:(id)arg1;
 - (id)initWithData:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initWithContentsOfURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (id)initWithKind:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)init;
 - (void)dealloc;
 

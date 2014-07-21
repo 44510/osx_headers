@@ -207,8 +207,8 @@
 + (id)addMessages:(id)arg1 withMailbox:(id)arg2 progressDelegate:(id)arg3 error:(id *)arg4;
 + (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 oldMessagesByNewMessage:(id)arg4 error:(id *)arg5;
 + (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 isInitialImport:(BOOL)arg4 oldMessagesByNewMessage:(id)arg5 error:(id *)arg6;
-+ (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 isInitialImport:(BOOL)arg4 oldMessagesByNewMessage:(id)arg5 remoteIDs:(id)arg6 setFlags:(long long)arg7 clearFlags:(long long)arg8 messageFlagsForMessages:(id)arg9 copyFiles:(BOOL)arg10 error:(id *)arg11;
-+ (id)insertOrUpdateMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 isInitialImport:(BOOL)arg4 oldMessagesByNewMessage:(id)arg5 remoteIDs:(id)arg6 newDocumentIDs:(id)arg7 setFlags:(long long)arg8 clearFlags:(long long)arg9 messageFlagsForMessages:(id)arg10 copyFiles:(BOOL)arg11 progressDelegate:(id)arg12 updateRowIDs:(id)arg13 error:(id *)arg14;
++ (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 isInitialImport:(BOOL)arg4 oldMessagesByNewMessage:(id)arg5 remoteIDs:(id)arg6 setFlags:(long long)arg7 clearFlags:(long long)arg8 messageFlagsForMessages:(id)arg9 copyFiles:(BOOL)arg10 missedMessages:(id *)arg11 error:(id *)arg12;
++ (id)insertOrUpdateMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 isInitialImport:(BOOL)arg4 oldMessagesByNewMessage:(id)arg5 remoteIDs:(id)arg6 newDocumentIDs:(id)arg7 setFlags:(long long)arg8 clearFlags:(long long)arg9 messageFlagsForMessages:(id)arg10 copyFiles:(BOOL)arg11 progressDelegate:(id)arg12 updateRowIDs:(id)arg13 missedMessages:(id *)arg14 error:(id *)arg15;
 + (void)resetConversationIDForMessages:(id)arg1;
 + (void)updateDatabaseValuesIfNeeded;
 + (void)cleanupTablesReferencingMessageID:(long long)arg1 inDatabase:(id)arg2;

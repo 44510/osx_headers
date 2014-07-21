@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)_saveNextAssetPackage;
 - (void)_removeManifests;

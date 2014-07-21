@@ -6,7 +6,7 @@
 
 #import "CALayer.h"
 
-@class ECProgressLayer, ECStatusLabelDescription, ECStatusLabelLayer, NSMutableDictionary, NSString, _UnderTileTextLayer;
+@class ECProgressLayer, ECStatusLabelDescription, ECStatusLabelLayer, NSMutableDictionary, NSString;
 
 @interface DOCKTileLayer : CALayer
 {
@@ -16,12 +16,10 @@
     ECProgressLayer *_progressLayer;
     ECStatusLabelLayer *_statusLabelLayer;
     ECStatusLabelLayer *_debugStatusLabelLayer;
-    _UnderTileTextLayer *_underTextLayer;
     NSMutableDictionary *_filters;
     unsigned int _hasAppReplacementImage:1;
     unsigned int _hasExtraReplacementImage:1;
     unsigned int _usingNotFoundImage:1;
-    unsigned int _underTextInserted:1;
     NSString *_vibrantCompositingFilter;
 }
 
@@ -29,7 +27,6 @@
 @property(readonly, nonatomic) ECStatusLabelLayer *labelLayer; // @synthesize labelLayer=_statusLabelLayer;
 @property(readonly, nonatomic) _Bool usingNotFoundImage; // @synthesize usingNotFoundImage=_usingNotFoundImage;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSString *underText;
 @property(retain, nonatomic) ECStatusLabelDescription *debugStatusLabel;
 @property(retain, nonatomic) ECStatusLabelDescription *statusLabel;
 @property float progress;
@@ -40,7 +37,6 @@
 - (void)layoutSublayers;
 - (void)layoutImageLayer;
 - (void)setFilter:(id)arg1 forName:(id)arg2;
-- (void)backgroundChanged;
 - (void)scaleFactorChanged;
 - (void)_removeReplacementExtraImage;
 - (void)_setReplacementExtraImage:(id)arg1;

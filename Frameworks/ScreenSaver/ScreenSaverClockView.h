@@ -14,6 +14,7 @@
 + (id)bezierPathWithRoundRectInRect:(struct CGRect)arg1 radius:(float)arg2;
 - (void)setAlignment:(int)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)attributedStringForTime;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

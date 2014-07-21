@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)performFaceTimeAudioCall;
 - (void)performFaceTimeCall;
 - (id)faceTimeBridge;
-- (void)setFaceTimeAudioEnabled:(BOOL)arg1;
 - (void)setFaceTimeEnabled:(BOOL)arg1;
 - (id)labelForButton:(id)arg1;
 - (id)allButtons;

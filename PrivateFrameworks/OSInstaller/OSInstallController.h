@@ -45,6 +45,7 @@
 - (void)operation:(id)arg1 timeRemaining:(double)arg2;
 - (double)smoothTimeRemaining:(double)arg1;
 - (double)timeRemainingAfter:(id)arg1;
+- (BOOL)_isValidCompatibilityUpdatePackage:(id)arg1;
 - (BOOL)_isRecoverySupportedForTarget:(id)arg1;
 - (void)_enableSystemSleep;
 - (void)_disableSystemSleep;

@@ -27,8 +27,6 @@
 - (void)startAuthentication;
 - (void)callAuthHandlerWithError:(id)arg1;
 - (void)_showWelcomeBanner;
-- (void)showAuthenticateForInGameNavController:(id)arg1 popOnAuthenticate:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)authenticateCurrentAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)authenticateCurrentAccountForWebViewWithWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @end
 

@@ -17,6 +17,7 @@
 {
     BOOL _canvasIsSwiping;
     BOOL _shouldTryToSelectNewEvent;
+    BOOL _isUpdatingSidebarInspectorSelection;
     CalUIDayCanvasController *_canvasController;
     EKEventViewController *_eventViewController;
     NSTextField *_noEventsLabel;
@@ -32,6 +33,7 @@
 + (long long)liveRangeNumDaysOfPaddingPastVisibleRange;
 + (Class)contentViewClass;
 + (void)debugUpdateTimeIntervalBuffers;
+@property BOOL isUpdatingSidebarInspectorSelection; // @synthesize isUpdatingSidebarInspectorSelection=_isUpdatingSidebarInspectorSelection;
 @property(retain) NSLayoutConstraint *miniMonthLeftInsetConstraint; // @synthesize miniMonthLeftInsetConstraint=_miniMonthLeftInsetConstraint;
 @property(retain) NSLayoutConstraint *miniMonthHeightConstraint; // @synthesize miniMonthHeightConstraint=_miniMonthHeightConstraint;
 @property(retain) NSTextField *lunarDateLabel; // @synthesize lunarDateLabel=_lunarDateLabel;
@@ -105,10 +107,11 @@
 - (void)miniMonthView:(id)arg1 didSelectDate:(id)arg2;
 - (void)selectionStateChangedForEventOccurrenceIDs:(id)arg1;
 - (void)eventsChanged:(id)arg1;
-- (void)updateSidebarInspector;
+- (id)initialFirstResponder;
+- (void)refreshSidebarInspectorContents;
 - (BOOL)clearSidebarInspector;
 - (void)tryToSelectVisibleOccurrence;
-- (id)initialFirstResponder;
+- (void)updateSidebarInspectorSelectionIfNecessary;
 - (void)occurrenceContainerDidPopulateEvents:(id)arg1;
 - (void)activateWithStartDate:(id)arg1 activeDate:(id)arg2;
 - (void)updateLunarDateLabel;

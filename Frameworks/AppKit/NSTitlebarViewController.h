@@ -8,6 +8,7 @@
 
 @class NSThemeFrame;
 
+__attribute__((visibility("hidden")))
 @interface NSTitlebarViewController : NSViewController
 {
     NSThemeFrame *_associatedThemeFrame;

@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_record;
 @property(nonatomic) BOOL recordsContinuously;
+- (void)_pasteStateWithAssumedSourceFidelity:(unsigned long long)arg1;
+- (void)_copyStateWithFidelity:(unsigned long long)arg1;
 - (void)prepareContent;
 
 @end

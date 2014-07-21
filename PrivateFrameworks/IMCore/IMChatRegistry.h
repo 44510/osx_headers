@@ -53,9 +53,10 @@
 - (id)_chatsWithMessage:(id)arg1;
 - (id)_allGUIDsForChat:(id)arg1;
 - (void)handleIMChatParticipantsDidChange:(id)arg1;
-- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 message:(id)arg3 allowCreate:(BOOL)arg4 createdChat:(char *)arg5 outGUID:(id *)arg6;
+- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 allowCreate:(BOOL)arg3 createdChat:(char *)arg4 outGUID:(id *)arg5;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2 allowRetargeting:(BOOL)arg3;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2;
+- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(BOOL)arg5;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(BOOL)arg2;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2;
@@ -74,7 +75,7 @@
 - (long long)lastFailedMessageID;
 - (unsigned long long)unreadCount;
 - (id)_createdChatForRoom:(id)arg1 onAccount:(id)arg2;
-- (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2 groupID:(id)arg3;
+- (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(BOOL)arg5;
 - (id)_createdChatForIMHandle:(id)arg1;
 - (id)_createdChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
 - (id)_allCreatedChats;
@@ -82,9 +83,8 @@
 - (id)chatForURL:(id)arg1 outMessageText:(id *)arg2 outRecipientIDs:(id *)arg3 outService:(id *)arg4 outMessageGUID:(id *)arg5;
 - (id)messagesURLWithChat:(id)arg1 orHandles:(id)arg2 withMessageText:(id)arg3;
 - (id)chatForRoom:(id)arg1 onAccount:(id)arg2;
-- (id)newChatForIMHandles:(id)arg1;
-- (id)newChatForIMHandle:(id)arg1;
 - (id)chatForIMHandles:(id)arg1 chatName:(id)arg2;
+- (id)chatForIMHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3;
 - (id)chatForIMHandles:(id)arg1;
 - (id)chatForIMHandle:(id)arg1;
 - (void)_unregisterChatWithGUID:(id)arg1;

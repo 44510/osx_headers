@@ -84,6 +84,7 @@
 - (void)layout;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (BOOL)allowsVibrancy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

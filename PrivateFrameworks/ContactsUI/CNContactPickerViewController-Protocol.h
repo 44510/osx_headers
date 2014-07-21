@@ -8,6 +8,6 @@
 
 @protocol CNContactPickerViewController <NSObject>
 @property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate;
-- (void)popoverDidCreate;
+- (void)pickerDidCreate;
 @end
 

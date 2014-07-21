@@ -23,7 +23,9 @@
 - (void).cxx_destruct;
 - (void)transferQueueDidRequestOperations:(id)arg1;
 - (void)_scheduleUploads;
+- (void)clearOverQuotaItemsWithSizeLessThan:(unsigned long long)arg1;
 - (BOOL)_scheduleUploadForItem:(id)arg1;
+- (void)cancelAllUploads;
 - (void)cancelUploadForItemID:(id)arg1;
 - (BOOL)isUploadingItemID:(id)arg1;
 - (void)signalNeedsUploads;

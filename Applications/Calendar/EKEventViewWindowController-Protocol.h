@@ -20,6 +20,7 @@
 - (BOOL)displayApplyButton;
 - (BOOL)displayShowButton;
 - (void)didCommitEvent;
+- (BOOL)shouldCloseOnRevert;
 - (BOOL)shouldCloseOnCommit;
 @end
 

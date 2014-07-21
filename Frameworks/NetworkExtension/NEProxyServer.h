@@ -18,6 +18,7 @@
     BOOL _authenticationRequired;
     int _port;
     NSString *_address;
+    long long _type;
     NSString *_username;
     NSString *_password;
 }
@@ -26,14 +27,19 @@
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property BOOL authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
+@property(readonly) long long type; // @synthesize type=_type;
 @property(readonly) int port; // @synthesize port=_port;
 @property(readonly) NSString *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+- (id)copyPassword;
+- (void)syncWithKeychain;
+- (id)copyProtectionSpace;
 - (id)descriptionWithIndent:(int)arg1;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithType:(long long)arg1 address:(id)arg2 port:(int)arg3;
 - (id)initWithAddress:(id)arg1 andPort:(int)arg2;
 
 @end

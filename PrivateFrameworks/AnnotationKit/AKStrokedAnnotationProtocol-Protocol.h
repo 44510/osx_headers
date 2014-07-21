@@ -10,7 +10,7 @@
 
 @protocol AKStrokedAnnotationProtocol <NSObject>
 @property BOOL hasShadow;
-@property BOOL hasBrushStyle;
+@property long long brushStyle;
 @property(getter=isDashed) BOOL dashed;
 @property(retain) NSColor *strokeColor;
 @property double strokeWidth;

@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
+- (id)_copyThumnbailToStage:(id)arg1;
 - (id)uploadAssetsOperationWithRecord:(id)arg1;
 - (BOOL)_isItemTooLarge;
 @property(readonly, nonatomic) long long transferPriority;

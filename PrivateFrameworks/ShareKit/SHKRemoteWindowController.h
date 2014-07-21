@@ -45,7 +45,9 @@
 - (void)startSharingTransitionInWithServiceScreenFrame:(struct CGRect)arg1 initialLayerTransform:(struct CGAffineTransform)arg2 dimmingScreenFrame:(struct CGRect)arg3 delay:(double)arg4 duration:(double)arg5;
 - (void)startInstantTransitionInWithServiceScreenFrame:(struct CGRect)arg1 dimmingScreenFrame:(struct CGRect)arg2;
 - (void)startMarkupTransitionInWithServiceScreenFrame:(struct CGRect)arg1 initialLayerTransform:(struct CGAffineTransform)arg2 dimmingScreenFrame:(struct CGRect)arg3;
+- (void)requestClientWindowFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setHostWindowFrame:(struct CGRect)arg1 withClientWindowSync:(BOOL)arg2;
+- (void)performBlockOnAnotherMainQueueRunloopIteration:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)advanceToRunPhaseIfNeeded;
 - (id)initWithWindow:(id)arg1 clientWindow:(id)arg2 remoteView:(id)arg3 noSourceWindow:(BOOL)arg4 disableServiceWindowPresentation:(BOOL)arg5 isInNotificationCenter:(BOOL)arg6 service:(id)arg7;

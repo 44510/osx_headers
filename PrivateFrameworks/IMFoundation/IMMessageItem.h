@@ -55,7 +55,8 @@
 @property(readonly, nonatomic) BOOL isFromExternalSource;
 @property(readonly, nonatomic) BOOL wasDowngraded;
 @property(readonly, nonatomic) BOOL isSent;
-- (BOOL)isEmote;
+@property(readonly, nonatomic) BOOL isEmote;
+@property(readonly, nonatomic) BOOL isLocatingMessage;
 @property(readonly, nonatomic) BOOL isTypingMessage;
 @property(readonly, nonatomic) BOOL isPrepared;
 @property(readonly, nonatomic) BOOL isDelivered;

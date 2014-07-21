@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)persistenceURL;
 - (id)_newElementWithBookmarkStorage:(id)arg1;
 - (id)newSyncedItemForSyncData:(id)arg1;
-- (void)addElement:(id)arg1;
+- (id)addElement:(id)arg1;
 - (BOOL)syncShouldUseItemPositions;
 - (BOOL)syncShouldUseCustomStore;
 - (id)syncIdentifier;

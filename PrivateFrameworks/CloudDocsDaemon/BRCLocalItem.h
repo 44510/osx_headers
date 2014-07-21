@@ -19,6 +19,7 @@
     id _serverPathMatchID;
     BOOL _resolvedPath;
     BOOL _forceDelete;
+    BOOL _forceDeletedAlready;
     unsigned int _syncUpState;
     unsigned long long _dbRowID;
     BRCItemID *_itemID;
@@ -72,6 +73,7 @@
 - (void)refreshDesiredVersion:(id)arg1;
 - (void)clearVersionToStage;
 - (BOOL)setVersionToStage:(id)arg1 wantsFault:(BOOL)arg2 startDownload:(BOOL)arg3 needsSave:(char *)arg4;
+- (id)_scheduleLosersDownloadForVersion:(id)arg1;
 @property(readonly, nonatomic) BOOL isDownloadRequested;
 - (void)markRenamedUsingServerItem:(id)arg1;
 - (void)markRemovedFromFilesystem;
@@ -94,14 +96,15 @@
 - (void)_clearInFlightDiffs;
 - (void)prepareForSyncUp;
 - (void)markNeedsUploadOrSyncingUpWithAliasTarget:(id)arg1;
-- (void)checkIfStillNeedsSyncingUpWithServerItem:(id)arg1;
-- (void)_markNeedsSyncingUpWithServerItem:(id)arg1;
+- (void)_markNeedsSyncingUp;
+- (void)markForceNeedsSyncUp;
 - (void)markNeedsReading;
 - (void)appDidResolveConflictLoserWithEtag:(id)arg1;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
 - (BOOL)updateLocationAndMetaFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (BOOL)updateFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (void)updateFromFSAtPath:(id)arg1;
+- (BOOL)updateXattrInfoFromPathPath:(id)arg1 error:(id *)arg2;
 - (void)clearVersionSignatures:(unsigned long long)arg1 isPackage:(BOOL)arg2;
 - (unsigned long long)diffAgainstOriginalItem;
 - (unsigned long long)diffAgainstLocalItem:(id)arg1;
@@ -159,6 +162,7 @@
 @property(readonly, nonatomic) unsigned int uploadStatus;
 @property(readonly, nonatomic) unsigned int downloadStatus;
 @property(readonly, nonatomic) unsigned int queryItemStatus;
+- (void)deleteAllDesiredLosers;
 - (void)deleteAllDesiredAdditions;
 - (BOOL)hasStagedThumbnail;
 - (id)desiredThumbnail;

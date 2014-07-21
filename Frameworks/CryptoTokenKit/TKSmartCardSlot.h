@@ -6,15 +6,13 @@
 
 #import "NSObject.h"
 
-#import "TKProtocolSlotNotification.h"
-
 @class NSString, NSXPCConnection, TKSmartCardATR;
 
-@interface TKSmartCardSlot : NSObject <TKProtocolSlotNotification>
+@interface TKSmartCardSlot : NSObject
 {
     NSXPCConnection *_connection;
-    BOOL _specific;
-    BOOL _exclusive;
+    long long _powerState;
+    long long _shareState;
     long long _state;
     TKSmartCardATR *_ATR;
     NSString *_name;
@@ -23,6 +21,8 @@
 }
 
 + (void)slotWithEndpoint:(id)arg1 reply:(CDUnknownBlockType)arg2;
+@property long long powerState; // @synthesize powerState=_powerState;
+@property long long shareState; // @synthesize shareState=_shareState;
 @property(readonly, nonatomic) long long maxOutputLength; // @synthesize maxOutputLength=_maxOutputLength;
 @property(readonly, nonatomic) long long maxInputLength; // @synthesize maxInputLength=_maxInputLength;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
@@ -30,12 +30,11 @@
 @property long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)notifyWithParameters:(id)arg1;
+- (void)invalidate;
 - (id)makeSmartCard;
 @property(readonly, nonatomic) id <TKProtocolSmartCardSlot> slot;
 - (void)connectToEndpoint:(id)arg1 reply:(CDUnknownBlockType)arg2;
-@property(readonly) BOOL exclusive;
-@property(readonly) BOOL specific;
+- (void)control:(id)arg1 data:(id)arg2 expectedLength:(unsigned int)arg3 reply:(CDUnknownBlockType)arg4;
 
 @end
 

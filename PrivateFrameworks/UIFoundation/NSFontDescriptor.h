@@ -6,13 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSCoding.h"
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
 @class NSAffineTransform, NSDictionary, NSMutableDictionary, NSString;
 
-@interface NSFontDescriptor : NSObject <NSSecureCoding, NSCopying, NSCoding>
+@interface NSFontDescriptor : NSObject <NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_attributes;
     id _reserved1;

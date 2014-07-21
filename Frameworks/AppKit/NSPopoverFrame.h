@@ -34,6 +34,7 @@
 + (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 appearance:(long long)arg2 anchorSize:(struct CGSize)arg3 contentInset:(CDStruct_3c058996)arg4;
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 appearance:(long long)arg2 anchorSize:(struct CGSize)arg3 contentInset:(CDStruct_3c058996)arg4;
 + (struct CGSize)minFrameSizeForMinContentSize:(struct CGSize)arg1 styleMask:(unsigned long long)arg2;
++ (BOOL)automaticallyNotifiesObserversOfAnchorPoint;
 - (id)_verticalRangesForAreasOfInterest;
 @property(retain, nonatomic) NSFloatRange *rangeOfInterest2;
 @property(retain, nonatomic) NSFloatRange *rangeOfInterest1;

@@ -124,6 +124,7 @@
 - (id)applicationVersion;
 - (double)loadThreadPriority;
 - (void)setLoadThreadPriority:(double)arg1;
+- (id)mediaLibraryAttributes;
 - (id)extendedAttributeForKey:(id)arg1;
 - (void)setExtendedAttributes:(id)arg1;
 - (void)_resetObjectsAndGroupsDictionaries;

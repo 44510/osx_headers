@@ -20,7 +20,6 @@
     int _pushDNDNotificationToken;
     int _timeNotifier;
     _Bool _turnOnWhenMirrored;
-    _Bool _turnedOnByUser;
     _Bool _displayIsMirrored;
     _Bool _presentationModeTakesOverScreen;
     _Bool _userChangedMode;

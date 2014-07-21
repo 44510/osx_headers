@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)textMarkerRangeForLine:(unsigned long long)arg1 withUIElement:(id)arg2;
 - (void)setSelectedTextMarkerRange:(id)arg1 withUIElement:(id)arg2;
 - (id)selectedTextMarkerRangeWithUIElement:(id)arg1;
+- (id)markerRangeWithUIElement:(id)arg1;
 - (BOOL)shouldHandleTextSelection;
 - (BOOL)shouldHandleTextNavigation;
 - (BOOL)isWebArea;

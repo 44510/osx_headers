@@ -9,7 +9,7 @@
 #import "BRCAccountHandlerDelegate.h"
 #import "NSXPCListenerDelegate.h"
 
-@class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
+@class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
 @interface BRCDaemon : NSObject <NSXPCListenerDelegate, BRCAccountHandlerDelegate>
 {
@@ -31,6 +31,7 @@
     NSString *_cacheDirPath;
     NSString *_rootDirPath;
     Class _containerClass;
+    NSError *_loggedOutError;
     NSString *_ubiquityTokenSalt;
     unsigned long long _forceIsGreedyState;
     NSDate *_startupDate;
@@ -44,6 +45,7 @@
 @property(nonatomic) BOOL disableAccountChangesHandling; // @synthesize disableAccountChangesHandling=_disableAccountChangesHandling;
 @property(readonly, nonatomic) BRCVersionsFileProvider *versionsProvider; // @synthesize versionsProvider=_versionsProvider;
 @property(readonly, nonatomic) BRCCloudFileProvider *fileProvider; // @synthesize fileProvider=_fileProvider;
+@property(retain, nonatomic) NSError *loggedOutError; // @synthesize loggedOutError=_loggedOutError;
 @property(retain, nonatomic) BRCAccountSession *accountSession; // @synthesize accountSession=_accountSession;
 @property(retain, nonatomic) Class containerClass; // @synthesize containerClass=_containerClass;
 @property(retain, nonatomic) NSString *rootDirPath; // @synthesize rootDirPath=_rootDirPath;
@@ -60,6 +62,8 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)accountHandler:(id)arg1 didChangeSessionTo:(id)arg2;
 - (void)accountHandler:(id)arg1 willChangeSessionFrom:(id)arg2;
+- (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
+- (long long)computePurgableSpaceWithUrgency:(int)arg1;
 - (void)setUp;
 - (void)setUpSandbox;
 - (BOOL)_haveRequiredKernelFeatures;

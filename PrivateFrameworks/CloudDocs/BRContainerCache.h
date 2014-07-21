@@ -13,9 +13,12 @@ __attribute__((visibility("hidden")))
 {
     NSMutableDictionary *_containersByID;
     BOOL _didFetchAllContainers;
+    id <NSObject> _containerStatusObserver;
 }
 
 + (id)containerCache;
+- (void)unsubscribeToContainerStatusUpdate;
+- (void)subscribeToContainerStatusUpdate;
 - (id)containerByID:(id)arg1 forURL:(id)arg2;
 - (id)allContainersByID;
 - (id)documentContainers;
@@ -23,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)_allContainersByIDUnsafe;
 - (void)invalidate;
 - (void)containerListDidChange;
+- (void)dealloc;
 - (id)init;
 
 @end

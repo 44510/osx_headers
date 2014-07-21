@@ -37,12 +37,7 @@
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
-- (void)selectAll:(id)arg1;
-- (void)delete:(id)arg1;
-- (void)paste:(id)arg1;
-- (void)copy:(id)arg1;
-- (void)cut:(id)arg1;
-- (BOOL)validateMenuItem:(id)arg1;
+- (id)menuForEvent:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)viewDidMoveToWindow;

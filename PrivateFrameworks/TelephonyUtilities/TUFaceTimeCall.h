@@ -47,6 +47,7 @@
 - (double)startTime;
 - (BOOL)isBlocked;
 - (BOOL)isOutgoing;
+- (BOOL)isStatusFinal;
 - (void)inviteWithCallIdentifier:(id)arg1;
 - (void)disconnect;
 - (void)answerWithSourceIdentifier:(id)arg1;

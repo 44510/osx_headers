@@ -27,8 +27,13 @@ __attribute__((visibility("hidden")))
     MKMapItem *_mapItemCache;
     RouteDurationProvider *_routeDurationProvider;
     GEOComposedWaypoint *_composedWaypoint;
+    BOOL _wasResolved;
     BOOL _hovered;
+    BOOL _hasUserRatingScore;
+    unsigned int _sampleSizeForUserRatingScore;
     NSArray *_formattedAddressLinesCache;
+    NSString *_formattedNumberOfReviewsIncludingProvider;
+    NSString *_formattedNumberOfReviews;
     CDStruct_feeb6407 _region;
 }
 
@@ -37,18 +42,22 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingTitle;
 + (id)keyPathsForValuesAffectingLongTitle;
 + (id)serializedKeys;
++ (id)keyPathsForValuesAffectingResolved;
 + (id)keyPathsForValuesAffectingMapItem;
 + (id)keyPathsForValuesAffectingSyncData;
 + (id)privatePasteboardType;
-+ (id)allPlacesForPersonsMatchingString:(id)arg1;
 + (id)allPlacesForPerson:(id)arg1;
 + (id)commonPlaceWithTitle:(id)arg1;
 + (id)commonPlaces;
 + (id)userLocationPlace;
 + (id)titlesFromMapItem:(id)arg1 visibleMapRect:(CDStruct_90e2a262)arg2;
 + (id)singleLineAddressForAddress:(id)arg1;
+@property(nonatomic) unsigned int sampleSizeForUserRatingScore; // @synthesize sampleSizeForUserRatingScore=_sampleSizeForUserRatingScore;
 @property(nonatomic) CDStruct_90e2a262 region; // @synthesize region=_region;
 @property(retain, nonatomic) MKUserLocation *userLocation; // @synthesize userLocation=_userLocation;
+@property(nonatomic) BOOL hasUserRatingScore; // @synthesize hasUserRatingScore=_hasUserRatingScore;
+@property(copy, nonatomic) NSString *formattedNumberOfReviews; // @synthesize formattedNumberOfReviews=_formattedNumberOfReviews;
+@property(copy, nonatomic) NSString *formattedNumberOfReviewsIncludingProvider; // @synthesize formattedNumberOfReviewsIncludingProvider=_formattedNumberOfReviewsIncludingProvider;
 @property(copy, nonatomic) GEOComposedWaypoint *composedWaypoint; // @synthesize composedWaypoint=_composedWaypoint;
 @property(retain, nonatomic) GEOAddress *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSArray *formattedAddressLinesCache; // @synthesize formattedAddressLinesCache=_formattedAddressLinesCache;

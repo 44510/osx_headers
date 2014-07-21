@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) NSString *characters; // @dynamic characters;
 @property(readonly, nonatomic) unsigned short keyData; // @dynamic keyData;
 @property(readonly, nonatomic) BOOL keyRepeat; // @dynamic keyRepeat;
+@property(readonly, nonatomic) unsigned short charCode; // @dynamic charCode;
 @property(readonly, nonatomic) int type; // @dynamic type;
 - (void)invalidate;
 - (id)initWithEvent:(id)arg1 session:(id)arg2;

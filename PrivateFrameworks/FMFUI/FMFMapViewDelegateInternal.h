@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL respondingToUserTouch; // @synthesize respondingToUserTouch=_respondingToUserTouch;
 @property __weak id <FMFMapViewDelegateInternalDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)regionIsValid:(CDStruct_90e2a262)arg1;
 - (CDStruct_3c058996)edgeInsetsWithMinApplied:(CDStruct_3c058996)arg1;
 - (void)zoomToFitAnnotationsForMapView:(id)arg1 includeMe:(BOOL)arg2 disallowAnimation:(BOOL)arg3;
 - (void)zoomToFitLocation:(id)arg1 forMapView:(id)arg2;

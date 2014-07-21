@@ -14,10 +14,15 @@ __attribute__((visibility("hidden")))
     BookmarksSidebarTableCellView *_bookmarksSidebarTableCellView;
 }
 
++ (void)initialize;
 @property(nonatomic) __weak BookmarksSidebarTableCellView *bookmarksSidebarTableCellView; // @synthesize bookmarksSidebarTableCellView=_bookmarksSidebarTableCellView;
 - (void).cxx_destruct;
 - (void)bookmarksSidebarTitleTextViewResignFirstResponder;
 - (void)bookmarksSidebarTitleTextViewBecameFirstResponder;
+- (CDStruct_3c058996)alignmentRectInsets;
+- (struct CGSize)intrinsicContentSize;
+- (id)initWithCoder:(id)arg1;
+- (void)setBezeled:(BOOL)arg1;
 
 @end
 

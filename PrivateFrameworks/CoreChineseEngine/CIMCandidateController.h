@@ -51,12 +51,14 @@
     BOOL _useCachedPosition;
     BOOL _verticalSelectionShouldLoop;
     NSArray *_visibleCandidates;
+    BOOL _userDidChangeCandidateSelection;
 }
 
 + (id)localizedName:(id)arg1;
 + (id)sharedCandidateController;
 + (id)frameworkIdentifier;
 + (id)frameworkBundle;
+@property(nonatomic) BOOL userDidChangeCandidateSelection; // @synthesize userDidChangeCandidateSelection=_userDidChangeCandidateSelection;
 @property(retain, nonatomic) NSArray *visibleCandidates; // @synthesize visibleCandidates=_visibleCandidates;
 @property(nonatomic) BOOL useCachedPosition; // @synthesize useCachedPosition=_useCachedPosition;
 @property(retain, nonatomic) CIMCandidateStepperAccessoryView *stepperView; // @synthesize stepperView=_stepperView;
@@ -87,7 +89,6 @@
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic) struct CGPoint cachedPosition; // @synthesize cachedPosition=_cachedPosition;
-- (id).cxx_construct;
 @property(readonly, nonatomic) BOOL isUsingIncrementalSearch;
 - (struct CGPoint)candidateController:(id)arg1 topLeftPointOfWindowFrame:(struct CGRect)arg2 candidateTextOffset:(double)arg3 windowMaxHeight:(double)arg4;
 - (void)candidateController:(id)arg1 didChangeSortStyle:(long long)arg2;

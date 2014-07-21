@@ -78,7 +78,6 @@
 @property(readonly, nonatomic) NSString *faultDisplayName;
 - (BOOL)isEqualToRelativePath:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isSubpathOfRelativePath:(id)arg1;
 - (void)closeDirectoryScan;
 - (id)nextDescendant;
 - (BOOL)openDirectoryForRecursiveScan;

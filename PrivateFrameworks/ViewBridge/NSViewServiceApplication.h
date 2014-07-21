@@ -16,6 +16,7 @@
 
 + (BOOL)hasBootstrapKind:(int)arg1;
 + (int)bootstrapKind;
++ (BOOL)commonNamedFaults;
 + (void)commonBootstrap;
 + (void)learnRemotePID;
 + (void)registerStandardUserDefaults;

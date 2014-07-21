@@ -11,6 +11,8 @@
 - (void)handleCurrentProxyCallsChanged:(NSArray *)arg1;
 - (void)handleCallContinuityStateChangedForProxyCall:(TUProxyCall *)arg1;
 - (void)handleCallStatusChangedForProxyCall:(TUProxyCall *)arg1;
+- (void)handleHardPauseDigitsAvailibilityChangedTo:(unsigned short)arg1 digits:(NSString *)arg2;
+- (void)handleMutedChangedTo:(BOOL)arg1;
 - (void)handleRemoteFrequencyChangedTo:(NSData *)arg1;
 - (void)handleLocalFrequencyChangedTo:(NSData *)arg1;
 - (void)handleDisconnectedReasonChangedTo:(int)arg1 forCallWithUUID:(NSString *)arg2;

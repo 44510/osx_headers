@@ -14,6 +14,7 @@
     NSLock *_pendingRequestsLock;
 }
 
++ (id)_serviceTypeNumber;
 + (BOOL)shouldAttributeData;
 + (void)setAttributeData;
 + (id)_debugRequestName;

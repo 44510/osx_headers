@@ -11,7 +11,6 @@
 @protocol GEOMapServiceTicket <NSObject>
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
-- (BOOL)isEqualForHistoryToTicket:(id <GEOMapServiceTicket>)arg1;
 - (void)applyToCorrectedSearch:(GEORPCorrectedSearch *)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(void (^)(NSArray *, NSArray *, NSError *))arg1 timeout:(long long)arg2 networkActivity:(void (^)(BOOL))arg3;

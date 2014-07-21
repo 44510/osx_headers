@@ -21,6 +21,7 @@
     BorderlessButton *_faceTimeButton;
     BorderlessButton *_swapButton;
     BorderlessButton *_mergeButton;
+    BorderlessButton *_hardPauseButton;
     BorderlessButton *_muteButton;
     BorderlessButton *_endButton;
     BorderlessButton *_cancelButton;
@@ -71,6 +72,7 @@
 @property(nonatomic) __weak BorderlessButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak BorderlessButton *endButton; // @synthesize endButton=_endButton;
 @property(nonatomic) __weak BorderlessButton *muteButton; // @synthesize muteButton=_muteButton;
+@property(nonatomic) __weak BorderlessButton *hardPauseButton; // @synthesize hardPauseButton=_hardPauseButton;
 @property(nonatomic) __weak BorderlessButton *mergeButton; // @synthesize mergeButton=_mergeButton;
 @property(nonatomic) __weak BorderlessButton *swapButton; // @synthesize swapButton=_swapButton;
 @property(nonatomic) __weak BorderlessButton *faceTimeButton; // @synthesize faceTimeButton=_faceTimeButton;

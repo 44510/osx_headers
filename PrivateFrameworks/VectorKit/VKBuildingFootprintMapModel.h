@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem>>> _shadowRenderItemPool;
     BOOL _supportsStrokes;
     BOOL _supports3DStrokes;
+    BOOL _supportsBuildingShadows;
     VKMercatorTerrainHeightCache *_heightCache;
 }
 
@@ -69,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)generate3DBuildingRenderItemsIfNecessaryForScene:(id)arg1 withContext:(id)arg2 commandBuffer:(struct CommandBuffer *)arg3;
 - (void)generate2DBuildingRenderItemsForScene:(id)arg1 withContext:(id)arg2 commandBuffer:(struct CommandBuffer *)arg3;
 - (void)generate2DBuildingRenderItemsIfNecessaryForScene:(id)arg1 withContext:(id)arg2 commandBuffer:(struct CommandBuffer *)arg3;
+- (void)_updateBuildingModeForContext:(id)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue *)arg3;
 - (void)resetPools;
 - (void)flushPools;

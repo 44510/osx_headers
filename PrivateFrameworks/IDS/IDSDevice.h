@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSData, NSString, NSUUID, _IDSDevice;
+@class NSArray, NSData, NSString, NSUUID, _IDSDevice;
 
 @interface IDSDevice : NSObject
 {
@@ -25,7 +25,7 @@
 - (void)_setAccount:(id)arg1;
 - (BOOL)isDefaultLocalDevice;
 - (void)_addIdentity:(id)arg1;
-- (id)_identities;
+@property(readonly, retain, nonatomic) NSArray *identities;
 @property(readonly, retain, nonatomic) NSData *pushToken;
 @property(readonly, retain, nonatomic) NSString *enclosureColor;
 @property(readonly, retain, nonatomic) NSString *deviceColor;
@@ -43,6 +43,9 @@
 @property(readonly, retain, nonatomic) NSString *service;
 @property(readonly, retain, nonatomic) NSString *name;
 @property(readonly, retain, nonatomic) NSString *modelIdentifier;
+@property(readonly, nonatomic) NSString *productBuildVersion;
+@property(readonly, nonatomic) NSString *productName;
+@property(readonly, nonatomic) NSString *productVersion;
 @property(readonly, retain, nonatomic) NSString *uniqueID;
 - (id)description;
 - (void)dealloc;

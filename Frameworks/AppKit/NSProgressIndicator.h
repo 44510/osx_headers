@@ -60,6 +60,7 @@
 - (void)_surfaceResized:(id)arg1;
 - (id)_invalidateGStatesForTree;
 - (void)_clipViewAncestorDidScroll:(id)arg1;
+- (void)_windowOcclusionChanged:(id)arg1;
 - (void)_setWindow:(id)arg1;
 - (BOOL)_isThreadedAnimationLooping;
 - (void)_systemColorChanged:(id)arg1;

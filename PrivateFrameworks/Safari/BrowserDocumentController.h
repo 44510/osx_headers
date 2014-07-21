@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canShowStartPage;
 - (BOOL)_canShowUnifiedField;
 - (BOOL)_browserDocumentIsAvailable:(id)arg1 usingWindowPolicy:(long long)arg2;
-- (void)tryMultipleURLs:(unique_ptr_b4bbd85b)arg1 windowPolicy:(long long)arg2;
+- (void)tryMultipleURLs:(unique_ptr_ed026c72)arg1 windowPolicy:(long long)arg2;
 - (void)searchWeb:(id)arg1;
 - (void)toggleBookmarksEditView:(id)arg1;
 - (void)showFavorites:(id)arg1;

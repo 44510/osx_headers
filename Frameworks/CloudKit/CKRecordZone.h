@@ -21,12 +21,16 @@
     NSData *_protectionData;
     NSString *_protectionEtag;
     NSString *_previousProtectionEtag;
+    long long _assetQuotaUsage;
+    long long _metadataQuotaUsage;
     CKContainerID *_containerID;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)defaultRecordZone;
 @property(copy, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
+@property(nonatomic) long long metadataQuotaUsage; // @synthesize metadataQuotaUsage=_metadataQuotaUsage;
+@property(nonatomic) long long assetQuotaUsage; // @synthesize assetQuotaUsage=_assetQuotaUsage;
 @property(retain, nonatomic) NSString *previousProtectionEtag; // @synthesize previousProtectionEtag=_previousProtectionEtag;
 @property(retain, nonatomic) NSString *protectionEtag; // @synthesize protectionEtag=_protectionEtag;
 @property(retain, nonatomic) NSData *protectionData; // @synthesize protectionData=_protectionData;

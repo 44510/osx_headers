@@ -12,6 +12,7 @@
 
 - (void)dealloc;
 - (void)setSuppressesScrollerFlash:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

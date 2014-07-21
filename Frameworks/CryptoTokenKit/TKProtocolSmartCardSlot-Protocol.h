@@ -6,9 +6,11 @@
 
 #import "TKProtocolSlot.h"
 
-@class NSDictionary;
+@class NSData, NSDictionary, NSNumber;
 
 @protocol TKProtocolSmartCardSlot <TKProtocolSlot>
+- (void)sendControl:(id)arg1 data:(NSData *)arg2 expectedLength:(unsigned int)arg3 reply:(void (^)(NSData *))arg4;
 - (void)sessionWithParameters:(NSDictionary *)arg1 reply:(void (^)(id <TKProtocolSmartCardSession>, NSDictionary *, NSError *))arg2;
+- (void)reserveProtocols:(NSNumber *)arg1 currentlyReserved:(NSNumber *)arg2 reply:(void (^)(NSNumber *))arg3;
 @end
 

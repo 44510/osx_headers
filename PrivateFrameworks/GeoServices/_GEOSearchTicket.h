@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(retain, nonatomic) GEOPlaceSearchResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) NSString *searchQuery;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;

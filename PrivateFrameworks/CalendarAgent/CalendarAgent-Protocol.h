@@ -6,7 +6,7 @@
 
 #import "CalendarLink.h"
 
-@class CalDateRange, CalDelegateUserInfo, CalLocation, NSArray, NSData, NSDate, NSString;
+@class CRRecentContact, CalDateRange, CalDelegateUserInfo, CalLocation, NSArray, NSData, NSDate, NSNumber, NSString;
 
 @protocol CalendarAgent <CalendarLink>
 - (void)calMeCardWithReply:(void (^)(CalMeCard *))arg1;
@@ -22,6 +22,8 @@
 - (void)getGrantedDelegateListForAccountWithObjectIDString:(NSString *)arg1 reply:(void (^)(NSArray *, NSString *, NSError *))arg2;
 - (void)addDelegate:(CalDelegateUserInfo *)arg1 toAccountWithObjectIDString:(NSString *)arg2 reply:(void (^)(NSString *, CalDelegateUserInfo *, NSError *))arg3;
 - (void)refreshDelegateListForAccountWithObjectIDString:(NSString *)arg1 reply:(void (^)(NSArray *, NSString *, NSError *))arg2;
+- (void)removeRecentsEntryWithIdentifier:(NSNumber *)arg1;
+- (void)removeRecentsEntry:(CRRecentContact *)arg1;
 - (void)recentContactSearchWithSearchString:(NSString *)arg1 sourceID:(NSString *)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)expandGroupForCalDAVprincipalWithObjectIDString:(NSString *)arg1 groupIdentifier:(NSString *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)principalPropertSearchForCalDAVPrincipalWithObjectIDString:(NSString *)arg1 searchString:(NSString *)arg2 searchTypes:(NSArray *)arg3 reply:(void (^)(NSArray *))arg4;

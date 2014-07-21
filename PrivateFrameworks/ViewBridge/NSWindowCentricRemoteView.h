@@ -42,7 +42,7 @@
 - (void)deallocOnAppKitThread;
 - (BOOL)setServiceWindowBorderViewLayerContextID:(unsigned int)arg1;
 - (unsigned int)windowIDToPassToSetFrontProcess;
-- (void)advanceToConfigPhase;
+- (void)_advanceToConfigPhase:(CDUnknownBlockType)arg1;
 - (void)stopAwaitingWindowRights;
 
 @end

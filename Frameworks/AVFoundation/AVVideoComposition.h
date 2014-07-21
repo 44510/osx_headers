@@ -27,6 +27,7 @@
 @property(readonly, retain, nonatomic) AVVideoCompositionCoreAnimationTool *animationTool;
 - (id)_postProcessingRootLayer;
 - (id)_postProcessingVideoLayers;
+- (id)_postProcessingVideoLayer;
 - (BOOL)_hasPostProcessingLayers;
 - (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;

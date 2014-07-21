@@ -111,6 +111,7 @@
 - (void)commitInlineForSpecialWindow;
 - (void)commitInline;
 - (void)commitCandidate;
+- (void)learnCandidate:(id)arg1;
 - (id)selectedCandidate;
 - (void)setCandidates:(id)arg1;
 - (void)showCandidateWindowIfNeeded;

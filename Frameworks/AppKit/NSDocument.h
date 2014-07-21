@@ -381,6 +381,7 @@
 - (void)_coordinateReadingContentsAndWritingItemAtURL:(id)arg1 byAccessor:(CDUnknownBlockType)arg2;
 - (void)_fileCoordinator:(id)arg1 coordinateReadingContentsAndWritingItemAtURL:(id)arg2 byAccessor:(CDUnknownBlockType)arg3;
 - (void)_fileCoordinator:(id)arg1 asynchronouslyCoordinateReadingContentsAndWritingItemAtURL:(id)arg2 byAccessor:(CDUnknownBlockType)arg3;
+- (void)_didUnblockUserInteraction;
 - (void)_waitForUserInteractionUnblocking;
 - (void)_blockUserInteraction;
 - (void)saveToURL:(id)arg1 ofType:(id)arg2 forSaveOperation:(unsigned long long)arg3 delegate:(id)arg4 didSaveSelector:(SEL)arg5 contextInfo:(void *)arg6;
@@ -491,6 +492,7 @@
 - (void)_synchronizeWindowTitles;
 - (BOOL)_reconcileDisplayNameAndTrackingInfoToFileURL;
 - (id)_displayNameForURL:(id)arg1;
+- (BOOL)_isExpendableAsUnsavedDocument;
 - (id)initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 - (BOOL)_initForURL:(id)arg1 withContentsOfURL:(id)arg2 ofType:(id)arg3 error:(id *)arg4;
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2 error:(id *)arg3;

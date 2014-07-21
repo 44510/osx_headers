@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (void)suspend;
 - (void)resume;
 - (void)_throttleChangedHeapKey:(id)arg1;
+- (void)removeThrottle:(id)arg1;
+- (void)unscheduleThrottle:(id)arg1;
 - (void)addThrottle:(id)arg1;
 - (void)_scheduleIfNecessaryWhenThrottleChanged:(id)arg1;
 - (void)_schedule;

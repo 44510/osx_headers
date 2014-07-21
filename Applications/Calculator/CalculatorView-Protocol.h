@@ -40,6 +40,7 @@
 - (BOOL)readyForConversion;
 
 @optional
+- (void)setOperandIndicatorState:(NSString *)arg1;
 - (void)handleStringFromCalcEngine:(NSString *)arg1;
 - (void)handleConversion:(NSArray *)arg1;
 @end

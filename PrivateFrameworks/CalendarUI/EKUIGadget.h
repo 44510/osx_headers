@@ -12,9 +12,11 @@
 
 @interface EKUIGadget : NSObject <EKUILayoutItem>
 {
+    BOOL _alwaysScrollIfNeeded;
     BOOL _isVisible;
     BOOL _shouldScrollToTop;
     BOOL _observingKeyViews;
+    BOOL _isScrolling;
     NSView *_gadgetView;
     id <EKUILayoutItem> _parentItem;
     NSView *_firstKeyView;
@@ -27,6 +29,7 @@
 }
 
 + (id)interestedChangeKeys;
+@property BOOL isScrolling; // @synthesize isScrolling=_isScrolling;
 @property BOOL observingKeyViews; // @synthesize observingKeyViews=_observingKeyViews;
 @property(retain) NSLayoutConstraint *scrollViewMaxHeightConstraint; // @synthesize scrollViewMaxHeightConstraint=_scrollViewMaxHeightConstraint;
 @property(retain) NSLayoutConstraint *scrollContentHeightConstraint; // @synthesize scrollContentHeightConstraint=_scrollContentHeightConstraint;
@@ -38,6 +41,7 @@
 @property(nonatomic) __weak NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
 @property(nonatomic) __weak NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
 @property __weak id <EKUILayoutItem> parentItem; // @synthesize parentItem=_parentItem;
+@property BOOL alwaysScrollIfNeeded; // @synthesize alwaysScrollIfNeeded=_alwaysScrollIfNeeded;
 @property(retain) NSView *gadgetView; // @synthesize gadgetView=_gadgetView;
 - (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
@@ -59,6 +63,7 @@
 - (BOOL)updateWithDiff:(id)arg1;
 - (void)updateWithChanges:(id)arg1;
 - (BOOL)isInterestedInChanges:(id)arg1;
+- (void)saveCompleteChangeWithoutPromptingUserAboutDecline;
 - (void)saveCompleteChange;
 - (void)savePartialChange;
 - (void)mouseExitedGadgetView;

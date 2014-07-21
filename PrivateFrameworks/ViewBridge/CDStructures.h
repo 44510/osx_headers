@@ -63,6 +63,13 @@ struct __sbuf {
     int _field2;
 };
 
+struct __va_list_tag {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+    void *_field4;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

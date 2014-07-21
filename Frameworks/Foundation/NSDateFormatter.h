@@ -56,11 +56,14 @@
 - (void)_setDateFormat:(id)arg1;
 - (id)_dateFormat;
 @property(copy) NSString *dateFormat;
+- (void)_setDateFormat:(id)arg1 alreadyLocked:(BOOL)arg2;
 @property unsigned long long formatterBehavior;
 @property BOOL generatesCalendarDates;
 @property(copy) NSLocale *locale;
+- (id)_getLocaleAlreadyLocked:(BOOL)arg1;
 @property unsigned long long timeStyle;
 @property unsigned long long dateStyle;
+- (void)setLocalizedDateFormatFromTemplate:(id)arg1;
 - (id)dateFromString:(id)arg1;
 - (id)stringFromDate:(id)arg1;
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 range:(inout struct _NSRange *)arg3 error:(out id *)arg4;

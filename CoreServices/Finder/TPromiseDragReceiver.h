@@ -12,8 +12,8 @@
 
 @interface TPromiseDragReceiver : NSObject <TCoalescingNodeObserverProtocol>
 {
-    function_966f7bb5 _promiseDragNodeAddedCallback;
-    function_40a2a9af _promiseDragCompletionCallback;
+    struct function<void (const TFENode &)> _promiseDragNodeAddedCallback;
+    struct function<void (const TFENodeVector &, const TError &)> _promiseDragCompletionCallback;
     struct TCoalescingNodeObserverCocoaBridge *_nodeObserver;
     struct TFENode _dropTargetNode;
     struct TStringVector _rawNamesOfPendingPromisedNodes;

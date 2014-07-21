@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)urlsForSelectedItemWithItems:(id)arg1;
 - (id)urlsForReviewWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *addReviewURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;

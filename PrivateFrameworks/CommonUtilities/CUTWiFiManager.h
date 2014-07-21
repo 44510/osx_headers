@@ -12,6 +12,8 @@
 
 @interface CUTWiFiManager : NSObject <CUTPowerMonitorDelegate>
 {
+    BOOL _isHostingHotSpot;
+    BOOL _isWifiEnabled;
     BOOL _isWakeOnWiFiEnabled;
     BOOL _isWakeOnWiFiSupported;
     BOOL _isWifiAssociated;
@@ -40,11 +42,11 @@
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableSet *wiFiAutoAssociationTokens; // @synthesize wiFiAutoAssociationTokens=_wiFiAutoAssociationTokens;
 @property(readonly, nonatomic) BOOL isWoWSupported; // @synthesize isWoWSupported=_isWakeOnWiFiSupported;
-@property(nonatomic) BOOL isWoWEnabled; // @synthesize isWoWEnabled=_isWakeOnWiFiEnabled;
-- (void)setIsWiFiEnabled:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL isWoWEnabled; // @synthesize isWoWEnabled=_isWakeOnWiFiEnabled;
 - (void)showNetworkOptions;
 - (void)removeWiFiAutoAssociationClientToken:(id)arg1;
 - (void)addWiFiAutoAssociationClientToken:(id)arg1;
+- (BOOL)hasWiFiAutoAssociationClientToken:(id)arg1;
 @property(readonly, nonatomic) BOOL autoAssociateWiFi;
 - (void)_adjustWiFiAutoAssociation;
 - (void)_adjustWiFiAutoAssociationLocked;
@@ -53,15 +55,18 @@
 @property(readonly, retain, nonatomic) NSString *currentSSID;
 - (void)currentWiFiNetworkPowerUsageWithCompletion:(CDUnknownBlockType)arg1;
 - (double)_wifiMeasurementErrorForInterval:(double)arg1;
-@property(readonly, nonatomic) BOOL isWiFiEnabled;
+@property(readonly, nonatomic) BOOL isWiFiEnabled; // @synthesize isWiFiEnabled=_isWifiEnabled;
+- (void)_updateIsWiFiEnabled;
 @property(readonly, retain, nonatomic) NSNumber *wiFiScaledRate;
 @property(readonly, retain, nonatomic) NSNumber *wiFiScaledRSSI;
 @property(readonly, retain, nonatomic) NSNumber *wiFiSignalStrength;
 @property(readonly, nonatomic) BOOL willTryToSearchForWiFiNetwork;
 @property(readonly, nonatomic) BOOL willTryToAutoAssociateWiFiNetwork;
-@property(readonly, nonatomic) BOOL isHostingWiFiHotSpot;
+@property(readonly, nonatomic) BOOL isHostingWiFiHotSpot; // @synthesize isHostingWiFiHotSpot=_isHostingHotSpot;
 - (void)_createDynamicStore;
 - (void)_createWiFiManager;
+- (void)_adjustWoWState;
+- (BOOL)hasWoWClient:(id)arg1;
 - (void)removeWoWClient:(id)arg1;
 - (void)addWoWClient:(id)arg1;
 - (void)removeDelegate:(id)arg1;

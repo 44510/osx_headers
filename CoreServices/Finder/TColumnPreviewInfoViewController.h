@@ -34,7 +34,7 @@
 - (void)adjustTextFieldWidths;
 - (void)nodeMDAttributeChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;
 - (void)bulkNodesChanged:(const struct TCoalescedNodesChangedMap *)arg1;
-- (void)viewFrameChanged:(id)arg1;
+- (void)viewFrameChanged;
 - (void)refresh;
 - (void)setNodes:(const struct TFENodeVector *)arg1;
 - (void)setSubviewsHidden:(_Bool)arg1;

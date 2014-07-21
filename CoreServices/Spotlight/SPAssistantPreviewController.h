@@ -9,18 +9,18 @@
 #import "NSTableViewDataSource.h"
 #import "NSTableViewDelegate.h"
 
-@class NSArray, NSLayoutConstraint, NSString, NSTableView;
+@class NSArray, NSString, NSTableView;
 
 @interface SPAssistantPreviewController : SPPreviewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     NSTableView *_sliceTable;
-    NSLayoutConstraint *_topSpaceConstraint;
     NSArray *_slices;
+    double _extraSpace;
 }
 
 + (id)sharedPreviewController;
+@property double extraSpace; // @synthesize extraSpace=_extraSpace;
 @property(retain) NSArray *slices; // @synthesize slices=_slices;
-@property(retain) NSLayoutConstraint *topSpaceConstraint; // @synthesize topSpaceConstraint=_topSpaceConstraint;
 @property __weak NSTableView *sliceTable; // @synthesize sliceTable=_sliceTable;
 - (void).cxx_destruct;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;

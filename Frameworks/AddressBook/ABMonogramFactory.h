@@ -11,7 +11,7 @@
 }
 
 + (BOOL)colorIsClear:(id)arg1;
-+ (id)imageWithOptions:(id)arg1 drawBorder:(BOOL)arg2 drawing:(CDUnknownBlockType)arg3;
++ (id)imageWithOptions:(id)arg1 drawBorder:(BOOL)arg2 drawHandler:(CDUnknownBlockType)arg3;
 + (unsigned long long)linesOfTextInString:(id)arg1;
 + (double)addPhotoBaselineForString:(id)arg1;
 + (id)addPhotoImageWithOptions:(id)arg1;

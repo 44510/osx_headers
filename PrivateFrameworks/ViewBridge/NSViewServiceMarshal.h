@@ -79,6 +79,7 @@
 @property(readonly) int eventRoutingCentricity;
 - (void)orderOutServiceWindow:(CDUnknownBlockType)arg1;
 - (id)orderOutServiceWindow;
+- (void)remoteViewContainingWindowOcclusionStateDidChange:(unsigned long long)arg1;
 - (void)remoteViewDidMove:(struct CGPoint)arg1;
 - (void)remoteWindowLevelDidChange:(long long)arg1;
 - (void)requestResize:(struct CGSize)arg1 transaction:(id)arg2 animate:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;

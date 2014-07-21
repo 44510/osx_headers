@@ -24,7 +24,7 @@
     id _customViewsList;
     id _customPickerList;
     id _currViewObject;
-    id _boxAboveSwatch;
+    id _bottomConstraint;
     id _target;
     id _accessoryView;
     SEL _action;
@@ -32,14 +32,17 @@
     struct CGSize _maxColorPanelSize;
     id _accessoryContainerViewHeight;
     id _opacityViewHeight;
+    id _reserved1;
+    id _reserved2;
     id _resizeDimple;
-    id _bottomConstraint;
-    BOOL _reserved6;
+    BOOL _reserved3;
+    BOOL _reserved4;
     BOOL _handlingOpacityMoveAction;
     BOOL _ignoreConstraints;
     BOOL _continuous;
     BOOL _allowColorSetting;
     BOOL _stillInitializing;
+    BOOL _reserved5;
     id _opacityTextController;
 }
 

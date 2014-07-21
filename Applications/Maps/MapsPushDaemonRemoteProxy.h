@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)pushDaemonProxyReceivedNotificationData:(id)arg1 forType:(id)arg2 recordIdentifier:(id)arg3;
+- (void)fetchCurrentAnnouncement:(CDUnknownBlockType)arg1;
 - (void)clearBulletinWithRecordID:(id)arg1;
 - (void)resetShownAnnouncements;
 - (void)clearCurrentAnnouncement;

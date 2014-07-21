@@ -13,6 +13,8 @@
     _IDSContinuity *_internal;
 }
 
+- (void)stopTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1;
 - (void)disconnectFromPeer:(id)arg1;
 - (void)connectToPeer:(id)arg1;
 - (void)stopScanningForType:(long long)arg1;

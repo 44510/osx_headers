@@ -17,6 +17,7 @@
 + (id)alternateSelectedControlColor;
 + (id)controlAlternatingRowColor;
 + (id)keyboardFocusIndicatorColor;
++ (id)systemGrayColor;
 + (id)systemPurpleColor;
 + (id)systemPinkColor;
 + (id)systemBrownColor;

@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (BOOL)_handleSectionItemFetched:(id)arg1 package:(id)arg2 error:(id *)arg3;
 - (void)_fetchNextAssetPackage;
 - (void)_finishPackage:(id)arg1 error:(id)arg2;

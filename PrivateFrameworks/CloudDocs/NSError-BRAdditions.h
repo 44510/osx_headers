@@ -19,7 +19,6 @@
 + (id)brc_errorInvalidParameter:(id)arg1 value:(id)arg2;
 + (id)brc_errorMethodNotImplemented:(const char *)arg1;
 + (id)brc_errorDaemonShouldBeLoggedOut;
-+ (id)brc_errorDaemonNotConfigured;
 + (id)errorFromErrno;
 + (id)errorWithPOSIXCode:(int)arg1 description:(id)arg2;
 + (id)errorWithPOSIXCode:(int)arg1;

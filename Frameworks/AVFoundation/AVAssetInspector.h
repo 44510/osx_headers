@@ -15,6 +15,7 @@
 }
 
 @property(readonly, nonatomic) id propertyListForProxy;
+@property(readonly, nonatomic) BOOL containsMovieFragments;
 @property(readonly, nonatomic) BOOL canContainMovieFragments;
 @property(readonly, nonatomic) NSData *SHA1Digest;
 @property(readonly, nonatomic, getter=isComposable) BOOL composable;

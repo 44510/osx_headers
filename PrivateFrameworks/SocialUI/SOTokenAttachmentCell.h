@@ -28,7 +28,7 @@
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (void)dealloc;
-- (BOOL)shouldDrawTokenBackground;
+- (BOOL)alwaysShowBackground;
 - (id)tokenTintColor;
 - (void)setRepresentedObject:(id)arg1;
 - (void)_updateHandleTokenFromNotification:(id)arg1;

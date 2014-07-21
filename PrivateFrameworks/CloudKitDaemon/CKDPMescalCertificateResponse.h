@@ -17,6 +17,7 @@
 
 @property(retain, nonatomic) NSData *certificate; // @synthesize certificate=_certificate;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

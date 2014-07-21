@@ -308,6 +308,8 @@
 @property BOOL hasVerticalRuler;
 @property BOOL hasHorizontalRuler;
 @property BOOL rulersVisible;
+- (id)accessibilitySizeAttribute;
+- (id)accessibilityPositionAttribute;
 @property BOOL automaticallyAdjustsContentInsets;
 @property BOOL automaticallyAdjustsContentViewInsets;
 @property CDStruct_3c058996 scrollerInsets;

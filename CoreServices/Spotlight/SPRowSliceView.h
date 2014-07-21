@@ -10,6 +10,7 @@
 
 @interface SPRowSliceView : NSView
 {
+    BOOL _clickable;
     NSTextField *_leadingTextField;
     NSTextField *_trailingTextField;
     NSImageView *_trailingImageView;
@@ -18,6 +19,7 @@
 @property NSImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
 @property NSTextField *trailingTextField; // @synthesize trailingTextField=_trailingTextField;
 @property NSTextField *leadingTextField; // @synthesize leadingTextField=_leadingTextField;
+@property(nonatomic) BOOL clickable; // @synthesize clickable=_clickable;
 - (void)_setNoWrap:(BOOL)arg1 forTextField:(id)arg2;
 - (BOOL)_getNoWrapForTextField:(id)arg1;
 @property(retain, nonatomic) NSImage *trailingImage;
@@ -29,7 +31,8 @@
 @property(retain, nonatomic) NSColor *leadingTextColor;
 @property(retain, nonatomic) NSFont *leadingFont;
 @property(retain, nonatomic) NSString *leadingString;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)updateTrackingAreas;
+- (void)cursorUpdate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

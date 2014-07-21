@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     int _styleZ;
     float _z;
     BOOL _hasOccluders;
+    BOOL _hasMovingOccluders;
     VKViewTransform *_viewTransform;
     VKAnchorContext *_anchorContext;
     shared_ptr_78ff922b _unitMesh;

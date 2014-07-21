@@ -11,7 +11,7 @@
 #import "PRSResourceProvider.h"
 #import "PRSSessionController.h"
 
-@class CLLocation, CLLocationManager, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSString, NSURL, NSURLSessionConfiguration, NSURLSessionDataTask, PRSFairPlaySAPSession, PRSSharedParsecSession;
+@class CLLocation, CLLocationManager, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL, NSURLSessionConfiguration, NSURLSessionDataTask, PRSFairPlaySAPSession, PRSSharedParsecSession;
 
 @interface PRSBagHandler : NSObject <PRSParsecDataHandler, PRSResourceProvider, PRSSessionController, CLLocationManagerDelegate>
 {
@@ -20,6 +20,7 @@
     struct __SCNetworkReachability *_networkReachability;
     NSObject<OS_dispatch_queue> *_bagQueue;
     BOOL _bagFailed;
+    NSSet *_appIdentifierWhitelist;
     BOOL _active;
     BOOL _parsecEnabled;
     BOOL _mescalEnabled;
@@ -55,6 +56,7 @@
     NSMutableData *_collectedData;
     NSURLSessionDataTask *_guidDataTask;
     NSMutableData *_guidCollectedData;
+    NSString *_appIdentifierListString;
     NSDictionary *_resources;
     NSMutableArray *_queryTasks;
     id <PRSSessionController> _client;
@@ -66,6 +68,7 @@
 @property __weak id <PRSSessionController> client; // @synthesize client=_client;
 @property(retain, nonatomic) NSMutableArray *queryTasks; // @synthesize queryTasks=_queryTasks;
 @property(retain) NSDictionary *resources; // @synthesize resources=_resources;
+@property(retain) NSString *appIdentifierListString; // @synthesize appIdentifierListString=_appIdentifierListString;
 @property(retain) NSMutableData *guidCollectedData; // @synthesize guidCollectedData=_guidCollectedData;
 @property(retain) NSURLSessionDataTask *guidDataTask; // @synthesize guidDataTask=_guidDataTask;
 @property(retain) NSMutableData *collectedData; // @synthesize collectedData=_collectedData;
@@ -120,9 +123,12 @@
 - (void)loadUserID;
 - (void)_setupLocationManager;
 - (void)golocation:(CDUnknownBlockType)arg1;
+- (void)startlocation;
 - (id)_locationManagerBundle;
 - (void)_deactivateLocationManager;
 - (void)_activateLocationManager;
+- (void)discardRecentlyUsedAppIdentifiers;
+- (void)updateRecentlyUsedAppIdentifiers;
 - (id)init;
 @property(readonly, nonatomic) NSString *parsecBaseURL;
 @property(readonly, nonatomic) int useLedBelly;

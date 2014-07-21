@@ -61,7 +61,6 @@
 - (void)setStrokeColorUIDisplayToColor:(id)arg1;
 - (void)setFillColorUIDisplayToColor:(id)arg1;
 - (void)revalidateItems;
-- (void)lineDashedMenuItemSelected:(id)arg1;
 - (void)signatureButtonClicked:(id)arg1;
 - (void)doodleButtonClicked:(id)arg1;
 - (void)sketchButtonClicked:(id)arg1;

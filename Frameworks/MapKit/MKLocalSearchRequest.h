@@ -15,6 +15,7 @@
     NSString *_naturalLanguageQuery;
     BOOL _hasRegion;
     CDStruct_feeb6407 _region;
+    BOOL _allowPhoneNumberLookupUsingCellular;
     id <GEOCompletionItem> _geoCompletionItem;
     CLLocation *_deviceLocation;
     NSArray *_phoneNumbers;
@@ -24,6 +25,7 @@
 }
 
 + (id)searchRequestWithCompletion:(id)arg1;
+@property(nonatomic, getter=_allowPhoneNumberLookupUsingCellular, setter=_setAllowPhoneNumberLookupUsingCellular:) BOOL allowPhoneNumberLookupUsingCellular; // @synthesize allowPhoneNumberLookupUsingCellular=_allowPhoneNumberLookupUsingCellular;
 @property(retain, nonatomic, getter=_canonicalSearchString, setter=_setCanonicalSearchString:) NSString *canonicalSearchString; // @synthesize canonicalSearchString=_canonicalSearchString;
 @property(retain, nonatomic, getter=_contactsDataString, setter=_setContactsDataString:) NSString *contactsDataString; // @synthesize contactsDataString=_contactsDataString;
 @property(retain, nonatomic, getter=_muids, setter=_setMuids:) NSArray *muids; // @synthesize muids=_muids;

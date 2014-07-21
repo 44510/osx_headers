@@ -6,10 +6,11 @@
 
 #import <SocialUI/SOChatDisplayController.h>
 
-@class NSUndoManager;
+@class NSMutableDictionary, NSUndoManager;
 
 @interface SONewChatDisplayController : SOChatDisplayController
 {
+    NSMutableDictionary *_knownIDStatus;
     NSUndoManager *_recipientBarUndoManager;
 }
 
@@ -18,7 +19,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)canInsertFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;
-- (void)updateToPreferredService:(id)arg1;
+- (unsigned long long)validateIMHandle:(id)arg1;
 - (void)recipientHandlesDidChange;
 - (void)recipientsDidChange;
 - (BOOL)canInsertAttachmentsIntoInputLineContents;
@@ -28,7 +29,12 @@
 - (BOOL)canAddRecipientHandles;
 - (BOOL)canBeRestored;
 - (BOOL)representsNewChat;
+- (void)_replaceIDSRecipientsWithService:(id)arg1;
+- (void)_recalculateRecipientsFromIDSResults:(id)arg1 allAddressesIMessageCapable:(BOOL)arg2 checkedServer:(BOOL)arg3 errorCode:(BOOL)arg4;
+- (id)_currentIDSIDs;
+- (BOOL)_containsLegacyServiceHandles;
 - (void)_chatRegistryWillUnregisterChat:(id)arg1;
+- (long long)knownIDSIDStatusForIMHandle:(id)arg1;
 - (void)removeIMHandleGUIDFromDanglingHandles:(id)arg1;
 
 @end

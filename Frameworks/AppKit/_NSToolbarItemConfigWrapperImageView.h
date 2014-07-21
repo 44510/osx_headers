@@ -20,6 +20,7 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_windowChangedKeyState;
 - (void)viewWillDraw;
+- (void)setFrameSize:(struct CGSize)arg1;
 
 @end
 

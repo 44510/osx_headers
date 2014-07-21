@@ -63,6 +63,7 @@
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences *)arg1;
 - (void)removeKeychainItemsInDomain:(long long)arg1;
 - (void)syncWithKeychainInDomain:(long long)arg1 configuration:(id)arg2 suffix:(id)arg3;
+- (void)syncWithKeychainInDomainCommon:(long long)arg1;
 @property(copy) NSData *identityData;
 @property(copy) NSData *identityReference;
 @property(copy) NSData *identityReferenceInternal;

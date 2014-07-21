@@ -19,8 +19,8 @@
 - (void)restoreStateWithCoder:(id)arg1;
 - (BOOL)toolbarAutohidingEnabled;
 - (void)toggleToolbarShown:(id)arg1;
-- (struct CGRect)_frameForFullScreenMode;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setStyleMask:(unsigned long long)arg1;
 - (id)undoManager;
 - (id)_batchClose;

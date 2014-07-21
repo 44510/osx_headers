@@ -42,7 +42,9 @@
 - (id)fetchWithCallTypes:(unsigned int)arg1;
 - (id)getArrayForCallTypeMask:(unsigned int)arg1;
 - (id)createCallRecord;
+- (id)fetchAllNoLimit;
 - (id)fetchAll;
+- (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(BOOL)arg3;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2;
 - (void)mergeCallDBPropChangesFromRemoteAppSave;
 - (void)mergeCallRecordChangesFromRemoteAppSave;

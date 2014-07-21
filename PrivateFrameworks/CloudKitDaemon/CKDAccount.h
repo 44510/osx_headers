@@ -51,7 +51,6 @@
 @property(readonly, copy) NSString *description;
 - (id)serverPreferredPushEnvironment;
 - (id)trafficContainerIdentifier;
-- (id)sourceApplicationSecondaryIdentifier;
 - (id)bundleID;
 - (id)containerID;
 @property(readonly, nonatomic) NSString *accountID;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WebBookmark *bookmark;
 - (id)initWithBookmark:(id)arg1 minimumIconSize:(struct CGSize)arg2 maximumIconSize:(struct CGSize)arg3;
 - (id)initWithURL:(id)arg1 minimumIconSize:(struct CGSize)arg2 maximumIconSize:(struct CGSize)arg3;
+- (id)folderUUID;
 
 @end
 

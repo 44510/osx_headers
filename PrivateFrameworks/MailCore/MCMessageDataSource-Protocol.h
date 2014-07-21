@@ -27,9 +27,7 @@
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(MCMessage *)arg4;
 - (NSString *)attachmentsDirectoryForMessage:(MCMessage *)arg1;
 - (void)setColor:(NSColor *)arg1 highlightTextOnly:(BOOL)arg2 forMessages:(NSArray *)arg3;
-- (MCResultTaskOperation *)async_setJunkMailLevel:(long long)arg1 forMessages:(NSArray *)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
-- (MCResultTaskOperation *)async_setJunkMailLevel:(long long)arg1 forMessages:(NSArray *)arg2 trainJunkMailDatabase:(BOOL)arg3;
-- (MCResultTaskOperation *)async_setJunkMailLevel:(long long)arg1 forMessages:(NSArray *)arg2;
+- (void)setJunkMailLevel:(long long)arg1 forMessages:(NSArray *)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
 - (void)messageFlagsDidChange:(NSArray *)arg1 flags:(NSDictionary *)arg2;
 - (MCResultTaskOperation *)async_setFlagWithKey:(NSString *)arg1 state:(BOOL)arg2 forMessages:(NSArray *)arg3;
 - (MCResultTaskOperation *)async_setFlagsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2;

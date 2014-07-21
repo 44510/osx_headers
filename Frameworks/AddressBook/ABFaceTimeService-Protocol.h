@@ -6,14 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSArray, NSString;
 
 @protocol ABFaceTimeService <NSObject>
 - (void)makeFaceTimeCallWithEndpoint:(NSString *)arg1 isAudio:(BOOL)arg2;
 - (void)makeFaceTimeCallWithContactIdentifier:(NSString *)arg1 isAudio:(BOOL)arg2;
-- (void)startTelephonySupportCheck;
-- (void)startiMessageAvailabilityCheckForEndpoint:(NSString *)arg1 property:(NSString *)arg2;
-- (void)startFaceTimeAudioAvailabilityCheckForContactIdentifier:(NSString *)arg1;
-- (void)startFaceTimeVideoAvailabilityCheckForContactIdentifier:(NSString *)arg1;
+- (void)updateTelephonyAvailability;
+- (void)startiMessageAvailabilityCheckForEndpoint:(NSString *)arg1;
+- (void)startFaceTimeAvailabilityCheckForContactIdentifier:(NSString *)arg1 endpoints:(NSArray *)arg2;
 @end
 

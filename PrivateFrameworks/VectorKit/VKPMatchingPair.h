@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) VKPMatchingTree *subTree; // @synthesize subTree=_subTree;
 @property(nonatomic) unsigned long long attributeValue; // @synthesize attributeValue=_attributeValue;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

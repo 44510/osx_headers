@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cachedPrefsQueue; // @synthesize cachedPrefsQueue=_cachedPrefsQueue;
 @property(retain, nonatomic) NSMutableDictionary *cachedPrefs; // @synthesize cachedPrefs=_cachedPrefs;
 - (void).cxx_destruct;
+- (BOOL)shouldDecryptRecordsBeforeSave;
 - (unsigned long long)maxBatchSize;
 - (double)flowControlRegenerationOverride;
 - (long long)flowControlBudgetOverride;
@@ -37,10 +38,13 @@
 - (BOOL)optimisticPCS;
 - (void)setOptimisticPCS:(BOOL)arg1;
 - (unsigned long long)PCSCacheSize;
+- (BOOL)sandboxCloudD;
 - (void)setEnableMescal:(BOOL)arg1;
 - (BOOL)enableMescal;
 - (BOOL)isAppleInternalInstall;
 - (long long)defaultOperationQualityOfService;
+- (unsigned long long)assetEvictionGracePeriodOnHighWatermarkWithDefaultValue:(unsigned long long)arg1;
+- (unsigned long long)assetEvictionGracePeriodWithDefaultValue:(unsigned long long)arg1;
 - (BOOL)evictRecentAssets;
 - (id)contextLoggingBlacklist;
 - (id)contextLoggingWhitelist;
@@ -93,7 +97,7 @@
 - (double)_getDoubleOptionForKey:(id)arg1 defaultValue:(double)arg2;
 - (int)_getIntOptionForKey:(id)arg1 defaultValue:(int)arg2;
 - (BOOL)_getBoolOptionForKey:(id)arg1 defaultValue:(BOOL)arg2;
-- (id)_behaviorObjectForKey:(id)arg1;
+- (id)_behaviorContainerOptionForKey:(id)arg1;
 - (id)_behaviorOptionForKey:(id)arg1;
 - (id)init;
 - (void)_startListeningForNotifications;

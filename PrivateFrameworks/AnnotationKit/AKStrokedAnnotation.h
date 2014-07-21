@@ -13,10 +13,10 @@
 @interface AKStrokedAnnotation : AKAnnotation <AKStrokedAnnotationProtocol>
 {
     BOOL _dashed;
-    BOOL _hasBrushStyle;
     BOOL _hasShadow;
     double _strokeWidth;
     NSColor *_strokeColor;
+    long long _brushStyle;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -24,7 +24,7 @@
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
 @property BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
-@property BOOL hasBrushStyle; // @synthesize hasBrushStyle=_hasBrushStyle;
+@property long long brushStyle; // @synthesize brushStyle=_brushStyle;
 @property(getter=isDashed) BOOL dashed; // @synthesize dashed=_dashed;
 @property(retain) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property double strokeWidth; // @synthesize strokeWidth=_strokeWidth;

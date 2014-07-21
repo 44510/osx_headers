@@ -55,6 +55,7 @@
 @property(getter=isTransparent) BOOL transparent;
 @property(getter=isBordered) BOOL bordered;
 @property long long state;
+- (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (void)setButtonType:(unsigned long long)arg1;
 - (void)setImageScaling:(unsigned long long)arg1;
 - (unsigned long long)imageScaling;

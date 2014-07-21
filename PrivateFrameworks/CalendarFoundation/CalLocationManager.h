@@ -10,6 +10,8 @@
 {
 }
 
++ (void)_loadMapKit;
++ (void)strictGeocodeString:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 + (void)placemarkForAddress:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 + (void)placemarkForLocation:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 + (void)currentLocationWithCompletionBlock:(CDUnknownBlockType)arg1;

@@ -6,16 +6,14 @@
 
 #import "DelayedHoverButtonTableCellView.h"
 
-@class ListViewController, NSTextField;
+@class ListViewController;
 
 @interface SidebarCellView : DelayedHoverButtonTableCellView
 {
-    NSTextField *_titleField;
     ListViewController *_controller;
 }
 
 @property __weak ListViewController *controller; // @synthesize controller=_controller;
-@property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2;
 

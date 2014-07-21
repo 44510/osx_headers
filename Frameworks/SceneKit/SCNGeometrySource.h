@@ -26,12 +26,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)SCNJSExportProtocol;
-+ (id)geometrySourceWithTextureCoordinates:(struct CGPoint *)arg1 count:(long long)arg2;
-+ (id)geometrySourceWithNormals:(struct SCNVector3 *)arg1 count:(long long)arg2;
-+ (id)geometrySourceWithVertices:(struct SCNVector3 *)arg1 count:(long long)arg2;
++ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint *)arg1 count:(long long)arg2;
++ (id)geometrySourceWithNormals:(const struct SCNVector3 *)arg1 count:(long long)arg2;
++ (id)geometrySourceWithVertices:(const struct SCNVector3 *)arg1 count:(long long)arg2;
 + (id)geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 floatComponents:(BOOL)arg4 componentsPerVector:(long long)arg5 bytesPerComponent:(long long)arg6 dataOffset:(long long)arg7 dataStride:(long long)arg8;
-+ (id)dataWithPointArray:(struct CGPoint *)arg1 count:(long long)arg2 bytesPerComponent:(long long *)arg3;
-+ (id)dataWithVector3Array:(struct SCNVector3 *)arg1 count:(long long)arg2 bytesPerComponent:(long long *)arg3;
++ (id)dataWithPointArray:(const struct CGPoint *)arg1 count:(long long)arg2 bytesPerComponent:(long long *)arg3;
++ (id)dataWithVector3Array:(const struct SCNVector3 *)arg1 count:(long long)arg2 bytesPerComponent:(long long *)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (struct __C3DMeshSource *)meshSource;

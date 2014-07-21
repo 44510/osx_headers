@@ -20,7 +20,6 @@
 @property(retain) NSArray *selectedObjectsFromContextualMenu; // @synthesize selectedObjectsFromContextualMenu=_selectedObjectsFromContextualMenu;
 @property BOOL animating; // @synthesize animating=_animating;
 - (void).cxx_destruct;
-- (void)setFrameSize:(struct CGSize)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)symbolicColorPicked:(id)arg1;
@@ -38,12 +37,9 @@
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)menu;
 - (id)menuForEvent:(id)arg1;
-- (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
 - (void)delete:(id)arg1;
-- (BOOL)becomeFirstResponder;
 - (void)keyDown:(id)arg1;
 - (id)delegate;
-- (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
 - (long long)draggingDestinationFeedbackStyle;
 - (id)initWithFrame:(struct CGRect)arg1;
 

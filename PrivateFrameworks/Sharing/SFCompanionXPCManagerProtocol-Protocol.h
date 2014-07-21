@@ -13,7 +13,7 @@
 - (void)createUnlockManagerWithReply:(void (^)(id <SFUnlockProtocol>, NSError *))arg1;
 - (void)createContinuityScannerForClientProxy:(id <SFContinuityScannerClient>)arg1 reply:(void (^)(id <SFContinuityScannerProtocol>, NSError *))arg2;
 - (void)createActivityAdvertiserForClientProxy:(id <SFActivityAdvertiserClient>)arg1 reply:(void (^)(id <SFActivityAdvertiserProtocol>, NSError *))arg2;
-- (void)createCompanionStreamWithService:(SFCompanionService *)arg1 reply:(void (^)(NSFileHandle *, NSFileHandle *, NSError *))arg2;
+- (void)createStreamsWithService:(SFCompanionService *)arg1 reply:(void (^)(NSFileHandle *, NSError *))arg2;
 - (void)createCompanionConnectionManagerForService:(SFCompanionService *)arg1 clientProxy:(id <SFCompanionConnectionManagerClient>)arg2 reply:(void (^)(id <SFCompanionConnectionManagerProtocol>))arg3;
 - (void)createCompanionServiceManagerWithIdentifier:(NSString *)arg1 clientProxy:(id <SFCompanionServiceManagerClient>)arg2 reply:(void (^)(id <SFCompanionServiceManagerProtocol>, NSString *, NSString *, NSString *, NSError *))arg3;
 - (void)createCompanionBrowserWithIdentifier:(NSString *)arg1 serviceType:(NSString *)arg2 clientProxy:(id <SFCompanionBrowserClient>)arg3 reply:(void (^)(id <SFCompanionBrowserProtocol>))arg4;

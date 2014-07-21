@@ -4,24 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NCButton.h"
+#import "NSButton.h"
 
-@class NSMenu, NSObject<OS_dispatch_source>, NSPopUpButtonCell, NSTextField;
+@class CALayer, NSImageView, NSMenu, NSObject<OS_dispatch_source>, NSPopUpButtonCell, NSString, NSTextField;
 
-@interface NCAlertButton : NCButton
+@interface NCAlertButton : NSButton
 {
     NSPopUpButtonCell *_delayedPopupCell;
     NSObject<OS_dispatch_source> *_timer;
     id _observer;
     _Bool _menuShown;
+    CALayer *_highlightLayer;
     NSTextField *_buttonTitle;
+    NSImageView *_buttonImage;
     _Bool _showsDropdownArrow;
     _Bool _alwaysDropdown;
     _Bool __showingPopupMenu;
     id <NCAlertButtonDelegate> _delegate;
+    NSString *_fontSelectorName;
 }
 
 @property _Bool _showingPopupMenu; // @synthesize _showingPopupMenu=__showingPopupMenu;
+@property(copy, nonatomic) NSString *fontSelectorName; // @synthesize fontSelectorName=_fontSelectorName;
 @property _Bool alwaysDropdown; // @synthesize alwaysDropdown=_alwaysDropdown;
 @property(nonatomic) _Bool showsDropdownArrow; // @synthesize showsDropdownArrow=_showsDropdownArrow;
 @property __weak id <NCAlertButtonDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,7 +34,9 @@
 @property(readonly, nonatomic) NSMenu *_popupMenu;
 - (void)_buildAndShowMenu;
 - (void)mouseUp:(id)arg1;
+- (void)layout;
 - (void)mouseDown:(id)arg1;
+- (struct CGSize)intrinsicContentSize;
 @property(readonly, nonatomic) _Bool hasPopupMenu;
 - (id)title;
 - (void)setTitle:(id)arg1;

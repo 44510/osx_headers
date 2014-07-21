@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class CNContactPickerViewController, CNContactPickerXPCRelay;
+@class CNContactPickerViewService, CNContactPickerXPCRelay;
 
 @interface CNContactPickerService : NSObject
 {
     CNContactPickerXPCRelay *_relay;
-    CNContactPickerViewController *_viewController;
+    CNContactPickerViewService *_viewController;
 }
 
 + (id)sharedService;

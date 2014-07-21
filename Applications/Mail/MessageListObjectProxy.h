@@ -13,6 +13,7 @@
     BOOL _showContactPhotos;
     BOOL _isOpen;
     BOOL _isVIP;
+    BOOL _selected;
     BOOL _showRecipient;
     BOOL _isDeleted;
     unsigned int _flags;
@@ -24,7 +25,8 @@
     NSDictionary *_replyImages;
     NSDictionary *_attachmentImages;
     NSImage *_statusImage;
-    NSImage *_photo;
+    NSImage *_selectedPhoto;
+    NSImage *_unselectedPhoto;
     unsigned long long _photoSize;
     NSString *_mailbox;
     NSString *_size;
@@ -44,10 +46,12 @@
 + (id)keyPathsForValuesAffectingReplyAlternateImage;
 + (id)keyPathsForValuesAffectingReplyImage;
 + (id)keyPathsForValuesAffectingUnreadImage;
++ (id)keyPathsForValuesAffectingPhoto;
 + (void)_resetDateFormats:(id)arg1;
 + (void)initialize;
 @property(copy, nonatomic) NSString *toCcString; // @synthesize toCcString=_toCcString;
 @property(nonatomic) BOOL isDeleted; // @synthesize isDeleted=_isDeleted;
+@property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned long long threadCount; // @synthesize threadCount=_threadCount;
 @property(nonatomic) BOOL isOpen; // @synthesize isOpen=_isOpen;
@@ -55,7 +59,8 @@
 @property(copy, nonatomic) NSOrderedSet *flagImages; // @synthesize flagImages=_flagImages;
 @property(copy, nonatomic) NSString *size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *mailbox; // @synthesize mailbox=_mailbox;
-@property(retain, nonatomic) NSImage *photo; // @synthesize photo=_photo;
+@property(retain, nonatomic) NSImage *unselectedPhoto; // @synthesize unselectedPhoto=_unselectedPhoto;
+@property(retain, nonatomic) NSImage *selectedPhoto; // @synthesize selectedPhoto=_selectedPhoto;
 @property(retain, nonatomic) NSImage *statusImage; // @synthesize statusImage=_statusImage;
 @property(retain, nonatomic) NSDictionary *attachmentImages; // @synthesize attachmentImages=_attachmentImages;
 @property(retain, nonatomic) NSDictionary *replyImages; // @synthesize replyImages=_replyImages;
@@ -76,7 +81,7 @@
 - (void)_updateMailbox;
 - (id)_relevantAddressesForMessage:(id)arg1;
 - (id)_relevantAddresses;
-- (id)_unknownSenderImage;
+- (id)_unknownSenderImageSelected:(BOOL)arg1;
 - (void)_updatePhoto;
 - (void)_updateToCcString;
 - (void)_updateThreadData;
@@ -101,6 +106,7 @@
 @property(nonatomic) BOOL showRecipient; // @synthesize showRecipient=_showRecipient;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSIndexSet *flagColors; // @synthesize flagColors=_flagColors;
+@property(readonly, nonatomic) NSImage *photo;
 @property(nonatomic) BOOL isVIP; // @synthesize isVIP=_isVIP;
 @property(nonatomic) __weak MFCriterion *mailboxCriterion; // @synthesize mailboxCriterion=_mailboxCriterion;
 @property(nonatomic) unsigned long long messageSize; // @synthesize messageSize=_messageSize;

@@ -6,20 +6,22 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface CalUIPasswordPanelController : NSObject
 {
     NSMutableDictionary *_currentlyAuthenticatingAccounts;
     NSMutableDictionary *_needToShowPasswordPromptsFor;
     NSMutableDictionary *_cancelledAccounts;
+    NSObject<OS_dispatch_queue> *_groupsChangedQueue;
 }
 
 + (id)_mainWindow;
 + (id)sharedController;
+@property(readonly) NSObject<OS_dispatch_queue> *groupsChangedQueue; // @synthesize groupsChangedQueue=_groupsChangedQueue;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)finishedAuthenticatingAccount:(id)arg1;
+- (void)finishedAuthenticatingAccountID:(id)arg1;
 - (void)userCancelledAuthenticationForAccount:(id)arg1;
 - (BOOL)recentlyCancelledAuthenticationForAccount:(id)arg1 isUserInitiated:(BOOL)arg2;
 - (void)showPasswordPanelForAccountInUserContext:(id)arg1 isUserInitiated:(BOOL)arg2 forError:(id)arg3;
@@ -27,7 +29,7 @@
 - (void)showPasswordPanelForAccount:(id)arg1 forError:(id)arg2;
 - (void)showPasswordPanelForSource:(id)arg1 forError:(id)arg2;
 - (void)checkNeedsToShowPasswordPrompts;
-- (void)groupsChangedExternallyOnMainThread:(id)arg1;
+- (void)checkForAuthErrorsWithUserInfo:(id)arg1;
 - (void)groupsChangedExternally:(id)arg1;
 - (id)init;
 

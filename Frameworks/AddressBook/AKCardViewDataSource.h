@@ -35,8 +35,7 @@
     NSString *_linkIdentifier;
     NSMutableSet *_editedPropertyKeys;
     NSMutableSet *_manuallyAddedPropertyKeys;
-    BOOL _availableForFaceTimeVideo;
-    BOOL _availableForFaceTimeAudio;
+    BOOL _availableForFaceTime;
 }
 
 @property(readonly) AKCardViewImageDataSource *imageDataSource; // @synthesize imageDataSource=_imageDataSource;
@@ -144,8 +143,7 @@
 - (void)markAsViewed:(id)arg1;
 - (id)uniqueIdentifiers;
 - (id)URL;
-@property(getter=isAvailableForFaceTimeAudio) BOOL availableForFaceTimeAudio;
-@property(getter=isAvailableForFaceTimeVideo) BOOL availableForFaceTimeVideo;
+@property(getter=isAvailableForFaceTime) BOOL availableForFaceTime;
 - (BOOL)isDirectoryResult;
 - (BOOL)isEmpty;
 - (BOOL)isReadOnly;

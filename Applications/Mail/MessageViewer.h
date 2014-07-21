@@ -21,7 +21,7 @@
 #import "NSWindowDelegate.h"
 #import "SGTSearchFieldQueryScopeDelegate.h"
 
-@class ActivityViewController, ContentSplitViewController, FavoritesBarView, FlaggedStatusToolbarItem, FullScreenModalCapableWindow, FullScreenWindowController, MFBehaviorTracker, MailBarContainerView, MailSplitView, MailToolbar, MailboxesOutlineViewController, MailboxesSplitViewController, MessageListContainerView, MessageMall, MessageViewerLazyPopUpButton, MessageViewerSearchField, NSArray, NSDictionary, NSLayoutConstraint, NSMenu, NSMenuItem, NSMutableArray, NSNumber, NSSet, NSString, NSTextField, NSTimer, NSToolbarItem, NSView, NSWindow, TableViewManager, ViewingPaneViewController;
+@class ActivityViewController, ContentSplitViewController, FavoritesBarView, FavoritesBarViewController, FlaggedStatusToolbarItem, FullScreenModalCapableWindow, FullScreenWindowController, MFBehaviorTracker, MailBarContainerView, MailSplitView, MailToolbar, MailboxesOutlineViewController, MailboxesSplitViewController, MessageListContainerView, MessageMall, MessageViewerLazyPopUpButton, MessageViewerSearchField, NSArray, NSDictionary, NSLayoutConstraint, NSMenu, NSMenuItem, NSMutableArray, NSNumber, NSSet, NSString, NSTextField, NSTimer, NSToolbarItem, NSView, NSWindow, TableViewManager, ViewingPaneViewController;
 
 @interface MessageViewer : NSResponder <FlaggedStatusToolbarItemDelegate, MessageViewerSearchFieldFocusDelegate, NSToolbarDelegate, MailboxesOutlineViewControllerDelegate, MailTableViewDelegateDelegate, MCActivityTarget, MessageTransferDelegate, MVMailboxSelectionOwner, MVTerminationHandler, NSAnimationDelegate, NSSpeechSynthesizerDelegate, NSUserInterfaceValidations, NSWindowDelegate, SGTSearchFieldQueryScopeDelegate>
 {
@@ -71,12 +71,11 @@
     MessageViewerLazyPopUpButton *_makeNewMailboxButton;
     MessageViewerLazyPopUpButton *_actionButton;
     NSDictionary *_savedAttributes;
-    MailBarContainerView *_mailBarContainerView;
-    FavoritesBarView *_favoritesBarView;
     NSWindow *_timeMachineRestoreMessagesWindow;
     NSTextField *_timeMachineRestoreMessagesField;
     NSWindow *_timeMachineRestoreMailboxWindow;
     NSTextField *_timeMachineRestoreMailboxField;
+    FavoritesBarViewController *_favoritesBarViewController;
     NSString *_searchQuery;
     long long _currentSearchField;
     long long _selectedTag;
@@ -105,6 +104,8 @@
 + (void)restoreAllViewersFromDefaults;
 + (BOOL)automaticallyNotifiesObserversOfSearchPhrase;
 + (unsigned long long)deleteOperationForEvent:(id)arg1 isKeyPressed:(BOOL)arg2;
++ (id)keyPathsForValuesAffectingFavoritesBarView;
++ (id)keyPathsForValuesAffectingMailBarContainerView;
 + (id)_mailboxesForPaths:(id)arg1;
 + (void)searchForString:(id)arg1;
 + (id)frontmostMessageViewerWithOptions:(unsigned long long)arg1;
@@ -150,6 +151,7 @@
 @property(nonatomic) int searchTarget; // @synthesize searchTarget=_searchTarget;
 @property(nonatomic) long long currentSearchField; // @synthesize currentSearchField=_currentSearchField;
 @property(copy, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
+@property(retain, nonatomic) FavoritesBarViewController *favoritesBarViewController; // @synthesize favoritesBarViewController=_favoritesBarViewController;
 @property(nonatomic) BOOL previouslyHadSentScope; // @synthesize previouslyHadSentScope=_previouslyHadSentScope;
 @property(nonatomic) BOOL ignoreSearchBarUpdates; // @synthesize ignoreSearchBarUpdates=_ignoreSearchBarUpdates;
 @property(nonatomic) __weak NSTextField *timeMachineRestoreMailboxField; // @synthesize timeMachineRestoreMailboxField=_timeMachineRestoreMailboxField;
@@ -441,8 +443,8 @@
 - (void)_beginTimeMachineRestoreSheetIsForMailbox:(id)arg1;
 - (void)_displayTimeMachineRestoreSheet:(id)arg1;
 - (void)prepareForTimeMachineRestore;
-@property(nonatomic) __weak FavoritesBarView *favoritesBarView; // @synthesize favoritesBarView=_favoritesBarView;
-@property(retain, nonatomic) MailBarContainerView *mailBarContainerView; // @synthesize mailBarContainerView=_mailBarContainerView;
+@property(readonly, nonatomic) FavoritesBarView *favoritesBarView;
+@property(readonly, nonatomic) MailBarContainerView *mailBarContainerView;
 @property(retain, nonatomic) MailboxesSplitViewController *mailboxesSplitViewController;
 - (BOOL)_shouldUseLayoutContraintsForWindow:(id)arg1;
 - (struct CGSize)_minimumPreviewPaneSize;

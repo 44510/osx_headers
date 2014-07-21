@@ -35,7 +35,7 @@
 + (BOOL)_hitAdditionsOnURL:(id)arg1 error:(id *)arg2;
 + (BOOL)_hitAdditionsOnURLUsingDaemon:(id)arg1 error:(id *)arg2;
 + (id)_additionCreationInfo;
-+ (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 atURL:(id)arg3 error:(id *)arg4;
++ (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id *)arg4;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSDictionary *thumbnailDataDictionary; // @synthesize thumbnailDataDictionary=_thumbnailDataDictionary;
 @property(retain) NSURL *additionURL; // @synthesize additionURL=_additionURL;

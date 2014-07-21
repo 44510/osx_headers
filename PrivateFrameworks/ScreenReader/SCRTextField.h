@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSMutableString *_content;
     SCRElement *_suggestionsMenuElement;
+    int _cachedInvalidStatus;
     struct {
         unsigned int isSearchField:1;
         unsigned int isStatic:1;

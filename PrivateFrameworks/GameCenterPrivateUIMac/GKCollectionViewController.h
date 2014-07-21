@@ -27,12 +27,12 @@
     int _previousOrientation;
     GKColorPalette *_colorPalette;
     id <NSCollectionViewDataSource> _dataSource;
+    GKPlaceholderView *_placeholderView;
     NSString *_currentSearchText;
     GKLoadableContentStateMachine *_loadingMachine;
     NSCollectionViewLayout *_defaultLayout;
     GKSearchBar *_activeSearchBar;
     UIActivityIndicatorView *_loadingIndicatorView;
-    GKPlaceholderView *_placeholderView;
     long long _gkFocusBubbleType;
     long long _appearCount;
     CDStruct_3c058996 _contentInsetsBeforeKeyboard;
@@ -47,12 +47,12 @@
 @property BOOL active; // @synthesize active=_active;
 @property(nonatomic) int previousOrientation; // @synthesize previousOrientation=_previousOrientation;
 @property(nonatomic) long long gkFocusBubbleType; // @synthesize gkFocusBubbleType=_gkFocusBubbleType;
-@property(retain, nonatomic) GKPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) GKSearchBar *activeSearchBar; // @synthesize activeSearchBar=_activeSearchBar;
 @property(retain, nonatomic) NSCollectionViewLayout *defaultLayout; // @synthesize defaultLayout=_defaultLayout;
 @property(retain, nonatomic) GKLoadableContentStateMachine *loadingMachine; // @synthesize loadingMachine=_loadingMachine;
 @property(retain, nonatomic) NSString *currentSearchText; // @synthesize currentSearchText=_currentSearchText;
+@property(retain, nonatomic) GKPlaceholderView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(readonly, nonatomic) BOOL readyToDisplayData; // @synthesize readyToDisplayData=_readyToDisplayData;
 @property(nonatomic) BOOL showSupplementaryViewsWhileLoading; // @synthesize showSupplementaryViewsWhileLoading=_showSupplementaryViewsWhileLoading;
 @property(nonatomic) BOOL supportsMasterSelectionBehavior; // @synthesize supportsMasterSelectionBehavior=_supportsMasterSelectionBehavior;
@@ -159,7 +159,10 @@
 - (void)buyGame:(id)arg1;
 - (void)shareScore:(id)arg1;
 - (void)shareAchievement:(id)arg1;
+- (void)removeFriendRecommendation:(id)arg1;
 - (void)unfriendPlayer:(id)arg1;
+- (void)ignoreFriendRequest:(id)arg1;
+- (void)acceptFriendRequest:(id)arg1;
 - (void)sendFriendRequest:(id)arg1;
 - (void)collectionView:(id)arg1 itemWasRightClickedAtIndexPath:(id)arg2 withEvent:(id)arg3;
 

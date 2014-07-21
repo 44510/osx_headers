@@ -17,6 +17,7 @@
 }
 
 @property(nonatomic) double time; // @synthesize time=_time;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

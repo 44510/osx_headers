@@ -4,42 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSTokenField.h"
+#import <CalendarUI/EKUITokenField.h>
 
-#import "CalUIAutocompletingField.h"
-
-@class EKUIGadget, NSColor, NSString;
-
-@interface EKUIAttendeesTokenField : NSTokenField <CalUIAutocompletingField>
+@interface EKUIAttendeesTokenField : EKUITokenField
 {
     BOOL _isExpanded;
-    NSColor *_tokenTextColor;
-    EKUIGadget *_gadget;
     struct CGSize _intrinsicContentSize;
 }
 
-@property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
-@property(retain) NSColor *tokenTextColor; // @synthesize tokenTextColor=_tokenTextColor;
 @property BOOL isExpanded; // @synthesize isExpanded=_isExpanded;
 @property struct CGSize intrinsicContentSize; // @synthesize intrinsicContentSize=_intrinsicContentSize;
-- (void).cxx_destruct;
-- (void)setObjectValue:(id)arg1;
-- (id)objectValueAsArray;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (BOOL)canBecomeKeyView;
 - (BOOL)becomeFirstResponder;
 - (BOOL)areAttendeesEditable;
 - (id)attendeesViewController;
-- (BOOL)acceptsFirstResponder;
 - (id)hitTest:(struct CGPoint)arg1;
-- (BOOL)allowsVibrancy;
-- (void)awakeFromNib;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

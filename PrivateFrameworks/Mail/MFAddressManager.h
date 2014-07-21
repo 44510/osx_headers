@@ -23,7 +23,7 @@
 }
 
 + (double)_photoDimensionForPhotoSize:(unsigned long long)arg1;
-+ (id)placeholderImageOfSize:(unsigned long long)arg1;
++ (id)placeholderImageOfSize:(unsigned long long)arg1 selected:(BOOL)arg2;
 + (id)addressManager;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSOperationQueue *imageCreationQueue; // @synthesize imageCreationQueue=_imageCreationQueue;
@@ -31,12 +31,13 @@
 @property(readonly, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
 - (id)groups;
-- (void)_abImageForAddress:(id)arg1 displayName:(id)arg2 size:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (void)_fetchImageForAddress:(id)arg1 displayName:(id)arg2 size:(id)arg3;
+- (void)_abImageForAddress:(id)arg1 displayName:(id)arg2 photoSize:(unsigned long long)arg3 selected:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (void)_fetchImageForAddress:(id)arg1 displayName:(id)arg2 size:(id)arg3 selected:(id)arg4;
 - (id)_cacheKeyForAddress:(id)arg1 displayName:(id)arg2;
-- (void)_setCachedImage:(id)arg1 forAddress:(id)arg2 displayName:(id)arg3 photoSize:(unsigned long long)arg4;
-- (id)_cachedImageForAddress:(id)arg1 displayName:(id)arg2 photoSize:(unsigned long long)arg3;
-- (id)imageForMailAddress:(id)arg1 displayName:(id)arg2 photoSize:(unsigned long long)arg3 fetchState:(unsigned long long *)arg4;
+- (id)_cacheKeyForPhotoSize:(unsigned long long)arg1 selected:(BOOL)arg2;
+- (void)_setCachedImage:(id)arg1 forAddress:(id)arg2 displayName:(id)arg3 photoSize:(unsigned long long)arg4 selected:(BOOL)arg5;
+- (id)_cachedImageForAddress:(id)arg1 displayName:(id)arg2 photoSize:(unsigned long long)arg3 selected:(BOOL)arg4;
+- (id)imageForMailAddress:(id)arg1 displayName:(id)arg2 photoSize:(unsigned long long)arg3 selected:(BOOL)arg4 fetchState:(unsigned long long *)arg5;
 - (id)_addressBookRecordsForFirstName:(id)arg1 lastName:(id)arg2;
 - (id)addressBookPersonForEmail:(id)arg1;
 - (id)_addressBookRecordForEmail:(id)arg1;

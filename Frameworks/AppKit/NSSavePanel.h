@@ -97,6 +97,7 @@
 + (void)_warmUp;
 + (BOOL)_applicationContextHasEntitlement:(unsigned long long)arg1;
 + (BOOL)_clientWithSecurityTaskRef:(struct __SecTask *)arg1 hasEntitlement:(unsigned long long)arg2 sandboxPermissions:(unsigned long long *)arg3;
++ (BOOL)_tracksDirtyRegions;
 + (id)_resolvedSymLinkedURL:(id)arg1;
 + (BOOL)_filenameHasAcceptableFileType:(id)arg1 allowedFileTypes:(id)arg2 allowsOtherFileTypes:(BOOL)arg3;
 + (BOOL)_filenameHasNonEmptyAcceptableFileType:(id)arg1 allowedFileTypes:(id)arg2 allowsOtherFileTypes:(BOOL)arg3;
@@ -104,6 +105,7 @@
 + (BOOL)_isFauxFilePackageURL:(id)arg1 fauxFilePackageTypes:(id)arg2 enabledFileTypes:(id)arg3;
 + (id)_nameWithStrictRequiredExtensionCheck:(id)arg1 andPreferredFileExtension:(id)arg2;
 + (id)_nameWithLooseRequiredExtensionCheck:(id)arg1 andPreferredFileExtension:(id)arg2;
++ (id)_containerURLsForRemoteProcess:(int)arg1;
 + (struct CGSize)_minContentRectSize;
 + (BOOL)setValue:(id)arg1 forUndefinedKey:(id)arg2 onObject:(id)arg3;
 + (void)_spiPropertySelectorForKey:(id)arg1 withClass:(Class)arg2 isSetter:(BOOL)arg3 outSelector:(SEL *)arg4;
@@ -456,6 +458,7 @@
 - (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (id)initWithOptions:(id)arg1;
+- (BOOL)_shouldUseTexturedAppearanceForSegmentedCellInView:(id)arg1;
 - (struct CGRect)startRectForSheet:(id)arg1;
 - (double)_startRectForSheetHeightOffset;
 - (void)_initializeAppCentricSpaceBehavior;

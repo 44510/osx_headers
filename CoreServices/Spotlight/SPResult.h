@@ -92,6 +92,7 @@
 - (BOOL)isEqualToResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
+@property(readonly) BOOL allowsCPRecording;
 - (void)prepare;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -114,6 +115,7 @@
 - (BOOL)open;
 - (void)markAsEngaged;
 - (void)markAsUsed;
+@property(readonly) NSString *targetString;
 - (BOOL)allowShowPath;
 - (int)qlPreviewMode;
 - (id)previewItemURL;

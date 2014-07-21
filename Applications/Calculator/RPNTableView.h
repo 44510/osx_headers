@@ -10,8 +10,5 @@
 {
 }
 
-- (void)setLayer:(id)arg1;
-- (id)makeBackingLayer;
-
 @end
 

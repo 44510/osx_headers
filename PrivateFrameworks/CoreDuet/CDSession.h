@@ -11,7 +11,7 @@
 @interface CDSession : NSObject
 {
     CDDClientConnection *_cddClientConnection;
-    NSMutableDictionary *_cachedAttributes;
+    NSMutableDictionary *_cachedAttributeIDs;
     NSMutableDictionary *_cachedBudgets;
     NSObject<OS_dispatch_queue> *_cacheSerializerQ;
     unsigned long long _clientId;
@@ -23,7 +23,7 @@
 @property BOOL verbose; // @synthesize verbose=_verbose;
 @property(retain) NSObject<OS_dispatch_queue> *cacheSerializerQ; // @synthesize cacheSerializerQ=_cacheSerializerQ;
 @property(retain) NSMutableDictionary *cachedBudgets; // @synthesize cachedBudgets=_cachedBudgets;
-@property(retain) NSMutableDictionary *cachedAttributes; // @synthesize cachedAttributes=_cachedAttributes;
+@property(retain) NSMutableDictionary *cachedAttributeIDs; // @synthesize cachedAttributeIDs=_cachedAttributeIDs;
 @property unsigned long long clientId; // @synthesize clientId=_clientId;
 @property(readonly) CDDClientConnection *cddClientConnection; // @synthesize cddClientConnection=_cddClientConnection;
 - (void).cxx_destruct;

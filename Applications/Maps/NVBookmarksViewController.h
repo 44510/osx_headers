@@ -18,8 +18,10 @@ __attribute__((visibility("hidden")))
     NSTableView *_tableView;
     NSArrayController *_arrayController;
     NSButton *_specialActionButton;
+    NSButton *_bottomActionButton;
 }
 
+@property(retain) NSButton *bottomActionButton; // @synthesize bottomActionButton=_bottomActionButton;
 @property(retain) NSButton *specialActionButton; // @synthesize specialActionButton=_specialActionButton;
 @property(retain) NSArrayController *arrayController; // @synthesize arrayController=_arrayController;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 identifierForRow:(long long)arg2;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
+- (void)bottomActionButtonClicked:(id)arg1;
 - (void)deleteElementAction:(id)arg1;
 - (void)tableSpecialAction:(id)arg1;
 - (void)cleanUpState;
@@ -45,9 +48,11 @@ __attribute__((visibility("hidden")))
 - (void)setFilter:(id)arg1;
 - (void)showPlaceOrTrip:(id)arg1;
 @property(readonly) NVPlacesManager *manager;
+- (void)viewDidLoad;
 - (void)loadView;
 - (id)nibBundle;
 - (id)nibName;
+- (id)nibNameForType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 type:(unsigned long long)arg3;
 

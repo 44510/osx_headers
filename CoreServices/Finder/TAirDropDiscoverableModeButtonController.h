@@ -23,7 +23,7 @@
 + (id)keyPathsForValuesAffectingButtonTitle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)popoverWillClose:(id)arg1;
+- (void)popoverWillClose;
 - (void)buttonPressed:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldBeVisible; // @dynamic shouldBeVisible;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;

@@ -115,8 +115,7 @@ __attribute__((visibility("hidden")))
 - (void)setLinkedPeople:(id)arg1;
 - (void)manuallyAddPropertyKey:(id)arg1;
 - (BOOL)hasKeyBeenManuallyAdded:(id)arg1;
-- (BOOL)isAvailableForFaceTimeAudio;
-- (BOOL)isAvailableForFaceTimeVideo;
+- (BOOL)isAvailableForFaceTime;
 - (BOOL)keyAvailable:(id)arg1;
 - (id)multiValueKeys;
 - (BOOL)shouldUseUnifiedPlaceholderForKey:(id)arg1;

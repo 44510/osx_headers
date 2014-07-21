@@ -48,6 +48,7 @@
 - (double)sweepingCursorStage3PixelsPerSecond;
 - (double)sweepingCursorStage2PixelsPerSecond;
 - (double)sweepingCursorStage1PixelsPerSecond;
+- (unsigned long long)maxScanCycleCount;
 - (double)autoScanElementInterval;
 - (double)autoScanPanelInterval;
 - (BOOL)isAutoScanEnabled;

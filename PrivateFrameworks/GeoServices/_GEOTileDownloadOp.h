@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     int _attempts;
     double _startTime;
     double _timeout;
+    long long _eTagType;
 }
 
 @property(retain, nonatomic) NSString *responseEtag; // @synthesize responseEtag=_responseEtag;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property struct _GEOTileKey key; // @synthesize key=_key;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(nonatomic) long long eTagType; // @synthesize eTagType=_eTagType;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

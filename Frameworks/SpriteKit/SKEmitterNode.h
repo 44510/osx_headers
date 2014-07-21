@@ -86,6 +86,8 @@
 - (id)description;
 - (void)setPhysicsWorld:(id)arg1;
 - (id)physicsWorld;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)setFieldInfluenceSequence:(id)arg1;
 - (id)fieldInfluenceSequence;
 

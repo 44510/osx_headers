@@ -16,11 +16,13 @@
     BOOL _isDetached;
     BOOL _closingViaCommit;
     BOOL _isDeterminingPopoverShouldClose;
+    BOOL _isClosing;
     NSView *_contentView;
     EKEventViewController *_eventViewController;
     EKEvent *_pendingEvent;
 }
 
+@property BOOL isClosing; // @synthesize isClosing=_isClosing;
 @property(retain) EKEvent *pendingEvent; // @synthesize pendingEvent=_pendingEvent;
 @property BOOL isDeterminingPopoverShouldClose; // @synthesize isDeterminingPopoverShouldClose=_isDeterminingPopoverShouldClose;
 @property BOOL closingViaCommit; // @synthesize closingViaCommit=_closingViaCommit;
@@ -32,6 +34,7 @@
 - (BOOL)wantsTimeDetectionForSuggestions;
 - (void)showEvent:(id)arg1;
 - (void)startDateChangedTo:(id)arg1;
+- (BOOL)shouldCloseOnRevert;
 - (BOOL)shouldCloseOnCommit;
 - (BOOL)displayApplyButton;
 - (BOOL)displayShowButton;

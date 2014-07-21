@@ -23,13 +23,11 @@ __attribute__((visibility("hidden")))
 - (void)makeFaceTimeCallWithEndpoint:(id)arg1 isAudio:(BOOL)arg2;
 - (void)makeFaceTimeCallWithContactIdentifier:(id)arg1 isAudio:(BOOL)arg2;
 - (void)startTelephonySupportLookup;
-- (void)startMessagingAvailabilityLookupForEndpoint:(id)arg1 property:(id)arg2;
-- (void)startFaceTimeAudioAvailabilityLookupForIdentifier:(id)arg1;
-- (void)startFaceTimeVideoAvailabilityLookupForIdentifier:(id)arg1;
+- (void)startMessagingAvailabilityLookupForEndpoint:(id)arg1;
+- (void)startFaceTimeAvailabilityLookupForIdentifier:(id)arg1 endpoints:(id)arg2;
 - (void)telephonyAvailaibilityChanged:(BOOL)arg1;
 - (void)messagingAvailabilityChanged:(BOOL)arg1 forEndpoint:(id)arg2;
-- (void)faceTimeAudioAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(id)arg2;
-- (void)faceTimeVideoAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(id)arg2;
+- (void)faceTimeAvailabilityChanged:(BOOL)arg1 forContactIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

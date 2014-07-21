@@ -50,7 +50,7 @@
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
 @property(nonatomic) BOOL usesBackgroundSession; // @synthesize usesBackgroundSession=_usesBackgroundSession;
-@property(readonly, nonatomic) BOOL useEncryption; // @synthesize useEncryption=_useEncryption;
+@property(nonatomic) BOOL useEncryption; // @synthesize useEncryption=_useEncryption;
 @property(nonatomic) __weak CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 @property(readonly, nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak CKDOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
@@ -68,12 +68,13 @@
 @property(readonly, nonatomic) unsigned int QOSClass;
 @property(readonly, nonatomic) NSString *flowControlKey;
 @property(readonly, nonatomic) BOOL shouldCheckAppVersion;
-- (void)cancel;
-- (void)finishWithError:(id)arg1;
 - (BOOL)_errorShouldImpactFlowControl:(id)arg1;
 - (id)nameForState:(unsigned long long)arg1;
 - (void)makeStateTransition:(BOOL)arg1;
 - (BOOL)makeStateTransition;
+- (void)cancel;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (void)finishWithError:(id)arg1;
 - (void)main;
 - (void)start;
 - (BOOL)_checkAppVersion;

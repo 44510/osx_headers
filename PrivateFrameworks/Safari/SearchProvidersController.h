@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct URLRequest)redirectToSafeSearchIfNeeded:(const struct URLRequest *)arg1;
++ (id)_countrySetInMacBuddy;
 + (id)_internetServicesRegion;
 + (void)_getSortedSearchProviderList:(id *)arg1 andDefaultProvider:(id *)arg2 fromProviderList:(id)arg3;
 + (void)_sortSearchProviders:(id)arg1;

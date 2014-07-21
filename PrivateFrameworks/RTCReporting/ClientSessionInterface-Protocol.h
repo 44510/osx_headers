@@ -8,7 +8,7 @@
 
 @protocol ClientSessionInterface
 - (void)sendMessageWithSessionInfo:(NSDictionary *)arg1 userInfo:(NSDictionary *)arg2 category:(unsigned short)arg3 type:(unsigned short)arg4 payload:(NSDictionary *)arg5 reply:(void (^)(NSString *))arg6;
-- (void)uploadFileAtPath:(NSURL *)arg1 completionHandler:(void (^)(BOOL))arg2;
+- (void)uploadFileAtPath:(NSURL *)arg1 extensionToken:(char *)arg2 completionHandler:(void (^)(BOOL))arg3;
 - (void)flushMessagesWithReply:(void (^)(NSString *))arg1;
 - (void)sendMessageWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(NSDictionary *)arg3 reply:(void (^)(NSString *))arg4;
 - (void)fetchDisplayURL:(void (^)(NSString *))arg1;

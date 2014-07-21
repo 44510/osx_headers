@@ -47,6 +47,7 @@
     unsigned int _containerMetadataSyncState;
     BRCOperation *_containerMetadataSyncOperation;
     BRCThrottle *_containerResetThrottle;
+    unsigned long long _availableQuota;
     BRCThrottledScheduler *_readerScheduler;
     BRCThrottledScheduler *_applyChangesScheduler;
     NSObject<OS_dispatch_group> *_lostScanGroup;
@@ -59,6 +60,7 @@
 }
 
 @property(readonly, nonatomic) BRCAccountSession *accountSession; // @synthesize accountSession=_session;
+@property(nonatomic) unsigned long long availableQuota; // @synthesize availableQuota=_availableQuota;
 @property(readonly, nonatomic) BRCSyncBudgetThrottle *syncUpBudget; // @synthesize syncUpBudget=_syncUpBudget;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *syncGroup; // @synthesize syncGroup=_syncGroup;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *initialSyncDownGroup; // @synthesize initialSyncDownGroup=_initialSyncDownGroup;

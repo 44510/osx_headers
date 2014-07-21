@@ -77,6 +77,7 @@
 - (void)_updateBottomOverlap;
 - (void)_headerViewFrameDidChange:(id)arg1;
 - (void)_updateTopOverlap;
+- (void)_chatDisplayControllerChatDidChange:(id)arg1;
 - (void)_chatDisplayControllerRecipientsDidChange:(id)arg1;
 - (void)saveChatAs:(id)arg1;
 - (void)fadeinAnimation:(double)arg1;

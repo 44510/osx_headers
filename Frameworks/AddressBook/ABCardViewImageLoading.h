@@ -8,22 +8,25 @@
 
 @interface ABCardViewImageLoading : NSObject
 {
+    long long _backgroundStyle;
 }
 
-+ (id)cardViewMonogramOptions;
-+ (id)imageByCroppingImage:(id)arg1;
-+ (id)addPhotoImage;
-+ (id)imageWithInitials:(id)arg1;
-+ (id)defaultImageForCompany;
-+ (id)defaultImageForPerson;
-+ (id)makeObservableWithLocalPhotoObservable:(id)arg1 placeholderObservable:(id)arg2 remotePhotoObservable:(id)arg3;
-+ (id)makeRemotePhotoObservableWithDataSource:(id)arg1;
-+ (id)makeAddPhotoObservable;
-+ (id)makePlaceholderObservableWithInitials:(id)arg1 isCompany:(BOOL)arg2;
-+ (id)makePlaceholderObservableWithDataSource:(id)arg1;
-+ (id)makeLocalPhotoObservableWithDataSource:(id)arg1;
-+ (id)makeEditModeObservableWithDataSource:(id)arg1;
-+ (id)makeObservableWithDataSource:(id)arg1;
+@property long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
+- (id)cardViewMonogramOptions;
+- (id)imageByCroppingImage:(id)arg1;
+- (id)addPhotoImage;
+- (id)imageWithInitials:(id)arg1;
+- (id)defaultImageForCompany;
+- (id)defaultImageForPerson;
+- (id)makeObservableWithLocalPhotoObservable:(id)arg1 placeholderObservable:(id)arg2 remotePhotoObservable:(id)arg3;
+- (id)makeRemotePhotoObservableWithDataSource:(id)arg1;
+- (id)makeAddPhotoObservable;
+- (id)makePlaceholderObservableWithInitials:(id)arg1 isCompany:(BOOL)arg2;
+- (id)makePlaceholderObservableWithDataSource:(id)arg1;
+- (id)makeLocalPhotoObservableWithDataSource:(id)arg1;
+- (id)makeEditModeObservableWithDataSource:(id)arg1;
+- (id)makeObservableWithDataSource:(id)arg1;
+- (id)initWithBackgroundStyle:(long long)arg1;
 
 @end
 

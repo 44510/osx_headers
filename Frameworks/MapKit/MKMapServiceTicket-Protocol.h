@@ -14,7 +14,6 @@
 @property(readonly, nonatomic) NSArray *refinedMapItems;
 @property(readonly, nonatomic) NSArray *exactMapItems;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
-- (BOOL)isEqualForHistoryToTicket:(id <MKMapServiceTicket>)arg1;
 - (void)applyToCorrectedSearch:(GEORPCorrectedSearch *)arg1;
 - (void)submitWithHandler:(void (^)(NSArray *, NSError *))arg1 queue:(NSObject<OS_dispatch_queue> *)arg2 networkActivity:(void (^)(BOOL))arg3;
 - (void)cancel;

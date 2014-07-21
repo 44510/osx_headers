@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     double lastReceivedAudio;
     BOOL launchedShutdownThread;
     BOOL isAudioRunning;
+    BOOL isVideoRunning;
     BOOL isWaitingForICEResult;
     BOOL didSend200OK;
     float remoteParticipantVolume;
@@ -258,6 +259,7 @@ __attribute__((visibility("hidden")))
 @property BOOL receivedSIPInvite; // @synthesize receivedSIPInvite;
 @property BOOL isWaitingForICEResult; // @synthesize isWaitingForICEResult;
 @property(readonly) BOOL isAudioRunning; // @synthesize isAudioRunning;
+@property(readonly) BOOL isVideoRunning; // @synthesize isVideoRunning;
 @property(retain) NSObject<VCCallSessionDelegate> *delegate; // @synthesize delegate;
 @property long long sampleRate; // @synthesize sampleRate;
 @property long long videoPayload; // @synthesize videoPayload;

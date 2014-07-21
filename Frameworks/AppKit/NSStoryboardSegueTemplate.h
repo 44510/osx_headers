@@ -8,22 +8,23 @@
 
 #import "NSCoding.h"
 
-@class NSStoryboard, NSString, NSViewController;
+@class NSStoryboard, NSString;
 
 @interface NSStoryboardSegueTemplate : NSObject <NSCoding>
 {
     NSString *_identifier;
     NSString *_segueClassName;
     NSStoryboard *_storyboard;
-    NSViewController *_viewController;
+    id _controller;
     NSString *_destinationControllerIdentifier;
     BOOL _performOnViewLoad;
 }
 
 @property(nonatomic) BOOL performOnViewLoad; // @synthesize performOnViewLoad=_performOnViewLoad;
-@property(nonatomic) NSViewController *viewController; // @synthesize viewController=_viewController;
+@property(nonatomic) id controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic) NSStoryboard *storyboard; // @synthesize storyboard=_storyboard;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)setViewController:(id)arg1;
 - (void)perform:(id)arg1;
 - (void)_perform:(id)arg1;
 - (id)segueWithDestinationViewController:(id)arg1;

@@ -148,7 +148,6 @@
 - (void)_findOverpasses;
 - (void)_findJunctions;
 - (void)_attachRoadPoints;
-- (id)_initWithVMP3:(id)arg1 localizationData:(id)arg2 tileKey:(const struct _GEOTileKey *)arg3;
 - (id)_initWithVMP4:(id)arg1 localizationData:(id)arg2 tileKey:(const struct _GEOTileKey *)arg3;
 - (BOOL)_handleGenericTile:(CDStruct_effb527d *)arg1;
 - (BOOL)_addGenericPolygonWithAttributes:(int *)arg1;

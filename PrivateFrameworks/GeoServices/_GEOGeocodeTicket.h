@@ -19,12 +19,13 @@ __attribute__((visibility("hidden")))
     GEOMapServiceTraits *_traits;
     GEOMapRegion *_resultBoundingRegion;
     BOOL _isForwardGeocode;
+    BOOL _shiftLocationsIfNeeded;
 }
 
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion; // @synthesize resultBoundingRegion=_resultBoundingRegion;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
 @property(retain, nonatomic) GEOPlaceSearchResponse *response; // @synthesize response=_response;
-- (BOOL)isEqualForHistoryToTicket:(id)arg1;
+- (void)_reverseGeocodeWithRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 networkActivity:(CDUnknownBlockType)arg3;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 timeout:(long long)arg2 networkActivity:(CDUnknownBlockType)arg3;
@@ -34,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)request;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithReverseGeocodeRequest:(id)arg1 traits:(id)arg2;
+- (id)initWithReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeRequest:(id)arg1 traits:(id)arg2;
 - (id)_initWithGeocodeRequest:(id)arg1 traits:(id)arg2;
 

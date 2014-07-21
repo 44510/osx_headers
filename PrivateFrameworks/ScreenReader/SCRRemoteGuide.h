@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)dispatchAddRemoteGuideItemsWithLimit:(unsigned long long)arg1;
 - (void)dispatchAddRemoteElementsForSearchKeys:(id)arg1 remoteElements:(id)arg2 remoteGuideItems:(id)arg3 limit:(id)arg4;
 - (void)addAllLocalGuideItems;
+- (void)_updateStatusWithItemCount:(unsigned long long)arg1 isFinishedLoading:(BOOL)arg2;
 - (void)_updateGuideViewTitleWithTypeAheadString:(id)arg1;
 - (BOOL)_isHandlingTypeAhead;
 - (id)_filteredGuideItemsWithGuideItems:(id)arg1 containingTitleString:(id)arg2;

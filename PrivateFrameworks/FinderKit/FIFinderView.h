@@ -44,6 +44,7 @@
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)refreshContents;
 - (BOOL)isNewFolderDialogRunning;
+- (BOOL)canSaveNewDocument;
 - (BOOL)canCreateNewFolder;
 - (BOOL)makeNewFolderForSavePanel:(id)arg1;
 @property(copy) NSArray *selectedURLs;
@@ -57,6 +58,7 @@
 @property(retain) NSURL *rootDirectoryURL;
 @property(retain) NSURL *directoryURL;
 - (void)viewWillMoveToWindow:(id)arg1;
+- (void)viewDidMoveToWindow;
 - (void)windowOrderedOut;
 - (void)windowOrderedIn;
 - (void)ourWindowDidBecomeKey;

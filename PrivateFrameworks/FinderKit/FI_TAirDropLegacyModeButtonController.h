@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingButtonTitle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)popoverWillClose:(id)arg1;
+- (void)popoverWillClose;
 - (void)buttonPressed:(id)arg1;
 @property(readonly, retain, nonatomic) NSString *buttonTitle; // @dynamic buttonTitle;
 @property(readonly) FI_TAirDropDiscoveryController *discoveryController;

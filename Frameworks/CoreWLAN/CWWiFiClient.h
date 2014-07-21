@@ -19,6 +19,7 @@
 
 + (id)interfaceNames;
 + (id)sharedWiFiClient;
++ (id)virtualInterfaceNames;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void)internal_enableTetherDevice:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)internal_stopBrowsingForTetherDevicesAndReply:(CDUnknownBlockType)arg1;

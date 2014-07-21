@@ -21,7 +21,7 @@
 @property(copy, nonatomic) CDUnknownBlockType shareFetchedProgressBlock; // @synthesize shareFetchedProgressBlock=_shareFetchedProgressBlock;
 @property(retain, nonatomic) NSArray *shares; // @synthesize shares=_shares;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleShareFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

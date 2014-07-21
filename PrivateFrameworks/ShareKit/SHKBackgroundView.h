@@ -13,7 +13,7 @@
 
 @property __weak id <SHKClientWindowSyncDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)mouseDragged:(id)arg1;
+- (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 

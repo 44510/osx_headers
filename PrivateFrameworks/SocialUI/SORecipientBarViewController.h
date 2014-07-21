@@ -79,7 +79,7 @@
 - (void)_chatDisplayControllerRecipientHandlesDidChange:(id)arg1;
 - (void)_chatStatusDidChange:(id)arg1;
 - (void)_handleInfoDidChange:(id)arg1;
-- (void)_startObservingRecipientHandles;
+- (void)_startObservingRecipientHandles:(id)arg1;
 - (void)_stopObservingRecipientHandles:(id)arg1;
 - (void)addRecipientActionView:(id)arg1 verticalOffset:(double)arg2;
 - (void)chatDisplayControllerDidChange;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class DBBackgroundWindows, DBSpringboard, DBWidget, NSMutableArray, NSObject<OS_dispatch_source>, NSSet, _CGSSpace;
+@class DBBackgroundWindows, DBButton, DBSpringboard, DBWidget, NSMutableArray, NSObject<OS_dispatch_source>, NSSet, _CGSSpace;
 
 @interface DBDashboard : NSObject
 {
@@ -31,6 +31,9 @@
     } _overlayAnimationMutex;
     DBBackgroundWindows *_overlayBackgroundWindows;
     NSMutableArray *_widgetProcessList;
+    DBButton *_plusButton;
+    DBButton *_minusButton;
+    DBButton *_backButton;
     _Bool _widgetsAwake;
     _Bool _watchingForFlagsChanged;
     _Bool _sticky;
@@ -48,6 +51,9 @@
 + (int)enabledState:(_Bool)arg1;
 @property(readonly, nonatomic) NSMutableArray *widgetProcessList; // @synthesize widgetProcessList=_widgetProcessList;
 @property(nonatomic) _Bool editMode; // @synthesize editMode=_editMode;
+@property(readonly, nonatomic) DBButton *backButton; // @synthesize backButton=_backButton;
+@property(readonly, nonatomic) DBButton *minusButton; // @synthesize minusButton=_minusButton;
+@property(readonly, nonatomic) DBButton *plusButton; // @synthesize plusButton=_plusButton;
 @property(readonly, nonatomic) DBWidget *keyFocusWidget; // @synthesize keyFocusWidget=_keyFocusWidget;
 @property(readonly, nonatomic) unsigned int cid; // @synthesize cid=_cid;
 @property(readonly, nonatomic) _Bool allowOutOfLayer; // @synthesize allowOutOfLayer=_allowOutOfLayer;

@@ -28,6 +28,7 @@
     NSOperationQueue *_remoteTaskQueue;
     NSOperationQueue *_remoteFetchQueue;
     NSOperationQueue *_requestResponseQueue;
+    NSOperationQueue *_bodyFetchQueue;
 }
 
 + (void)resetAllFolderHierarchySyncStates;
@@ -46,6 +47,7 @@
 + (id)keyPathsForValuesAffecting_URLInternalConnectionScheme;
 + (id)defaultPathNameForAccount;
 + (id)accountTypeString;
+@property(readonly, nonatomic) NSOperationQueue *bodyFetchQueue; // @synthesize bodyFetchQueue=_bodyFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *requestResponseQueue; // @synthesize requestResponseQueue=_requestResponseQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue; // @synthesize remoteFetchQueue=_remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue; // @synthesize remoteTaskQueue=_remoteTaskQueue;

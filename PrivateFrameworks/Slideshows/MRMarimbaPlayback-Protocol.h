@@ -15,6 +15,8 @@
 - (double)timeForSlide:(MPSlide *)arg1;
 - (void)gotoText:(MPText *)arg1;
 - (void)gotoSlide:(MPSlide *)arg1;
+- (void)gotoPreviousSlide:(BOOL)arg1;
+- (void)gotoNextSlide:(BOOL)arg1;
 - (void)gotoPreviousSlide;
 - (void)gotoNextSlide;
 - (NSArray *)currentSlides;

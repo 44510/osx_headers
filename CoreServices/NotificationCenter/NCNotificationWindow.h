@@ -62,7 +62,6 @@
 - (void)checkForAutoDismissWithMouseLocation:(struct CGPoint)arg1;
 - (void)updateContentModel:(id)arg1;
 - (void)modelDidUpdate;
-- (id)accessibilityActionNames;
 - (void)cancelTalkingAlert;
 - (void)registerTalkingAlertIfNecessary;
 - (void)windowAnimateOutComplete;
@@ -72,10 +71,6 @@
 - (void)removeFromView;
 - (void)internalLayout;
 @property(readonly) BOOL onScreen;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityAttributeNames;
-- (BOOL)accessibilityIsIgnored;
 - (int)behaviorType;
 @property(readonly) NSString *nibName;
 @property(readonly) BOOL contentsClipped;

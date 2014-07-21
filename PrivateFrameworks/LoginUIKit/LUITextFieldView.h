@@ -21,6 +21,7 @@
 }
 
 @property id delegate; // @synthesize delegate=_delegate;
+- (id)accessibilityPlaceholderValue;
 - (void)setUIEnabled:(BOOL)arg1;
 - (void)setPlaceholderString:(id)arg1;
 - (void)setStringValue:(id)arg1;

@@ -11,7 +11,7 @@
 #import "NCRoundedWindowContentDelegate.h"
 #import "NSTextViewDelegate.h"
 
-@class NCAlertButton, NCAlertScrollView, NCAppInfo, NCBaseBannerViewController, NCDividerLineView, NCFadedClipView, NCIdentityImageView, NCImageFramedView, NSButton, NSImageView, NSLayoutConstraint, NSObject<OS_dispatch_source>, NSObjectController, NSString, NSTextField, NSTextView, NSUserNotification, NSView, _NCRoundProgressView;
+@class NCAlertButton, NCAlertScrollView, NCAppInfo, NCBaseBannerViewController, NCFadedClipView, NCIdentityImageView, NCImageFramedView, NCLineView, NSButton, NSImageView, NSLayoutConstraint, NSObject<OS_dispatch_source>, NSObjectController, NSString, NSTextField, NSTextView, NSUserNotification, NSView, _NCRoundProgressView;
 
 @interface NCBanner : NCNotificationWindow <NCRoundedWindowContentDelegate, NSTextViewDelegate, NCAlertButtonDelegate, NCBannerViewControllerDelegate>
 {
@@ -53,6 +53,7 @@
     NSLayoutConstraint *_inputHeightMaxConstraint;
     NSLayoutConstraint *_buttonContainerWidthConstraint;
     NSLayoutConstraint *_buttonContainerToTitleWidthConstraint;
+    NSLayoutConstraint *_buttonBottomLineHeightConstraint;
     NSLayoutConstraint *_contentImageWidthConstraint;
     NSLayoutConstraint *_contentImageHeightConstraint;
     NSLayoutConstraint *_contentImageCollapseConstraint;
@@ -66,7 +67,7 @@
     NSTextField *_titleTF;
     NSImageView *_miniImageView;
     NSImageView *_statusImageView;
-    NCDividerLineView *_bottomDivider;
+    NCLineView *_bottomDivider;
     NSView *_buttonContainer;
     NSView *_contentContainer;
     NCAlertScrollView *_contentScroller;
@@ -86,7 +87,7 @@
 @property NCAlertScrollView *contentScroller; // @synthesize contentScroller=_contentScroller;
 @property NSView *contentContainer; // @synthesize contentContainer=_contentContainer;
 @property(retain) NSView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
-@property NCDividerLineView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
+@property NCLineView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
 @property NSImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property NSImageView *miniImageView; // @synthesize miniImageView=_miniImageView;
 @property NSTextField *titleTF; // @synthesize titleTF=_titleTF;
@@ -100,6 +101,7 @@
 @property NSLayoutConstraint *contentImageCollapseConstraint; // @synthesize contentImageCollapseConstraint=_contentImageCollapseConstraint;
 @property NSLayoutConstraint *contentImageHeightConstraint; // @synthesize contentImageHeightConstraint=_contentImageHeightConstraint;
 @property NSLayoutConstraint *contentImageWidthConstraint; // @synthesize contentImageWidthConstraint=_contentImageWidthConstraint;
+@property NSLayoutConstraint *buttonBottomLineHeightConstraint; // @synthesize buttonBottomLineHeightConstraint=_buttonBottomLineHeightConstraint;
 @property NSLayoutConstraint *buttonContainerToTitleWidthConstraint; // @synthesize buttonContainerToTitleWidthConstraint=_buttonContainerToTitleWidthConstraint;
 @property NSLayoutConstraint *buttonContainerWidthConstraint; // @synthesize buttonContainerWidthConstraint=_buttonContainerWidthConstraint;
 @property NSLayoutConstraint *inputHeightMaxConstraint; // @synthesize inputHeightMaxConstraint=_inputHeightMaxConstraint;
@@ -148,7 +150,7 @@
 - (void)updateContentModel:(id)arg1;
 @property(readonly) NCAppInfo *application;
 @property(readonly) NSUserNotification *notification;
-- (id)accessibilitySubRole;
+- (id)accessibilitySubroleForBanner;
 @property(nonatomic) _Bool showReply;
 - (void)setLockscreenMode:(_Bool)arg1;
 - (id)nibName;

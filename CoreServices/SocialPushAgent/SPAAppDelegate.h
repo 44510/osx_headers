@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (BOOL)handleChangesToPushNotificationSettings;
 - (void)pushNotificationSettingsHaveChangedForService:(id)arg1;
-- (id)notifiationCenterEnabledTopics;
 - (void)callAPSConnectionPublicToken;
 - (void)updateAPSRegisteredTopics;
 - (void)resetAPSConnection;

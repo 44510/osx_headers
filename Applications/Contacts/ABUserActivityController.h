@@ -19,9 +19,9 @@
 - (void)selectRecordsWithIdentifiers:(id)arg1;
 - (void)restoreActivity:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
-- (void)userActivityWillSave:(id)arg1;
 - (void)markAsNeedingUpdate;
 - (id)currentPayload;
+- (void)clearActivity;
 - (void)registerActivity;
 - (void)dealloc;
 - (id)initWithWindowViewModel:(id)arg1 responder:(id)arg2;

@@ -12,19 +12,22 @@
 #import "FILocationPopUpDelegate.h"
 #import "NSMenuDelegate.h"
 
-@class FIContainerController, FIFinderView, FILocationPopUp, FI_TArrangeByMenuController, NSArray, NSSearchField, NSSegmentedControl, NSString;
+@class FIContainerController, FIFinderView, FILocationPopUp, FI_TArrangeByMenuController, NSArray, NSBox, NSSearchField, NSSegmentedControl, NSString, NSView;
 
 __attribute__((visibility("hidden")))
 @interface FIFinderViewGutsController : FI_TViewController <FILocationPopUpDelegate, NSMenuDelegate, BrowserContainerTargeting, BrowserContainerSearching, BrowserContainerDelegate>
 {
     id _mainView;
     id _splitViewHolder;
+    NSView *_topBar;
+    NSBox *_horizontalLineAtTop;
     NSSearchField *_searchField;
     NSSegmentedControl *_backForward;
     NSSegmentedControl *_viewSwitcher;
     NSSegmentedControl *_arrangeView;
     FILocationPopUp *_locationPopUp;
     FILocationPopUp *_associatedLocationPopup;
+    struct TNSRef<FITopBarTitlebarAccessoryViewController *> _topBarTitlebarAccessoryViewController;
     FIContainerController *_activeContainer;
     _Bool _showing;
     FIFinderView *_finderView;
@@ -155,6 +158,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)sidebarContainsURL:(id)arg1;
 - (void)refreshContents;
 - (_Bool)isNewFolderDialogRunning;
+- (_Bool)canSaveNewDocument;
 - (_Bool)canCreateNewFolder;
 - (_Bool)makeNewFolderForSavePanel:(id)arg1;
 - (_Bool)hidesSharedSection;
@@ -232,6 +236,7 @@ __attribute__((visibility("hidden")))
 - (void)finalize;
 - (void)dealloc;
 - (void)aboutToDestroyBrowserView;
+- (void)viewDidMoveToWindow;
 - (void)setExpanded:(_Bool)arg1;
 - (void)windowOrderedOut;
 - (void)windowOrderedIn;

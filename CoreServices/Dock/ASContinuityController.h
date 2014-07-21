@@ -24,7 +24,7 @@
 - (void)_suggestionChanged:(id)arg1 fetchingIdentifier:(id)arg2;
 - (void)connectionInterrupted;
 - (void)bestAppSuggestionChanged:(id)arg1;
-- (void)launch:(id)arg1;
+- (void)launch:(id)arg1 from:(unsigned long long)arg2;
 - (id)init;
 
 // Remaining properties

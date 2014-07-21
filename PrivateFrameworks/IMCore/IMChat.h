@@ -64,11 +64,16 @@
     BOOL _downgradeState;
     BOOL _ignoreDowngradeStatusUpdates;
     BOOL _forceMMS;
+    IMScheduledUpdater *_downgradeStateUpdater;
 }
 
 + (Class)chatItemRulesClass;
 + (void)setChatItemRulesClass:(Class)arg1;
 + (void)_initializeFMF;
++ (void)_postRefreshActiveChatNotification;
++ (void)_handleOperationalAccountsChanged:(id)arg1;
++ (void)_handleLoginStatusChange:(id)arg1;
++ (void)initialize;
 @property(retain, nonatomic) IMMessage *invitationForPendingParticipants; // @synthesize invitationForPendingParticipants=_invitationForPendingParticipants;
 @property(readonly, nonatomic) long long joinState; // @synthesize joinState=_joinState;
 @property(readonly, nonatomic) NSDate *dateModified; // @synthesize dateModified=_dateModified;
@@ -242,8 +247,8 @@
 - (void)_sendProgressTimerFired:(id)arg1;
 - (void)_scheduleSendProgressTimerIfNeeded;
 - (void)_updateSendProgress;
-- (void)resetSendProgressAndFinished:(BOOL)arg1;
-- (float)progressSending:(unsigned long long *)arg1 of:(unsigned long long *)arg2;
+- (void)_resetSendProgress;
+- (float)_progressSending:(unsigned long long *)arg1 of:(unsigned long long *)arg2;
 - (void)_unmapSendingItem:(id)arg1;
 - (void)_mapSendingItem:(id)arg1;
 - (BOOL)_hasSendingMessages;
@@ -263,8 +268,6 @@
 @property(readonly, retain, nonatomic) NSSet *fmfHandles;
 @property(readonly, retain, nonatomic) IMChatRegistry *chatRegistry;
 - (id)testChatItems;
-- (void)_handleOperationalAccountsChanged:(id)arg1;
-- (void)_handleLoginStatusChange:(id)arg1;
 @property(nonatomic) BOOL forceMMS;
 @property(readonly, nonatomic) BOOL suppressAccountRetargetingForGroupConversation;
 - (void)_calculateDowngradeState;
@@ -280,9 +283,6 @@
 - (id)_previousAccountForService:(id)arg1;
 - (BOOL)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
 - (BOOL)_accountIsOperational:(id)arg1 forService:(id)arg2;
-- (void)_setupPreferredServiceChangeHandlers;
-- (void)_cleanupIDSListeners;
-- (void)_setupIDSListeners;
 - (void)_delayedInvalidateDowngradeState;
 - (void)_handleIncomingCommand:(id)arg1;
 - (void)_handleDeliveredCommand:(id)arg1;

@@ -21,6 +21,9 @@
     NSArray *_itemMap;
     NSArray *_restoredOpusGuidelines;
     NSMutableDictionary *_mediaAttributes;
+    double _minDuration;
+    double _maxDuration;
+    double _duration;
     struct {
         unsigned int isLoaded:1;
     } _flags;
@@ -89,14 +92,15 @@
 - (id)_subtitleGuidelineWithValue:(id)arg1 andMediaItem:(id)arg2;
 - (id)_subtitleGuidelineWithString:(id)arg1 andMediaItem:(id)arg2;
 - (id)_titleGuidelineWithString:(id)arg1 andAttributes:(id)arg2;
-- (id)_transitionGuidelineFromSettings:(id)arg1;
-- (id)_makeOpusGuidelinesFromAttributes:(id)arg1;
+- (id)_transitionGuidelineFromSettings:(id)arg1 theme:(id)arg2;
+- (id)_makeOpusGuidelinesFromAttributes:(id)arg1 theme:(id)arg2;
 - (void)document:(id)arg1 needsAnimationPathsAppliedForSlide:(id)arg2 inEffect:(id)arg3;
 - (BOOL)document:(id)arg1 shouldUseDefaultAnimatedPathsForSlide:(id)arg2 inEffect:(id)arg3;
 - (void)authorMarimbaDocumentWithStyle:(id)arg1 mediaURLS:(id)arg2 attributes:(id)arg3;
 - (unsigned long long)authorWithTheme:(id)arg1 mediaURLs:(id)arg2 attributes:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)_closeOpusDocument;
 - (struct CGImage *)posterImageWithSize:(struct CGSize)arg1;
+- (void)_updateDurations;
 - (void)_recomputeSynopsis;
 - (void)recomputeSynopsis;
 - (id)itemAtIndex:(unsigned long long)arg1;

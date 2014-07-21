@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CALMainController, CalUICalendarContainerView, CalUICalendarContentView, CalUIDayViewController, CalUIMonthViewController, CalUIViewController, CalUIWeekViewController, CalUIYearViewController, NSMutableArray, NSString, NSView;
+@class CALMainController, CalUICalendarContainerView, CalUICalendarContentView, CalUIDayViewController, CalUIMonthViewController, CalUIViewController, CalUIWeekViewController, CalUIYearViewController, NSMutableArray, NSString, NSTimer, NSView;
 
 @interface CalUICalendarViewsController : NSObject
 {
@@ -26,12 +26,14 @@
     CalUICalendarContainerView *_weekViewContainer;
     CalUICalendarContainerView *_monthViewContainer;
     CalUICalendarContainerView *_yearViewContainer;
+    NSTimer *_inactiveViewControllerUpdateTimer;
 }
 
 + (double)heightForFontSize:(double)arg1;
 + (double)_heightForFontSize:(double)arg1;
 + (Class)viewControllerClassForViewName:(id)arg1;
 + (id)viewNameForViewDescription:(id)arg1;
+@property(retain) NSTimer *inactiveViewControllerUpdateTimer; // @synthesize inactiveViewControllerUpdateTimer=_inactiveViewControllerUpdateTimer;
 @property(retain) CalUICalendarContainerView *yearViewContainer; // @synthesize yearViewContainer=_yearViewContainer;
 @property(retain) CalUICalendarContainerView *monthViewContainer; // @synthesize monthViewContainer=_monthViewContainer;
 @property(retain) CalUICalendarContainerView *weekViewContainer; // @synthesize weekViewContainer=_weekViewContainer;
@@ -67,6 +69,8 @@
 - (void)createNewEventAtDate:(id)arg1 isAllDay:(BOOL)arg2;
 - (BOOL)hideWeekends;
 - (void)dateTimeFormatChanged;
+- (void)_updateCheckedCalendarEventsForInactiveViewControllersAfterDelay:(id)arg1;
+- (void)checkedCalendarsDidChange;
 - (void)eventsChanged:(id)arg1;
 - (id)inactiveViewControllers;
 - (id)allViewControllers;

@@ -1127,13 +1127,6 @@ typedef struct {
 } CDStruct_b2f7276a;
 
 typedef struct {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-} CDStruct_d2b197d1;
-
-typedef struct {
     float left;
     float right;
     float leftBottom;

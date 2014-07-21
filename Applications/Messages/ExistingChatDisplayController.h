@@ -40,7 +40,6 @@
 - (id)_updateBrowsingHistoryWithItemAtIndex:(unsigned long long)arg1 inChatItems:(id)arg2;
 - (id)initWithLegacyMessagesState:(id)arg1;
 - (BOOL)canInsertFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;
-- (void)updateToPreferredService:(id)arg1;
 - (void)recipientsDidChange;
 - (void)chatDisplayNameDidChange;
 - (void)chatRecipientsDidChange;

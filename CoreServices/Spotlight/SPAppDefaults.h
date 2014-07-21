@@ -8,6 +8,7 @@
 
 @interface SPAppDefaults : SPDefaults
 {
+    BOOL _darkMode;
 }
 
 + (id)localizedGroupName:(id)arg1;
@@ -31,8 +32,11 @@
 + (id)pathToSpotlightPrefStorage;
 + (void)initialize;
 + (id)checkList;
+@property BOOL darkMode; // @synthesize darkMode=_darkMode;
 - (id)loadCategoryOrder:(id)arg1;
 - (void)reloadPrefs;
+- (id)init;
+- (void)appearanceChanged:(id)arg1;
 
 @end
 

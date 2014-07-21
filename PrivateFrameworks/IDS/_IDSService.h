@@ -9,7 +9,7 @@
 #import "IDSAccountControllerDelegate.h"
 #import "IDSConnectionDelegatePrivate.h"
 
-@class IDSAccountController, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
+@class IDSAccount, IDSAccountController, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface _IDSService : NSObject <IDSAccountControllerDelegate, IDSConnectionDelegatePrivate>
 {
@@ -38,6 +38,7 @@
 - (void)setProtobufAction:(SEL)arg1 forProtobufType:(unsigned short)arg2 isResponse:(BOOL)arg3;
 @property(readonly, copy, nonatomic) NSArray *devices;
 @property(readonly, copy, nonatomic) NSSet *accounts;
+@property(readonly, retain, nonatomic) IDSAccount *iCloudAccount;
 @property(readonly, copy, nonatomic) NSString *serviceDomain;
 - (void)connection:(id)arg1 account:(id)arg2 sessionInviteReceived:(id)arg3 fromID:(id)arg4 transportType:(id)arg5 options:(id)arg6 context:(id)arg7;
 - (void)connection:(id)arg1 identifier:(id)arg2 hasBeenDeliveredWithContext:(id)arg3;

@@ -170,6 +170,9 @@
 - (void)dealloc;
 - (id)initTextCell:(id)arg1;
 - (id)initTextCell:(id)arg1 pullsDown:(BOOL)arg2;
+- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
+- (BOOL)wantsUpdateLayerInView:(id)arg1;
+- (Class)_classForOverrideCheck;
 - (void)accessibilityPerformAction:(id)arg1;
 - (void)_accessibilityPressAction:(id)arg1;
 - (BOOL)accessibilityIsFocusedAttributeSettable;

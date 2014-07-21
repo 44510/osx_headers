@@ -300,6 +300,7 @@
 - (id)_applicationAuthorizationChallenge;
 @property(readonly, nonatomic) NSString *_applicationAuthorizationChallengeProvider;
 @property(nonatomic, getter=_isExternalProtectionRequiredForPlayback, setter=_setExternalProtectionRequiredForPlayback:) BOOL _externalProtectionRequiredForPlayback;
+- (id)_isExternalProtectionRequiredForPlaybackInternal;
 - (id)errorLog;
 - (id)accessLog;
 - (id)dataYouTubeID;

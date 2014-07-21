@@ -14,9 +14,11 @@
     NSString *_string;
     struct CGRect _normalizedBounds;
     struct CGPoint _normalizedCenter;
+    _Bool _hasImageResource;
 }
 
 + (BOOL)statusLabelsEnabledForIdentifier:(id)arg1;
+@property(nonatomic) _Bool hasImageResource; // @synthesize hasImageResource=_hasImageResource;
 @property(readonly, nonatomic) struct CGPoint normalizedCenter; // @synthesize normalizedCenter=_normalizedCenter;
 @property(readonly, nonatomic) struct CGRect normalizedBounds; // @synthesize normalizedBounds=_normalizedBounds;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;

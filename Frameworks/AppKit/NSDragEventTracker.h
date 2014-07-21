@@ -12,6 +12,7 @@
     double _movementThreshold;
     double _timeoutThreshold;
     BOOL _routesScrollWheelEventsToWindow;
+    BOOL _wantsRightMouseEvents;
     double _gestureAmount;
     long long _stage;
     struct CGPoint _location;
@@ -21,6 +22,7 @@
 @property long long stage; // @synthesize stage=_stage;
 @property double gestureAmount; // @synthesize gestureAmount=_gestureAmount;
 @property unsigned long long discardEventMask; // @synthesize discardEventMask=_discardEventMask;
+@property BOOL wantsRightMouseEvents; // @synthesize wantsRightMouseEvents=_wantsRightMouseEvents;
 @property BOOL routesScrollWheelEventsToWindow; // @synthesize routesScrollWheelEventsToWindow=_routesScrollWheelEventsToWindow;
 @property double timeoutThreshold; // @synthesize timeoutThreshold=_timeoutThreshold;
 @property double movementThreshold; // @synthesize movementThreshold=_movementThreshold;

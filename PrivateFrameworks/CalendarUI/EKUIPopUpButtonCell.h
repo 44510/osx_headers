@@ -11,6 +11,7 @@
 @interface EKUIPopUpButtonCell : NSPopUpButtonCell
 {
     BOOL _useAlternateTitle;
+    BOOL _mouseOver;
     EKUIPopUpButton *_uiPopUpbutton;
     NSDictionary *_enabledTitleAttributes;
     NSDictionary *_disabledTitleAttributes;
@@ -20,6 +21,7 @@
 @property __weak EKEventViewController *eventViewController; // @synthesize eventViewController=_eventViewController;
 @property(retain) NSDictionary *disabledTitleAttributes; // @synthesize disabledTitleAttributes=_disabledTitleAttributes;
 @property(retain) NSDictionary *enabledTitleAttributes; // @synthesize enabledTitleAttributes=_enabledTitleAttributes;
+@property BOOL mouseOver; // @synthesize mouseOver=_mouseOver;
 @property BOOL useAlternateTitle; // @synthesize useAlternateTitle=_useAlternateTitle;
 @property __weak EKUIPopUpButton *uiPopUpbutton; // @synthesize uiPopUpbutton=_uiPopUpbutton;
 - (void).cxx_destruct;
@@ -31,6 +33,8 @@
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (id)currentTitleAttributesWithColor;
 - (id)titleAttributes;
+- (void)mouseExited:(id)arg1;
+- (void)mouseEntered:(id)arg1;
 - (id)titleFont;
 - (id)lightTextColor;
 - (id)textColor;

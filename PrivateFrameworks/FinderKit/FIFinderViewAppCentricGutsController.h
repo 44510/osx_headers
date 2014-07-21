@@ -15,10 +15,14 @@ __attribute__((visibility("hidden")))
     NSVisualEffectView *_visualEffectView;
     struct TNSRef<FIScrollViewMirrorView *> _browserViewMirrorView;
     struct TNSRef<FIScrollViewMirrorView *> _sidebarMirrorView;
+    struct vector<TNSRef<FIScrollViewMirrorView *>, std::__1::allocator<TNSRef<FIScrollViewMirrorView *>>> _columnViewMirrorViews;
+    struct TNSRef<FIDisabledScrollingScrollView *> _columnViewMirrorViewScrollView;
+    struct TNotificationCenterObserver _columnViewBoundsChangeObserver;
+    struct TNotificationCenterObserver _columnViewDidAddColumnObserver;
+    struct TNotificationCenterObserver _columnViewDidSetLastColumnObserver;
     struct TNSRef<NSArray *> _sidebarMirrorViewWidthConstraints;
     struct TNSRef<NSArray *> _browserViewMirrorViewWidthConstraints;
     NSBox *_bottomLine;
-    NSView *_topBar;
     NSSegmentedControl *_toggleSidebarButton;
     NSSegmentedControl *_topBarEditTagsButton;
     NSSegmentedControl *_topBarSharingButton;
@@ -61,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)adjustTopBar;
 - (void)configureWindowForContentChange;
 - (void)_configureMirrorViews;
+- (void)_configureMirrorViewForBrowserColumnView:(id)arg1;
+- (void)_configureMirrorViewForSidebarScrollView:(id)arg1;
 - (void)didChangeSelection;
 - (struct TMDQueryAliasNode *)userSearchTarget;
 - (void)moreInitialization;
@@ -69,6 +75,9 @@ __attribute__((visibility("hidden")))
 - (struct TString)clientAppName;
 - (void)prepareToHide;
 - (void)prepareToShow;
+- (void)didSetLastColumn;
+- (void)didAddColumn;
+- (void)columnViewContentViewBoundsChanged;
 - (void)dealloc;
 - (void)aboutToDestroyBrowserView;
 - (void)_tearDownMirrorViews;

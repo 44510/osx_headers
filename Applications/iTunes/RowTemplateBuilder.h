@@ -48,9 +48,9 @@
 @property(readonly) NSMutableDictionary *numericKeyPathsDictionary; // @synthesize numericKeyPathsDictionary=_numericKeyPathsDictionary;
 @property(readonly) NSMutableDictionary *textKeyPathsDictionary; // @synthesize textKeyPathsDictionary=_textKeyPathsDictionary;
 - (void)addToKeyPathsDictionary:(id)arg1 keyPath:(id)arg2 trailingString:(id)arg3 defaultString:(id)arg4;
-- (id)defaultStringFromTrackField:(unsigned int)arg1;
-- (id)trailingStringForTrackField:(unsigned int)arg1;
-- (id)completionArrayForTrackField:(unsigned int)arg1;
+- (id)defaultStringFromTrackField:(int)arg1;
+- (id)trailingStringForTrackField:(int)arg1;
+- (id)completionArrayForTrackField:(int)arg1;
 @property(readonly) NSArray *sortSeriesNameArray; // @synthesize sortSeriesNameArray=_sortSeriesNameArray;
 @property(readonly) NSArray *seriesNameArray; // @synthesize seriesNameArray=_seriesNameArray;
 @property(readonly) NSArray *sortAlbumArray; // @synthesize sortAlbumArray=_sortAlbumArray;

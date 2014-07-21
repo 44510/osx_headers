@@ -28,6 +28,7 @@
 - (void)setTrustRemoteKeyEvents:(BOOL)arg1;
 - (BOOL)trustRemoteKeyEvents;
 - (void)setView:(id)arg1;
+@property(readonly) BOOL valid;
 @property(readonly) BOOL invalid;
 - (void)invalidate;
 - (id)nibBundle;
@@ -60,6 +61,7 @@
 @property(readonly) struct CGSize remoteViewSize;
 - (void)_complete:(CDUnknownBlockType)arg1 error:(id)arg2;
 @property(readonly) BOOL makesExplicitResizeRequests;
+@property(readonly) BOOL allowsImplicitResizeRequests;
 @property(readonly) BOOL allowsWindowFrameOriginChanges;
 - (unsigned long long)filterStyleMask:(unsigned long long)arg1;
 - (unsigned long long)acceptableStyleMask;

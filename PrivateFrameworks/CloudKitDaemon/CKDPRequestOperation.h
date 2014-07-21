@@ -8,7 +8,7 @@
 
 #import "NSCopying.h"
 
-@class CKDPAssetUploadTokenRetrieveRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPInvitationAcceptRequest, CKDPInvitationDeclineRequest, CKDPInvitationQueryRequest, CKDPLikeRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPkiRegisterRequest, CKDPPkiRetrieveRequest, CKDPPostCommentRequest, CKDPPromoteContainerSchemaRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPResetContainerRequest, CKDPSetBadgeCountRequest, CKDPShareCreateRequest, CKDPShareDeleteRequest, CKDPShareParticipantCreateRequest, CKDPShareParticipantDeleteRequest, CKDPShareParticipantUpdateRequest, CKDPShareRetrieveRequest, CKDPShareSetKeyRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
+@class CKDPAssetUploadTokenRetrieveRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPInvitationAcceptRequest, CKDPInvitationDeclineRequest, CKDPInvitationQueryRequest, CKDPLikeRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPkiRegisterRequest, CKDPPkiRetrieveRequest, CKDPPostCommentRequest, CKDPPromoteContainerSchemaRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPResetContainerRequest, CKDPSetBadgeCountRequest, CKDPShareCreateRequest, CKDPShareDeleteRequest, CKDPShareParticipantCreateRequest, CKDPShareParticipantDeleteRequest, CKDPShareParticipantUpdateRequest, CKDPShareRetrieveRequest, CKDPShareSetKeyRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUserAvailableQuotaRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
 
 @interface CKDPRequestOperation : PBCodable <NSCopying>
 {
@@ -53,6 +53,7 @@
     CKDPTokenRegistrationRequest *_tokenRegistrationRequest;
     CKDPTokenUnregistrationRequest *_tokenUnregistrationRequest;
     CKDPUnlikeRequest *_unlikeRequest;
+    CKDPUserAvailableQuotaRequest *_userAvailableQuotaRequest;
     CKDPUserPrivacySettingsBatchLookupRequest *_userPrivacySettingsBatchLookupRequest;
     CKDPUserPrivacySettingsResetRequest *_userPrivacySettingsResetRequest;
     CKDPUserPrivacySettingsRetrieveRequest *_userPrivacySettingsRetrieveRequest;
@@ -68,6 +69,7 @@
 @property(retain, nonatomic) CKDPOperation *request; // @synthesize request=_request;
 @property(retain, nonatomic) CKDPRequestOperationHeader *header; // @synthesize header=_header;
 - (void).cxx_destruct;
+- (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -95,6 +97,8 @@
 @property(readonly, nonatomic) BOOL hasRecordRetrieveChangesRequest;
 @property(retain, nonatomic) CKDPRecordDeleteRequest *recordDeleteRequest;
 @property(readonly, nonatomic) BOOL hasRecordDeleteRequest;
+@property(retain, nonatomic) CKDPUserAvailableQuotaRequest *userAvailableQuotaRequest;
+@property(readonly, nonatomic) BOOL hasUserAvailableQuotaRequest;
 @property(retain, nonatomic) CKDPUserRetrieveRequest *userRetrieveRequest;
 @property(readonly, nonatomic) BOOL hasUserRetrieveRequest;
 @property(retain, nonatomic) CKDPQueryRetrieveRequest *queryRetrieveRequest;

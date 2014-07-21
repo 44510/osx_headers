@@ -31,7 +31,8 @@
     unsigned int _showOptionsButton:1;
     unsigned int _canSendSynchronousMessagesToRemote:1;
     unsigned int _animatingSetFrame:1;
-    unsigned int _reserved:17;
+    unsigned int _dismissingPanel:1;
+    unsigned int _reserved:16;
     CDUnknownBlockType _completionHandler;
     NSButton *_dontSaveButton;
     NSButton *_newDocumentButton;

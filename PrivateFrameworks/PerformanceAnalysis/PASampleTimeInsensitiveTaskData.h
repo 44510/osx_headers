@@ -63,6 +63,7 @@
 @property(readonly) int rpid; // @synthesize rpid=_rpid;
 @property(readonly) int ppid; // @synthesize ppid=_ppid;
 @property(readonly) int pid; // @synthesize pid=_pid;
+@property(readonly, copy) NSString *debugDescription;
 - (BOOL)correspondsToStackshotTask:(id)arg1;
 - (id)addStack:(id)arg1;
 - (void)_gatherTimeCriticalAuxiliaryInfoFromLiveSystem;
@@ -79,7 +80,6 @@
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

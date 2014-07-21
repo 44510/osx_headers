@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)taskForUnlinkedPerson:(id)arg1 additionalEmails:(id)arg2 options:(id)arg3;
++ (id)taskForLinkedPeople:(id)arg1 additionalEmails:(id)arg2 options:(id)arg3;
 + (id)taskForPerson:(id)arg1 additionalEmails:(id)arg2 options:(id)arg3;
 
 @end

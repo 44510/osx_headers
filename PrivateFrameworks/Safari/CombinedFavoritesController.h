@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_touchIconsCacheWillPurge:(id)arg1;
+- (void)_titleOfFrequentlyVisitedSiteDidChange:(id)arg1;
 - (void)_frequentlyVisitedSitesDidChange:(id)arg1;
 - (void)_bookmarksWereChanged:(id)arg1;
 - (void)_favoritesContentsChanged;

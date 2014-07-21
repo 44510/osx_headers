@@ -9,6 +9,8 @@
 @class NSData, NSString, NSURL;
 
 @protocol BRNonLocalVersionReceiving <NSObject>
-- (oneway void)newVersionAtURL:(NSURL *)arg1 faultURL:(NSURL *)arg2 faultExtension:(NSData *)arg3 etag:(NSString *)arg4 lastEditorDeviceName:(NSString *)arg5;
+- (oneway void)newThumbnailForVersionWithEtag:(NSString *)arg1;
+- (oneway void)versionsDone;
+- (oneway void)newVersionAtURL:(NSURL *)arg1 faultURL:(NSURL *)arg2 faultExtension:(NSData *)arg3 etag:(NSString *)arg4 hasThumbnail:(BOOL)arg5 lastEditorDeviceName:(NSString *)arg6;
 @end
 

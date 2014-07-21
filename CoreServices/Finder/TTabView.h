@@ -21,6 +21,7 @@
     struct TNSRef<TTabViewCoverLayer *> _rightCoverLayer;
     TNSRef_720ff929 _selectedTabViewItem;
     struct TNSRef<NSView *> _tabContainer;
+    struct TNotificationCenterObserver _scrolled;
     _Bool _tearingDown;
     _Bool _isMergingTabs;
     _Bool _trackingTabClick;
@@ -93,6 +94,7 @@
 - (id)browserWindowUnderDrag:(struct CGPoint)arg1;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)moveTab:(id)arg1 to:(long long)arg2;
+- (void)clearDragState;
 - (_Bool)tabDropped:(id)arg1;
 - (_Bool)tabDragged:(id)arg1;
 - (void)updateDragImageForBrowserWindow:(id)arg1;
@@ -170,7 +172,6 @@
 - (_Bool)layersShouldDraw;
 - (void)setNeedsDisplay;
 - (BOOL)isFlipped;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

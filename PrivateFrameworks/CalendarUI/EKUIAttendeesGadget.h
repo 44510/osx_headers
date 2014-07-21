@@ -9,7 +9,7 @@
 #import "CalAutoCompleteDelegate.h"
 #import "EKUIAttendeesViewController.h"
 
-@class CalAutoCompleteOperation, EKUIAttendeeFieldDelegate, EKUIAttendeesControlContainer, EKUIAttendeesEditingField, EKUIAttendeesTokenField, EKUIPlusButton, NSArray, NSButton, NSDictionary, NSProgressIndicator, NSString, NSView;
+@class CalAutoCompleteOperation, EKUIAttendeeFieldDelegate, EKUIAttendeesControlContainer, EKUIAttendeesEditingField, EKUIAttendeesTokenField, EKUIPlusButton, EKUITextButton, NSArray, NSDictionary, NSProgressIndicator, NSString, NSView;
 
 @interface EKUIAttendeesGadget : EKUISingleViewGadget <EKUIAttendeesViewController, CalAutoCompleteDelegate>
 {
@@ -21,7 +21,7 @@
     EKUIAttendeesEditingField *_editingField;
     NSProgressIndicator *_progressIndicator;
     EKUIPlusButton *_plusButton;
-    NSButton *_linkButton;
+    EKUITextButton *_linkButton;
     NSView *_separator;
     NSDictionary *_viewMetrics;
     CalAutoCompleteOperation *_acOperation;
@@ -37,7 +37,7 @@
 @property(retain) CalAutoCompleteOperation *acOperation; // @synthesize acOperation=_acOperation;
 @property(retain) NSDictionary *viewMetrics; // @synthesize viewMetrics=_viewMetrics;
 @property(retain) NSView *separator; // @synthesize separator=_separator;
-@property(retain) NSButton *linkButton; // @synthesize linkButton=_linkButton;
+@property(retain) EKUITextButton *linkButton; // @synthesize linkButton=_linkButton;
 @property(retain) EKUIPlusButton *plusButton; // @synthesize plusButton=_plusButton;
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) EKUIAttendeesEditingField *editingField; // @synthesize editingField=_editingField;

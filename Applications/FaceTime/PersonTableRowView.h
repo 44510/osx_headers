@@ -10,6 +10,7 @@
 
 @interface PersonTableRowView : NSTableRowView
 {
+    BOOL _isLastRow;
     id <PersonTableRowViewDelegate> _delegate;
     NSView *_containerView;
     NSImageView *_imageView;
@@ -35,13 +36,17 @@
 @property(nonatomic) __weak NSImageView *faceTimeIconImageView; // @synthesize faceTimeIconImageView=_faceTimeIconImageView;
 @property(nonatomic) __weak NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
+@property(nonatomic) BOOL isLastRow; // @synthesize isLastRow=_isLastRow;
 @property(nonatomic) __weak id <PersonTableRowViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)mouseDownCanMoveWindow;
 - (void)infoButton:(id)arg1;
 - (void)audioButton:(id)arg1;
 - (void)videoButton:(id)arg1;
 - (void)showVideoButtonAnimated:(BOOL)arg1;
+- (void)enableVideoButton:(BOOL)arg1;
 - (void)showAudioButtonAnimated:(BOOL)arg1;
+- (void)enableAudioButton:(BOOL)arg1;
 - (void)disableCallButtons;
 - (void)hideCallButtons:(BOOL)arg1;
 - (void)faceTimeAudioActionSelected:(id)arg1;

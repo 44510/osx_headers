@@ -24,6 +24,7 @@
 - (void)setImage:(id)arg1 forState:(int)arg2;
 - (double)baselineOffsetFromBottom;
 - (struct CGSize)intrinsicContentSize;
+- (void)p_windowChangedMainStatus:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 @property(readonly, nonatomic) IMCustomButtonCell *customCell;
 - (BOOL)isFlipped;

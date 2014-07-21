@@ -9,43 +9,54 @@
 #import "NSXPCListenerDelegate.h"
 #import "TKProtocolSmartCardSlot.h"
 
-@class NSMutableArray, NSString, NSXPCConnection, NSXPCListener, TKSmartCardATR, TKSmartCardSessionEngine;
+@class NSHashTable, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener, TKPowerMonitor, TKSmartCardATR, TKSmartCardSessionEngine;
 
 @interface TKSmartCardSlotEngine : NSObject <TKProtocolSmartCardSlot, NSXPCListenerDelegate>
 {
-    long long _state;
     TKSmartCardATR *_atr;
     unsigned long long _protocol;
+    long long _state;
+    long long _slotStateStamp;
     NSXPCConnection *_registrationConnection;
     NSXPCListener *_listener;
-    NSMutableArray *_clients;
+    NSHashTable *_clients;
     NSMutableArray *_sessionRequests;
-    BOOL _cardSensitive;
+    CDUnknownBlockType _sessionRequestReply;
+    NSMapTable *_reservations;
+    TKPowerMonitor *_powerMonitor;
     BOOL _apduSent;
     long long _maxInputLength;
     long long _maxOutputLength;
     id <TKSmartCardSlotDelegate> _delegate;
     NSString *_name;
+    NSObject<OS_dispatch_queue> *_queue;
     TKSmartCardSessionEngine *_session;
 }
 
 @property __weak TKSmartCardSessionEngine *session; // @synthesize session=_session;
 @property BOOL apduSent; // @synthesize apduSent=_apduSent;
-@property BOOL cardSensitive; // @synthesize cardSensitive=_cardSensitive;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property __weak id <TKSmartCardSlotDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long maxOutputLength; // @synthesize maxOutputLength=_maxOutputLength;
 @property long long maxInputLength; // @synthesize maxInputLength=_maxInputLength;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)terminate;
-- (BOOL)hasSessionRequest;
+- (void)sendControl:(id)arg1 data:(id)arg2 expectedLength:(unsigned int)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)reserveProtocols:(id)arg1 currentlyReserved:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)registerSessionRequest:(CDUnknownBlockType)arg1;
 - (void)sessionWithParameters:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)handlePendingSessionCreate:(BOOL)arg1;
+- (void)leaveSession:(id)arg1;
+- (void)connectCardSessionWithParameters:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setupSlotWithReply:(CDUnknownBlockType)arg1;
-- (void)initializeSessionWithParameters:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)cardPresent:(BOOL)arg1;
+- (void)powerDownWithEject:(BOOL)arg1 slotStateStamp:(long long)arg2;
+- (void)setProtocol:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)changeStateTo:(long long)arg1 atr:(id)arg2;
 - (id)dictionaryForState:(long long)arg1 atr:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setupWithName:(id)arg1 delegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)init;
